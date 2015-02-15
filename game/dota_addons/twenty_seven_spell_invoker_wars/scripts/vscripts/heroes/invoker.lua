@@ -128,6 +128,8 @@ end
 	ability bound to F based on the order of the orbs around Invoker.
 ================================================================================================================= ]]
 function invoker_invoke_retro_on_spell_start(keys)
+	keys.caster:EmitSound("Hero_Invoker.Invoke")
+
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the
 	--limited number of slots, keep track of the gametime of when abilities were last cast, which we can use to determine
 	--if invoked spells should still be on cooldown from when they were last used.

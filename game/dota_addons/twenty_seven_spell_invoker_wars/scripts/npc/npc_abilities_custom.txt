@@ -120,13 +120,13 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"health_regen_per_instance"	"1.0 2.0 3.0 4.0 5.0 6.0 7.0"
+				"var_type"								"FIELD_INTEGER"
+				"bonus_damage_percent_per_instance"		"2 4 6 8 10 12 14"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_strength"			"2 4 6 8 10 12 14"
+				"var_type"								"FIELD_INTEGER"
+				"bonus_intelligence"					"1 2 3 4 5 6 7"
 			}
 		}
 		
@@ -157,7 +157,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 				}
 			}
 			"modifier_invoker_quas_instance_retro"
@@ -175,7 +175,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
 				}
 			}
 		}
@@ -212,17 +212,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"attack_speed_per_instance"			"2 4 6 8 10 12 14"
+				"move_speed_percent_per_instance"	"1 2 3 4 5 6 7"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"move_speed_percent_per_instance"	"1 2 3 4 5 6 7"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_agility"						"2 4 6 8 10 12 14"
+				"bonus_agility"						"1 2 3 4 5 6 7"
 			}
 		}
 		
@@ -271,7 +266,6 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed_per_instance"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_speed_percent_per_instance"
 				}
 			}
@@ -308,13 +302,13 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_per_instance"	"3 6 9 12 15 18 21"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_intelligence"		"2 4 6 8 10 12 14"
+				"var_type"							"FIELD_INTEGER"
+				"bonus_strength"					"1 2 3 4 5 6 7"
 			}
 		}
 		
@@ -363,7 +357,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage_per_instance"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen_per_instance"
 				}
 			}
 		}

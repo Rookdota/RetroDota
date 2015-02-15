@@ -1,0 +1,8 @@
+twenty_seven_spell_invoker_wars_ma
+{
+	material materials/overviews/twenty_seven_spell_invoker_wars_ma.vmat
+	pos_x -7072
+	pos_y 7898
+	scale 14.531
+}
+

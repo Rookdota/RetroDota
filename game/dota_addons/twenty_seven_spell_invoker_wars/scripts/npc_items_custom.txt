@@ -1,0 +1,16 @@
+"DOTAAbilities"
+{	
+	//Items are made unsearchable in npc_abilities_override.txt.
+	
+	//A dummy item that is used to take up item slots (generally used with items that change icons, so the "on"/"off" version will be placed into the same slot).
+	"item_dummy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"                            "1297"  // unique ID number for this item.  Do not change this once 
+		"BaseClass"                     "item_datadriven"
+		"ItemBaseLevel"                 "1"
+		"ItemPurchasable"				"0"
+		//"AbilityTextureName"			""
+	}
+}

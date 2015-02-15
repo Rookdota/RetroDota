@@ -370,6 +370,56 @@
 	}
 	
 	
-	
+	// Invoker's Invoke
+	// Author: Rook
+	// Date: February 15, 2015
+	"invoker_invoke_retro"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName" 			"invoker_invoke"
+		"MaxLevel"						"7"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"			"5"
+		"RequiredLevel"					"2"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22 17 12 5"
+		"AbilityManaCost"				"20 40 60 80"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_invoked_spells"		"2 2 2 2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"16 8 4 2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_cost_scepter"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_invoke_retro_on_spell_start"
+			}
+		}
+	}
 	
 }

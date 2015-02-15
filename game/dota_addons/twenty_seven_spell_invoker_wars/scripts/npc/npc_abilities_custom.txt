@@ -443,6 +443,7 @@
 		"precache"
 		{
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
 		}
 		
 		// Special
@@ -459,27 +460,27 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
 			}
-			"02"
+			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"slow"					"-140"
 			}
-			"03"
+			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"2.0"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"num_wall_elements"		"15"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_spacing"	"80"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"
@@ -490,8 +491,9 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_icy_path_on_spell_start"
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
 			}
 		}
 		
@@ -506,12 +508,12 @@
 				"IsPurgable"		"1"
 				
 				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
-				"EffectAttachType"		"follow_overhead"
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
 				
 				"Properties"
 				{
-					
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
 				}
 			}
 		}

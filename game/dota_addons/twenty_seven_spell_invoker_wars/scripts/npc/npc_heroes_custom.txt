@@ -12,8 +12,8 @@
 		"Ability1"					"invoker_quas_retro"
 		"Ability2"					"invoker_wex_retro"
 		"Ability3"					"invoker_exort_retro"
-		"Ability4"					"invoker_empty_invoke_slot_retro"
-		"Ability5"					"invoker_empty_invoke_slot_retro"
+		"Ability4"					"invoker_empty_slot_1_retro"
+		"Ability5"					"invoker_empty_slot_2_retro"
 		"Ability6"					"invoker_invoke_retro"
 	}
 }

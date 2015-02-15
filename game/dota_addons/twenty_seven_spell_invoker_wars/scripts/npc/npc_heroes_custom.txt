@@ -9,11 +9,11 @@
 	"npc_dota_hero_invoker"
 	{
 		"override_hero"				"npc_dota_hero_invoker"
-		"Ability1"					"invoker_quas_retro"
-		"Ability2"					"invoker_wex_retro"
-		"Ability3"					"invoker_exort_retro"
-		"Ability4"					"invoker_empty_slot_1_retro"
-		"Ability5"					"invoker_empty_slot_2_retro"
-		"Ability6"					"invoker_invoke_retro"
+		"Ability1"					"invoker_retro_quas"
+		"Ability2"					"invoker_retro_wex"
+		"Ability3"					"invoker_retro_exort"
+		"Ability4"					"invoker_retro_empty_slot_1"
+		"Ability5"					"invoker_retro_empty_slot_2"
+		"Ability6"					"invoker_retro_invoke"
 	}
 }

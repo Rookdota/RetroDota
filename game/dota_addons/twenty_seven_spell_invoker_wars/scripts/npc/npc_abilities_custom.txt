@@ -66,7 +66,7 @@
 	
 	
 	// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
-	"invoker_empty_slot_1_retro"
+	"invoker_retro_empty_slot_1"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@
 	
 	
 	// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
-	"invoker_empty_slot_2_retro"
+	"invoker_retro_empty_slot_2"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,8 @@
 	// Invoker's Quas
 	// Author: Rook
 	// Date: February 15, 2015
-	"invoker_quas_retro"
+	// Known bugs: The max level should be 8, not 7.
+	"invoker_retro_quas"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -135,7 +136,7 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_quas_retro_on_spell_start"
+				"Function"							"invoker_retro_quas_on_spell_start"
 			}
 		}
 		
@@ -144,13 +145,13 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_orb_retro_on_upgrade"
+				"Function"							"invoker_retro_orb_on_upgrade"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_quas_retro"
+			"modifier_invoker_retro_quas"
 			{
 				"Passive"  			"1"
 				"IsHidden" 			"1"
@@ -160,7 +161,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 				}
 			}
-			"modifier_invoker_quas_instance_retro"
+			"modifier_invoker_retro_quas_instance"
 			{
 				"Passive"  			"0"
 				"IsHidden" 			"0"
@@ -185,7 +186,8 @@
 	// Invoker's Wex
 	// Author: Rook
 	// Date: February 15, 2015
-	"invoker_wex_retro"
+	// Known bugs: The max level should be 8, not 7.
+	"invoker_retro_wex"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -226,7 +228,7 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_wex_retro_on_spell_start"
+				"Function"							"invoker_retro_wex_on_spell_start"
 			}
 		}
 		
@@ -235,13 +237,13 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_orb_retro_on_upgrade"
+				"Function"							"invoker_retro_orb_on_upgrade"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_wex_retro"
+			"modifier_invoker_retro_wex"
 			{
 				"Passive"  			"1"
 				"IsHidden" 			"1"
@@ -251,7 +253,7 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
 				}
 			}
-			"modifier_invoker_wex_instance_retro"
+			"modifier_invoker_retro_wex_instance"
 			{
 				"Passive"  			"0"
 				"IsHidden" 			"0"
@@ -276,7 +278,8 @@
 	// Invoker's Exort
 	// Author: Rook
 	// Date: February 15, 2015
-	"invoker_exort_retro"
+	// Known bugs: The max level should be 8, not 7.
+	"invoker_retro_exort"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -317,7 +320,7 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_exort_retro_on_spell_start"
+				"Function"							"invoker_retro_exort_on_spell_start"
 			}
 		}
 		
@@ -326,13 +329,13 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_orb_retro_on_upgrade"
+				"Function"							"invoker_retro_orb_on_upgrade"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_exort_retro"
+			"modifier_invoker_retro_exort"
 			{
 				"Passive"  			"1"
 				"IsHidden" 			"1"
@@ -342,7 +345,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
 				}
 			}
-			"modifier_invoker_exort_instance_retro"
+			"modifier_invoker_retro_exort_instance"
 			{
 				"Passive"  			"0"
 				"IsHidden" 			"0"
@@ -367,7 +370,8 @@
 	// Invoker's Invoke
 	// Author: Rook
 	// Date: February 15, 2015
-	"invoker_invoke_retro"
+	// Known bugs: The max level should be 1, not 4.  Change this if/when Quas, Wex, and Exort have their maximum levels boosted to 8.
+	"invoker_retro_invoke"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -375,15 +379,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName" 			"invoker_invoke"
-		"MaxLevel"						"7"
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"			"5"
 		"RequiredLevel"					"2"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 17 12 5"
-		"AbilityManaCost"				"20 40 60 80"
+		"AbilityCooldown"				"22 17 12 5"  //Old Invoker's Invoke cooldown was a static 12 seconds.
+		"AbilityManaCost"				"20 40 60 80"  //Old Invoker's Invoke mana cost was a static 0.
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -411,7 +414,106 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_invoke_retro_on_spell_start"
+				"Function"							"invoker_retro_invoke_on_spell_start"
+			}
+		}
+	}
+	
+	
+	// Invoker's Icy Path
+	// Author: Rook
+	// Date: February 15, 2015
+	"invoker_retro_icy_path"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_icy_path_on_spell_start"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
+				"EffectAttachType"		"follow_overhead"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen_per_instance"
+				}
 			}
 		}
 	}

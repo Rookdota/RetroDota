@@ -13,12 +13,12 @@ function invoker_remove_oldest_orb(keys)
 	--Therefore, the oldest orb is located in [1], and the newest is located in [3].
 	if keys.caster.invoked_orbs[1] ~= nil then
 		local orb_name = keys.caster.invoked_orbs[1]:GetName()
-		if orb_name == "invoker_quas_retro" then
-			keys.caster:RemoveModifierByName("modifier_invoker_quas_instance_retro")
-		elseif orb_name == "invoker_wex_retro" then
-			keys.caster:RemoveModifierByName("modifier_invoker_wex_instance_retro")
-		elseif orb_name == "invoker_exort_retro" then
-			keys.caster:RemoveModifierByName("modifier_invoker_exort_instance_retro")
+		if orb_name == "invoker_retro_quas" then
+			keys.caster:RemoveModifierByName("modifier_invoker_retro_quas_instance")
+		elseif orb_name == "invoker_retro_wex" then
+			keys.caster:RemoveModifierByName("modifier_invoker_retro_wex_instance")
+		elseif orb_name == "invoker_retro_exort" then
+			keys.caster:RemoveModifierByName("modifier_invoker_retro_exort_instance")
 		end
 	end
 end
@@ -39,33 +39,33 @@ function invoker_orb_retro_on_upgrade(keys)
 	--Reapply all the orbs Invoker has out in order to benefit from the upgraded ability's level.  By reapplying all
 	--three orb modifiers, they will maintain their order on the modifier bar (so long as all are removed before any
 	--are reapplied, since ordering problems arise there are two of the same type of orb otherwise).
-	while keys.caster:HasModifier("modifier_invoker_quas_instance_retro") do
-		keys.caster:RemoveModifierByName("modifier_invoker_quas_instance_retro")
+	while keys.caster:HasModifier("modifier_invoker_retro_quas_instance") do
+		keys.caster:RemoveModifierByName("modifier_invoker_retro_quas_instance")
 	end
-	while keys.caster:HasModifier("modifier_invoker_wex_instance_retro") do
-		keys.caster:RemoveModifierByName("modifier_invoker_wex_instance_retro")
+	while keys.caster:HasModifier("modifier_invoker_retro_wex_instance") do
+		keys.caster:RemoveModifierByName("modifier_invoker_retro_wex_instance")
 	end
-	while keys.caster:HasModifier("modifier_invoker_exort_instance_retro") do
-		keys.caster:RemoveModifierByName("modifier_invoker_exort_instance_retro")
+	while keys.caster:HasModifier("modifier_invoker_retro_exort_instance") do
+		keys.caster:RemoveModifierByName("modifier_invoker_retro_exort_instance")
 	end
 	
 	for i=1, 3, 1 do
 		if keys.caster.invoked_orbs[i] ~= nil then
 			local orb_name = keys.caster.invoked_orbs[i]:GetName()
-			if orb_name == "invoker_quas_retro" then
-				local quas_ability = keys.caster:FindAbilityByName("invoker_quas_retro")
+			if orb_name == "invoker_retro_quas" then
+				local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 				if quas_ability ~= nil then
-					quas_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_quas_instance_retro", nil)
+					quas_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
 				end
-			elseif orb_name == "invoker_wex_retro" then
-				local wex_ability = keys.caster:FindAbilityByName("invoker_wex_retro")
+			elseif orb_name == "invoker_retro_wex" then
+				local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
 				if wex_ability ~= nil then
-					wex_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_wex_instance_retro", nil)
+					wex_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
 				end
-			elseif orb_name == "invoker_exort_retro" then
-				local exort_ability = keys.caster:FindAbilityByName("invoker_exort_retro")
+			elseif orb_name == "invoker_retro_exort" then
+				local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
 				if exort_ability ~= nil then
-					exort_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_exort_instance_retro", nil)
+					exort_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
 				end
 			end
 		end
@@ -78,10 +78,10 @@ end
 	Date: February 15, 2015
 	Called when Quas is cast.
 ================================================================================================================= ]]
-function invoker_quas_retro_on_spell_start(keys)
+function invoker_retro_quas_on_spell_start(keys)
 	invoker_remove_oldest_orb(keys)
 	
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_quas_instance_retro", nil)
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
 	
 	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
 	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
@@ -94,10 +94,10 @@ end
 	Date: February 15, 2015
 	Called when Wex is cast.
 ================================================================================================================= ]]
-function invoker_wex_retro_on_spell_start(keys)
+function invoker_retro_wex_on_spell_start(keys)
 	invoker_remove_oldest_orb(keys)
 	
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_wex_instance_retro", nil)
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
 	
 	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
 	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
@@ -110,10 +110,10 @@ end
 	Date: February 15, 2015
 	Called when Exort is cast.
 ================================================================================================================= ]]
-function invoker_exort_retro_on_spell_start(keys)
+function invoker_retro_exort_on_spell_start(keys)
 	invoker_remove_oldest_orb(keys)
 	
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_exort_instance_retro", nil)
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
 	
 	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
 	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
@@ -163,81 +163,81 @@ function invoker_invoke_retro_on_spell_start(keys)
 		keys.caster.invoked_orbs = {}
 	end
 	if keys.caster.invoked_orbs[1] ~= nil and keys.caster.invoked_orbs[2] ~= nil and keys.caster.invoked_orbs[3] ~= nil then  --If three orbs have not been summoned, no spell will be invoked.
-		if keys.caster.invoked_orbs[1]:GetName() == "invoker_quas_retro" then
-			if keys.caster.invoked_orbs[2]:GetName() == "invoker_quas_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Quas Quas Quas
+		if keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_quas" then
+			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Quas Quas
 					keys.caster:AddAbility("invoker_icy_path_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Quas Quas Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Quas Wex
 					keys.caster:AddAbility("invoker_portal_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Quas Quas Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Quas Exort
 					keys.caster:AddAbility("invoker_frost_nova_retro")
 				end
-			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_wex_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Quas Wex Quas
+			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Wex Quas
 					keys.caster:AddAbility("invoker_betrayal_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Quas Wex Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Wex Wex
 					keys.caster:AddAbility("invoker_tornado_blast_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Quas Wex Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Wex Exort
 					keys.caster:AddAbility("invoker_levitation_retro")
 				end
-			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_exort_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Quas Exort Quas
+			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Exort Quas
 					keys.caster:AddAbility("invoker_power_word_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Quas Exort Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Exort Wex
 					keys.caster:AddAbility("invoker_invisibility_aura_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Quas Exort Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Exort Exort
 					keys.caster:AddAbility("invoker_shroud_of_flame_retro")
 				end
 			end
-		elseif keys.caster.invoked_orbs[1]:GetName() == "invoker_wex_retro" then
-			if keys.caster.invoked_orbs[2]:GetName() == "invoker_quas_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Wex Quas Quas
+		elseif keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_wex" then
+			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Quas Quas
 					keys.caster:AddAbility("invoker_mana_burn_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Wex Quas Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Quas Wex
 					keys.caster:AddAbility("invoker_emp_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Wex Quas Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Quas Exort
 					keys.caster:AddAbility("invoker_soul_blast_retro")
 				end
-			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_wex_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Wex Wex Quas
+			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Wex Quas
 					keys.caster:AddAbility("invoker_telelightning_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Wex Wex Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Wex Wex
 					keys.caster:AddAbility("invoker_shock_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Wex Wex Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Wex Exort
 					keys.caster:AddAbility("invoker_arcane_arts_retro")
 				end
-			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_exort_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Wex Exort Quas
+			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Exort Quas
 					keys.caster:AddAbility("invoker_scout_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Wex Exort Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Exort Wex
 					keys.caster:AddAbility("invoker_energy_ball_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Wex Exort Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Exort Exort
 					keys.caster:AddAbility("invoker_lightning_shield_retro")
 				end
 			end
-		elseif keys.caster.invoked_orbs[1]:GetName() == "invoker_exort_retro" then
-			if keys.caster.invoked_orbs[2]:GetName() == "invoker_quas_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Exort Quas Quas
+		elseif keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_exort" then
+			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Quas Quas
 					keys.caster:AddAbility("invoker_chaos_meteor_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Exort Quas Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Quas Wex
 					keys.caster:AddAbility("invoker_confuse_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Exort Quas Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Quas Exort
 					keys.caster:AddAbility("invoker_disarm_retro")
 				end
-			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_wex_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Exort Wex Quas
+			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Wex Quas
 					keys.caster:AddAbility("invoker_soul_reaver_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Exort Wex Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Wex Wex
 					keys.caster:AddAbility("invoker_firestorm_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Exort Wex Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Wex Exort
 					keys.caster:AddAbility("invoker_incinerate_retro")
 				end
-			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_exort_retro" then
-				if keys.caster.invoked_orbs[3]:GetName() == "invoker_quas_retro" then  --Exort Exort Quas
+			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
+				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Exort Quas
 					keys.caster:AddAbility("invoker_deafening_blast_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_wex_retro" then  --Exort Exort Wex
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Exort Wex
 					keys.caster:AddAbility("invoker_inferno_retro")
-				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_exort_retro" then  --Exort Exort Exort
+				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Exort Exort
 					keys.caster:AddAbility("invoker_firebolt_retro")
 				end
 			end
@@ -247,6 +247,8 @@ function invoker_invoke_retro_on_spell_start(keys)
 	--Put the newly invoked ability on cooldown if it should still have a remaining cooldown from the last time it was invoked.
 	local new_ability_f = keys.caster:GetAbilityByIndex(5)
 	if new_ability_f ~= nil then
+		new_ability_f:SetLevel(1)
+		
 		local new_ability_f_name = new_ability_f:GetName()
 		if keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_ability_f_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] ~= 0 then
 			local current_game_time = GameRules:GetGameTime() 

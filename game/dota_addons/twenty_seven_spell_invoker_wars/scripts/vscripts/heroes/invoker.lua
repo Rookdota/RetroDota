@@ -31,7 +31,7 @@ end
 	Known bugs: Leveling up currently sometimes switches the order of the invoked orbs in the modifier bar (it should
 		not switch the stored order of the orbs).
 ================================================================================================================= ]]
-function invoker_orb_retro_on_upgrade(keys)
+function invoker_retro_orb_on_upgrade(keys)
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
 	end
@@ -127,7 +127,7 @@ end
 	Called when Invoke is cast.  Stores cooldown information for the ability that was bound to D, and adds a new
 	ability bound to F based on the order of the orbs around Invoker.
 ================================================================================================================= ]]
-function invoker_invoke_retro_on_spell_start(keys)
+function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster:EmitSound("Hero_Invoker.Invoke")
 
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the

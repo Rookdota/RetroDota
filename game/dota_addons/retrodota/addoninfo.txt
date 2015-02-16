@@ -1,0 +1,7 @@
+"AddonInfo"
+{
+	"addontitle"		"Retro Dota"
+	"addonversion"		"1.000000"
+	"addontagline"		"Retro Dota"
+	"addonDescription"		"Play as Invoker when he had 27 spells!"
+}

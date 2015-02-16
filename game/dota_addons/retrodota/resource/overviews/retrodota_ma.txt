@@ -1,0 +1,8 @@
+retrodota_ma
+{
+	material materials/overviews/retrodota_ma.vmat
+	pos_x -7072
+	pos_y 7898
+	scale 14.531
+}
+

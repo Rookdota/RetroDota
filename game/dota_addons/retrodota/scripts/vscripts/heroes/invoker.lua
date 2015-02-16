@@ -130,6 +130,9 @@ end
 function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster:EmitSound("Hero_Invoker.Invoke")
 
+	
+	--[[The following code is for the modern Invoker that can invoke two spells, and is left here but commented out in case
+		we decide to allow Invoker to invoke two spells.
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the
 	--limited number of slots, keep track of the gametime of when abilities were last cast, which we can use to determine
 	--if invoked spells should still be on cooldown from when they were last used.
@@ -157,6 +160,28 @@ function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster:AddAbility(ability_f_name)  --This will place the ability that was bound to F in the D slot.
 	local new_ability_d = keys.caster:FindAbilityByName(ability_f_name)
 	new_ability_d:StartCooldown(ability_f_current_cooldown)
+	]]
+	
+	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the
+	--limited number of slots, keep track of the gametime of when abilities were last cast, which we can use to determine
+	--if invoked spells should still be on cooldown from when they were last used.
+	local old_spell_invoked = keys.caster:GetAbilityByIndex(5)
+	local old_spell_invoked_name = old_spell_invoked:GetName()
+	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
+	--We cannot just store the gametime because the ability's maximum cooldown may have changed due to leveling up Invoker's orbs
+	--by the time the ability is reinvoked.  Therefore, keys.caster.invoke_ability_gametime_removed[ability_name] is also stored.
+	--Items like Refresher Orb should clear this list.
+	if keys.caster.invoke_ability_cooldown_remaining == nil then
+		keys.caster.invoke_ability_cooldown_remaining = {}
+	end
+	if keys.caster.invoke_ability_gametime_removed == nil then
+		keys.caster.invoke_ability_gametime_removed = {}
+	end
+	keys.caster.invoke_ability_cooldown_remaining[old_spell_invoked_name] = old_spell_invoked:GetCooldownTimeRemaining()
+	keys.caster.invoke_ability_gametime_removed[old_spell_invoked_name] = GameRules:GetGameTime() 
+	
+	--Remove the ability that was in the F slot.
+	keys.caster:RemoveAbility(old_spell_invoked_name)
 	
 	--Add the invoked spell depending on the order of the invoked orbs.
 	if keys.caster.invoked_orbs == nil then

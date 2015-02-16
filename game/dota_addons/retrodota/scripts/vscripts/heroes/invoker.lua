@@ -3,12 +3,19 @@
 	Date: February 15, 2015
 	Removes the third-to-most-recent orb created (if applicable) to make room for the newest orb.
 ================================================================================================================= ]]
-function invoker_remove_oldest_orb(keys)
+function invoker_retro_replace_orb(keys, particle_filepath)
+	--Initialization, if not already done.
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
 	end
 	if keys.caster.invoked_orbs_particle == nil then
 		keys.caster.invoked_orbs_particle = {}
+	end
+	if keys.caster.invoked_orbs_particle_attach == nil then
+		keys.caster.invoked_orbs_particle_attach = {}
+		keys.caster.invoked_orbs_particle_attach[1] = "attach_orb1"
+		keys.caster.invoked_orbs_particle_attach[2] = "attach_orb2"
+		keys.caster.invoked_orbs_particle_attach[3] = "attach_orb3"
 	end
 	
 	--Invoker can only have three orbs active at any time.  Each time an orb is activated, its hscript is
@@ -27,11 +34,28 @@ function invoker_remove_oldest_orb(keys)
 		keys.caster.invoked_orbs[1] = nil
 	end
 	
-	--Remove the associated orb particle effect.
+	--Remove the removed orb's particle effect.
 	if keys.caster.invoked_orbs_particle[1] ~= nil then
 		ParticleManager:DestroyParticle(keys.caster.invoked_orbs_particle[1], false)
 		keys.caster.invoked_orbs_particle[1] = nil
 	end
+	
+	--Shift the ordered list of currently summoned orbs down.
+	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
+	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
+	keys.caster.invoked_orbs[3] = keys.ability
+	
+	--Shift the ordered list of currently summoned orb particle effects down, and create the new particle.
+	keys.caster.invoked_orbs_particle[1] = keys.caster.invoked_orbs_particle[2]
+	keys.caster.invoked_orbs_particle[2] = keys.caster.invoked_orbs_particle[3]
+	keys.caster.invoked_orbs_particle[3] = ParticleManager:CreateParticle(particle_filepath, PATTACH_OVERHEAD_FOLLOW, keys.caster)
+	ParticleManager:SetParticleControlEnt(keys.caster.invoked_orbs_particle[3], 1, keys.caster, PATTACH_POINT_FOLLOW, keys.caster.invoked_orbs_particle_attach[1], keys.caster:GetAbsOrigin(), false)
+	
+	--Shift the ordered list of currently summoned orb particle effect attach locations down.
+	local temp_attachment_point = keys.caster.invoked_orbs_particle_attach[1]
+	keys.caster.invoked_orbs_particle_attach[1] = keys.caster.invoked_orbs_particle_attach[2]
+	keys.caster.invoked_orbs_particle_attach[2] = keys.caster.invoked_orbs_particle_attach[3]
+	keys.caster.invoked_orbs_particle_attach[3] = temp_attachment_point
 end
 
 
@@ -90,21 +114,8 @@ end
 	Called when Quas is cast.
 ================================================================================================================= ]]
 function invoker_retro_quas_on_spell_start(keys)
-	invoker_remove_oldest_orb(keys)
-	
+	invoker_retro_replace_orb(keys, "particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf")
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
-	
-	--Shift the ordered list of currently summoned orbs down.
-	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
-	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
-	keys.caster.invoked_orbs[3] = keys.ability
-	
-	--Shift the ordered list of currently summoned orb particle effects down, and create the new particle.
-	keys.caster.invoked_orbs_particle[1] = keys.caster.invoked_orbs_particle[2]
-	keys.caster.invoked_orbs_particle[2] = keys.caster.invoked_orbs_particle[3]
-	keys.caster.invoked_orbs_particle[3] = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf", PATTACH_OVERHEAD_FOLLOW, keys.caster)
-	ParticleManager:SetParticleControlEnt(keys.caster.invoked_orbs_particle[3], 1, keys.caster, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", keys.caster:GetAbsOrigin(), false)
-	ParticleManager:SetParticleControlEnt(keys.caster.invoked_orbs_particle[3], 2, keys.caster, PATTACH_OVERHEAD_FOLLOW, "follow_overhead", keys.caster:GetAbsOrigin(), false)
 end
 
 
@@ -114,13 +125,8 @@ end
 	Called when Wex is cast.
 ================================================================================================================= ]]
 function invoker_retro_wex_on_spell_start(keys)
-	invoker_remove_oldest_orb(keys)
-	
+	invoker_retro_replace_orb(keys, "particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf")
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
-	
-	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
-	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
-	keys.caster.invoked_orbs[3] = keys.ability
 end
 
 
@@ -130,13 +136,8 @@ end
 	Called when Exort is cast.
 ================================================================================================================= ]]
 function invoker_retro_exort_on_spell_start(keys)
-	invoker_remove_oldest_orb(keys)
-	
+	invoker_retro_replace_orb(keys, "particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf")
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
-	
-	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
-	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
-	keys.caster.invoked_orbs[3] = keys.ability
 end
 
 

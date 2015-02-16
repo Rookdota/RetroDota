@@ -168,7 +168,7 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
 				
 				"Properties"
 				{
@@ -256,7 +256,7 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
 				
 				//TODO: The control points for this particle still need to be figured out.
 				"EffectName"			"particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf"
@@ -348,7 +348,7 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
 				
 				//TODO: The control points for this particle still need to be figured out.
 				"EffectName"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"

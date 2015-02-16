@@ -1,0 +1,15 @@
+//=================================================================================================================
+// Dummy1
+// A effectless dummy ability, used for filling in empty ability slots when needed.
+//=================================================================================================================
+"dummy1"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"MaxLevel" "0"
+	"BaseClass" "ability_datadriven"
+	"AbilityTextureName" "rubick_empty1"
+	"IsHidden" "1"
+}
+

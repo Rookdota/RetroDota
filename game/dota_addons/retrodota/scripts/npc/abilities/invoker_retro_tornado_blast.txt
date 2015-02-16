@@ -1,0 +1,103 @@
+// Invoker's Tornado Blast
+// Author:
+// Date: February 15, 2015
+// Invoke: Quas Wex Wex
+"invoker_retro_tornado_blast"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityTextureName" 			"invoker_exort"  //TODO
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+	"AbilityManaCost"				"200"
+	
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-140"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"2.0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"num_wall_elements"		"15"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wall_element_spacing"	"80"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wall_element_radius"	"105"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/invoker.lua"
+			"Function"				"invoker_retro_icy_path_on_spell_start"
+			"Target"				"POINT"
+			"NumWallElements"		"%num_wall_elements"
+			"WallElementSpacing"	"%wall_element_spacing"
+			"WallElementRadius"		"%wall_element_radius"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_icy_wall_slow"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+			
+			//TODO: The control points for this particle still need to be figured out.
+			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+			}
+		}
+	}
+}
+

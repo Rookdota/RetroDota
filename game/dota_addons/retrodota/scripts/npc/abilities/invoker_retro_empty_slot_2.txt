@@ -1,0 +1,12 @@
+// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
+"invoker_retro_empty_slot_2"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"MaxLevel" "0"
+	"BaseClass" "ability_datadriven"
+	"AbilityTextureName" "rubick_empty1"
+	"IsHidden" "1"
+}
+

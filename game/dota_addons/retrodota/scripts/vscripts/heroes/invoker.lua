@@ -231,7 +231,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Exort Wex
 					keys.caster:AddAbility("invoker_retro_invisibility_aura")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Exort Exort
-					keys.caster:AddAbility("invoker_retro_shroud_of_flame")
+					keys.caster:AddAbility("invoker_retro_shroud_of_flames")
 				end
 			end
 		elseif keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_wex" then
@@ -239,7 +239,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Quas Quas
 					keys.caster:AddAbility("invoker_retro_mana_burn")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Quas Wex
-					keys.caster:AddAbility("invoker_emp_retro")
+					keys.caster:AddAbility("invoker_retro_emp")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Quas Exort
 					keys.caster:AddAbility("invoker_retro_soul_blast")
 				end
@@ -265,9 +265,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Quas Quas
 					keys.caster:AddAbility("invoker_retro_chaos_meteor")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Quas Wex
-					keys.caster:AddAbility("invoker_confuse_retro")
+					keys.caster:AddAbility("invoker_retro_confuse")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Quas Exort
-					keys.caster:AddAbility("invoker_disarm_retro")
+					keys.caster:AddAbility("invoker_retro_disarm")
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Wex Quas

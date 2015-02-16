@@ -1,0 +1,88 @@
+// Invoker's Quas
+// Author: Rook
+// Date: February 15, 2015
+// Known bugs: The max level should be 8, not 7.
+"invoker_retro_quas"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityTextureName" 			"invoker_quas"
+	"MaxLevel"						"7"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"bonus_damage_percent_per_instance"		"2 4 6 8 10 12 14"
+		}
+		"02"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"bonus_intelligence"					"1 2 3 4 5 6 7"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/invoker.lua"
+			"Function"							"invoker_retro_quas_on_spell_start"
+		}
+	}
+	
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/invoker.lua"
+			"Function"							"invoker_retro_orb_on_upgrade"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_quas"
+		{
+			"Passive"  			"1"
+			"IsHidden" 			"1"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+			}
+		}
+		"modifier_invoker_retro_quas_instance"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
+			}
+		}
+	}
+}
+
+

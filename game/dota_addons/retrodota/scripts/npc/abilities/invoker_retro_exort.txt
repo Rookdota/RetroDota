@@ -42,7 +42,7 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"						"heroes/invoker.lua"
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 			"Function"							"invoker_retro_exort_on_spell_start"
 		}
 	}
@@ -51,7 +51,7 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"						"heroes/invoker.lua"
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 			"Function"							"invoker_retro_orb_replace_modifiers"
 		}
 	}

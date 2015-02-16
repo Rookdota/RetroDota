@@ -955,7 +955,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_exort_on_spell_start"
 			}
 		}
@@ -964,7 +964,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
 		}
@@ -1395,7 +1395,7 @@
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_icy_wall_slow"
+			"modifier_invoker_retro_icy_path_slow"
 			{
 				"Passive"  			"0"
 				"IsHidden" 			"0"
@@ -1770,7 +1770,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_invoke.lua"
 				"Function"							"invoker_retro_invoke_on_spell_start"
 			}
 		}
@@ -2336,7 +2336,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_quas_on_spell_start"
 			}
 		}
@@ -2345,7 +2345,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
 		}
@@ -3145,7 +3145,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_wex_on_spell_start"
 			}
 		}
@@ -3154,7 +3154,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"						"heroes/invoker.lua"
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
 		}

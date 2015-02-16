@@ -44,7 +44,7 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"						"heroes/invoker.lua"
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_invoke.lua"
 			"Function"							"invoker_retro_invoke_on_spell_start"
 		}
 	}

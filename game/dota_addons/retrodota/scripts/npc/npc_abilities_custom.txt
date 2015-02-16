@@ -1,8 +1,5 @@
-// Dota Heroes File
 "DOTAAbilities"
 {
-	"Version"		"1"
-	
 	//=================================================================================================================
 	// Dummy1
 	// A effectless dummy ability, used for filling in empty ability slots when needed.
@@ -38,7 +35,7 @@
 	// A passive ability for dummy units that makes them unable to be interacted with.
 	//=================================================================================================================
 	"dummy_unit_passive"
-    {
+	{
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Modifiers"
@@ -62,364 +59,14 @@
 				}
 			}
 		}
-    }
-	
-	
-	// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
-	"invoker_retro_empty_slot_1"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "0"
-		"BaseClass" "ability_datadriven"
-		"AbilityTextureName" "rubick_empty1"
-		"IsHidden" "1"
 	}
 	
 	
-	// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
-	"invoker_retro_empty_slot_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "0"
-		"BaseClass" "ability_datadriven"
-		"AbilityTextureName" "rubick_empty1"
-		"IsHidden" "1"
-	}
-	
-	
-	// Invoker's Quas
-	// Author: Rook
+	// Invoker's Arcane Arts
+	// Author: 
 	// Date: February 15, 2015
-	// Known bugs: The max level should be 8, not 7.
-	"invoker_retro_quas"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName" 			"invoker_quas"
-		"MaxLevel"						"7"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"0"
-		
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"bonus_damage_percent_per_instance"		"2 4 6 8 10 12 14"
-			}
-			"02"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"bonus_intelligence"					"1 2 3 4 5 6 7"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_quas_on_spell_start"
-			}
-		}
-		
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_orb_replace_modifiers"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_quas"
-			{
-				"Passive"  			"1"
-				"IsHidden" 			"1"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-				}
-			}
-			"modifier_invoker_retro_quas_instance"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
-				}
-			}
-		}
-	}
-
-	
-	// Invoker's Wex
-	// Author: Rook
-	// Date: February 15, 2015
-	// Known bugs: The max level should be 8, not 7.
-	"invoker_retro_wex"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName" 			"invoker_wex"
-		"MaxLevel"						"7"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"0"
-		
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"move_speed_percent_per_instance"	"1 2 3 4 5 6 7"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_agility"						"1 2 3 4 5 6 7"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_wex_on_spell_start"
-			}
-		}
-		
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_orb_replace_modifiers"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_wex"
-			{
-				"Passive"  			"1"
-				"IsHidden" 			"1"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
-				}
-			}
-			"modifier_invoker_retro_wex_instance"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
-				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf"
-				"EffectAttachType"		"follow_overhead"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_speed_percent_per_instance"
-				}
-			}
-		}
-	}
-	
-	
-	// Invoker's Exort
-	// Author: Rook
-	// Date: February 15, 2015
-	// Known bugs: The max level should be 8, not 7.
-	"invoker_retro_exort"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName" 			"invoker_exort"
-		"MaxLevel"						"7"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"0"
-		
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"1 2 3 4 5 6 7"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_exort_on_spell_start"
-			}
-		}
-		
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_orb_replace_modifiers"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_exort"
-			{
-				"Passive"  			"1"
-				"IsHidden" 			"1"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
-				}
-			}
-			"modifier_invoker_retro_exort_instance"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
-				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
-				"EffectAttachType"		"follow_overhead"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen_per_instance"
-				}
-			}
-		}
-	}
-	
-	
-	// Invoker's Invoke
-	// Author: Rook
-	// Date: February 15, 2015
-	// Known bugs: The max level should be 1, not 4.  Change this if/when Quas, Wex, and Exort have their maximum levels boosted to 8.
-	"invoker_retro_invoke"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName" 			"invoker_invoke"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"			"5"
-		"RequiredLevel"					"2"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 17 12 5"  //Old Invoker's Invoke cooldown was a static 12 seconds.
-		"AbilityManaCost"				"20 40 60 80"  //Old Invoker's Invoke mana cost was a static 0.
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_invoked_spells"		"2 2 2 2"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"16 8 4 2"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_cost_scepter"			"0"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_invoke_on_spell_start"
-			}
-		}
-	}
-	
-	
-	// Invoker's Icy Path
-	// Author: Rook
-	// Date: February 15, 2015
-	"invoker_retro_icy_path"
+	// Invoke: Wex Wex Exort
+	"invoker_retro_arcane_arts"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -517,5 +164,3033 @@
 			}
 		}
 	}
+	
+	// Invoker's Betrayal
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Quas Wex Quas
+	"invoker_retro_betrayal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Chaos Meteor
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Quas Quas
+	"invoker_retro_chaos_meteor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Confuse
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Quas Wex
+	"invoker_retro_confuse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Deafening Blast
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Exort Quas
+	"invoker_retro_deafening_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Disarm
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Quas Exort
+	"invoker_retro_disarm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's EMP
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Wex Quas Wex
+	"invoker_retro_emp"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
+	"invoker_retro_empty_slot_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" "0"
+		"BaseClass" "ability_datadriven"
+		"AbilityTextureName" "rubick_empty1"
+		"IsHidden" "1"
+	}
+	
+	
+	// A effectless ability, used for filling in ability slots when Invoker has not yet invoked any spells.
+	"invoker_retro_empty_slot_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel" "0"
+		"BaseClass" "ability_datadriven"
+		"AbilityTextureName" "rubick_empty1"
+		"IsHidden" "1"
+	}
+	
+	// Invoker's Energy Ball
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Wex Exort Wex
+	"invoker_retro_energy_ball"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Exort
+	// Author: Rook
+	// Date: February 15, 2015
+	// Known bugs: The max level should be 8, not 7.
+	"invoker_retro_exort"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"
+		"MaxLevel"						"7"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_strength"					"1 2 3 4 5 6 7"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_exort_on_spell_start"
+			}
+		}
+		
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_exort"
+			{
+				"Passive"  			"1"
+				"IsHidden" 			"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+				}
+			}
+			"modifier_invoker_retro_exort_instance"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
+				"EffectAttachType"		"follow_overhead"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen_per_instance"
+				}
+			}
+		}
+	}
+	
+	
+	// Invoker's Firebolt
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Exort Exort
+	"invoker_retro_firebolt"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Firestorm
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Wex Wex
+	"invoker_retro_firestorm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Frost Nova
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Quas Quas Exort
+	"invoker_retro_frost_nova"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Icy Path
+	// Author: Rook
+	// Date: February 15, 2015
+	// Invoke: Quas Quas Quas
+	"invoker_retro_icy_path"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Incinerate
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Exort Wex Exort
+	"invoker_retro_incinerate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Inferno
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Exort Exort Wex
+	"invoker_retro_inferno"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Icy Path
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Quas Exort Wex
+	"invoker_retro_invisibility_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Invoke
+	// Author: Rook
+	// Date: February 15, 2015
+	// Known bugs: The max level should be 1, not 4.  Change this if/when Quas, Wex, and Exort have their maximum levels boosted to 8.
+	"invoker_retro_invoke"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName" 			"invoker_invoke"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"			"5"
+		"RequiredLevel"					"2"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22 17 12 5"  //Old Invoker's Invoke cooldown was a static 12 seconds.
+		"AbilityManaCost"				"20 40 60 80"  //Old Invoker's Invoke mana cost was a static 0.
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_invoked_spells"		"2 2 2 2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"16 8 4 2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_cost_scepter"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_invoke_on_spell_start"
+			}
+		}
+	}
+	
+	
+	// Invoker's Levitation
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Quas Wex Exort
+	"invoker_retro_levitation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Lightning Shield
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Wex Exort Exort
+	"invoker_retro_lightning_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Mana Burn
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Wex Quas Quas
+	"invoker_retro_mana_burn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Portal
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Quas Quas Wex
+	"invoker_retro_portal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Power Word
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Quas Exort Quas
+	"invoker_retro_power_word"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Quas
+	// Author: Rook
+	// Date: February 15, 2015
+	// Known bugs: The max level should be 8, not 7.
+	"invoker_retro_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_quas"
+		"MaxLevel"						"7"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"bonus_damage_percent_per_instance"		"2 4 6 8 10 12 14"
+			}
+			"02"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"bonus_intelligence"					"1 2 3 4 5 6 7"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_quas_on_spell_start"
+			}
+		}
+		
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_quas"
+			{
+				"Passive"  			"1"
+				"IsHidden" 			"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+				}
+			}
+			"modifier_invoker_retro_quas_instance"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
+				}
+			}
+		}
+	}
+	
+	
+	// Invoker's Scout
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Wex Exort Quas
+	"invoker_retro_scout"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Shock
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Wex Wex Wex
+	"invoker_retro_shock"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Shroud of Flames
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Quas Exort Exort
+	"invoker_retro_shroud_of_flames"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Soul Blast
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Wex Quas Exort
+	"invoker_retro_soul_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Soul Reaver
+	// Author:
+	// Date: February 15, 2015
+	// Combination: Exort Wex Quas
+	"invoker_retro_soul_reaver"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Telelightning
+	// Author: 
+	// Date: February 15, 2015
+	// Invoke: Wex Wex Quas
+	"invoker_retro_telelightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Tornado Blast
+	// Author:
+	// Date: February 15, 2015
+	// Invoke: Quas Wex Wex
+	"invoker_retro_tornado_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_exort"  //TODO
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_icy_wall_slow"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+			}
+		}
+	}
+	
+	// Invoker's Wex
+	// Author: Rook
+	// Date: February 15, 2015
+	// Known bugs: The max level should be 8, not 7.
+	"invoker_retro_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_wex"
+		"MaxLevel"						"7"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"move_speed_percent_per_instance"	"1 2 3 4 5 6 7"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_agility"						"1 2 3 4 5 6 7"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_wex_on_spell_start"
+			}
+		}
+		
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/invoker.lua"
+				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_wex"
+			{
+				"Passive"  			"1"
+				"IsHidden" 			"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
+				}
+			}
+			"modifier_invoker_retro_wex_instance"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf"
+				"EffectAttachType"		"follow_overhead"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_speed_percent_per_instance"
+				}
+			}
+		}
+	}
+	
 	
 }

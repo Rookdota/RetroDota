@@ -2,13 +2,14 @@
 // Author:
 // Date: February 15, 2015
 // Invoke: Wex Quas Wex
+// Releases an EMP bomb that detonates depleting the mana of all enemies nearby. Up to 640 mana per unit based on Wex and Quas levels.
 "invoker_retro_emp"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_exort"  //TODO
+	"AbilityTextureName" 			"invoker_retro_emp"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"FightRecapLevel"				"1"

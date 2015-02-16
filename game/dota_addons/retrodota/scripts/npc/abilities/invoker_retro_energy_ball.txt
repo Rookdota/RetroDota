@@ -2,13 +2,14 @@
 // Author:
 // Date: February 15, 2015
 // Invoke: Wex Exort Wex
+// Summons an energy ball that explodes dealing up to 800 damage to units in a 400 AOE based on Wex level.
 "invoker_retro_energy_ball"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_exort"  //TODO
+	"AbilityTextureName" 			"invoker_retro_energy_ball"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"FightRecapLevel"				"1"

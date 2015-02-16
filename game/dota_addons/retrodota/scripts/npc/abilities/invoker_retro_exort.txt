@@ -2,13 +2,14 @@
 // Author: Rook
 // Date: February 15, 2015
 // Known bugs: The max level should be 8, not 7.
+// Builds Kael's skill in the fire magics. These spells, when invoked, deal with the power of fire, projection and damage. As a reagent, regenerates .5 hitpoints per level, per reagent cast. Increases Strength by 1 each time his skill is learned.
 "invoker_retro_exort"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_exort"
+	"AbilityTextureName" 			"invoker_retro_exort"
 	"MaxLevel"						"7"
 	
 	// Stats

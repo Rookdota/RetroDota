@@ -2,13 +2,14 @@
 // Author: Rook
 // Date: February 15, 2015
 // Known bugs: The max level should be 8, not 7.
+// Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a regeant, increases movement speed by 1% per level, per regeant. Increases Agility by 1 each time this skill is learned.
 "invoker_retro_wex"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_wex"
+	"AbilityTextureName" 			"invoker_retro_wex"
 	"MaxLevel"						"7"
 	
 	// Stats

@@ -2,13 +2,14 @@
 // Author:
 // Date: February 15, 2015
 // Invoke: Exort Exort Quas
+// Hits an enemy unit with a defeaning blast, dealing heavy damage and causing the target to be mute for 3.5 seconds. Deals 65 damage per level in Exort.
 "invoker_retro_deafening_blast"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_exort"  //TODO
+	"AbilityTextureName" 			"invoker_retro_deafening_blast"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"FightRecapLevel"				"1"

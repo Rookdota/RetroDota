@@ -2,13 +2,14 @@
 // Author: 
 // Date: February 15, 2015
 // Invoke: Wex Wex Quas
+// Cast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range.
 "invoker_retro_telelightning"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_exort"  //TODO
+	"AbilityTextureName" 			"invoker_retro_telelightning"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"FightRecapLevel"				"1"

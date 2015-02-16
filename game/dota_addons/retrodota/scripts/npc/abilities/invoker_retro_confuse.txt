@@ -2,13 +2,14 @@
 // Author:
 // Date: February 15, 2015
 // Invoke: Exort Quas Wex
+// Creates a dummy unit that looks like Kael. Cast range based on Exort, duration based on Quas and damage taken based on Wex. Underneat this unit is a ghost unit that lasts twice as long.
 "invoker_retro_confuse"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityTextureName" 			"invoker_exort"  //TODO
+	"AbilityTextureName" 			"invoker_retro_confuse"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"FightRecapLevel"				"1"

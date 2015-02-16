@@ -7,6 +7,9 @@ function invoker_remove_oldest_orb(keys)
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
 	end
+	if keys.caster.invoked_orbs_particle == nil then
+		keys.caster.invoked_orbs_particle = {}
+	end
 	
 	--Invoker can only have three orbs active at any time.  Each time an orb is activated, its hscript is
 	--placed into keys.caster.invoked_orbs[3], the old [3] is moved into [2], and the old [2] is moved into [1].
@@ -20,6 +23,14 @@ function invoker_remove_oldest_orb(keys)
 		elseif orb_name == "invoker_retro_exort" then
 			keys.caster:RemoveModifierByName("modifier_invoker_retro_exort_instance")
 		end
+		
+		keys.caster.invoked_orbs[1] = nil
+	end
+	
+	--Remove the associated orb particle effect.
+	if keys.caster.invoked_orbs_particle[1] ~= nil then
+		ParticleManager:DestroyParticle(keys.caster.invoked_orbs_particle[1], false)
+		keys.caster.invoked_orbs_particle[1] = nil
 	end
 end
 
@@ -83,9 +94,17 @@ function invoker_retro_quas_on_spell_start(keys)
 	
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
 	
+	--Shift the ordered list of currently summoned orbs down.
 	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
 	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
 	keys.caster.invoked_orbs[3] = keys.ability
+	
+	--Shift the ordered list of currently summoned orb particle effects down, and create the new particle.
+	keys.caster.invoked_orbs_particle[1] = keys.caster.invoked_orbs_particle[2]
+	keys.caster.invoked_orbs_particle[2] = keys.caster.invoked_orbs_particle[3]
+	keys.caster.invoked_orbs_particle[3] = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf", PATTACH_OVERHEAD_FOLLOW, keys.caster)
+	ParticleManager:SetParticleControlEnt(keys.caster.invoked_orbs_particle[3], 1, keys.caster, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", keys.caster:GetAbsOrigin(), false)
+	ParticleManager:SetParticleControlEnt(keys.caster.invoked_orbs_particle[3], 2, keys.caster, PATTACH_OVERHEAD_FOLLOW, "follow_overhead", keys.caster:GetAbsOrigin(), false)
 end
 
 
@@ -287,8 +306,9 @@ end
 
 --[[ ============================================================================================================
 	Author: Rook
-	Date: February 15, 2015
+	Date: February 16, 2015
 	Called when Icy Wall is cast.
+	Additional parameters: keys.NumWallElements, keys.WallElementSpacing, and keys.WallElementRadius
 ================================================================================================================= ]]
 function invoker_retro_icy_wall_on_spell_start(keys)
 	

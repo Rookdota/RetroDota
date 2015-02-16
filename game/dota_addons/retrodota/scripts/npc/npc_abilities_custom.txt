@@ -170,10 +170,6 @@
 				"IsPurgable"		"0"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf"
-				"EffectAttachType"		"follow_overhead"
-				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
@@ -494,6 +490,9 @@
 				"ScriptFile"			"heroes/invoker.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
 			}
 		}
 		

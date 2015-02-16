@@ -33,6 +33,7 @@ function retro_dota:InitGameMode()
 
 	
 	-- Register Game Events
+	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(retro_dota, 'OnPlayerPickHero'), self)
 	
 end
 
@@ -46,4 +47,15 @@ end
 --------------------------------------------------------------------------------
 function Precache( context)
 	
+end
+
+function retro_dota:OnPlayerPickHero(keys)
+	local hero = EntIndexToHScript(keys.heroindex)
+	local player = EntIndexToHScript(keys.player)
+	local playerID = hero:GetPlayerID()
+
+	local level = 25
+	for i=1,level-1 do
+		hero:HeroLevelUp(false)
+	end
 end

@@ -44,7 +44,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the
 	--limited number of slots, keep track of the gametime of when abilities were last cast, which we can use to determine
 	--if invoked spells should still be on cooldown from when they were last used.
-	local old_spell_invoked = keys.caster:GetAbilityByIndex(5)
+	local old_spell_invoked = keys.caster:GetAbilityByIndex(4)
 	local old_spell_invoked_name = old_spell_invoked:GetName()
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
 	--We cannot just store the gametime because the ability's maximum cooldown may have changed due to leveling up Invoker's orbs
@@ -149,7 +149,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 	end
 	
 	--Put the newly invoked ability on cooldown if it should still have a remaining cooldown from the last time it was invoked.
-	local new_ability_f = keys.caster:GetAbilityByIndex(5)
+	local new_ability_f = keys.caster:GetAbilityByIndex(4)
 	if new_ability_f ~= nil then
 		new_ability_f:SetLevel(1)
 		

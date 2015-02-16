@@ -145,7 +145,7 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_orb_on_upgrade"
+				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
 		}
 		
@@ -233,7 +233,7 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_orb_on_upgrade"
+				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
 		}
 		
@@ -325,7 +325,7 @@
 			"RunScript"
 			{
 				"ScriptFile"						"heroes/invoker.lua"
-				"Function"							"invoker_retro_orb_on_upgrade"
+				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
 		}
 		

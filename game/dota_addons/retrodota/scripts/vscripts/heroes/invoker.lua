@@ -21,29 +21,16 @@ function invoker_retro_replace_orb(keys, particle_filepath)
 	--Invoker can only have three orbs active at any time.  Each time an orb is activated, its hscript is
 	--placed into keys.caster.invoked_orbs[3], the old [3] is moved into [2], and the old [2] is moved into [1].
 	--Therefore, the oldest orb is located in [1], and the newest is located in [3].
-	if keys.caster.invoked_orbs[1] ~= nil then
-		local orb_name = keys.caster.invoked_orbs[1]:GetName()
-		if orb_name == "invoker_retro_quas" then
-			keys.caster:RemoveModifierByName("modifier_invoker_retro_quas_instance")
-		elseif orb_name == "invoker_retro_wex" then
-			keys.caster:RemoveModifierByName("modifier_invoker_retro_wex_instance")
-		elseif orb_name == "invoker_retro_exort" then
-			keys.caster:RemoveModifierByName("modifier_invoker_retro_exort_instance")
-		end
-		
-		keys.caster.invoked_orbs[1] = nil
-	end
+	--Shift the ordered list of currently summoned orbs down.
+	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
+	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
+	keys.caster.invoked_orbs[3] = keys.ability
 	
 	--Remove the removed orb's particle effect.
 	if keys.caster.invoked_orbs_particle[1] ~= nil then
 		ParticleManager:DestroyParticle(keys.caster.invoked_orbs_particle[1], false)
 		keys.caster.invoked_orbs_particle[1] = nil
 	end
-	
-	--Shift the ordered list of currently summoned orbs down.
-	keys.caster.invoked_orbs[1] = keys.caster.invoked_orbs[2]
-	keys.caster.invoked_orbs[2] = keys.caster.invoked_orbs[3]
-	keys.caster.invoked_orbs[3] = keys.ability
 	
 	--Shift the ordered list of currently summoned orb particle effects down, and create the new particle.
 	keys.caster.invoked_orbs_particle[1] = keys.caster.invoked_orbs_particle[2]
@@ -56,6 +43,8 @@ function invoker_retro_replace_orb(keys, particle_filepath)
 	keys.caster.invoked_orbs_particle_attach[1] = keys.caster.invoked_orbs_particle_attach[2]
 	keys.caster.invoked_orbs_particle_attach[2] = keys.caster.invoked_orbs_particle_attach[3]
 	keys.caster.invoked_orbs_particle_attach[3] = temp_attachment_point
+	
+	invoker_retro_orb_replace_modifiers(keys)  --Remove and reapply the orb instance modifiers.
 end
 
 
@@ -63,10 +52,8 @@ end
 	Author: Rook
 	Date: February 15, 2015
 	Called when Quas, Wex, or Exort is upgraded.  Levels the effects of any currently existing orbs.
-	Known bugs: Leveling up currently sometimes switches the order of the invoked orbs in the modifier bar (it should
-		not switch the stored order of the orbs).
 ================================================================================================================= ]]
-function invoker_retro_orb_on_upgrade(keys)
+function invoker_retro_orb_replace_modifiers(keys)
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
 	end
@@ -115,7 +102,6 @@ end
 ================================================================================================================= ]]
 function invoker_retro_quas_on_spell_start(keys)
 	invoker_retro_replace_orb(keys, "particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf")
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
 end
 
 
@@ -126,7 +112,6 @@ end
 ================================================================================================================= ]]
 function invoker_retro_wex_on_spell_start(keys)
 	invoker_retro_replace_orb(keys, "particles/units/heroes/hero_invoker/invoker_wex_orb.vpcf")
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
 end
 
 
@@ -137,7 +122,6 @@ end
 ================================================================================================================= ]]
 function invoker_retro_exort_on_spell_start(keys)
 	invoker_retro_replace_orb(keys, "particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf")
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
 end
 
 
@@ -153,6 +137,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 	
 	--[[The following code is for the modern Invoker that can invoke two spells, and is left here but commented out in case
 		we decide to allow Invoker to invoke two spells.
+		
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the
 	--limited number of slots, keep track of the gametime of when abilities were last cast, which we can use to determine
 	--if invoked spells should still be on cooldown from when they were last used.
@@ -180,6 +165,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster:AddAbility(ability_f_name)  --This will place the ability that was bound to F in the D slot.
 	local new_ability_d = keys.caster:FindAbilityByName(ability_f_name)
 	new_ability_d:StartCooldown(ability_f_current_cooldown)
+	
 	]]
 	
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the

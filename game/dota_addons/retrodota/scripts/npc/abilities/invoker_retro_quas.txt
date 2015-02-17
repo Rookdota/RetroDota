@@ -80,7 +80,7 @@
 			
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage_percent_per_instance"
 			}
 		}
 	}

@@ -66,7 +66,7 @@
 			
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 			}
 		}
 		"modifier_invoker_retro_exort_instance"
@@ -77,10 +77,6 @@
 			"IsDebuff"			"0"
 			"IsPurgable"		"0"
 			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-			
-			//TODO: The control points for this particle still need to be figured out.
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_exort_orb.vpcf"
-			"EffectAttachType"		"follow_overhead"
 			
 			"Properties"
 			{

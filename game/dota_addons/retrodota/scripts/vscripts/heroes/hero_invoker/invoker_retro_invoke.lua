@@ -59,14 +59,13 @@ function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster.invoke_ability_cooldown_remaining[old_spell_invoked_name] = old_spell_invoked:GetCooldownTimeRemaining()
 	keys.caster.invoke_ability_gametime_removed[old_spell_invoked_name] = GameRules:GetGameTime() 
 	
-	--Remove the ability that was in the F slot.
-	keys.caster:RemoveAbility(old_spell_invoked_name)
-	
-	--Add the invoked spell depending on the order of the invoked orbs.
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
 	end
-	if keys.caster.invoked_orbs[1] ~= nil and keys.caster.invoked_orbs[2] ~= nil and keys.caster.invoked_orbs[3] ~= nil then  --If three orbs have not been summoned, no spell will be invoked.
+	if keys.caster.invoked_orbs[1] ~= nil and keys.caster.invoked_orbs[2] ~= nil and keys.caster.invoked_orbs[3] ~= nil then  --A spell will be invoked only if three orbs have been summoned.
+		keys.caster:RemoveAbility(old_spell_invoked_name)  --Remove the ability that was in the F slot.
+		
+		--Add the invoked spell depending on the order of the invoked orbs.
 		if keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_quas" then
 			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Quas Quas
@@ -146,18 +145,18 @@ function invoker_retro_invoke_on_spell_start(keys)
 				end
 			end
 		end
-	end
-	
-	--Put the newly invoked ability on cooldown if it should still have a remaining cooldown from the last time it was invoked.
-	local new_ability_f = keys.caster:GetAbilityByIndex(4)
-	if new_ability_f ~= nil then
-		new_ability_f:SetLevel(1)
 		
-		local new_ability_f_name = new_ability_f:GetName()
-		if keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_ability_f_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] ~= 0 then
-			local current_game_time = GameRules:GetGameTime() 
-			if keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] + keys.caster.invoke_ability_gametime_removed[new_ability_f_name] >= current_game_time then
-				new_ability_f:StartCooldown(current_game_time - (keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] + keys.caster.invoke_ability_gametime_removed[new_ability_f_name]))
+		--Put the newly invoked ability on cooldown if it should still have a remaining cooldown from the last time it was invoked.
+		local new_ability_f = keys.caster:GetAbilityByIndex(4)
+		if new_ability_f ~= nil then
+			new_ability_f:SetLevel(1)
+			
+			local new_ability_f_name = new_ability_f:GetName()
+			if keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_ability_f_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] ~= 0 then
+				local current_game_time = GameRules:GetGameTime() 
+				if keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] + keys.caster.invoke_ability_gametime_removed[new_ability_f_name] >= current_game_time then
+					new_ability_f:StartCooldown(current_game_time - (keys.caster.invoke_ability_cooldown_remaining[new_ability_f_name] + keys.caster.invoke_ability_gametime_removed[new_ability_f_name]))
+				end
 			end
 		end
 	end

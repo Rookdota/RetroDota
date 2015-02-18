@@ -1393,7 +1393,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -1401,10 +1401,54 @@
 				"WallElementRadius"		"%wall_element_radius"
 			}
 		}
+	}
+	
+	
+	// Invoker's Icy Path Unit Dummy Passive
+	// Author: Rook
+	// Date: February 18, 2015
+	// A passive ability that makes Invoker's Icy Path units unable to be interacted with.
+	"invoker_retro_icy_path_unit_ability"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_icy_path_slow"
+			"modifier_invoker_retro_icy_path_unit_ability"
+			{
+				"Passive"				"1"
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"  	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"    	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"  		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"       	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"   		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"    		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"  		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_invoker_retro_icy_path_unit_ability_aura_emitter"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				
+				"Aura" 				"modifier_invoker_retro_icy_path_unit_ability_aura"
+				"Aura_Radius" 		"900"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Flags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster" "0"
+			}
+			"modifier_invoker_retro_icy_path_unit_ability_aura"
 			{
 				"Passive"  			"0"
 				"IsHidden" 			"0"
@@ -1418,7 +1462,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"-50"
 				}
 			}
 		}
@@ -2392,7 +2436,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%outgoing_damage_percent_melee"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage_percent_per_instance"
 				}
 			}
 		}

@@ -45,8 +45,8 @@ end
 --------------------------------------------------------------------------------
 -- PRECACHE
 --------------------------------------------------------------------------------
-function Precache( context)
-	
+function Precache(context)
+	PrecacheUnitByNameSync("npc_dota_invoker_retro_scout_unit", context)
 end
 
 function retro_dota:OnPlayerPickHero(keys)

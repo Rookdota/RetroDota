@@ -69,7 +69,7 @@
 
 		"SpawnUnit"
 		{
-			"UnitName"		"npc_owl_1"
+			"UnitName"		"npc_dota_invoker_retro_scout_unit"
 			"Target"
 			{
 				"Center"				"CASTER"
@@ -82,7 +82,7 @@
 			}
 			
 			"Duration"		"%owl_duration"
-			"UnitCount"		"%owl_1_count"
+			"UnitCount"		"1 0 0"
 			"UnitLimit"		"0"
 			"GrantsGold"	"0"
 			"GrantsXP"		"0"

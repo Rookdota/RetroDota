@@ -10,7 +10,7 @@
 
 		// ******************** ABILITIES ********************
 		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts"                                  "Arcane Arts"
-		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts_Description"                      "Kael is superior in the arts of magic then this opponents. He is able to manipulate spells to reduce their damage by 40%. Resistance based on Wex level."
+		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts_Description"                      "Kael is superior in the arts of magic then this opponents. He is able to manipulate spells to reduce their damage by 40%%. Resistance based on Wex level."
 
 		"DOTA_Tooltip_Ability_invoker_retro_betrayal"                                     "Betrayal"
 		"DOTA_Tooltip_Ability_invoker_retro_betrayal_Description"                         "Cast a dark magic on a target enemy, causing all of its previous allies to turn against it, thinking it's a foe. Duration base on Quas."
@@ -91,7 +91,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Releases a ring of shocking energy that summons a bolt of energy on each target in its path, removing all buffs. 300 range and 160 damage. Radius and Damage based on Wex"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_Description"                 "Creates a barrier that reduces spell damage against a friendly unit by 12%. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds."
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_Description"                 "Creates a barrier that reduces spell damage against a friendly unit by 12%%. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds."
 
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast"                                   "Soul Blast"
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_Description"                       "Deals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex."
@@ -106,7 +106,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_Description"                    "Summons a tornado to wreak havoc and damage enemy units over a long distance. Deals 225 damage over 750 range"
 
 		"DOTA_Tooltip_Ability_invoker_retro_wex"                                          "Wex"
-		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a regeant, increases movement speed by 1% per level, per regeant. Increases Agility by 1 each time this skill is learned."
+		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a regeant, increases movement speed by 1%% per level, per regeant. Increases Agility by 1 each time this skill is learned."
 
 	}
 }

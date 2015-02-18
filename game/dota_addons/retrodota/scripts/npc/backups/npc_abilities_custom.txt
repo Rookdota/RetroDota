@@ -976,6 +976,12 @@
 				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
+			
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+				"Function"							"invoker_retro_orb_maintain_invoked_spells"
+			}
 		}
 		
 		"Modifiers"
@@ -1320,95 +1326,10 @@
 		}
 	}
 	
-	// Invoker's Icy Path
-	// Author: Rook
-	// Date: February 15, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	"invoker_retro_icy_path"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName" 			"invoker_retro_icy_path"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
-		
-		// Stats	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
-		
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
-			}
-		}
-	}
-	
-	
 	// Invoker's Icy Path Unit Dummy Passive
 	// Author: Rook
 	// Date: February 18, 2015
-	// A passive ability that makes Invoker's Icy Path units unable to be interacted with.
+	// A passive ability that makes Invoker's Icy Path units unable to be interacted with, and gives them a slowing aura.
 	"invoker_retro_icy_path_unit_ability"
 	{
 		"BaseClass"				"ability_datadriven"
@@ -1421,17 +1342,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path if this is changed.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path if this is changed.
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path if this is changed.
 			}
 		}
 	
@@ -1490,7 +1411,608 @@
 			}
 		}
 	}
+		
+		
+	// Invoker's Icy Path, level 1 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_1_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"300"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
 	
+	
+	// Invoker's Icy Path, level 2 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_2_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"350"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
+	
+	
+	// Invoker's Icy Path, level 3 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_3_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"400"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
+	
+	
+	// Invoker's Icy Path, level 4 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_4_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"450"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
+	
+	
+	// Invoker's Icy Path, level 5 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_5_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"500"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
+	
+	
+	// Invoker's Icy Path, level 6 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_6_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"550"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
+	
+	
+	// Invoker's Icy Path, level 7 Quas
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Quas
+	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_icy_path_level_7_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"600"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
 	// Invoker's Incinerate
 	// Author: 
 	// Date: February 15, 2015
@@ -2434,6 +2956,12 @@
 				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_orb_replace_modifiers"
 			}
+			
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+				"Function"							"invoker_retro_orb_maintain_invoked_spells"
+			}
 		}
 		
 		"Modifiers"
@@ -2467,8 +2995,8 @@
 	
 	
 	// Invoker's Scout
-	// Author: Noya, with some modifications by wFX
-	// Date: February 17, 2015
+	// Author: 
+	// Date: February 15, 2015
 	// Invoke: Wex Exort Quas
 	// Summons an Owl Scout, which can be used to scout. Can see invisible units. Is vulnerable. Lasts 40 seconds. Duration, Vision and Speed depend on Wex level.
 	"invoker_retro_scout"
@@ -2476,7 +3004,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityTextureName" 			"invoker_retro_scout"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2487,13 +3015,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-	
+		
 		"precache"
 		{
-			"particle" 	"particles/units/heroes/hero_invoker/mirana_starfall_moonray.vpcf"
-			"particle"  "particles/units/heroes/hero_invoker/mirana_moonlight_owner.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-			"model"		"models/items/courier/snowl/snowl_flying.vmdl"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
 		}
 		
 		// Special
@@ -2502,96 +3028,72 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"owl_duration"				"60 90 120"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"owl_hp"					"40"
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"owl_vision"				"1000 1400 1800" //1000 1500 2200 originally
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"owl_movespeed"				"270 350 450"
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"spawn_distance"			"150"
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"
 			}
 		}
 		
 		"OnSpellStart"
 		{
-			"FireSound"
+			"RunScript"
 			{
-				"EffectName"	"Hero_Mirana.Leap.Owlcat"
-				"Target"		"CASTER"
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"		"npc_owl_1"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_invoker/invoker_retro_scout.lua"
-	        			"Function"      "SummonLocation"
-						"Target"		"CASTER"
-					}
-				}
-				
-				"Duration"		"%owl_duration"
-				"UnitCount"		"%owl_1_count"
-				"UnitLimit"		"0"
-				"GrantsGold"	"0"
-				"GrantsXP"		"0"
-				"SpawnRadius"	"10"
-				"OnSpawn"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
-						"Function"		"SetUnitsMoveForward"
-					}				
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-			
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_owl_scout"
-						"Target" 		"TARGET"
-					}
-				}
+				"ScriptFile"			"heroes/invoker.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+				"WallElementRadius"		"%wall_element_radius"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_owl_scout"
+			"modifier_invoker_retro_icy_wall_slow"
 			{
-				"IsHidden"			"1"
-			
-				"States"
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				
+				//TODO: The control points for this particle still need to be figured out.
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				
+				"Properties"
 				{
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
 				}
-	
-				"EffectName"        "particles/units/heroes/hero_invoker/mirana_moonlight_owner.vpcf"
-				"EffectAttachType"  "follow_overhead"
 			}
 		}
 	}
@@ -3276,6 +3778,12 @@
 			{
 				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+				"Function"							"invoker_retro_orb_maintain_invoked_spells"
 			}
 		}
 		

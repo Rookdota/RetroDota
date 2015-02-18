@@ -55,6 +55,12 @@
 			"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
 			"Function"							"invoker_retro_orb_replace_modifiers"
 		}
+		
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+			"Function"							"invoker_retro_orb_maintain_invoked_spells"
+		}
 	}
 	
 	"Modifiers"

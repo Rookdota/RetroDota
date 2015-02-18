@@ -1,5 +1,5 @@
 "DOTAAbilities"
-{
+{	
 	//Items are made unsearchable in npc_abilities_override.txt.
 	
 	//A dummy item that is used to take up item slots (generally used with items that change icons, so the "on"/"off" version will be placed into the same slot).

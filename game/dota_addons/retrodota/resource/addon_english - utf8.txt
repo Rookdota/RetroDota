@@ -51,8 +51,56 @@
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova"                                   "Frost Nova"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_Description"                       "Blasts enemy units with a wave of frost that deals up to 300 damage to the target based on Quas level. Deals 112.5 area of effect damage and slows for 3 seconds."
 
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path"                                     "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_Description"                         "Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas."
+		//Icy Path (broken up into 7 spells)
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_slow_duration"          "SLOW DURATION:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_slow_duration"          "SLOW DURATION:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_slow_duration"          "SLOW DURATION:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_slow_duration"          "SLOW DURATION:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_slow_duration"          "SLOW DURATION:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_slow_duration"          "SLOW DURATION:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_Description"            "Creates an Icy Path that slows enemy units that cross it.  Duration and casting range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_duration"               "DURATION (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_slow_duration"          "SLOW DURATION:"
+		
 
 		"DOTA_Tooltip_Ability_invoker_retro_incinerate"                                   "Incinerate"
 		"DOTA_Tooltip_Ability_invoker_retro_incinerate_Description"                       "Does heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling"

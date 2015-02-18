@@ -46,6 +46,12 @@ function invoker_retro_invoke_on_spell_start(keys)
 	--if invoked spells should still be on cooldown from when they were last used.
 	local old_spell_invoked = keys.caster:GetAbilityByIndex(3)
 	local old_spell_invoked_name = old_spell_invoked:GetName()
+	local old_spell_invoked_index_name = old_spell_invoked_name
+	
+	if string.sub(old_spell_invoked_index_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells was invoked.
+		old_spell_invoked_index_name = "invoker_retro_icy_path"
+	end
+	
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
 	--We cannot just store the gametime because the ability's maximum cooldown may have changed due to leveling up Invoker's orbs
 	--by the time the ability is reinvoked.  Therefore, keys.caster.invoke_ability_gametime_removed[ability_name] is also stored.
@@ -56,8 +62,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 	if keys.caster.invoke_ability_gametime_removed == nil then
 		keys.caster.invoke_ability_gametime_removed = {}
 	end
-	keys.caster.invoke_ability_cooldown_remaining[old_spell_invoked_name] = old_spell_invoked:GetCooldownTimeRemaining()
-	keys.caster.invoke_ability_gametime_removed[old_spell_invoked_name] = GameRules:GetGameTime() 
+	keys.caster.invoke_ability_cooldown_remaining[old_spell_invoked_index_name] = old_spell_invoked:GetCooldownTimeRemaining()
+	keys.caster.invoke_ability_gametime_removed[old_spell_invoked_index_name] = GameRules:GetGameTime() 
 	
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
@@ -93,7 +99,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 		if keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_quas" then
 			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Quas Quas
-					keys.caster:AddAbility("invoker_retro_icy_path")
+					--Since Icy Path's cast range increases with the level of Quas, it is split up into 7 abilities.
+					local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+					keys.caster:AddAbility("invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Quas Wex
 					keys.caster:AddAbility("invoker_retro_portal")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Quas Exort
@@ -177,6 +185,11 @@ function invoker_retro_invoke_on_spell_start(keys)
 			new_spell_invoked:SetLevel(1)
 			
 			local new_spell_invoked_name = new_spell_invoked:GetName()
+			
+			if string.sub(new_spell_invoked_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells was invoked.
+				new_spell_invoked_name = "invoker_retro_icy_path"
+			end
+
 			if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= 0 then
 				local current_game_time = GameRules:GetGameTime() 
 				if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] + keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] >= current_game_time then

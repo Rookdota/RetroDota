@@ -1398,6 +1398,8 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				
+				"TextureName"			"invoker_retro_icy_path"
+				
 				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
 				"EffectAttachType"		"follow_origin"
 				

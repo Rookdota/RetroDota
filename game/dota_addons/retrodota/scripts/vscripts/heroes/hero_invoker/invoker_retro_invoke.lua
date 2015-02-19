@@ -50,6 +50,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 	
 	if string.sub(old_spell_invoked_index_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_icy_path"
+	elseif string.sub(old_spell_invoked_index_name, 1, 20) == "invoker_retro_portal" then  --If one of the 7 Portal spells was invoked.
+		old_spell_invoked_index_name = "invoker_retro_portal"
 	end
 	
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
@@ -103,7 +105,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 					local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 					keys.caster:AddAbility("invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Quas Wex
-					keys.caster:AddAbility("invoker_retro_portal")
+					--Since Portal's cast range increases with the level of Quas, it is split up into 7 abilities.
+					local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+					keys.caster:AddAbility("invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Quas Exort
 					keys.caster:AddAbility("invoker_retro_frost_nova")
 				end
@@ -188,6 +192,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 			
 			if string.sub(new_spell_invoked_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells was invoked.
 				new_spell_invoked_name = "invoker_retro_icy_path"
+			elseif string.sub(new_spell_invoked_name, 1, 20) == "invoker_retro_portal" then  --If one of the 7 Portal spells was invoked.
+				new_spell_invoked_name = "invoker_retro_portal"
 			end
 
 			if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= 0 then

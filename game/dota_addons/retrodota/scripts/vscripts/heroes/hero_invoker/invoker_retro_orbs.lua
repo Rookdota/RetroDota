@@ -101,17 +101,25 @@ end
 	Called when Quas, Wex, or Exort is upgraded.  Makes sure the correct invoked spell is still being used.
 ================================================================================================================= ]]
 function invoker_retro_orb_maintain_invoked_spells(keys)
-	--Icy Path has seven different versions (one for each level of Quas).  If it is currently invoked, make sure it is the correct version, given Quas' level.
+	--Some spells have seven different versions (one for each level of a reagent).  If one of these is currently invoked, make sure it is the correct version, given the reagent's level.
 	local current_invoked_spell = keys.caster:GetAbilityByIndex(3)
 	if current_invoked_spell ~= nil then
 		local current_invoked_spell_name = current_invoked_spell:GetName()
 		
-		--If one of the 7 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
-		if string.sub(current_invoked_spell_name, 1, 22) == "invoker_retro_icy_path" then
+		if string.sub(current_invoked_spell_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 			local new_invoked_spell_name = "invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas"
+			keys.caster:AddAbility(new_invoked_spell_name)
+			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+			new_invoked_spell:SetLevel(1)
+		elseif string.sub(current_invoked_spell_name, 1, 20) == "invoker_retro_portal" then  --If one of the 7 Portal spells is invoked, swap it out for the correct version based on Quas' level.
+			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
+			keys.caster:RemoveAbility(current_invoked_spell_name)
+			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+			local new_invoked_spell_name = "invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas"
 			keys.caster:AddAbility(new_invoked_spell_name)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)

@@ -82,6 +82,15 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
 			}
+			
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"				"Hero_Invoker.IceWall.Slow"
+					"Target"					"TARGET"
+				}
+			}
 		}
 	}
 }

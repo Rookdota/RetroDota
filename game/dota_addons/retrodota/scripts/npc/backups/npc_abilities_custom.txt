@@ -1398,6 +1398,8 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				
+				"TextureName"			"invoker_retro_icy_path"
+				
 				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
 				"EffectAttachType"		"follow_origin"
 				
@@ -1407,6 +1409,15 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				}
+				
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"				"Hero_Invoker.IceWall.Slow"
+						"Target"					"TARGET"
+					}
 				}
 			}
 		}
@@ -2692,31 +2703,35 @@
 	}
 	
 	// Invoker's Portal
-	// Author:
-	// Date: February 15, 2015
+	// Author: Rook
+	// Date: February 18, 2015
 	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals 80 damage to it. That unit is instantly moved to your position. Cast range is 400. Cast range is based on Quas, damage based on Wex.
-	"invoker_retro_portal"
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_1_quas"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
-		// Stats
+		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"400"
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
 		// Special
@@ -2726,37 +2741,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
-			}
-			"04"
-			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"delay"					".75"
 			}
 		}
 		
@@ -2764,37 +2759,396 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_icy_wall_slow"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-				"EffectAttachType"		"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-				}
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
 			}
 		}
 	}
 	
+	// Invoker's Portal
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Wex
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_2_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"450"
+		
+		"precache"
+		{
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					".75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
+			}
+		}
+	}
+	
+	// Invoker's Portal
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Wex
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_3_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"500"
+		
+		"precache"
+		{
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					".75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
+			}
+		}
+	}
+	
+	// Invoker's Portal
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Wex
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_4_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"550"
+		
+		"precache"
+		{
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					".75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
+			}
+		}
+	}
+	
+	// Invoker's Portal
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Wex
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_5_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"600"
+		
+		"precache"
+		{
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					".75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
+			}
+		}
+	}
+	
+	// Invoker's Portal
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Wex
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_6_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"650"
+		
+		"precache"
+		{
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					".75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
+			}
+		}
+	}
+	
+	// Invoker's Portal
+	// Author: Rook
+	// Date: February 18, 2015
+	// Invoke: Quas Quas Wex
+	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_portal_level_7_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"700"
+		
+		"precache"
+		{
+			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					".75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+				"Delay"					"%delay"
+			}
+		}
+	}
 	// Invoker's Power Word
 	// Author: 
 	// Date: February 15, 2015
@@ -3018,8 +3372,8 @@
 	
 		"precache"
 		{
-			"particle" 	"particles/units/heroes/hero_mirana/mirana_starfall_moonray.vpcf"
-			"particle"  "particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
+			"particle" 	"particles/units/heroes/hero_invoker/mirana_starfall_moonray.vpcf"
+			"particle"  "particles/units/heroes/hero_invoker/mirana_moonlight_owner.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 			"model"		"models/items/courier/snowl/snowl_flying.vmdl"
 		}
@@ -3843,60 +4197,4 @@
 	}
 	
 	
-	"true_sight"
-	{
-		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"true_sight"
-		"MaxLevel" 						"1"
-	
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		"Modifiers"
-		{
-			"modifier_true_sight"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-		
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
-				{
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Radius" 	"%owl_vision"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-					
-						"Action"    
-						{
-							"RemoveModifier"
-							{
-								"ModifierName"	"modifier_truesight_reveal"
-								"Target" 		"TARGET"
-							}
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_truesight_reveal"
-								"Target" 		"TARGET"
-							}
-						}
-					}			
-				}
-			}
-	
-			"modifier_true_sight_reveal"
-			{
-				"IsHidden"			"1"
-				"Duration"			"0.03"
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
-				}
-			}
-		}	
-	}
 }

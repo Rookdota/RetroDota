@@ -5,6 +5,8 @@
 	Additional parameters: keys.NumWallElements and keys.WallElementSpacing
 ================================================================================================================= ]]
 function invoker_retro_icy_path_on_spell_start(keys)
+	keys.caster:EmitSound("Hero_Invoker.IceWall.Cast")
+	
 	local target_point = keys.target_points[1]
 	local caster_point = keys.caster:GetAbsOrigin()
 	local direction_to_target_point = (target_point - caster_point):Normalized()
@@ -53,12 +55,4 @@ function invoker_retro_icy_path_on_spell_start(keys)
 			end
 		})
 	end
-	
-	
-	
-	
-	
-	
-	
-	
 end

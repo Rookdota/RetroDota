@@ -12,6 +12,16 @@ if retro_dota == nil then
 end
 
 --------------------------------------------------------------------------------
+-- PRECACHE
+--------------------------------------------------------------------------------
+function Precache(context)
+	--Precache relevant particle effects.  Custom units with all of Invoker's spells are used to precache because there is an issue with
+	--precaching using datadriven blocks when a spell is swapped in for a hero, and most of Invoker's spells are.
+	PrecacheUnitByNameSync("npc_dota_invoker_retro_precache_unit_1", context)
+	PrecacheUnitByNameSync("npc_dota_invoker_retro_precache_unit_2", context)
+end
+
+--------------------------------------------------------------------------------
 -- ACTIVATE
 --------------------------------------------------------------------------------
 function Activate()
@@ -26,15 +36,13 @@ function retro_dota:InitGameMode()
 	local GameMode = GameRules:GetGameModeEntity()
 
 	-- Enable the standard Dota PvP game rules
-	GameRules:GetGameModeEntity():SetTowerBackdoorProtectionEnabled( true)
+	GameRules:GetGameModeEntity():SetTowerBackdoorProtectionEnabled(true)
 
 	-- Register Think
 	GameMode:SetContextThink("retro_dota:GameThink", function() return self:GameThink() end, 0.25)
-
 	
 	-- Register Game Events
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(retro_dota, 'OnPlayerPickHero'), self)
-	
 end
 
 --------------------------------------------------------------------------------
@@ -42,12 +50,6 @@ function retro_dota:GameThink()
 	return 0.25
 end
 
---------------------------------------------------------------------------------
--- PRECACHE
---------------------------------------------------------------------------------
-function Precache(context)
-	PrecacheUnitByNameSync("npc_dota_invoker_retro_scout_unit", context)
-end
 
 function retro_dota:OnPlayerPickHero(keys)
 	local hero = EntIndexToHScript(keys.heroindex)

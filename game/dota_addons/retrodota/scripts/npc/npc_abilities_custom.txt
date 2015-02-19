@@ -72,7 +72,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_arcane_arts"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -135,7 +135,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -176,7 +176,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_betrayal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -239,7 +239,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -280,7 +280,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_chaos_meteor"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -343,7 +343,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -378,13 +378,13 @@
 	// Author:
 	// Date: February 15, 2015
 	// Invoke: Exort Quas Wex
-	// Creates a dummy unit that looks like Kael. Cast range based on Exort, duration based on Quas and damage taken based on Wex. Underneat this unit is a ghost unit that lasts twice as long.
+	// Creates a dummy unit that looks like Kael. Cast range based on Exort, duration based on Quas and damage taken based on Wex. Underneath this unit is a ghost unit that lasts twice as long.
 	"invoker_retro_confuse"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_confuse"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -447,7 +447,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -488,7 +488,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_deafening_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -551,7 +551,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -592,7 +592,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_disarm"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -655,7 +655,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -696,7 +696,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_emp"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -759,7 +759,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -825,7 +825,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_energy_ball"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -888,7 +888,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -1024,7 +1024,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_firebolt"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1087,7 +1087,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -1128,7 +1128,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_firestorm"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1191,7 +1191,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -1224,7 +1224,7 @@
 	
 	// Invoker's Frost Nova
 	// Author:
-	// Date: February 15, 2015
+	// Date: February 19, 2015
 	// Invoke: Quas Quas Exort
 	// Blasts enemy units with a wave of frost that deals up to 300 damage to the target based on Quas level. Deals 112.5 area of effect damage and slows for 3 seconds.
 	"invoker_retro_frost_nova"
@@ -1232,7 +1232,9 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"invoker_retro_frost_nova"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1241,13 +1243,17 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"150"
+		"AbilityCastRange"				"650"
+		"AoERadius"						"200"
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"particle"		"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"particle"		"particles/units/heroes/hero_lich/lich_slowed_cold.vpcf"
+			"particle"		"particles/status_fx/status_effect_frost_lich.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
 		}
 		
 		// Special
@@ -1257,37 +1263,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5"  //Increases with Exort.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+				"area_damage"			"75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
+				"area_radius"			"200"  //Update AoERadius if this is changed.
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
+				"var_type"				"FIELD_INTEGER"
+				"slow_percent"			"-30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"slow_duration"			"3"
 			}
 		}
 		
@@ -1295,32 +1291,32 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_frost_nova.lua"
+				"Function"				"invoker_retro_frost_nova_on_spell_start"
+				"AreaRadius"			"%area_radius"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_icy_wall_slow"
+			"modifier_invoker_retro_frost_nova_slow"
 			{
+				"Duration"			"%slow_duration"
 				"Passive"  			"0"
 				"IsHidden" 			"0"
 				"IsBuff"			"0"
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+				"EffectName"			"particles/units/heroes/hero_lich/lich_slowed_cold.vpcf"
 				"EffectAttachType"		"follow_origin"
+				
+				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
+				"StatusEffectPriority"	"10"
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_percent"
 				}
 			}
 		}
@@ -1435,7 +1431,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1521,7 +1517,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1607,7 +1603,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1693,7 +1689,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1779,7 +1775,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1865,7 +1861,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1951,7 +1947,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2034,7 +2030,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_incinerate"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2097,7 +2093,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -2138,7 +2134,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_inferno"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2201,7 +2197,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -2242,7 +2238,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_invisibility_aura"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2305,7 +2301,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -2400,7 +2396,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_levitation"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2463,7 +2459,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -2504,7 +2500,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_lightning_shield"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2567,7 +2563,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -2608,7 +2604,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_mana_burn"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -2671,7 +2667,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -3159,7 +3155,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_power_word"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3222,7 +3218,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -3358,7 +3354,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_scout"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3488,7 +3484,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_shock"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3551,7 +3547,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -3592,7 +3588,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_shroud_of_flames"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3655,7 +3651,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -3696,7 +3692,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_soul_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3759,7 +3755,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -3800,7 +3796,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_soul_reaver"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3863,7 +3859,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -3898,13 +3894,13 @@
 	// Author: 
 	// Date: February 15, 2015
 	// Invoke: Wex Wex Quas
-	// Cast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range.
+	// Cast a powerful chain of energy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range.
 	"invoker_retro_telelightning"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_telelightning"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -3967,7 +3963,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -4008,7 +4004,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_tornado_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -4071,7 +4067,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/invoker.lua"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 				"Function"				"invoker_retro_icy_path_on_spell_start"
 				"Target"				"POINT"
 				"NumWallElements"		"%num_wall_elements"
@@ -4197,4 +4193,60 @@
 	}
 	
 	
+	"true_sight"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"true_sight"
+		"MaxLevel" 						"1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		"Modifiers"
+		{
+			"modifier_true_sight"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%owl_vision"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+					
+						"Action"    
+						{
+							"RemoveModifier"
+							{
+								"ModifierName"	"modifier_truesight_reveal"
+								"Target" 		"TARGET"
+							}
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_truesight_reveal"
+								"Target" 		"TARGET"
+							}
+						}
+					}			
+				}
+			}
+	
+			"modifier_true_sight_reveal"
+			{
+				"IsHidden"			"1"
+				"Duration"			"0.03"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}	
+	}
 }

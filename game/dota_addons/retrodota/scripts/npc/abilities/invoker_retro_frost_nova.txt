@@ -1,6 +1,6 @@
 // Invoker's Frost Nova
 // Author:
-// Date: February 15, 2015
+// Date: February 19, 2015
 // Invoke: Quas Quas Exort
 // Blasts enemy units with a wave of frost that deals up to 300 damage to the target based on Quas level. Deals 112.5 area of effect damage and slows for 3 seconds.
 "invoker_retro_frost_nova"
@@ -8,7 +8,9 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"AbilityTextureName" 			"invoker_retro_frost_nova"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -17,13 +19,17 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30"
-	"AbilityManaCost"				"200"
+	"AbilityCooldown"				"15"
+	"AbilityManaCost"				"150"
+	"AbilityCastRange"				"650"
+	"AoERadius"						"200"
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"particle"		"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+		"particle"		"particles/units/heroes/hero_lich/lich_slowed_cold.vpcf"
+		"particle"		"particles/status_fx/status_effect_frost_lich.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
 	}
 	
 	// Special
@@ -33,37 +39,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5"  //Increases with Exort.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			"area_damage"			"75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-140"
+			"area_radius"			"200"  //Update AoERadius if this is changed.
 		}
 		"04"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"2.0"
+			"var_type"				"FIELD_INTEGER"
+			"slow_percent"			"-30"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"num_wall_elements"		"15"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_spacing"	"80"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_radius"	"105"
+			"slow_duration"			"3"
 		}
 	}
 	
@@ -71,32 +67,32 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/invoker.lua"
-			"Function"				"invoker_retro_icy_path_on_spell_start"
-			"Target"				"POINT"
-			"NumWallElements"		"%num_wall_elements"
-			"WallElementSpacing"	"%wall_element_spacing"
-			"WallElementRadius"		"%wall_element_radius"
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_frost_nova.lua"
+			"Function"				"invoker_retro_frost_nova_on_spell_start"
+			"AreaRadius"			"%area_radius"
 		}
 	}
 	
 	"Modifiers"
 	{
-		"modifier_invoker_retro_icy_wall_slow"
+		"modifier_invoker_retro_frost_nova_slow"
 		{
+			"Duration"			"%slow_duration"
 			"Passive"  			"0"
 			"IsHidden" 			"0"
 			"IsBuff"			"0"
 			"IsDebuff"			"1"
 			"IsPurgable"		"1"
 			
-			//TODO: The control points for this particle still need to be figured out.
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"EffectName"			"particles/units/heroes/hero_lich/lich_slowed_cold.vpcf"
 			"EffectAttachType"		"follow_origin"
+			
+			"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
+			"StatusEffectPriority"	"10"
 			
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_percent"
 			}
 		}
 	}

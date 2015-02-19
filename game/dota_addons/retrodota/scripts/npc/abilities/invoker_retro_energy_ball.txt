@@ -8,7 +8,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	"AbilityTextureName" 			"invoker_retro_energy_ball"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -71,7 +71,7 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/invoker.lua"
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
 			"Function"				"invoker_retro_icy_path_on_spell_start"
 			"Target"				"POINT"
 			"NumWallElements"		"%num_wall_elements"

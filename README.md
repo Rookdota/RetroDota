@@ -6,7 +6,7 @@ If you have any questions regarding the project, if you have found a bug/issue w
 Resources
 =========
 
-- [Invoker](http://imgur.com/dUeY3)
+- Invoker: [1](http://imgur.com/dUeY3) [2](https://www.youtube.com/watch?v=l3tminWOrRk)
 
 - [Gambler](http://i.imgur.com/o9MRBAN.jpg)
 

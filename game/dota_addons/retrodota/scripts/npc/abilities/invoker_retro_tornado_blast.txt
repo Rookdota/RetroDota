@@ -1,6 +1,6 @@
 // Invoker's Tornado Blast
-// Author:
-// Date: February 15, 2015
+// Author: Rook
+// Date: February 19, 2015
 // Invoke: Quas Wex Wex
 // Summons a tornado to wreak havoc and damage enemy units over a long distance. Deals 225 damage over 750 range.
 // Balance ideas: Travel distance should scale with Wex instead of Quas.

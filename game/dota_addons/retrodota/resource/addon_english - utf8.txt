@@ -63,6 +63,9 @@
 		//Exort
 		"DOTA_Tooltip_Ability_invoker_retro_exort"                                        "Exort"
 		"DOTA_Tooltip_Ability_invoker_retro_exort_Description"                            "Builds Kael's skill in the fire magics. These spells, when invoked, deal with the power of fire, projection and damage. As a reagent, regenerates .5 hitpoints per level, per reagent cast. Increases Strength by 1 each time his skill is learned."
+		
+		"DOTA_Tooltip_modifier_invoker_retro_exort_instance"                              "Exort"
+		"DOTA_Tooltip_modifier_invoker_retro_exort_instance_Description"                  "Health regeneration per second increased by .5 per level of Exort."
 
 		
 		//Firebolt
@@ -163,8 +166,12 @@
 		
 		//Levitation
 		"DOTA_Tooltip_Ability_invoker_retro_levitation"                                   "Levitation"
-		"DOTA_Tooltip_Ability_invoker_retro_levitation_Description"                       "Invoke: Quas Wex Exort.\n\nAllows you to rise into the air, invulnerable. Duration is based on Wex, Quas and Exort"
-
+		"DOTA_Tooltip_Ability_invoker_retro_levitation_Description"                       "Invoke: Quas Wex Exort.\n\nInvoker rises into the air, invulnerable but unable to act.  Duration increases per level of Quas, Wex, and Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_levitation_duration"                          "DURATION (QUAS, WEX, EXORT):"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_levitation"                  "Levitation"
+		"DOTA_Tooltip_modifier_invoker_retro_levitation_Description"      "Invulnerable but unable to act."
+		
 		
 		//Lightning Shield
 		"DOTA_Tooltip_Ability_invoker_retro_lightning_shield"                             "Lightning Shield"
@@ -228,7 +235,9 @@
 		//Quas
 		"DOTA_Tooltip_Ability_invoker_retro_quas"                                         "Quas"
 		"DOTA_Tooltip_Ability_invoker_retro_quas_Description"                             "Builds Kael's skills in the arcana magics. These spells, when invoked deal with the power of the mind, wind and water. As a reagent, increases damage by 2%% per level, per reagent cast. Increases Intelligence by 1 each time this skill is learned."
-
+		
+		"DOTA_Tooltip_modifier_invoker_retro_quas_instance"                               "Quas"
+		"DOTA_Tooltip_modifier_invoker_retro_quas_instance_Description"                   "Damage increased by 2%% per level of Quas."
 
 		//Scout
 		"DOTA_Tooltip_Ability_invoker_retro_scout"                                        "Scout"
@@ -303,6 +312,8 @@
 		//Wex
 		"DOTA_Tooltip_Ability_invoker_retro_wex"                                          "Wex"
 		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a reagent, increases movement speed by 1%% per level, per reagent. Increases Agility by 1 each time this skill is learned."
-
+		
+		"DOTA_Tooltip_modifier_invoker_retro_wex_instance"                                "Wex"
+		"DOTA_Tooltip_modifier_invoker_retro_wex_instance_Description"                    "Movement speed increased by 1%% per level of Wex."
 	}
 }

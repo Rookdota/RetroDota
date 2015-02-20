@@ -61,6 +61,28 @@
 			"Delay"					"%delay"
 		}
 	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
+		}
+	}
 }
 
 
@@ -119,6 +141,28 @@
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
 			"Delay"					"%delay"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
 		}
 	}
 }
@@ -181,6 +225,28 @@
 			"Delay"					"%delay"
 		}
 	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
+		}
+	}
 }
 
 
@@ -239,6 +305,28 @@
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
 			"Delay"					"%delay"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
 		}
 	}
 }
@@ -301,6 +389,28 @@
 			"Delay"					"%delay"
 		}
 	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
+		}
+	}
 }
 
 
@@ -361,6 +471,28 @@
 			"Delay"					"%delay"
 		}
 	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
+		}
+	}
 }
 
 
@@ -419,6 +551,28 @@
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
 			"Delay"					"%delay"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_portal"
+		{
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+	        "ThinkInterval"		"%delay"
+			"OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
+                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
+                }
+			}
 		}
 	}
 }

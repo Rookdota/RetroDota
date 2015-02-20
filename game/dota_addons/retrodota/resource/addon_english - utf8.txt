@@ -9,54 +9,68 @@
 		"npc_dota_hero_invoker"    	  "Kael"
 
 		// ******************** ABILITIES ********************
+		
+		//Arcane Arts
 		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts"                                  "Arcane Arts"
 		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts_Description"                      "Invoke: Wex Wex Exort.\n\nKael is superior in the arts of magic then this opponents. He is able to manipulate spells to reduce their damage by 40%%. Resistance based on Wex level."
 
 		
+		//Betrayal
 		"DOTA_Tooltip_Ability_invoker_retro_betrayal"                                     "Betrayal"
 		"DOTA_Tooltip_Ability_invoker_retro_betrayal_Description"                         "Invoke: Quas Wex Quas.\n\nCast a dark magic on a target enemy, causing all of its previous allies to turn against it, thinking it's a foe. Duration base on Quas."
 
 		
+		//Chaos Meteor
 		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor"                                 "Chaos Meteor"
 		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_Description"                     "Invoke: Exort Quas Quas.\n\nSummons a powerful meteor to crush all enemies within its path. Deals 200 damage per second to units in its path. Based on Exort."
 
 		
+		//Confuse
 		"DOTA_Tooltip_Ability_invoker_retro_confuse"                                      "Confuse"
 		"DOTA_Tooltip_Ability_invoker_retro_confuse_Description"                          "Invoke: Exort Quas Wex.\n\nCreates a dummy unit that looks like Kael. Cast range based on Exort, duration based on Quas and damage taken based on Wex. Underneath this unit is a ghost unit that lasts twice as long."
 		
 		
+		//Deafening Blast
 		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast"                              "Deafening Blast"
 		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invoke: Exort Exort Quas.\n\nHits an enemy unit with a deafening blast, dealing heavy damage and causing the target to be mute for 3.5 seconds. Deals 65 damage per level in Exort."
 
 		
+		//Disarm
 		"DOTA_Tooltip_Ability_invoker_retro_disarm"                                       "Disarm"
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_Description"                           "Invoke: Exort Quas Exort.\n\nStrips the enemy of the capAbility to attack. Lasts 5 seconds with 900 cast range. Duration and cast range based on Exort."
 
 		
+		//EMP
 		"DOTA_Tooltip_Ability_invoker_retro_emp"                                          "EMP"
 		"DOTA_Tooltip_Ability_invoker_retro_emp_Description"                              "Invoke: Wex Quas Wex.\n\nReleases an EMP bomb that detonates depleting the mana of all enemies nearby. Up to 640 mana per unit based on Wex and Quas levels."
 
 		
+		//Empty Slot 1
 		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_1"                                 "Empty Slot 1"
 		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_1_Description"                     ""
 
 		
+		//Empty Slot 2
 		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_2"                                 "Empty Slot 2"
 		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_2_Description"                     ""
 
 		
+		//Energy Ball
 		"DOTA_Tooltip_Ability_invoker_retro_energy_ball"                                  "Energy Ball"
 		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_Description"                      "Invoke: Wex Exort Wex.\n\nSummons an energy ball that explodes dealing up to 800 damage to units in a 400 AOE based on Wex level."
 
 		
+		//Exort
 		"DOTA_Tooltip_Ability_invoker_retro_exort"                                        "Exort"
 		"DOTA_Tooltip_Ability_invoker_retro_exort_Description"                            "Builds Kael's skill in the fire magics. These spells, when invoked, deal with the power of fire, projection and damage. As a reagent, regenerates .5 hitpoints per level, per reagent cast. Increases Strength by 1 each time his skill is learned."
 
 		
+		//Firebolt
 		"DOTA_Tooltip_Ability_invoker_retro_firebolt"                                     "Firebolt"
 		"DOTA_Tooltip_Ability_invoker_retro_firebolt_Description"                         "Invoke: Exort Exort Exort.\n\nHurls a fiery bolt that deals 380 damage. Based on level of Exort"
 
 		
+		//Firestorm
 		"DOTA_Tooltip_Ability_invoker_retro_firestorm"                                    "Firestorm"
 		"DOTA_Tooltip_Ability_invoker_retro_firestorm_Description"                        "Invoke: Exort Wex Wex.\n\nCalls then magical fireballs from the sky to land around Kael. Deals 30 damage to units that lay beneath it and leaves a magical Fireball remaining. This unit damages nearby units with fire, with damage and AOE based on your Exort level. When Fireball expires, it deals 150 AOE damage."
 
@@ -127,30 +141,37 @@
 		"DOTA_Tooltip_modifier_invoker_retro_icy_path_unit_ability_aura_Description"      "Movement speed slowed."
 
 		
+		//Incinerate
 		"DOTA_Tooltip_Ability_invoker_retro_incinerate"                                   "Incinerate"
 		"DOTA_Tooltip_Ability_invoker_retro_incinerate_Description"                       "Invoke: Exort Wex Exort.\n\nDoes heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling"
 
 		
+		//Inferno
 		"DOTA_Tooltip_Ability_invoker_retro_inferno"                                      "Inferno"
 		"DOTA_Tooltip_Ability_invoker_retro_inferno_Description"                          "Invoke: Exort Exort Wex.\n\nCreates random fiery hells around Kael. The damage varies by Exort levels and the number of Infernos varies by Wex level."
 
 		
+		//Invisibility Aura
 		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura"                            "Invisibility Aura"
 		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_Description"                "Invoke: Quas Exort Wex.\n\nUnits within 190 range of Kael become Invisible. Range based on Quas level"
 
 		
+		//Invoke
 		"DOTA_Tooltip_Ability_invoker_retro_invoke"                                       "Invoke"
 		"DOTA_Tooltip_Ability_invoker_retro_invoke_Description"                           "Invoker combines the three reagents he has active into a spell, with different effects based on the reagents. The order the reagents were casts makes a difference."
 
 		
+		//Levitation
 		"DOTA_Tooltip_Ability_invoker_retro_levitation"                                   "Levitation"
 		"DOTA_Tooltip_Ability_invoker_retro_levitation_Description"                       "Invoke: Quas Wex Exort.\n\nAllows you to rise into the air, invulnerable. Duration is based on Wex, Quas and Exort"
 
 		
+		//Lightning Shield
 		"DOTA_Tooltip_Ability_invoker_retro_lightning_shield"                             "Lightning Shield"
 		"DOTA_Tooltip_Ability_invoker_retro_lightning_shield_Description"                 "Invoke: Wex Exort Exort.\n\nForms a shield of electricity around a target, dealing 40 damage per second to units around it. Lasts 20 seconds. Damage and AOE based on Wex. Animation doesn't appear on scourge tower but the effect is there (LMAO)"
 
 		
+		//Mana Burn
 		"DOTA_Tooltip_Ability_invoker_retro_mana_burn"                                    "Mana Burn"
 		"DOTA_Tooltip_Ability_invoker_retro_mana_burn_Description"                        "Invoke: Wex Quas Quas.\n\nSends a bolt of negative energy that burns 150 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned."
 		
@@ -199,10 +220,12 @@
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_delay"                  "DELAY:"
 		
 
+		//Power Word
 		"DOTA_Tooltip_Ability_invoker_retro_power_word"                                   "Power Word"
 		"DOTA_Tooltip_Ability_invoker_retro_power_word_Description"                       "Invoke: Quas Exort Quas.\n\nApplies a magic that weakens or strengthens a unit's resistance to physical attacks. Increases a friendly unit's armor or decreases an enemy's armor by 3. Lasts 25 seconds"
 
 		
+		//Quas
 		"DOTA_Tooltip_Ability_invoker_retro_quas"                                         "Quas"
 		"DOTA_Tooltip_Ability_invoker_retro_quas_Description"                             "Builds Kael's skills in the arcana magics. These spells, when invoked deal with the power of the mind, wind and water. As a reagent, increases damage by 2%% per level, per reagent cast. Increases Intelligence by 1 each time this skill is learned."
 
@@ -215,22 +238,27 @@
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_movespeed"						  "Move Speed (WEX):"
 
 		
+		//Shock
 		"DOTA_Tooltip_Ability_invoker_retro_shock"                                        "Shock"
 		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Invoke: Wex Wex Wex.\n\nReleases a ring of shocking energy that summons a bolt of energy on each target in its path, removing all buffs. 300 range and 160 damage. Radius and Damage based on Wex"
 
 		
+		//Shroud of Flames
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames"                             "Shroud of Flames"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_Description"                 "Invoke: Quas Exort Exort.\n\nCreates a barrier that reduces spell damage against a friendly unit by 12%%. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds."
 
 		
+		//Soul Blast
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast"                                   "Soul Blast"
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_Description"                       "Invoke: Wex Quas Exort.\n\nDeals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex."
 
 		
+		//Reaver
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver"                                  "Soul Reaver"
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_Description"                      "Invoke: Exort Wex Quas.\n\nBlazes a target enemy unit, dealing up to 400 damage, based on Quas level. After 8 seconds, it takes another 280 damage. Increases the Invoker's movement speed for 8 seconds based on Wex level."
 
 		
+		//Telelightning
 		"DOTA_Tooltip_Ability_invoker_retro_telelightning"                                "Telelightning"
 		"DOTA_Tooltip_Ability_invoker_retro_telelightning_Description"                    "Invoke: Wex Wex Quas.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
 		
@@ -272,6 +300,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
 		
 		
+		//Wex
 		"DOTA_Tooltip_Ability_invoker_retro_wex"                                          "Wex"
 		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a reagent, increases movement speed by 1%% per level, per reagent. Increases Agility by 1 each time this skill is learned."
 

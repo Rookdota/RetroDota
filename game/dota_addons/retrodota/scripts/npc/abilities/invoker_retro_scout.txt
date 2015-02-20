@@ -3,6 +3,7 @@
 // Date: February 17, 2015
 // Invoke: Wex Exort Quas
 // Summons an Owl Scout, which can be used to scout. Can see invisible units. Is vulnerable. Lasts 40 seconds. Duration, Vision and Speed depend on Wex level.
+// Balance Ideas: MS should be based on Wex, Duration on Quas, and Vision on Exort, max 350ms, max Vision 1800 units, max Duration 40s
 "invoker_retro_scout"
 {
 	// General

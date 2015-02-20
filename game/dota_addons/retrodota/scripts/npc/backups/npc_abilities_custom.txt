@@ -1311,8 +1311,8 @@
 				"EffectName"			"particles/units/heroes/hero_lich/lich_slowed_cold.vpcf"
 				"EffectAttachType"		"follow_origin"
 				
-				//"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
-				//"StatusEffectPriority"	"10"
+				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
+				"StatusEffectPriority"	"10"
 				
 				"Properties"
 				{

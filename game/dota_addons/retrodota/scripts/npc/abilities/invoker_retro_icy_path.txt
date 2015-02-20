@@ -111,6 +111,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -182,12 +183,6 @@
 }
 
 
-// Invoker's Icy Path, level 2 Quas
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Quas
-// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_2_quas"
 {
 	// General
@@ -197,6 +192,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -268,12 +264,6 @@
 }
 
 
-// Invoker's Icy Path, level 3 Quas
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Quas
-// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_3_quas"
 {
 	// General
@@ -283,6 +273,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -354,12 +345,6 @@
 }
 
 
-// Invoker's Icy Path, level 4 Quas
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Quas
-// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_4_quas"
 {
 	// General
@@ -369,6 +354,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -440,12 +426,6 @@
 }
 
 
-// Invoker's Icy Path, level 5 Quas
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Quas
-// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_5_quas"
 {
 	// General
@@ -455,6 +435,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -526,12 +507,6 @@
 }
 
 
-// Invoker's Icy Path, level 6 Quas
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Quas
-// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_6_quas"
 {
 	// General
@@ -541,6 +516,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -612,12 +588,6 @@
 }
 
 
-// Invoker's Icy Path, level 7 Quas
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Quas
-// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_7_quas"
 {
 	// General
@@ -627,6 +597,7 @@
 	"AbilityTextureName" 			"invoker_retro_icy_path"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	

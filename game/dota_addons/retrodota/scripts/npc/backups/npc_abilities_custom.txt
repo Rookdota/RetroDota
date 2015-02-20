@@ -60,8 +60,6 @@
 			}
 		}
 	}
-	
-	
 	// Invoker's Arcane Arts
 	// Author: 
 	// Date: February 15, 2015
@@ -76,6 +74,7 @@
 		"AbilityTextureName" 			"invoker_retro_arcane_arts"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -180,6 +179,7 @@
 		"AbilityTextureName" 			"invoker_retro_betrayal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -284,6 +284,7 @@
 		"AbilityTextureName" 			"invoker_retro_chaos_meteor"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -388,6 +389,7 @@
 		"AbilityTextureName" 			"invoker_retro_confuse"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -492,6 +494,7 @@
 		"AbilityTextureName" 			"invoker_retro_deafening_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -596,6 +599,7 @@
 		"AbilityTextureName" 			"invoker_retro_disarm"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -700,6 +704,7 @@
 		"AbilityTextureName" 			"invoker_retro_emp"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -829,6 +834,7 @@
 		"AbilityTextureName" 			"invoker_retro_energy_ball"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1028,6 +1034,7 @@
 		"AbilityTextureName" 			"invoker_retro_firebolt"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1132,6 +1139,7 @@
 		"AbilityTextureName" 			"invoker_retro_firestorm"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1238,6 +1246,7 @@
 		"AbilityTextureName" 			"invoker_retro_frost_nova"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1435,6 +1444,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1506,12 +1516,6 @@
 	}
 	
 	
-	// Invoker's Icy Path, level 2 Quas
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_2_quas"
 	{
 		// General
@@ -1521,6 +1525,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1592,12 +1597,6 @@
 	}
 	
 	
-	// Invoker's Icy Path, level 3 Quas
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_3_quas"
 	{
 		// General
@@ -1607,6 +1606,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1678,12 +1678,6 @@
 	}
 	
 	
-	// Invoker's Icy Path, level 4 Quas
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_4_quas"
 	{
 		// General
@@ -1693,6 +1687,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1764,12 +1759,6 @@
 	}
 	
 	
-	// Invoker's Icy Path, level 5 Quas
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_5_quas"
 	{
 		// General
@@ -1779,6 +1768,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1850,12 +1840,6 @@
 	}
 	
 	
-	// Invoker's Icy Path, level 6 Quas
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_6_quas"
 	{
 		// General
@@ -1865,6 +1849,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -1936,12 +1921,6 @@
 	}
 	
 	
-	// Invoker's Icy Path, level 7 Quas
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Quas
-	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_7_quas"
 	{
 		// General
@@ -1951,6 +1930,7 @@
 		"AbilityTextureName" 			"invoker_retro_icy_path"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2034,6 +2014,7 @@
 		"AbilityTextureName" 			"invoker_retro_incinerate"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2138,6 +2119,7 @@
 		"AbilityTextureName" 			"invoker_retro_inferno"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2242,6 +2224,7 @@
 		"AbilityTextureName" 			"invoker_retro_invisibility_aura"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2400,6 +2383,7 @@
 		"AbilityTextureName" 			"invoker_retro_levitation"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2504,6 +2488,7 @@
 		"AbilityTextureName" 			"invoker_retro_lightning_shield"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2608,6 +2593,7 @@
 		"AbilityTextureName" 			"invoker_retro_mana_burn"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2715,6 +2701,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2762,12 +2749,7 @@
 		}
 	}
 	
-	// Invoker's Portal
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	
 	"invoker_retro_portal_level_2_quas"
 	{
 		// General
@@ -2779,6 +2761,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2826,12 +2809,7 @@
 		}
 	}
 	
-	// Invoker's Portal
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	
 	"invoker_retro_portal_level_3_quas"
 	{
 		// General
@@ -2843,6 +2821,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2890,12 +2869,7 @@
 		}
 	}
 	
-	// Invoker's Portal
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	
 	"invoker_retro_portal_level_4_quas"
 	{
 		// General
@@ -2907,6 +2881,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -2954,12 +2929,7 @@
 		}
 	}
 	
-	// Invoker's Portal
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	
 	"invoker_retro_portal_level_5_quas"
 	{
 		// General
@@ -2971,6 +2941,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3018,12 +2989,7 @@
 		}
 	}
 	
-	// Invoker's Portal
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	
 	"invoker_retro_portal_level_6_quas"
 	{
 		// General
@@ -3035,6 +3001,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3082,12 +3049,7 @@
 		}
 	}
 	
-	// Invoker's Portal
-	// Author: Rook
-	// Date: February 18, 2015
-	// Invoke: Quas Quas Wex
-	// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	
 	"invoker_retro_portal_level_7_quas"
 	{
 		// General
@@ -3099,6 +3061,7 @@
 		"AbilityTextureName" 			"invoker_retro_portal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3159,6 +3122,7 @@
 		"AbilityTextureName" 			"invoker_retro_power_word"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3358,6 +3322,7 @@
 		"AbilityTextureName" 			"invoker_retro_scout"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3488,6 +3453,7 @@
 		"AbilityTextureName" 			"invoker_retro_shock"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3592,6 +3558,7 @@
 		"AbilityTextureName" 			"invoker_retro_shroud_of_flames"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3696,6 +3663,7 @@
 		"AbilityTextureName" 			"invoker_retro_soul_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3800,6 +3768,7 @@
 		"AbilityTextureName" 			"invoker_retro_soul_reaver"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3904,6 +3873,7 @@
 		"AbilityTextureName" 			"invoker_retro_telelightning"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
@@ -3998,8 +3968,10 @@
 	// Author:
 	// Date: February 15, 2015
 	// Invoke: Quas Wex Wex
-	// Summons a tornado to wreak havoc and damage enemy units over a long distance. Deals 225 damage over 750 range
-	"invoker_retro_tornado_blast"
+	// Summons a tornado to wreak havoc and damage enemy units over a long distance. Deals 225 damage over 750 range.
+	// Balance ideas: Travel distance should scale with Wex instead of Quas.
+	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+	"invoker_retro_tornado_blast_level_1_quas"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -4008,18 +3980,19 @@
 		"AbilityTextureName" 			"invoker_retro_tornado_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"800"
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
 		}
 		
 		// Special
@@ -4028,38 +4001,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
 			}
 		}
 		
@@ -4067,37 +4035,549 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
 			}
 		}
 		
-		"Modifiers"
+		"OnProjectileHitUnit"
 		{
-			"modifier_invoker_retro_icy_wall_slow"
+			"DeleteOnHit" "0"
+			
+			"RunScript"
 			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-				"EffectAttachType"		"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-				}
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
 			}
 		}
 	}
 	
+	
+	"invoker_retro_tornado_blast_level_2_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"1000"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_tornado_blast_level_3_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"1200"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_tornado_blast_level_4_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"1400"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_tornado_blast_level_5_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"1600"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_tornado_blast_level_6_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"1800"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_tornado_blast_level_7_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"2000"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
 	// Invoker's Wex
 	// Author: Rook
 	// Date: February 15, 2015

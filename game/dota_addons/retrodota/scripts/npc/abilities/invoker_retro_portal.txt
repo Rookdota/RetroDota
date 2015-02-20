@@ -15,6 +15,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -62,12 +63,7 @@
 	}
 }
 
-// Invoker's Portal
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Wex
-// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+
 "invoker_retro_portal_level_2_quas"
 {
 	// General
@@ -79,6 +75,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -126,12 +123,7 @@
 	}
 }
 
-// Invoker's Portal
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Wex
-// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+
 "invoker_retro_portal_level_3_quas"
 {
 	// General
@@ -143,6 +135,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -190,12 +183,7 @@
 	}
 }
 
-// Invoker's Portal
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Wex
-// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+
 "invoker_retro_portal_level_4_quas"
 {
 	// General
@@ -207,6 +195,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -254,12 +243,7 @@
 	}
 }
 
-// Invoker's Portal
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Wex
-// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+
 "invoker_retro_portal_level_5_quas"
 {
 	// General
@@ -271,6 +255,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -318,12 +303,7 @@
 	}
 }
 
-// Invoker's Portal
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Wex
-// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+
 "invoker_retro_portal_level_6_quas"
 {
 	// General
@@ -335,6 +315,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -382,12 +363,7 @@
 	}
 }
 
-// Invoker's Portal
-// Author: Rook
-// Date: February 18, 2015
-// Invoke: Quas Quas Wex
-// Casts a powerful displacement magic at another unit. Deals damage to it. That unit is instantly moved to your position.  Cast range is based on Quas, damage based on Wex.
-// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
+
 "invoker_retro_portal_level_7_quas"
 {
 	// General
@@ -399,6 +375,7 @@
 	"AbilityTextureName" 			"invoker_retro_portal"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	

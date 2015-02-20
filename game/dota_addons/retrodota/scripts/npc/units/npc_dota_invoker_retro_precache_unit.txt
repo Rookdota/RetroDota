@@ -14,7 +14,7 @@
 			"Ability3"                  "invoker_retro_portal_level_1_quas"
 			"Ability4"                  "invoker_retro_frost_nova"
 			"Ability5"                  "invoker_retro_betrayal"
-			"Ability6"                  "invoker_retro_tornado_blast"
+			"Ability6"                  "invoker_retro_tornado_blast_level_1_quas"
 			"Ability7"                  "invoker_retro_levitation"
 			"Ability8"                  "invoker_retro_power_word"
 			"Ability9"                  "invoker_retro_invisibility_aura"

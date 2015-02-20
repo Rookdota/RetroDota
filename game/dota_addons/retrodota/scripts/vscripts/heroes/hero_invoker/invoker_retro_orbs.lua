@@ -124,6 +124,15 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(1)
+		elseif string.sub(current_invoked_spell_name, 1, 27) == "invoker_retro_tornado_blast" then  --If one of the 7 Tornado Blast spells is invoked, swap it out for the correct version based on Quas' level.
+			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
+			keys.caster:RemoveAbility(current_invoked_spell_name)
+			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+			local new_invoked_spell_name = "invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas"
+			keys.caster:AddAbility(new_invoked_spell_name)
+			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+			new_invoked_spell:SetLevel(1)
 		end
 	end
 end

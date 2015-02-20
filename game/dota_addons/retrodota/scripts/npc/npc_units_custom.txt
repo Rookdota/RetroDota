@@ -29,7 +29,7 @@
 				"Ability3"                  "invoker_retro_portal_level_1_quas"
 				"Ability4"                  "invoker_retro_frost_nova"
 				"Ability5"                  "invoker_retro_betrayal"
-				"Ability6"                  "invoker_retro_tornado_blast"
+				"Ability6"                  "invoker_retro_tornado_blast_level_1_quas"
 				"Ability7"                  "invoker_retro_levitation"
 				"Ability8"                  "invoker_retro_power_word"
 				"Ability9"                  "invoker_retro_invisibility_aura"
@@ -131,5 +131,20 @@
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"WakesNeutrals"				"0"
+	}
+	//A dummy unit that follows the path of the tornado, providing flying vision and sound.
+	"npc_dota_invoker_retro_tornado_blast_unit"
+	{
+			// General
+			//----------------------------------------------------------------
+			    "BaseClass"                 "npc_dota_creature"
+				"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+				"VisionDaytimeRange"        "0"
+				"VisionNighttimeRange"      "0"
+				"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+				"MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_FLY"
+				"WakesNeutrals"				"0"
+				"AbilityLayout"             "4"
+				"Ability1"                  "dummy_unit_passive"
 	}
 }

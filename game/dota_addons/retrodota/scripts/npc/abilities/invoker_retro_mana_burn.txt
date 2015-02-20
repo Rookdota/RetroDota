@@ -12,6 +12,7 @@
 	"AbilityTextureName" 			"invoker_retro_mana_burn"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	

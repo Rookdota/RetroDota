@@ -143,14 +143,3 @@ function TornadoHeight( keys )
 		end
 	end)
 end
-
---[[
-	Author: Noya
-	Date: 16.01.2015.
-	Rotates by an angle degree
-]]
-function Spin(keys)
-    local target = keys.target
-    local total_degrees = keys.Angle
-    target:SetForwardVector(RotatePosition(Vector(0,0,0), QAngle(0,total_degrees,0), target:GetForwardVector()))
-end

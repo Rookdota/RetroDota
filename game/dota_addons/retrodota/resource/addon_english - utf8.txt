@@ -4,7 +4,11 @@
 	"Tokens"
 	{		
 		"addon_game_name"			"Retro Dota"
-
+		
+		//Quas uses <font color=\"#008A8A\">Quas</font>
+		//Wex uses <font color=\"#CC0099\">Wex</font>
+		//Exort uses <font color=\"#E68A00\">Exort</font>
+		
 		// ******************** HEROES ********************
 		"npc_dota_hero_invoker"    	  "Kael"
 
@@ -12,37 +16,37 @@
 		
 		//Arcane Arts
 		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts"                                  "Arcane Arts"
-		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts_Description"                      "Invoke: Wex Wex Exort.\n\nKael is superior in the arts of magic then this opponents. He is able to manipulate spells to reduce their damage by 40%%. Resistance based on Wex level."
+		"DOTA_Tooltip_Ability_invoker_retro_arcane_arts_Description"                      "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nKael is superior in the arts of magic then this opponents. He is able to manipulate spells to reduce their damage by 40%%. Resistance based on Wex level."
 
 		
 		//Betrayal
 		"DOTA_Tooltip_Ability_invoker_retro_betrayal"                                     "Betrayal"
-		"DOTA_Tooltip_Ability_invoker_retro_betrayal_Description"                         "Invoke: Quas Wex Quas.\n\nCast a dark magic on a target enemy, causing all of its previous allies to turn against it, thinking it's a foe. Duration base on Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_Description"                         "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a dark magic on a target enemy, causing all of its previous allies to turn against it, thinking it's a foe. Duration base on Quas."
 
 		
 		//Chaos Meteor
 		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor"                                 "Chaos Meteor"
-		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_Description"                     "Invoke: Exort Quas Quas.\n\nSummons a powerful meteor to crush all enemies within its path. Deals 200 damage per second to units in its path. Based on Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_Description"                     "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons a powerful meteor to crush all enemies within its path. Deals 200 damage per second to units in its path. Based on Exort."
 
 		
 		//Confuse
 		"DOTA_Tooltip_Ability_invoker_retro_confuse"                                      "Confuse"
-		"DOTA_Tooltip_Ability_invoker_retro_confuse_Description"                          "Invoke: Exort Quas Wex.\n\nCreates a dummy unit that looks like Kael. Cast range based on Exort, duration based on Quas and damage taken based on Wex. Underneath this unit is a ghost unit that lasts twice as long."
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_Description"                          "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCreates a dummy unit that looks like Kael. Cast range based on Exort, duration based on Quas and damage taken based on Wex. Underneath this unit is a ghost unit that lasts twice as long."
 		
 		
 		//Deafening Blast
 		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast"                              "Deafening Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invoke: Exort Exort Quas.\n\nHits an enemy unit with a deafening blast, dealing heavy damage and causing the target to be mute for 3.5 seconds. Deals 65 damage per level in Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nHits an enemy unit with a deafening blast, dealing heavy damage and causing the target to be mute for 3.5 seconds. Deals 65 damage per level in Exort."
 
 		
 		//Disarm
 		"DOTA_Tooltip_Ability_invoker_retro_disarm"                                       "Disarm"
-		"DOTA_Tooltip_Ability_invoker_retro_disarm_Description"                           "Invoke: Exort Quas Exort.\n\nStrips the enemy of the capAbility to attack. Lasts 5 seconds with 900 cast range. Duration and cast range based on Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_Description"                           "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nStrips the enemy of the capAbility to attack. Lasts 5 seconds with 900 cast range. Duration and cast range based on Exort."
 
 		
 		//EMP
 		"DOTA_Tooltip_Ability_invoker_retro_emp"                                          "EMP"
-		"DOTA_Tooltip_Ability_invoker_retro_emp_Description"                              "Invoke: Wex Quas Wex.\n\nReleases an EMP bomb that detonates depleting the mana of all enemies nearby. Up to 640 mana per unit based on Wex and Quas levels."
+		"DOTA_Tooltip_Ability_invoker_retro_emp_Description"                              "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nReleases an EMP bomb that detonates depleting the mana of all enemies nearby. Up to 640 mana per unit based on Wex and Quas levels."
 
 		
 		//Empty Slot 1
@@ -57,7 +61,7 @@
 		
 		//Energy Ball
 		"DOTA_Tooltip_Ability_invoker_retro_energy_ball"                                  "Energy Ball"
-		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_Description"                      "Invoke: Wex Exort Wex.\n\nSummons an energy ball that explodes dealing up to 800 damage to units in a 400 AOE based on Wex level."
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_Description"                      "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons an energy ball that explodes dealing up to 800 damage to units in a 400 AOE based on Wex level."
 
 		
 		//Exort
@@ -70,19 +74,19 @@
 		
 		//Firebolt
 		"DOTA_Tooltip_Ability_invoker_retro_firebolt"                                     "Firebolt"
-		"DOTA_Tooltip_Ability_invoker_retro_firebolt_Description"                         "Invoke: Exort Exort Exort.\n\nHurls a fiery bolt that deals 380 damage. Based on level of Exort"
+		"DOTA_Tooltip_Ability_invoker_retro_firebolt_Description"                         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nHurls a fiery bolt that deals 380 damage. Based on level of Exort"
 
 		
 		//Firestorm
 		"DOTA_Tooltip_Ability_invoker_retro_firestorm"                                    "Firestorm"
-		"DOTA_Tooltip_Ability_invoker_retro_firestorm_Description"                        "Invoke: Exort Wex Wex.\n\nCalls then magical fireballs from the sky to land around Kael. Deals 30 damage to units that lay beneath it and leaves a magical Fireball remaining. This unit damages nearby units with fire, with damage and AOE based on your Exort level. When Fireball expires, it deals 150 AOE damage."
+		"DOTA_Tooltip_Ability_invoker_retro_firestorm_Description"                        "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nCalls then magical fireballs from the sky to land around Kael. Deals 30 damage to units that lay beneath it and leaves a magical Fireball remaining. This unit damages nearby units with fire, with damage and AOE based on your Exort level. When Fireball expires, it deals 150 AOE damage."
 
 		
 		//Frost Nova
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova"                                   "Frost Nova"
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_Description"                       "Invoke: Quas Quas Exort.\n\nBlasts the target enemy unit with damaging frost, dealing primary damage to the target and area damage to enemies within %area_radius% range.  Affected units have their movement speed slowed.  Primary damage increases per level of Exort, and area damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_primary_damage"                    "PRIMARY DAMAGE (EXORT):"
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_area_damage"                       "AREA DAMAGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_Description"                       "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nBlasts the target enemy unit with damaging frost, dealing primary damage to the target and area damage to enemies within %area_radius% range.  Affected units have their movement speed slowed.  Primary damage increases per level of Exort, and area damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_primary_damage"                    "PRIMARY DAMAGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_area_damage"                       "AREA DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_slow_percent"                      "%SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_slow_duration"                     "SLOW DURATION:"
 		
@@ -92,51 +96,51 @@
 		
 		//Icy Path (broken up into 7 spells)
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_1_quas_slow_duration"          "SLOW DURATION:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_2_quas_slow_duration"          "SLOW DURATION:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_3_quas_slow_duration"          "SLOW DURATION:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_4_quas_slow_duration"          "SLOW DURATION:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_5_quas_slow_duration"          "SLOW DURATION:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_6_quas_slow_duration"          "SLOW DURATION:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas"                        "Icy Path"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_Description"            "Invoke: Quas Quas Quas.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_duration"               "DURATION (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  Duration and cast range increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_slow_duration"          "SLOW DURATION:"
 		
@@ -146,17 +150,17 @@
 		
 		//Incinerate
 		"DOTA_Tooltip_Ability_invoker_retro_incinerate"                                   "Incinerate"
-		"DOTA_Tooltip_Ability_invoker_retro_incinerate_Description"                       "Invoke: Exort Wex Exort.\n\nDoes heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_Description"                       "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nDoes heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling"
 
 		
 		//Inferno
 		"DOTA_Tooltip_Ability_invoker_retro_inferno"                                      "Inferno"
-		"DOTA_Tooltip_Ability_invoker_retro_inferno_Description"                          "Invoke: Exort Exort Wex.\n\nCreates random fiery hells around Kael. The damage varies by Exort levels and the number of Infernos varies by Wex level."
+		"DOTA_Tooltip_Ability_invoker_retro_inferno_Description"                          "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nCreates random fiery hells around Kael. The damage varies by Exort levels and the number of Infernos varies by Wex level."
 
 		
 		//Invisibility Aura
 		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura"                            "Invisibility Aura"
-		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_Description"                "Invoke: Quas Exort Wex.\n\nUnits within 190 range of Kael become Invisible. Range based on Quas level"
+		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_Description"                "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nUnits within 190 range of Kael become Invisible. Range based on Quas level"
 
 		
 		//Invoke
@@ -166,8 +170,8 @@
 		
 		//Levitation
 		"DOTA_Tooltip_Ability_invoker_retro_levitation"                                   "Levitation"
-		"DOTA_Tooltip_Ability_invoker_retro_levitation_Description"                       "Invoke: Quas Wex Exort.\n\nInvoker rises into the air, invulnerable but unable to act.  Duration increases per level of Quas, Wex, and Exort."
-		"DOTA_Tooltip_Ability_invoker_retro_levitation_duration"                          "DURATION (QUAS, WEX, EXORT):"
+		"DOTA_Tooltip_Ability_invoker_retro_levitation_Description"                       "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nInvoker rises into the air, invulnerable but unable to act.  Duration increases per level of Quas, Wex, and Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_levitation_duration"                          "DURATION (<font color=\"#008A8A\">QUAS</font>, <font color=\"#CC0099\">WEX</font>, <font color=\"#E68A00\">EXORT</font>):"
 		
 		"DOTA_Tooltip_modifier_invoker_retro_levitation"                  "Levitation"
 		"DOTA_Tooltip_modifier_invoker_retro_levitation_Description"      "Invulnerable but unable to act."
@@ -175,55 +179,55 @@
 		
 		//Lightning Shield
 		"DOTA_Tooltip_Ability_invoker_retro_lightning_shield"                             "Lightning Shield"
-		"DOTA_Tooltip_Ability_invoker_retro_lightning_shield_Description"                 "Invoke: Wex Exort Exort.\n\nForms a shield of electricity around a target, dealing 40 damage per second to units around it. Lasts 20 seconds. Damage and AOE based on Wex. Animation doesn't appear on scourge tower but the effect is there (LMAO)"
+		"DOTA_Tooltip_Ability_invoker_retro_lightning_shield_Description"                 "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nForms a shield of electricity around a target, dealing 40 damage per second to units around it. Lasts 20 seconds. Damage and AOE based on Wex. Animation doesn't appear on scourge tower but the effect is there (LMAO)"
 
 		
 		//Mana Burn
 		"DOTA_Tooltip_Ability_invoker_retro_mana_burn"                                    "Mana Burn"
-		"DOTA_Tooltip_Ability_invoker_retro_mana_burn_Description"                        "Invoke: Wex Quas Quas.\n\nSends a bolt of negative energy that burns 150 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned."
+		"DOTA_Tooltip_Ability_invoker_retro_mana_burn_Description"                        "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nSends a bolt of negative energy that burns 150 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned."
 		
 		
 		//Portal (broken up into 7 spells)
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_Description"            "Invoke: Quas Quas Wex.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_damage"                 "DAMAGE (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_cast_range"             "CAST RANGE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_modifier_invoker_retro_portal"                                    "Portal"
@@ -233,7 +237,7 @@
 
 		//Power Word
 		"DOTA_Tooltip_Ability_invoker_retro_power_word"                                   "Power Word"
-		"DOTA_Tooltip_Ability_invoker_retro_power_word_Description"                       "Invoke: Quas Exort Quas.\n\nApplies a magic that weakens or strengthens a unit's resistance to physical attacks. Increases a friendly unit's armor or decreases an enemy's armor by 3. Lasts 25 seconds"
+		"DOTA_Tooltip_Ability_invoker_retro_power_word_Description"                       "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nApplies a magic that weakens or strengthens a unit's resistance to physical attacks. Increases a friendly unit's armor or decreases an enemy's armor by 3. Lasts 25 seconds."
 
 		
 		//Quas
@@ -245,72 +249,72 @@
 
 		//Scout
 		"DOTA_Tooltip_Ability_invoker_retro_scout"                                        "Scout"
-		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Summons an Owl Scout, which can be used to scout. Can see invisible units. Is vulnerable. Lasts 40 seconds. Duration, Vision and Speed depend on Wex level."
-		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_duration"             	 	      "Duration (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_vision"							  "Vision (WEX):"
-		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_movespeed"						  "Move Speed (WEX):"
+		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons an invulnerable Owl Scout that has flying vision and truesight.  Summon duration, vision radius, and movement speed increase per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_duration"             	 	      "DURATION (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_vision"							  "VISION RADIUS (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_movespeed"						  "MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>):"
 
 		
 		//Shock
 		"DOTA_Tooltip_Ability_invoker_retro_shock"                                        "Shock"
-		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Invoke: Wex Wex Wex.\n\nReleases a ring of shocking energy that summons a bolt of energy on each target in its path, removing all buffs. 300 range and 160 damage. Radius and Damage based on Wex"
+		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nReleases a ring of shocking energy that summons a bolt of energy on each target in its path, removing all buffs. 300 range and 160 damage. Radius and Damage based on Wex"
 
 		
 		//Shroud of Flames
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_Description"                 "Invoke: Quas Exort Exort.\n\nCreates a barrier that reduces spell damage against a friendly unit by 12%%. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds."
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that reduces spell damage against a friendly unit by 12%%. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds."
 
 		
 		//Soul Blast
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast"                                   "Soul Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_Description"                       "Invoke: Wex Quas Exort.\n\nDeals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_Description"                       "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDeals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex."
 
 		
 		//Reaver
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver"                                  "Soul Reaver"
-		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_Description"                      "Invoke: Exort Wex Quas.\n\nBlazes a target enemy unit, dealing up to 400 damage, based on Quas level. After 8 seconds, it takes another 280 damage. Increases the Invoker's movement speed for 8 seconds based on Wex level."
+		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_Description"                      "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nBlazes a target enemy unit, dealing up to 400 damage, based on Quas level. After 8 seconds, it takes another 280 damage. Increases the Invoker's movement speed for 8 seconds based on Wex level."
 
 		
 		//Telelightning
 		"DOTA_Tooltip_Ability_invoker_retro_telelightning"                                "Telelightning"
-		"DOTA_Tooltip_Ability_invoker_retro_telelightning_Description"                    "Invoke: Wex Wex Quas.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_Description"                    "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
 		
 		
 		//Tornado Blast (broken up into 7 spells)
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_1_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_2_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_3_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_4_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_5_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_6_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas"                        "Tornado Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_Description"            "Invoke: Quas Wex Wex.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_damage"                 "DAMAGE (QUAS):"
-		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_travel_distance"        "TRAVEL DISTANCE (QUAS):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  Cast range and damage increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		
 		//Wex

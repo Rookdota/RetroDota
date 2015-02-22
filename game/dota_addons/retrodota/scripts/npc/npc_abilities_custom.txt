@@ -3526,63 +3526,78 @@
 				"Target"		"CASTER"
 			}
 	
-			"SpawnUnit"
+			"RunScript"
 			{
-				"UnitName"		"npc_dota_invoker_retro_scout_unit"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_invoker/invoker_retro_scout.lua"
-	        			"Function"      "SummonLocation"
-						"Target"		"CASTER"
-					}
-				}
-				
-				"Duration"		"%owl_duration"
-				"UnitCount"		"1 0 0"
-				"UnitLimit"		"0"
-				"GrantsGold"	"0"
-				"GrantsXP"		"0"
-				"SpawnRadius"	"10"
-				"OnSpawn"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
-						"Function"		"SetUnitsMoveForward"
-					}				
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-			
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_owl_scout"
-						"Target" 		"TARGET"
-					}
-				}
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
+				"Function"		"invoker_retro_scout_on_spell_start"
 			}
+		// 	"SpawnUnit"
+		// 	{
+		// 		"UnitName"		"npc_dota_invoker_retro_scout_unit"
+		// 		"Target"
+		// 		{
+		// 			"Center"				"CASTER"
+		// 			"ScriptSelectPoints"
+		// 			{
+		// 				"ScriptFile"    "heroes/hero_invoker/invoker_retro_scout.lua"
+	    //        			"Function"      "SummonLocation"
+		// 				"Target"		"CASTER"
+		// 			}
+		// 		}
+				
+		// 		"Duration"		"%owl_duration"
+		// 		"UnitCount"		"1 0 0"
+		// 		"UnitLimit"		"0"
+		// 		"GrantsGold"	"0"
+		// 		"GrantsXP"		"0"
+		// 		"SpawnRadius"	"10"
+		// 		"OnSpawn"
+		// 		{
+		// 			"RunScript"
+		// 			{
+		// 				"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
+		// 				"Function"		"SetUnitsMoveForward"
+		// 			}							
+	
+		// 			"ApplyModifier"
+		// 			{
+		// 				"ModifierName"	"modifier_phased"
+		// 				"Target"		"TARGET"
+		// 				"Duration"		"0.03"
+		// 			}
+			
+		// 			"ApplyModifier"
+		// 			{
+		// 				"ModifierName"	"modifier_owl_scout"
+		// 				"Target" 		"TARGET"
+		// 			}
+		// 		}
+		// 	}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_owl_scout"
+			"modifier_invoker_retro_scout"
 			{
 				"IsHidden"			"1"
-			
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
 				}
 	
 				"EffectName"        "particles/units/heroes/hero_invoker/mirana_moonlight_owner.vpcf"
 				"EffectAttachType"  "follow_overhead"
+			}
+	
+			"modifier_invoker_retro_scout_movespeed_per_wex"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "15"
+				}
 			}
 		}
 	}

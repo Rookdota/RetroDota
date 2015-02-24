@@ -39,6 +39,7 @@ Gambler
 -------
 
 [All Skills Print](http://i.imgur.com/o9MRBAN.jpg)
+[Video History](https://www.youtube.com/watch?v=LT0kTUo5beI)
 
 Dark Terminator
 ---------------

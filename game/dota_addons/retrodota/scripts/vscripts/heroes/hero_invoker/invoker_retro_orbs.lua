@@ -71,27 +71,42 @@ function invoker_retro_orb_replace_modifiers(keys)
 	while keys.caster:HasModifier("modifier_invoker_retro_exort_instance") do
 		keys.caster:RemoveModifierByName("modifier_invoker_retro_exort_instance")
 	end
-	
+
 	for i=1, 3, 1 do
 		if keys.caster.invoked_orbs[i] ~= nil then
 			local orb_name = keys.caster.invoked_orbs[i]:GetName()
 			if orb_name == "invoker_retro_quas" then
 				local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 				if quas_ability ~= nil then
-					quas_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
-					print(i .. " = quas")
+					--Timers:CreateTimer({
+					--	endTime = .03 * i,
+					--	callback = function()
+							quas_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
+							print(i .. " = quas")
+					--	end
+					--})
 				end
 			elseif orb_name == "invoker_retro_wex" then
 				local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
 				if wex_ability ~= nil then
-					wex_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
-					print(i .. " = wex")
+					--Timers:CreateTimer({
+						--endTime = .03 * i,
+						--callback = function()
+							wex_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
+							print(i .. " = wex")
+						--end
+					--})
 				end
 			elseif orb_name == "invoker_retro_exort" then
 				local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
 				if exort_ability ~= nil then
-					exort_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
-					print(i .. " = exort")
+					--Timers:CreateTimer({
+					--	endTime = .03 * i,
+					--	callback = function()
+							exort_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
+							print(i .. " = exort")
+					--	end
+					--})
 				end
 			end
 		end

@@ -990,6 +990,15 @@
 			}
 		}
 		
+		"OnOwnerSpawned"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+		}
+		
 		"Modifiers"
 		{
 			"modifier_invoker_retro_exort"
@@ -1009,7 +1018,7 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				
 				"Properties"
 				{
@@ -2443,7 +2452,7 @@
 					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_ROOTED"				"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
-					//"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
 		        }
 		
@@ -2704,6 +2713,7 @@
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
 		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
 		{
@@ -2728,7 +2738,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"					".75"
+				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
 			}
 		}
 		
@@ -2738,29 +2758,6 @@
 			{
 				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 				"Function"				"invoker_retro_portal_on_spell_start"
-				"Delay"					"%delay"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_portal"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-	
-		        "ThinkInterval"		"%delay"
-				"OnIntervalThink"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-	                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-	                }
-				}
 			}
 		}
 	}
@@ -3426,6 +3423,15 @@
 			}
 		}
 		
+		"OnOwnerSpawned"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+		}
+		
 		"Modifiers"
 		{
 			"modifier_invoker_retro_quas"
@@ -3445,7 +3451,7 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				
 				"Properties"
 				{
@@ -4767,6 +4773,15 @@
 			}
 		}
 		
+		"OnOwnerSpawned"
+		{
+			"RunScript"
+			{
+				"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+				"Function"							"invoker_retro_orb_replace_modifiers"
+			}
+		}
+		
 		"Modifiers"
 		{
 			"modifier_invoker_retro_wex"
@@ -4786,7 +4801,7 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				
 				"Properties"
 				{

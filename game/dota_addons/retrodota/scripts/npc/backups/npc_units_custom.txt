@@ -80,7 +80,7 @@
 		"Level"						"1"
 		"ModelScale"				"1.0"
 		"IsSummoned"				"1"
-		"UnitLabel"					"hawk"
+		"UnitLabel"					"Owl Scout"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -115,7 +115,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1"		// Base health.
+		"StatusHealth"				"40"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		
 		// Vision

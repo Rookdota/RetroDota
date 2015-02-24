@@ -7,7 +7,6 @@
 function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster:EmitSound("Hero_Invoker.Invoke")
 
-	
 	--[[The following code is for the modern Invoker that can invoke two spells, and is left here but commented out in case
 		we decide to allow Invoker to invoke two spells.
 		
@@ -38,7 +37,6 @@ function invoker_retro_invoke_on_spell_start(keys)
 	keys.caster:AddAbility(ability_f_name)  --This will place the ability that was bound to F in the D slot.
 	local new_ability_d = keys.caster:FindAbilityByName(ability_f_name)
 	new_ability_d:StartCooldown(ability_f_current_cooldown)
-	
 	]]
 	
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the

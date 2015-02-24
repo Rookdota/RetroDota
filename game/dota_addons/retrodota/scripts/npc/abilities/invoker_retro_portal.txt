@@ -24,6 +24,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"400"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -48,7 +49,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -58,29 +69,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }
@@ -106,6 +94,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"450"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -130,7 +119,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -140,29 +139,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }
@@ -188,6 +164,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -212,7 +189,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -222,29 +209,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }
@@ -270,6 +234,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -294,7 +259,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -304,29 +279,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }
@@ -352,6 +304,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -376,7 +329,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -386,29 +349,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }
@@ -434,6 +374,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"650"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -458,7 +399,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -468,29 +419,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }
@@ -516,6 +444,7 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
 	{
@@ -540,7 +469,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					".75"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
 		}
 	}
 	
@@ -550,29 +489,6 @@
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
 			"Function"				"invoker_retro_portal_on_spell_start"
-			"Delay"					"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_portal"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-
-	        "ThinkInterval"		"%delay"
-			"OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/hero_invoker/invoker_retro_portal.lua"
-                    "Function"      "modifier_invoker_retro_portal_on_interval_think"
-                }
-			}
 		}
 	}
 }

@@ -198,50 +198,39 @@
 		
 		//Portal (broken up into 7 spells)
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_2_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_3_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_4_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_5_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_6_quas_delay"                  "DELAY:"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas"                        "Portal"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slight delay, the target enemy unit is damaged and moved to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nDamages the target enemy unit and moves them to Invoker's position.  Cast range increases per level of Quas, and damage increases per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_delay"                  "DELAY:"
-		
-		"DOTA_Tooltip_modifier_invoker_retro_portal"                                    "Portal"
-		"DOTA_Tooltip_modifier_invoker_retro_portal_Description"                        "After a slight delay, will be damaged and moved to Invoker's position."
-		
 		
 
 		//Power Word

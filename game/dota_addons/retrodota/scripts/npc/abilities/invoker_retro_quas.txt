@@ -63,6 +63,15 @@
 		}
 	}
 	
+	"OnOwnerSpawned"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_orbs.lua"
+			"Function"							"invoker_retro_orb_replace_modifiers"
+		}
+	}
+	
 	"Modifiers"
 	{
 		"modifier_invoker_retro_quas"
@@ -82,7 +91,7 @@
 			"IsBuff"			"1"
 			"IsDebuff"			"0"
 			"IsPurgable"		"0"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			
 			"Properties"
 			{

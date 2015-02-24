@@ -19,8 +19,8 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30"
-	"AbilityManaCost"				"200"
+	"AbilityCooldown"				"20"
+	"AbilityManaCost"				"150"
 
 	"precache"
 	{
@@ -70,14 +70,14 @@
 	{
 		"modifier_invoker_retro_scout"
 		{
-			"IsHidden"			"1"
+			"IsHidden"			"0"
 			"States"
 			{
 				"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
 			}
 
-			"EffectName"        "particles/units/heroes/hero_invoker/mirana_moonlight_owner.vpcf"
+			"EffectName"        "particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
 			"EffectAttachType"  "follow_overhead"
 		}
 

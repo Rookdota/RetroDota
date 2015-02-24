@@ -2,14 +2,23 @@
 {
 	"Language"		"English"
 	"Tokens"
-	{		
-		"addon_game_name"			"Retro Dota"
+	{	
+		// ******************** GENERAL **********************
+		"addon_game_name"			"Retro Dota"	
+
+		// ************** Units and Resources ****************
+		"npc_dota_invoker_retro_scout_unit"	"Owl Scout"
+		"DOTA_Tooltip_Ability_true_sight"	"True sight"
+		"DOTA_Tooltip_Ability_true_sight_Description"	"Gives the ability to see invisible units and wards."
+		"DOTA_Tooltip_Ability_true_sight_radius"	"RADIUS:"
+		"DOTA_Tooltip_modifier_invoker_retro_scout" "Scout Unit"
+		"DOTA_Tooltip_modifier_invoker_retro_scout_Description" "This unit is invulnerable"
 		
 		//Quas uses <font color=\"#008A8A\">Quas</font>
 		//Wex uses <font color=\"#CC0099\">Wex</font>
 		//Exort uses <font color=\"#E68A00\">Exort</font>
 		
-		// ******************** HEROES ********************
+		// ******************** HEROES ***********************
 		"npc_dota_hero_invoker"    	  "Kael"
 
 		// ******************** ABILITIES ********************

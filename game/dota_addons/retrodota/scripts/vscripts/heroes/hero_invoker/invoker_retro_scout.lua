@@ -17,6 +17,8 @@ function invoker_retro_scout_on_spell_start(event)
         local owl = CreateUnitByName("npc_dota_invoker_retro_scout_unit", front_position, true, nil, nil, caster:GetTeam())
         owl:SetForwardVector(fv)
 
+        ability:ApplyDataDrivenModifier(caster, owl, "modifier_invoker_retro_scout", {})
+
         ability:ApplyDataDrivenModifier(caster, owl, "modifier_invoker_retro_scout_movespeed_per_wex", {})
         owl:SetModifierStackCount("modifier_invoker_retro_scout_movespeed_per_wex", ability, wex_level)
 
@@ -26,6 +28,6 @@ function invoker_retro_scout_on_spell_start(event)
         owl.vOwner = caster:GetOwner()
         owl:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true)
         owl:AddNewModifier(owl, nil, "modifier_kill", {duration = wex_level * 10})
-
+        owl:FindAbilityByName("true_sight"):SetLevel(1)
     end
 end

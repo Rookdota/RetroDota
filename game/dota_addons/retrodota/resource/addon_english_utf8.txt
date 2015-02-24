@@ -227,8 +227,17 @@
 
 		//Power Word
 		"DOTA_Tooltip_Ability_invoker_retro_power_word"                                   "Power Word"
-		"DOTA_Tooltip_Ability_invoker_retro_power_word_Description"                       "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nApplies a magic that weakens or strengthens a unit's resistance to physical attacks. Increases a friendly unit's armor or decreases an enemy's armor by 3. Lasts 25 seconds."
-
+		"DOTA_Tooltip_Ability_invoker_retro_power_word_Description"                       "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nIf cast on an ally, increases their armor.  If cast on an enemy, decreases their armor.  Cannot be self-cast."
+		"DOTA_Tooltip_Ability_invoker_retro_power_word_armor_bonus_ally"                  "ALLY ARMOR INCREASE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_power_word_armor_reduction_enemy"             "ENEMY ARMOR DECREASE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_power_word_duration"                          "DURATION:"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_power_word_armor_debuff_icon"                "Power Word"
+		"DOTA_Tooltip_modifier_invoker_retro_power_word_armor_debuff_icon_Description"    "Armor decreased."
+		
+		"DOTA_Tooltip_modifier_invoker_retro_power_word_armor_buff_icon"                  "Power Word"
+		"DOTA_Tooltip_modifier_invoker_retro_power_word_armor_buff_icon_Description"      "Armor increased."
+		
 		
 		//Quas
 		"DOTA_Tooltip_Ability_invoker_retro_quas"                                         "Quas"

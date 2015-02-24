@@ -37,7 +37,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cyclone_height"		"550"
+			"cyclone_height"		"500"
 		}
 		"03"
 		{
@@ -47,7 +47,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cyclone_max_height"	"650"
+			"cyclone_max_height"	"600"
 		}
 	}
 	

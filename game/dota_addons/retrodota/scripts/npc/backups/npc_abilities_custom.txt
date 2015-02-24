@@ -1434,6 +1434,7 @@
 	// Date: February 18, 2015
 	// Invoke: Quas Quas Quas
 	// Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+	// Balance ideas: Path length increases per level of Quas.
 	// Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 	"invoker_retro_icy_path_level_1_quas"
 	{
@@ -2462,7 +2463,7 @@
 		        	}
 				}
 	
-				"OverrideAnimation"     "ACT_DOTA_SPAWN+loadout"
+				"OverrideAnimation"     "ACT_DOTA_DISABLED"
 			}
 		}
 	}
@@ -3456,7 +3457,7 @@
 	
 	
 	// Invoker's Scout
-	// Author: Noya, with some modifications by wFX
+	// Author: wFX with help of Noya and Rook
 	// Date: February 17, 2015
 	// Invoke: Wex Exort Quas
 	// Summons an Owl Scout, which can be used to scout. Can see invisible units. Is vulnerable. Lasts 40 seconds. Duration, Vision and Speed depend on Wex level.
@@ -3494,27 +3495,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"owl_duration"				"60 90 120"
+				"owl_duration"				"10 20 30 40 50 60 70" // "60 90 120" originally
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"owl_hp"					"40"
+				"owl_vision"				"400 500 600 700 800 900 1000" //1000 1500 2200 originally
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"owl_vision"				"1000 1400 1800" //1000 1500 2200 originally
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"owl_movespeed"				"270 350 450"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spawn_distance"			"150"
+				"owl_movespeed"				"265 280 295 310 325 340 355" // "270 350 450" originally
 			}
 		}
 		
@@ -3526,63 +3517,47 @@
 				"Target"		"CASTER"
 			}
 	
-			"SpawnUnit"
+			"RunScript"
 			{
-				"UnitName"		"npc_dota_invoker_retro_scout_unit"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_invoker/invoker_retro_scout.lua"
-	        			"Function"      "SummonLocation"
-						"Target"		"CASTER"
-					}
-				}
-				
-				"Duration"		"%owl_duration"
-				"UnitCount"		"1 0 0"
-				"UnitLimit"		"0"
-				"GrantsGold"	"0"
-				"GrantsXP"		"0"
-				"SpawnRadius"	"10"
-				"OnSpawn"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
-						"Function"		"SetUnitsMoveForward"
-					}				
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-			
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_owl_scout"
-						"Target" 		"TARGET"
-					}
-				}
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
+				"Function"		"invoker_retro_scout_on_spell_start"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_owl_scout"
+			"modifier_invoker_retro_scout"
 			{
 				"IsHidden"			"1"
-			
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
 				}
 	
 				"EffectName"        "particles/units/heroes/hero_invoker/mirana_moonlight_owner.vpcf"
 				"EffectAttachType"  "follow_overhead"
+			}
+	
+			"modifier_invoker_retro_scout_movespeed_per_wex"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "15"
+				}
+			}
+	
+			"modifier_invoker_retro_scout_vision_per_wex"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"100"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"100"
+				}
 			}
 		}
 	}
@@ -4845,7 +4820,7 @@
 						"Target"
 						{
 							"Center"  	"TARGET"
-							"Radius" 	"%owl_vision"
+							"Radius" 	"600"
 							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 						}

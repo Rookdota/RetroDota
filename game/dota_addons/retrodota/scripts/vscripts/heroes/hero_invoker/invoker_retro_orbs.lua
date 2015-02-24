@@ -51,7 +51,8 @@ end
 --[[ ============================================================================================================
 	Author: Rook
 	Date: February 15, 2015
-	Called when Quas, Wex, or Exort is upgraded.  Levels the effects of any currently existing orbs.
+	Called when Quas, Wex, or Exort is cast or upgraded.  Replaces the modifiers on the caster's modifier bar to
+	ensure the correct order, which also has the effect of leveling the effects of any currently existing orbs.
 ================================================================================================================= ]]
 function invoker_retro_orb_replace_modifiers(keys)
 	if keys.caster.invoked_orbs == nil then
@@ -78,20 +79,24 @@ function invoker_retro_orb_replace_modifiers(keys)
 				local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 				if quas_ability ~= nil then
 					quas_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_quas_instance", nil)
+					print(i .. " = quas")
 				end
 			elseif orb_name == "invoker_retro_wex" then
 				local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
 				if wex_ability ~= nil then
 					wex_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_wex_instance", nil)
+					print(i .. " = wex")
 				end
 			elseif orb_name == "invoker_retro_exort" then
 				local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
 				if exort_ability ~= nil then
 					exort_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_exort_instance", nil)
+					print(i .. " = exort")
 				end
 			end
 		end
 	end
+	print("")
 end
 
 

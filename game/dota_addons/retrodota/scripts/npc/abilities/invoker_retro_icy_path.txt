@@ -101,6 +101,7 @@
 // Date: February 18, 2015
 // Invoke: Quas Quas Quas
 // Creates an Icy Path that slows enemy units that cross it. The caster's allies and Heroes are free to cross the wall. Duration an casting range increases per level of Quas.
+// Balance ideas: Path length increases per level of Quas.
 // Because Quas affects the AbilityCastRange, we use a separate ability for each possible Quas level.
 "invoker_retro_icy_path_level_1_quas"
 {

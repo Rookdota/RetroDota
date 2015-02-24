@@ -185,7 +185,8 @@
 		
 		//Mana Burn
 		"DOTA_Tooltip_Ability_invoker_retro_mana_burn"                                    "Mana Burn"
-		"DOTA_Tooltip_Ability_invoker_retro_mana_burn_Description"                        "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nSends a bolt of negative energy that burns 150 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned."
+		"DOTA_Tooltip_Ability_invoker_retro_mana_burn_Description"                        "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nBurns the target enemy unit's mana, dealing damage equal to the amount of mana burned.  Amount of mana burned increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_mana_burn_mana_burned"                        "MANA BURNED AND DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		
 		
 		//Portal (broken up into 7 spells)

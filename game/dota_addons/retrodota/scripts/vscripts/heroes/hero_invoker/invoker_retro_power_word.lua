@@ -1,6 +1,6 @@
 --[[ ============================================================================================================
 	Author: Rook
-	Date: February 18, 2015
+	Date: February 23, 2015
 	Called when Power Word is cast.  Applies an armor buff if cast on an ally, and an armor debuff if cast on an enemy.
 ================================================================================================================= ]]
 function invoker_retro_power_word_on_spell_start(keys)

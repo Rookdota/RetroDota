@@ -5,14 +5,6 @@
 	{	
 		// ******************** GENERAL **********************
 		"addon_game_name"			"Retro Dota"	
-
-		// ************** Units and Resources ****************
-		"npc_dota_invoker_retro_scout_unit"	"Owl Scout"
-		"DOTA_Tooltip_Ability_true_sight"	"True sight"
-		"DOTA_Tooltip_Ability_true_sight_Description"	"Gives the ability to see invisible units and wards."
-		"DOTA_Tooltip_Ability_true_sight_radius"	"RADIUS:"
-		"DOTA_Tooltip_modifier_invoker_retro_scout" "Scout Unit"
-		"DOTA_Tooltip_modifier_invoker_retro_scout_Description" "This unit is invulnerable"
 		
 		//Quas uses <font color=\"#008A8A\">Quas</font>
 		//Wex uses <font color=\"#CC0099\">Wex</font>
@@ -247,10 +239,18 @@
 
 		//Scout
 		"DOTA_Tooltip_Ability_invoker_retro_scout"                                        "Scout"
-		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons an invulnerable Owl Scout that has flying vision and truesight.  Summon duration, vision radius, and movement speed increase per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons an invisible, invulnerable Owl Scout that has flying vision and truesight.  Summon duration, vision radius, and movement speed increase per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_duration"             	 	      "DURATION (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_vision"							  "VISION RADIUS (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_movespeed"						  "MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>):"
+
+		"npc_dota_invoker_retro_scout_unit"                                               "Owl Scout"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_scout_unit_ability"                           "Owl Scout"
+		"DOTA_Tooltip_Ability_invoker_retro_scout_unit_ability_Description"               "Invisible and invulnerable.  Has flying vision and truesight."
+		
+		"DOTA_Tooltip_modifier_invoker_retro_scout_unit_ability"                          "Owl Scout"
+		"DOTA_Tooltip_modifier_invoker_retro_scout_unit_ability_Description"              "Invisible and invulnerable.  Has flying vision and truesight."
 
 		
 		//Shock

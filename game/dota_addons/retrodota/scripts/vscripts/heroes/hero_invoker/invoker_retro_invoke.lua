@@ -201,7 +201,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 			end
 
 			if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= 0 then
-				local current_game_time = GameRules:GetGameTime() 
+				local current_game_time = GameRules:GetGameTime()
 				if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] + keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] >= current_game_time then
 					new_spell_invoked:StartCooldown(current_game_time - (keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] + keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name]))
 				end

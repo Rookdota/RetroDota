@@ -8,11 +8,10 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	"AbilityTextureName" 			"invoker_retro_emp"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
@@ -23,8 +22,8 @@
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_emp.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_emp_explode.vpcf"
 	}
 	
 	// Special
@@ -33,38 +32,28 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			"var_type"						"FIELD_INTEGER"
+			"distance_to_move"				"600"  //Note that the particle spawns 100 units in front of Invoker.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			"var_type"						"FIELD_INTEGER"
+			"projectile_speed_per_second"	"200"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-140"
+			"var_type"						"FIELD_FLOAT"
+			"delay_before_exploding"		"2.0"  //This delay begins once the EMP has reached its final position.
 		}
 		"04"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"2.0"
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"675"
 		}
 		"05"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"num_wall_elements"		"15"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_spacing"	"80"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_radius"	"105"
+			"var_type"						"FIELD_INTEGER"
+			"mana_burned"					"100 200 300 400 500 600 700"  //Increases with Quas and Wex.
 		}
 	}
 	
@@ -72,33 +61,12 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-			"Function"				"invoker_retro_icy_path_on_spell_start"
-			"Target"				"POINT"
-			"NumWallElements"		"%num_wall_elements"
-			"WallElementSpacing"	"%wall_element_spacing"
-			"WallElementRadius"		"%wall_element_radius"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_icy_wall_slow"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-			
-			//TODO: The control points for this particle still need to be figured out.
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-			"EffectAttachType"		"follow_origin"
-			
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-			}
+			"ScriptFile"					"heroes/hero_invoker/invoker_retro_emp.lua"
+			"Function"						"invoker_retro_emp_on_spell_start"
+			"DistanceToMove"				"%distance_to_move"
+			"ProjectileSpeedPerSecond"		"%projectile_speed_per_second"
+			"DelayBeforeExploding"			"%delay_before_exploding"
+			"Radius"						"%radius"
 		}
 	}
 }

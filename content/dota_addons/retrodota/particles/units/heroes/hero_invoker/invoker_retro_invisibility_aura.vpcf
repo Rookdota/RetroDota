@@ -49,7 +49,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 	[
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/heroes/hero_invoker/invoker_retro_invisibility_aura_b.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura_b.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -57,7 +57,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/heroes/hero_invoker/invoker_retro_invisibility_aura_ring.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura_ring.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false

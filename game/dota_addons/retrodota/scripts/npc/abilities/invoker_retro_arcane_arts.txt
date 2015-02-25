@@ -15,7 +15,7 @@
 		
 	"precache"
 	{
-		"particle"			"particles/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
 	}
 	
 	// Special
@@ -40,7 +40,7 @@
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
 					"EffectAttachType"  "follow_origin"
 					"Target"            "CASTER"
 				}

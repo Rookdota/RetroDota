@@ -16,7 +16,7 @@
 	
 	"precache"
 	{
-		"particle"			"particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf"
 	}
 	
 	// Special

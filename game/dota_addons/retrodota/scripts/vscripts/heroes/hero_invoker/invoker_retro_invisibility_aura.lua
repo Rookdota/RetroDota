@@ -86,7 +86,7 @@ function modifier_invoker_retro_invisibility_aura_on_created(keys)
 	if quas_ability ~= nil then
 		local radius = keys.ability:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
 
-		local invisibility_aura_particle = ParticleManager:CreateParticle("particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+		local invisibility_aura_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
 		ParticleManager:SetParticleControl(invisibility_aura_particle, 1, Vector(radius, radius, radius))
 		local invisibility_aura_circle_sprite_radius = radius * 1.276  --The circle's sprite extends outwards a bit, so make it slightly larger.
 		ParticleManager:SetParticleControl(invisibility_aura_particle, 2, Vector(invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius))

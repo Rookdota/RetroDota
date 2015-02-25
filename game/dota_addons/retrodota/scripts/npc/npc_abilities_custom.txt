@@ -77,7 +77,7 @@
 			
 		"precache"
 		{
-			"particle"			"particles/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
 		}
 		
 		// Special
@@ -102,7 +102,7 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"        "particles/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
+						"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_arcane_arts.vpcf"
 						"EffectAttachType"  "follow_origin"
 						"Target"            "CASTER"
 					}
@@ -2156,7 +2156,7 @@
 		
 		"precache"
 		{
-			"particle"			"particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf"
 		}
 		
 		// Special
@@ -2546,7 +2546,7 @@
 		
 		"precache"
 		{
-			"particle"					"particles/heroes/hero_invoker/invoker_retro_mana_burn.vpcf"
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_mana_burn.vpcf"
 			"particle"					"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn_msg.vpcf"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
 		}
@@ -2602,7 +2602,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -2672,7 +2672,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -2742,7 +2742,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -2812,7 +2812,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -2882,7 +2882,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -2952,7 +2952,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -3022,7 +3022,7 @@
 		
 		"precache"
 		{
-			"particle"				"particles/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 		}
 		
@@ -3319,6 +3319,7 @@
 		"precache"
 		{
 			"particle"  "particles/econ/wards/portal/ward_portal_core/ward_portal_eye_sentry.vpcf"
+			"particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 			"model"		"models/items/courier/snowl/snowl_flying.vmdl"
 		}
@@ -3389,7 +3390,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"0"
-		
+				
 				"States"
 				{
 					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"

@@ -46,11 +46,11 @@ function invoker_retro_invoke_on_spell_start(keys)
 	local old_spell_invoked_name = old_spell_invoked:GetName()
 	local old_spell_invoked_index_name = old_spell_invoked_name
 	
-	if string.sub(old_spell_invoked_index_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells was invoked.
+	if string.find(old_spell_invoked_index_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_icy_path"
-	elseif string.sub(old_spell_invoked_index_name, 1, 20) == "invoker_retro_portal" then  --If one of the 7 Portal spells was invoked.
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_portal") then  --If one of the 7 Portal spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_portal"
-	elseif string.sub(old_spell_invoked_index_name, 1, 27) == "invoker_retro_tornado_blast" then  --If one of the 7 Tornado Blast spells was invoked.
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_tornado_blast"
 	end
 	
@@ -77,7 +77,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 		keys.caster:RemoveAbility(old_spell_invoked_name)  --Remove the ability that was in the D slot.
 
 		-- Remove modifiers that were added to the caster by the now removed ability
-		if string.find(old_spell_invoked_name,"invoker_retro_arcane_arts") then
+		if string.find(old_spell_invoked_name, "invoker_retro_arcane_arts") then
 			keys.caster:RemoveModifierByName("modifier_invoker_retro_arcane_arts")
 		end
 		
@@ -200,11 +200,11 @@ function invoker_retro_invoke_on_spell_start(keys)
 			
 			local new_spell_invoked_name = new_spell_invoked:GetName()
 			
-			if string.sub(new_spell_invoked_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells was invoked.
+			if string.find(new_spell_invoked_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells was invoked.
 				new_spell_invoked_name = "invoker_retro_icy_path"
-			elseif string.sub(new_spell_invoked_name, 1, 20) == "invoker_retro_portal" then  --If one of the 7 Portal spells was invoked.
+			elseif string.find(new_spell_invoked_name, "invoker_retro_portal") then  --If one of the 7 Portal spells was invoked.
 				new_spell_invoked_name = "invoker_retro_portal"
-			elseif string.sub(new_spell_invoked_name, 1, 27) == "invoker_retro_tornado_blast" then  --If one of the 7 Tornado Blast spells was invoked.
+			elseif string.find(new_spell_invoked_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells was invoked.
 				new_spell_invoked_name = "invoker_retro_tornado_blast"
 			end
 

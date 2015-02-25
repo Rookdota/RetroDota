@@ -126,7 +126,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 	if current_invoked_spell ~= nil then
 		local current_invoked_spell_name = current_invoked_spell:GetName()
 		
-		if string.sub(current_invoked_spell_name, 1, 22) == "invoker_retro_icy_path" then  --If one of the 7 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
+		if string.find(current_invoked_spell_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
@@ -135,7 +135,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(1)
-		elseif string.sub(current_invoked_spell_name, 1, 20) == "invoker_retro_portal" then  --If one of the 7 Portal spells is invoked, swap it out for the correct version based on Quas' level.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_portal") then  --If one of the 7 Portal spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
@@ -144,7 +144,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(1)
-		elseif string.sub(current_invoked_spell_name, 1, 27) == "invoker_retro_tornado_blast" then  --If one of the 7 Tornado Blast spells is invoked, swap it out for the correct version based on Quas' level.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
@@ -153,7 +153,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(1)
-		elseif string.sub(current_invoked_spell_name, 1, 31) == "invoker_retro_invisibility_aura" then  --If Invisibility Aura is invoked, increase the particle effect to match the new radius.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_invisibility_aura") then  --If Invisibility Aura is invoked, increase the particle effect to match the new radius.
 			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 			if quas_ability ~= nil then
 				local radius = current_invoked_spell:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
@@ -163,7 +163,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 					keys.caster.invisibility_aura_particle = nil
 				end
 				
-				local invisibility_aura_particle = ParticleManager:CreateParticle("particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+				local invisibility_aura_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
 				ParticleManager:SetParticleControl(invisibility_aura_particle, 1, Vector(radius, radius, radius))
 				local invisibility_aura_circle_sprite_radius = radius * 1.276  --The circle's sprite extends outwards a bit, so make it slightly larger.
 				ParticleManager:SetParticleControl(invisibility_aura_particle, 2, Vector(invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius))

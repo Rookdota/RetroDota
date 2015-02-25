@@ -31,8 +31,9 @@ function invoker_retro_scout_on_spell_start(event)
 
 			owl.vOwner = caster:GetOwner()
 			owl:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true)
-			owl:AddNewModifier(owl, nil, "modifier_kill", {duration = wex_level * 10})
-			owl:AddNewModifier(owl, nil, "modifier_invisible", nil)
+			owl:AddNewModifier(owl, nil, "modifier_kill", {duration = wex_level * 10})  --Add the green duration circle, and kill it after the duration ends.
+			owl:AddNewModifier(owl, nil, "modifier_invisible", nil)  --Make the owl invisible and have the translucent texture.
+			owl:AddNewModifier(owl, nil, "modifier_bloodseeker_thirst_speed", nil)  --Allow the owl to exceed the maximum movement speed.
 		end
     end
 end

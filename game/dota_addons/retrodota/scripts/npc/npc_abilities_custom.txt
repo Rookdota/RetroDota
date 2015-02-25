@@ -691,8 +691,8 @@
 	}
 	
 	// Invoker's EMP
-	// Author:
-	// Date: February 15, 2015
+	// Author: Rook
+	// Date: February 24, 2015
 	// Invoke: Wex Quas Wex
 	// Releases an EMP bomb that detonates depleting the mana of all enemies nearby. Up to 640 mana per unit based on Wex and Quas levels.
 	"invoker_retro_emp"
@@ -2190,7 +2190,7 @@
 	
 	// Invoker's Invisibility Aura
 	// Author: Rook and wFX
-	// Date: February 15, 2015
+	// Date: February 24, 2015
 	// Invoke: Quas Exort Wex
 	// Units within 190 range of Kael become Invisible. Range based on Quas level
 	"invoker_retro_invisibility_aura"
@@ -2198,7 +2198,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_invisibility_aura"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
@@ -2221,7 +2221,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fade_time"				".3"
+				"fade_time"				"3"
 			}
 		}
 		
@@ -2268,9 +2268,10 @@
 				"IsHidden"			"0"
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
-				"IsPurgable"		"1"
+				"IsPurgable"		"0"
 				"Duration"			".5"
 				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"TextureName"		"invoker_retro_invisibility_aura"
 	
 				"States"
 				{
@@ -2279,21 +2280,21 @@
 				
 				"OnAbilityExecuted"  //Remove this modifier from the unit, since they should no longer be invis.
 				{
-					"RemoveModifier"
+					"RunScript"
 					{
-						"Target"			"UNIT"
-						"ModifierName"		"modifier_invoker_retro_invisibility_aura_effect"
+						"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+						"Function"		"modifier_invoker_retro_invisibility_aura_effect_on_ability_executed"
 					}
 				}
 				
 				//Note: For parity, the invisibility should be removed when the autoattack projectile appears, 
 				//but there is currently no event that can be used for this.
-				"OnAttackLanded" 
+				"OnAttackStart" 
 				{				
-					"RemoveModifier"
+					"RunScript"
 					{
-						"Target"			"UNIT"
-						"ModifierName"		"modifier_invoker_retro_invisibility_aura_effect"
+						"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+						"Function"		"modifier_invoker_retro_invisibility_aura_effect_on_attack_start"
 					}
 				}
 				
@@ -3116,8 +3117,8 @@
 		}
 	}
 	// Invoker's Power Word
-	// Author: 
-	// Date: February 15, 2015
+	// Author: Rook
+	// Date: February 23, 2015
 	// Invoke: Quas Exort Quas
 	// Applies a magic that weakes or strengthens a unit's resistance to physical attacks. Increases a friendly unit's armor or decreaes an enemy's armor by 3. Lasts 25 seconds
 	// Balance ideas: Make use of Exort's level somehow.
@@ -3693,8 +3694,8 @@
 	}
 	
 	// Invoker's Soul Blast
-	// Author: 
-	// Date: February 15, 2015
+	// Author: Rook
+	// Date: February 24, 2015
 	// Invoke: Wex Quas Exort
 	// Deals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex.
 	"invoker_retro_soul_blast"

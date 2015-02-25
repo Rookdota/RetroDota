@@ -17,13 +17,20 @@ function modifier_invoker_retro_invisibility_aura_on_interval_think(keys)
 
 		for i, individual_unit in ipairs(nearby_ally_units) do
 			if keys.caster ~= individual_unit then  --Invisibility Aura does not make Invoker invisible.
-				if individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") then  --Immediately apply the invis if the unit is already invis.
-					keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+				if individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") then  --Immediately apply the invis if the unit is already invis and has not attacked nor casted an ability recently.
+					if individual_unit.invisibility_aura_reveal_gametime == nil or individual_unit.invisibility_aura_reveal_gametime + keys.FadeTime <= GameRules:GetGameTime() then
+						keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+					end
 				else  --Apply the invis after the fade delay if the unit is not already invis.
 					Timers:CreateTimer({
 						endTime = keys.FadeTime,
 						callback = function()
-							keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+							if not individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") and (individual_unit.invisibility_aura_reveal_gametime == nil or individual_unit.invisibility_aura_reveal_gametime + keys.FadeTime <= GameRules:GetGameTime()) then
+								--print(individual_unit.invisibility_aura_reveal_gametime)
+								--print(keys.FadeTime)
+								--print(GameRules:GetGameTime())
+								keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+							end
 						end
 					})
 				end
@@ -42,6 +49,30 @@ end
 ================================================================================================================= ]]
 function modifier_invoker_retro_invisibility_aura_effect_on_interval_think(keys)
 	keys.target:AddNewModifier(keys.caster, keys.ability, "modifier_invisible", {duration = .1})
+end
+
+
+--[[ ============================================================================================================
+	Author: Rook
+	Date: February 24, 2015
+	Called when a unit under the effects of Invisibility Aura casts an ability, revealing themselves.  Removes the
+	invisibility from them and stores the gametime.
+================================================================================================================= ]]
+function modifier_invoker_retro_invisibility_aura_effect_on_ability_executed(keys)
+	keys.unit:RemoveModifierByName("modifier_invoker_retro_invisibility_aura_effect")
+	keys.unit.invisibility_aura_reveal_gametime = GameRules:GetGameTime()
+end
+
+
+--[[ ============================================================================================================
+	Author: Rook
+	Date: February 24, 2015
+	Called when a unit under the effects of Invisibility Aura autoattacks, revealing themselves.  Removes the
+	invisibility from them and stores the gametime.
+================================================================================================================= ]]
+function modifier_invoker_retro_invisibility_aura_effect_on_attack_start(keys)
+	keys.attacker:RemoveModifierByName("modifier_invoker_retro_invisibility_aura_effect")
+	keys.attacker.invisibility_aura_reveal_gametime = GameRules:GetGameTime()
 end
 
 

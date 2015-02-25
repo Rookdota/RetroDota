@@ -31,7 +31,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"fade_time"				".3"
+			"fade_time"				"3"
 		}
 	}
 	
@@ -90,21 +90,21 @@
 			
 			"OnAbilityExecuted"  //Remove this modifier from the unit, since they should no longer be invis.
 			{
-				"RemoveModifier"
+				"RunScript"
 				{
-					"Target"			"UNIT"
-					"ModifierName"		"modifier_invoker_retro_invisibility_aura_effect"
+					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+					"Function"		"modifier_invoker_retro_invisibility_aura_effect_on_ability_executed"
 				}
 			}
 			
 			//Note: For parity, the invisibility should be removed when the autoattack projectile appears, 
 			//but there is currently no event that can be used for this.
-			"OnAttackLanded" 
+			"OnAttackStart" 
 			{				
-				"RemoveModifier"
+				"RunScript"
 				{
-					"Target"			"UNIT"
-					"ModifierName"		"modifier_invoker_retro_invisibility_aura_effect"
+					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+					"Function"		"modifier_invoker_retro_invisibility_aura_effect_on_attack_start"
 				}
 			}
 			

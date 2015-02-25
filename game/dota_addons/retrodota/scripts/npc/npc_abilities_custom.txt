@@ -2180,7 +2180,7 @@
 			"modifier_invoker_retro_invisibility_aura"
 			{
 				"Passive"  			"1"
-				"IsHidden"			"1"
+				"IsHidden"			"0"
 		
 				"ThinkInterval"  "0.03"
 				"OnIntervalThink"

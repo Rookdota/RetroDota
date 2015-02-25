@@ -7,8 +7,14 @@
 function modifier_invoker_retro_invisibility_aura_on_interval_think(keys)
 	local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 	
-	if keys.ability == nil then  --If Invisibility Aura is not invoked anymore.
-		keys.caster:RemoveModifierByName("modifier_invoker_retro_invisibility_aura")
+	if keys.ability == nil then  --If Invisibility Aura is not invoked anymore, or if it was re-invoked and the old keys.ability no longer exists.
+		local invisibility_aura_ability = keys.caster:FindAbilityByName("invoker_retro_invisibility_aura")
+		if invisibility_aura_ability == nil then  --If Invisiblity Aura is no longer invoked.
+			keys.caster:RemoveModifierByName("modifier_invoker_retro_invisibility_aura")
+		else  --If Invisibility Aura was re-invoked.
+			keys.caster:RemoveModifierByName("modifier_invoker_retro_invisibility_aura")
+			invisibility_aura_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_invisibility_aura", nil)
+		end
 	elseif quas_ability ~= nil then
 		local radius = keys.ability:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
 

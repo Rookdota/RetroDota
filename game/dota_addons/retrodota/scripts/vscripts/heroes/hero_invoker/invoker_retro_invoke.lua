@@ -74,7 +74,12 @@ function invoker_retro_invoke_on_spell_start(keys)
 	local invoke_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_invoke.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)  --Play the particle effect.
 	
 	if keys.caster.invoked_orbs[1] ~= nil and keys.caster.invoked_orbs[2] ~= nil and keys.caster.invoked_orbs[3] ~= nil then  --A spell will be invoked only if three orbs have been summoned.
-		keys.caster:RemoveAbility(old_spell_invoked_name)  --Remove the ability that was in the F slot.
+		keys.caster:RemoveAbility(old_spell_invoked_name)  --Remove the ability that was in the D slot.
+
+		-- Remove modifiers that were added to the caster by the now removed ability
+		if string.find(old_spell_invoked_name,"invoker_retro_arcane_arts") then
+			keys.caster:RemoveModifierByName("modifier_invoker_retro_arcane_arts")
+		end
 		
 		--The Invoke particle effect changes color depending on which orbs are invoked.
 		local quas_particle_effect_color = Vector(60, 185, 255)
@@ -145,7 +150,10 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Wex Wex
 					keys.caster:AddAbility("invoker_retro_shock")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Wex Exort
+					local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
 					keys.caster:AddAbility("invoker_retro_arcane_arts")
+					local ability = keys.caster:FindAbilityByName("invoker_retro_arcane_arts")
+					ability:SetLevel(wex_ability:GetLevel())
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Exort Quas

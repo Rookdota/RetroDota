@@ -170,6 +170,21 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 				
 				keys.caster.invisibility_aura_particle = invisibility_aura_particle
 			end
+		elseif string.find(current_invoked_spell_name, "invoker_retro_arcane_arts") then
+			local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
+			if wex_ability ~= nil then
+				local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
+				local new_invoked_spell_name = "invoker_retro_arcane_arts"
+				print(current_invoked_spell_name,new_invoked_spell_name)
+
+				-- Remove the old skill and the passive modifier
+				keys.caster:RemoveAbility(current_invoked_spell_name)
+				keys.caster:RemoveModifierByName("modifier_invoker_retro_arcane_arts")
+
+				keys.caster:AddAbility(new_invoked_spell_name)
+				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+				new_invoked_spell:SetLevel(wex_ability:GetLevel())
+			end
 		end
 	end
 end

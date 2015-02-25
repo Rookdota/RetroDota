@@ -16,7 +16,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 	string m_hFallback = ""
 	int m_nFallbackMaxCount = -1
 	string m_hLowViolenceDef = ""
-	uint(4) m_ConstantColor = ( 55, 96, 28, 255 )
+	uint(4) m_ConstantColor = ( 170, 0, 0, 70 )
 	float(3) m_ConstantNormal = ( 0.000000, 0.000000, 1.000000 )
 	float m_flConstantRadius = 5.000000
 	float m_flConstantRotation = 0.000000
@@ -65,7 +65,8 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		&C_OP_InterpolateRadius_7,
 		&C_OP_RampScalarLinearSimple_8,
 		&C_OP_OscillateScalarSimple_0,
-		&C_OP_AlphaDecay_0
+		&C_OP_AlphaDecay_0,
+		&C_OP_ControlpointLight_0
 	]
 	CParticleOperatorInstance*[] m_Renderers = 
 	[
@@ -259,8 +260,8 @@ C_OP_Orient2DRelToCP C_OP_Orient2DRelToCP_5
 
 C_OP_ColorInterpolate C_OP_ColorInterpolate_6
 {
-	uint(4) m_ColorFade = ( 146, 255, 73, 255 )
-	float m_flFadeStartTime = 0.700000
+	uint(4) m_ColorFade = ( 0, 255, 255, 255 )
+	float m_flFadeStartTime = 0.400000
 	float m_flFadeEndTime = 1.000000
 	int m_nFieldOutput = 6
 	bool m_bEaseInOut = true
@@ -368,6 +369,61 @@ C_OP_OscillateScalarSimple C_OP_OscillateScalarSimple_0
 C_OP_AlphaDecay C_OP_AlphaDecay_0
 {
 	float m_flMinAlpha = 0.000000
+	float m_flOpStartFadeInTime = 0.000000
+	float m_flOpEndFadeInTime = 0.000000
+	float m_flOpStartFadeOutTime = 0.000000
+	float m_flOpEndFadeOutTime = 0.000000
+	float m_flOpFadeOscillatePeriod = 0.000000
+	float m_flOpTimeOffsetMin = 0.000000
+	float m_flOpTimeOffsetMax = 0.000000
+	int m_nOpTimeOffsetSeed = 0
+	int m_nOpStrengthScaleSeed = 0
+	float m_flOpStrengthMinScale = 1.000000
+	float m_flOpStrengthMaxScale = 1.000000
+	int m_nOpTimeScaleSeed = 0
+	float m_flOpTimeScaleMin = 1.000000
+	float m_flOpTimeScaleMax = 1.000000
+	bool m_bDisableOperator = true
+	int m_nOpEndCapState = -1
+	int m_nOpScaleCP = -1
+	string m_Notes = ""
+}
+
+C_OP_ControlpointLight C_OP_ControlpointLight_0
+{
+	float m_flScale = 0.000000
+	int m_nControlPoint1 = 0
+	int m_nControlPoint2 = 0
+	int m_nControlPoint3 = 0
+	int m_nControlPoint4 = 0
+	float(3) m_vecCPOffset1 = ( 0.000000, 0.000000, 0.000000 )
+	float(3) m_vecCPOffset2 = ( 0.000000, 0.000000, 0.000000 )
+	float(3) m_vecCPOffset3 = ( 0.000000, 0.000000, 0.000000 )
+	float(3) m_vecCPOffset4 = ( 0.000000, 0.000000, 0.000000 )
+	float m_LightFiftyDist1 = 100.000000
+	float m_LightZeroDist1 = 200.000000
+	float m_LightFiftyDist2 = 100.000000
+	float m_LightZeroDist2 = 200.000000
+	float m_LightFiftyDist3 = 100.000000
+	float m_LightZeroDist3 = 200.000000
+	float m_LightFiftyDist4 = 100.000000
+	float m_LightZeroDist4 = 200.000000
+	uint(4) m_LightColor1 = ( 0, 0, 0, 255 )
+	uint(4) m_LightColor2 = ( 0, 0, 0, 255 )
+	uint(4) m_LightColor3 = ( 0, 0, 0, 255 )
+	uint(4) m_LightColor4 = ( 0, 0, 0, 255 )
+	bool m_bLightType1 = false
+	bool m_bLightType2 = false
+	bool m_bLightType3 = false
+	bool m_bLightType4 = false
+	bool m_bLightDynamic1 = false
+	bool m_bLightDynamic2 = false
+	bool m_bLightDynamic3 = false
+	bool m_bLightDynamic4 = false
+	bool m_bUseNormal = false
+	bool m_bUseHLambert = true
+	bool m_bClampLowerRange = false
+	bool m_bClampUpperRange = false
 	float m_flOpStartFadeInTime = 0.000000
 	float m_flOpEndFadeInTime = 0.000000
 	float m_flOpStartFadeOutTime = 0.000000

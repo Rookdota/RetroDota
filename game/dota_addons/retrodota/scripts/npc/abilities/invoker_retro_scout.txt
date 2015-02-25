@@ -116,18 +116,6 @@
 			}
 		}
 
-		"modifier_invoker_retro_scout_unit_ability_reveal"
-		{
-			"IsHidden"			"1"
-			"Duration"			"0.5"
-			"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-			
-			"States"
-			{
-				"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
-			}
-		}
-
 		"modifier_invoker_retro_scout_unit_ability_movespeed_per_wex"
 		{
 			"IsHidden"			"1"

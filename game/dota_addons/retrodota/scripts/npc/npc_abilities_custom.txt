@@ -2189,8 +2189,8 @@
 	}
 	
 	// Invoker's Invisibility Aura
-	// Author: Rook
-	// Date: 23.02.2015.
+	// Author: Rook and wFX
+	// Date: February 15, 2015
 	// Invoke: Quas Exort Wex
 	// Units within 190 range of Kael become Invisible. Range based on Quas level
 	"invoker_retro_invisibility_aura"
@@ -2204,6 +2204,11 @@
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
+		"precache"
+		{
+			"particle"			"particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf"
+		}
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2211,7 +2216,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"				"200 250 300 350 400 450 500"  //Increases with Quas.
+				"radius"				"170 190 210 230 250 270 290"  //Increases with Quas.
 			}
 			"02"
 			{
@@ -2222,7 +2227,7 @@
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_invisibility_aura_ability"
+			"modifier_invoker_retro_invisibility_aura"
 			{
 				"Passive"  			"1"
 				"IsHidden"			"1"
@@ -2235,6 +2240,24 @@
 						"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
 						"Function"		"modifier_invoker_retro_invisibility_aura_on_interval_think"
 						"FadeTime"		"%fade_time"
+					}
+				}
+				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+						"Function"		"modifier_invoker_retro_invisibility_aura_on_created"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+						"Function"		"modifier_invoker_retro_invisibility_aura_on_destroy"
 					}
 				}
 			}
@@ -3456,7 +3479,7 @@
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%vision_per_wex"
 				}
 			}
-		}	
+		}
 	}
 	
 	// Invoker's Shock
@@ -3679,23 +3702,24 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_mana_burn"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			
 		}
 		
 		// Special
@@ -3705,37 +3729,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"damage"				"100 150 200 250 300 350 400"  //Increases with Exort.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"100 150 200 250 300 350 400"  //Increases with Quas.
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 		}
 		
@@ -3743,37 +3747,11 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_icy_wall_slow"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-				"EffectAttachType"		"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-				}
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_mana_burn.lua"
+				"Function"				"invoker_retro_mana_burn_on_spell_start"
 			}
 		}
 	}
-	
 	// Invoker's Soul Reaver
 	// Author:
 	// Date: February 15, 2015

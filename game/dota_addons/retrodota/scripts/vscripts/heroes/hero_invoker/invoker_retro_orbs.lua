@@ -153,6 +153,23 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(1)
+		elseif string.sub(current_invoked_spell_name, 1, 31) == "invoker_retro_invisibility_aura" then  --If Invisibility Aura is invoked, increase the particle effect to match the new radius.
+			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+			if quas_ability ~= nil then
+				local radius = current_invoked_spell:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
+				
+				if keys.caster.invisibility_aura_particle ~= nil then
+					ParticleManager:DestroyParticle(keys.caster.invisibility_aura_particle, false)
+					keys.caster.invisibility_aura_particle = nil
+				end
+				
+				local invisibility_aura_particle = ParticleManager:CreateParticle("particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+				ParticleManager:SetParticleControl(invisibility_aura_particle, 1, Vector(radius, radius, radius))
+				local invisibility_aura_circle_sprite_radius = radius * 1.276  --The circle's sprite extends outwards a bit, so make it slightly larger.
+				ParticleManager:SetParticleControl(invisibility_aura_particle, 2, Vector(invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius))
+				
+				keys.caster.invisibility_aura_particle = invisibility_aura_particle
+			end
 		end
 	end
 end

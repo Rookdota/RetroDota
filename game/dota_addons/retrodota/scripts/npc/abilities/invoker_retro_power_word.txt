@@ -1,6 +1,6 @@
 // Invoker's Power Word
-// Author: 
-// Date: February 15, 2015
+// Author: Rook
+// Date: February 23, 2015
 // Invoke: Quas Exort Quas
 // Applies a magic that weakes or strengthens a unit's resistance to physical attacks. Increases a friendly unit's armor or decreaes an enemy's armor by 3. Lasts 25 seconds
 // Balance ideas: Make use of Exort's level somehow.

@@ -1,6 +1,6 @@
 // Invoker's EMP
-// Author:
-// Date: February 15, 2015
+// Author: Rook
+// Date: February 24, 2015
 // Invoke: Wex Quas Wex
 // Releases an EMP bomb that detonates depleting the mana of all enemies nearby. Up to 640 mana per unit based on Wex and Quas levels.
 "invoker_retro_emp"

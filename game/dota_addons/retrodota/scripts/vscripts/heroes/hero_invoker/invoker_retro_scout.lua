@@ -48,6 +48,6 @@ function modifier_invoker_retro_scout_unit_ability_on_interval_think(keys)
 	DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
 
 	for i, individual_unit in ipairs(nearby_enemy_units) do
-		keys.ability:ApplyDataDrivenModifier(individual_unit, keys.caster, "modifier_truesight", {duration = .5})
+		individual_unit:AddNewModifier(keys.caster, keys.ability, "modifier_truesight", {duration = .5})
 	end
 end

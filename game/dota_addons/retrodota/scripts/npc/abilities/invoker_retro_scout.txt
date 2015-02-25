@@ -136,6 +136,6 @@
 				"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%vision_per_wex"
 			}
 		}
-	}	
+	}
 }
 

@@ -1,6 +1,6 @@
 // Invoker's Invisibility Aura
-// Author: Rook
-// Date: 23.02.2015.
+// Author: Rook and wFX
+// Date: February 24, 2015
 // Invoke: Quas Exort Wex
 // Units within 190 range of Kael become Invisible. Range based on Quas level
 "invoker_retro_invisibility_aura"
@@ -8,11 +8,16 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	"AbilityTextureName" 			"invoker_retro_invisibility_aura"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	
+	"precache"
+	{
+		"particle"			"particles/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf"
+	}
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -21,7 +26,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"radius"				"200 250 300 350 400 450 500"  //Increases with Quas.
+			"radius"				"170 190 210 230 250 270 290"  //Increases with Quas.
 		}
 		"02"
 		{
@@ -32,7 +37,7 @@
 	
 	"Modifiers"
 	{
-		"modifier_invoker_retro_invisibility_aura_ability"
+		"modifier_invoker_retro_invisibility_aura"
 		{
 			"Passive"  			"1"
 			"IsHidden"			"1"
@@ -47,6 +52,24 @@
 					"FadeTime"		"%fade_time"
 				}
 			}
+			
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+					"Function"		"modifier_invoker_retro_invisibility_aura_on_created"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+					"Function"		"modifier_invoker_retro_invisibility_aura_on_destroy"
+				}
+			}
 		}
 
 		"modifier_invoker_retro_invisibility_aura_effect"
@@ -55,9 +78,10 @@
 			"IsHidden"			"0"
 			"IsBuff"			"1"
 			"IsDebuff"			"0"
-			"IsPurgable"		"1"
+			"IsPurgable"		"0"
 			"Duration"			".5"
 			"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			"TextureName"		"invoker_retro_invisibility_aura"
 
 			"States"
 			{

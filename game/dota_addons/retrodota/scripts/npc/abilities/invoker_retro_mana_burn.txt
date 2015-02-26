@@ -22,6 +22,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"15"
 	"AbilityManaCost"				"100"
+	"AbilityCastRange"				"700"  //This value is unconfirmed.
 	
 	"precache"
 	{

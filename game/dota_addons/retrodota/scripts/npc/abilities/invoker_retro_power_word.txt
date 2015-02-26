@@ -22,11 +22,14 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"650"
 	
 	"precache"
 	{
 		"particle"					"particles/units/heroes/hero_dazzle/dazzle_armor_friend_shield.vpcf"
 		"particle"					"particles/units/heroes/hero_dazzle/dazzle_armor_enemy_shield.vpcf"
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_power_word_ally.vpcf"
+		"particle"                  "particles/units/heroes/hero_invoker/invoker_retro_power_word_enemy.vpcf"
 	}
 	
 	// Special
@@ -36,12 +39,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"armor_bonus_ally"		"1 2 3 4 5 6 7"
+			"armor_bonus_ally"		"2 3 4 5 6 7 8"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"armor_reduction_enemy"	"-1 -2 -3 -4 -5 -6 -7"
+			"armor_reduction_enemy"	"-2 -3 -4 -5 -6 -7 -8"
 		}
 		"03"
 		{

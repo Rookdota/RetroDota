@@ -9,9 +9,9 @@ function modifier_invoker_retro_invisibility_aura_on_interval_think(keys)
 	
 	if keys.ability == nil then  --If Invisibility Aura is not invoked anymore, or if it was re-invoked and the old keys.ability no longer exists.
 		local invisibility_aura_ability = keys.caster:FindAbilityByName("invoker_retro_invisibility_aura")
-		if invisibility_aura_ability == nil then  --If Invisiblity Aura is no longer invoked.
+		if invisibility_aura_ability == nil then  --If Invisiblity Aura is no longer invoked, remove the aura modifier.
 			keys.caster:RemoveModifierByName("modifier_invoker_retro_invisibility_aura")
-		else  --If Invisibility Aura was re-invoked.
+		else  --If Invisibility Aura was re-invoked, replace the aura modifier with one tied to the new instance of the ability.
 			keys.caster:RemoveModifierByName("modifier_invoker_retro_invisibility_aura")
 			invisibility_aura_ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_invisibility_aura", nil)
 		end
@@ -23,23 +23,28 @@ function modifier_invoker_retro_invisibility_aura_on_interval_think(keys)
 
 		for i, individual_unit in ipairs(nearby_ally_units) do
 			if keys.caster ~= individual_unit then  --Invisibility Aura does not make Invoker invisible.
-				if individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") then  --Immediately apply the invis if the unit is already invis and has not attacked nor casted an ability recently.
-					if individual_unit.invisibility_aura_reveal_gametime == nil or individual_unit.invisibility_aura_reveal_gametime + keys.FadeTime <= GameRules:GetGameTime() then
-						keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
-					end
-				else  --Apply the invis after the fade delay if the unit is not already invis.
-					Timers:CreateTimer({
-						endTime = keys.FadeTime,
-						callback = function()
-							if not individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") and (individual_unit.invisibility_aura_reveal_gametime == nil or individual_unit.invisibility_aura_reveal_gametime + keys.FadeTime <= GameRules:GetGameTime()) then
-								--print(individual_unit.invisibility_aura_reveal_gametime)
-								--print(keys.FadeTime)
-								--print(GameRules:GetGameTime())
-								keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
-							end
-						end
-					})
+				local current_gametime = GameRules:GetGameTime()
+				if individual_unit.invisibility_aura_most_recent_gametime_in_aura == nil then  --Initialize the most recent time the unit was in an Invis Aura, if necessary.
+					individual_unit.invisibility_aura_most_recent_gametime_in_aura = 0
 				end
+				if individual_unit.invisibility_aura_started_to_fade_gametime == nil then  --Initialize the time at which the unit started to fade, if necessary.
+					individual_unit.invisibility_aura_started_to_fade_gametime = current_gametime
+				end
+				
+				--If the unit has been out of an invisibility aura for longer than .5 seconds and does not have modifier_invoker_retro_invisibility_aura_effect on them, start fading.
+				--Fading is also restarted when the unit attacks or casts an ability.
+				if not individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") and current_gametime - individual_unit.invisibility_aura_most_recent_gametime_in_aura >= .5 then
+					individual_unit.invisibility_aura_started_to_fade_gametime = current_gametime
+				end
+				
+				if individual_unit:HasModifier("modifier_invoker_retro_invisibility_aura_effect") then  --Immediately apply the invis if the unit is already invis from Invis Aura.
+					keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+				elseif current_gametime - individual_unit.invisibility_aura_started_to_fade_gametime >= keys.FadeTime then --If the unit is not already invis from the invis aura, apply the invis if they have been within its range and have not attacked nor used an ability for at least the FadeTime.
+					keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+				end
+				
+				individual_unit.invisibility_aura_most_recent_gametime_in_aura = current_gametime  --Keep track of the most recent time the unit was within an Invisibility Aura.
+				keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_in_radius", nil)  --Add a modifier to reset the fade time when attacking or using an ability.
 			end
 		end
 	end
@@ -64,9 +69,9 @@ end
 	Called when a unit under the effects of Invisibility Aura casts an ability, revealing themselves.  Removes the
 	invisibility from them and stores the gametime.
 ================================================================================================================= ]]
-function modifier_invoker_retro_invisibility_aura_effect_on_ability_executed(keys)
+function modifier_invoker_retro_invisibility_aura_in_radius_on_ability_executed(keys)
 	keys.unit:RemoveModifierByName("modifier_invoker_retro_invisibility_aura_effect")
-	keys.unit.invisibility_aura_reveal_gametime = GameRules:GetGameTime()
+	keys.unit.invisibility_aura_started_to_fade_gametime = GameRules:GetGameTime()
 end
 
 
@@ -76,9 +81,9 @@ end
 	Called when a unit under the effects of Invisibility Aura autoattacks, revealing themselves.  Removes the
 	invisibility from them and stores the gametime.
 ================================================================================================================= ]]
-function modifier_invoker_retro_invisibility_aura_effect_on_attack_start(keys)
+function modifier_invoker_retro_invisibility_aura_in_radius_on_attack_start(keys)
 	keys.attacker:RemoveModifierByName("modifier_invoker_retro_invisibility_aura_effect")
-	keys.attacker.invisibility_aura_reveal_gametime = GameRules:GetGameTime()
+	keys.attacker.invisibility_aura_started_to_fade_gametime = GameRules:GetGameTime()
 end
 
 

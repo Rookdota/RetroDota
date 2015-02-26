@@ -31,7 +31,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"fade_time"				"3"
+			"fade_time"				".7"
 		}
 	}
 	
@@ -71,7 +71,35 @@
 				}
 			}
 		}
-
+		
+		//A modifier this is applied to units while they are within the radius of a friendly Invoker's Invisibility Aura.
+		"modifier_invoker_retro_invisibility_aura_in_radius"
+		{
+			"Duration"			".5"
+			"Passive"  			"0"
+			"IsHidden"			"1"
+			
+			"OnAbilityExecuted"  //Remove the invisibility modifier from this unit (if applicable).
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+					"Function"		"modifier_invoker_retro_invisibility_aura_in_radius_on_ability_executed"
+				}
+			}
+			
+			//Note: For parity, the invisibility should be removed when the autoattack projectile appears, 
+			//but there is currently no event that can be used for this.
+			"OnAttackStart" 
+			{				
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
+					"Function"		"modifier_invoker_retro_invisibility_aura_in_radius_on_attack_start"
+				}
+			}
+		}
+		
 		"modifier_invoker_retro_invisibility_aura_effect"
 		{
 			"Passive"			"0"
@@ -86,26 +114,6 @@
 			"States"
 			{
 				"MODIFIER_STATE_INVISIBLE"					"MODIFIER_STATE_VALUE_ENABLED"
-			}
-			
-			"OnAbilityExecuted"  //Remove this modifier from the unit, since they should no longer be invis.
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
-					"Function"		"modifier_invoker_retro_invisibility_aura_effect_on_ability_executed"
-				}
-			}
-			
-			//Note: For parity, the invisibility should be removed when the autoattack projectile appears, 
-			//but there is currently no event that can be used for this.
-			"OnAttackStart" 
-			{				
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/hero_invoker/invoker_retro_invisibility_aura.lua"
-					"Function"		"modifier_invoker_retro_invisibility_aura_effect_on_attack_start"
-				}
 			}
 			
 			"ThinkInterval" 		".03"

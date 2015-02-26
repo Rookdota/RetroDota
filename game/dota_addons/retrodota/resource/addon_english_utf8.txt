@@ -267,6 +267,10 @@
 		
 		"DOTA_Tooltip_modifier_invoker_retro_scout_unit_ability"                          "Owl Scout"
 		"DOTA_Tooltip_modifier_invoker_retro_scout_unit_ability_Description"              "Invisible and invulnerable.  Has flying vision and truesight."
+		
+		//Bloodseeker's Thirst modifier is used to allow the Owl Scout to exceed the maximum movement speed of 522.
+		"DOTA_Tooltip_modifier_bloodseeker_thirst_speed"				                  "Owl Scout"
+		"DOTA_Tooltip_modifier_bloodseeker_thirst_speed_Description"	                  "Invisible and invulnerable.  Has flying vision and truesight."
 
 		
 		//Shock
@@ -284,7 +288,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_Description"                       "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDeals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex."
 
 		
-		//Reaver
+		//Soul Reaver
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver"                                  "Soul Reaver"
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_Description"                      "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nBlazes a target enemy unit, dealing up to 400 damage, based on Quas level. After 8 seconds, it takes another 280 damage. Increases the Invoker's movement speed for 8 seconds based on Wex level."
 

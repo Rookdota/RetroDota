@@ -126,19 +126,21 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 	if current_invoked_spell ~= nil then
 		local current_invoked_spell_name = current_invoked_spell:GetName()
 		
+		local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+		local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
+		local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
+		
 		if string.find(current_invoked_spell_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
-			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 			local new_invoked_spell_name = "invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas"
 			keys.caster:AddAbility(new_invoked_spell_name)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
-			new_invoked_spell:SetLevel(1)
+			new_invoked_spell:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 		elseif string.find(current_invoked_spell_name, "invoker_retro_portal") then  --If one of the 7 Portal spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
-			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 			local new_invoked_spell_name = "invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas"
 			keys.caster:AddAbility(new_invoked_spell_name)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
@@ -147,44 +149,35 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 		elseif string.find(current_invoked_spell_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
-			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 			local new_invoked_spell_name = "invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas"
 			keys.caster:AddAbility(new_invoked_spell_name)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
-			new_invoked_spell:SetLevel(1)
+			new_invoked_spell:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 		elseif string.find(current_invoked_spell_name, "invoker_retro_invisibility_aura") then  --If Invisibility Aura is invoked, increase the particle effect to match the new radius.
-			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
-			if quas_ability ~= nil then
-				local radius = current_invoked_spell:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
-				
-				if keys.caster.invisibility_aura_particle ~= nil then
-					ParticleManager:DestroyParticle(keys.caster.invisibility_aura_particle, false)
-					keys.caster.invisibility_aura_particle = nil
-				end
-				
-				local invisibility_aura_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
-				ParticleManager:SetParticleControl(invisibility_aura_particle, 1, Vector(radius, radius, radius))
-				local invisibility_aura_circle_sprite_radius = radius * 1.276  --The circle's sprite extends outwards a bit, so make it slightly larger.
-				ParticleManager:SetParticleControl(invisibility_aura_particle, 2, Vector(invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius))
-				
-				keys.caster.invisibility_aura_particle = invisibility_aura_particle
+			local radius = current_invoked_spell:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
+			
+			if keys.caster.invisibility_aura_particle ~= nil then
+				ParticleManager:DestroyParticle(keys.caster.invisibility_aura_particle, false)
+				keys.caster.invisibility_aura_particle = nil
 			end
+			
+			local invisibility_aura_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_invisibility_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+			ParticleManager:SetParticleControl(invisibility_aura_particle, 1, Vector(radius, radius, radius))
+			local invisibility_aura_circle_sprite_radius = radius * 1.276  --The circle's sprite extends outwards a bit, so make it slightly larger.
+			ParticleManager:SetParticleControl(invisibility_aura_particle, 2, Vector(invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius, invisibility_aura_circle_sprite_radius))
+			
+			keys.caster.invisibility_aura_particle = invisibility_aura_particle
+			
+			current_invoked_spell:SetLevel(quas_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_arcane_arts") then
-			local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
-			if wex_ability ~= nil then
-				local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
-				local new_invoked_spell_name = "invoker_retro_arcane_arts"
-				print(current_invoked_spell_name,new_invoked_spell_name)
-
-				-- Remove the old skill and the passive modifier
-				keys.caster:RemoveAbility(current_invoked_spell_name)
-				keys.caster:RemoveModifierByName("modifier_invoker_retro_arcane_arts")
-
-				keys.caster:AddAbility(new_invoked_spell_name)
-				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
-				new_invoked_spell:SetLevel(wex_ability:GetLevel())
-			end
+			current_invoked_spell:SetLevel(wex_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_power_word") then
+			current_invoked_spell:SetLevel(quas_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_mana_burn") then
+			current_invoked_spell:SetLevel(wex_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_scout") then
+			current_invoked_spell:SetLevel(wex_ability:GetLevel())
 		end
 	end
 end

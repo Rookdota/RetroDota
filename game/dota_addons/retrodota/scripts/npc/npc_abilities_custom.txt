@@ -73,7 +73,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName" 			"invoker_retro_arcane_arts"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"1" //SetLevel in lua can override this
+		"MaxLevel"						"1" //SetLevel in Lua can override this
 			
 		"precache"
 		{

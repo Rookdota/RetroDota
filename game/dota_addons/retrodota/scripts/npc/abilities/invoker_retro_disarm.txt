@@ -66,7 +66,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -137,7 +136,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -208,7 +206,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -279,7 +276,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -350,7 +346,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -421,7 +416,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -492,7 +486,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -563,7 +556,6 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"

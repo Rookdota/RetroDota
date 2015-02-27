@@ -3,6 +3,8 @@
 // Date: February 15, 2015
 // Invoke: Exort Quas Quas
 // Summons a powerful meteor to crush all enemies within its path. Deals 200 damage per second to units in its path. Based on Exort.
+// Note: Different sources indicate different damage values.  Some say it deals 25 damage per level of Exort per second to units in its path,
+//     while others say the meteor itself deals 50/100/150/200/250/300/350/400 DPS and its path burns for 5 seconds, dealing a flat 80 damage per second.
 "invoker_retro_chaos_meteor"
 {
 	// General
@@ -12,19 +14,19 @@
 	"AbilityTextureName" 			"invoker_retro_chaos_meteor"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_CHAOS_METEOR"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30"
+	"AbilityCooldown"				"20"
 	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"700"
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		
 	}
 	
 	// Special
@@ -34,37 +36,57 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			"land_time"				"1.3"  //The meteor lands on the ground this many seconds after it was cast.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			"area_of_effect"		"275"  //This is the radius of the meteor.
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-140"
+			"travel_distance"		"1500"  //With a 300 travel speed and a 1500 travel distance, the meteor itself lasts 5 seconds.
 		}
 		"04"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"2.0"
+			"var_type"				"FIELD_INTEGER"
+			"travel_speed"			"300"  //With a 300 travel speed and a 1500 travel distance, the meteor itself lasts 5 seconds.
 		}
 		"05"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"num_wall_elements"		"15"
+			"var_type"				"FIELD_FLOAT"
+			"damage_interval"		"0.5"  //The main meteor ball deals its damage and applies its DoT burn every damage_interval.
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"wall_element_spacing"	"80"
+			"vision_distance"		"500"  //This is flying vision given by the meteor ball.
 		}
 		"07"
 		{
+			"var_type"				"FIELD_FLOAT"
+			"end_vision_duration"	"3.0"  //The meteor's flying vision lingers for this long after it disappears.
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"main_dps"			    "50 100 150 200 250 300 350 400"  //Increases with Exort.  This is the damage dealt by the meteor itself every damage_interval.
+		}
+		"09"
+		{
 			"var_type"				"FIELD_INTEGER"
-			"wall_element_radius"	"105"
+			"burn_duration"			"5"  //Units hit by the meteor receive a modifier lasting this long that regularly damages them.
+		}
+		"10"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"burn_dps"				"80"  //Units standing in the burning trail or hit by the meteor receive this much damage per second.
+		}
+		"11"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"burn_interval"			"1.0"
 		}
 	}
 	
@@ -72,34 +94,13 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-			"Function"				"invoker_retro_icy_path_on_spell_start"
-			"Target"				"POINT"
-			"NumWallElements"		"%num_wall_elements"
-			"WallElementSpacing"	"%wall_element_spacing"
-			"WallElementRadius"		"%wall_element_radius"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_icy_wall_slow"
-		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-			
-			//TODO: The control points for this particle still need to be figured out.
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-			"EffectAttachType"		"follow_origin"
-			
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-			}
+			"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+			"Function"									"invoker_retro_tornado_blast_on_spell_start"
+			"Target"									"POINT"
+			"ProjectileSpeed"							"%projectile_speed"
+			"ProjectileRadius"							"%projectile_radius"
+			"ProjectileFlyingVision"					"%projectile_flying_vision"
+			"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
 		}
 	}
 }
-

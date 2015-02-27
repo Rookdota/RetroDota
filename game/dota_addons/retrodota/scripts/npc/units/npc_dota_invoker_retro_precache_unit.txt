@@ -43,7 +43,7 @@
 			"Ability3"                  "invoker_retro_energy_ball"
 			"Ability4"                  "invoker_retro_lightning_shield"
 			"Ability5"                  "invoker_retro_chaos_meteor"
-			"Ability6"                  "invoker_retro_confuse"
+			"Ability6"                  "invoker_retro_confuse_level_1_exort"
 			"Ability7"                  "invoker_retro_disarm"
 			"Ability8"                  "invoker_retro_soul_reaver"
 			"Ability9"                  "invoker_retro_firestorm"

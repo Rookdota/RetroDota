@@ -94,13 +94,9 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
-			"Function"									"invoker_retro_tornado_blast_on_spell_start"
+			"ScriptFile"								"heroes/hero_invoker/invoker_retro_chaos_meteor.lua"
+			"Function"									"invoker_retro_chaos_meteor_on_spell_start"
 			"Target"									"POINT"
-			"ProjectileSpeed"							"%projectile_speed"
-			"ProjectileRadius"							"%projectile_radius"
-			"ProjectileFlyingVision"					"%projectile_flying_vision"
-			"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
 		}
 	}
 }

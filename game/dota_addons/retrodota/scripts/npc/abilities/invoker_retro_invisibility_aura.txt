@@ -26,7 +26,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"radius"				"170 190 210 230 250 270 290"  //Increases with Quas.
+			"radius"				"150 170 190 210 230 250 270 290"  //Increases with Quas.
 		}
 		"02"
 		{

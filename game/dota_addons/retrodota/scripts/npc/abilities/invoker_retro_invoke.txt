@@ -1,7 +1,6 @@
 // Invoker's Invoke
 // Author: Rook
 // Date: February 15, 2015
-// Known bugs: The max level should be 1, not 4.  Change this if/when Quas, Wex, and Exort have their maximum levels boosted to 8.
 // Invoker combines the three reagents he has active into a spell, with different effects based on the reagents. The order the reagents were casts makes a difference.
 "invoker_retro_invoke"
 {
@@ -11,34 +10,19 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName" 			"invoker_retro_invoke"
-	"MaxLevel"						"4"
-	"LevelsBetweenUpgrades"			"5"
-	"RequiredLevel"					"2"
+	"MaxLevel"						"1"
+	"RequiredLevel"					"6"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"22 17 12 5"  //Old Invoker's Invoke cooldown was a static 12 seconds.
-	"AbilityManaCost"				"20 40 60 80"  //Old Invoker's Invoke mana cost was a static 0.
+	"AbilityCooldown"				"12"
+	"AbilityManaCost"				"0"
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"max_invoked_spells"		"2 2 2 2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"cooldown_scepter"			"16 8 4 2"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_cost_scepter"			"0"
-		}
+	
 	}
 	
 	"OnSpellStart"

@@ -11,7 +11,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-	"AbilityTextureName" 			"invoker_retro_mana_burn"
+	"AbilityTextureName" 			"invoker_retro_soul_blast"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
@@ -22,7 +22,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"40"
 	"AbilityManaCost"				"300"
-	"AbilityCastRange"				"650"
+	"AbilityCastRange"				"400"
 	
 	"precache"
 	{
@@ -36,17 +36,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage"				"100 150 200 250 300 350 400"  //Increases with Exort.
+			"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"heal"					"100 150 200 250 300 350 400"  //Increases with Quas.
+			"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 	}
 	
@@ -54,8 +54,8 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_mana_burn.lua"
-			"Function"				"invoker_retro_mana_burn_on_spell_start"
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+			"Function"				"invoker_retro_soul_blast_on_spell_start"
 		}
 	}
 }

@@ -46,11 +46,11 @@ function invoker_retro_invoke_on_spell_start(keys)
 	local old_spell_invoked_name = old_spell_invoked:GetName()
 	local old_spell_invoked_index_name = old_spell_invoked_name
 	
-	if string.find(old_spell_invoked_index_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells was invoked.
+	if string.find(old_spell_invoked_index_name, "invoker_retro_icy_path") then  --If one of the 8 Icy Path spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_icy_path"
-	elseif string.find(old_spell_invoked_index_name, "invoker_retro_portal") then  --If one of the 7 Portal spells was invoked.
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_portal") then  --If one of the 8 Portal spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_portal"
-	elseif string.find(old_spell_invoked_index_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells was invoked.
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_tornado_blast") then  --If one of the 8 Tornado Blast spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_tornado_blast"
 	end
 	
@@ -112,12 +112,12 @@ function invoker_retro_invoke_on_spell_start(keys)
 		if keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_quas" then
 			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Quas Quas
-					--Since Icy Path's cast range increases with the level of Quas, it is split up into 7 abilities.
+					--Since Icy Path's cast range increases with the level of Quas, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas")
 					local icy_path_ability = keys.caster:FindAbilityByName("invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas")
 					icy_path_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Quas Wex
-					--Since Portal's cast range increases with the level of Quas, it is split up into 7 abilities.
+					--Since Portal's cast range increases with the level of Quas, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Quas Exort
 					keys.caster:AddAbility("invoker_retro_frost_nova")
@@ -126,7 +126,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Wex Quas
 					keys.caster:AddAbility("invoker_retro_betrayal")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Wex Wex
-					--Since Portal's cast range increases with the level of Quas, it is split up into 7 abilities.
+					--Since Portal's cast range increases with the level of Quas, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas")
 					local tornado_blast_ability = keys.caster:FindAbilityByName("invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas")
 					tornado_blast_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
@@ -216,11 +216,11 @@ function invoker_retro_invoke_on_spell_start(keys)
 			
 			local new_spell_invoked_name = new_spell_invoked:GetName()
 			
-			if string.find(new_spell_invoked_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells was invoked.
+			if string.find(new_spell_invoked_name, "invoker_retro_icy_path") then  --If one of the 8 Icy Path spells was invoked.
 				new_spell_invoked_name = "invoker_retro_icy_path"
-			elseif string.find(new_spell_invoked_name, "invoker_retro_portal") then  --If one of the 7 Portal spells was invoked.
+			elseif string.find(new_spell_invoked_name, "invoker_retro_portal") then  --If one of the 8 Portal spells was invoked.
 				new_spell_invoked_name = "invoker_retro_portal"
-			elseif string.find(new_spell_invoked_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells was invoked.
+			elseif string.find(new_spell_invoked_name, "invoker_retro_tornado_blast") then  --If one of the 8 Tornado Blast spells was invoked.
 				new_spell_invoked_name = "invoker_retro_tornado_blast"
 			end
 

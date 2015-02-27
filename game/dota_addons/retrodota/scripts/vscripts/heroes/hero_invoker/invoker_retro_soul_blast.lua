@@ -7,9 +7,11 @@ function invoker_retro_soul_blast_on_spell_start(keys)
 	keys.caster:EmitSound("Hero_NyxAssassin.ManaBurn.Cast")
 	keys.target:EmitSound("Hero_NyxAssassin.ManaBurn.Target")
 	
-	local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
-	if wex_ability ~= nil then
-		local mana_to_burn = keys.ability:GetLevelSpecialValueFor("mana_burned", wex_ability:GetLevel() - 1)  --Mana burned increases per level of Wex.
+	local Quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
+	local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
+	if wex_ability ~= nil and exort_ability ~= nil then
+		local damage = keys.ability:GetLevelSpecialValueFor("damage", exort_ability:GetLevel() - 1)  --Damage dealt increases per level of Exort.
+		local healing = keys.ability:GetLevelSpecialValueFor("heal", quas_ability:GetLevel() - 1)  --Damage dealt increases per level of Quas.
 		
 		local mana_burn_number = ParticleManager:CreateParticle("particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn_msg.vpcf", PATTACH_OVERHEAD_FOLLOW, keys.target)
 		ParticleManager:SetParticleControl(mana_burn_number, 1, Vector(1, mana_to_burn, 0))

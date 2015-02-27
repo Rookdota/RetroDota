@@ -23,17 +23,20 @@ function invoker_retro_scout_on_spell_start(event)
 			
 			owl_ability:ApplyDataDrivenModifier(caster, owl, "modifier_invoker_retro_scout_unit_ability", {})
 
-			owl_ability:ApplyDataDrivenModifier(caster, owl, "modifier_invoker_retro_scout_unit_ability_movespeed_per_wex", {})
-			owl:SetModifierStackCount("modifier_invoker_retro_scout_unit_ability_movespeed_per_wex", ability, wex_level)
-
+			local movespeed = ability:GetLevelSpecialValueFor("owl_movespeed", wex_level - 1)  --Movespeed increases per level of Wex.
+			owl:SetBaseMoveSpeed(movespeed)
+			
+			local vision_range = ability:GetLevelSpecialValueFor("owl_vision", wex_level - 1)  --Vision radius increases per level of Wex.
+			owl:SetDayTimeVisionRange(vision_range)
+			owl:SetNightTimeVisionRange(vision_range)
+			
 			owl_ability:ApplyDataDrivenModifier(caster, owl, "modifier_invoker_retro_scout_unit_ability_vision_per_wex", {})
 			owl:SetModifierStackCount("modifier_invoker_retro_scout_unit_ability_vision_per_wex", ability, wex_level)
 
 			owl.vOwner = caster:GetOwner()
 			owl:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true)
-			owl:AddNewModifier(owl, nil, "modifier_kill", {duration = wex_level * 10})  --Add the green duration circle, and kill it after the duration ends.
+			owl:AddNewModifier(owl, nil, "modifier_kill", {duration = ability:GetLevelSpecialValueFor("owl_duration", wex_level - 1) })  --Add the green duration circle, and kill it after the duration ends.
 			owl:AddNewModifier(owl, nil, "modifier_invisible", {duration = .1})  --Make the owl have the translucent texture.
-			owl:AddNewModifier(owl, nil, "modifier_bloodseeker_thirst_speed", nil)  --Allow the owl to exceed the maximum movement speed.
 		end
     end
 end

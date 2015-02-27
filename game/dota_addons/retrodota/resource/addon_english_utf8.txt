@@ -146,6 +146,13 @@
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_slow"                   "SLOW:"
 		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_7_quas_slow_duration"          "SLOW DURATION:"
 		
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_8_quas"                        "Icy Path"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_8_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nCreates an Icy Path that slows enemy units that cross it.  The duration and cast range increase per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_8_quas_duration"               "DURATION (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_8_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_8_quas_slow"                   "SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_icy_path_level_8_quas_slow_duration"          "SLOW DURATION:"
+		
 		"DOTA_Tooltip_modifier_invoker_retro_icy_path_unit_ability_aura"                  "Icy Path"
 		"DOTA_Tooltip_modifier_invoker_retro_icy_path_unit_ability_aura_Description"      "Movement speed slowed."
 
@@ -231,6 +238,11 @@
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_7_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
 		
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_8_quas"                        "Portal"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_8_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nAfter a slightly extended cast animation, damages the target enemy unit and moves them to Invoker's position.  The cast range increases per level of Quas, and the damage increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_8_quas_damage"                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_portal_level_8_quas_cast_range"             "CAST RANGE (<font color=\"#008A8A\">QUAS</font>):"
+		
 
 		//Power Word
 		"DOTA_Tooltip_Ability_invoker_retro_power_word"                                   "Power Word"
@@ -278,41 +290,47 @@
 		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nReleases a ring of shocking energy that summons a bolt of energy on each target in its path, removing all buffs. 300 range and 160 damage. Radius and Damage based on Wex"
 
 		
-		//Shroud of Flames - Ability broken in 7 abilities that take care of the Quas Tooltip. The Exort Tooltip is hardcoded into the description, with the appropiate colors
+		//Shroud of Flames - Ability broken in 8 abilities that take care of the Quas Tooltip. The Exort Tooltip is hardcoded into the description, with the appropiate colors
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort1"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort1_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#E68A00\">20</font><font color=\"#888888\">/30/40/50/60/70/80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort1_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#E68A00\">8</font><font color=\"#888888\">16/24/32/40/48/56/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort1_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort1_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort2"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort2_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">20</font><font color=\"#E68A00\">30</font><font color=\"#888888\">/40/50/60/70/80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort2_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8</font><font color=\"#E68A00\">16</font><font color=\"#888888\">/24/32/40/48/56/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort2_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort2_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort3"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort3_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">20/30/</font><font color=\"#E68A00\">40</font><font color=\"#888888\">/50/60/70/80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort3_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8/16/</font><font color=\"#E68A00\">24</font><font color=\"#888888\">/32/40/48/56/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort3_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort3_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort4"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort4_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">20/30/40/</font><font color=\"#E68A00\">50</font><font color=\"#888888\">/60/70/80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort4_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8/16/24</font><font color=\"#E68A00\">32</font><font color=\"#888888\">/40/48/56/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort4_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort4_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort5"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort5_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">20/30/40/50/</font><font color=\"#E68A00\">60</font><font color=\"#888888\">/70/80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort5_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8/16/24/32/</font><font color=\"#E68A00\">40</font><font color=\"#888888\">/48/56/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort5_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort5_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort6"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort6_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">20/30/40/50/60/</font><font color=\"#E68A00\">70</font><font color=\"#888888\">/80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort6_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8/16/24/32/40/</font><font color=\"#E68A00\">48</font><font color=\"#888888\">/56/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort6_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort6_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort7"                             "Shroud of Flames"
-		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort7_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">20/30/40/50/60/70/</font><font color=\"#E68A00\">80</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort7_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8/16/24/32/40/48</font><font color=\"#E68A00\">56</font><font color=\"#888888\">/64</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort7_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort7_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort8"                             "Shroud of Flames"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort8_Description"                 "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nCreates a barrier that blocks spell damage and grants magic resistance. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.\nDAMAGE AFTER ATTACK (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">8/16/24/32/40/48/56/</font><font color=\"#E68A00\">64</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort8_barrier"                     "SHROUD BARRIER (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort8_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
+		
 		
 		//Soul Blast
 		"DOTA_Tooltip_Ability_invoker_retro_soul_blast"                                   "Soul Blast"
@@ -364,6 +382,11 @@
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  The cast range and damage increase per level of Quas."
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_7_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_8_quas"                        "Tornado Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_8_quas_Description"            "Invoke: <font color=\"#008A8A\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons a tornado that travels a long distance, damaging enemy units it comes in contact with.  The tornado has a speed of %projectile_speed% units per second and provides %projectile_flying_vision% flying vision that lingers for %projectile_flying_vision_max_range_duration% seconds after the tornado disappears.  The cast range and damage increase per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_8_quas_damage"                 "DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_tornado_blast_level_8_quas_travel_distance"        "TRAVEL DISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		
 		//Wex

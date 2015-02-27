@@ -23,7 +23,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
-	"AbilityCastRange"				"400"
+	"AbilityCastRange"				"350"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
@@ -38,13 +38,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{
@@ -93,7 +93,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
-	"AbilityCastRange"				"450"
+	"AbilityCastRange"				"400"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
@@ -108,13 +108,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{
@@ -163,7 +163,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
-	"AbilityCastRange"				"500"
+	"AbilityCastRange"				"450"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
@@ -178,13 +178,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{
@@ -233,7 +233,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
-	"AbilityCastRange"				"550"
+	"AbilityCastRange"				"500"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
@@ -248,13 +248,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{
@@ -303,7 +303,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"550"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
@@ -318,13 +318,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{
@@ -373,7 +373,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
-	"AbilityCastRange"				"650"
+	"AbilityCastRange"				"600"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
 	"precache"
@@ -388,13 +388,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{
@@ -443,6 +443,76 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"350"
+	"AbilityCastRange"				"650"
+	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
+	
+	"precache"
+	{
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_ability_phase_start"
+			"CastPoint"				"%cast_point"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+			"Function"				"invoker_retro_portal_on_spell_start"
+		}
+	}
+}
+
+
+"invoker_retro_portal_level_8_quas"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_portal"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"700"
 	"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 	
@@ -458,13 +528,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 		}
 		"03"
 		{

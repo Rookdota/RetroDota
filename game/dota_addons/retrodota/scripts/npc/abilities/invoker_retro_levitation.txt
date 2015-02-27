@@ -32,7 +32,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"1.0 2.5 4.0 5.5 7.0 8.5 10.0"  //Increases with Quas, Wex, and Exort.
+			"duration"				".9 1.8 2.7 3.6 4.5 5.4 6.3 7.2"  //Increases with Quas, Wex, and Exort.
 		}
 		"02"
 		{

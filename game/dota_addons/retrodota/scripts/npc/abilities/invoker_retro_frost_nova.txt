@@ -40,12 +40,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5"  //Increases with Exort.
+			"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Exort.
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"area_damage"			"75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
+			"area_damage"			"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
 		}
 		"03"
 		{

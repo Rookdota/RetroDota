@@ -8,7 +8,8 @@ Resources
 
 Invoker
 -------
-- [All Skills Print](http://imgur.com/dUeY3)
+- [All Skill Values](http://pastebin.com/82HHWJ9a)
+- [All Skills Tooltips](http://imgur.com/dUeY3)
 - [Icy Path QQQ](http://youtu.be/l3tminWOrRk?t=3m05s)  
 - [Portal QQW](http://youtu.be/l3tminWOrRk?t=3m55s)  
 - [Frost Nova QQE](http://youtu.be/l3tminWOrRk?t=4m48s)  

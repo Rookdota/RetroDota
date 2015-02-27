@@ -87,7 +87,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"20 30 40 50 60 70 80"  //Increases with Wex.
+				"magic_resistance"		"10 20 30 40 50 60 70 80"  //Increases with Wex.
 			}
 		}
 			
@@ -1158,12 +1158,12 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"						"675"
+				"radius"						"600"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"mana_burned"					"100 200 300 400 500 600 700"  //Increases with Quas and Wex.
+				"mana_burned"					"100 200 300 400 500 600 700 800"  //Increases with Quas and Wex.
 			}
 		}
 		
@@ -1314,7 +1314,6 @@
 	// Invoker's Exort
 	// Author: Rook
 	// Date: February 15, 2015
-	// Known bugs: The max level should be 8, not 7.
 	// Builds Kael's skill in the fire magics. These spells, when invoked, deal with the power of fire, projection and damage. As a reagent, regenerates .5 hitpoints per level, per reagent cast. Increases Strength by 1 each time his skill is learned.
 	"invoker_retro_exort"
 	{
@@ -1323,7 +1322,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityTextureName" 			"invoker_retro_exort"
-		"MaxLevel"						"7"
+		"MaxLevel"						"8"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1343,12 +1342,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5 4"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_strength"					"1 2 3 4 5 6 7"
+				"bonus_strength"					"1 2 3 4 5 6 7 8"
 			}
 		}
 		
@@ -1667,12 +1666,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5"  //Increases with Exort.
+				"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Exort.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"area_damage"			"75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
+				"area_damage"			"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
 			}
 			"03"
 			{
@@ -1848,7 +1847,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"250"
 		
 		"precache"
 		{
@@ -1864,12 +1863,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -1929,7 +1928,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"350"
+		"AbilityCastRange"				"300"
 		
 		"precache"
 		{
@@ -1945,12 +1944,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -2010,7 +2009,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"400"
+		"AbilityCastRange"				"350"
 		
 		"precache"
 		{
@@ -2026,12 +2025,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -2091,7 +2090,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"400"
 		
 		"precache"
 		{
@@ -2107,12 +2106,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -2172,7 +2171,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"450"
 		
 		"precache"
 		{
@@ -2188,12 +2187,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -2253,7 +2252,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"550"
+		"AbilityCastRange"				"500"
 		
 		"precache"
 		{
@@ -2269,12 +2268,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -2334,6 +2333,87 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"550"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"2"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_icy_path_level_8_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"600"
 		
 		"precache"
@@ -2350,12 +2430,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -2634,7 +2714,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"				"170 190 210 230 250 270 290"  //Increases with Quas.
+				"radius"				"150 170 190 210 230 250 270 290"  //Increases with Quas.
 			}
 			"02"
 			{
@@ -2741,7 +2821,6 @@
 	// Invoker's Invoke
 	// Author: Rook
 	// Date: February 15, 2015
-	// Known bugs: The max level should be 1, not 4.  Change this if/when Quas, Wex, and Exort have their maximum levels boosted to 8.
 	// Invoker combines the three reagents he has active into a spell, with different effects based on the reagents. The order the reagents were casts makes a difference.
 	"invoker_retro_invoke"
 	{
@@ -2751,34 +2830,19 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName" 			"invoker_retro_invoke"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"			"5"
-		"RequiredLevel"					"2"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"6"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 17 12 5"  //Old Invoker's Invoke cooldown was a static 12 seconds.
-		"AbilityManaCost"				"20 40 60 80"  //Old Invoker's Invoke mana cost was a static 0.
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"0"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_invoked_spells"		"2 2 2 2"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"16 8 4 2"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_cost_scepter"			"0"
-			}
+		
 		}
 		
 		"OnSpellStart"
@@ -2826,7 +2890,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0 2.5 4.0 5.5 7.0 8.5 10.0"  //Increases with Quas, Wex, and Exort.
+				"duration"				".9 1.8 2.7 3.6 4.5 5.4 6.3 7.2"  //Increases with Quas, Wex, and Exort.
 			}
 			"02"
 			{
@@ -3019,7 +3083,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"100"
-		"AbilityCastRange"				"700"  //This value is unconfirmed.
+		"AbilityCastRange"				"700"  //This value is a guess.
 		
 		"precache"
 		{
@@ -3035,7 +3099,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_burned"			"100 150 200 250 300 350 400"  //Increases with Wex.
+				"mana_burned"			"50 100 150 200 250 300 350 400"  //Increases with Wex.
 			}
 		}
 		
@@ -3074,7 +3138,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
-		"AbilityCastRange"				"400"
+		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -3089,13 +3153,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3144,7 +3208,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -3159,13 +3223,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3214,7 +3278,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"450"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -3229,13 +3293,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3284,7 +3348,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
-		"AbilityCastRange"				"550"
+		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -3299,13 +3363,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3354,7 +3418,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"550"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -3369,13 +3433,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3424,7 +3488,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
-		"AbilityCastRange"				"650"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -3439,13 +3503,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3494,6 +3558,76 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
+		
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_portal_level_8_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
@@ -3509,13 +3643,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160 200 240 280"  //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -3584,12 +3718,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_bonus_ally"		"2 3 4 5 6 7 8"
+				"armor_bonus_ally"		"1 2 3 4 5 6 7 8"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction_enemy"	"-2 -3 -4 -5 -6 -7 -8"
+				"armor_reduction_enemy"	"-1 -2 -3 -4 -5 -6 -7 -8"
 			}
 			"03"
 			{
@@ -3671,7 +3805,6 @@
 	// Invoker's Quas
 	// Author: Rook
 	// Date: February 15, 2015
-	// Known bugs: The max level should be 8, not 7.
 	// Builds Kael's skills in the arcana magics. These spells, when invoked deal with the power of the mind, wind and water. As a regeant, increases damage by 2% per level, per regeant cast. Increases Intelligence by 1 each time this skill is learned.
 	"invoker_retro_quas"
 	{
@@ -3680,7 +3813,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityTextureName" 			"invoker_retro_quas"
-		"MaxLevel"						"7"
+		"MaxLevel"						"8"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3700,12 +3833,12 @@
 			"01"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"bonus_damage_percent_per_instance"		"2 4 6 8 10 12 14"
+				"bonus_damage_percent_per_instance"		"2 4 6 8 10 12 14 16"
 			}
 			"02"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"bonus_intelligence"					"1 2 3 4 5 6 7"
+				"bonus_intelligence"					"1 2 3 4 5 6 7 8"
 			}
 		}
 		
@@ -3811,17 +3944,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"owl_duration"				"10 20 30 40 50 60 70"
+				"owl_duration"				"25 30 35 40 45 50 55 60"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"owl_vision"				"400 500 600 700 800 900 1000"  //Maintain values in invoker_retro_scout_unit_ability if this is changed.
+				"owl_vision"				"200 300 400 500 600 700 800 900"  //Increases with Wex.
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"owl_movespeed"				"250 300 350 400 450 500 550"  //Maintain values in invoker_retro_scout_unit_ability if this is changed.
+				"owl_movespeed"				"200 225 250 300 350 400 450 500"  //Increases with Wex.
 			}
 		}
 		
@@ -3850,20 +3983,6 @@
 	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movespeed_per_wex"			"50"  //Maintain values in invoker_retro_scout if this is changed.
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"vision_per_wex"			"100"  //Maintain values in invoker_retro_scout if this is changed.
-			}
-		}
-	
 		"Modifiers"
 		{
 			"modifier_invoker_retro_scout_unit_ability"
@@ -3888,27 +4007,6 @@
 						"ScriptFile"	"heroes/hero_invoker/invoker_retro_scout.lua"
 						"Function"		"modifier_invoker_retro_scout_unit_ability_on_interval_think"
 					}
-				}
-			}
-	
-			"modifier_invoker_retro_scout_unit_ability_movespeed_per_wex"
-			{
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%movespeed_per_wex"
-				}
-			}
-	
-			"modifier_invoker_retro_scout_unit_ability_vision_per_wex"
-			{
-				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%vision_per_wex"
-					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%vision_per_wex"
 				}
 			}
 		}
@@ -4062,12 +4160,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4110,12 +4208,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4158,12 +4256,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4206,12 +4304,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4254,12 +4352,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4302,12 +4400,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4350,12 +4448,60 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
+			}
+		}
+	}
+	
+	"invoker_retro_shroud_of_flames_exort8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"invoker_retro_shroud_of_flames"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"500"
+		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
 		}
 	}
@@ -4364,7 +4510,8 @@
 	// Date: February 24, 2015
 	// Invoke: Wex Quas Exort
 	// Deals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex.
-	"invoker_retro_soul_blast"
+	// Because Wex affects the AbilityCastRange, we use a separate ability for each possible Wex level.
+	"invoker_retro_soul_blast_level_1_wex"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -4372,7 +4519,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityTextureName" 			"invoker_retro_mana_burn"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
@@ -4383,11 +4530,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"300"
-		"AbilityCastRange"				"650"
+		"AbilityCastRange"				"400"
 		
 		"precache"
 		{
-			
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
 		}
 		
 		// Special
@@ -4397,17 +4545,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"100 150 200 250 300 350 400"  //Increases with Exort.
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal"					"100 150 200 250 300 350 400"  //Increases with Quas.
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 		}
 		
@@ -4415,8 +4563,509 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_mana_burn.lua"
-				"Function"				"invoker_retro_mana_burn_on_spell_start"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_2_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"448"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_3_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"496"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_4_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"544"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_5_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"592"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_6_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"640"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_7_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"688"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_soul_blast_level_8_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"736"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
 			}
 		}
 	}
@@ -4655,7 +5304,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
-		"AbilityCastRange"				"800"
+		"AbilityCastRange"				"250"
 		
 		"precache"
 		{
@@ -4669,12 +5318,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -4742,7 +5391,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"500"
 		
 		"precache"
 		{
@@ -4756,12 +5405,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -4829,7 +5478,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"750"
 		
 		"precache"
 		{
@@ -4843,12 +5492,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -4916,7 +5565,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
-		"AbilityCastRange"				"1400"
+		"AbilityCastRange"				"1000"
 		
 		"precache"
 		{
@@ -4930,12 +5579,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -5003,7 +5652,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
-		"AbilityCastRange"				"1600"
+		"AbilityCastRange"				"1250"
 		
 		"precache"
 		{
@@ -5017,12 +5666,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -5090,7 +5739,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
-		"AbilityCastRange"				"1800"
+		"AbilityCastRange"				"1500"
 		
 		"precache"
 		{
@@ -5104,12 +5753,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -5177,6 +5826,93 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"1750"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	"invoker_retro_tornado_blast_level_8_quas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
 		"AbilityCastRange"				"2000"
 		
 		"precache"
@@ -5191,12 +5927,12 @@
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"damage"										"175 225 275 325 375 425 475"  //Increases with Quas.
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"travel_distance"								"800 1000 1200 1400 1600 1800 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
 			}
 			"03"
 			{
@@ -5248,7 +5984,6 @@
 	// Invoker's Wex
 	// Author: Rook
 	// Date: February 15, 2015
-	// Known bugs: The max level should be 8, not 7.
 	// Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a regeant, increases movement speed by 1% per level, per regeant. Increases Agility by 1 each time this skill is learned.
 	"invoker_retro_wex"
 	{
@@ -5257,7 +5992,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityTextureName" 			"invoker_retro_wex"
-		"MaxLevel"						"7"
+		"MaxLevel"						"8"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5277,12 +6012,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"move_speed_percent_per_instance"	"1 2 3 4 5 6 7"
+				"move_speed_percent_per_instance"	"1 2 3 4 5 6 7 8"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_agility"						"1 2 3 4 5 6 7"
+				"bonus_agility"						"1 2 3 4 5 6 7 8"
 			}
 		}
 		

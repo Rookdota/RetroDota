@@ -1,7 +1,6 @@
 // Invoker's Exort
 // Author: Rook
 // Date: February 15, 2015
-// Known bugs: The max level should be 8, not 7.
 // Builds Kael's skill in the fire magics. These spells, when invoked, deal with the power of fire, projection and damage. As a reagent, regenerates .5 hitpoints per level, per reagent cast. Increases Strength by 1 each time his skill is learned.
 "invoker_retro_exort"
 {
@@ -10,7 +9,7 @@
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityTextureName" 			"invoker_retro_exort"
-	"MaxLevel"						"7"
+	"MaxLevel"						"8"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -30,12 +29,12 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5"
+			"bonus_health_regen_per_instance"	".5 1.0 1.5 2.0 2.5 3.0 3.5 4"
 		}
 		"02"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"bonus_strength"					"1 2 3 4 5 6 7"
+			"bonus_strength"					"1 2 3 4 5 6 7 8"
 		}
 	}
 	

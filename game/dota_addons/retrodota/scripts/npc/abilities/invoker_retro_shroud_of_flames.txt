@@ -41,12 +41,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }
@@ -89,12 +89,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }
@@ -137,12 +137,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }
@@ -185,12 +185,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }
@@ -233,12 +233,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }
@@ -281,12 +281,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }
@@ -329,12 +329,60 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"magic_resistance"		"12 15 18 21 24 27 30"	// Scales with Quas
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_exort"			"20 30 40 50 60 70 80" // Scales with Exort. Hardcoded tooltip
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
+		}
+	}
+}
+
+"invoker_retro_shroud_of_flames_exort8"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityTextureName" 			"invoker_retro_shroud_of_flames"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+	"AbilityManaCost"				"250"
+	"AbilityCastRange"				"500"
+	"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
+	
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
 	}
 }

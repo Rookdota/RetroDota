@@ -48,12 +48,12 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"675"
+			"radius"						"600"
 		}
 		"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"mana_burned"					"100 200 300 400 500 600 700"  //Increases with Quas and Wex.
+			"mana_burned"					"100 200 300 400 500 600 700 800"  //Increases with Quas and Wex.
 		}
 	}
 	

@@ -130,7 +130,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 		local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
 		local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
 		
-		if string.find(current_invoked_spell_name, "invoker_retro_icy_path") then  --If one of the 7 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
+		if string.find(current_invoked_spell_name, "invoker_retro_icy_path") then  --If one of the 8 Icy Path spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local new_invoked_spell_name = "invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas"
@@ -138,7 +138,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
-		elseif string.find(current_invoked_spell_name, "invoker_retro_portal") then  --If one of the 7 Portal spells is invoked, swap it out for the correct version based on Quas' level.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_portal") then  --If one of the 8 Portal spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local new_invoked_spell_name = "invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas"
@@ -146,7 +146,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(1)
-		elseif string.find(current_invoked_spell_name, "invoker_retro_tornado_blast") then  --If one of the 7 Tornado Blast spells is invoked, swap it out for the correct version based on Quas' level.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_tornado_blast") then  --If one of the 8 Tornado Blast spells is invoked, swap it out for the correct version based on Quas' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local new_invoked_spell_name = "invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas"
@@ -178,7 +178,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_scout") then
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
-		elseif string.find(current_invoked_spell_name, "invoker_retro_shroud_of_flames") then  --If one of the 7 Shroud of Flames spells is invoked, swap it out for the correct version based on Exort' level.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_shroud_of_flames") then  --If one of the 8 Shroud of Flames spells is invoked, swap it out for the correct version based on Exort' level.
 			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 			keys.caster:RemoveAbility(current_invoked_spell_name)
 			local new_invoked_spell_name = "invoker_retro_shroud_of_flames_exort"..exort_ability:GetLevel()
@@ -186,6 +186,14 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(quas_ability:GetLevel()) -- The leveling of the ability reflects the Quas Level. Exort level is done with lua and shown with tooltip manipulation.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_soul_blast") then  --If one of the 8 Soul Blast spells is invoked, swap it out for the correct version based on Wex' level.
+			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
+			keys.caster:RemoveAbility(current_invoked_spell_name)
+			local new_invoked_spell_name = "invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex"
+			keys.caster:AddAbility(new_invoked_spell_name)
+			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+			new_invoked_spell:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 		end
 	end
 end

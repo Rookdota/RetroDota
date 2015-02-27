@@ -1,30 +1,34 @@
 // Invoker's Disarm
-// Author:
+// Author: wFX
 // Date: February 15, 2015
 // Invoke: Exort Quas Exort
-// Strips the enemy of the capability to attack. Lasts 5 seconds with 900 cast range. Duration and cast range based on Exort.
-"invoker_retro_disarm"
+// Strips the enemy of the capability to attack. Lasts up to 8 seconds with 1200 cast range. Duration and cast range based on Exort.
+// Balance Ideas: Make cast range based on Quas
+"invoker_retro_disarm_level_1_exort"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"AbilityTextureName" 			"invoker_retro_disarm"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30"
+	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"500" 
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
 	}
 	
 	// Special
@@ -34,37 +38,13 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
 		}
+
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-140"
-		}
-		"04"
-		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"2.0"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"num_wall_elements"		"15"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_spacing"	"80"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_radius"	"105"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 		}
 	}
 	
@@ -72,34 +52,522 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-			"Function"				"invoker_retro_icy_path_on_spell_start"
-			"Target"				"POINT"
-			"NumWallElements"		"%num_wall_elements"
-			"WallElementSpacing"	"%wall_element_spacing"
-			"WallElementRadius"		"%wall_element_radius"
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
 		}
 	}
-	
+
 	"Modifiers"
 	{
-		"modifier_invoker_retro_icy_wall_slow"
+		"modifier_invoker_retro_disarm"
 		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
+			"Duration"			"%duration"
 			"IsPurgable"		"1"
-			
-			//TODO: The control points for this particle still need to be figured out.
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-			"EffectAttachType"		"follow_origin"
-			
-			"Properties"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
 			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
 			}
 		}
 	}
 }
 
+"invoker_retro_disarm_level_2_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"600" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"invoker_retro_disarm_level_3_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"700" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"invoker_retro_disarm_level_4_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"800" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"invoker_retro_disarm_level_5_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"900" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"invoker_retro_disarm_level_6_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"1000" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"invoker_retro_disarm_level_7_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"1100" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"invoker_retro_disarm_level_8_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName" 			"invoker_retro_disarm"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"1200" 
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+			"Function"				"invoker_retro_disarm_on_spell_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_invoker_retro_disarm"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"TextureName"		"invoker_retro_disarm"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

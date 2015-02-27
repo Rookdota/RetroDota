@@ -186,7 +186,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Quas Wex
 					keys.caster:AddAbility("invoker_retro_confuse")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Quas Exort
-					keys.caster:AddAbility("invoker_retro_disarm")
+					keys.caster:AddAbility("invoker_retro_disarm_level_" .. exort_ability:GetLevel().."_exort")
+					local disarm_ability = keys.caster:FindAbilityByName("invoker_retro_disarm_level_" .. exort_ability:GetLevel().."_exort")
+					disarm_ability:SetLevel(exort_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Wex Quas

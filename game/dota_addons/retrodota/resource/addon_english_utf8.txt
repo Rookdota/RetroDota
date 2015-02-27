@@ -40,7 +40,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nHits an enemy unit with a deafening blast, dealing heavy damage and causing the target to be mute for 3.5 seconds. Deals 65 damage per level in Exort."
 
 		
-		//Disarm (Broken into 7 spells)
+		//Disarm (Broken into 8 spells)
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort"                         "Disarm"
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_Description"             "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nStrips the enemy of the capability to attack. Lasts up to 8 seconds with 1200 cast range. Duration and cast range based on Exort."
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_duration"				  "DURATION(<font color=\"#E68A00\">EXORT</font>):"
@@ -83,6 +83,7 @@
 
 		"DOTA_Tooltip_modifier_invoker_retro_disarm"                  					  "Disarm"
 		"DOTA_Tooltip_modifier_invoker_retro_disarm_Description"                          "This unit can't attack."
+
 		
 		//EMP
 		"DOTA_Tooltip_Ability_invoker_retro_emp"                                          "EMP"

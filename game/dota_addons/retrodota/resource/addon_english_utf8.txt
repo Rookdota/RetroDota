@@ -279,10 +279,6 @@
 		
 		"DOTA_Tooltip_modifier_invoker_retro_scout_unit_ability"                          "Owl Scout"
 		"DOTA_Tooltip_modifier_invoker_retro_scout_unit_ability_Description"              "Invisible and invulnerable.  Has flying vision and truesight."
-		
-		//Bloodseeker's Thirst modifier is used to allow the Owl Scout to exceed the maximum movement speed of 522.
-		"DOTA_Tooltip_modifier_bloodseeker_thirst_speed"				                  "Owl Scout"
-		"DOTA_Tooltip_modifier_bloodseeker_thirst_speed_Description"	                  "Invisible and invulnerable.  Has flying vision and truesight."
 
 		
 		//Shock
@@ -332,10 +328,39 @@
 		"DOTA_Tooltip_Ability_invoker_retro_shroud_of_flames_exort8_magic_resistance"            "MAGIC RESISTANCE (<font color=\"#008A8A\">QUAS</font>):"
 		
 		
-		//Soul Blast
-		"DOTA_Tooltip_Ability_invoker_retro_soul_blast"                                   "Soul Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_Description"                       "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDeals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex."
-
+		//Soul Blast	
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_1_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_1_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_1_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_2_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_2_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_2_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_3_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_3_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_3_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_4_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_4_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_4_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_5_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_5_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_5_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_6_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_6_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_6_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_7_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_7_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_7_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_8_wex"                        "Soul Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_8_wex_Description"            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font> <font color=\"#E68A00\">Exort</font>.\n\nDamages the target unit and heals Invoker.  The damage dealt increases per level of Exort, the amount healed increases per level of Quas, and the cast range increases per level of Wex.\n\nDAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">75/150/225/300/375/450/525/600</font>\nHEAL (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">62.5/125/187.5/250/312.5/375/437.5/500</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_blast_level_8_wex_cast_range"             "CAST RANGE (<font color=\"#CC0099\">WEX</font>):"
+	
 		
 		//Soul Reaver
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver"                                  "Soul Reaver"
@@ -397,3 +422,4 @@
 		"DOTA_Tooltip_modifier_invoker_retro_wex_instance_Description"                    "Movement speed increased by 1%% per level of Wex."
 	}
 }
+ 

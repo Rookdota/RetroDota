@@ -52,6 +52,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 		old_spell_invoked_index_name = "invoker_retro_portal"
 	elseif string.find(old_spell_invoked_index_name, "invoker_retro_tornado_blast") then  --If one of the 8 Tornado Blast spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_tornado_blast"
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_soul_blast") then  --If one of the 8 Soul Blast spells was invoked.
+		old_spell_invoked_index_name = "invoker_retro_soul_blast"
 	end
 	
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
@@ -126,7 +128,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Wex Quas
 					keys.caster:AddAbility("invoker_retro_betrayal")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Wex Wex
-					--Since Portal's cast range increases with the level of Quas, it is split up into 8 abilities.
+					--Since Tornado Blast's cast range increases with the level of Quas, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas")
 					local tornado_blast_ability = keys.caster:FindAbilityByName("invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas")
 					tornado_blast_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
@@ -155,7 +157,10 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Quas Wex
 					keys.caster:AddAbility("invoker_retro_emp")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Quas Exort
-					keys.caster:AddAbility("invoker_retro_soul_blast")
+					--Since Soul Blast's cast range increases with the level of Wex, it is split up into 8 abilities.
+					keys.caster:AddAbility("invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex")
+					local soul_blast_ability = keys.caster:FindAbilityByName("invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex")
+					soul_blast_ability:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Wex Quas
@@ -222,6 +227,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 				new_spell_invoked_name = "invoker_retro_portal"
 			elseif string.find(new_spell_invoked_name, "invoker_retro_tornado_blast") then  --If one of the 8 Tornado Blast spells was invoked.
 				new_spell_invoked_name = "invoker_retro_tornado_blast"
+			elseif string.find(new_spell_invoked_name, "invoker_retro_soul_blast") then  --If one of the 8 Soul Blast spells was invoked.
+				new_spell_invoked_name = "invoker_retro_soul_blast"
 			end
 
 			if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= 0 then

@@ -1,6 +1,6 @@
 --[[ ============================================================================================================
 	Author: Rook, with help from Noya
-	Date: February 27, 2015
+	Date: February 26, 2015
 	Returns a reference to a newly-created illusion unit.
 ================================================================================================================= ]]
 function invoker_retro_confuse_create_illusion(keys, illusion_origin, illusion_incoming_damage, illusion_outgoing_damage, illusion_duration, find_clear_space)	

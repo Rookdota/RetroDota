@@ -1,6 +1,6 @@
 --[[ ============================================================================================================
 	Author: Rook
-	Date: February 24, 2015
+	Date: February 25, 2015
 	Called when Soul Blast is cast.  Damages the target enemy unit, and heals Invoker.
 ================================================================================================================= ]]
 function invoker_retro_soul_blast_on_spell_start(keys)

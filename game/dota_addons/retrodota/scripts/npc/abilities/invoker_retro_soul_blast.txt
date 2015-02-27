@@ -1,6 +1,6 @@
 // Invoker's Soul Blast
 // Author: Rook
-// Date: February 24, 2015
+// Date: February 25, 2015
 // Invoke: Wex Quas Exort
 // Deals up to 600 damage to a target enemy unit, based on Exort. Heals the Invoker for up to 500 hit points, based on Quas. Cast range is based on Wex.
 // Because Wex affects the AbilityCastRange, we use a separate ability for each possible Wex level.

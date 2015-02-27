@@ -1,6 +1,6 @@
 // Invoker's Chaos Meteor
-// Author:
-// Date: February 15, 2015
+// Author: Rook
+// Date: February 27, 2015
 // Invoke: Exort Quas Quas
 // Summons a powerful meteor to crush all enemies within its path. Deals 200 damage per second to units in its path. Based on Exort.
 // Note: Different sources indicate different damage values.  Some say it deals 25 damage per level of Exort per second to units in its path,

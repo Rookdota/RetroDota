@@ -25,12 +25,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"500" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -50,6 +44,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -66,6 +67,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -95,12 +107,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"600" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -120,6 +126,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -136,6 +149,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -165,12 +189,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"700" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -190,6 +208,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -206,6 +231,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -235,12 +271,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"800" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -260,6 +290,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -276,6 +313,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -305,12 +353,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"900" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -330,6 +372,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -346,6 +395,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -375,12 +435,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"1000" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -400,6 +454,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -416,6 +477,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -445,12 +517,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"1100" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -470,6 +536,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -486,6 +559,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -515,12 +599,6 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"1200" 
 	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -540,6 +618,13 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+			"Target" 		"TARGET"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -556,6 +641,17 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+
 			"States"
 			{
 				"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"

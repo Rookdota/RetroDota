@@ -4,9 +4,6 @@
 	Called when Disarm is cast.  Remove the attack command from a unit.
 ================================================================================================================= ]]
 function invoker_retro_disarm_on_spell_start(event)
---	event.caster:EmitSound("Hero_NyxAssassin.ManaBurn.Cast")
---	event.target:EmitSound("Hero_NyxAssassin.ManaBurn.Target")
-
 	local exort_ability = event.caster:FindAbilityByName("invoker_retro_exort")
 	if exort_ability ~= nil then
 		local duration = event.ability:GetLevelSpecialValueFor("duration", exort_ability:GetLevel() - 1) 

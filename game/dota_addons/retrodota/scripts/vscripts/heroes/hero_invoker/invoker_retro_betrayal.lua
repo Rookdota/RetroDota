@@ -54,5 +54,6 @@ function modifier_invoker_retro_betrayal_on_destroy(keys)
 	if target_player.invoker_retro_betrayal_original_team ~= nil then  --If this value was not stored, we're in trouble.
 		PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)
 		keys.target:SetTeam(target_player.invoker_retro_betrayal_original_team)
+		target_player.invoker_retro_betrayal_original_team = nil
 	end
 end

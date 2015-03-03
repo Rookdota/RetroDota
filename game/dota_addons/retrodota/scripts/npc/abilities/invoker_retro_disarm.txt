@@ -14,7 +14,6 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"AbilityTextureName" 			"invoker_retro_disarm"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"

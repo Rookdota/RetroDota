@@ -41,6 +41,7 @@ function modifier_invoker_retro_invisibility_aura_on_interval_think(keys)
 					keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
 				elseif current_gametime - individual_unit.invisibility_aura_started_to_fade_gametime >= keys.FadeTime then --If the unit is not already invis from the invis aura, apply the invis if they have been within its range and have not attacked nor used an ability for at least the FadeTime.
 					keys.ability:ApplyDataDrivenModifier(keys.caster, individual_unit, "modifier_invoker_retro_invisibility_aura_effect", nil)
+					individual_unit:EmitSound("Hero_Invoker.GhostWalk")
 				end
 				
 				individual_unit.invisibility_aura_most_recent_gametime_in_aura = current_gametime  --Keep track of the most recent time the unit was within an Invisibility Aura.

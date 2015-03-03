@@ -119,29 +119,29 @@
 	// Author:
 	// Date: February 15, 2015
 	// Invoke: Quas Wex Quas
-	// Cast a dark magic on a target enemy, causing all of its previous allies to turn against it, thinking it's a foe. Duration base on Quas.
+	// Cast a dark magic on a target enemy, causing all of its previous allies to turn against it, thinking it's a foe. Duration based on Quas.
 	"invoker_retro_betrayal"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"invoker_retro_betrayal"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"200"
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
 		}
 		
 		// Special
@@ -151,37 +151,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"duration"				"1.5 3 4.5 6 7.5 9 10.5 12"  //Increases with Quas.
 			}
 		}
 		
@@ -189,32 +159,33 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_betrayal.lua"
+				"Function"			"invoker_retro_betrayal_on_spell_start"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_icy_wall_slow"
+			"modifier_invoker_retro_betrayal"
 			{
+				"Duration"			"%duration"
 				"Passive"  			"0"
 				"IsHidden" 			"0"
 				"IsBuff"			"0"
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-				"EffectAttachType"		"follow_origin"
+				"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+				"EffectAttachType"		"follow_overhead"
 				
-				"Properties"
+				//When this modifier's duration ends, or when it is othwerwise removed, move the affected unit back to their original team.
+				"OnDestroy"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_invoker/invoker_retro_betrayal.lua"
+						"Function"			"modifier_invoker_retro_betrayal_on_destroy"
+					}
 				}
 			}
 		}
@@ -309,13 +280,13 @@
 			}
 			"11"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"burn_damage_per_interval"			"80"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
 			}
 			"12"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"burn_interval"						"1.0"
+				"burn_interval"						"1.0"  //Alter the tooltip if this is changed.
 			}
 		}
 		
@@ -1241,7 +1212,6 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"invoker_retro_disarm"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"

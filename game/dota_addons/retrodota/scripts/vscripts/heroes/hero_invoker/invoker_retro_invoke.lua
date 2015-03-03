@@ -129,6 +129,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Wex Quas
 					keys.caster:AddAbility("invoker_retro_betrayal")
+					local betrayal_ability = keys.caster:FindAbilityByName("invoker_retro_betrayal")
+					betrayal_ability:SetLevel(quas_ability:GetLevel())
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Wex Wex
 					--Since Tornado Blast's cast range increases with the level of Quas, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas")

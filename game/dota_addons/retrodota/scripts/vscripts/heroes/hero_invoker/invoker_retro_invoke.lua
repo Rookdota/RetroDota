@@ -189,6 +189,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 			if keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_quas" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Quas Quas
 					keys.caster:AddAbility("invoker_retro_chaos_meteor")
+					local chaos_meteor_ability = keys.caster:FindAbilityByName("invoker_retro_chaos_meteor")
+					chaos_meteor_ability:SetLevel(exort_ability:GetLevel())
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Quas Wex
 					--Since Confuse's cast range increases with the level of Exort, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_confuse_level_" .. exort_ability:GetLevel() .. "_exort")

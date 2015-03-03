@@ -27,8 +27,13 @@
 		
 		//Chaos Meteor
 		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor"                                 "Chaos Meteor"
-		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_Description"                     "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons a powerful meteor to crush all enemies within its path. Deals 200 damage per second to units in its path. Based on Exort."
-
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_Description"                     "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font> <font color=\"#008A8A\">Quas</font>.\n\nInvoker pulls a flaming meteor from space onto the targeted location. After a %land_delay%-second delay, the meteor lands and rolls forward %travel_distance% units at %travel_speed% units per second, dealing damage every %main_damage_interval% seconds.  Damaged units are burned and take additional damage every second for %burn_duration% seconds.  Units may be damaged by the meteor multiple times, in which case they will also be burned multiple times.  The damage initially dealt by the meteor increases per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_main_damage_per_second_tooltip"  "METEOR DAMAGE PER SECOND (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_burn_damage_per_interval"        "BURN DAMAGE PER SECOND:"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_chaos_meteor_burn_damage"                    "Chaos Meteor Burn"
+		"DOTA_Tooltip_modifier_invoker_retro_chaos_meteor_burn_damage_Description"        "Taking damage every second due to contact with Invoker's Chaos Meteor."
+		
 		
 		//Confuse
 		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort"                        "Confuse"
@@ -137,11 +142,13 @@
 		
 		//Exort
 		"DOTA_Tooltip_Ability_invoker_retro_exort"                                        "Exort"
-		"DOTA_Tooltip_Ability_invoker_retro_exort_Description"                            "Builds Kael's skill in the fire magics. These spells, when invoked, deal with the power of fire, projection and damage. As a reagent, regenerates .5 hitpoints per level, per reagent cast. Increases Strength by 1 each time his skill is learned."
-		
+		"DOTA_Tooltip_Ability_invoker_retro_exort_Description"                            "Allows manipulation of fire magics and grants a permanent Strength bonus. Each Exort instance provides increased health regeneration."
+		"DOTA_Tooltip_Ability_invoker_retro_exort_bonus_health_regen_per_instance"		  "HEALTH REGEN BONUS PER <font color=\"#E68A00\">EXORT</font> INSTANCE:"
+		"DOTA_Tooltip_Ability_invoker_retro_exort_bonus_strength"		              	  "PASSIVE STRENGTH BONUS:"
+
 		"DOTA_Tooltip_modifier_invoker_retro_exort_instance"                              "Exort"
 		"DOTA_Tooltip_modifier_invoker_retro_exort_instance_Description"                  "Health regeneration per second increased by .5 per level of Exort."
-
+		
 		
 		//Firebolt
 		"DOTA_Tooltip_Ability_invoker_retro_firebolt"                                     "Firebolt"
@@ -247,8 +254,9 @@
 		
 		
 		//Invoke
+		//Note: The description is at its maximum line limit.  Coloring reagent names with <font> also causes some of the description to be cut off.
 		"DOTA_Tooltip_Ability_invoker_retro_invoke"                                       "Invoke"
-		"DOTA_Tooltip_Ability_invoker_retro_invoke_Description"                           "Invoker combines the three reagents he has active into a spell, with different effects based on the reagents. The order in which the reagents were cast makes a difference."
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_Description"                           "Invoker combines the three reagents he has active into a spell.  The order in which the reagents were cast determines which new spell is invoked.\nQuas Quas Quas:  Icy Path\nQuas Quas Wex:   Portal\nQuas Quas Exort:  Frost Nova\nQuas Wex Quas:   Betrayal\nQuas Wex Wex:    Tornado Blast\nQuas Wex Exort:   Levitation\nQuas Exort Quas:  Power Word\nQuas Exort Wex:   Invisibility Aura\nQuas Exort Exort:  Shroud of Flames\nWex Quas Quas:   Mana Burn\nWex Quas Wex:    EMP\nWex Quas Exort:   Soul Blast\nWex Wex Quas:    Telelightning\nWex Wex Wex:     Shock\nWex Wex Exort:    Arcane Arts\nWex Exort Quas:   Scout\nWex Exort Wex:    Energy Ball\nWex Exort Exort:   Lightning Shield\nExort Quas Quas:  Chaos Meteor\nExort Quas Wex:   Confuse\nExort Quas Exort:  Disarm\nExort Wex Quas:   Soul Reaver\nExort Wex Wex:    Firestorm\nExort Wex Exort:   Incinerate\nExort Exort Quas:  Deafening Blast\nExort Exort Wex:   Inferno\nExort Exort Exort:  Firebolt"
 
 		
 		//Levitation
@@ -329,11 +337,14 @@
 		
 		//Quas
 		"DOTA_Tooltip_Ability_invoker_retro_quas"                                         "Quas"
-		"DOTA_Tooltip_Ability_invoker_retro_quas_Description"                             "Builds Kael's skills in the arcana magics. These spells, when invoked deal with the power of the mind, wind and water. As a reagent, increases damage by 2%% per level, per reagent cast. Increases Intelligence by 1 each time this skill is learned."
+		"DOTA_Tooltip_Ability_invoker_retro_quas_Description"							  "Allows manipulation of arcana magics and grants a permanent Intelligence bonus. Each Quas instance provides increased attack damage."
+		"DOTA_Tooltip_Ability_invoker_retro_quas_bonus_damage_percent_per_instance"		  "%ATTACK DAMAGE BONUS PER <font color=\"#008A8A\">QUAS</font> INSTANCE:"
+		"DOTA_Tooltip_Ability_invoker_retro_quas_bonus_intelligence"		              "PASSIVE INTELLIGENCE BONUS:"
 		
 		"DOTA_Tooltip_modifier_invoker_retro_quas_instance"                               "Quas"
 		"DOTA_Tooltip_modifier_invoker_retro_quas_instance_Description"                   "Damage increased by 2%% per level of Quas."
 
+		
 		//Scout
 		"DOTA_Tooltip_Ability_invoker_retro_scout"                                        "Scout"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons an invisible, invulnerable Owl Scout that has flying vision and truesight.  The summon duration, vision radius, and movement speed increase per level of Wex."
@@ -485,8 +496,10 @@
 		
 		//Wex
 		"DOTA_Tooltip_Ability_invoker_retro_wex"                                          "Wex"
-		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Builds Kael's skill in the energy magics. These spells, when invoked, deal with the power of electricity and lightning. As a reagent, increases movement speed by 1%% per level, per reagent. Increases Agility by 1 each time this skill is learned."
-		
+		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Allows manipulation of energy magics and grants a permanent Agility bonus. Each Wex instance provides increased movement speed."
+		"DOTA_Tooltip_Ability_invoker_retro_wex_move_speed_percent_per_instance"		  "%MOVE SPEED BONUS PER <font color=\"#CC0099\">WEX</font> INSTANCE:"
+		"DOTA_Tooltip_Ability_invoker_retro_wex_bonus_agility"		              		  "PASSIVE AGILITY BONUS:"
+
 		"DOTA_Tooltip_modifier_invoker_retro_wex_instance"                                "Wex"
 		"DOTA_Tooltip_modifier_invoker_retro_wex_instance_Description"                    "Movement speed increased by 1%% per level of Wex."
 	}

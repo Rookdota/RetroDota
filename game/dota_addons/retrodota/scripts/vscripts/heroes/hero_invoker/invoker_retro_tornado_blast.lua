@@ -52,7 +52,7 @@ function invoker_retro_tornado_blast_on_spell_start(keys)
 	local tornado_blast_final_position = caster_origin + (projectile_information.vVelocity * tornado_blast_duration)
 	local tornado_blast_velocity_per_frame = projectile_information.vVelocity * .03
 	
-	--Create a dummy unit will follow the path of the tornado, providing flying vision and sound.
+	--Create a dummy unit that will follow the path of the tornado, providing flying vision and sound.
 	local tornado_blast_dummy_unit = CreateUnitByName("npc_dota_invoker_retro_tornado_blast_unit", caster_origin, false, nil, nil, keys.caster:GetTeam())
 	local tornado_blast_dummy_unit_ability = tornado_blast_dummy_unit:FindAbilityByName("dummy_unit_passive")
 	if tornado_blast_dummy_unit_ability ~= nil then

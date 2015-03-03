@@ -68,6 +68,9 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
+			
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -149,6 +152,9 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
@@ -232,6 +238,9 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
+			
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -313,6 +322,9 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
@@ -396,6 +408,9 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
+			
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -477,6 +492,9 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
@@ -560,6 +578,9 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
+			
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -641,6 +662,9 @@
 			"IsDebuff"			"1"
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
+			
+			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{

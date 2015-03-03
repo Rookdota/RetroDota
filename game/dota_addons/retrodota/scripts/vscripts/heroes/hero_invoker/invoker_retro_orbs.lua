@@ -210,6 +210,8 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(exort_ability:GetLevel())  --Level up the ability for tooltip purposes.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_chaos_meteor") then
+			current_invoked_spell:SetLevel(exort_ability:GetLevel())
 		end
 	end
 end

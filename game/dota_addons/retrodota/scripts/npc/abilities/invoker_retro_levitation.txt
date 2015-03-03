@@ -3,6 +3,7 @@
 // Date: February 19, 2015
 // Invoke: Quas Wex Exort
 // Allows you to rise into the air, invulnerable. Duration is based on Wex, Quas and Exort.
+// Balance ideas: While levitating, replace the skill with a sub-ability that allows you to cancel the levitation early.
 "invoker_retro_levitation"
 {
 	// General

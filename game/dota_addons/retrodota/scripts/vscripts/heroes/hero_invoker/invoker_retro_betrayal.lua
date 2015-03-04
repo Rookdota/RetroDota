@@ -23,10 +23,15 @@ function invoker_retro_betrayal_on_spell_start(keys)
 					PlayerResource:SetCustomTeamAssignment(target_pid, i)
 					keys.target:SetTeam(i)
 					
-					if target_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
-						keys.target:SetCustomHealthLabel(GetTeamName(target_player.invoker_retro_betrayal_original_team), 0, 255, 0)
-					elseif target_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
-						keys.target:SetCustomHealthLabel(GetTeamName(target_player.invoker_retro_betrayal_original_team), 255, 0, 0)
+					--Set up health labels for every hero now that a unit has Betrayal on them.
+					local herolist = HeroList:GetAllHeroes()
+					for i, individual_hero in ipairs(herolist) do
+						local individual_player = PlayerResource:GetPlayer(individual_hero:GetPlayerID())
+						if individual_hero:GetTeam() == DOTA_TEAM_GOODGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
+							individual_hero:SetCustomHealthLabel("Radiant", 0, 255, 0)
+						elseif individual_hero:GetTeam() == DOTA_TEAM_BADGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
+							individual_hero:SetCustomHealthLabel("Dire", 255, 0, 0)
+						end
 					end
 					
 					keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_invoker_retro_betrayal", nil)
@@ -57,7 +62,21 @@ function modifier_invoker_retro_betrayal_on_destroy(keys)
 	local target_pid = keys.target:GetPlayerID()
 	local target_player = PlayerResource:GetPlayer(target_pid)
 	
-	keys.target:SetCustomHealthLabel("", 0, 0, 0)  --Remove the custom health label.
+	--Remove health labels if no heroes have Betrayal on them anymore.
+	local herolist = HeroList:GetAllHeroes()
+	local someone_has_betrayal = false
+	for i, individual_hero in ipairs(herolist) do
+		if individual_hero:HasModifier("modifier_invoker_retro_betrayal") then
+			someone_has_betrayal = true
+			print("someone has Betrayal")
+		end
+	end
+	
+	if not someone_has_betrayal then
+		for i, individual_hero in ipairs(herolist) do
+			individual_hero:SetCustomHealthLabel("", 0, 0, 0)  --Remove the custom health label.
+		end
+	end
 
 	if target_player.invoker_retro_betrayal_original_team ~= nil then  --If this value was not stored, we're in trouble.
 		PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)

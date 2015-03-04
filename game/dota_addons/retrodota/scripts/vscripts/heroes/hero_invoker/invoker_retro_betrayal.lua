@@ -23,6 +23,12 @@ function invoker_retro_betrayal_on_spell_start(keys)
 					PlayerResource:SetCustomTeamAssignment(target_pid, i)
 					keys.target:SetTeam(i)
 					
+					if target_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
+						keys.target:SetCustomHealthLabel(GetTeamName(target_player.invoker_retro_betrayal_original_team), 0, 255, 0)
+					elseif target_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
+						keys.target:SetCustomHealthLabel(GetTeamName(target_player.invoker_retro_betrayal_original_team), 255, 0, 0)
+					end
+					
 					keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_invoker_retro_betrayal", nil)
 
 					found_new_team = true
@@ -49,7 +55,9 @@ end
 ================================================================================================================= ]]
 function modifier_invoker_retro_betrayal_on_destroy(keys)
 	local target_pid = keys.target:GetPlayerID()
-	local target_player = PlayerResource:GetPlayer(target_pid)	
+	local target_player = PlayerResource:GetPlayer(target_pid)
+	
+	keys.target:SetCustomHealthLabel("", 0, 0, 0)  --Remove the custom health label.
 
 	if target_player.invoker_retro_betrayal_original_team ~= nil then  --If this value was not stored, we're in trouble.
 		PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)

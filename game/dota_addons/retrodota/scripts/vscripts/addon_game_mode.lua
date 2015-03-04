@@ -45,7 +45,7 @@ function retro_dota:InitGameMode()
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(retro_dota, 'OnPlayerPickHero'), self)
 end
 
---------------------------------------------------------------------------------
+
 function retro_dota:GameThink()
 	return 0.25
 end

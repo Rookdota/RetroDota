@@ -1,0 +1,15 @@
+//A dummy unit that follows the path of the Energy Ball.
+"npc_dota_invoker_retro_energy_ball_unit"
+{
+		// General
+		//----------------------------------------------------------------
+		    "BaseClass"                 "npc_dota_creature"
+			"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+			"VisionDaytimeRange"        "0"
+			"VisionNighttimeRange"      "0"
+			"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+			"MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_GROUND"
+			"WakesNeutrals"				"0"
+			"AbilityLayout"             "4"
+			"Ability1"                  "dummy_unit_passive"
+}

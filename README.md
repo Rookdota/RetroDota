@@ -34,7 +34,7 @@ Invoker
 - [Incinerate EWE](http://youtu.be/l3tminWOrRk?t=24m55s)  
 - [Deafening Blast EEQ](http://youtu.be/l3tminWOrRk?t=25m40s)
 - [Inferno EEW](http://youtu.be/l3tminWOrRk?t=26m33s)  
-- [Deafening Blast EEQ](http://youtu.be/l3tminWOrRk?t=25m40s)  
+- [Firestorm](http://puu.sh/gnuRo/a38e462e3c.mp4)
 
 Gambler
 -------

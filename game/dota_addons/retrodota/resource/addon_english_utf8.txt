@@ -75,7 +75,12 @@
 		
 		//Deafening Blast
 		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast"                              "Deafening Blast"
-		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nHits an enemy unit with a deafening blast, dealing heavy damage and causing the target to be mute for 3.5 seconds. Deals 65 damage per level in Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nDamages and mutes the target enemy unit, disabling their passives in addition to preventing them from casting spells and using items.  The effect duration and damage dealt increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_mute_duration"                "DURATION (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_damage"                       "DAMAGE (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_deafening_blast"                  			  "Deafening Blast"
+		"DOTA_Tooltip_modifier_invoker_retro_deafening_blast_Description"                 "Muted.  This unit cannot cast spells nor use items, and its passives are disabled."
 
 		
 		//Disarm (Broken into 8 spells)

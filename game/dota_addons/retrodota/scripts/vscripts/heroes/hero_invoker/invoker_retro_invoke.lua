@@ -214,6 +214,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Exort Quas
 					keys.caster:AddAbility("invoker_retro_deafening_blast")
+					local deafening_blast_ability = keys.caster:FindAbilityByName("invoker_retro_deafening_blast")
+					deafening_blast_ability:SetLevel(exort_ability:GetLevel())
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Exort Wex
 					keys.caster:AddAbility("invoker_retro_inferno")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Exort Exort

@@ -24,6 +24,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"500" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -49,6 +54,13 @@
 			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
 			"Target" 		"TARGET"
 		}
+		
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
 
 		"RunScript"
 		{
@@ -67,14 +79,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -109,6 +121,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"600" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -134,6 +151,13 @@
 			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
 			"Target" 		"TARGET"
 		}
+		
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
 
 		"RunScript"
 		{
@@ -152,14 +176,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -194,6 +218,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"700" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -220,6 +249,13 @@
 			"Target" 		"TARGET"
 		}
 
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
+		
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -237,14 +273,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -279,6 +315,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"800" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -305,6 +346,13 @@
 			"Target" 		"TARGET"
 		}
 
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
+		
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -322,14 +370,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -364,6 +412,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"900" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -390,6 +443,13 @@
 			"Target" 		"TARGET"
 		}
 
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
+		
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -407,14 +467,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -449,6 +509,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"1000" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -475,6 +540,13 @@
 			"Target" 		"TARGET"
 		}
 
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
+		
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -492,14 +564,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -534,6 +606,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"1100" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -559,6 +636,13 @@
 			"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
 			"Target" 		"TARGET"
 		}
+		
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
 
 		"RunScript"
 		{
@@ -577,14 +661,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}
@@ -619,6 +703,11 @@
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"1200" 
 	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+	}
+	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -645,6 +734,13 @@
 			"Target" 		"TARGET"
 		}
 
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+			"EffectAttachType"  "PATTACH_ABSORIGIN"
+			"Target"            "TARGET"
+		}
+		
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -662,14 +758,14 @@
 			"IsHidden"			"0"
 			"TextureName"		"invoker_retro_disarm"
 			
-			"EffectName"            "particles/items2_fx/heavens_halberd.vpcf"
+			"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
 					"EffectAttachType"  "follow_overhead"
 					"Target"            "TARGET"
 				}

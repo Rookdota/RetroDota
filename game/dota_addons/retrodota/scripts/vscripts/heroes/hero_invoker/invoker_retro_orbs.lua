@@ -214,6 +214,8 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(exort_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_betrayal") then
 			current_invoked_spell:SetLevel(quas_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_deafening_blast") then
+			current_invoked_spell:SetLevel(exort_ability:GetLevel())
 		end
 	end
 end

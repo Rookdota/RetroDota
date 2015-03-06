@@ -168,7 +168,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Wex Quas
-					keys.caster:AddAbility("invoker_retro_telelightning")
+					keys.caster:AddAbility("invoker_retro_telelightning_level_" .. wex_ability:GetLevel() .. "_wex")
+					local telelightning_ability = keys.caster:FindAbilityByName("invoker_retro_telelightning_level_" .. wex_ability:GetLevel() .. "_wex")
+					telelightning_ability:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Wex Wex
 					keys.caster:AddAbility("invoker_retro_shock")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Wex Exort

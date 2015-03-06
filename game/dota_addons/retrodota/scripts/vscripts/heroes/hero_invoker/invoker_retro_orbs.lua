@@ -162,6 +162,14 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(exort_ability:GetLevel())  --Level up the ability for tooltip purposes.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_telelightning") then  --If one of the 8 Telelighning spells is invoked, swap it out for the correct version based on Exort' level.
+			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
+			keys.caster:RemoveAbility(current_invoked_spell_name)
+			local new_invoked_spell_name = "invoker_retro_telelightning_level_" .. wex_ability:GetLevel() .. "_wex"
+			keys.caster:AddAbility(new_invoked_spell_name)
+			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+			new_invoked_spell:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 		elseif string.find(current_invoked_spell_name, "invoker_retro_invisibility_aura") then  --If Invisibility Aura is invoked, increase the particle effect to match the new radius.
 			local radius = current_invoked_spell:GetLevelSpecialValueFor("radius", quas_ability:GetLevel() - 1)
 			

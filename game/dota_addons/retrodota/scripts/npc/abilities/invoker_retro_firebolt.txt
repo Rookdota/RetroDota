@@ -30,6 +30,7 @@
 	{
 		"particle"			"particles/units/heroes/hero_invoker/invoker_retro_firebolt.vpcf"
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 	}
 	
 	// Special

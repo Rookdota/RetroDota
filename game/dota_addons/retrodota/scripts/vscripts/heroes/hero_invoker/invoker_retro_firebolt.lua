@@ -46,7 +46,7 @@ function invoker_retro_firebolt_on_projectile_hit_unit(keys)
 		damage_to_deal = keys.ability:GetLevelSpecialValueFor("damage", exort_ability:GetLevel() - 1)
 	end
 	
-	keys.target:EmitSound("Hero_SkeletonKing.Hellfire_BlastImpact")
+	keys.target:EmitSound("Hero_OgreMagi.Fireblast.Target")
 	
 	ApplyDamage({victim = keys.target, attacker = keys.caster, damage = damage_to_deal, damage_type = DAMAGE_TYPE_MAGICAL,})
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_invoker_retro_firebolt_ministun", nil)

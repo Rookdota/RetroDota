@@ -162,7 +162,11 @@
 		
 		//Firebolt
 		"DOTA_Tooltip_Ability_invoker_retro_firebolt"                                     "Firebolt"
-		"DOTA_Tooltip_Ability_invoker_retro_firebolt_Description"                         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nHurls a fiery bolt that deals 380 damage. Based on level of Exort"
+		"DOTA_Tooltip_Ability_invoker_retro_firebolt_Description"                         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font> <font color=\"#E68A00\">Exort</font>.\n\nHurls a fiery bolt at the target enemy unit.  When it connects, it deals damage and mini-stuns.  The damage dealt increases per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_firebolt_damage"							  "DAMAGE (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_firebolt_ministun"                            "Firebolt Mini-Stun"
+		"DOTA_Tooltip_modifier_invoker_retro_firebolt_ministun_Description"                "Mini-stunned."
 
 		
 		//Firestorm

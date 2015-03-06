@@ -222,6 +222,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 					keys.caster:AddAbility("invoker_retro_inferno")
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Exort Exort
 					keys.caster:AddAbility("invoker_retro_firebolt")
+					local firebolt_ability = keys.caster:FindAbilityByName("invoker_retro_firebolt")
+					firebolt_ability:SetLevel(exort_ability:GetLevel())
 				end
 			end
 		end

@@ -218,6 +218,8 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(exort_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_energy_ball") then
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_firebolt") then
+			current_invoked_spell:SetLevel(exort_ability:GetLevel())
 		end
 	end
 end

@@ -33,8 +33,9 @@ Invoker
 - [Energy Ball WEW](http://youtu.be/l3tminWOrRk?t=23m40s)  
 - [Incinerate EWE](http://youtu.be/l3tminWOrRk?t=24m55s)  
 - [Deafening Blast EEQ](http://youtu.be/l3tminWOrRk?t=25m40s)
-- [Inferno EEW](http://youtu.be/l3tminWOrRk?t=26m33s)  
-- [Firestorm](http://puu.sh/gnuRo/a38e462e3c.mp4)
+- [Inferno EEW](http://youtu.be/l3tminWOrRk?t=26m33s) 
+- [Firebolt EEE](http://youtu.be/l3tminWOrRk?t=27m12s)
+- [Firestorm EWW](http://puu.sh/gnuRo/a38e462e3c.mp4)
 
 Gambler
 -------

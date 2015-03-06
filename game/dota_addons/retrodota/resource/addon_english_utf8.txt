@@ -6,9 +6,9 @@
 		// ******************** GENERAL **********************
 		"addon_game_name"			"Retro Dota"	
 		
-		//Quas uses <font color=\"#008A8A\">Quas</font>
-		//Wex uses <font color=\"#CC0099\">Wex</font>
-		//Exort uses <font color=\"#E68A00\">Exort</font>
+		//Quas uses <font color=\"#008A8A\">Quas</font>, which is (0, 138, 138)
+		//Wex uses <font color=\"#CC0099\">Wex</font>, which is (204, 0, 153)
+		//Exort uses <font color=\"#E68A00\">Exort</font>, which is (230, 138, 0)
 		
 		// ******************** HEROES ***********************
 		"npc_dota_hero_invoker"    	  "Kael"
@@ -146,7 +146,8 @@
 		
 		//Energy Ball
 		"DOTA_Tooltip_Ability_invoker_retro_energy_ball"                                  "Energy Ball"
-		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_Description"                      "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons an energy ball that explodes dealing up to 800 damage to units in a 400 AOE based on Wex level."
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_Description"                      "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nSummons an energy ball at Invoker's location.  After a %delay_before_exploding%-second delay, it deals damage to all enemy units in a %radius%-unit AoE.  The damage dealt increases per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_damage"							  "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 
 		
 		//Exort

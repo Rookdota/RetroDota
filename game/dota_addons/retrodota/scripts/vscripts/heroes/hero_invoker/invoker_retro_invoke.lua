@@ -183,6 +183,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 					scout_ability:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Exort Wex
 					keys.caster:AddAbility("invoker_retro_energy_ball")
+					local energy_ball_ability = keys.caster:FindAbilityByName("invoker_retro_energy_ball")
+					energy_ball_ability:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Exort Exort
 					keys.caster:AddAbility("invoker_retro_lightning_shield")
 				end

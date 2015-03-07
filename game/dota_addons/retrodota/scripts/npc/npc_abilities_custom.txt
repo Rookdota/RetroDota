@@ -6086,34 +6086,38 @@
 	}
 	
 	// Invoker's Telelightning
-	// Author: 
-	// Date: February 15, 2015
+	// Author: wFX
+	// Date: Marcg 25, 2015
 	// Invoke: Wex Wex Quas
 	// Cast a powerful chain of energy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range.
-	"invoker_retro_telelightning"
+	"invoker_retro_telelightning_level_1_wex"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName" 			"invoker_retro_telelightning"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 		
+	
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
 		}
-		
+	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -6121,75 +6125,483 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 		}
 		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_icy_wall_slow"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-				"EffectAttachType"		"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-				}
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
 			}
 		}
 	}
 	
+	"invoker_retro_telelightning_level_2_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
+	
+	"invoker_retro_telelightning_level_3_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
+	
+	"invoker_retro_telelightning_level_4_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
+	
+	"invoker_retro_telelightning_level_5_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
+	
+	"invoker_retro_telelightning_level_6_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
+	
+	"invoker_retro_telelightning_level_7_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
+	
+	"invoker_retro_telelightning_level_8_wex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
 	// Invoker's Tornado Blast
 	// Author: Rook
 	// Date: February 19, 2015

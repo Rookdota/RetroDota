@@ -1,5 +1,5 @@
 // Invoker's Energy Ball
-// Author:
+// Author: Rook
 // Date: March 5, 2015
 // Invoke: Wex Exort Wex
 // Summons an energy ball that explodes dealing up to 800 damage to units in a 400 AOE based on Wex level.

@@ -1,6 +1,6 @@
 // Invoker's Mana Burn
-// Author:
-// Date: February 15, 2015
+// Author: Rook
+// Date: February 24, 2015
 // Invoke: Wex Quas Quas
 // Sends a bolt of negative energy that burns 150 points of a target enemy unit's mana. The mana combusts, dealing damage equal to the amount of mana burned.
 "invoker_retro_mana_burn"

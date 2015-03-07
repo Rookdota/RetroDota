@@ -1,5 +1,5 @@
 // Invoker's Shroud of Flames
-// Author:
+// Author: Noya
 // Date: February 15, 2015
 // Invoke: Quas Exort Exort
 // Creates a barrier that reduces spell damage against a friendly unit by 12%. Units that attack that unit get flamed, with damage based on Exort. Lasts 40 seconds.

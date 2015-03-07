@@ -1,6 +1,6 @@
 // Invoker's Firebolt
-// Author:
-// Date: February 15, 2015
+// Author: Rook
+// Date: March 6, 2015
 // Invoke: Exort Exort Exort
 // Hurls a fiery bolt that deals 380 damage. Based on level of Exort
 "invoker_retro_firebolt"

@@ -465,6 +465,45 @@
 		//Telelightning
 		"DOTA_Tooltip_Ability_invoker_retro_telelightning"                                "Telelightning"
 		"DOTA_Tooltip_Ability_invoker_retro_telelightning_Description"                    "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_1_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_1_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_1_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_1_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_2_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_2_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_2_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_2_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_3_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_3_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_3_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_3_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_4_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_4_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_4_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_4_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_5_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_5_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_5_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_5_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_6_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_6_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_6_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_6_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_7_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_7_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_7_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_7_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_8_wex"                        "Telelightning"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_8_wex_Description"            "Invoke: <font color=\"#CC0099\">WEX</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nCast a powerful chain of eneergy that deals 280 damage. Kael travels with this energy, ending at the location of the enemy. 400 Casting Range."
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_8_wex_damage"                 "DAMAGE (<font color=\"#008A8A\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_telelightning_level_8_wex_cast_range"       	  "CAST RANGE (<font color=\"#008A8A\">WEX</font>):"
 		
 		
 		//Tornado Blast (broken up into 7 spells)

@@ -14,7 +14,8 @@ function invoker_retro_telelightning_on_spell_start(event)
 	ParticleManager:SetParticleControl(particle, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z))
 	ParticleManager:SetParticleControl(particle, 1, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z))
 
-	target:EmitSound("Hero_Zuus.ArcLightning")
+	caster:EmitSound("Hero_Zuus.ArcLightning.Cast")
+	target:EmitSound("Hero_Zuus.ArcLightning.Target")
 	FindClearSpaceForUnit(caster, target:GetAbsOrigin(), false)
 
 	local damageTable = {

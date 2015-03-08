@@ -22,13 +22,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"250"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -44,16 +45,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -86,13 +77,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"300"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -108,16 +100,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -150,13 +132,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"350"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -172,16 +155,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -214,13 +187,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"400"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -236,16 +210,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -278,13 +242,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"450"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -300,16 +265,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -342,13 +297,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"500"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -364,16 +320,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -407,13 +353,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"550"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -429,16 +376,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 
@@ -471,13 +408,14 @@
 	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"250"
 	"AbilityCastRange"				"600"
-	"AbilityCastPoint"				"1.0"
+	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
 	
 
 	"precache"
 	{
-		"particle"  "particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"		"particles/items_fx/chain_lightning.vpcf"
 	}
 
 	// Special
@@ -493,16 +431,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
-		}
-	}
-	
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
-			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
-			"CastPoint"				"%cast_point"
 		}
 	}
 

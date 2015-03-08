@@ -56,6 +56,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 		old_spell_invoked_index_name = "invoker_retro_soul_blast"
 	elseif string.find(old_spell_invoked_index_name, "invoker_retro_confuse") then  --If one of the 8 Confuse spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_confuse"
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells was invoked.
+		old_spell_invoked_index_name = "invoker_retro_inferno"
 	end
 	
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
@@ -223,7 +225,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 					local deafening_blast_ability = keys.caster:FindAbilityByName("invoker_retro_deafening_blast")
 					deafening_blast_ability:SetLevel(exort_ability:GetLevel())
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Exort Wex
-					keys.caster:AddAbility("invoker_retro_inferno")
+					keys.caster:AddAbility("invoker_retro_inferno_level_" .. wex_ability:GetLevel() .. "_wex")  --Inferno is split up into 8 abilities for tooltip purposes.
+					local inferno_ability = keys.caster:FindAbilityByName("invoker_retro_inferno_level_" .. wex_ability:GetLevel() .. "_wex")
+					inferno_ability:SetLevel(exort_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Exort Exort
 					keys.caster:AddAbility("invoker_retro_firebolt")
 					local firebolt_ability = keys.caster:FindAbilityByName("invoker_retro_firebolt")
@@ -251,6 +255,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 				new_spell_invoked_name = "invoker_retro_soul_blast"
 			elseif string.find(old_spell_invoked_index_name, "invoker_retro_confuse") then  --If one of the 8 Confuse spells was invoked.
 				old_spell_invoked_index_name = "invoker_retro_confuse"
+			elseif string.find(old_spell_invoked_index_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells was invoked.
+				old_spell_invoked_index_name = "invoker_retro_inferno"
 			end
 
 			if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= 0 then

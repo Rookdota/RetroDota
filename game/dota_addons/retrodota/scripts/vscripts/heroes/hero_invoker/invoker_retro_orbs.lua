@@ -230,6 +230,14 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(exort_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_firestorm") then
 			current_invoked_spell:SetLevel(exort_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells is invoked, swap it out for the correct version based on Wex's level.
+			local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
+			keys.caster:RemoveAbility(current_invoked_spell_name)
+			local new_invoked_spell_name = "invoker_retro_inferno_level_" .. wex_ability:GetLevel() .. "_wex"
+			keys.caster:AddAbility(new_invoked_spell_name)
+			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+			new_invoked_spell:SetLevel(exort_ability:GetLevel())  --Level up the ability for tooltip purposes.
 		end
 	end
 end

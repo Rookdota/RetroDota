@@ -49,7 +49,7 @@
 			"Ability9"                  "invoker_retro_firestorm"
 			"Ability10"                 "invoker_retro_incinerate"
 			"Ability11"                 "invoker_retro_deafening_blast"
-			"Ability12"                 "invoker_retro_inferno"
+			"Ability12"                 "invoker_retro_inferno_level_1_wex"
 			"Ability13"                 "invoker_retro_firebolt"
 			"Ability14"                 ""
 			"Ability15"                 ""

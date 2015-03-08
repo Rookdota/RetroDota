@@ -75,8 +75,9 @@ function invoker_retro_firestorm_on_spell_start(keys)
 					fireball_unit:EmitSound("Hero_EarthSpirit.RollingBoulder.Target")
 					fireball_unit:EmitSound("Hero_Phoenix.FireSpirits.Cast")
 					
-					keys.ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_duration", nil)
-					keys.ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_damage_over_time", nil)					
+					local firestorm_ability = fireball_unit:FindAbilityByName("invoker_retro_firestorm") 
+					firestorm_ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_duration", nil)
+					firestorm_ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_damage_over_time", nil)					
 					
 					--Damage nearby enemy units with fireball landing damage.
 					local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), fireball_landing_point, nil, keys.FireballDamageAoE, DOTA_UNIT_TARGET_TEAM_ENEMY,

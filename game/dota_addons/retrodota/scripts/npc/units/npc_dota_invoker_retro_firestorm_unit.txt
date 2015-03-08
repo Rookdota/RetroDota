@@ -12,9 +12,10 @@
 			"WakesNeutrals"				"0"
 			"AbilityLayout"             "4"
 			"Ability1"                  "invoker_retro_firestorm_fireball"
+			"Ability2"					"invoker_retro_firestorm"
 }
 
-//A dummy unit used to fire an explosion effect when a npc_dota_invoker_retro_firestorm_unit is destroyed.
+//A dummy unit used to fire an explosion effect after a npc_dota_invoker_retro_firestorm_unit is destroyed.
 "npc_dota_invoker_retro_firestorm_fireball_explosion_unit"
 {
 		// General

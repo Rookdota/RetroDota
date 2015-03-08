@@ -22,7 +22,7 @@
 			"Ability11"                 "invoker_retro_mana_burn"
 			"Ability12"                 "invoker_retro_emp"
 			"Ability13"                 "invoker_retro_soul_blast_level_1_wex"
-			"Ability14"                 "invoker_retro_telelightning"
+			"Ability14"                 "invoker_retro_telelightning_level_1_wex"
 			"Ability15"                 "invoker_retro_shock"
 			"Ability16"                 "invoker_retro_arcane_arts"
 }

@@ -58,6 +58,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 		old_spell_invoked_index_name = "invoker_retro_confuse"
 	elseif string.find(old_spell_invoked_index_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_inferno"
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_incinerate") then  --If one of the 8 Incinerate spells was invoked.
+		old_spell_invoked_index_name = "invoker_retro_incinerate"
 	end
 	
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
@@ -217,7 +219,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 					local firestorm_ability = keys.caster:FindAbilityByName("invoker_retro_firestorm")
 					firestorm_ability:SetLevel(exort_ability:GetLevel())
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Wex Exort
-					keys.caster:AddAbility("invoker_retro_incinerate")
+					keys.caster:AddAbility("invoker_retro_incinerate_level_" .. exort_ability:GetLevel() .. "_exort")  --Incinerate is split up into 8 abilities.
+					local incinerate_ability = keys.caster:FindAbilityByName("invoker_retro_incinerate_level_" .. exort_ability:GetLevel() .. "_exort")
+					incinerate_ability:SetLevel(exort_ability:GetLevel())
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Exort Quas

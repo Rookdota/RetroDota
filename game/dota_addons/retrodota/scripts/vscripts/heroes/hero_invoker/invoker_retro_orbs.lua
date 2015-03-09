@@ -238,6 +238,41 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 			new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
 			new_invoked_spell:SetLevel(exort_ability:GetLevel())  --Level up the ability for tooltip purposes.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_incinerate") then  --If one of the 8 Incinerate spells is invoked, swap it out for the correct version based on Exort's level.
+			--If the spell is still channeling, swap the ability out when the channeling ends.  
+			--Swapping it out while channeling seems to have Invoker continue channeling the previous version indefinitely.
+			if current_invoked_spell:IsChanneling() then
+				Timers:CreateTimer({
+					callback = function()
+						local current_invoked_spell_timer = keys.caster:GetAbilityByIndex(3)
+						if current_invoked_spell_timer ~= nil then
+							local current_invoked_spell_name_timer = current_invoked_spell_timer:GetName()
+							if not current_invoked_spell_timer:IsChanneling() and string.find(current_invoked_spell_name_timer, "invoker_retro_incinerate") then
+								local exort_ability_timer = keys.caster:FindAbilityByName("invoker_retro_exort")
+								if exort_ability_timer ~= nil then
+									local current_invoked_spell_cooldown = current_invoked_spell_timer:GetCooldownTimeRemaining()
+									keys.caster:RemoveAbility(current_invoked_spell_name_timer)
+									local new_invoked_spell_name = "invoker_retro_incinerate_level_" .. exort_ability_timer:GetLevel() .. "_exort"
+									keys.caster:AddAbility(new_invoked_spell_name)
+									local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+									new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+									new_invoked_spell:SetLevel(exort_ability_timer:GetLevel())
+								end
+							else
+								return .03
+							end
+						end
+					end
+				})
+			else  --If the ability is not being channeled, swap it out immediately.
+				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
+				keys.caster:RemoveAbility(current_invoked_spell_name)
+				local new_invoked_spell_name = "invoker_retro_incinerate_level_" .. exort_ability:GetLevel() .. "_exort"
+				keys.caster:AddAbility(new_invoked_spell_name)
+				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
+				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
+				new_invoked_spell:SetLevel(exort_ability:GetLevel())
+			end
 		end
 	end
 end

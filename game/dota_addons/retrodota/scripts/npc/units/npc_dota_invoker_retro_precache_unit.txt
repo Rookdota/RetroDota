@@ -47,7 +47,7 @@
 			"Ability7"                  "invoker_retro_disarm"
 			"Ability8"                  "invoker_retro_soul_reaver"
 			"Ability9"                  "invoker_retro_firestorm"
-			"Ability10"                 "invoker_retro_incinerate"
+			"Ability10"                 "invoker_retro_incinerate_level_1_exort"
 			"Ability11"                 "invoker_retro_deafening_blast"
 			"Ability12"                 "invoker_retro_inferno_level_1_wex"
 			"Ability13"                 "invoker_retro_firebolt"

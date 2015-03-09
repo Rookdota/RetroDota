@@ -1,14 +1,15 @@
 // Invoker's Incinerate
-// Author: 
-// Date: February 15, 2015
+// Author: Rook
+// Date: March 8, 2015
 // Invoke: Exort Wex Exort
-// Does heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling
-"invoker_retro_incinerate"
+// Does heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling.
+// This ability is split up into 8 versions since cast range, AoE radius, and channel time scale with Exort.
+"invoker_retro_incinerate_level_1_exort"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	"AbilityTextureName" 			"invoker_retro_incinerate"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -18,13 +19,16 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30"
+	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"50"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
 	}
 	
 	// Special
@@ -33,43 +37,33 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-140"
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
 		}
 		"04"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"2.0"
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
 		}
 		"05"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"num_wall_elements"		"15"
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
 		"06"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_spacing"	"80"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wall_element_radius"	"105"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"pip_current"			"1"
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
 		}
 	}
 	
@@ -77,34 +71,1190 @@
 	{
 		"RunScript"
 		{
-			"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-			"Function"				"invoker_retro_icy_path_on_spell_start"
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
 			"Target"				"POINT"
-			"NumWallElements"		"%num_wall_elements"
-			"WallElementSpacing"	"%wall_element_spacing"
-			"WallElementRadius"		"%wall_element_radius"
 		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
 	}
 	
-	"Modifiers"
-	{
-		"modifier_invoker_retro_icy_wall_slow"
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
 		{
-			"Passive"  			"0"
-			"IsHidden" 			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-			"IsPurgable"		"1"
-			
-			//TODO: The control points for this particle still need to be figured out.
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-			"EffectAttachType"		"follow_origin"
-			
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
-			}
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
 		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
 	}
 }
 
+
+"invoker_retro_incinerate_level_2_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"100"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}
+
+
+"invoker_retro_incinerate_level_3_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"150"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}
+
+
+"invoker_retro_incinerate_level_4_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"200"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}
+
+
+"invoker_retro_incinerate_level_5_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"200"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}
+
+
+"invoker_retro_incinerate_level_6_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"300"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}
+
+
+"invoker_retro_incinerate_level_7_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"350"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}
+
+
+"invoker_retro_incinerate_level_8_exort"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_incinerate"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
+	"AoERadius"						"400"  //Update wave_radius if this is.
+	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"damage_per_wave"					"75"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+		}
+		"06"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"pip_current"						"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_spell_start"
+			"Target"				"POINT"
+		}
+		
+		"ApplyModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+	}
+	
+	"OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+            "Target"				"CASTER"
+        }
+		
+		"RemoveModifier"
+        {
+            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+            "Target"				"CASTER"
+        }
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+			"Function"				"invoker_retro_incinerate_on_channel_finish"
+		}
+    }
+	
+	
+	"Modifiers"
+    {
+		"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+					"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+					"DelayBetweenWaves"		"%delay_between_waves"
+					"DamagePerWave"			"%damage_per_wave"
+				}
+			}
+        }
+		
+        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+        {
+			"Passive"			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "ThinkInterval"		".6"
+            "OnIntervalThink"
+			{
+                "ApplyModifier"
+                {
+                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+                    "Target"			"CASTER"
+                }
+            }
+        }
+
+        "modifier_invoker_retro_incinerate_channeling_animation_override"
+        {
+			"Duration"			"0.5"
+            "Passive"  			"0"
+			"IsHidden" 			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			
+            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+        }
+	}
+}

@@ -89,6 +89,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"10 20 30 40 50 60 70 80"  //Increases with Wex.
 			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 			
 		"Modifiers"
@@ -153,6 +158,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"1.5 3 4.5 6 7.5 9 10.5 12"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -289,6 +299,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"burn_interval"						"1.0"  //Alter the tooltip if this is changed.
 			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -403,10 +418,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -494,10 +514,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -585,10 +610,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -676,10 +706,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -767,10 +802,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -858,10 +898,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -949,10 +994,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -1040,10 +1090,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 			}
-			"02"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -1137,6 +1192,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage"				"65 130 195 260 325 390 455 520"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -1236,6 +1296,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -1332,6 +1397,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -1430,6 +1500,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -1526,6 +1601,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -1624,6 +1704,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -1720,6 +1805,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -1818,6 +1908,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -1914,6 +2009,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -2027,6 +2127,11 @@
 				"var_type"						"FIELD_INTEGER"
 				"mana_burned"					"100 200 300 400 500 600 700 800"  //Increases with Quas and Wex.
 			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -2053,6 +2158,14 @@
 		"BaseClass" "ability_datadriven"
 		"AbilityTextureName" "rubick_empty1"
 		"IsHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_show"				"0"
+			}
+		}
 	}
 	
 	
@@ -2066,6 +2179,14 @@
 		"BaseClass" "ability_datadriven"
 		"AbilityTextureName" "rubick_empty1"
 		"IsHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_show"				"0"
+			}
+		}
 	}
 	
 	// Invoker's Energy Ball
@@ -2121,6 +2242,11 @@
 			{
 				"var_type"								"FIELD_INTEGER"
 				"projectile_speed_upwards_per_second"	"75"  //This is only for cosmetic purposes.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -2294,6 +2420,11 @@
 				"var_type"						"FIELD_FLOAT"
 				"projectile_movement_speed"		"700"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -2435,6 +2566,11 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"fireball_vision_radius"			"75"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -2597,6 +2733,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"slow_duration"			"3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -2805,6 +2946,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -2885,6 +3031,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -2967,6 +3118,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -3047,6 +3203,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -3129,6 +3290,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -3209,6 +3375,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -3291,6 +3462,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -3371,6 +3547,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -3453,6 +3634,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -3566,6 +3752,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -3678,6 +3869,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -3788,6 +3984,11 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -3900,6 +4101,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -4010,6 +4216,11 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -4122,6 +4333,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -4232,6 +4448,11 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -4344,6 +4565,11 @@
 				"var_type"							"FIELD_FLOAT"
 				"inferno_damage_interval"			".5"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -4419,6 +4645,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"fade_time"				".7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -4607,6 +4838,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cyclone_max_height"	"600"
 			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -4722,6 +4958,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -4801,6 +5042,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"mana_burned"			"50 100 150 200 250 300 350 400"  //Increases with Wex.
 			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -4865,6 +5111,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -4936,6 +5187,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnAbilityPhaseStart"
@@ -5005,6 +5261,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -5076,6 +5337,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnAbilityPhaseStart"
@@ -5145,6 +5411,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -5216,6 +5487,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnAbilityPhaseStart"
@@ -5286,6 +5562,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnAbilityPhaseStart"
@@ -5355,6 +5636,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -5429,6 +5715,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -5656,6 +5947,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"owl_movespeed"				"200 225 250 300 350 400 450 500"  //Increases with Wex.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -5780,6 +6076,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -5866,6 +6167,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 	}
@@ -6257,6 +6563,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -6326,6 +6637,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -6397,6 +6713,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -6466,6 +6787,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -6537,6 +6863,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -6606,6 +6937,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -6677,6 +7013,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -6746,6 +7087,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -6837,6 +7183,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"wall_element_radius"	"105"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -6922,6 +7273,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 	
 		"OnSpellStart"
@@ -6976,6 +7332,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 	
@@ -7032,6 +7393,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 	
 		"OnSpellStart"
@@ -7086,6 +7452,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 	
@@ -7142,6 +7513,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 	
 		"OnSpellStart"
@@ -7196,6 +7572,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 	
@@ -7253,6 +7634,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 	
 		"OnSpellStart"
@@ -7307,6 +7693,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 	
@@ -7384,6 +7775,11 @@
 			{
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -7472,6 +7868,11 @@
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -7558,6 +7959,11 @@
 			{
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -7646,6 +8052,11 @@
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -7732,6 +8143,11 @@
 			{
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		
@@ -7820,6 +8236,11 @@
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -7907,6 +8328,11 @@
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
 		
 		"OnSpellStart"
@@ -7993,6 +8419,11 @@
 			{
 				"var_type"										"FIELD_FLOAT"
 				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
 			}
 		}
 		

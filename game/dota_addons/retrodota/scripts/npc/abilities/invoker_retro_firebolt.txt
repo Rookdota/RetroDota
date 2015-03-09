@@ -52,6 +52,11 @@
 			"var_type"						"FIELD_FLOAT"
 			"projectile_movement_speed"		"700"
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

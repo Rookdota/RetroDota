@@ -95,6 +95,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"burn_interval"						"1.0"  //Alter the tooltip if this is changed.
 		}
+		"13"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

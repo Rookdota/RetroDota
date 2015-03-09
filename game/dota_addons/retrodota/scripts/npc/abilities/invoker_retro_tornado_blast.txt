@@ -64,6 +64,11 @@
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -150,6 +155,11 @@
 		{
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -238,6 +248,11 @@
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -324,6 +339,11 @@
 		{
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -412,6 +432,11 @@
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -498,6 +523,11 @@
 		{
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -586,6 +616,11 @@
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -672,6 +707,11 @@
 		{
 			"var_type"										"FIELD_FLOAT"
 			"projectile_flying_vision_max_range_duration"	"1.75"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

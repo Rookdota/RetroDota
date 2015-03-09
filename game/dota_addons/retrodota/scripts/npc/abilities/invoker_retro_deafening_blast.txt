@@ -44,6 +44,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"damage"				"65 130 195 260 325 390 455 520"  //Increases with Exort.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

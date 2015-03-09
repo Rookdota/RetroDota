@@ -62,6 +62,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"slow_duration"			"3"
 		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

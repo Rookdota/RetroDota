@@ -40,10 +40,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -131,10 +136,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -222,10 +232,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -313,10 +328,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -404,10 +424,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -495,10 +520,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -586,10 +616,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -677,10 +712,15 @@
 			"var_type"					"FIELD_INTEGER"
 			"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
 		}
-		"02"
+		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

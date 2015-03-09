@@ -8,6 +8,14 @@
 	"BaseClass" "ability_datadriven"
 	"AbilityTextureName" "rubick_empty1"
 	"IsHidden" "1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_show"				"0"
+		}
+	}
 }
 
 

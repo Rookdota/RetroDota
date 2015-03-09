@@ -49,6 +49,11 @@
 			"var_type"					"FIELD_INTEGER"
 			"owl_movespeed"				"200 225 250 300 350 400 450 500"  //Increases with Wex.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

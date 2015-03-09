@@ -6,5 +6,12 @@
 		"player_ID"		"short"
 		"_error"		"string"
 	}
+
+	"send_hero_ent"
+
+	{
+		"player_ID"		"short"
+		"_ent"			"short"
+	}
 	
 }

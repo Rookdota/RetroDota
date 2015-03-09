@@ -51,6 +51,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnAbilityPhaseStart"
@@ -120,6 +125,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -191,6 +201,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnAbilityPhaseStart"
@@ -260,6 +275,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -331,6 +351,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnAbilityPhaseStart"
@@ -400,6 +425,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -471,6 +501,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnAbilityPhaseStart"
@@ -540,6 +575,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_point"			".75"  //Change AbilityCastPoint if this is.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

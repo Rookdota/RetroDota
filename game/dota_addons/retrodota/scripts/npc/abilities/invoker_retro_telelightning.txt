@@ -46,6 +46,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 
 	"OnSpellStart"
@@ -100,6 +105,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 
@@ -156,6 +166,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 
 	"OnSpellStart"
@@ -210,6 +225,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 
@@ -266,6 +286,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 
 	"OnSpellStart"
@@ -320,6 +345,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 
@@ -377,6 +407,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 
 	"OnSpellStart"
@@ -431,6 +466,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 

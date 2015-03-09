@@ -52,6 +52,11 @@
 			"var_type"								"FIELD_INTEGER"
 			"projectile_speed_upwards_per_second"	"75"  //This is only for cosmetic purposes.
 		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

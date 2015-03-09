@@ -50,6 +50,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -119,6 +124,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -190,6 +200,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -259,6 +274,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -330,6 +350,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -399,6 +424,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -470,6 +500,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -539,6 +574,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

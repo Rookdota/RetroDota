@@ -55,6 +55,11 @@
 			"var_type"						"FIELD_INTEGER"
 			"mana_burned"					"100 200 300 400 500 600 700 800"  //Increases with Quas and Wex.
 		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

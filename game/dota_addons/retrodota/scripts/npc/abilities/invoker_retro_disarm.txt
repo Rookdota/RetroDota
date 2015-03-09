@@ -44,6 +44,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -140,6 +145,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -238,6 +248,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -334,6 +349,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -432,6 +452,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -528,6 +553,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -626,6 +656,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -722,6 +757,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

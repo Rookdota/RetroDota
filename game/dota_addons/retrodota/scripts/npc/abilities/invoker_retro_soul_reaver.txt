@@ -66,6 +66,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"
 		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

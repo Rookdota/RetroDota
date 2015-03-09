@@ -55,7 +55,7 @@ function retro_dota:OnPlayerPickHero(keys)
 	local hero = EntIndexToHScript(keys.heroindex)
 	local player = EntIndexToHScript(keys.player)
 	local playerID = hero:GetPlayerID()
-
+	FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
 	local level = 25
 	for i=1,level-1 do
 		hero:HeroLevelUp(false)

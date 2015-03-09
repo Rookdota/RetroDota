@@ -40,6 +40,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"mana_burned"			"50 100 150 200 250 300 350 400"  //Increases with Wex.
 		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

@@ -48,6 +48,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 }
 

@@ -93,6 +93,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"fireball_vision_radius"			"75"
 		}
+		"12"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"

@@ -73,6 +73,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -185,6 +190,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -295,6 +305,11 @@
 		{
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -407,6 +422,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -517,6 +537,11 @@
 		{
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -629,6 +654,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -740,6 +770,11 @@
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -850,6 +885,11 @@
 		{
 			"var_type"							"FIELD_FLOAT"
 			"inferno_damage_interval"			".5"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

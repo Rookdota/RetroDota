@@ -168,6 +168,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -248,6 +253,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -330,6 +340,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -410,6 +425,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -492,6 +512,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -572,6 +597,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	
@@ -654,6 +684,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
 	}
 	
 	"OnSpellStart"
@@ -734,6 +769,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
 		}
 	}
 	

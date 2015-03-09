@@ -31,7 +31,13 @@ function invoker_retro_portal_on_spell_start(keys)
 		portal_damage = keys.ability:GetLevelSpecialValueFor("damage", wex_ability:GetLevel() - 1)
 	end
 	
-	FindClearSpaceForUnit(keys.target, keys.caster:GetAbsOrigin(), false)  --Move the target to Invoker's position.
+	--Instead of placing the target right on top of Invoker, place them a little away along the line between Invoker and the target.
+	--This ensures that the target is not placed on the opposite side of Invoker.
+	local caster_point = keys.caster:GetAbsOrigin()
+	local point_difference_normalized = (keys.target:GetAbsOrigin() - caster_point):Normalized()
+	local point_to_place_target = GetGroundPosition(caster_point + (point_difference_normalized * 64), nil)
+	
+	FindClearSpaceForUnit(keys.target, point_to_place_target, false)  --Move the target to Invoker's position.
 	keys.target:EmitSound("Hero_Meepo.Poof.End")
 	
 	ApplyDamage({victim = keys.target, attacker = keys.caster, damage = portal_damage, damage_type = DAMAGE_TYPE_MAGICAL,})

@@ -53,6 +53,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -113,6 +122,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -173,6 +191,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -233,6 +260,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -293,6 +329,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -353,6 +398,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -414,6 +468,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -474,6 +537,15 @@
 		}
 	}
 
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+			"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+		}
+	}
+	
 	"OnSpellStart"
 	{
 		"RunScript"

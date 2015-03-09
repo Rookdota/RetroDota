@@ -3607,12 +3607,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -3621,7 +3621,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -3764,12 +3764,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -3778,7 +3778,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -3921,12 +3921,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -3935,7 +3935,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -4078,12 +4078,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -4092,7 +4092,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -4218,9 +4218,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"200"
-		"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-		"AoERadius"						"200"  //Update wave_radius if this is.
-		"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+		"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
+		"AoERadius"						"250"  //Update wave_radius if this is.
+		"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 		
 		"precache"
 		{
@@ -4235,12 +4235,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -4249,7 +4249,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -4392,12 +4392,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -4406,7 +4406,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -4549,12 +4549,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -4563,7 +4563,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"
@@ -4706,12 +4706,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
 			}
 			"03"
 			{
@@ -4720,7 +4720,7 @@
 			}
 			"04"
 			{
-				"var_type"							"FIELD_FLOAT"
+				"var_type"							"FIELD_INTEGER"
 				"damage_per_wave"					"75"
 			}
 			"05"

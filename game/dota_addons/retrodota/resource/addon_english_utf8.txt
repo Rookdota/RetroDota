@@ -249,8 +249,53 @@
 
 		
 		//Incinerate
-		"DOTA_Tooltip_Ability_invoker_retro_incinerate"                                   "Incinerate"
-		"DOTA_Tooltip_Ability_invoker_retro_incinerate_Description"                       "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nDoes heavy damage to enemy units caught in the area. Range and number of flames increase per level exort. Channeling"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_1_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_1_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_1_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_1_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_1_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_2_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_2_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_2_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_2_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_2_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_3_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_3_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_3_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_3_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_3_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_4_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_4_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_4_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_4_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_4_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_5_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_5_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_5_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_5_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_5_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_6_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_6_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_6_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_6_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_6_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_7_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_7_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_7_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_7_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_7_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_8_exort"                     "Incinerate"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_8_exort_Description"         "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font>.\n\nWhile channeled, damaging waves spawn in the targeted area every %delay_between_waves% seconds.  Each wave deals %damage_per_wave% damage to all nearby enemy units.  The cast range, maximum number of waves, and wave radius all increase per level of Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_8_exort_cast_range"          "CAST RANGE (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_8_exort_num_waves"           "MAXIMUM NUMBER OF WAVES (<font color=\"#E68A00\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_incinerate_level_8_exort_wave_radius"         "WAVE RADIUS (<font color=\"#E68A00\">EXORT</font>):"
 
 		
 		//Inferno

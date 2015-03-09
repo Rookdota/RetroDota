@@ -214,6 +214,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Wex Quas
 					keys.caster:AddAbility("invoker_retro_soul_reaver")
+					local soul_reaver_ability = keys.caster:FindAbilityByName("invoker_retro_soul_reaver")
+					soul_reaver_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Wex Wex
 					keys.caster:AddAbility("invoker_retro_firestorm")
 					local firestorm_ability = keys.caster:FindAbilityByName("invoker_retro_firestorm")

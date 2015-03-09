@@ -192,6 +192,8 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(quas_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_mana_burn") then
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_soul_reaver") then
+			current_invoked_spell:SetLevel(quas_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_scout") then
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_shroud_of_flames") then  --If one of the 8 Shroud of Flames spells is invoked, swap it out for the correct version based on Exort' level.

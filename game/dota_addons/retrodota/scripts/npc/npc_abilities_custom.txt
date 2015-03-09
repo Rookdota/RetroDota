@@ -7180,11 +7180,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
+		"AbilityDamage"					"50 100 150 200 250 300 350 400"  //Increases with Quas
 		
 		"precache"
 		{
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
 		}
 		
 		// Special
@@ -7194,39 +7194,14 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"bonus_ms"				"5"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+				"after_damage"			"120 160 200 240 280 320 360 400"  //Increases with Exort.
 			}
 			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
-			}
-			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pip_current"			"1"
@@ -7237,32 +7212,25 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_reaver.lua"
+				"Function"				"invoker_retro_soul_reaver_on_spell_start"
+				"Target"				"TARGET"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_icy_wall_slow"
+			"modifier_invoker_retro_soul_reaver"
 			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
+				"IsBuff"			"1"
 				"IsPurgable"		"1"
-				
-				//TODO: The control points for this particle still need to be figured out.
+	
 				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
 				"EffectAttachType"		"follow_origin"
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_ms"
 				}
 			}
 		}
@@ -8275,7 +8243,9 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"invoker_retro_soul_reaver"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"

@@ -7251,10 +7251,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7262,25 +7264,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
-			"04"
+			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pip_current"			"1"
 			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort2"
@@ -7304,10 +7372,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7315,20 +7385,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort3"
@@ -7352,10 +7493,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7363,20 +7506,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort4"
@@ -7400,10 +7614,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7411,20 +7627,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort5"
@@ -7448,10 +7735,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7459,20 +7748,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort6"
@@ -7496,10 +7856,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7507,20 +7869,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort7"
@@ -7544,10 +7977,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7555,20 +7990,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	
 	"invoker_retro_shroud_of_flames_exort8"
@@ -7592,10 +8098,12 @@
 		"AbilityDuration"				"40" //Tooltip states "Lasts 40 seconds"
 		
 		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-		}
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7603,20 +8111,91 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier"				"100 150 200 250 300 350 400" // Scales with Quas
-			}
-			"02"
-			{
 				"var_type"				"FIELD_FLOAT"
 				"magic_resistance"		"4 8 12 16 20 24 28 32"	// Scales with Quas
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_exort"			"8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
 		}
+	
+		"OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_shroud_of_flames"
+	            "Target"        "TARGET"
+	            "Duration"      "%AbilityDuration"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	        	"TextureName"	"invoker_retro_shroud_of_flames"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+			        "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	            	"LinearProjectile"
+			        {
+		                "Target"        "ATTACKER"
+		                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+		                "MoveSpeed"     "900"
+		                "StartRadius"   "300"
+		                "StartPosition" "attach_origin"
+		                "EndRadius"     "300"
+		                "FixedDistance" "300"
+		                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+		                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		                "HasFrontalCone" "1"
+		                "ProvidesVision" "0"
+			        }
+	            }
+	        }
+	    }
 	}
 	// Invoker's Soul Blast
 	// Author: Rook

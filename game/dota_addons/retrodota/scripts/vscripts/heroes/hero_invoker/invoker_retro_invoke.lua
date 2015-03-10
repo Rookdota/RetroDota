@@ -154,6 +154,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 					invisibility_aura_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Exort Exort
 					keys.caster:AddAbility("invoker_retro_shroud_of_flames_exort"..exort_ability:GetLevel())
+					local shroud_of_flames_ability = keys.caster:FindAbilityByName("invoker_retro_shroud_of_flames_exort"..exort_ability:GetLevel())
+					shroud_of_flames_ability:SetLevel(quas_ability:GetLevel())
 				end
 			end
 		elseif keys.caster.invoked_orbs[1]:GetName() == "invoker_retro_wex" then

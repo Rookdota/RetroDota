@@ -26,7 +26,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -54,12 +54,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -82,6 +88,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -92,7 +99,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -107,12 +114,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -147,7 +155,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -175,12 +183,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -203,6 +217,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -213,7 +228,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -228,12 +243,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -268,7 +284,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -296,12 +312,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -324,6 +346,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -334,7 +357,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -349,12 +372,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -389,7 +413,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -417,12 +441,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -445,6 +475,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -455,7 +486,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -470,12 +501,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                h
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -510,7 +542,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -538,12 +570,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -566,6 +604,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -576,7 +615,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -591,12 +630,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -631,7 +671,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -659,12 +699,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -687,6 +733,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -697,7 +744,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -712,12 +759,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -752,7 +800,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -780,12 +828,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -808,6 +862,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -818,7 +873,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -833,12 +888,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
@@ -873,7 +929,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -901,12 +957,18 @@
 
 	"OnSpellStart"
     {
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_shroud_of_flames"
-            "Target"        "TARGET"
-            "Duration"      "%AbilityDuration"
-        }
+    	"RemoveModifier"
+    	{
+    		"ModifierName"	"modifier_shroud_of_flames"
+    		"Target" 		"TARGET"
+    	}
+
+    	// Create a dummy, which will learn this ability and apply the modifier on the target
+    	"RunScript"
+    	{
+    		"ScriptFile"	"heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+    		"Function"		"invoker_retro_shroud_of_flames_dummy"
+    	}
         "FireSound"
         {
             "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
@@ -929,6 +991,7 @@
         "modifier_shroud_of_flames"
         {
         	"TextureName"	"invoker_retro_shroud_of_flames"
+        	"Duration"		"%AbilityDuration"
             "Properties"
             {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
@@ -939,7 +1002,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -954,12 +1017,13 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
-	                "StartRadius"   "300"
+	                "StartRadius"   "100"
 	                "StartPosition" "attach_origin"
-	                "EndRadius"     "300"
-	                "FixedDistance" "300"
+	                "EndRadius"     "500"
+	                "FixedDistance" "600"
 	                "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	                "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
 	                "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"

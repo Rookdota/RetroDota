@@ -1,0 +1,16 @@
+//A dummy unit that keeps the level of shroud of flames
+"npc_dota_invoker_retro_shroud_of_flames_unit"
+{
+		// General
+		//----------------------------------------------------------------
+		    "BaseClass"                 "npc_dota_creature"
+		    "Level"						"1"
+			"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+			"VisionDaytimeRange"        "0"
+			"VisionNighttimeRange"      "0"
+			"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+			"MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_FLY"
+			"WakesNeutrals"				"0"
+			"AbilityLayout"             "4"
+			"Ability1"                  "dummy_unit_passive"
+}

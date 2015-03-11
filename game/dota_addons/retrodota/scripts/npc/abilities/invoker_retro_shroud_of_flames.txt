@@ -54,12 +54,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -183,12 +177,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -312,12 +300,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -441,12 +423,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -570,12 +546,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -699,12 +669,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -828,12 +792,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{
@@ -957,12 +915,6 @@
 
 	"OnSpellStart"
     {
-    	"RemoveModifier"
-    	{
-    		"ModifierName"	"modifier_shroud_of_flames"
-    		"Target" 		"TARGET"
-    	}
-
     	// Create a dummy, which will learn this ability and apply the modifier on the target
     	"RunScript"
     	{

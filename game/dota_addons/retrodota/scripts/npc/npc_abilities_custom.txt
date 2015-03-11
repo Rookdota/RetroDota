@@ -6041,8 +6041,8 @@
 	}
 	
 	// Invoker's Lightning Shield
-	// Author:
-	// Date: February 15, 2015
+	// Author: Rook
+	// Date: March 11, 2015
 	// Invoke: Wex Exort Exort
 	// Forms a shield of electricity around a target, dealing 40 damage per second to units around it. Lasts 20 seconds. Damage and AOE based on Wex. Animation doesn't appear on scourge tower but the effect is there (LMAO)
 	"invoker_retro_lightning_shield"
@@ -6050,23 +6050,25 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityTextureName" 			"invoker_retro_lightning_shield"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"150"
+		"AbilityCastRange"				"500"
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
-			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_lightning_shield.vpcf"
 		}
 		
 		// Special
@@ -6076,39 +6078,24 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.5 6.0 7.5 9.0 10.5 12.0"  //Increases with Quas.
+				"damage_per_second"		"10 20 30 40 50 60 70 80"  //Increases with Wex.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300 350 400 450 500 550 600"  //Increases with Quas.
+				"duration"				"5 10 15 20 25 30 35 40"  //Increases with Wex.
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-140"
+				"range"					"170"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
+				"damage_interval"		".5"
 			}
 			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_wall_elements"		"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_spacing"	"80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wall_element_radius"	"105"
-			}
-			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pip_current"			"1"
@@ -6119,32 +6106,34 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
-				"Function"				"invoker_retro_icy_path_on_spell_start"
-				"Target"				"POINT"
-				"NumWallElements"		"%num_wall_elements"
-				"WallElementSpacing"	"%wall_element_spacing"
-				"WallElementRadius"		"%wall_element_radius"
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_lightning_shield.lua"
+				"Function"				"invoker_retro_lightning_shield_on_spell_start"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_icy_wall_slow"
+			"modifier_invoker_retro_lightning_shield"
 			{
 				"Passive"  			"0"
 				"IsHidden" 			"0"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
 				"IsPurgable"		"1"
 				
-				//TODO: The control points for this particle still need to be figured out.
-				"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-				"EffectAttachType"		"follow_origin"
+				"EffectName"            "particles/units/heroes/hero_invoker/invoker_retro_lightning_shield.vpcf"
+				"EffectAttachType"      "PATTACH_ABSORIGIN"
 				
-				"Properties"
+				"ThinkInterval" 	"%damage_interval"
+				"OnIntervalThink"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%slow"
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_invoker/invoker_retro_lightning_shield.lua"
+						"Function"				"modifier_invoker_retro_lightning_shield_on_interval_think"
+						"Radius"				"%range"
+						"DamageInterval"		"%damage_interval"
+					}
 				}
 			}
 		}
@@ -7281,12 +7270,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -7410,12 +7393,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -7539,12 +7516,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -7668,12 +7639,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -7797,12 +7762,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -7926,12 +7885,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -8055,12 +8008,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{
@@ -8184,12 +8131,6 @@
 	
 		"OnSpellStart"
 	    {
-	    	"RemoveModifier"
-	    	{
-	    		"ModifierName"	"modifier_shroud_of_flames"
-	    		"Target" 		"TARGET"
-	    	}
-	
 	    	// Create a dummy, which will learn this ability and apply the modifier on the target
 	    	"RunScript"
 	    	{

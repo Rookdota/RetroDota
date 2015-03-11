@@ -49,7 +49,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 	[
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/ember_spirit_flameguard_shield.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames_shield.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -57,7 +57,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/ember_spirit_flameguard_fire_outer.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames_fire_outer.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -65,7 +65,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/ember_spirit_flameguard_fire_inner.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames_fire_inner.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -73,7 +73,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/ember_spirit_flameguard_projection.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames_projection.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -81,7 +81,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/ember_spirit_flameguard_warp.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames_warp.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -89,7 +89,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/ember_spirit_flameguard_column.vpcf"
+			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames_column.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false

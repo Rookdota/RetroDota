@@ -12,7 +12,7 @@ function invoker_retro_shock_on_spell_start(keys)
 		local damage = keys.ability:GetLevelSpecialValueFor("damage", wex_ability:GetLevel() - 1)
 		local radius = keys.ability:GetLevelSpecialValueFor("radius", wex_ability:GetLevel() - 1)
 		
-		--keys.caster:EmitSound("Hero_razor.UnstableCurrent")
+		keys.caster:EmitSound("retro_dota.shock_on_spell_start")
 
 		local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), caster_origin, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY,
 				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)

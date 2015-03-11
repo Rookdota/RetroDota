@@ -25,7 +25,7 @@
 	{
 		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_shock_ground.vpcf"
 		"particle"					"particles/units/heroes/hero_invoker/invoker_retro_shock_lightning_bolt.vpcf"
-		//"soundfile"					"soundevents/game_sounds_heroes/razor_unstable_current.vsndevts"
+		"soundfile"					"soundevents/custom_sounds.vsndevts"
 	}
 	
 	// Special

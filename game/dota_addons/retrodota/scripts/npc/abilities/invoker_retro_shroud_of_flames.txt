@@ -26,7 +26,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -99,7 +99,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -155,7 +155,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -228,7 +228,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -284,7 +284,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -357,7 +357,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -413,7 +413,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -486,7 +486,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -542,7 +542,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -615,7 +615,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -671,7 +671,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -744,7 +744,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -800,7 +800,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -873,7 +873,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {
@@ -929,7 +929,7 @@
 	"precache"
     {
         "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-        "particle"  "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
     }
@@ -1002,7 +1002,7 @@
 		        "AttachEffect"
                 {
                     "Target"              "TARGET"
-                    "EffectName"          "particles/units/heroes/hero_invoker/ember_spirit_flameguard.vpcf"
+                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
                     "EffectAttachType"    "start_at_customorigin"
                     "ControlPointEntities"
                     {

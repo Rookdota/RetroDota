@@ -60,6 +60,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 		old_spell_invoked_index_name = "invoker_retro_inferno"
 	elseif string.find(old_spell_invoked_index_name, "invoker_retro_incinerate") then  --If one of the 8 Incinerate spells was invoked.
 		old_spell_invoked_index_name = "invoker_retro_incinerate"
+	elseif string.find(old_spell_invoked_index_name, "invoker_retro_shroud_of_flames") then  --If one of the 8 Shroud of Flames spells was invoked.
+		old_spell_invoked_index_name = "invoker_retro_shroud_of_flames"
 	end
 	
 	--Update keys.caster.invoke_ability_cooldown_remaining[ability_name] of the ability to be removed, so cooldowns can be tracked.
@@ -265,17 +267,25 @@ function invoker_retro_invoke_on_spell_start(keys)
 				new_spell_invoked_name = "invoker_retro_tornado_blast"
 			elseif string.find(new_spell_invoked_name, "invoker_retro_soul_blast") then  --If one of the 8 Soul Blast spells was invoked.
 				new_spell_invoked_name = "invoker_retro_soul_blast"
-			elseif string.find(old_spell_invoked_index_name, "invoker_retro_confuse") then  --If one of the 8 Confuse spells was invoked.
-				old_spell_invoked_index_name = "invoker_retro_confuse"
-			elseif string.find(old_spell_invoked_index_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells was invoked.
-				old_spell_invoked_index_name = "invoker_retro_inferno"
+			elseif string.find(new_spell_invoked_name, "invoker_retro_confuse") then  --If one of the 8 Confuse spells was invoked.
+				new_spell_invoked_name = "invoker_retro_confuse"
+			elseif string.find(new_spell_invoked_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells was invoked.
+				new_spell_invoked_name = "invoker_retro_inferno"
+			elseif string.find(new_spell_invoked_name, "invoker_retro_incinerate") then  --If one of the 8 Incinerate spells was invoked.
+				new_spell_invoked_name = "invoker_retro_incinerate"
+			elseif string.find(new_spell_invoked_name, "invoker_retro_shroud_of_flames") then  --If one of the 8 Shroud of Flames spells was invoked.
+				new_spell_invoked_name = "invoker_retro_shroud_of_flames"
 			end
 
 			if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] ~= nil and keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] ~= 0 then
 				local current_game_time = GameRules:GetGameTime()
 				if keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] + keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name] >= current_game_time then
 					new_spell_invoked:StartCooldown(current_game_time - (keys.caster.invoke_ability_cooldown_remaining[new_spell_invoked_name] + keys.caster.invoke_ability_gametime_removed[new_spell_invoked_name]))
+				else
+					new_spell_invoked:EndCooldown()
 				end
+			else
+				new_spell_invoked:EndCooldown()
 			end
 		end
 	end

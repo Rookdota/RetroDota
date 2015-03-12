@@ -13,6 +13,18 @@
 		// ******************** HEROES ***********************
 		"npc_dota_hero_invoker"    	  "Kael"
 
+		
+		// ******************** ITEMS ***********************
+		"DOTA_Tooltip_ability_item_refresher_datadriven"									"Refresher Orb"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_Description"						"Active: Reset Cooldowns - Resets the cooldowns of all your items and abilities."
+		"DOTA_Tooltip_ability_item_refresher_datadriven_Lore"								"A powerful artifact created for wizards."
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_health_regen"					"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_mana_regen_percentage"		"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_intelligence"					"+$int"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_attack_speed"					"+$attack"
+
+		
 		// ******************** ABILITIES ********************
 		
 		//Arcane Arts

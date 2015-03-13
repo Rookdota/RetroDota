@@ -8828,9 +8828,9 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"200"
-		"AbilityDamage"					"50 100 150 200 250 300 350 400"  //Increases with Quas
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"500"
 		
 		"precache"
 		{
@@ -8845,14 +8845,24 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"5"  //Increases with Wex.
+				"initial_damage"		"50 100 150 200 250 300 350 400"  //Increases with Quas.  These values are hardcoded into the tooltip.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"after_damage"			"120 160 200 240 280 320 360 400"  //Increases with Exort.
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms_per_wex"		"5"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms_tooltip"		"5 10 15 20 25 30 35 40"  //Increases with Wex.  These values are hardcoded into the tooltip.
 			}
 			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"after_damage"			"120 160 200 240 280 320 360 400"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pip_current"			"1"
@@ -8880,7 +8890,7 @@
 	
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_ms"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_ms_per_wex"
 				}
 			}
 		}

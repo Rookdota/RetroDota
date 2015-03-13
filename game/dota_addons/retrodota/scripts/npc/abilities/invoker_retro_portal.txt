@@ -29,6 +29,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -104,6 +105,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -179,6 +181,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -254,6 +257,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -329,6 +333,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -404,6 +409,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -479,6 +485,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	
@@ -554,6 +561,7 @@
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
 	}
 	

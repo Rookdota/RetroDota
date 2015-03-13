@@ -26,7 +26,7 @@
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+		"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
 	}
 	
 	// Special
@@ -57,6 +57,8 @@
 			"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_reaver.lua"
 			"Function"				"invoker_retro_soul_reaver_on_spell_start"
 			"Target"				"TARGET"
+			"effect_name"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+
 		}
 	}
 	
@@ -67,9 +69,6 @@
 			"IsBuff"			"1"
 			"IsPurgable"		"1"
 
-			"EffectName"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
-			"EffectAttachType"		"follow_origin"
-			
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_ms"

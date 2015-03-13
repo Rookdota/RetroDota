@@ -13,13 +13,15 @@ function invoker_retro_soul_reaver_on_spell_start(event)
 	ApplyDamage(damageTable)
 	
 	local secondary_damage = event.ability:GetLevelSpecialValueFor("after_damage", event.caster:FindAbilityByName("invoker_retro_exort"):GetLevel())
-	event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "modifier_invoker_retro_soul_reaver", {duration = 8})	
-	event.caster:SetModifierStackCount("modifier_invoker_retro_soul_reaver", event.ability, event.caster:FindAbilityByName("invoker_retro_wex"):GetLevel())
-	local particle = ParticleManager:CreateParticle(event.effect_name, PATTACH_ABSORIGIN_FOLLOW, event.target)
+	event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "modifier_invoker_retro_soul_reaver_movement_speed", {duration = 8})
+	event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_invoker_retro_soul_reaver_damage", {duration = 8})	
+	event.caster:SetModifierStackCount("modifier_invoker_retro_soul_reaver_movement_speed", event.ability, event.caster:FindAbilityByName("invoker_retro_wex"):GetLevel())
+	
+	local soul_reaver_speed_boost_particle_effect_beginning = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_begin.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	
 	Timers:CreateTimer({
 		endTime = 8,
 		callback = function()
-			ParticleManager:DestroyParticle(particle, false)
 			local damageTable = {
 				victim = event.target,
 				attacker = event.caster,

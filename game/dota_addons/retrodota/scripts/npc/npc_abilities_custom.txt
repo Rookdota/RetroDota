@@ -8836,6 +8836,8 @@
 		{
 			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_msg.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_begin.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_modifier.vpcf"
 		}
 		
 		// Special
@@ -8876,22 +8878,36 @@
 				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_reaver.lua"
 				"Function"				"invoker_retro_soul_reaver_on_spell_start"
 				"Target"				"TARGET"
-				"effect_name"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
-	
 			}
 		}
 		
 		"Modifiers"
 		{
-			"modifier_invoker_retro_soul_reaver"
+			"modifier_invoker_retro_soul_reaver_movement_speed"
 			{
 				"IsBuff"			"1"
 				"IsPurgable"		"1"
 	
+				"EffectName"            "particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_modifier.vpcf"
+				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				
+				"TextureName"			"invoker_retro_soul_reaver"
+				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_ms_per_wex"
 				}
+			}
+			"modifier_invoker_retro_soul_reaver_damage"  //A visual modifier placed on the enemy unit that's affected by Soul Reaver.
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"EffectName"            "particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				
+				"TextureName"			"invoker_retro_soul_reaver"
 			}
 		}
 	}

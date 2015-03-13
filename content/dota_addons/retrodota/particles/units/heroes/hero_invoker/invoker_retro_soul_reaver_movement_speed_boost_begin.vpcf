@@ -97,7 +97,8 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		&C_INIT_RandomRotationSpeed_10,
 		&C_INIT_PositionOffset_11,
 		&C_INIT_RandomRotation_12,
-		&C_INIT_CreateWithinSphere_13
+		&C_INIT_CreateWithinSphere_13,
+		&C_INIT_RandomColor_0
 	]
 	CParticleOperatorInstance*[] m_Emitters = 
 	[
@@ -166,7 +167,7 @@ C_OP_BasicMovement C_OP_BasicMovement_1
 
 C_OP_ColorInterpolate C_OP_ColorInterpolate_2
 {
-	uint(4) m_ColorFade = ( 120, 61, 35, 255 )
+	uint(4) m_ColorFade = ( 65, 8, 77, 255 )
 	float m_flFadeStartTime = 0.250000
 	float m_flFadeEndTime = 1.000000
 	int m_nFieldOutput = 6
@@ -217,8 +218,8 @@ C_OP_InterpolateRadius C_OP_InterpolateRadius_4
 {
 	float m_flStartTime = 0.000000
 	float m_flEndTime = 1.000000
-	float m_flStartScale = 1.000000
-	float m_flEndScale = 20.000000
+	float m_flStartScale = 20.000000
+	float m_flEndScale = 1.000000
 	bool m_bEaseInAndOut = false
 	float m_flBias = 0.400000
 	float m_flOpStartFadeInTime = 0.000000
@@ -391,7 +392,7 @@ C_INIT_RandomAlpha C_INIT_RandomAlpha_7
 	int m_nOpTimeScaleSeed = 0
 	float m_flOpTimeScaleMin = 1.000000
 	float m_flOpTimeScaleMax = 1.000000
-	bool m_bDisableOperator = false
+	bool m_bDisableOperator = true
 	int m_nOpEndCapState = -1
 	int m_nOpScaleCP = -1
 	string m_Notes = ""
@@ -551,6 +552,39 @@ C_INIT_CreateWithinSphere C_INIT_CreateWithinSphere_13
 	float m_flEndCPGrowthTime = 0.000000
 	float(3) m_LocalCoordinateSystemSpeedMin = ( 0.000000, 0.000000, 0.000000 )
 	float(3) m_LocalCoordinateSystemSpeedMax = ( 0.000000, 0.000000, 0.000000 )
+	bool m_bRunForParentApplyKillList = true
+	float m_flOpStartFadeInTime = 0.000000
+	float m_flOpEndFadeInTime = 0.000000
+	float m_flOpStartFadeOutTime = 0.000000
+	float m_flOpEndFadeOutTime = 0.000000
+	float m_flOpFadeOscillatePeriod = 0.000000
+	float m_flOpTimeOffsetMin = 0.000000
+	float m_flOpTimeOffsetMax = 0.000000
+	int m_nOpTimeOffsetSeed = 0
+	int m_nOpStrengthScaleSeed = 0
+	float m_flOpStrengthMinScale = 1.000000
+	float m_flOpStrengthMaxScale = 1.000000
+	int m_nOpTimeScaleSeed = 0
+	float m_flOpTimeScaleMin = 1.000000
+	float m_flOpTimeScaleMax = 1.000000
+	bool m_bDisableOperator = false
+	int m_nOpEndCapState = -1
+	int m_nOpScaleCP = -1
+	string m_Notes = ""
+}
+
+C_INIT_RandomColor C_INIT_RandomColor_0
+{
+	uint(4) m_ColorMin = ( 204, 0, 153, 255 )
+	uint(4) m_ColorMax = ( 155, 19, 180, 255 )
+	uint(4) m_TintMin = ( 0, 0, 0, 0 )
+	uint(4) m_TintMax = ( 255, 255, 255, 255 )
+	float m_flTintPerc = 0.000000
+	float m_flUpdateThreshold = 32.000000
+	int m_nTintCP = 0
+	int m_nFieldOutput = 6
+	symbol m_nTintBlendMode = 0
+	float m_flLightAmplification = 1.000000
 	bool m_bRunForParentApplyKillList = true
 	float m_flOpStartFadeInTime = 0.000000
 	float m_flOpEndFadeInTime = 0.000000

@@ -165,7 +165,7 @@ C_OP_ColorInterpolate C_OP_ColorInterpolate_2
 	int m_nOpTimeScaleSeed = 0
 	float m_flOpTimeScaleMin = 1.000000
 	float m_flOpTimeScaleMax = 1.000000
-	bool m_bDisableOperator = true
+	bool m_bDisableOperator = false
 	int m_nOpEndCapState = -1
 	int m_nOpScaleCP = -1
 	string m_Notes = ""
@@ -396,7 +396,7 @@ C_INIT_RandomAlpha C_INIT_RandomAlpha_8
 	int m_nOpTimeScaleSeed = 0
 	float m_flOpTimeScaleMin = 1.000000
 	float m_flOpTimeScaleMax = 1.000000
-	bool m_bDisableOperator = false
+	bool m_bDisableOperator = true
 	int m_nOpEndCapState = -1
 	int m_nOpScaleCP = -1
 	string m_Notes = ""
@@ -579,7 +579,7 @@ C_INIT_RingWave C_INIT_RingWave_15
 	int m_nOverrideCP = -1
 	int m_nOverrideCP2 = -1
 	float m_flParticlesPerOrbit = -1.000000
-	float m_flInitialRadius = 100.000000
+	float m_flInitialRadius = 125.000000
 	float m_flThickness = 25.000000
 	float m_flInitialSpeedMin = 0.000000
 	float m_flInitialSpeedMax = 350.000000

@@ -142,7 +142,7 @@ C_OP_BasicMovement C_OP_BasicMovement_1
 
 C_OP_ColorInterpolate C_OP_ColorInterpolate_2
 {
-	uint(4) m_ColorFade = ( 65, 8, 77, 255 )
+	uint(4) m_ColorFade = ( 76, 24, 0, 255 )
 	float m_flFadeStartTime = 0.250000
 	float m_flFadeEndTime = 1.000000
 	int m_nFieldOutput = 6
@@ -492,8 +492,8 @@ C_INIT_CreateWithinSphere C_INIT_CreateWithinSphere_11
 
 C_INIT_RandomColor C_INIT_RandomColor_0
 {
-	uint(4) m_ColorMin = ( 204, 0, 153, 255 )
-	uint(4) m_ColorMax = ( 155, 19, 180, 255 )
+	uint(4) m_ColorMin = ( 230, 138, 0, 255 )
+	uint(4) m_ColorMax = ( 167, 55, 0, 255 )
 	uint(4) m_TintMin = ( 0, 0, 0, 0 )
 	uint(4) m_TintMax = ( 255, 255, 255, 255 )
 	float m_flTintPerc = 0.000000

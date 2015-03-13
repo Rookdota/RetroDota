@@ -8838,6 +8838,10 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_msg.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_begin.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_modifier.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_damage_initial.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_damage_delayed.vpcf"
+			"soundfile"			"soundevents/custom_sounds.vsndevts"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
 		}
 		
 		// Special

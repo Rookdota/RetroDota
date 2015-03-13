@@ -2905,6 +2905,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -2991,6 +2992,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -3077,6 +3079,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -3163,6 +3166,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -3249,6 +3253,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -3335,6 +3340,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -3421,6 +3427,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -3507,6 +3514,7 @@
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 		
 		// Special
@@ -6244,7 +6252,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6319,7 +6327,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6394,7 +6402,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6469,7 +6477,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6544,7 +6552,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6619,7 +6627,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6694,7 +6702,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -6769,7 +6777,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 			}
 			"03"
 			{
@@ -8956,13 +8964,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9025,13 +9033,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9094,13 +9102,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9163,13 +9171,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9232,13 +9240,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9301,13 +9309,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9371,13 +9379,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{
@@ -9440,13 +9448,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 			}
 			"03"
 			{

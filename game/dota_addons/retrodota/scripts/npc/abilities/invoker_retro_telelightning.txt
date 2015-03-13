@@ -38,13 +38,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -107,13 +107,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -176,13 +176,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -245,13 +245,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -314,13 +314,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -383,13 +383,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -453,13 +453,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{
@@ -522,13 +522,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
 		}
 		"03"
 		{

@@ -127,6 +127,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -213,6 +214,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -299,6 +301,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -385,6 +388,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -471,6 +475,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -557,6 +562,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -643,6 +649,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special
@@ -729,6 +736,7 @@
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	}
 	
 	// Special

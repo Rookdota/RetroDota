@@ -44,7 +44,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -119,7 +119,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -194,7 +194,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -269,7 +269,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -344,7 +344,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -419,7 +419,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -494,7 +494,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{
@@ -569,7 +569,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
 		}
 		"03"
 		{

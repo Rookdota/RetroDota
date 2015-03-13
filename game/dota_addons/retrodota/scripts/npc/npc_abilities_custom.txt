@@ -8835,6 +8835,7 @@
 		"precache"
 		{
 			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_msg.vpcf"
 		}
 		
 		// Special

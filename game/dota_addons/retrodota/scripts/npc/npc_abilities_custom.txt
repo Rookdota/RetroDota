@@ -144,10 +144,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"500"
 		
 		"precache"
 		{
 			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal_explosion.vpcf"
 		}
 		
 		// Special
@@ -2700,7 +2702,7 @@
 		
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_retro_frost_nova.vpcf"
 			"particle"		"particles/units/heroes/hero_lich/lich_slowed_cold.vpcf"
 			"particle"		"particles/status_fx/status_effect_frost_lich.vpcf"
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
@@ -2712,30 +2714,25 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"primary_damage"		"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.  These values are not represented in the tooltip (only area_damage is used).
+				"var_type"				"FIELD_INTEGER"
+				"area_damage"			"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"area_damage"			"37.5 75 112.5 150 187.5 225 262.5 300"  //Increases with Quas.
+				"area_radius"			"200"  //Update AoERadius if this is changed.
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"area_radius"			"200"  //Update AoERadius if this is changed.
+				"slow_percent"			"-30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_percent"			"-30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"slow_duration"			"3"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pip_current"			"1"

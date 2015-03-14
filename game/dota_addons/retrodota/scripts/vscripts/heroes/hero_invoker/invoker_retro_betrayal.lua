@@ -7,8 +7,18 @@ function invoker_retro_betrayal_on_spell_start(keys)
 	local target_pid = keys.target:GetPlayerID()
 	local target_player = PlayerResource:GetPlayer(target_pid)	
 	
+	local betrayal_explosion = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_betrayal_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.target)
+	
+	Timers:CreateTimer({  --Remove the Betrayal explosion after a short duration.
+		endTime = 1,
+		callback = function()
+			ParticleManager:DestroyParticle(betrayal_explosion, false)
+		end
+	})
+	
 	if keys.target:HasModifier("modifier_invoker_retro_betrayal") then  --If the unit is already on a unique team, simply refresh the modifier's duration.  This does not trigger the modifier's OnDestroy event.
-		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_invoker_retro_betrayal", nil)  
+		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_invoker_retro_betrayal", nil)
+		keys.target:EmitSound("Hero_Invoker.Alacrity")
 	else
 		--Custom teams are DOTA_TEAM_CUSTOM_1 through DOTA_TEAM_CUSTOM_8, which correspond with ints 6-13, inclusive.
 		local found_new_team = false

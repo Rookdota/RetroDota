@@ -22,10 +22,12 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"20"
 	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"500"
 	
 	"precache"
 	{
 		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal_explosion.vpcf"
 	}
 	
 	// Special

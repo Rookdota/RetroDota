@@ -279,6 +279,8 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_lightning_shield") then
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_frost_nova") then
+			current_invoked_spell:SetLevel(quas_ability:GetLevel())
 		end
 	end
 end

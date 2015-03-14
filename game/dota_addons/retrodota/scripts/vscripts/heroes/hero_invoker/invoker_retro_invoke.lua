@@ -133,6 +133,8 @@ function invoker_retro_invoke_on_spell_start(keys)
 					portal_ability:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Quas Exort
 					keys.caster:AddAbility("invoker_retro_frost_nova")
+					local frost_nova_ability = keys.caster:FindAbilityByName("invoker_retro_frost_nova")
+					frost_nova_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_wex" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Wex Quas

@@ -148,6 +148,20 @@ function invoker_retro_invoke_on_spell_start(keys)
 					tornado_blast_ability:SetLevel(quas_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Wex Exort
 					keys.caster:AddAbility("invoker_retro_levitation")
+					local levitation_ability = keys.caster:FindAbilityByName("invoker_retro_levitation")
+					--Set Levitation's level to the average level of Quas, Wex, and Exort.
+					local average_level = (quas_ability:GetLevel() + wex_ability:GetLevel() + exort_ability:GetLevel()) / 3
+					average_level = math.floor(average_level + .5)  --Round to the nearest integer.
+					
+					--Ensure that the average level is in-bounds, just in case.
+					if average_level < 1 then
+						average_level = 1
+					end
+					if average_level > 8 then
+						average_level = 8
+					end
+					
+					levitation_ability:SetLevel(average_level)  --Level up the ability for tooltip purposes.
 				end
 			elseif keys.caster.invoked_orbs[2]:GetName() == "invoker_retro_exort" then
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Exort Quas
@@ -172,6 +186,20 @@ function invoker_retro_invoke_on_spell_start(keys)
 					mana_burn_ability:SetLevel(wex_ability:GetLevel())  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Quas Wex
 					keys.caster:AddAbility("invoker_retro_emp")
+					local emp_ability = keys.caster:FindAbilityByName("invoker_retro_emp")
+					--Set Levitation's level to the average level of Quas and Wex.
+					local average_level = (quas_ability:GetLevel() + wex_ability:GetLevel()) / 2
+					average_level = math.floor(average_level + .5)  --Round to the nearest integer.
+					
+					--Ensure that the average level is in-bounds, just in case.
+					if average_level < 1 then
+						average_level = 1
+					end
+					if average_level > 8 then
+						average_level = 8
+					end
+					
+					emp_ability:SetLevel(average_level)  --Level up the ability for tooltip purposes.
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Quas Exort
 					--Since Soul Blast's cast range increases with the level of Wex, it is split up into 8 abilities.
 					keys.caster:AddAbility("invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex")

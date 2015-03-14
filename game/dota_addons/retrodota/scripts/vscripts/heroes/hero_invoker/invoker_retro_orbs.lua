@@ -281,6 +281,33 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			current_invoked_spell:SetLevel(wex_ability:GetLevel())
 		elseif string.find(current_invoked_spell_name, "invoker_retro_frost_nova") then
 			current_invoked_spell:SetLevel(quas_ability:GetLevel())
+		elseif string.find(current_invoked_spell_name, "invoker_retro_levitation") then
+			--Set Levitation's level to the average level of Quas, Wex, and Exort.
+			local average_level = (quas_ability:GetLevel() + wex_ability:GetLevel() + exort_ability:GetLevel()) / 3
+			average_level = math.floor(average_level + .5)  --Round to the nearest integer.
+			
+			--Ensure that the average level is in-bounds, just in case.
+			if average_level < 1 then
+				average_level = 1
+			end
+			if average_level > 8 then
+				average_level = 8
+			end
+			
+			current_invoked_spell:SetLevel(average_level)  --Level up the ability for tooltip purposes.
+		elseif string.find(current_invoked_spell_name, "invoker_retro_emp") then
+			--Set EMP's level to the average level of Quas and Wex.
+			local average_level = (quas_ability:GetLevel() + wex_ability:GetLevel()) / 2
+			average_level = math.floor(average_level + .5)  --Round to the nearest integer.
+			
+			--Ensure that the average level is in-bounds, just in case.
+			if average_level < 1 then
+				average_level = 1
+			end
+			if average_level > 8 then
+				average_level = 8
+			end
+			current_invoked_spell:SetLevel(average_level)  --Level up the ability for tooltip purposes.
 		end
 	end
 end

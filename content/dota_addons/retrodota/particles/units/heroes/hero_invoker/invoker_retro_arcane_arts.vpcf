@@ -186,7 +186,7 @@ C_OP_Decay C_OP_Decay_2
 
 C_OP_FadeOutSimple C_OP_FadeOutSimple_3
 {
-	float m_flFadeOutTime = 0.500000
+	float m_flFadeOutTime = 0.300000
 	int m_nFieldOutput = 7
 	float m_flOpStartFadeInTime = 0.000000
 	float m_flOpEndFadeInTime = 0.000000
@@ -210,7 +210,7 @@ C_OP_FadeOutSimple C_OP_FadeOutSimple_3
 
 C_OP_FadeInSimple C_OP_FadeInSimple_4
 {
-	float m_flFadeInTime = 0.500000
+	float m_flFadeInTime = 0.300000
 	int m_nFieldOutput = 7
 	float m_flOpStartFadeInTime = 0.000000
 	float m_flOpEndFadeInTime = 0.000000

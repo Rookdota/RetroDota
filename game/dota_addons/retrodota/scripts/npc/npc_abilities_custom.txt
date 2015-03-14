@@ -294,7 +294,7 @@
 			"11"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"burn_damage_per_interval"			"80"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
+				"burn_damage_per_interval"			"25"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
 			}
 			"12"
 			{
@@ -8847,7 +8847,7 @@
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring_e_copy.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_msg.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_begin.vpcf"
 			"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_modifier.vpcf"
@@ -8921,7 +8921,7 @@
 				"IsPurgable"		"0"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				
-				"EffectName"            "particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+				"EffectName"            "particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring_e_copy.vpcf"
 				"EffectAttachType"      "PATTACH_ABSORIGIN"
 				
 				"TextureName"			"invoker_retro_soul_reaver"

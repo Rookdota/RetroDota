@@ -26,7 +26,7 @@
 	
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+		"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring_e_copy.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_msg.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_begin.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_movement_speed_boost_modifier.vpcf"
@@ -100,7 +100,7 @@
 			"IsPurgable"		"0"
 			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			
-			"EffectName"            "particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring.vpcf"
+			"EffectName"            "particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring_e_copy.vpcf"
 			"EffectAttachType"      "PATTACH_ABSORIGIN"
 			
 			"TextureName"			"invoker_retro_soul_reaver"

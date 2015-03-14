@@ -19,8 +19,8 @@ function invoker_retro_levitation_on_spell_start(keys)
 		if average_level < 1 then
 			average_level = 1
 		end
-		if average_level > 7 then
-			average_level = 7
+		if average_level > 8 then
+			average_level = 8
 		end
 		
 		local levitation_duration = keys.ability:GetLevelSpecialValueFor("duration", average_level - 1)

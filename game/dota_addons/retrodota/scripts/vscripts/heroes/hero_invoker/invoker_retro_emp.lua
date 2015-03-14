@@ -25,8 +25,8 @@ function invoker_retro_emp_on_spell_start(keys)
 		if average_level < 1 then
 			average_level = 1
 		end
-		if average_level > 7 then
-			average_level = 7
+		if average_level > 8 then
+			average_level = 8
 		end
 		
 		local mana_to_burn = keys.ability:GetLevelSpecialValueFor("mana_burned", average_level - 1)

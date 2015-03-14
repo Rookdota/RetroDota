@@ -461,7 +461,7 @@
 		
 		//Shock
 		"DOTA_Tooltip_Ability_invoker_retro_shock"                                        "Shock"
-		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nReleases a circle of shocking energy around Invoker that damages and removes buffs from all enemy units within it.  The damage and radius increase per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_shock_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nReleases a circle of shocking energy around Invoker that damages and removes buffs from all enemy units within it.  The damage and radius both increase per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_shock_damage"                                 "DAMAGE (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_shock_radius"                                 "RADIUS (<font color=\"#CC0099\">WEX</font>):"
 		
@@ -539,7 +539,7 @@
 		
 		//Soul Reaver
 		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver"                                  "Soul Reaver"
-		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_Description"                      "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nInstantly deals damage to the target enemy unit.  For 8 seconds afterwards, Invoker's movement speed is increased.  After the 8 seconds are up, the target enemy unit is dealt more damage.  The initial damage increases per level of Quas, the movement speed bonus increases per level of Wex, and the delayed damage increases per level of Exort.\n\nINITIAL DAMAGE (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">50/100/150/200/250/300/350/400</font>\nBONUS MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40%%</font>\nDELAYED DAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">120/160/200/240/280/320/360/400</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_Description"                      "Invoke: <font color=\"#E68A00\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#008A8A\">Quas</font>.\n\nInstantly deals damage to the target enemy unit.  For 8 seconds afterwards, Invoker's movement speed is increased.  After the 8 seconds are up, the target enemy unit is dealt more damage.  The initial damage increases per level of Quas, the movement speed bonus increases per level of Wex, and the delayed damage increases per level of Exort.\n\nINITIAL DAMAGE (<font color=\"#008A8A\">QUAS</font>): <font color=\"#888888\">50/100/150/200/250/300/350/400</font>\nBONUS MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">5%%/10%%/15%%/20%%/25%%/30%%/35%%/40%%</font>\nDELAYED DAMAGE (<font color=\"#E68A00\">EXORT</font>): <font color=\"#888888\">120/160/200/240/280/320/360/400</font>"
 		//"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_initial_damage"				  "INITIAL DAMAGE (<font color=\"#008A8A\">QUAS</font>):"
 		//"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_bonus_ms_tooltip"				  "BONUS MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>):"
 		//"DOTA_Tooltip_Ability_invoker_retro_soul_reaver_after_damage"					  "DELAYED DAMAGE (<font color=\"#E68A00\">EXORT</font>):"

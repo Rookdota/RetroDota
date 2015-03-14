@@ -7,12 +7,22 @@ function invoker_retro_betrayal_on_spell_start(keys)
 	local target_pid = keys.target:GetPlayerID()
 	local target_player = PlayerResource:GetPlayer(target_pid)	
 	
+	local betrayal_explosion_maximum_radius = 75
 	local betrayal_explosion = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_betrayal_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.target)
+	ParticleManager:SetParticleControl(betrayal_explosion, 1, Vector(betrayal_explosion_maximum_radius, 0, 0))
 	
-	Timers:CreateTimer({  --Remove the Betrayal explosion after a short duration.
-		endTime = 1,
+	local endTime = GameRules:GetGameTime() + 3
+	Timers:CreateTimer({  --Remove the Betrayal explosion after a short duration, and decrease its maximum radius steadily until it is removed.
+		endTime = .03,
 		callback = function()
-			ParticleManager:DestroyParticle(betrayal_explosion, false)
+			if GameRules:GetGameTime() >= endTime or betrayal_explosion_maximum_radius <= 0 then
+				ParticleManager:DestroyParticle(betrayal_explosion, false)
+				return
+			else
+				betrayal_explosion_maximum_radius = betrayal_explosion_maximum_radius - 1
+				ParticleManager:SetParticleControl(betrayal_explosion, 1, Vector(betrayal_explosion_maximum_radius, 0, 0))
+				return .03
+			end
 		end
 	})
 	

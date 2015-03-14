@@ -121,7 +121,7 @@ end
 	Called when Quas, Wex, or Exort is upgraded.  Makes sure the correct invoked spell is still being used.
 ================================================================================================================= ]]
 function invoker_retro_orb_maintain_invoked_spells(keys)
-	--Some spells have seven different versions (one for each level of a reagent).  If one of these is currently invoked, make sure it is the correct version, given the reagent's level.
+	--Some spells have eight different versions (one for each level of a reagent).  If one of these is currently invoked, make sure it is the correct version, given the reagent's level.
 	local current_invoked_spell = keys.caster:GetAbilityByIndex(3)
 	if current_invoked_spell ~= nil then
 		local current_invoked_spell_name = current_invoked_spell:GetName()
@@ -295,7 +295,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			end
 			
 			current_invoked_spell:SetLevel(average_level)  --Level up the ability for tooltip purposes.
-		elseif string.find(current_invoked_spell_name, "invoker_retro_emp") then
+		elseif current_invoked_spell_name == "invoker_retro_emp" then  --Seeing if the string contains "invoker_retro_emp" is misleading because "invoker_retro_empty" also fits that bill.
 			--Set EMP's level to the average level of Quas and Wex.
 			local average_level = (quas_ability:GetLevel() + wex_ability:GetLevel()) / 2
 			average_level = math.floor(average_level + .5)  --Round to the nearest integer.

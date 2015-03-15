@@ -1,7 +1,6 @@
 "npc_radiant_tower"
 {
 	// General
-	//
 	"BaseClass"					"npc_dota_creature" // allows turning and cosmetics
 	"Model"						"models/heroes/treant_protector/treant_protector.vmdl"
 	"ModelScale"				"1.3"

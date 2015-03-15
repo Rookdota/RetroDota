@@ -1,2 +1,4 @@
 # Compiled stuff
 *.vpcf_c
+*.bin
+*.vpk

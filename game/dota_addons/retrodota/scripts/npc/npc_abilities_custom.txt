@@ -60,6 +60,22 @@
 			}
 		}
 	}
+	"gambler_retro_all_in"
+	{
+		
+	}
+	"gambler_retro_ante_up"
+	{
+		
+	}
+	"gambler_retro_chip_stack"
+	{
+		
+	}
+	"gambler_retro_lucky_stars"
+	{
+		
+	}
 	// Invoker's Arcane Arts
 	// Author: Noya
 	// Date: February 15, 2015

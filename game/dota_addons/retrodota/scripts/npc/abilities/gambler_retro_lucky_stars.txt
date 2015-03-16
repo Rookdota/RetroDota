@@ -1,0 +1,4 @@
+"gambler_retro_lucky_stars"
+{
+	
+}

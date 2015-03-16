@@ -2,7 +2,7 @@
 {
 	// General
 	"BaseClass"					"npc_dota_fort"	// Class of entity of link to.
-	"Model"						"models/frozen_throne.vmdl"	// Model.
+	"Model"						"models/tree.vmdl"	// Model.
 	"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 	"MinimapIcon"				"minimap_ancient"
 	"MinimapIconSize"			"400"

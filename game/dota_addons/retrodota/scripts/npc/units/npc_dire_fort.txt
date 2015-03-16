@@ -2,7 +2,7 @@
 {
 	// General
 	"BaseClass"					"npc_creature"	// Class of entity of link to.
-	"Model"						"models/frozenthrone.vmdl"	// Model.
+	"Model"						"models/casket.vmdl"	// Model.
 	"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 	"MinimapIcon"				"minimap_ancient"
 	"MinimapIconSize"			"400"

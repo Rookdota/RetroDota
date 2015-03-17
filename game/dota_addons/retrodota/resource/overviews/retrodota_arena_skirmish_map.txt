@@ -1,0 +1,8 @@
+retrodota_arena_skirmish_map
+{
+	material materials/overviews/retrodota_arena_skirmish_map.vmat
+	pos_x -7104
+	pos_y 6784
+	scale 13.125
+}
+

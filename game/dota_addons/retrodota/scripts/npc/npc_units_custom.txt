@@ -3,8 +3,9 @@
 	"npc_dire_fort"
 	{
 		// General
-		"BaseClass"					"npc_creature"	// Class of entity of link to.
-		"Model"						"models/casket.vmdl"	// Model.
+		"BaseClass"					"npc_dota_fort"	// Class of entity of link to.
+		"Model"						"models/heroes/crystal_maiden/crystal_maiden_ice.vmdl"	// Model.
+		"ModelScale"				"15"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"MinimapIcon"				"minimap_ancient"
 		"MinimapIconSize"			"400"

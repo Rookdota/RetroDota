@@ -1,0 +1,2 @@
+function gambler_retro_lucky_stars_pillage(event)
+end

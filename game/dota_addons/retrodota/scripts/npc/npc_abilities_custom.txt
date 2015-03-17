@@ -64,17 +64,186 @@
 	{
 		
 	}
+	// Gambler's Ante up
+	// Author: wFX
+	// Date: March 16, 2015
+	// Gambler wagers 100 gold on the game targeting a hero.
+	// If the target get a kill first, Gambler cashes in for a big reward,
+	// If the target dies first, Gamble cashes in for half as much.
+	// Damages enemy, heal allies.
+	// Cash in for 300 400 500 600, damage/heal for 50 100 150 200
+	
 	"gambler_retro_ante_up"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_ante_up"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		//"AbilityCastAnimation"			"ACT_DOTA_CAST_COLD_SNAP"
+		"MaxLevel"						"4"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityDamage"					"50 100 150 200"
 		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"    // to be confirmed
+		"AbilityManaCost"				"100"
+		"AbilityGoldCost"				"100"
+		"AbilityCastRange"				"800"   // to be confirmed
+	
+		
+		"precache"
+		{
+	//		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"60"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cash_in"				"300 400 500 600"	
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+				"Function"			"gambler_retro_ante_up_on_spell_start"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_gambler_retro_ante_up"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsBuff"			"%IsBuff"
+				"IsDebuff"			"%IsDebuff"
+	
+	//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+	//		"EffectAttachType"		"follow_overhead"
+	
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					}	
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_death"
+					}
+				}
+			}
+		}
 	}
 	"gambler_retro_chip_stack"
 	{
 		
 	}
+	// Gambler's Lucky Stars
+	// Author: wFX
+	// Date: March 16, 2015
+	// 5 6 7 8% of chance on auto attack to 
+	// Instantly kill a creep
+	// Deal 200 extra damage on buildings and on heros
+	// Also always pillage gold with the formula
+	// (AttackDamage/TargetMaxHP) * PillageRatio * TargetCost
+	
 	"gambler_retro_lucky_stars"
 	{
-		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"gambler_retro_lucky_stars"
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		 {
+		  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+		  "particle"	"particles/generic_gameplay/generic_stunned.vpcf"  
+		 }
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"200"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_bash_datadriven"		
+			{
+	
+				"IsHidden"	"1"
+				"Passive"	"1"
+	
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%chance"
+	
+						"OnSuccess"
+						{
+							"FireSound"
+							{
+								"EffectName"	"Hero_Slardar.Bash"
+								"Target"		"TARGET"
+							}
+	
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"
+								"Function"		"gambler_retro_lucky_stars_on_success"
+							}
+						}
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"
+						"Function"		"gambler_retro_lucky_stars_pillage"
+					}
+				} 
+			}
+		}
 	}
 	// Invoker's Arcane Arts
 	// Author: Noya

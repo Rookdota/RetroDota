@@ -5,7 +5,7 @@
 		// General
 		"BaseClass"					"npc_dota_fort"	// Class of entity of link to.
 		"Model"						"models/heroes/crystal_maiden/crystal_maiden_ice.vmdl"	// Model.
-		"ModelScale"				"15"
+		"ModelScale"				"12"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"MinimapIcon"				"minimap_ancient"
 		"MinimapIconSize"			"400"

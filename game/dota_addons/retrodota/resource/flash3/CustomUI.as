@@ -45,16 +45,7 @@
 			
 			trace("Custom UI loaded!");
 		}
-		
-		/*public function AbilityButtonEvent(args:Object) : void {
-			trace("##Event Firing Detected")
-			trace("##Data: "+args.player_ID);
-			if (globals.Players.GetLocalPlayer() == args.player_ID)
-			{
-				this.showAbilityButton();
-			}
-		}*/
-			
+					
 		//this handles the resizes
 		public function onResize(re:ResizeManager) : * {
 			

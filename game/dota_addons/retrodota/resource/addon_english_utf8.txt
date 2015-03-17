@@ -1,4 +1,4 @@
-"lang"
+﻿"lang"
 {
 	"Language"		"English"
 	"Tokens"
@@ -445,7 +445,7 @@
 		
 		//Scout
 		"DOTA_Tooltip_Ability_invoker_retro_scout"                                        "Scout"
-		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons an invisible, invulnerable Owl Scout that has flying vision and truesight.  The summon duration, vision radius, and movement speed increase per level of Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_scout_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#E68A00\">Exort</font> <font color=\"#008A8A\">Quas</font>.\n\nSummons an invisible, invulnerable Owl Scout that has flying vision and truesight.  The summon duration, vision radius, and movement speed all increase per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_duration"             	 	      "DURATION (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_vision"							  "VISION RADIUS (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_owl_movespeed"						  "MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>):"
@@ -643,6 +643,24 @@
 
 		"DOTA_Tooltip_modifier_invoker_retro_wex_instance"                                "Wex"
 		"DOTA_Tooltip_modifier_invoker_retro_wex_instance_Description"                    "Movement speed increased by 1%% per level of Wex."
+
+
+
+
+		// ******************** VotePanel UI ***********************
+		"InvokerTitle"						"GAME SETTINGS"
+		"WinConditionLabel"					"Win Condition"
+		"StartingLevelLabel"				"Starting Level"
+		"StartingGoldLabel"					"Starting Gold"
+		"InvokeCDLabel"						"Invoke Cooldown"
+		"SecondInvokeLabel"					"Invoked Slots"
+		"ManaCostLabel"						"Spell Mana Cost"
+		"wtfLabel"							"WTF Mode?"
+		"fastRespawnLabel"					"Fast Respawn?"
+		"GoldMultiplierTextLabel"			"Gold Multiplier"
+		"XPMultiplierTextLabel"				"XP Multiplier"
+		"VOTE"								"VOTE"
+		"DONTCARE"							"DON'T CARE"
 	}
 }
  

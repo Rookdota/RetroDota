@@ -22,9 +22,12 @@
         var levelBox:Object;
         var goldBox:Object;
         var invokeCDBox:Object;
-        var secondInvokeBtn:Object;
+        var secondInvokeBox:Object;
         var manaCostBox:Object;
-        var wtfBtn:Object;
+        var wtfBox:Object;
+        var fastRespawnBox:Object;
+		var xpSlider:Object;
+		var goldSlider:Object;
 		var voteBtn:Object;
 		var ignoreBtn:Object;
 		
@@ -41,12 +44,7 @@
 			// Replacements
 			// Kills To Win: ComboBoxSkinned
 			this.killsToWinBox = replaceWithValveComponent(killsToWin, "ComboBoxSkinned");
-			this.killsToWinBox.visibleRows = 7;
-			this.killsToWinBox.showScrollBar = false;
-			this.killsToWinBox.rowHeight = 30;
-			this.killsToWinBox.menuWidth = 300;		
-			this.killsToWinBox.scaleX = 1.5;
-			this.killsToWinBox.scaleY = 1.5;
+	
 			var a:Array = new Array();
 			a.push({"label":"Ancient", "data":"1"});
 			a.push({"label":"2 Kills", "data":"2"});
@@ -59,38 +57,21 @@
 			this.killsToWinBox.setDataProvider(dataProvider1);
 			this.killsToWinBox.setSelectedIndex(0);
 			this.killsToWinBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onKillsToWinChanged );
-			
-			// Initial Level - Slider_New 1-25
-			/*this.levelSlider = replaceWithValveComponent(startingLevel, "Slider_New");
-			this.levelSlider.minimum = 1;
-			this.levelSlider.maximum = 25;
-			this.levelSlider.value = 1;
-			this.levelSlider.snapInterval = 1;
-			this.levelSlider.snapping = true;
-			this.levelSlider.addEventListener( SliderEvent.VALUE_CHANGE, onLevelSliderChanged );
-			trace("Initial Level: Slider_New 1-25");*/
-			
+						
 			this.levelBox = replaceWithValveComponent(startingLevel, "ComboBoxSkinned");
-			this.levelBox.visibleRows = 5;
-			this.levelBox.showScrollBar = false;
-			//this.killsToWinBox.rowHeight = 25;
 			var array_level:Array = new Array();
-			array_level.push({"label":"1", "data":"1"});
-			array_level.push({"label":"6", "data":"2"});
-			array_level.push({"label":"11", "data":"3"});
-			array_level.push({"label":"16", "data":"4"});
-			array_level.push({"label":"25", "data":"5"});
+			array_level.push({"label":"Level 1", "data":"1"});
+			array_level.push({"label":"Level 6", "data":"2"});
+			array_level.push({"label":"Level 11", "data":"3"});
+			array_level.push({"label":"Level 16", "data":"4"});
+			array_level.push({"label":"Level 25", "data":"5"});
 			var dataProvider6 = new DataProvider(array_level);
 			this.levelBox.setDataProvider(dataProvider6);
 			this.levelBox.setSelectedIndex(0);
 			this.levelBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onStartingGoldChanged );
 			
-			
 			// Gold Combobox
 			this.goldBox = replaceWithValveComponent(startingGold, "ComboBoxSkinned");
-			this.goldBox.visibleRows = 6;
-			this.goldBox.showScrollBar = false;
-			//this.killsToWinBox.rowHeight = 25;
 			var array_gold:Array = new Array();
 			array_gold.push({"label":"Default", "data":"Default"});
 			array_gold.push({"label":"1.5k", "data":"1.5k"});
@@ -105,34 +86,32 @@
 			
 			// Invoke CD: 12/6/2/0 ComboBoxSkinned
 			this.invokeCDBox = replaceWithValveComponent(invokeCD, "ComboBoxSkinned");
-			this.invokeCDBox.visibleRows = 4;
-			this.invokeCDBox.showScrollBar = false;
-			//this.killsToWinBox.rowHeight = 25;
 			var array_cd:Array = new Array();
-			array_cd.push({"label":"12", "data":"12"});
-			array_cd.push({"label":"6", "data":"6"});
-			array_cd.push({"label":"2", "data":"2"});
-			array_cd.push({"label":"0", "data":"0"});
+			array_cd.push({"label":"12 seconds", "data":"12"});
+			array_cd.push({"label":"6 seconds", "data":"6"});
+			array_cd.push({"label":"2 seconds", "data":"2"});
+			array_cd.push({"label":"0 seconds", "data":"0"});
 			var dataProvider3 = new DataProvider(array_cd);
 			this.invokeCDBox.setDataProvider(dataProvider3);
 			this.invokeCDBox.setSelectedIndex(0);
 			this.invokeCDBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onInvokeCDChanged );
 			
 			// 2nd Invoke slot: DotaCheckBoxDota
-			this.secondInvokeBtn = replaceWithValveComponent(secondInvoke, "DotaCheckBoxDota");
-			this.secondInvokeBtn.label = "2 Invoke Slots";
-			this.secondInvokeBtn.selected = true;
-			this.secondInvokeBtn.addEventListener(MouseEvent.CLICK, secondInvoke_click);
+			this.secondInvokeBox = replaceWithValveComponent(secondInvoke, "ComboBoxSkinned");
+			var array_yn:Array = new Array();
+			array_yn.push({"label":"1 Ability Slot", "data":"0"});
+			array_yn.push({"label":"2 Ability Slots", "data":"1"});
+			var dataProvider7 = new DataProvider(array_yn);
+			this.secondInvokeBox.setDataProvider(dataProvider7);
+			this.secondInvokeBox.setSelectedIndex(0);
+			this.secondInvokeBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, secondInvoke_click );
 			
 			// Mana Cost: 100/50/0 ComboBoxSkinned
 			this.manaCostBox = replaceWithValveComponent(manaCost, "ComboBoxSkinned");
-			this.manaCostBox.visibleRows = 3;
-			this.manaCostBox.showScrollBar = false;
-			//this.killsToWinBox.rowHeight = 25;
 			var array_mana:Array = new Array();
-			array_mana.push({"label":"100", "data":"100"});
-			array_mana.push({"label":"50", "data":"50"});
-			array_mana.push({"label":"No Mana Cost", "data":"0 FREE"});
+			array_mana.push({"label":"100%", "data":"100"});
+			array_mana.push({"label":"50%", "data":"50"});
+			array_mana.push({"label":"0% - No Mana Cost", "data":"0 FREE"});
 			var dataProvider4 = new DataProvider(array_mana);
 			this.manaCostBox.setDataProvider(dataProvider4);
 			this.manaCostBox.setSelectedIndex(0);
@@ -140,22 +119,91 @@
 			
 			// -wtf: DotaCheckBoxDota
 			// 2nd Invoke slot: DotaCheckBoxDota
-			this.wtfBtn = replaceWithValveComponent(wtf, "DotaCheckBoxDota");
-			this.wtfBtn.label = "Enable -wtf?";
-			this.wtfBtn.selected = false;
-			this.wtfBtn.addEventListener(MouseEvent.CLICK, wtf_click);
+			this.wtfBox = replaceWithValveComponent(wtf, "ComboBoxSkinned");
+			var array_wtf:Array = new Array();
+			array_wtf.push({"label":"No", "data":"0"});
+			array_wtf.push({"label":"Yes", "data":"1"});
+			var dataProvider8 = new DataProvider(array_wtf);
+			this.wtfBox.setDataProvider(dataProvider8);
+			this.wtfBox.setSelectedIndex(0);
+			this.wtfBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, wtf_click );
+
+			this.fastRespawnBox = replaceWithValveComponent(fastRespawn, "ComboBoxSkinned");
+			var array_fast:Array = new Array();
+			array_fast.push({"label":"No", "data":"0"});
+			array_fast.push({"label":"Yes", "data":"1"});
+			var dataProvider9 = new DataProvider(array_fast);
+			this.fastRespawnBox.setDataProvider(dataProvider9);
+			this.fastRespawnBox.setSelectedIndex(0);
+			this.fastRespawnBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, fast_click );
+			
+			// Gold Multiplier Slider
+			this.goldSlider = replaceWithValveComponent(goldMultiplier, "Slider_New");
+			this.goldSlider.minimum = 1;
+			this.goldSlider.maximum = 5;
+			this.goldSlider.value = 1;
+			this.goldSlider.snapInterval = 1;
+			this.goldSlider.snapping = true;
+			this.goldSlider.addEventListener( SliderEvent.VALUE_CHANGE, onGoldSliderChanged );
+			
+			// XP Multiplier Slider
+			this.xpSlider = replaceWithValveComponent(xpMultiplier, "Slider_New");
+			this.xpSlider.minimum = 1;
+			this.xpSlider.maximum = 5;
+			this.xpSlider.value = 1;
+			this.xpSlider.snapInterval = 1;
+			this.xpSlider.snapping = true;
+			this.xpSlider.addEventListener( SliderEvent.VALUE_CHANGE, onXPSliderChanged );
 					
 			//Vote Button
 			this.voteBtn = replaceWithValveComponent(vote, "ButtonThinSecondary");
-			voteBtn.addEventListener(ButtonEvent.CLICK, onVoteButtonClicked);
-			voteBtn.label = "VOTE";
-			//GoButton.label = Globals.instance.GameInterface.Translate("#Play");
+			this.voteBtn.addEventListener(ButtonEvent.CLICK, onVoteButtonClicked);
+			this.voteBtn.label = Globals.instance.GameInterface.Translate("#VOTE");
 			
 			//Don't care button
 			this.ignoreBtn = replaceWithValveComponent(dontCare, "ButtonThinPrimary");
-			ignoreBtn.addEventListener(ButtonEvent.CLICK, onIgnoreButtonClicked);
-			ignoreBtn.label = "DONT CARE";
-			//GoButton.label = Globals.instance.GameInterface.Translate("#Play");
+			this.ignoreBtn.addEventListener(ButtonEvent.CLICK, onIgnoreButtonClicked);
+			this.ignoreBtn.label = Globals.instance.GameInterface.Translate("#DONTCARE");
+
+			// Font Labels
+			var txFormatBold:TextFormat = new TextFormat;
+			txFormatBold.font = "$TextFontBold";
+
+			var txFormatTitle:TextFormat = new TextFormat;
+			txFormatTitle.font = "$TitleFontBold";
+
+			this.InvokerTitle.text = Globals.instance.GameInterface.Translate("#InvokerTitle");
+			this.InvokerTitle.setTextFormat(txFormatTitle);
+
+			this.WinConditionLabel.text = Globals.instance.GameInterface.Translate("#WinConditionLabel");
+			this.WinConditionLabel.setTextFormat(txFormatBold);
+
+			this.StartingLevelLabel.text = Globals.instance.GameInterface.Translate("#StartingLevelLabel");
+			this.StartingLevelLabel.setTextFormat(txFormatBold);
+
+			this.StartingGoldLabel.text = Globals.instance.GameInterface.Translate("#StartingGoldLabel");
+			this.StartingGoldLabel.setTextFormat(txFormatBold);
+
+			this.InvokeCDLabel.text = Globals.instance.GameInterface.Translate("#InvokeCDLabel");
+			this.InvokeCDLabel.setTextFormat(txFormatBold);
+
+			this.SecondInvokeLabel.text = Globals.instance.GameInterface.Translate("#SecondInvokeLabel");
+			this.SecondInvokeLabel.setTextFormat(txFormatBold);
+
+			this.ManaCostLabel.text = Globals.instance.GameInterface.Translate("#ManaCostLabel");
+			this.ManaCostLabel.setTextFormat(txFormatBold);
+
+			this.wtfLabel.text = Globals.instance.GameInterface.Translate("#wtfLabel");
+			this.wtfLabel.setTextFormat(txFormatBold);
+
+			this.fastRespawnLabel.text = Globals.instance.GameInterface.Translate("#fastRespawnLabel");
+			this.fastRespawnLabel.setTextFormat(txFormatBold);
+								
+			this.GoldMultiplierLabel.text = Globals.instance.GameInterface.Translate("#GoldMultiplierTextLabel")+" x"+"1";
+			this.GoldMultiplierLabel.setTextFormat(txFormatBold);
+
+			this.XPMultiplierLabel.text = Globals.instance.GameInterface.Translate("#XPMultiplierTextLabel")+" x"+"1";	
+			this.XPMultiplierLabel.setTextFormat(txFormatBold);
 			
 			trace("##GamePanel Setup!");
 		}
@@ -166,12 +214,28 @@
             trace("Kills To Win Changed to " + Current);
             return;
         }// end function
-
-        public function onLevelSliderChanged(event:SliderEvent)
+		
+		public function onGoldSliderChanged(event:SliderEvent)
         {
-			 var Current:String = this.levelBox.menuList.dataProvider[this.levelBox.selectedIndex].data;
-            trace("Starting Level Changed to "+ Current);
-            return;
+			trace("gold slider " + this.goldSlider.value);
+			this.GoldMultiplierLabel.text = Globals.instance.GameInterface.Translate("#GoldMultiplierTextLabel")+" x"+this.goldSlider.value;
+			
+			//font
+			var txFormat:TextFormat = new TextFormat;
+			txFormat.font = "$TextFontBold";					
+			this.GoldMultiplierLabel.setTextFormat(txFormat);
+        }// end function
+
+        public function onXPSliderChanged(event:SliderEvent)
+        {
+			trace("xp slider " + this.xpSlider.value);
+			this.XPMultiplierLabel.text = Globals.instance.GameInterface.Translate("#XPMultiplierTextLabel")+" x"+this.xpSlider.value;
+			
+			//font
+			var txFormat:TextFormat = new TextFormat;
+			txFormat.font = "$TextFontBold";					
+			this.XPMultiplierLabel.setTextFormat(txFormat);
+			
         }// end function
 
         public function onStartingGoldChanged(event:ListEvent)
@@ -195,29 +259,24 @@
             return;
         }// end function
 
-        public function secondInvoke_click(event:MouseEvent)
+        public function secondInvoke_click(event:ListEvent)
         {
-            if (this.secondInvokeBtn.selected == true)
-            {
-                trace("Second Invoke ON");
-            }
-            else
-            {
-                trace("Second Invoke OFF");
-            }
+            var Current:String = this.secondInvokeBox.menuList.dataProvider[this.secondInvokeBox.selectedIndex].data;
+            trace("Invoke 2nd slot " + Current);
             return;
         }// end function
 
-        public function wtf_click(event:MouseEvent)
+        public function wtf_click(event:ListEvent)
         {
-            if (this.wtfBtn.selected == true)
-            {
-                trace("WTF ON");
-            }
-            else
-            {
-                trace("WTF OFF");
-            }
+			var Current:String = this.wtfBox.menuList.dataProvider[this.wtfBox.selectedIndex].data;
+            trace("WTF " + Current);
+            return;
+        }// end function
+
+         public function fast_click(event:ListEvent)
+        {
+			var Current:String = this.fastRespawnBox.menuList.dataProvider[this.fastRespawnBox.selectedIndex].data;
+            trace("FAST RESPAWN " + Current);
             return;
         }// end function
 
@@ -268,7 +327,7 @@
 			trace("Stage Size: ",stageW,stageH);
 						
 			this.x = stageW/2;
-			this.y = stageH/2;		
+			this.y = stageH/2 - 15*yScale;		
 			
 			this.width = this.width*yScale;
 			this.height	 = this.height*yScale;
@@ -276,8 +335,8 @@
 			trace("#Result Resize: ",this.x,this.y,yScale);
 					 
 			//Now we just set the scale of this element, because these parameters are already the inverse ratios
-			this.scaleX = xScale;
-			this.scaleY = yScale;
+			this.scaleX = xScale*1.5;
+			this.scaleY = yScale*1.5;
 			
 			trace("#Highscore Panel  Resize");
 		}

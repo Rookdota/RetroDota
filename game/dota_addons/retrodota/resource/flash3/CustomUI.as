@@ -16,10 +16,7 @@
 		private var ScreenWidth:int;
 		private var ScreenHeight:int;
 		public var scaleRatioY:Number;
-		
-		//outside of func
-		private var holder:MovieClip = new MovieClip;
-		
+				
 		//constructor, you usually will use onLoaded() instead
 		public function CustomUI() : void {
 	
@@ -40,9 +37,13 @@
 			//pass the gameAPI on to the modules
 			this.myVotePanel.setup(this.gameAPI, this.globals);
 			trace("myVotePanel.setup");
-						
+			this.myGamePanel.setup(this.gameAPI, this.globals);
+			trace("myGamePanel.setup");
+			this.mySpellPanel.setup(this.gameAPI, this.globals);
+			trace("mySpellPanel.setup");
+									
 			//this.gameAPI.SubscribeToGameEvent("show_ultimate_ability", this.AbilityButtonEvent);
-			
+						
 			trace("Custom UI loaded!");
 		}
 					
@@ -59,6 +60,8 @@
 					
 			//pass the resize event to our module, we pass the width and height of the screen, as well as the INVERSE of the stage scaling ratios.
 			this.myVotePanel.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
+			this.myGamePanel.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
+			this.mySpellPanel.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
 		}
 	}
 }

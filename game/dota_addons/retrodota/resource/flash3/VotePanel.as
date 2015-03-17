@@ -40,7 +40,11 @@
 			//set our needed variables
 			this.gameAPI = api;
 			this.globals = globals;
-		
+			
+			//Hide the "Filter By". Do this only when the hero pick phase has started!
+			var obj = globals.Loader_shared_heroselectorandloadout.movieClip.heroDock.filterButtons; 
+			obj.parent.removeChild(obj);
+			
 			// Replacements
 			// Kills To Win: ComboBoxSkinned
 			this.killsToWinBox = replaceWithValveComponent(killsToWin, "ComboBoxSkinned");
@@ -205,13 +209,14 @@
 			this.XPMultiplierLabel.text = Globals.instance.GameInterface.Translate("#XPMultiplierTextLabel")+" x"+"1";	
 			this.XPMultiplierLabel.setTextFormat(txFormatBold);
 			
-			trace("##GamePanel Setup!");
+			trace("##VotePanel Setup!");
 		}
 		
 		public function onKillsToWinChanged(event:ListEvent)
         {
             var Current:String = this.killsToWinBox.menuList.dataProvider[this.killsToWinBox.selectedIndex].data;
             trace("Kills To Win Changed to " + Current);
+						
             return;
         }// end function
 		

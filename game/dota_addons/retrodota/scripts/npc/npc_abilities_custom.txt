@@ -1334,6 +1334,102 @@
 			}
 		}
 	}
+	
+	//Dummy for popup
+	"invoker_retro_confuse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_confuse"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"100"
+		"AbilityCastRange"				"300"
+		
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"5 10 15 20 25 30 35 40"  //Increases with Quas.  A "ghost" unit is also spawned that will last twice as long.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"300 400 500 600 700 800 900 1000"  //Increases with Exort.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage_percent"	"150 140 130 120 110 100 90 80"  //Increases with Wex.  These values are hardcoded into the tooltip.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_confuse.lua"
+				"Function"				"invoker_retro_confuse_on_spell_start"
+				"Target"				"POINT"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_confuse_illusion"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_invoker_retro_confuse_ghost"
+			{
+				"Passive"			"0"
+				"IsHidden" 			"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"  	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"    	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"  		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"       	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"   		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"    		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"  		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
 	// Invoker's Deafening Blast
 	// Author: Rook
 	// Date: March 5, 2015
@@ -2220,6 +2316,108 @@
 				"Target"            "TARGET"
 			}
 			
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
+				"Function"				"invoker_retro_disarm_on_spell_start"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_invoker_retro_disarm"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsDebuff"			"1"
+				"IsHidden"			"0"
+				"TextureName"		"invoker_retro_disarm"
+				
+				"EffectName"            "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_debuff.vpcf"
+				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_invoker/invoker_deafening_blast_disarm_reference.vpcf"
+						"EffectAttachType"  "follow_overhead"
+						"Target"            "TARGET"
+					}
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"  	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	//Dummy for popup
+	"invoker_retro_disarm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_disarm"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"500" 
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1 2 3 4 5 6 7 8"  //Increases with Exort.
+			}
+	
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"			"500 600 700 800 900 1000 1100 1200"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+	
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.HeavensHalberd.Activate"
+				"Target" 		"TARGET"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_invoker/invoker_retro_disarm_impact.vpcf"
+				"EffectAttachType"  "PATTACH_ABSORIGIN"
+				"Target"            "TARGET"
+			}
+	
 			"RunScript"
 			{
 				"ScriptFile"			"heroes/hero_invoker/invoker_retro_disarm.lua"
@@ -3757,6 +3955,95 @@
 			}
 		}
 	}
+	
+	
+	
+	//Dummy for popup
+	"invoker_retro_icy_path"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_icy_path"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"250"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+			"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"2"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+				"Function"				"invoker_retro_icy_path_on_spell_start"
+				"Target"				"POINT"
+				"NumWallElements"		"%num_wall_elements"
+				"WallElementSpacing"	"%wall_element_spacing"
+			}
+		}
+	}
 	// Invoker's Incinerate
 	// Author: Rook
 	// Date: March 8, 2015
@@ -5017,6 +5304,163 @@
 	        }
 		}
 	}
+	
+	//Dummy for popup
+	"invoker_retro_incinerate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_incinerate"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
+		"AoERadius"						"50"  //Update wave_radius if this is.
+		"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"damage_per_wave"					"75"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			}
+			"06"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"pip_current"						"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+				"Function"				"invoker_retro_incinerate_on_spell_start"
+				"Target"				"POINT"
+			}
+			
+			"ApplyModifier"
+	        {
+	            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+	            "Target"				"CASTER"
+	        }
+		}
+		
+		"OnChannelFinish"
+	    {
+	        "RemoveModifier"
+	        {
+	            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation"
+	            "Target"				"CASTER"
+	        }
+			
+			"RemoveModifier"
+	        {
+	            "ModifierName"			"modifier_invoker_retro_incinerate_channeling_animation_override"
+	            "Target"				"CASTER"
+	        }
+			
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+				"Function"				"invoker_retro_incinerate_on_channel_finish"
+			}
+	    }
+		
+		
+		"Modifiers"
+	    {
+			"modifier_invoker_retro_incinerate_channeling"  //Applied to the dummy unit when Invoker begins channeling, and is removed when he stops.
+	        {
+				"Passive"			"0"
+				"IsHidden" 			"1"
+				"IsBuff"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				
+	            "OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_invoker/invoker_retro_incinerate.lua"
+						"Function"				"modifier_invoker_retro_incinerate_channeling_on_created"
+						"DelayBetweenWaves"		"%delay_between_waves"
+						"DamagePerWave"			"%damage_per_wave"
+					}
+				}
+	        }
+			
+	        "modifier_invoker_retro_incinerate_channeling_animation"  //Repeatedly applies an animation to the caster to make them appear to be channeling.
+	        {
+				"Passive"			"0"
+				"IsHidden" 			"1"
+				"IsBuff"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				
+	            "ThinkInterval"		".6"
+	            "OnIntervalThink"
+				{
+	                "ApplyModifier"
+	                {
+	                    "ModifierName"		"modifier_invoker_retro_incinerate_channeling_animation_override"
+	                    "Target"			"CASTER"
+	                }
+	            }
+	        }
+	
+	        "modifier_invoker_retro_incinerate_channeling_animation_override"
+	        {
+				"Duration"			"0.5"
+	            "Passive"  			"0"
+				"IsHidden" 			"1"
+				"IsBuff"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				
+	            "OverrideAnimation" "ACT_DOTA_CAST_ICE_WALL"
+	        }
+		}
+	}
 	// Invoker's Inferno
 	// Author: Rook
 	// Date: March 7, 2015
@@ -5951,6 +6395,124 @@
 		}
 	}
 	
+	
+	
+	
+	//Dummy for popup
+	"invoker_retro_inferno"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_inferno"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"250"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_inferno.vpcf"
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_inferno_pre_explosion.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"num_infernos"						"1 2 3 4 5 6 7 8"  //Increases with Wex.  These values are hardcoded into the tooltip so the spell level can scale off of Exort.
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"inferno_damage_per_second"			"30 37.5 45 52.5 60 67.5 75 82.5"  //Increases with Exort.
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"inferno_delay_between_spawns"		"1"  //The time between when the pre-explosion circles appear.  The first inferno's pre-explosion circle appears as soon as the ability is cast.
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"inferno_explosion_delay"			"2"  //The time between when the pre-explosion circle appears and when the inferno explodes.
+			}
+			"05"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"inferno_explosion_duration"		"2.67"  //Each inferno remains in effect and deals AoE damage for this long.
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"inferno_spawn_radius"				"200"  //When infernos spawn, they will be centered at a random point within this many units from Invoker.
+			}
+			"07"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"inferno_radius"					"300"  //Infernos deal damage in this radius.
+			}
+			"08"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"inferno_damage_interval"			".5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"				"heroes/hero_invoker/invoker_retro_inferno.lua"
+				"Function"					"invoker_retro_inferno_on_spell_start"
+				"InfernoSpawnRadius"		"%inferno_spawn_radius"
+				"InfernoExplosionDelay"		"%inferno_explosion_delay"
+				"InfernoExplosionDuration"	"%inferno_explosion_duration"
+				"InfernoRadius"				"%inferno_radius"
+				"InfernoDelayBetweenSpawns"	"%inferno_delay_between_spawns"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_inferno_damage_over_time"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"1"
+				"IsBuff"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				
+				"ThinkInterval" 	"%inferno_damage_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"					"heroes/hero_invoker/invoker_retro_inferno.lua"
+						"Function"						"modifier_invoker_retro_inferno_damage_over_time_on_interval_think"
+						"InfernoRadius"					"%inferno_radius"
+						"InfernoDamageInterval"			"%inferno_damage_interval"
+					}
+				}
+			}
+		}
+	}
 	// Invoker's Invisibility Aura
 	// Author: Rook and wFX
 	// Date: February 24, 2015
@@ -6946,6 +7508,83 @@
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"350"
 		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
+		
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 80 120 160 200 240 280 320"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"350 400 450 500 550 600 650 700"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange and tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			".75"  //Change AbilityCastPoint if this is.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_ability_phase_start"
+				"CastPoint"				"%cast_point"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_portal.lua"
+				"Function"				"invoker_retro_portal_on_spell_start"
+			}
+		}
+	}
+	
+	
+	//Dummy for popup
+	"invoker_retro_portal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_portal"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"350"
+		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				".75"  //Change the variable cast_point if this is.
 		
 		"precache"
@@ -8400,6 +9039,130 @@
 	        }
 	    }
 	}
+	
+	//Dummy for popup
+	"invoker_retro_shroud_of_flames"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityTextureName"            "invoker_retro_shroud_of_flames"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ICE_WALL"
+	    "MaxLevel"                      "1"
+	    
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "30"
+	    "AbilityManaCost"               "250"
+	    "AbilityCastRange"              "500"
+	    "AbilityDuration"               "40" //Tooltip states "Lasts 40 seconds"
+	    
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	        "particle"  "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	    }
+	    
+	    // Special
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "magic_resistance"      "4 8 12 16 20 24 28 32" // Scales with Quas
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_exort"          "8 16 24 32 40 48 56 64" // Scales with Exort. Hardcoded tooltip
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "pip_current"           "1"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        // Create a dummy, which will learn this ability and apply the modifier on the target
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames_dummy"
+	        }
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_EmberSpirit.FlameGuard.Cast"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit" "0"
+	        "RunScript"
+	        {
+	            "ScriptFile"    "heroes/hero_invoker/invoker_retro_shroud_of_flames.lua"
+	            "Function"      "invoker_retro_shroud_of_flames"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_shroud_of_flames"
+	        {
+	            "TextureName"   "invoker_retro_shroud_of_flames"
+	            "Duration"      "%AbilityDuration"
+	            "Properties"
+	            {
+	                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+	            }
+	
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"              "TARGET"
+	                    "EffectName"          "particles/units/heroes/hero_invoker/invoker_retro_shroud_of_flames.vpcf"
+	                    "EffectAttachType"    "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"     "attach_origin"
+	                        "TARGET"     "attach_origin"
+	                    }
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	                "LinearProjectile"
+	                {
+	                    "Target"        "ATTACKER"
+	                    "Source"        "TARGET"
+	                    "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	                    "MoveSpeed"     "900"
+	                    "StartRadius"   "100"
+	                    "StartPosition" "attach_origin"
+	                    "EndRadius"     "500"
+	                    "FixedDistance" "600"
+	                    "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	                    "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL"
+	                    "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+	                    "HasFrontalCone" "1"
+	                    "ProvidesVision" "0"
+	                }
+	            }
+	        }
+	    }
+	}
 	// Invoker's Soul Blast
 	// Author: Rook
 	// Date: February 25, 2015
@@ -8951,6 +9714,81 @@
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"300"
 		"AbilityCastRange"				"736"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"75 150 225 300 375 450 525 600"  //Increases with Exort.  These values are hardcoded into the tooltip.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"62.5 125 187.5 250 312.5 375 437.5 500"  //Increases with Quas.  These values are hardcoded into the tooltip.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 448 496 544 592 640 688 736"  //Increases with Wex.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_soul_blast.lua"
+				"Function"				"invoker_retro_soul_blast_on_spell_start"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_bane/bane_sap.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"ControlPointEntities"
+				{
+					"CASTER"			"follow_origin"
+					"TARGET"			"follow_origin"
+				}
+			}
+		}
+	}
+	
+	//Dummy for popup
+	"invoker_retro_soul_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_soul_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"400"
 		
 		"precache"
 		{
@@ -9671,6 +10509,76 @@
 			}
 		}
 	}
+	
+	//Dummy for Popup
+	"invoker_retro_telelightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName" 			"invoker_retro_telelightning"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ICE_WALL"
+		
+	
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+			"particle"		"particles/items_fx/chain_lightning.vpcf"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"70 140 210 280 350 420 490 560"   //Increases with Wex.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"				"invoker_retro_telelightning_on_ability_phase_start"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_invoker/invoker_retro_telelightning.lua"
+				"Function"		"invoker_retro_telelightning_on_spell_start"
+			}
+		}
+	}
 	// Invoker's Tornado Blast
 	// Author: Rook
 	// Date: February 19, 2015
@@ -10341,6 +11249,100 @@
 		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
 		"AbilityCastRange"				"2000"
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"damage"										"125 175 225 275 325 375 425 475"  //Increases with Quas.
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"travel_distance"								"250 500 750 1000 1250 1500 1750 2000"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_speed"								"1000"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_radius"								"200"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"projectile_flying_vision"						"600"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"projectile_flying_vision_max_range_duration"	"1.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"								"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"									"invoker_retro_tornado_blast_on_spell_start"
+				"Target"									"POINT"
+				"ProjectileSpeed"							"%projectile_speed"
+				"ProjectileRadius"							"%projectile_radius"
+				"ProjectileFlyingVision"					"%projectile_flying_vision"
+				"ProjectileFlyingVisionMaxRangeDuration"	"%projectile_flying_vision_max_range_duration"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_invoker/invoker_retro_tornado_blast.lua"
+				"Function"			"invoker_retro_tornado_blast_on_projectile_hit_unit"
+			}
+		}
+	}
+	
+	
+	
+	//Dummy for Popup
+	"invoker_retro_tornado_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" 			"invoker_retro_tornado_blast"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250"
+		"AbilityCastRange"				"250"
 		
 		"precache"
 		{

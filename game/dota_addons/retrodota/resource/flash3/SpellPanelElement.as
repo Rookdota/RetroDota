@@ -5,7 +5,7 @@
 	import flash.utils.getDefinitionByName;
 	import flash.utils.Dictionary;
 	import scaleform.clik.events.*;
-	import scaleform.clik.data.DataProvider;
+	import flash.geom.Point;
 	
 	import ValveLib.*;
 	import flash.text.TextFormat;
@@ -38,6 +38,7 @@
 			
 			this.iconName = "invoker_retro_"+this.name;
 			this.addEventListener(MouseEvent.ROLL_OVER, onMouseRollOver);
+			this.addEventListener(MouseEvent.ROLL_OUT, onMouseRollOut);
 			
 			//Spell Text
 			var txFormat:TextFormat = new TextFormat;
@@ -114,8 +115,16 @@
        		var s:Object = keys.target;
        		trace("roll over! " + s.iconName);
 
-			//globals.Loader_heroselection.gameAPI.OnSkillRollOver(this.x, this.y, s.getResourceName());
+			// Workout where to put it
+            var lp:Point = s.localToGlobal(new Point(0, 0));
+			
+            globals.Loader_heroselection.gameAPI.OnSkillRollOver(lp.x, lp.y, s.iconName);
        	}
+		
+		public function onMouseRollOut(keys:MouseEvent){
+			
+			globals.Loader_heroselection.gameAPI.OnSkillRollOut();
+		}
 		
 	}
 }

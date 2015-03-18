@@ -797,3 +797,92 @@
 		}
 	}
 }
+
+
+
+//Dummy for popup
+"invoker_retro_icy_path"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName" 			"invoker_retro_icy_path"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+	"AbilityManaCost"				"200"
+	"AbilityCastRange"				"250"
+	
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_b.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_ice_wall_debuff.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1.25 2.5 3.75 5.0 6.25 7.5 8.75 10"  //Increases with Quas.
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"250 300 350 400 450 500 550 600"  //Increases with Quas.  This value is hardcoded into each ability's AbilityCastRange.
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-140"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_duration"			"2"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"num_wall_elements"		"15"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wall_element_spacing"	"80"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wall_element_radius"	"105"  //Update the corresponding value in invoker_retro_icy_path_unit_ability if this is changed.
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_invoker/invoker_retro_icy_path.lua"
+			"Function"				"invoker_retro_icy_path_on_spell_start"
+			"Target"				"POINT"
+			"NumWallElements"		"%num_wall_elements"
+			"WallElementSpacing"	"%wall_element_spacing"
+		}
+	}
+}

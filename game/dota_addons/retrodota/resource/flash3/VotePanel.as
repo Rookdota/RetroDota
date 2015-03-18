@@ -332,7 +332,7 @@
 			trace("Stage Size: ",stageW,stageH);
 						
 			this.x = stageW/2;
-			this.y = stageH/2 - 15*yScale;		
+			this.y = stageH/2 - 17*yScale;		
 			
 			this.width = this.width*yScale;
 			this.height	 = this.height*yScale;

@@ -33,6 +33,44 @@
 			this.closeBtn = replaceWithValveComponent(closeSpellPanel, "s_closeBtn");
 			this.closeBtn.addEventListener(ButtonEvent.CLICK, onCloseButtonClicked);
 			
+			// Icon Setups
+			this.icy_path.setup(this.gameAPI, this.globals, "Icy Path","Q","Q","Q");
+			this.portal.setup(this.gameAPI, this.globals, "Portal","Q","Q","W");
+			this.frost_nova.setup(this.gameAPI, this.globals, "Frost Nova","Q","Q","E");
+			
+			this.betrayal.setup(this.gameAPI, this.globals, "Betrayal","Q","W","Q");
+			this.tornado_blast.setup(this.gameAPI, this.globals, "Tornado Blast","Q","W","W");
+			this.levitation.setup(this.gameAPI, this.globals, "Levitation","Q","W","E");
+			
+			this.power_word.setup(this.gameAPI, this.globals, "Power Word","Q","E","Q");
+			this.invisibility_aura.setup(this.gameAPI, this.globals, "Invisibility Aura","Q","E","W");
+			this.shroud_of_flames.setup(this.gameAPI, this.globals, "Shroud of Flames","Q","E","E");
+			
+			this.mana_burn.setup(this.gameAPI, this.globals, "Mana Burn","W","Q","Q");
+			this.emp.setup(this.gameAPI, this.globals, "EMP","W","Q","W");
+			this.soul_blast.setup(this.gameAPI, this.globals, "Soul Blast","W","Q","E");
+			
+			this.telelightning.setup(this.gameAPI, this.globals, "Telelightning","W","W","Q");
+			this.shock.setup(this.gameAPI, this.globals, "Shock","W","W","W");
+			this.arcane_arts.setup(this.gameAPI, this.globals, "Arcane Arts","W","W","E");
+			
+			this.scout.setup(this.gameAPI, this.globals, "Scout","W","E","Q");
+			this.energy_ball.setup(this.gameAPI, this.globals, "Energy Ball","W","E","W");
+			this.lightning_shield.setup(this.gameAPI, this.globals, "Lightning Shield","W","E","E");
+			
+			this.chaos_meteor.setup(this.gameAPI, this.globals, "Chaos Meteor","E","Q","Q");
+			this.confuse.setup(this.gameAPI, this.globals, "Confuse","E","Q","W");
+			this.disarm.setup(this.gameAPI, this.globals, "Disarm","E","Q","E");
+			
+			this.soul_reaver.setup(this.gameAPI, this.globals, "Soul Reaver","E","W","Q");
+			this.firestorm.setup(this.gameAPI, this.globals, "Firestorm","E","W","W");
+			this.incinerate.setup(this.gameAPI, this.globals, "Incinerate","E","W","E");
+			
+			this.deafening_blast.setup(this.gameAPI, this.globals, "Deafening Blast","E","E","Q");
+			this.inferno.setup(this.gameAPI, this.globals, "Inferno","E","E","W");
+			this.firebolt.setup(this.gameAPI, this.globals, "Firebolt","E","E","E");
+			
+			
 			trace("##SpellPanel Setup!");
 		}
 		
@@ -75,7 +113,7 @@
 			trace("Stage Size: ",stageW,stageH);
 						
 			this.x = stageW/2 + 685*yScale;
-			this.y = stageH/2 - 108*yScale;		
+			this.y = stageH/2 - 95*yScale;		
 			
 			this.width = this.width*yScale;
 			this.height	 = this.height*yScale;
@@ -83,8 +121,8 @@
 			trace("#Result Resize: ",this.x,this.y,yScale);
 					 
 			//Now we just set the scale of this element, because these parameters are already the inverse ratios
-			this.scaleX = xScale*1.5;
-			this.scaleY = yScale*1.5;
+			this.scaleX = xScale;
+			this.scaleY = yScale;
 			
 			trace("#Highscore Panel  Resize");
 		}

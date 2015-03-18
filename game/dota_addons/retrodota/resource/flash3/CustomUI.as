@@ -41,6 +41,12 @@
 			trace("myGamePanel.setup");
 			this.mySpellPanel.setup(this.gameAPI, this.globals);
 			trace("mySpellPanel.setup");
+			this.mySpellListButton.setup(this.gameAPI, this.globals, this.mySpellPanel);
+			trace("mySpellListButton.setup");
+			
+			// Icon Setups
+			//this.mySpellPanel.icy_path.setup(this.gameAPI, this.globals, "Icy Path");
+			//this.mySpellPanel.portal.setup(this.gameAPI, this.globals, "Portal");
 									
 			//this.gameAPI.SubscribeToGameEvent("show_ultimate_ability", this.AbilityButtonEvent);
 						

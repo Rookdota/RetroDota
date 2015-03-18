@@ -18,6 +18,7 @@
 	public class SpellPanelToggle extends MovieClip {
 		var gameAPI:Object;
 		var globals:Object;
+		var spellPanel:Object;
 
 		var SpellPanelActive:Boolean;
 		
@@ -30,15 +31,27 @@
 			//set our needed variables
 			this.gameAPI = api;
 			this.globals = globals;
-						
-			this.toggleSpellBtn.addEventListener(ButtonEvent.CLICK, onSpellListToggle);
+			this.spellPanel = panel;
+									
+			this.spellBtnToggle.addEventListener(MouseEvent.CLICK, onSpellListToggle);
 			
-			trace("##VotePanel Setup!");
+			trace("##SpellPanelToggle Setup!");
 		}
 		
-		public function onSpellListToggle(event:ButtonEvent)
+		public function onSpellListToggle(event:MouseEvent)
         {
             trace("Spell List Toggle");
+			if (this.spellPanel.visible == false)
+			{
+				this.spellPanel.visible = true;
+				trace("Spell Panel Visible");
+			}
+			else
+			{
+				this.spellPanel.visible = false;
+				trace("Spell Panel Hidden");
+			}			
+			
             return;
         }// end function
 	}

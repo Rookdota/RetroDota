@@ -42,7 +42,7 @@
 			this.mySpellPanel.setup(this.gameAPI, this.globals);
 			trace("mySpellPanel.setup");
 			this.mySpellListButton.setup(this.gameAPI, this.globals, this.mySpellPanel);
-			trace("mySpellListButton.setup");
+			trace("mySpellListButton.setup!");
 			
 			// Icon Setups
 			//this.mySpellPanel.icy_path.setup(this.gameAPI, this.globals, "Icy Path");
@@ -68,6 +68,7 @@
 			this.myVotePanel.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
 			this.myGamePanel.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
 			this.mySpellPanel.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
+			this.mySpellListButton.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
 		}
 	}
 }

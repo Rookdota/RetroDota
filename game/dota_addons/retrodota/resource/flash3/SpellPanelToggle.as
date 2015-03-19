@@ -32,10 +32,12 @@
 			this.gameAPI = api;
 			this.globals = globals;
 			this.spellPanel = panel;
+			
+			this.visible = true;
 									
 			this.spellBtnToggle.addEventListener(MouseEvent.CLICK, onSpellListToggle);
 			
-			trace("##SpellPanelToggle Setup!");
+			trace("###SpellPanelToggle Setup!");
 		}
 		
 		public function onSpellListToggle(event:MouseEvent)
@@ -54,6 +56,25 @@
 			
             return;
         }// end function
+		
+		public function screenResize(stageW:int, stageH:int, xScale:Number, yScale:Number, wide:Boolean){
+			
+			trace("Stage Size: ",stageW,stageH);
+						
+			this.x = stageW/2 + 455*yScale;
+			this.y = stageH/2 + 440*yScale;
+			
+			this.width = this.width*yScale;
+			this.height	 = this.height*yScale;
+			
+			trace("#Result Resize: ",this.x,this.y,yScale);
+					 
+			//Now we just set the scale of this element, because these parameters are already the inverse ratios
+			this.scaleX = xScale;
+			this.scaleY = yScale;
+			
+			trace("#Highscore Panel  Resize");
+		}
 	}
 	
 }

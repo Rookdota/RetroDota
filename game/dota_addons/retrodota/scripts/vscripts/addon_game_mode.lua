@@ -78,7 +78,8 @@ function retro_dota:OnNpcSpawned(keys)
 	if IsValidEntity(npc) then
 		local npc_name = npc:GetUnitName()
 		
-		if npc_name == "npc_dota_creep_goodguys_melee" then
+		-- Creep custom models are changed directly through the npc_units.txt override file
+		--[[if npc_name == "npc_dota_creep_goodguys_melee" then
 			npc:SetOriginalModel("models/heroes/furion/treant.vmdl")
 			npc:SetModel("models/heroes/furion/treant.vmdl")
 		elseif npc_name == "npc_dota_creep_goodguys_ranged" then
@@ -90,7 +91,7 @@ function retro_dota:OnNpcSpawned(keys)
 		elseif npc_name == "npc_dota_creep_badguys_ranged" then
 			npc:SetOriginalModel("models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl")
 			npc:SetModel("models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl")
-		end
+		end--]]
 	end
 	
 	--Remove movement speed modifiers that are automatically applied to lane creeps spawned from the npc_dota_spawner entities.

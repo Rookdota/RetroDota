@@ -12,7 +12,7 @@
 	// Abilities
 	//----------------------------------------------------------------
 	
-	"Ability1"					""			// Ability 1.
+	"Ability1"					"dota_tower_creature"			// Ability 1.
 	"Ability2"					""			// Ability 2.
 	"Ability3"					""			// Ability 3.
 	"Ability4"					""			// Ability 4.

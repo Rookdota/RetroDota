@@ -1,5 +1,56 @@
 "DOTAAbilities"
 {
+	// Tower Properties:
+	//	Truesight
+	//	Invulnerability before 0:00
+	//	Protects the ancient (2 instances in this case)
+	//	Backdoor protection (not really that important in such a small map)
+	"dota_tower_creature"
+	{
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+		"Modifiers"
+		{
+			"modifier_tower"
+			{
+				"Passive"   "1"
+				"IsHidden"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"       	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+	
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"buildings/tower.lua"
+						"Function"		"ApplyInvulnerability"
+					}
+				}
+	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"buildings/tower.lua"
+						"Function"		"ReduceInvulnerabilityCount"
+					}
+				}
+	
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"buildings/tower.lua"
+						"Function"		"InvulnerabilityCheck"
+					}
+				}
+			}
+		}
+	}
 	//=================================================================================================================
 	// Dummy1
 	// A effectless dummy ability, used for filling in empty ability slots when needed.

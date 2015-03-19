@@ -30,8 +30,8 @@
 			this.gameAPI = api;
 			this.globals = globals;
 			
-			this.closeBtn = replaceWithValveComponent(closeSpellPanel, "s_closeBtn");
-			this.closeBtn.addEventListener(ButtonEvent.CLICK, onCloseButtonClicked);
+			//this.closeBtn = replaceWithValveComponent(closeSpellPanel, "s_closeBtn");
+			this.closeSpellPanel.addEventListener(MouseEvent.CLICK, onCloseButtonClicked);
 			
 			// Icon Setups
 			this.icy_path.setup(this.gameAPI, this.globals, "Icy Path","Q","Q","Q");
@@ -70,11 +70,26 @@
 			this.inferno.setup(this.gameAPI, this.globals, "Inferno","E","E","W");
 			this.firebolt.setup(this.gameAPI, this.globals, "Firebolt","E","E","E");
 			
+			var txFormat:TextFormat = new TextFormat;
+			txFormat.font = "$TitleFontBold";
+			this.letterQ.setTextFormat(txFormat);
+			this.letterW.setTextFormat(txFormat);
+			this.letterE.setTextFormat(txFormat);
+			this.letters_1.letterQ.setTextFormat(txFormat);
+			this.letters_1.letterW.setTextFormat(txFormat);
+			this.letters_1.letterE.setTextFormat(txFormat);
+			this.letters_2.letterQ.setTextFormat(txFormat);
+			this.letters_2.letterW.setTextFormat(txFormat);
+			this.letters_2.letterE.setTextFormat(txFormat);
+			this.letters_3.letterQ.setTextFormat(txFormat);
+			this.letters_3.letterW.setTextFormat(txFormat);
+			this.letters_3.letterE.setTextFormat(txFormat);
+			
 			
 			trace("##SpellPanel Setup!");
 		}
 		
-		public function onCloseButtonClicked(event:ButtonEvent)
+		public function onCloseButtonClicked(event:MouseEvent)
         {
             trace("Close Game Panel");
             this.visible = false;

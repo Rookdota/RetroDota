@@ -30,13 +30,12 @@
 			this.gameAPI = api;
 			this.globals = globals;
 			
-			this.closeBtn = replaceWithValveComponent(closeGamePanel, "s_closeBtn"); 
-			this.closeBtn.addEventListener(ButtonEvent.CLICK, onCloseButtonClicked);
+			this.closeGamePanel.addEventListener(MouseEvent.CLICK, onCloseButtonClicked);
 			
 			trace("##SpellPanel Setup!");
 		}
 		
-		public function onCloseButtonClicked(event:ButtonEvent)
+		public function onCloseButtonClicked(event:MouseEvent)
         {
             trace("Close Game Panel");
             this.visible = false;

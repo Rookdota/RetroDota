@@ -50,6 +50,7 @@ function retro_dota:InitGameMode()
 	-- Register Game Events
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(retro_dota, 'OnPlayerPickHero'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(retro_dota, 'OnNpcSpawned'), self)
+	ListenToGameEvent('last_hit', Dynamic_Wrap(retro_dota, 'OnLastHit'), self)
 end
 
 
@@ -70,6 +71,7 @@ function retro_dota:OnPlayerPickHero(keys)
 end
 
 
+--Remove movement speed spawn modifiers on lane creeps, and alter the creeps' models.
 function retro_dota:OnNpcSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	
@@ -92,9 +94,9 @@ function retro_dota:OnNpcSpawned(keys)
 	end
 	
 	--Remove movement speed modifiers that are automatically applied to lane creeps spawned from the npc_dota_spawner entities.
-	--We have to wait a frame due to issues when modifiers are added and removed on the same frame.
+	--We have to wait around 1 second for unknown reasons, or the modifiers won't be removed.
 	Timers:CreateTimer({
-		endTime = .03,
+		endTime = 1,
 		callback = function()
 			if IsValidEntity(npc) then
 				if npc:HasModifier("modifier_creep_haste") or npc:HasModifier("modifier_creep_slow")then
@@ -104,4 +106,37 @@ function retro_dota:OnNpcSpawned(keys)
 			end
 		end
 	})
+end
+
+
+--Remove ancient invulnerability if both towers have been destroyed.
+function retro_dota:OnLastHit(keys)
+	if keys.TowerKill == 1 then
+		local killed_tower = EntIndexToHScript(keys.EntKilled)
+		if killed_tower:IsTower() then
+			local tower_team = killed_tower:GetTeam()
+			if tower_team == DOTA_TEAM_GOODGUYS then
+				--
+			elseif tower_team == DOTA_TEAM_BADGUYS then
+				local dire_tower_still_alive = false
+				
+				local towers = Entities:FindAllByClassname("npc_dota_tower")
+				for i, individual_tower in ipairs(towers) do
+					if individual_tower:GetTeam() == DOTA_TEAM_BADGUYS and individual_tower:IsAlive() then
+						dire_tower_still_alive = true
+						--print("tower still alive")
+					end
+				end
+				
+				if not dire_tower_still_alive then  --Remove invulnerability from the ancient if the towers have been destroyed.
+					--local dire_ancient = Entities:FindAllByClassname("npc_dota_badguys_fort")
+					local dire_ancient = Entities:FindAllByName("npc_dire_fort")  --This does not appear to return anything.
+					for i, individual_ancient in ipairs(dire_ancient) do
+						individual_ancient:SetInvulnCount(0)
+						print("ancient invulnerability lost")
+					end
+				end
+			end
+		end
+	end
 end

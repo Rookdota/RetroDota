@@ -163,9 +163,9 @@
 	{
 		// General
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/warlock/warlock.vmdl"
+		"Model"						"models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl"
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
-		"ModelScale" 				".6"
+		"ModelScale" 				".7"
 		"Level"						"2"
 		
 		// Abilities
@@ -195,7 +195,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -246,24 +246,6 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
 		//Inventory
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"		"239"		}
-				"Wearable2"		{	"ItemDef"		"240"		}
-				"Wearable3" 	{	"ItemDef"		"241"		}
-				"Wearable4"		{	"ItemDef"		"242"		}
-				"Wearable5"		{	"ItemDef"		"243"		}
-				"Wearable6"		{	"ItemDef"		"244"		}
-				"Wearable7"		{	"ItemDef"		"245"		}
-			}
-		}
-
-		"precache"
-		{
-			"particle_folder"  "particles/units/heroes/hero_warlock"
-		}
 	}	
 	
 //=================================================================================
@@ -306,7 +288,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -399,7 +381,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -459,7 +441,7 @@
 	{
 		// General
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/furion/furion.vmdl"
+		"Model"						"models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl"
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 		"ModelScale" 				".5"
 		"Level"						"2"
@@ -491,7 +473,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/units/heroes/hero_furion/furion_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -542,23 +524,6 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
 		//Inventory
-
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"		"29"		}
-				"Wearable2"		{	"ItemDef"		"30"		}
-				"Wearable3" 	{	"ItemDef"		"31"		}
-				"Wearable4"		{	"ItemDef"		"32"		}
-				"Wearable5"		{	"ItemDef"		"33"		}
-			}
-		}
-
-		"precache"
-		{
-			"particle_folder"  "particles/units/heroes/hero_furion"
-		}
 	}	
 	
 //=================================================================================
@@ -601,7 +566,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_goodguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -694,7 +659,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_goodguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -754,7 +719,7 @@
 	{
 	// General
 	"BaseClass"					"npc_dota_creature"
-	"Model"						"models/heroes/life_stealer/life_stealer.vmdl"
+	"Model"						"models/heroes/undying/undying_minion.vmdl"
 	"SoundSet"					"Creep_Bad_Melee"					// Name of sound set.
 	"ModelScale" 				".6"
 	"Level"						"3"
@@ -838,13 +803,6 @@
 	
 	//Inventory
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"		{	"ItemDef"		"443"		}
-		}
-	}
 	}	
 	
 //=================================================================================
@@ -4677,7 +4635,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_good" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_siege_good.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -4771,7 +4729,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_good" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_siege_good.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -4865,7 +4823,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_good" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_siege_good.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -4959,7 +4917,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_bad" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_siege_bad.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -5053,7 +5011,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_bad" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_siege_bad.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -5147,7 +5105,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_bad" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_siege_bad.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -7924,7 +7882,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
 
 		// Bounds
@@ -7997,7 +7955,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
 
 		// Bounds
@@ -8070,7 +8028,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"300"		// Range within a target can be attacked.
-		"ProjectileModel"			"satyr_trickster_projectile" // Particle system model for projectile.
+		"ProjectileModel"			"particles/neutral_fx/satyr_trickster_projectile.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
 
 		// Bounds
@@ -8143,7 +8101,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
 
 		// Bounds
@@ -8216,7 +8174,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"600"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.		     
 
 		// Bounds
@@ -8289,7 +8247,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"300"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
 
 		// Bounds
@@ -8362,7 +8320,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"450"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
 
 		// Bounds
@@ -10789,7 +10747,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"150"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_goodguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
 		// Bounty
@@ -10876,7 +10834,7 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"150"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_goodguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
 		// Bounty
@@ -15781,7 +15739,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_badguy" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes

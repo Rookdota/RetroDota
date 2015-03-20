@@ -33,7 +33,7 @@
 			this.globals = globals;
 			this.spellPanel = panel;
 			
-			this.visible = true;
+			this.visible = false;
 			
 			var txFormat:TextFormat = new TextFormat;
 			txFormat.font = "$TitleFontBold";
@@ -41,7 +41,20 @@
 									
 			this.spellBtnToggle.addEventListener(MouseEvent.CLICK, onSpellListToggle);
 			
+			// Game Event Listening
+			this.gameAPI.SubscribeToGameEvent("show_spell_list_button", this.showSpellListButton);
+			
 			trace("###SpellPanelToggle Setup!");
+		}
+		
+		public function showSpellListButton(args:Object) : void {			
+			
+			// Show for this player
+			var pID:int = globals.Players.GetLocalPlayer();
+			if (args.player_ID == pID) {
+				this.visible = true;
+				trace("##Spell List Button visible for "+args.player_ID);
+			}
 		}
 		
 		public function onSpellListToggle(event:MouseEvent)

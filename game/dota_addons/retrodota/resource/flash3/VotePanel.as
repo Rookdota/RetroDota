@@ -40,7 +40,7 @@
 			//set our needed variables
 			this.gameAPI = api;
 			this.globals = globals;
-			
+					
 			//Hide the "Filter By". Do this only when the hero pick phase has started!
 			var obj = globals.Loader_shared_heroselectorandloadout.movieClip.heroDock.filterButtons; 
 			obj.parent.removeChild(obj);
@@ -209,7 +209,16 @@
 			this.XPMultiplierLabel.text = Globals.instance.GameInterface.Translate("#XPMultiplierTextLabel")+" x"+"1";	
 			this.XPMultiplierLabel.setTextFormat(txFormatBold);
 			
+			// Game Event Listening
+			this.visible = false;
+			this.gameAPI.SubscribeToGameEvent("show_vote_panel", this.showVotePanel);
+			
 			trace("##VotePanel Setup!");
+		}
+		
+		public function showVotePanel() : void {
+			this.visible = true
+			trace("##VotePanel is now Visible")
 		}
 		
 		public function onKillsToWinChanged(event:ListEvent)

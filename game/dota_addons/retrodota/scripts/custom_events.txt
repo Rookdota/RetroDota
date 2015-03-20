@@ -8,10 +8,19 @@
 	}
 
 	"send_hero_ent"
-
 	{
 		"player_ID"		"short"
 		"_ent"			"short"
 	}
-	
+
+	// Fired when entering the pick screen
+	"show_vote_panel"
+	{
+	}
+
+	// Fired after player picks a hero
+	"show_spell_list_button"
+	{
+		"player_ID"		"short"
+	}
 }

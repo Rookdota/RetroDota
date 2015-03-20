@@ -28,6 +28,12 @@
 						"ScriptFile"	"buildings/tower.lua"
 						"Function"		"ApplyInvulnerability"
 					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_tower_truesight_aura"
+						"Target" 		"CASTER"
+					}
 				}
 	
 				"OnDestroy"

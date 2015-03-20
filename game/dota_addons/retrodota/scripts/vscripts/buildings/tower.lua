@@ -19,7 +19,7 @@ end
 function ReduceInvulnerabilityCount( event )
 	GameRules.AncientInvulnerability = GameRules.AncientInvulnerability - 1
 
-	if GameRules.AncientInvulnerability == 0 then
+	if GameRules.AncientInvulnerability <= 0 then
 		local caster = event.caster
 		local ancients = Entities:FindAllByClassname('npc_dota_fort')
 		for k,v in pairs(ancients) do

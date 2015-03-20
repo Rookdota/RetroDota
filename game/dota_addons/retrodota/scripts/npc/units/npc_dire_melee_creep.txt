@@ -2,7 +2,7 @@
 {
 	// General
 	"BaseClass"					"npc_dota_creature"
-	"Model"						"models/heroes/life_stealer/life_stealer.vmdl"
+	"Model"						"models/heroes/undying/undying_minion.vmdl"
 	"SoundSet"					"Creep_Bad_Melee"					// Name of sound set.
 	"ModelScale" 				".6"
 	"Level"						"3"
@@ -83,14 +83,4 @@
 	//----------------------------------------------------------------
 	"VisionDaytimeRange"		"850"		// Range of vision during day light.
 	"VisionNighttimeRange"		"800"		// Range of vision at night time.
-	
-	//Inventory
-
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"		{	"ItemDef"		"443"		}
-		}
-	}
 }

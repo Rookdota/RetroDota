@@ -50,7 +50,7 @@ function retro_dota:InitGameMode()
 	-- Register Game Events
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(retro_dota, 'OnPlayerPickHero'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(retro_dota, 'OnNpcSpawned'), self)
-	ListenToGameEvent('last_hit', Dynamic_Wrap(retro_dota, 'OnLastHit'), self)
+	--ListenToGameEvent('last_hit', Dynamic_Wrap(retro_dota, 'OnLastHit'), self)
 end
 
 
@@ -91,7 +91,7 @@ function retro_dota:OnNpcSpawned(keys)
 		elseif npc_name == "npc_dota_creep_badguys_ranged" then
 			npc:SetOriginalModel("models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl")
 			npc:SetModel("models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl")
-		end--]]
+		end]]
 	end
 	
 	--Remove movement speed modifiers that are automatically applied to lane creeps spawned from the npc_dota_spawner entities.
@@ -111,7 +111,7 @@ end
 
 
 --Remove ancient invulnerability if both towers have been destroyed.
-function retro_dota:OnLastHit(keys)
+--[[function retro_dota:OnLastHit(keys)
 	if keys.TowerKill == 1 then
 		local killed_tower = EntIndexToHScript(keys.EntKilled)
 		if killed_tower:IsTower() then
@@ -140,4 +140,4 @@ function retro_dota:OnLastHit(keys)
 			end
 		end
 	end
-end
+end]]

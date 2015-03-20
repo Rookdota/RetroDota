@@ -14,7 +14,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"backdoor_protection_in_base"			// Ability 1.
+		"Ability1"					""			// Ability 1.  backdoor_protection_in_base could be used too.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -91,7 +91,7 @@
 	{
 		// General
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/life_stealer/life_stealer.vmdl"
+		"Model"						"models/heroes/undying/undying_minion.vmdl"
 		"SoundSet"					"Creep_Bad_Melee"					// Name of sound set.
 		"ModelScale" 				".6"
 		"Level"						"3"
@@ -172,22 +172,12 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"850"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
-		//Inventory
-	
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"		"443"		}
-			}
-		}
 	}
 	"npc_dire_ranged_creep"
 	{
 		// General
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/heroes/warlock/warlock.vmdl"
+		"Model"						"models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl"
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale" 				".6"
 		"Level"						"2"
@@ -219,7 +209,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 	
 		// Attributes
@@ -268,26 +258,6 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"850"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
-		//Inventory
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"		"239"		}
-				"Wearable2"		{	"ItemDef"		"240"		}
-				"Wearable3" 	{	"ItemDef"		"241"		}
-				"Wearable4"		{	"ItemDef"		"242"		}
-				"Wearable5"		{	"ItemDef"		"243"		}
-				"Wearable6"		{	"ItemDef"		"244"		}
-				"Wearable7"		{	"ItemDef"		"245"		}
-			}
-		}
-	
-		"precache"
-		{
-			"particle_folder"  "particles/units/heroes/hero_warlock"
-		}
 	}
 	"npc_dire_tower"
 	{
@@ -303,7 +273,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"dota_tower_creature"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -678,7 +648,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"backdoor_protection_in_base"			// Ability 1.
+		"Ability1"					""			// Ability 1.  backdoor_protection_in_base could be used too.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -843,7 +813,7 @@
 	{
 		// General
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/furion/furion.vmdl"
+		"Model"						"models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl"
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 		"ModelScale" 				".5"
 		"Level"						"2"
@@ -875,7 +845,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/units/heroes/hero_furion/furion_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 	
 		// Attributes
@@ -924,25 +894,6 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"850"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
-		//Inventory
-	
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"		"29"		}
-				"Wearable2"		{	"ItemDef"		"30"		}
-				"Wearable3" 	{	"ItemDef"		"31"		}
-				"Wearable4"		{	"ItemDef"		"32"		}
-				"Wearable5"		{	"ItemDef"		"33"		}
-			}
-		}
-	
-		"precache"
-		{
-			"particle_folder"  "particles/units/heroes/hero_furion"
-		}
 	}	
 	"npc_radiant_tower"
 	{

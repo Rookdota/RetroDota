@@ -2,7 +2,7 @@
 {
 	// General
 	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-	"Model"						"models/heroes/furion/furion.vmdl"
+	"Model"						"models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl"
 	"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 	"ModelScale" 				".5"
 	"Level"						"2"
@@ -34,7 +34,7 @@
 	"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 	"AttackRange"				"500"		// Range within a target can be attacked.
-	"ProjectileModel"			"particles/units/heroes/hero_furion/furion_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 	"ProjectileSpeed"			"900"		// Speed of projectile.
 
 	// Attributes
@@ -83,23 +83,4 @@
 	//----------------------------------------------------------------
 	"VisionDaytimeRange"		"850"		// Range of vision during day light.
 	"VisionNighttimeRange"		"800"		// Range of vision at night time.
-	
-	//Inventory
-
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"		{	"ItemDef"		"29"		}
-			"Wearable2"		{	"ItemDef"		"30"		}
-			"Wearable3" 	{	"ItemDef"		"31"		}
-			"Wearable4"		{	"ItemDef"		"32"		}
-			"Wearable5"		{	"ItemDef"		"33"		}
-		}
-	}
-
-	"precache"
-	{
-		"particle_folder"  "particles/units/heroes/hero_furion"
-	}
 }	

@@ -2228,7 +2228,7 @@
 	{
 		// General
 		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-		"Model"						"models/buildings/building_racks_melee_reference.vmdl"// Model.
+		"Model"						"models/ziggurat.vmdl"// Model.
 		"ModelScale"				"1"
 		"SoundSet"					"Tower.Fire"					// Name of sound set.
 		"MinimapIcon"				"minimap_tower90"
@@ -2413,7 +2413,7 @@
 	{
 		// General
 		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-		"Model"						"models/buildings/building_racks_melee_reference.vmdl"// Model.
+		"Model"						"models/ziggurat.vmdl"// Model.
 		"ModelScale"				"1"
 		"SoundSet"					"Tower.Fire"					// Name of sound set.
 		"MinimapIcon"				"minimap_tower90"

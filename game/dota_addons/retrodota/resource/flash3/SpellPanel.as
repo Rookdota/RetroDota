@@ -78,12 +78,40 @@
 			this.letters_1.letterQ.setTextFormat(txFormat);
 			this.letters_1.letterW.setTextFormat(txFormat);
 			this.letters_1.letterE.setTextFormat(txFormat);
+				this.letters_1_1.letterQ.setTextFormat(txFormat);
+				this.letters_1_1.letterW.setTextFormat(txFormat);
+				this.letters_1_1.letterE.setTextFormat(txFormat);
+				this.letters_1_2.letterQ.setTextFormat(txFormat);
+				this.letters_1_2.letterW.setTextFormat(txFormat);
+				this.letters_1_2.letterE.setTextFormat(txFormat);
+				this.letters_1_3.letterQ.setTextFormat(txFormat);
+				this.letters_1_3.letterW.setTextFormat(txFormat);
+				this.letters_1_3.letterE.setTextFormat(txFormat);
 			this.letters_2.letterQ.setTextFormat(txFormat);
 			this.letters_2.letterW.setTextFormat(txFormat);
 			this.letters_2.letterE.setTextFormat(txFormat);
+				this.letters_1_1.letterQ.setTextFormat(txFormat);
+				this.letters_1_1.letterW.setTextFormat(txFormat);
+				this.letters_1_1.letterE.setTextFormat(txFormat);
+				this.letters_1_2.letterQ.setTextFormat(txFormat);
+				this.letters_1_2.letterW.setTextFormat(txFormat);
+				this.letters_1_2.letterE.setTextFormat(txFormat);
+				this.letters_1_3.letterQ.setTextFormat(txFormat);
+				this.letters_1_3.letterW.setTextFormat(txFormat);
+				this.letters_1_3.letterE.setTextFormat(txFormat);
 			this.letters_3.letterQ.setTextFormat(txFormat);
 			this.letters_3.letterW.setTextFormat(txFormat);
 			this.letters_3.letterE.setTextFormat(txFormat);
+				this.letters_1_1.letterQ.setTextFormat(txFormat);
+				this.letters_1_1.letterW.setTextFormat(txFormat);
+				this.letters_1_1.letterE.setTextFormat(txFormat);
+				this.letters_1_2.letterQ.setTextFormat(txFormat);
+				this.letters_1_2.letterW.setTextFormat(txFormat);
+				this.letters_1_2.letterE.setTextFormat(txFormat);
+				this.letters_1_3.letterQ.setTextFormat(txFormat);
+				this.letters_1_3.letterW.setTextFormat(txFormat);
+				this.letters_1_3.letterE.setTextFormat(txFormat);
+			//Pls no flamerino my copypasterino
 			
 			
 			trace("##SpellPanel Setup!");

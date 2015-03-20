@@ -34,6 +34,10 @@
 			this.spellPanel = panel;
 			
 			this.visible = true;
+			
+			var txFormat:TextFormat = new TextFormat;
+			txFormat.font = "$TitleFontBold";
+			this.spellBtnToggle.spellToggleText.setTextFormat(txFormat);
 									
 			this.spellBtnToggle.addEventListener(MouseEvent.CLICK, onSpellListToggle);
 			
@@ -61,8 +65,8 @@
 			
 			trace("Stage Size: ",stageW,stageH);
 						
-			this.x = stageW/2 + 455*yScale;
-			this.y = stageH/2 + 440*yScale;
+			this.x = stageW/2 + 378*yScale;
+			this.y = stageH/2 + 335*yScale;
 			
 			this.width = this.width*yScale;
 			this.height	 = this.height*yScale;

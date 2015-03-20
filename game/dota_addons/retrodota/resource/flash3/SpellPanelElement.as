@@ -52,9 +52,9 @@
 			var txFormat1:TextFormat = new TextFormat;
 			txFormat1.font = "$TextFont";
 			
-			var QuasColor:Number = 0x008A8A;
-			var WexColor:Number = 0xCC0099;
-			var ExortColor:Number = 0xE68A00;
+			var QuasColor:Number = 0x0099CC;
+			var WexColor:Number = 0xEE48F0;
+			var ExortColor:Number = 0xFF6600;
 									
 			this.e1.text = first_elem;
 			switch(first_elem){

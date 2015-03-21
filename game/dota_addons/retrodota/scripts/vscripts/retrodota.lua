@@ -28,6 +28,12 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(RetroDota, 'OnNPCSpawned'), self)
 	--ListenToGameEvent('last_hit', Dynamic_Wrap(RetroDota, 'OnLastHit'), self)
 
+	--Set the hull radius of the ancients.  This is especially important for the Dire ancient, since it allows melee creeps to be able to attack it.
+	local ancients = Entities:FindAllByClassname('npc_dota_fort')
+	for k,v in pairs(ancients) do
+		v:SetHullRadius(190)
+	end
+	
 	-- Vote Data
 	GameRules.player_count = 0
 	GameRules.players_voted = 0
@@ -134,7 +140,8 @@ function RetroDota:OnGameRulesStateChange(keys)
 					return
 				end
 				return 1
-			end})
+			end
+		})
 	end
 end
 
@@ -143,7 +150,6 @@ function RetroDota:OnAllPlayersLoaded()
 
 	-- Show Vote Panel
 	FireGameEvent( 'show_vote_panel', {} )
-
 end
 
 function RetroDota:OnPlayerPickHero(keys)

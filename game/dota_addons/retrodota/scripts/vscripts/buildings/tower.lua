@@ -21,7 +21,6 @@ function ApplyInvulnerability( event )
 		else
 			GameRules.ThroneInvulnerability = 1
 		end
-		
 	end
 end
 

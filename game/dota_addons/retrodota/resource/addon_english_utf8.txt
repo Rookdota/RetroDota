@@ -23,6 +23,37 @@
 		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_intelligence"					"+$int"
 		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_attack_speed"					"+$attack"
+		
+		
+		// ******************** STRUCTURES ***********************
+		"dota_fountain"										"Well"
+		
+		"npc_radiant_fort"									"Tree"
+		"npc_dire_fort"										"Throne"
+		
+		"npc_radiant_tower"									"Protector"
+		"npc_dire_tower"									"Ziggurat"
+		
+		"npc_dota_goodguys_tower1_top"						"Protector"
+		"npc_dota_goodguys_tower1_mid"						"Protector"
+		"npc_dota_goodguys_tower1_bot"						"Protector"
+		"npc_dota_goodguys_tower2_top"						"Protector"
+		"npc_dota_goodguys_tower2_mid"						"Protector"
+		"npc_dota_goodguys_tower2_bot"						"Protector"
+		"npc_dota_goodguys_tower3_top"						"Protector"
+		"npc_dota_goodguys_tower3_mid"						"Protector"
+		"npc_dota_goodguys_tower3_bot"						"Protector"
+		"npc_dota_goodguys_tower4"							"Protector"
+		"npc_dota_badguys_tower1_top"						"Ziggurat"
+		"npc_dota_badguys_tower1_mid"						"Ziggurat"
+		"npc_dota_badguys_tower1_bot"						"Ziggurat"
+		"npc_dota_badguys_tower2_top"						"Ziggurat"
+		"npc_dota_badguys_tower2_mid"						"Ziggurat"
+		"npc_dota_badguys_tower2_bot"						"Ziggurat"
+		"npc_dota_badguys_tower3_top"						"Ziggurat"
+		"npc_dota_badguys_tower3_mid"						"Ziggurat"
+		"npc_dota_badguys_tower3_bot"						"Ziggurat"
+		"npc_dota_badguys_tower4"							"Ziggurat"
 
 		
 		// ******************** ABILITIES ********************
@@ -704,8 +735,8 @@
 		"InvokeCDLabel"						"Invoke Cooldown"
 		"SecondInvokeLabel"					"Invoked Slots"
 		"ManaCostLabel"						"Spell Mana Cost"
-		"wtfLabel"							"WTF Mode?"
-		"fastRespawnLabel"					"Fast Respawn?"
+		"wtfLabel"							"WTF Mode"
+		"fastRespawnLabel"					"Fast Respawn"
 		"GoldMultiplierTextLabel"			"Gold Multiplier"
 		"XPMultiplierTextLabel"				"XP Multiplier"
 		"VOTE"								"VOTE"

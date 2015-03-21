@@ -6,9 +6,6 @@ print("Retro Dota game mode loaded.")
 
 RETRODOTA_VERSION = "1.0.0"
 
-END_GAME_ON_KILLS = false
-KILLS_TO_END_GAME_FOR_TEAM = 0
-
 if RetroDota == nil then
 	RetroDota = class({})
 end
@@ -29,7 +26,7 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(RetroDota, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(RetroDota, 'OnPlayerPickHero'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(RetroDota, 'OnNPCSpawned'), self)
-	ListenToGameEvent('entity_killed', Dynamic_Wrap(RetroDota, 'OnEntityKilled'), self)
+	--ListenToGameEvent('last_hit', Dynamic_Wrap(RetroDota, 'OnLastHit'), self)
 
 	-- Vote Data
 	GameRules.finished_voting = false
@@ -46,9 +43,6 @@ function RetroDota:InitGameMode()
 	GameRules.fast_respawn_votes = {}
 	GameRules.gold_multiplier_votes = {}
 	GameRules.xp_multiplier_votes = {}
-
-	self.nRadiantKills = 0
-  	self.nDireKills = 0
 
 	--Set the hull radius of the ancients.  This is especially important for the Dire ancient, since it allows melee creeps to be able to attack it.
 	local ancients = Entities:FindAllByClassname('npc_dota_fort')
@@ -184,76 +178,31 @@ function RetroDota:OnPlayerPickHero(keys)
 	end
 end
 
---Remove movement speed spawn modifiers on lane creeps, and alter the creeps' models.
+
 function RetroDota:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-	
-	if IsValidEntity(npc) then
+
+	if IsValidEntity(npc) and GameRules:GetDOTATime(false, false) < 500 then  --Lane creeps stop being given movement speed modifiers at 7:30, so don't bother removing them after that point.
 		local npc_name = npc:GetUnitName()
-		
-		-- Creep custom models are changed directly through the npc_units.txt override file
-		--[[if npc_name == "npc_dota_creep_goodguys_melee" then
-			npc:SetOriginalModel("models/heroes/furion/treant.vmdl")
-			npc:SetModel("models/heroes/furion/treant.vmdl")
-		elseif npc_name == "npc_dota_creep_goodguys_ranged" then
-			npc:SetOriginalModel("models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl")
-			npc:SetModel("models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl")
-		elseif npc_name == "npc_dota_creep_badguys_melee" then
-			npc:SetOriginalModel("models/heroes/undying/undying_minion.vmdl")
-			npc:SetModel("models/heroes/undying/undying_minion.vmdl")
-		elseif npc_name == "npc_dota_creep_badguys_ranged" then
-			npc:SetOriginalModel("models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl")
-			npc:SetModel("models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl")
-		end]]
-	end
-	
-	--Remove movement speed modifiers that are automatically applied to lane creeps spawned from the npc_dota_spawner entities.
-	--We have to wait around 1 second for unknown reasons, or the modifiers won't be removed.
-	Timers:CreateTimer({
-		endTime = 1,
-		callback = function()
-			if IsValidEntity(npc) then
-				if npc:HasModifier("modifier_creep_haste") or npc:HasModifier("modifier_creep_slow")then
-					npc:RemoveModifierByName("modifier_creep_haste")
-					npc:RemoveModifierByName("modifier_creep_slow")
+		if npc_name == "npc_dota_creep_goodguys_melee" or npc_name == "npc_dota_creep_goodguys_ranged" or npc_name == "npc_dota_goodguys_siege" or 
+			npc_name == "npc_dota_creep_badguys_melee" or npc_name == "npc_dota_creep_badguys_ranged" or npc_name == "npc_dota_badguys_siege" then  --If the entity is a lane creep of some kind.
+			
+			--Remove movement speed modifiers that are automatically applied to lane creeps spawned from the npc_dota_spawner entities when the gametime is early.
+			--We usually end up waiting around a second or so before the modifiers are applied, for unknown reasons.
+			Timers:CreateTimer({
+				endTime = .03,
+				callback = function()
+					if IsValidEntity(npc) and npc:IsAlive() then
+						if npc:HasModifier("modifier_creep_haste") or npc:HasModifier("modifier_creep_slow")then
+							npc:RemoveModifierByName("modifier_creep_haste")
+							npc:RemoveModifierByName("modifier_creep_slow")
+							return
+						else
+							return .03
+						end
+					end
 				end
-			end
-		end
-	})
-end
-
-
--- An entity died
-function RetroDota:OnEntityKilled( keys )
-
-	-- The Unit that was Killed
-	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-	-- The Killing entity
-	local killerEntity = nil
-
-	if keys.entindex_attacker ~= nil then
-		killerEntity = EntIndexToHScript( keys.entindex_attacker )
-	end
-
-	if killedUnit:IsRealHero() and END_GAME_ON_KILLS == true then 
-		if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
-			self.nRadiantKills = self.nRadiantKills + 1
-			if self.nRadiantKills >= GameRules.win_condition then
-				print("Radiant Team Wins")
-				GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-				GameRules:SetSafeToLeave( true )
-			else
-				print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
-			end
-		elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
-			self.nDireKills = self.nDireKills + 1
-			if self.nDireKills >= GameRules.win_condition then
-				print("Dire Team Wins")	
-				GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-				GameRules:SetSafeToLeave( true )
-			else
-				print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
-			end
+			})
 		end
 	end
 end
@@ -412,22 +361,9 @@ function RetroDota:OnEveryoneVoted()
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 	GameRules.finished_voting = true
 
-	-- Apply the settings
-
-	-- Set Kills to Win if the option is not the default (Ancient)
-	if GameRules.win_condition ~= "0" then
-		print(GameRules.win_condition)
-		END_GAME_ON_KILLS = true
-	end
-
+	-- Apply the simple one-time settings
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
-
-	if GameRules.wtf == "1" then
-		SendToConsole("dota_ability_debug 1")
-		SendToServerConsole("dota_ability_debug 1")
-	end
-
 	if GameRules.fast_respawn == "1" then
 		GameRules:GetGameModeEntity():SetFixedRespawnTime(0)
 	end
@@ -461,3 +397,35 @@ function SetBonusGold(gold)
 		end
 	end
 end
+
+--Remove ancient invulnerability if both towers have been destroyed.
+--[[function RetroDota:OnLastHit(keys)
+	if keys.TowerKill == 1 then
+		local killed_tower = EntIndexToHScript(keys.EntKilled)
+		if killed_tower:IsTower() then
+			local tower_team = killed_tower:GetTeam()
+			if tower_team == DOTA_TEAM_GOODGUYS then
+				--
+			elseif tower_team == DOTA_TEAM_BADGUYS then
+				local dire_tower_still_alive = false
+				
+				local towers = Entities:FindAllByClassname("npc_dota_tower")
+				for i, individual_tower in ipairs(towers) do
+					if individual_tower:GetTeam() == DOTA_TEAM_BADGUYS and individual_tower:IsAlive() then
+						dire_tower_still_alive = true
+						--print("tower still alive")
+					end
+				end
+				
+				if not dire_tower_still_alive then  --Remove invulnerability from the ancient if the towers have been destroyed.
+					--local dire_ancient = Entities:FindAllByClassname("npc_dota_badguys_fort")
+					local dire_ancient = Entities:FindAllByName("npc_dire_fort")  --This does not appear to return anything.
+					for i, individual_ancient in ipairs(dire_ancient) do
+						individual_ancient:SetInvulnCount(0)
+						print("ancient invulnerability lost")
+					end
+				end
+			end
+		end
+	end
+end]]

@@ -27,6 +27,23 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(RetroDota, 'OnPlayerPickHero'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(RetroDota, 'OnNPCSpawned'), self)
 	--ListenToGameEvent('last_hit', Dynamic_Wrap(RetroDota, 'OnLastHit'), self)
+
+	-- Vote Data
+	GameRules.player_count = 0
+	GameRules.players_voted = 0
+	GameRules.players_skipped_vote = 0
+	GameRules.win_condition_votes = {}
+	GameRules.level_votes = {}
+	GameRules.gold_votes = {}
+	GameRules.invoke_cd_votes = {}
+	GameRules.invoke_slots_votes = {}
+	GameRules.mana_cost_reduction_votes = {}
+	GameRules.wtf_votes = {}
+	GameRules.fast_respawn_votes = {}
+	GameRules.gold_multiplier_votes = {}
+	GameRules.xp_multiplier_votes = {}
+
+	GameRules.vote_options = LoadKeyValues("scripts/npc/kv/vote_options.txt")
 end
 
 function RetroDota:GameThink()
@@ -50,6 +67,8 @@ function RetroDota:OnConnectFull(keys)
 
 	-- The Player ID of the joining player
 	local playerID = ply:GetPlayerID()
+
+	GameRules.player_count = GameRules.player_count + 1
 
 end
 
@@ -104,12 +123,6 @@ function RetroDota:OnGameRulesStateChange(keys)
 			et = .01
 		end
 
-		Timers:CreateTimer(0.5, function() 
-			-- Show Vote Panel
-			print("DOTA_GAMERULES_STATE_HERO_SELECTION")
-			FireGameEvent( 'show_vote_panel', {} )
-		end)
-
 		Timers:CreateTimer("alljointimer", {
 			useGameTime = true,
 			endTime = et,
@@ -127,6 +140,9 @@ end
 
 function RetroDota:OnAllPlayersLoaded()
 	print("[RETRODOTA] All Players have loaded into the game")
+
+	-- Show Vote Panel
+	FireGameEvent( 'show_vote_panel', {} )
 
 end
 
@@ -181,6 +197,157 @@ function RetroDota:OnNPCSpawned(keys)
 		end
 	})
 end
+
+
+
+-- register the 'player_voted' command in our console
+Convars:RegisterCommand( "player_voted", function(name, win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, 
+												wtf, fast_respawn, gold_multiplier, xp_multiplier)
+	local cmdPlayer = Convars:GetCommandClient()
+	if cmdPlayer then
+		local playerID = cmdPlayer:GetPlayerID()
+		if playerID ~= nil and playerID ~= -1 then
+			--if the player is valid, register the vote
+        	return RetroDota:RegisterVote( cmdPlayer , win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, 
+												wtf, fast_respawn, gold_multiplier, xp_multiplier)
+		else
+			print("nil or -1 playerID",playerID)
+		end
+	end
+end, "VOTE button", 0 )
+
+
+Convars:RegisterCommand( "player_skip_vote", function(name, p)
+	local cmdPlayer = Convars:GetCommandClient()
+	if cmdPlayer then
+		local playerID = cmdPlayer:GetPlayerID()
+		if playerID ~= nil and playerID ~= -1 then
+			--if the player is valid, register the vote
+        	return RetroDota:IgnoreVote()
+		end
+	end
+end, "DONT CARE button", 0 )
+
+function RetroDota:IgnoreVote()
+	GameRules.players_skipped_vote = GameRules.players_skipped_vote + 1
+end
+
+
+function RetroDota:RegisterVote( player, win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, wtf, fast_respawn, gold_multiplier, xp_multiplier )
+ 
+    --get the player's ID
+    local pID = player:GetPlayerID()
+    print("RegisterVote", pID, win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, wtf, fast_respawn, gold_multiplier, xp_multiplier)
+
+	GameRules.players_voted = GameRules.players_voted + 1
+
+    -- Insert the different values in each table
+    table.insert(GameRules.win_condition_votes, win_condition)
+	table.insert(GameRules.level_votes, level)
+	table.insert(GameRules.gold_votes, gold)
+	table.insert(GameRules.invoke_cd_votes, invoke_cd)
+	table.insert(GameRules.invoke_slots_votes, invoke_slots)
+	table.insert(GameRules.mana_cost_reduction_votes, mana_cost_reduction)
+	table.insert(GameRules.wtf_votes, wtf)
+	table.insert(GameRules.fast_respawn_votes, fast_respawn)
+	table.insert(GameRules.gold_multiplier_votes, gold_multiplier)
+	table.insert(GameRules.xp_multiplier_votes, xp_multiplier)	
+
+    if (GameRules.players_voted + GameRules.players_skipped_vote == GameRules.player_count ) then
+    	RetroDota:OnEveryoneVoted()
+    else
+    	print( GameRules.players_voted + GameRules.players_skipped_vote .. " out of " .. GameRules.player_count .. " have voted")
+    end
+
+end
+
+
+-- Auxiliar function to return the average numeric value of the votes rounded down
+function RoundedDownAverage( table )
+    	
+	local value = 0
+	local cant = GameRules.players_voted
+
+	for k,v in pairs(table) do
+		value = value + v
+	end
+
+	print("   Averaging: " .. value.."/"..GameRules.players_voted)
+	value = value / cant
+    value = math.floor(value+0.5)
+    print("   Rounded: ".. value)
+
+	return tostring(value)
+end
+
+function RetroDota:OnEveryoneVoted()
+	
+	print("All Players have voted. Averaging the values now")
+
+	print("-> Win Condition")
+    GameRules.win_condition = RoundedDownAverage(GameRules.win_condition_votes)
+    print("=> "..GameRules.vote_options.kills_to_win[GameRules.win_condition])
+
+	print("-> Starting Level")
+	GameRules.starting_level = RoundedDownAverage(GameRules.level_votes)
+	print("==> "..GameRules.vote_options.starting_level[GameRules.starting_level])
+
+	print("-> Starting Gold")
+	GameRules.starting_gold = RoundedDownAverage(GameRules.gold_votes)
+	print("==> "..GameRules.vote_options.starting_gold[GameRules.starting_gold])
+
+	print("-> Invoke Cooldown")
+	GameRules.invoke_cd = RoundedDownAverage(GameRules.invoke_cd_votes)
+	print("==> "..GameRules.vote_options.invoke_cd[GameRules.invoke_cd])
+
+	print("-> Mana Cost")
+	GameRules.mana_cost = RoundedDownAverage(GameRules.mana_cost_reduction_votes)
+	print("==> "..GameRules.vote_options.mana_cost[GameRules.mana_cost])
+
+	print("-> Invoke Slots")
+	GameRules.invoke_slots = RoundedDownAverage(GameRules.invoke_slots_votes)
+	print("==> "..GameRules.invoke_slots)
+
+	print("-> WTF?")
+	GameRules.wtf = RoundedDownAverage(GameRules.wtf_votes)
+	print("==> "..GameRules.wtf)
+
+	print("-> Fast Respawn?")
+	GameRules.fast_respawn = RoundedDownAverage(GameRules.fast_respawn_votes)
+	print("==> "..GameRules.fast_respawn)
+
+	print("-> Gold Multiplier")
+	GameRules.gold_multiplier = RoundedDownAverage(GameRules.gold_multiplier_votes)
+	print("==> "..GameRules.gold_multiplier)
+
+	print("-> XP Multiplier")
+	GameRules.xp_multiplier = RoundedDownAverage(GameRules.xp_multiplier_votes)
+	print("==> "..GameRules.xp_multiplier)
+
+	print("=== FINISHED VOTE AVERAGING ===")
+
+    GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
+
+ --[[  
+    -- Add settings to our stat collector
+    statcollection.addStats({
+        modes = {
+            difficulty = GameRules.DIFFICULTY
+        }
+    })
+
+    -- Find the barrier_voting and obstructions_voting entities in the map and disable them
+    local barrier = Entities:FindByName(nil,"barrier_voting")
+	barrier:RemoveSelf()
+
+	local obstructions = Entities:FindAllByName("obstructions_voting")
+	for _,v in pairs(obstructions) do
+		v:SetEnabled(false,false)
+		print("Obstructions disabled")
+	end]]
+	
+end
+
 
 
 --Remove ancient invulnerability if both towers have been destroyed.

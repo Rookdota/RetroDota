@@ -72,17 +72,17 @@
 			var dataProvider6 = new DataProvider(array_level);
 			this.levelBox.setDataProvider(dataProvider6);
 			this.levelBox.setSelectedIndex(0);
-			this.levelBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onStartingGoldChanged );
+			this.levelBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onStartingLevelChanged );
 			
 			// Gold Combobox
 			this.goldBox = replaceWithValveComponent(startingGold, "ComboBoxSkinned");
 			var array_gold:Array = new Array();
-			array_gold.push({"label":"Default", "data":"Default"});
-			array_gold.push({"label":"1.5k", "data":"1.5k"});
-			array_gold.push({"label":"5k", "data":"5k"});
-			array_gold.push({"label":"10k", "data":"10k"});
-			array_gold.push({"label":"20k", "data":"20k"});
-			array_gold.push({"label":"MAX", "data":"MAX"});
+			array_gold.push({"label":"Default", "data":"1"});
+			array_gold.push({"label":"1.5k", "data":"2"});
+			array_gold.push({"label":"5k", "data":"3"});
+			array_gold.push({"label":"10k", "data":"4"});
+			array_gold.push({"label":"20k", "data":"5"});
+			array_gold.push({"label":"MAX", "data":"6"});
 			var dataProvider2 = new DataProvider(array_gold);
 			this.goldBox.setDataProvider(dataProvider2);
 			this.goldBox.setSelectedIndex(0);
@@ -91,10 +91,10 @@
 			// Invoke CD: 12/6/2/0 ComboBoxSkinned
 			this.invokeCDBox = replaceWithValveComponent(invokeCD, "ComboBoxSkinned");
 			var array_cd:Array = new Array();
-			array_cd.push({"label":"12 seconds", "data":"12"});
-			array_cd.push({"label":"6 seconds", "data":"6"});
-			array_cd.push({"label":"2 seconds", "data":"2"});
-			array_cd.push({"label":"0 seconds", "data":"0"});
+			array_cd.push({"label":"12 seconds", "data":"1"});
+			array_cd.push({"label":"6 seconds", "data":"2"});
+			array_cd.push({"label":"2 seconds", "data":"3"});
+			array_cd.push({"label":"0 seconds", "data":"4"});
 			var dataProvider3 = new DataProvider(array_cd);
 			this.invokeCDBox.setDataProvider(dataProvider3);
 			this.invokeCDBox.setSelectedIndex(0);
@@ -103,8 +103,8 @@
 			// 2nd Invoke slot: DotaCheckBoxDota
 			this.secondInvokeBox = replaceWithValveComponent(secondInvoke, "ComboBoxSkinned");
 			var array_yn:Array = new Array();
-			array_yn.push({"label":"1 Ability Slot", "data":"0"});
-			array_yn.push({"label":"2 Ability Slots", "data":"1"});
+			array_yn.push({"label":"1 Ability Slot", "data":"1"});
+			array_yn.push({"label":"2 Ability Slots", "data":"2"});
 			var dataProvider7 = new DataProvider(array_yn);
 			this.secondInvokeBox.setDataProvider(dataProvider7);
 			this.secondInvokeBox.setSelectedIndex(0);
@@ -113,9 +113,9 @@
 			// Mana Cost: 100/50/0 ComboBoxSkinned
 			this.manaCostBox = replaceWithValveComponent(manaCost, "ComboBoxSkinned");
 			var array_mana:Array = new Array();
-			array_mana.push({"label":"100%", "data":"100"});
-			array_mana.push({"label":"50%", "data":"50"});
-			array_mana.push({"label":"0% - No Mana Cost", "data":"0 FREE"});
+			array_mana.push({"label":"100%", "data":"1"});
+			array_mana.push({"label":"50%", "data":"2"});
+			array_mana.push({"label":"0% - No Mana Cost", "data":"3"});
 			var dataProvider4 = new DataProvider(array_mana);
 			this.manaCostBox.setDataProvider(dataProvider4);
 			this.manaCostBox.setSelectedIndex(0);
@@ -252,6 +252,13 @@
 			
         }// end function
 
+        public function onStartingLevelChanged(event:ListEvent)
+        {
+            var Current:String = this.levelBox.menuList.dataProvider[this.levelBox.selectedIndex].data;
+            trace("Starting Level Changed to " + Current);
+            return;		
+        }// end function
+
         public function onStartingGoldChanged(event:ListEvent)
         {
             var Current:String = this.goldBox.menuList.dataProvider[this.goldBox.selectedIndex].data;
@@ -262,7 +269,7 @@
         public function onInvokeCDChanged(event:ListEvent)
         {
             var Current:String = this.invokeCDBox.menuList.dataProvider[this.invokeCDBox.selectedIndex].data;
-            trace("Starting Gold Changed to " + Current);
+            trace("Invoke CD Changed to " + Current);
             return;
         }// end function
 
@@ -296,15 +303,33 @@
 
         public function onVoteButtonClicked(event:ButtonEvent)
         {
-            trace("VOTED");
-            this.visible = false;
+            trace("VOTE REGISTERED");
+
+            var win_condition:String = this.killsToWinBox.menuList.dataProvider[this.killsToWinBox.selectedIndex].data;
+            var level:String = this.levelBox.menuList.dataProvider[this.levelBox.selectedIndex].data;
+			var gold:String = this.goldBox.menuList.dataProvider[this.goldBox.selectedIndex].data;
+			var invoke_cd:String = this.invokeCDBox.menuList.dataProvider[this.invokeCDBox.selectedIndex].data;
+			var invoke_slots:String = this.secondInvokeBox.menuList.dataProvider[this.secondInvokeBox.selectedIndex].data;
+			var mana_cost_reduction:String = this.manaCostBox.menuList.dataProvider[this.manaCostBox.selectedIndex].data;
+			var wtf:String = this.wtfBox.menuList.dataProvider[this.wtfBox.selectedIndex].data;
+			var fast_respawn:String = this.fastRespawnBox.menuList.dataProvider[this.fastRespawnBox.selectedIndex].data;
+			var gold_multiplier:String = this.goldSlider.value;
+			var xp_multiplier:String = this.xpSlider.value;
+
+			var command:String = "player_voted "+ win_condition +" "+ level +" "+ gold +" "+ invoke_cd +" "+ invoke_slots +" "+ 
+								  mana_cost_reduction +" "+ mana_cost_reduction +" "+ wtf + " " + fast_respawn + " " + gold_multiplier + " " + xp_multiplier;
+
+            trace(command)
+			this.gameAPI.SendServerCommand(command);
+			this.visible = false;
             return;
         }// end function
 
         public function onIgnoreButtonClicked(event:ButtonEvent)
         {
-            trace("DONT CARE");
+            trace("VOTE IGNORED");
             this.visible = false;
+			this.gameAPI.SendServerCommand("player_skip_vote");
             return;
         }// end function
 

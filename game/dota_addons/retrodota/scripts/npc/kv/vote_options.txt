@@ -1,0 +1,49 @@
+"vote_options"
+{
+	"kills_to_win"
+	{
+		"1"	"0" //Ancient
+		"2" "2" //Kills
+		"3"	"5"
+		"4" "10"
+		"5" "25" 
+		"6" "50"
+		"7" "100"
+	}
+
+	"starting_level"
+	{
+		"1" "1"
+		"2"	"6"
+		"3"	"11"
+		"4"	"16"
+		"5"	"25"
+	}
+
+	"starting_gold"
+	{
+		"1"	"0"
+		"2"	"1500"
+		"3"	"5000"
+		"4"	"10000"
+		"5"	"20000"
+		"6"	"99999"
+	}
+
+	"invoke_cd"
+	{
+		"1"	"12"
+		"2"	"6"
+		"3"	"2"
+		"4"	"0"
+	}
+
+	"mana_cost"
+	{
+		"1"	"100"	//Default
+		"2"	"50"	//Half
+		"3"	"0"		//Free
+	}
+
+	//Invoke Slots, WTF and Fast Respawn are just booleans
+}

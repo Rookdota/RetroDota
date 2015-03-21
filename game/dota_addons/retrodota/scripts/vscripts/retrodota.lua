@@ -44,6 +44,12 @@ function RetroDota:InitGameMode()
 	GameRules.gold_multiplier_votes = {}
 	GameRules.xp_multiplier_votes = {}
 
+	--Set the hull radius of the ancients.  This is especially important for the Dire ancient, since it allows melee creeps to be able to attack it.
+	local ancients = Entities:FindAllByClassname('npc_dota_fort')
+	for k,v in pairs(ancients) do
+		v:SetHullRadius(190)
+	end
+
 	GameRules.vote_options = LoadKeyValues("scripts/npc/kv/vote_options.txt")
 end
 

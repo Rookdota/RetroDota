@@ -113,7 +113,7 @@ CVModel CVModel_0
 
 CVattachmentList CVattachmentList_0
 {
-	string m_name = "ziggurat"
+	string m_name = "attach_attack1"
 	CVattachment[] m_attachments = 
 	[
 		CVattachment
@@ -127,7 +127,7 @@ CVattachmentList CVattachmentList_0
 					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 209.301727 )
 					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000020 )
 					float m_flWeight = 1.000000
-					bool m_bRoot = false
+					bool m_bRoot = true
 				}
 			]
 		},

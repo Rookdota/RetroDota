@@ -6,6 +6,9 @@ print("Retro Dota game mode loaded.")
 
 RETRODOTA_VERSION = "1.0.0"
 
+END_GAME_ON_KILLS = false
+KILLS_TO_END_GAME_FOR_TEAM = 0
+
 if RetroDota == nil then
 	RetroDota = class({})
 end
@@ -26,7 +29,7 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(RetroDota, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(RetroDota, 'OnPlayerPickHero'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(RetroDota, 'OnNPCSpawned'), self)
-	--ListenToGameEvent('last_hit', Dynamic_Wrap(RetroDota, 'OnLastHit'), self)
+	ListenToGameEvent('entity_killed', Dynamic_Wrap(RetroDota, 'OnEntityKilled'), self)
 
 	-- Vote Data
 	GameRules.finished_voting = false
@@ -43,6 +46,9 @@ function RetroDota:InitGameMode()
 	GameRules.fast_respawn_votes = {}
 	GameRules.gold_multiplier_votes = {}
 	GameRules.xp_multiplier_votes = {}
+
+	self.nRadiantKills = 0
+  	self.nDireKills = 0
 
 	--Set the hull radius of the ancients.  This is especially important for the Dire ancient, since it allows melee creeps to be able to attack it.
 	local ancients = Entities:FindAllByClassname('npc_dota_fort')
@@ -217,6 +223,42 @@ function RetroDota:OnNPCSpawned(keys)
 end
 
 
+-- An entity died
+function RetroDota:OnEntityKilled( keys )
+
+	-- The Unit that was Killed
+	local killedUnit = EntIndexToHScript( keys.entindex_killed )
+	-- The Killing entity
+	local killerEntity = nil
+
+	if keys.entindex_attacker ~= nil then
+		killerEntity = EntIndexToHScript( keys.entindex_attacker )
+	end
+
+	if killedUnit:IsRealHero() and END_GAME_ON_KILLS == true then 
+		if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
+			self.nRadiantKills = self.nRadiantKills + 1
+			if self.nRadiantKills >= GameRules.win_condition then
+				print("Radiant Team Wins")
+				GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+				GameRules:SetSafeToLeave( true )
+			else
+				print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
+			end
+		elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
+			self.nDireKills = self.nDireKills + 1
+			if self.nDireKills >= GameRules.win_condition then
+				print("Dire Team Wins")	
+				GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+				GameRules:SetSafeToLeave( true )
+			else
+				print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+			end
+		end
+	end
+end
+
+
 
 -- register the 'player_voted' command in our console
 Convars:RegisterCommand( "player_voted", function(name, win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, 
@@ -370,9 +412,22 @@ function RetroDota:OnEveryoneVoted()
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 	GameRules.finished_voting = true
 
-	-- Apply the simple one-time settings
+	-- Apply the settings
+
+	-- Set Kills to Win if the option is not the default (Ancient)
+	if GameRules.win_condition ~= "0" then
+		print(GameRules.win_condition)
+		END_GAME_ON_KILLS = true
+	end
+
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
+
+	if GameRules.wtf == "1" then
+		SendToConsole("dota_ability_debug 1")
+		SendToServerConsole("dota_ability_debug 1")
+	end
+
 	if GameRules.fast_respawn == "1" then
 		GameRules:GetGameModeEntity():SetFixedRespawnTime(0)
 	end
@@ -406,35 +461,3 @@ function SetBonusGold(gold)
 		end
 	end
 end
-
---Remove ancient invulnerability if both towers have been destroyed.
---[[function RetroDota:OnLastHit(keys)
-	if keys.TowerKill == 1 then
-		local killed_tower = EntIndexToHScript(keys.EntKilled)
-		if killed_tower:IsTower() then
-			local tower_team = killed_tower:GetTeam()
-			if tower_team == DOTA_TEAM_GOODGUYS then
-				--
-			elseif tower_team == DOTA_TEAM_BADGUYS then
-				local dire_tower_still_alive = false
-				
-				local towers = Entities:FindAllByClassname("npc_dota_tower")
-				for i, individual_tower in ipairs(towers) do
-					if individual_tower:GetTeam() == DOTA_TEAM_BADGUYS and individual_tower:IsAlive() then
-						dire_tower_still_alive = true
-						--print("tower still alive")
-					end
-				end
-				
-				if not dire_tower_still_alive then  --Remove invulnerability from the ancient if the towers have been destroyed.
-					--local dire_ancient = Entities:FindAllByClassname("npc_dota_badguys_fort")
-					local dire_ancient = Entities:FindAllByName("npc_dire_fort")  --This does not appear to return anything.
-					for i, individual_ancient in ipairs(dire_ancient) do
-						individual_ancient:SetInvulnCount(0)
-						print("ancient invulnerability lost")
-					end
-				end
-			end
-		end
-	end
-end]]

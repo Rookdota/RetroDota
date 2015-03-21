@@ -170,9 +170,11 @@ function RetroDota:OnPlayerPickHero(keys)
 	FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
 	FireGameEvent( 'show_spell_list_button', { player_ID = playerID } )
 
-	local level = 25
-	for i=1,level-1 do
-		hero:HeroLevelUp(false)
+	-- Check the level of this hero, add the bonus levels if needed
+	if GameRules.finished_voting and (hero:GetLevel() ~= GameRules.starting_level) then
+		for i=1,(GameRules.starting_level-hero:GetLevel()) do
+			hero:HeroLevelUp(false)
+		end	
 	end
 end
 
@@ -368,27 +370,42 @@ function RetroDota:OnEveryoneVoted()
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 	GameRules.finished_voting = true
 
+	-- Apply the simple one-time settings
+	SetHeroLevels(GameRules.starting_level)
+	SetBonusGold(GameRules.starting_gold)
+	if GameRules.fast_respawn == "1" then
+		GameRules:GetGameModeEntity():SetFixedRespawnTime(0)
+	end
+
  --[[  
     -- Add settings to our stat collector
     statcollection.addStats({
         modes = {
             difficulty = GameRules.DIFFICULTY
         }
-    })
+    })]]
+end
 
-    -- Find the barrier_voting and obstructions_voting entities in the map and disable them
-    local barrier = Entities:FindByName(nil,"barrier_voting")
-	barrier:RemoveSelf()
-
-	local obstructions = Entities:FindAllByName("obstructions_voting")
-	for _,v in pairs(obstructions) do
-		v:SetEnabled(false,false)
-		print("Obstructions disabled")
-	end]]
-	
+-- Sets all the heroes to this level
+-- An additional check is done OnHeroPicked for players that still haven't picked when the vote ends
+function SetHeroLevels(level)
+	local allHeroes = HeroList:GetAllHeroes()
+	for k, hero in pairs( allHeroes ) do
+		for i=1,level-1 do
+			hero:HeroLevelUp(false)
+		end
+	end
 end
 
 
+-- Gives bonus gold to all players
+function SetBonusGold(gold)
+	for pID=0,9 do
+		if PlayerResource:IsValidPlayerID(pID) then
+			PlayerResource:ModifyGold(pID, gold, false, 0)
+		end
+	end
+end
 
 --Remove ancient invulnerability if both towers have been destroyed.
 --[[function RetroDota:OnLastHit(keys)

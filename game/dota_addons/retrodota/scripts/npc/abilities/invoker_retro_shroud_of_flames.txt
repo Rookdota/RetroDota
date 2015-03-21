@@ -477,7 +477,7 @@
             	"LinearProjectile"
 		        {
 	                "Target"        "ATTACKER"
-	                h
+	                "Source"		"TARGET"
 	                "EffectName"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 	                "MoveSpeed"     "900"
 	                "StartRadius"   "100"

@@ -18,6 +18,11 @@
 	{
 	}
 
+	// Fired at 0:00
+	"hide_vote_panel"
+	{
+	}
+
 	// Fired after player picks a hero
 	"show_spell_list_button"
 	{

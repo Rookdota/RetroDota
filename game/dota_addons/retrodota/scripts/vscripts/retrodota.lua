@@ -29,6 +29,7 @@ function RetroDota:InitGameMode()
 	--ListenToGameEvent('last_hit', Dynamic_Wrap(RetroDota, 'OnLastHit'), self)
 
 	-- Vote Data
+	GameRules.finished_voting = false
 	GameRules.player_count = 0
 	GameRules.players_voted = 0
 	GameRules.players_skipped_vote = 0
@@ -135,6 +136,15 @@ function RetroDota:OnGameRulesStateChange(keys)
 				end
 				return 1
 			end})
+	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+
+		if not GameRules.finished_voting then
+
+			-- Finish Voting in case there's still some panels open
+			FireGameEvent( 'hide_vote_panel', {} )
+
+			RetroDota:OnEveryoneVoted()
+		end
 	end
 end
 
@@ -223,13 +233,18 @@ Convars:RegisterCommand( "player_skip_vote", function(name, p)
 		local playerID = cmdPlayer:GetPlayerID()
 		if playerID ~= nil and playerID ~= -1 then
 			--if the player is valid, register the vote
-        	return RetroDota:IgnoreVote()
+        	return RetroDota:IgnoreVote(playerID)
 		end
 	end
 end, "DONT CARE button", 0 )
 
-function RetroDota:IgnoreVote()
+function RetroDota:IgnoreVote(player)
+	print("Player "..player.." skipped vote")
 	GameRules.players_skipped_vote = GameRules.players_skipped_vote + 1
+
+	if (GameRules.players_voted + GameRules.players_skipped_vote == GameRules.player_count ) then
+    	RetroDota:OnEveryoneVoted()
+    end
 end
 
 
@@ -273,8 +288,7 @@ function RoundedDownAverage( table )
 	end
 
 	print("   Averaging: " .. value.."/"..GameRules.players_voted)
-	value = value / cant
-    value = math.floor(value+0.5)
+	value = math.floor(value / cant)
     print("   Rounded: ".. value)
 
 	return tostring(value)
@@ -282,51 +296,71 @@ end
 
 function RetroDota:OnEveryoneVoted()
 	
-	print("All Players have voted. Averaging the values now")
+	print("All Players have voted.")
 
-	print("-> Win Condition")
-    GameRules.win_condition = RoundedDownAverage(GameRules.win_condition_votes)
-    print("=> "..GameRules.vote_options.kills_to_win[GameRules.win_condition])
+	-- Handle the case where all players skipped voting
+	if GameRules.players_voted == 0 then
+		print("Everyone skipped voting. Setting the defaults")
+		GameRules.win_condition = GameRules.vote_options.kills_to_win["1"]
+		GameRules.starting_level = GameRules.vote_options.starting_level["1"]
+		GameRules.starting_gold = GameRules.vote_options.starting_gold["1"]
+		GameRules.invoke_cd = GameRules.vote_options.invoke_cd["1"]
+		GameRules.mana_cost = GameRules.vote_options.mana_cost["1"]
+		GameRules.invoke_slots = "1"
+		GameRules.wtf = "0"
+		GameRules.fast_respawn = "0"
+		GameRules.gold_multiplier = "1"
+		GameRules.xp_multiplier = "1"
 
-	print("-> Starting Level")
-	GameRules.starting_level = RoundedDownAverage(GameRules.level_votes)
-	print("==> "..GameRules.vote_options.starting_level[GameRules.starting_level])
+	else
+		print("Averaging the values now")
 
-	print("-> Starting Gold")
-	GameRules.starting_gold = RoundedDownAverage(GameRules.gold_votes)
-	print("==> "..GameRules.vote_options.starting_gold[GameRules.starting_gold])
+		print("-> Win Condition")
+	    GameRules.win_condition = GameRules.vote_options.kills_to_win[RoundedDownAverage(GameRules.win_condition_votes)]
+	    print("=> "..GameRules.win_condition)
 
-	print("-> Invoke Cooldown")
-	GameRules.invoke_cd = RoundedDownAverage(GameRules.invoke_cd_votes)
-	print("==> "..GameRules.vote_options.invoke_cd[GameRules.invoke_cd])
+		print("-> Starting Level")
+		GameRules.starting_level = GameRules.vote_options.starting_level[RoundedDownAverage(GameRules.level_votes)]
+		print("==> "..GameRules.starting_level)
 
-	print("-> Mana Cost")
-	GameRules.mana_cost = RoundedDownAverage(GameRules.mana_cost_reduction_votes)
-	print("==> "..GameRules.vote_options.mana_cost[GameRules.mana_cost])
+		print("-> Starting Gold")
+		GameRules.starting_gold = GameRules.vote_options.starting_gold[RoundedDownAverage(GameRules.gold_votes)]
+		print("==> "..GameRules.starting_gold)
 
-	print("-> Invoke Slots")
-	GameRules.invoke_slots = RoundedDownAverage(GameRules.invoke_slots_votes)
-	print("==> "..GameRules.invoke_slots)
+		print("-> Invoke Cooldown")
+		GameRules.invoke_cd = GameRules.vote_options.invoke_cd[RoundedDownAverage(GameRules.invoke_cd_votes)]
+		print("==> "..GameRules.invoke_cd)
 
-	print("-> WTF?")
-	GameRules.wtf = RoundedDownAverage(GameRules.wtf_votes)
-	print("==> "..GameRules.wtf)
+		print("-> Mana Cost")
+		GameRules.mana_cost = GameRules.vote_options.mana_cost[RoundedDownAverage(GameRules.mana_cost_reduction_votes)]
+		print("==> "..GameRules.mana_cost)
 
-	print("-> Fast Respawn?")
-	GameRules.fast_respawn = RoundedDownAverage(GameRules.fast_respawn_votes)
-	print("==> "..GameRules.fast_respawn)
+		print("-> Invoke Slots")
+		GameRules.invoke_slots = RoundedDownAverage(GameRules.invoke_slots_votes)
+		print("==> "..GameRules.invoke_slots)
 
-	print("-> Gold Multiplier")
-	GameRules.gold_multiplier = RoundedDownAverage(GameRules.gold_multiplier_votes)
-	print("==> "..GameRules.gold_multiplier)
+		print("-> WTF?")
+		GameRules.wtf = RoundedDownAverage(GameRules.wtf_votes)
+		print("==> "..GameRules.wtf)
 
-	print("-> XP Multiplier")
-	GameRules.xp_multiplier = RoundedDownAverage(GameRules.xp_multiplier_votes)
-	print("==> "..GameRules.xp_multiplier)
+		print("-> Fast Respawn?")
+		GameRules.fast_respawn = RoundedDownAverage(GameRules.fast_respawn_votes)
+		print("==> "..GameRules.fast_respawn)
 
-	print("=== FINISHED VOTE AVERAGING ===")
+		print("-> Gold Multiplier")
+		GameRules.gold_multiplier = RoundedDownAverage(GameRules.gold_multiplier_votes)
+		print("==> "..GameRules.gold_multiplier)
 
-    GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
+		print("-> XP Multiplier")
+		GameRules.xp_multiplier = RoundedDownAverage(GameRules.xp_multiplier_votes)
+		print("==> "..GameRules.xp_multiplier)
+
+		print("=== FINISHED VOTE AVERAGING ===")
+	
+	end
+
+	GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
+	GameRules.finished_voting = true
 
  --[[  
     -- Add settings to our stat collector

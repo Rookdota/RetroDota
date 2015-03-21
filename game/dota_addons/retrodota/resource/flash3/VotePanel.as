@@ -212,6 +212,7 @@
 			// Game Event Listening
 			this.visible = false;
 			this.gameAPI.SubscribeToGameEvent("show_vote_panel", this.showVotePanel);
+			this.gameAPI.SubscribeToGameEvent("hide_vote_panel", this.hideVotePanel);
 			
 			trace("##VotePanel Setup!");
 		}
@@ -219,6 +220,11 @@
 		public function showVotePanel() : void {
 			this.visible = true
 			trace("##VotePanel is now Visible")
+		}
+		
+		public function hideVotePanel() : void {
+			this.visible = false
+			trace("##VotePanel is now Hidden")
 		}
 		
 		public function onKillsToWinChanged(event:ListEvent)

@@ -6779,28 +6779,28 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				".9 1.8 2.7 3.6 4.5 5.4 6.3 7.2"  //Increases with Quas, Wex, and Exort.
+				"var_type"					"FIELD_FLOAT"
+				"duration"					".9 1.8 2.7 3.6 4.5 5.4 6.3 7.2"  //Increases with Quas, Wex, and Exort.
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cyclone_height"		"500"
+				"var_type"					"FIELD_INTEGER"
+				"cyclone_initial_height"	"175 200 225 250 275 300 325 350"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cyclone_min_height"	"500"
+				"var_type"					"FIELD_INTEGER"
+				"cyclone_min_height"		"125 150 175 200 225 250 275 300"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cyclone_max_height"	"600"
+				"var_type"					"FIELD_INTEGER"
+				"cyclone_max_height"		"225 250 275 300 325 350 375 400"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"pip_current"			"1"
+				"var_type"					"FIELD_FLOAT"
+				"pip_current"				"1"
 			}
 		}
 		

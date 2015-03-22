@@ -89,18 +89,14 @@ function TornadoHeight( keys )
 	local initial_ascent_height_per_frame = ((cyclone_initial_height - position.z) / time_to_reach_initial_height) * .03  --This is the height to add every frame when Levitation is first cast, and applies until the caster reaches their max height.
 	
 	local up_down_cycle_height_per_frame = initial_ascent_height_per_frame / 3  --This is the height to add or remove every frame while the caster is in up/down cycle mode.
-	print("up/down height per frame: " .. up_down_cycle_height_per_frame)
 	if up_down_cycle_height_per_frame > 7.5 then  --Cap this value so the unit doesn't jerk up and down for short-duration levitations.
 		up_down_cycle_height_per_frame = 7.5
 	end
 	
 	local final_descent_height_per_frame = nil  --This is calculated when the unit begins descending.
-	--print(initial_ascent_height_per_frame)
-	--print(up_down_cycle_height_per_frame)
 
 	-- Time to go down
 	local time_to_stop_fly = duration - time_to_reach_initial_height
-	--print(time_to_stop_fly)
 
 	-- Loop up and down
 	local going_up = true
@@ -111,7 +107,7 @@ function TornadoHeight( keys )
 		
 		-- First send the target to the cyclone's initial height.
 		if position.z < cyclone_initial_height and time_in_air <= time_to_reach_initial_height then
-			print("+",initial_ascent_height_per_frame,position.z)
+			--print("+",initial_ascent_height_per_frame,position.z)
 			
 			position.z = position.z + initial_ascent_height_per_frame
 			target:SetAbsOrigin(position)
@@ -128,7 +124,7 @@ function TornadoHeight( keys )
 				final_descent_height_per_frame = (descent_initial_height_above_ground / time_to_reach_initial_height) * .03
 			end
 			
-			print("-",final_descent_height_per_frame,position.z)
+			--print("-",final_descent_height_per_frame,position.z)
 			
 			position.z = position.z - final_descent_height_per_frame
 			target:SetAbsOrigin(position)
@@ -160,7 +156,7 @@ function TornadoHeight( keys )
 
 		-- End
 		else
-			print(GetGroundPosition(target:GetAbsOrigin(), target))
+			--print(GetGroundPosition(target:GetAbsOrigin(), target))
 			--print("End TornadoHeight")
 		end
 	end)

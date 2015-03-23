@@ -232,14 +232,20 @@ Convars:RegisterCommand( "player_skip_vote", function(name, p)
 		local playerID = cmdPlayer:GetPlayerID()
 		if playerID ~= nil and playerID ~= -1 then
 			--if the player is valid, register the vote
-        	return RetroDota:IgnoreVote(playerID)
+        	return RetroDota:IgnoreVote(cmdPlayer)
 		end
 	end
 end, "DONT CARE button", 0 )
 
 function RetroDota:IgnoreVote(player)
-	print("Player "..player.." skipped vote")
+	local pID = player:GetPlayerID()
+	print("Player "..pID.." skipped vote")
+
+	EmitSoundOnClient("Draft.PickMade", player)
+
 	GameRules.players_skipped_vote = GameRules.players_skipped_vote + 1
+	local vote_count = GameRules.players_voted + GameRules.players_skipped_vote
+	GameRules:SendCustomMessage("<font color='#2EFE2E'>("..vote_count.."/"..GameRules.player_count.." votes)</font>", 0, 0)
 
 	if (GameRules.players_voted + GameRules.players_skipped_vote == GameRules.player_count ) then
     	RetroDota:OnEveryoneVoted()
@@ -249,9 +255,10 @@ end
 
 function RetroDota:RegisterVote( player, win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, wtf, fast_respawn, gold_multiplier, xp_multiplier )
  
-    --get the player's ID
-    local pID = player:GetPlayerID()
+ 	local pID = player:GetPlayerID()
     print("RegisterVote", pID, win_condition, level, gold, invoke_cd, invoke_slots, mana_cost_reduction, wtf, fast_respawn, gold_multiplier, xp_multiplier)
+
+    EmitSoundOnClient("HeroPicker.Selected", player)
 
 	GameRules.players_voted = GameRules.players_voted + 1
 
@@ -270,7 +277,9 @@ function RetroDota:RegisterVote( player, win_condition, level, gold, invoke_cd, 
     if (GameRules.players_voted + GameRules.players_skipped_vote == GameRules.player_count ) then
     	RetroDota:OnEveryoneVoted()
     else
-    	print( GameRules.players_voted + GameRules.players_skipped_vote .. " out of " .. GameRules.player_count .. " have voted")
+    	local vote_count = GameRules.players_voted + GameRules.players_skipped_vote
+    	print( vote_count .. " out of " .. GameRules.player_count .. " have voted")
+    	GameRules:SendCustomMessage("<font color='#2EFE2E'>("..vote_count.."/"..GameRules.player_count.." votes)</font>", 0, 0)
     end
 
 end

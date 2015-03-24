@@ -185,6 +185,16 @@ end
 function RetroDota:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
+	-- Apply Gold & XP Multiplier
+	if GameRules.xp_multiplier then
+		npc:SetDeathXP(npc:GetDeathXP() * tonumber(GameRules.xp_multiplier))
+	end
+	
+	if GameRules.gold_multiplier then
+		npc:SetMaximumGoldBounty(npc:GetGoldBounty() * tonumber(GameRules.gold_multiplier))
+		npc:SetMinimumGoldBounty(npc:GetGoldBounty() * tonumber(GameRules.gold_multiplier))
+	end
+
 	if IsValidEntity(npc) and GameRules:GetDOTATime(false, false) < 500 then  --Lane creeps stop being given movement speed modifiers at 7:30, so don't bother removing them after that point.
 		local npc_name = npc:GetUnitName()
 		if npc_name == "npc_dota_creep_goodguys_melee" or npc_name == "npc_dota_creep_goodguys_ranged" or npc_name == "npc_dota_goodguys_siege" or 

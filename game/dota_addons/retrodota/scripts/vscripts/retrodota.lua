@@ -9,6 +9,16 @@ RETRODOTA_VERSION = "1.0.0"
 END_GAME_ON_KILLS = false
 KILLS_TO_END_GAME_FOR_TEAM = 0
 
+-- Dota Hero XP Table
+XP_BOUNTY_PER_LEVEL_TABLE = {}
+XP_BOUNTY_PER_LEVEL_TABLE[1] = 100
+for i=2, 5 do
+	XP_BOUNTY_PER_LEVEL_TABLE[i] = XP_BOUNTY_PER_LEVEL_TABLE[i-1] + (i-1)*20
+end
+for i=6, 25 do
+	XP_BOUNTY_PER_LEVEL_TABLE[i] = XP_BOUNTY_PER_LEVEL_TABLE[i-1] + 100
+end
+
 if RetroDota == nil then
 	RetroDota = class({})
 end
@@ -30,6 +40,7 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(RetroDota, 'OnPlayerPickHero'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(RetroDota, 'OnNPCSpawned'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(RetroDota, 'OnEntityKilled'), self)
+	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(RetroDota, 'OnPlayerLevelUp'), self)
 
 	-- Vote Data
 	GameRules.finished_voting = false
@@ -88,7 +99,9 @@ function RetroDota:CaptureGameMode()
 		-- Set GameMode parameters
 		mode = GameRules:GetGameModeEntity()
 
-		-- Custom Settings (not used)
+		-- Custom Settings
+		GameRules:SetUseCustomHeroXPValues(true)
+		GameRules:SetUseBaseGoldBountyOnHeroes(false)
 		--[[mode:SetRecommendedItemsDisabled( RECOMMENDED_BUILDS_DISABLED )
 		mode:SetCameraDistanceOverride( CAMERA_DISTANCE_OVERRIDE )
 		mode:SetCustomBuybackCostEnabled( CUSTOM_BUYBACK_COST_ENABLED )
@@ -179,6 +192,25 @@ function RetroDota:OnPlayerPickHero(keys)
 			hero:HeroLevelUp(false)
 		end	
 	end
+
+	-- Set Custom XP Value when a hero is picked after the multiplier was defined
+	if GameRules.xp_multiplier then
+		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
+		print("Set unit's EXP bounty to " .. XP_value)
+		hero:SetCustomDeathXP(XP_value)
+	end
+end
+
+-- A player leveled up
+function RetroDota:OnPlayerLevelUp(keys)
+
+	local player = EntIndexToHScript(keys.player)
+	local hero = player:GetAssignedHero() 
+	local level = keys.level
+	local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
+	print("Set unit's EXP bounty to " .. XP_value)
+	hero:SetCustomDeathXP(XP_value)
+
 end
 
 
@@ -494,6 +526,14 @@ function RetroDota:OnEveryoneVoted()
 		GameRules:SendCustomMessage("Gold Multiplier: "..GameRules.gold_multiplier.." -- XP Multiplier: "..GameRules.xp_multiplier, 0, 0)
 	end
 
+	-- Set Custom XP Value on all heroes in game
+	local allHeroes = HeroList:GetAllHeroes()
+	for k, hero in pairs( allHeroes ) do
+		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
+		print("Set unit's EXP bounty to " .. XP_value)
+		hero:SetCustomDeathXP(XP_value)
+	end
+	
 
  --[[  
     -- Add settings to our stat collector

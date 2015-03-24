@@ -265,24 +265,50 @@ function RetroDota:OnEntityKilled( keys )
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
 
-	if killedUnit:IsRealHero() and END_GAME_ON_KILLS == true then 
-		if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
-			self.nRadiantKills = self.nRadiantKills + 1
-			if self.nRadiantKills >= GameRules.win_condition then
-				print("Radiant Team Wins")
-				GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-				GameRules:SetSafeToLeave( true )
-			else
-				print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
-			end
-		elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
-			self.nDireKills = self.nDireKills + 1
-			if self.nDireKills >= GameRules.win_condition then
-				print("Dire Team Wins")	
-				GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-				GameRules:SetSafeToLeave( true )
-			else
-				print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+	if killedUnit:IsRealHero() then
+
+		-- Gold Multiplier for hero kills
+		if killerEntity:IsRealHero() and GameRules.gold_multiplier then
+			local bounty = killedUnit:GetGoldBounty() * GameRules.gold_multiplier - killedUnit:GetGoldBounty()
+			killerEntity:ModifyGold(bounty, true, 0)
+
+			-- Assist Gold?
+			
+			-- Additional gold popup needed?
+			-- The default dota popup for gold on hero kills still shows up
+		    local pfxPath = "particles/msg_fx/msg_gold.vpcf"
+		    local pidx = ParticleManager:CreateParticleForPlayer(pfxPath, PATTACH_CUSTOMORIGIN, killedUnit, PlayerResource:GetPlayer( killerEntity:GetPlayerID()) )
+		    local digits = #tostring(bounty)+1
+
+		    ParticleManager:SetParticleControl(pidx, 0, killedUnit:GetAbsOrigin())
+		    ParticleManager:SetParticleControl(pidx, 1, Vector(0, tonumber(bounty), 0))
+		    ParticleManager:SetParticleControl(pidx, 2, Vector(2.0, digits, 0))
+		    ParticleManager:SetParticleControl(pidx, 3, Vector(255, 200, 33))
+
+		    print("Granted "..bounty.." extra bounty")
+		end
+
+
+
+		if END_GAME_ON_KILLS == true then 
+			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
+				self.nRadiantKills = self.nRadiantKills + 1
+				if self.nRadiantKills >= GameRules.win_condition then
+					print("Radiant Team Wins")
+					GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+					GameRules:SetSafeToLeave( true )
+				else
+					print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
+				end
+			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
+				self.nDireKills = self.nDireKills + 1
+				if self.nDireKills >= GameRules.win_condition then
+					print("Dire Team Wins")	
+					GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+					GameRules:SetSafeToLeave( true )
+				else
+					print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+				end
 			end
 		end
 	end

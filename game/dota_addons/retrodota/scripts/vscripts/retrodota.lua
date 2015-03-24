@@ -380,16 +380,16 @@ function RetroDota:RegisterVote( player, string_values )
     local vote = split(string_values, ",")
     DeepPrintTable(vote)
 
-    local win_condition = vote[2]
-    local level = vote[3]
-    local gold = vote[4]
-    local invoke_cd = vote[5]
-    local invoke_slots = vote[6]
-    local mana_cost_reduction = vote[7]
-    local wtf = vote[8]
-    local fast_respawn = vote[9]
-    local gold_multiplier = vote[10]
-    local xp_multiplier = vote[11]
+    local win_condition = vote[1]
+    local level = vote[2]
+    local gold = vote[3]
+    local invoke_cd = vote[4]
+    local invoke_slots = vote[5]
+    local mana_cost_reduction = vote[6]
+    local wtf = vote[7]
+    local fast_respawn = vote[8]
+    local gold_multiplier = vote[9]
+    local xp_multiplier = vote[10]
 
     EmitSoundOnClient("HeroPicker.Selected", player)
 

@@ -65,7 +65,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 					if not string.find(ability_d_name, "invoker_retro_portal") then
 						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
 						keys.caster:AddAbility(spell_name_to_invoke)
-						local portal_ability = keys.caster:FindAbilityByName()
+						local portal_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						portal_ability:SetLevel(wex_ability:GetLevel())
 						invoker_retro_invoke_on_spell_start_new_spell_cooldown_helper(keys)
 					end

@@ -322,7 +322,7 @@
 			var gold_multiplier:String = this.goldSlider.value;
 			var xp_multiplier:String = this.xpSlider.value;
 
-			var command:String = "player_voted "+ win_condition+','+level+','+gold+','+invoke_cd+','+invoke_slots+','+mana_cost_reduction+','+mana_cost_reduction+','+wtf+','+fast_respawn+','+gold_multiplier+','+xp_multiplier;
+			var command:String = "player_voted "+ win_condition+','+level+','+gold+','+invoke_cd+','+invoke_slots+','+mana_cost_reduction+','+wtf+','+fast_respawn+','+gold_multiplier+','+xp_multiplier;
 
             trace(command)
 			this.gameAPI.SendServerCommand(command);

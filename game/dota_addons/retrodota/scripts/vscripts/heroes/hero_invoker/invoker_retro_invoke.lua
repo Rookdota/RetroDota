@@ -16,7 +16,17 @@ function invoker_retro_invoke_on_spell_start(keys)
 	if keys.caster.invoked_orbs == nil then
 		keys.caster.invoked_orbs = {}
 	end
-	
+
+	-- Apply the adjusted cooldown. Tooltip will still show 12sec CD
+	-- Options are 12, 6, 2 and 0
+	if GameRules.invoke_cd and GameRules.invoke_cd ~= "1" then
+		-- Dont adjust the cooldown if wtf mode is enabled
+		if GameRules.wtf == "0" then
+			keys.ability:EndCooldown()
+			keys.ability:StartCooldown(tonumber(GameRules.invoke_cd))
+		end
+	end
+
 	local invoke_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_invoke.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)  --Play the particle effect.
 	
 	if keys.caster.invoked_orbs[1] ~= nil and keys.caster.invoked_orbs[2] ~= nil and keys.caster.invoked_orbs[3] ~= nil then  --A spell will be invoked only if three orbs have been summoned.

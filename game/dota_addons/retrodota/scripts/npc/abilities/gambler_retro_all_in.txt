@@ -1,26 +1,24 @@
 "gambler_retro_all_in"
+// Deals anywhere from 1 to his gold in damage. If it fails, loses a random amount of his gold
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityTextureName" 			"gambler_retro_all_in"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	//"AbilityCastAnimation"			"ACT_DOTA_CAST_COLD_SNAP"
-	"MaxLevel"						"4"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityDamage"					"50 100 150 200"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"60"    // to be confirmed
-	"AbilityManaCost"				"100"
-	"AbilityGoldCost"				"100"
+	"AbilityManaCost"				"100"	// to be confirmed
 	"AbilityCastRange"				"800"   // to be confirmed
 
-	
 	"precache"
 	{
 //		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
@@ -33,52 +31,37 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"60"  
+			"damage_cap"			"1500 2000 2500"  
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cash_in"				"300 400 500 600"	
+			"var_type"				"FIELD_FLOAT"
+			"change_to_fail"		"20 15 10"	
 		}
 	}
-	
+
 	"OnSpellStart"
 	{
-		"RunScript"
+		"Random"
 		{
-			"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-			"Function"			"gambler_retro_ante_up_on_spell_start"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_gambler_retro_ante_up"
-		{
-			"Duration"			"%duration"
-			"IsPurgable"		"1"
-			"IsBuff"			"%IsBuff"
-			"IsDebuff"			"%IsDebuff"
-
-//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
-//		"EffectAttachType"		"follow_overhead"
-
-			"OnKill"
+			"Chance"			"100 - %change_to_fail"
+			"OnSuccess"
 			{
 				"RunScript"
 				{
-					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
-				}	
+					"ScriptFile"	"heroes/hero_gambler/all_in.lua"
+					"Function"		"AllInSuccess"
+				}
 			}
-			"OnDeath"
+			"OnFailure"
 			{
 				"RunScript"
 				{
-					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-					"Function"			"gambler_retro_ante_up_on_owner_death"
+					"ScriptFile"	"heroes/hero_gambler/all_in.lua"
+					"Function"		"AllInFailure"
 				}
 			}
 		}
 	}
+
 }

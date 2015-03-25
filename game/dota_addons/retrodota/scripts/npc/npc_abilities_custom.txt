@@ -155,7 +155,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"change_to_fail"		"20 15 10"	
+				"change_to_fail"		"30 25 20"	
 			}
 		}
 	
@@ -198,7 +198,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 			"gambler_retro_ante_up"
@@ -248,12 +248,38 @@
 		
 		"Modifiers"
 		{
-			"modifier_gambler_retro_ante_up"
+			"modifier_gambler_retro_ante_up_buff"
 			{
 				"Duration"			"%duration"
 				"IsPurgable"		"1"
-				"IsBuff"			"%IsBuff"
-				"IsDebuff"			"%IsDebuff"
+				"IsBuff"			"1"
+	
+	//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+	//		"EffectAttachType"		"follow_overhead"
+	
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					}	
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_death"
+					}
+				}
+			}
+	
+			"modifier_gambler_retro_ante_up_debuff"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsDebuff"			"1"
 	
 	//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
 	//		"EffectAttachType"		"follow_overhead"
@@ -330,7 +356,7 @@
 	// Instantly kill a creep
 	// Deal 200 extra damage on buildings and on heros
 	// Also always pillage gold with the formula
-	// (AttackDamage/TargetMaxHP) * PillageRatio * TargetCost
+	// (AttackDamage/TargetMaxHP) * PillageRatio * TargetBounty/2
 	
 	"gambler_retro_lucky_stars"
 	{
@@ -366,11 +392,16 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"200"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pillage_ratio"			"0.01 0.02 0.03 0.04"
+			}
 		}
 	
 		"Modifiers"
 		{
-			"modifier_bash_datadriven"		
+			"modifier_lucky_stars"		
 			{
 	
 				"IsHidden"	"1"
@@ -378,6 +409,7 @@
 	
 				"OnAttackLanded"
 				{
+					
 					"Random"
 					{
 						"Chance"			"%chance"
@@ -394,6 +426,7 @@
 							{
 								"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"
 								"Function"		"gambler_retro_lucky_stars_on_success"
+								"Target"		"TARGET"
 							}
 						}
 					}
@@ -402,6 +435,9 @@
 					{
 						"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"
 						"Function"		"gambler_retro_lucky_stars_pillage"
+						"Target"		"TARGET"
+						"attack_damage"	"%attack_damage"
+						"pillage_ratio"	"%pillage_ratio"
 					}
 				} 
 			}

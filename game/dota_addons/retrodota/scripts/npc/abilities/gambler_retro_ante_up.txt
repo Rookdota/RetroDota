@@ -12,7 +12,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityTextureName" 			"gambler_retro_ante_up"
@@ -62,12 +62,38 @@
 	
 	"Modifiers"
 	{
-		"modifier_gambler_retro_ante_up"
+		"modifier_gambler_retro_ante_up_buff"
 		{
 			"Duration"			"%duration"
 			"IsPurgable"		"1"
-			"IsBuff"			"%IsBuff"
-			"IsDebuff"			"%IsDebuff"
+			"IsBuff"			"1"
+
+//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+//		"EffectAttachType"		"follow_overhead"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+				}	
+			}
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_death"
+				}
+			}
+		}
+
+		"modifier_gambler_retro_ante_up_debuff"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
 
 //		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
 //		"EffectAttachType"		"follow_overhead"

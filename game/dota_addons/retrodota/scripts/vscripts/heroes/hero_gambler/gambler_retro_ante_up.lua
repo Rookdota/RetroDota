@@ -7,10 +7,10 @@ function gambler_retro_ante_up_on_spell_start(event)
 	local caster = event.caster
 	local target = event.target
 	local ability  = event.ability
-	local args
+	local arg
 	if caster:GetTeamNumber() == target:GetTeamNumber() then
 		target:Heal(ability:GetAbilityDamage(), caster)
-		args = {IsBuff = 1, IsDebuff = 0}
+		arg = "modifier_gambler_retro_ante_up_buff"
 	else
 		ApplyDamage({
 			victim = target,
@@ -18,9 +18,9 @@ function gambler_retro_ante_up_on_spell_start(event)
 			damage = ability:GetAbilityDamage(),
 			damage_type = ability:GetAbilityDamageType()
 		})
-		args = {IsBuff = 0, IsDebuff = 1}
+		arg = "modifier_gambler_retro_ante_up_debuff"
 	end
-	ability:ApplyDataDrivenModifier(caster, target,"modifier_gambler_retro_ante_up", args)
+	ability:ApplyDataDrivenModifier(caster, target, arg, {})
 end
 
 
@@ -31,7 +31,7 @@ end
 	Called when the owner of ante up kill another hero.
 ================================================================================================================= ]]
  function gambler_retro_ante_up_on_owner_hero_kill(event)
-	event.caster:SetGold(event.ability:GetSpecialValueFor("cash_in"), false)
+	event.caster:ModifyGold(event.ability:GetSpecialValueFor("cash_in"), false, 0)
 	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up", event.caster)
 end
 
@@ -41,6 +41,6 @@ end
 	Called when the owner of ante up die.
 ================================================================================================================= ]]
 function gambler_retro_ante_up_on_owner_death(event)
-	event.caster:SetGold(event.ability:GetSpecialValueFor("cash_in")/2, false)
+	event.caster:ModifyGold((event.ability:GetSpecialValueFor("cash_in")/2), false, 0)
 	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up", event.caster)
 end

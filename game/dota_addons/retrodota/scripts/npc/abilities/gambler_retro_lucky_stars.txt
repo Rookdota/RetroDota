@@ -5,7 +5,7 @@
 // Instantly kill a creep
 // Deal 200 extra damage on buildings and on heros
 // Also always pillage gold with the formula
-// (AttackDamage/TargetMaxHP) * PillageRatio * TargetCost
+// (AttackDamage/TargetMaxHP) * PillageRatio * TargetBounty/2
 
 "gambler_retro_lucky_stars"
 {
@@ -41,11 +41,16 @@
 			"var_type"				"FIELD_INTEGER"
 			"bonus_damage"			"200"
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pillage_ratio"			"0.01 0.02 0.03 0.04"
+		}
 	}
 
 	"Modifiers"
 	{
-		"modifier_bash_datadriven"		
+		"modifier_lucky_stars"		
 		{
 
 			"IsHidden"	"1"
@@ -53,6 +58,7 @@
 
 			"OnAttackLanded"
 			{
+				
 				"Random"
 				{
 					"Chance"			"%chance"
@@ -69,6 +75,7 @@
 						{
 							"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"
 							"Function"		"gambler_retro_lucky_stars_on_success"
+							"Target"		"TARGET"
 						}
 					}
 				}
@@ -77,6 +84,9 @@
 				{
 					"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"
 					"Function"		"gambler_retro_lucky_stars_pillage"
+					"Target"		"TARGET"
+					"attack_damage"	"%attack_damage"
+					"pillage_ratio"	"%pillage_ratio"
 				}
 			} 
 		}

@@ -322,15 +322,18 @@ function RetroDota:OnAbilityUsed(keys)
 	
 	local hero = player:GetAssignedHero()
 	local ability = hero:FindAbilityByName(abilityname)
-	local mana_cost = ability:GetManaCost(ability:GetLevel() - 1)
 
-	print("Mana Cost Option : ", GameRules.mana_cost_reduction , "This Spell Mana Cost: ",mana_cost)
-	if GameRules.mana_cost_reduction == 50 then
-		hero:GiveMana(mana_cost/2)
-		print("Refunded "..mana_cost/2)
-	elseif GameRules.mana_cost_reduction == 100 then
-		hero:GiveMana(mana_cost)
-		print("Refunded "..mana_cost)
+	if ability then
+		local mana_cost = ability:GetManaCost(ability:GetLevel() - 1)
+
+		print("Mana Cost Option : ", GameRules.mana_cost_reduction , "This Spell Mana Cost: ",mana_cost)
+		if GameRules.mana_cost_reduction == 50 then
+			hero:GiveMana(mana_cost/2)
+			print("Refunded "..mana_cost/2)
+		elseif GameRules.mana_cost_reduction == 100 then
+			hero:GiveMana(mana_cost)
+			print("Refunded "..mana_cost)
+		end
 	end
 
 end

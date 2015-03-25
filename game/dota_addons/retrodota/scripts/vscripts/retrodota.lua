@@ -41,6 +41,7 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(RetroDota, 'OnNPCSpawned'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(RetroDota, 'OnEntityKilled'), self)
 	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(RetroDota, 'OnPlayerLevelUp'), self)
+	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(RetroDota, 'OnAbilityUsed'), self)
 
 	-- Vote Data
 	GameRules.finished_voting = false
@@ -314,6 +315,26 @@ function RetroDota:OnEntityKilled( keys )
 	end
 end
 
+-- An ability was used by a player
+function RetroDota:OnAbilityUsed(keys)
+	local player = EntIndexToHScript(keys.PlayerID)
+	local abilityname = keys.abilityname
+	
+	local hero = player:GetAssignedHero()
+	local ability = hero:FindAbilityByName(abilityname)
+	local mana_cost = ability:GetManaCost(ability:GetLevel() - 1)
+
+	print("Mana Cost Option : ", GameRules.mana_cost_reduction , "This Spell Mana Cost: ",mana_cost)
+	if GameRules.mana_cost_reduction == 50 then
+		hero:GiveMana(mana_cost/2)
+		print("Refunded "..mana_cost/2)
+	elseif GameRules.mana_cost_reduction == 100 then
+		hero:GiveMana(mana_cost)
+		print("Refunded "..mana_cost)
+	end
+
+end
+
 
 
 -- register the 'player_voted' command in our console
@@ -446,7 +467,7 @@ function RetroDota:OnEveryoneVoted()
 		GameRules.starting_level = GameRules.vote_options.starting_level["1"]
 		GameRules.starting_gold = GameRules.vote_options.starting_gold["1"]
 		GameRules.invoke_cd = GameRules.vote_options.invoke_cd["1"]
-		GameRules.mana_cost = GameRules.vote_options.mana_cost["1"]
+		GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["1"]
 		GameRules.invoke_slots = "1"
 		GameRules.wtf = "0"
 		GameRules.fast_respawn = "0"
@@ -472,9 +493,9 @@ function RetroDota:OnEveryoneVoted()
 		GameRules.invoke_cd = GameRules.vote_options.invoke_cd[RoundedDownAverage(GameRules.invoke_cd_votes)]
 		print("==> "..GameRules.invoke_cd)
 
-		print("-> Mana Cost")
-		GameRules.mana_cost = GameRules.vote_options.mana_cost[RoundedDownAverage(GameRules.mana_cost_reduction_votes)]
-		print("==> "..GameRules.mana_cost)
+		print("-> Mana Cost Reduction")
+		GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction[RoundedDownAverage(GameRules.mana_cost_reduction_votes)]
+		print("==> "..GameRules.mana_cost_reduction)
 
 		print("-> Invoke Slots")
 		GameRules.invoke_slots = RoundedDownAverage(GameRules.invoke_slots_votes)
@@ -518,9 +539,9 @@ function RetroDota:OnEveryoneVoted()
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
 	
-	if GameRules.mana_cost == "2" then
+	if GameRules.mana_cost_reduction == "2" then
 		GameRules:SendCustomMessage("There will be "..GameRules.invoke_slots.." Invoke Slots, with " .. GameRules.invoke_cd.." sec Invoke Cooldown, and 50% less mana cost on all spells", 0, 0)
-	elseif GameRules.mana_cost == "3" then
+	elseif GameRules.mana_cost_reduction == "3" then
 		GameRules:SendCustomMessage("There will be "..GameRules.invoke_slots.." Invoke Slots, with " .. GameRules.invoke_cd.." sec Invoke Cooldown, and spells cost 0 mana to cast", 0, 0)
 	else
 		GameRules:SendCustomMessage("There will be "..GameRules.invoke_slots.." Invoke Slots", 0, 0)

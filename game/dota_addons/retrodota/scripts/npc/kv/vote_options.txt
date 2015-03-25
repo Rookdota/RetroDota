@@ -38,11 +38,11 @@
 		"4"	"0"
 	}
 
-	"mana_cost"
+	"mana_cost_reduction"
 	{
-		"1"	"100"	//Default
+		"1"	"0"	//Default
 		"2"	"50"	//Half
-		"3"	"0"		//Free
+		"3"	"100"		//Free
 	}
 
 	//Invoke Slots, WTF and Fast Respawn are just booleans

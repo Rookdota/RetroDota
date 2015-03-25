@@ -31,7 +31,7 @@ end
 	Called when the owner of ante up kill another hero.
 ================================================================================================================= ]]
  function gambler_retro_ante_up_on_owner_hero_kill(event)
-	event.caster:ModifyGold(event.ability:GetSpecialValueFor("cash_in"), false, 0)
+	event.caster:ModifyGold(event.ability:GetLevelSpecialValueFor("cash_in", event.ability:GetLevel() - 1), false, 0)
 	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up", event.caster)
 end
 
@@ -41,6 +41,6 @@ end
 	Called when the owner of ante up die.
 ================================================================================================================= ]]
 function gambler_retro_ante_up_on_owner_death(event)
-	event.caster:ModifyGold((event.ability:GetSpecialValueFor("cash_in")/2), false, 0)
+	event.caster:ModifyGold((event.ability:GetLevelSpecialValueFor("cash_in", event.ability:GetLevel() - 1)/2), false, 0)
 	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up", event.caster)
 end

@@ -27,7 +27,21 @@
 	
 	"precache"
 	{
-//		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_b.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_beam_black.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_c.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_edge_rope.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_edge_rope_flash.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_lvl_5_tgt_sparks.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_path_ember.vpcf"		
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_path_steam.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_src_burst.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_src_glow.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_burst.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_glow.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_lgt.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_sparks.vpcf"
 	}
 	
 	// Special

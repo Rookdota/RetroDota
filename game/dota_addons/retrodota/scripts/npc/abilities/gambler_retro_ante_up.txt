@@ -21,18 +21,22 @@
 	"MaxLevel"						"4"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityDamage"					"50 100 150 200"
+	"AbilityCastPoint"				"0.01"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60"    // to be confirmed
+	"AbilityCooldown"				"60"    
 	"AbilityManaCost"				"100"
 	"AbilityGoldCost"				"100"
 	"AbilityCastRange"				"800"   // to be confirmed
 
-	
+
 	"precache"
 	{
-		"particle"				"particles/econ/items/techies/techies_arcana/techies_suicide_dud_arcana_message.vpcf"
+		"particle"		"particles/msg_fx/msg_gold.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_b.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
 	}
 
 	// Special
@@ -66,7 +70,6 @@
 		{
 			"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 			"Function"			"gambler_retro_ante_up_on_spell_start"
-			"effect_name"		"particles/econ/items/techies/techies_arcana/techies_suicide_dud_arcana_message.vpcf"
 		}
 	}
 	
@@ -78,8 +81,8 @@
 			"IsPurgable"		"1"
 			"IsBuff"			"1"
 
-//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
-//		"EffectAttachType"		"follow_overhead"
+			"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
 
 			"OnKill"
 			{
@@ -87,6 +90,7 @@
 				{
 					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					"effect_name"		"particles/msg_fx/msg_gold.vpcf"
 				}	
 			}
 			"OnDeath"
@@ -95,6 +99,7 @@
 				{
 					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 					"Function"			"gambler_retro_ante_up_on_owner_death"
+					"effect_name"		"particles/msg_fx/msg_gold.vpcf"
 				}
 			}
 		}
@@ -105,8 +110,8 @@
 			"IsPurgable"		"1"
 			"IsDebuff"			"1"
 
-//		"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
-//		"EffectAttachType"		"follow_overhead"
+			"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
 
 			"OnKill"
 			{
@@ -114,6 +119,7 @@
 				{
 					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					"effect_name"		"particles/msg_fx/msg_gold.vpcf"
 				}	
 			}
 			"OnDeath"
@@ -122,6 +128,7 @@
 				{
 					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 					"Function"			"gambler_retro_ante_up_on_owner_death"
+					"effect_name"		"particles/msg_fx/msg_gold.vpcf"
 				}
 			}
 		}

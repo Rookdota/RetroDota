@@ -20,7 +20,7 @@ function gambler_retro_lucky_stars_pillage(event)
 
 	-- print("-------------------------------")
 	-- print("Before Pillaged GOLD:" .. event.caster.pillaged_gold)
-	local pillage = (event.attack_damage/event.target:GetMaxHealth()) * event.pillage_ratio * event.target:GetGoldBounty()/2
+	local pillage = (event.attack_damage/event.target:GetMaxHealth()) * event.pillage_ratio * event.target:GetGoldBounty()
 	event.caster.pillaged_gold = event.caster.pillaged_gold + pillage
 	local effective_gold = math.floor(event.caster.pillaged_gold)
 
@@ -33,7 +33,6 @@ function gambler_retro_lucky_stars_pillage(event)
 	-- print("Effective: " .. effective_gold)
 
 	if effective_gold > 0 then
-		-- print("GREATER THAN 0 MAKING STUFF")
 		event.caster:ModifyGold(effective_gold, false, 0)
 		event.caster.pillaged_gold = event.caster.pillaged_gold - effective_gold
 	end

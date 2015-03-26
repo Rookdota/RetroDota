@@ -22,16 +22,16 @@ function gambler_retro_ante_up_on_spell_start(event)
 		arg = "modifier_gambler_retro_ante_up_debuff"
 	end
 	ability:ApplyDataDrivenModifier(caster, target, arg, {})
-
+	target.ante_bounty = ability:GetLevelSpecialValueFor("cash_in", ability:GetLevel() - 1)
 end
 
 --[[ ============================================================================================================
-	Author: igo95862, Noya
+	Author: Noya
 	Date: 14.1.2015.
 	Disallows self targeting by checking if the target is not the caster when the ability starts
 ================================================================================================================= ]]
 
-function AnteUpPreCast( event )
+function AnteUpPreCast(event)
 	local caster = event.caster
 	local target = event.target
 	local player = caster:GetPlayerOwner()
@@ -55,8 +55,12 @@ end
 	Called when the owner of ante up kill another hero.
 ================================================================================================================= ]]
  function gambler_retro_ante_up_on_owner_hero_kill(event)
-	event.caster:ModifyGold(event.ability:GetLevelSpecialValueFor("cash_in", event.ability:GetLevel() - 1), false, 0)
-	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up", event.caster)
+	event.caster:ModifyGold(event.attacker.ante_bounty, false, 0)
+	event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_buff", event.caster)
+	event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_debuff", event.caster)
+	event.msg = event.attacker.ante_bounty
+	event.attacker.ante_bounty = 0
+	AnteUpShowBounty(event)
 end
 
 --[[ ============================================================================================================
@@ -65,6 +69,21 @@ end
 	Called when the owner of ante up die.
 ================================================================================================================= ]]
 function gambler_retro_ante_up_on_owner_death(event)
-	event.caster:ModifyGold((event.ability:GetLevelSpecialValueFor("cash_in", event.ability:GetLevel() - 1)/2), false, 0)
-	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up", event.caster)
+	event.caster:ModifyGold(event.unit.ante_bounty/2, false, 0)
+	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_buff", event.caster)
+	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_debuff", event.caster)
+	event.msg = event.unit.ante_bounty/2
+	event.unit.ante_bounty = 0
+	AnteUpShowBounty(event)
+end
+
+function AnteUpShowBounty(event)
+	local pfxId = ParticleManager:CreateParticle(event.effect_name, PATTACH_CUSTOMORIGIN, event.caster)
+	local digits = string.len(event.msg)+1
+	local color = Vector(255, 200, 33)
+	ParticleManager:SetParticleControl(pfxId, 0, event.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(pfxId, 1, Vector(0, event.msg, 0))
+	ParticleManager:SetParticleControl(pfxId, 2, Vector(2.0, digits, 0))
+	ParticleManager:SetParticleControl(pfxId, 3, color)
+	event.caster:EmitSound("General.Coins")
 end

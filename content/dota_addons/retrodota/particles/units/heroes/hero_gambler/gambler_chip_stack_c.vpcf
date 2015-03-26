@@ -17,7 +17,7 @@ float m_flMaxRecreationTime = 0.000000
 string m_hFallback = ""
 int m_nFallbackMaxCount = -1
 string m_hLowViolenceDef = ""
-uint(4) m_ConstantColor = ( 255, 255, 0, 255 )
+uint(4) m_ConstantColor = ( 255, 255, 255, 128 )
 float(3) m_ConstantNormal = (0.000000,0.000000,1.000000)
 float m_flConstantRadius = 20.000000
 float m_flConstantRotation = 0.000000
@@ -382,10 +382,10 @@ string m_Notes = ""
 }
 C_INIT_RandomColor C_INIT_RandomColor_9
 {
-uint(4) m_ColorMin = ( 255, 255, 0, 255 )
-uint(4) m_ColorMax = ( 255, 255, 0, 255 )
-uint(4) m_TintMin = ( 255, 255, 0, 0 )
-uint(4) m_TintMax = ( 255, 255, 0, 255 )
+uint(4) m_ColorMin = ( 255, 255, 255, 128 )
+uint(4) m_ColorMax = ( 255, 255, 255, 128 )
+uint(4) m_TintMin = ( 255, 255, 255, 128 )
+uint(4) m_TintMax = ( 255, 255, 255, 128 )
 float m_flTintPerc = 0.000000
 float m_flUpdateThreshold = 32.000000
 int m_nTintCP = 0

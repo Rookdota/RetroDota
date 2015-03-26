@@ -17,7 +17,7 @@ float m_flMaxRecreationTime = 0.000000
 string m_hFallback = ""
 int m_nFallbackMaxCount = -1
 string m_hLowViolenceDef = ""
-uint(4) m_ConstantColor = (19,8,8,255)
+uint(4) m_ConstantColor = ( 192, 192, 192, 255 )
 float(3) m_ConstantNormal = (0.000000,0.000000,1.000000)
 float m_flConstantRadius = 5.000000
 float m_flConstantRotation = 0.000000
@@ -337,7 +337,7 @@ string m_Notes = ""
 }
 C_OP_ColorInterpolate C_OP_ColorInterpolate_9
 {
-uint(4) m_ColorFade = (0,0,0,255)
+uint(4) m_ColorFade = ( 192, 192, 192, 255 )
 float m_flFadeStartTime = 0.000000
 float m_flFadeEndTime = 1.000000
 int m_nFieldOutput = 6

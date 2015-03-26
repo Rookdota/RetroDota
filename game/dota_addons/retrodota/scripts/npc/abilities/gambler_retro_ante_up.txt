@@ -6,6 +6,7 @@
 // If the target dies first, Gamble cashes in for half as much.
 // Damages enemy, heal allies.
 // Cash in for 300 400 500 600, damage/heal for 50 100 150 200
+// Lua code have a workaround for prevent self casting
 
 "gambler_retro_ante_up"
 {
@@ -17,7 +18,6 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityTextureName" 			"gambler_retro_ante_up"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	//"AbilityCastAnimation"			"ACT_DOTA_CAST_COLD_SNAP"
 	"MaxLevel"						"4"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityDamage"					"50 100 150 200"
@@ -32,9 +32,9 @@
 	
 	"precache"
 	{
-//		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		"particle"				"particles/econ/items/techies/techies_arcana/techies_suicide_dud_arcana_message.vpcf"
 	}
-	
+
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -50,6 +50,15 @@
 			"cash_in"				"300 400 500 600"	
 		}
 	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_gambler/gambler_retro_ante_up.lua"
+			"Function"		"AnteUpPreCast"
+		}
+	}
 	
 	"OnSpellStart"
 	{
@@ -57,6 +66,7 @@
 		{
 			"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 			"Function"			"gambler_retro_ante_up_on_spell_start"
+			"effect_name"		"particles/econ/items/techies/techies_arcana/techies_suicide_dud_arcana_message.vpcf"
 		}
 	}
 	

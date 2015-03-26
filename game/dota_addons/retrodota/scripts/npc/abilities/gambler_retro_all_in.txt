@@ -1,5 +1,8 @@
-"gambler_retro_all_in"
+// Gambler's All in
+// Author: Noya
+// Date: March 25, 2015
 // Deals anywhere from 1 to his gold in damage. If it fails, loses a random amount of his gold
+"gambler_retro_all_in"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
@@ -15,9 +18,9 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60"    // to be confirmed
-	"AbilityManaCost"				"100"	// to be confirmed
-	"AbilityCastRange"				"800"   // to be confirmed
+	"AbilityCooldown"				"60"
+	"AbilityManaCost"				"150"
+	"AbilityCastRange"				"600"
 
 	"precache"
 	{

@@ -1,3 +1,9 @@
+// Gambler's Chip Stack
+// Author: Noya
+// Date: March 25, 2015
+// Deals single target damage based on target golds
+// Gold ratio scales
+
 "gambler_retro_chip_stack"
 {
 	// General
@@ -14,8 +20,8 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60"    // to be confirmed
-	"AbilityManaCost"				"100"
+	"AbilityCooldown"				"6"    
+	"AbilityManaCost"				"95 100 105 110"
 	"AbilityGoldCost"				"0"
 	"AbilityCastRange"				"800"   // to be confirmed
 	

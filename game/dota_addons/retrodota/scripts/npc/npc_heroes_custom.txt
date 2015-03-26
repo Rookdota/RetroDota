@@ -11,6 +11,40 @@
 		"Ability2"					"gambler_retro_chip_stack"
 		"Ability3"					"gambler_retro_lucky_stars"
 		"Ability4"					"gambler_retro_all_in"
+	
+		"ArmorPhysical"				"1.0"									    // Physical protection.
+		"MagicalResistance"			"25"									// Magical protection (percentage).
+	
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"43"										// Damage range min.
+		"AttackDamageMax"			"49"										// Damage range max.
+	
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLIGENCE"
+		"AttributeBaseStrength"		"16"										// Base strength
+		"AttributeStrengthGain"		"2"										// Strength bonus per level.
+		"AttributeBaseAgility"		"16"										// Base agility
+		"AttributeAgilityGain"		"2"										// Agility bonus per level.
+		"AttributeBaseIntelligence"	"21"										// Base intelligence
+		"AttributeIntelligenceGain"	"2"										// Intelligence bonus per level.
+	
+		"BountyXP"					"0"									    // Experience earn.
+		"BountyGoldMin"				"0"										// Gold earned min.
+		"BountyGoldMax"				"0"										// Gold earned max.
+	
+		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"RingRadius"				"70"
+	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"1.0"									// Turning rate.
+	
+		"StatusHealth"				"454"									// Base health.
+		"StatusHealthRegen"			"1.0"									// Health regeneration rate.
+		"StatusMana"				"273"									// Base mana.
+		"StatusManaRegen"			"1.0"									// Mana regeneration rate.
+	
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
 	}
 	//=================================================================================================================
 	// HERO: Invoker

@@ -207,7 +207,7 @@ function RetroDota:OnPlayerPickHero(keys)
 	--Set the player's gold.  This will override the gold bonus if the player chose to random (which we want to do).
 	PlayerResource:SetGold(playerID, 0, false)
 	PlayerResource:SetGold(playerID, 0, true)
-	PlayerResource:ModifyGold(playerID, 625 + GameRules.starting_gold, false, 0)
+	PlayerResource:ModifyGold(playerID, GameRules.starting_gold, false, 0)
 
 	-- Set Custom XP Value when a hero is picked after the multiplier was defined
 	if GameRules.xp_multiplier then

@@ -46,7 +46,7 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(RetroDota, 'OnEntityKilled'), self)
 	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(RetroDota, 'OnPlayerLevelUp'), self)
 	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(RetroDota, 'OnAbilityUsed'), self)
-
+	
 	-- Vote Data
 	GameRules.finished_voting = false
 	GameRules.player_count = 0
@@ -63,13 +63,25 @@ function RetroDota:InitGameMode()
 	GameRules.gold_multiplier_votes = {}
 	GameRules.xp_multiplier_votes = {}
 
+	GameRules.vote_options = LoadKeyValues("scripts/npc/kv/vote_options.txt")
+	
+	--Initialize the voting options with their default settings.
+	GameRules.win_condition = GameRules.vote_options.kills_to_win["1"]
+	GameRules.starting_level = GameRules.vote_options.starting_level["1"]
+	GameRules.starting_gold = GameRules.vote_options.starting_gold["1"]
+	GameRules.invoke_cd = GameRules.vote_options.invoke_cd["1"]
+	GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["1"]
+	GameRules.invoke_slots = "1"
+	GameRules.wtf = "0"
+	GameRules.fast_respawn = "0"
+	GameRules.gold_multiplier = "1"
+	GameRules.xp_multiplier = "1"
+	
 	--Set the hull radius of the ancients.  This is especially important for the Dire ancient, since it allows melee creeps to be able to attack it.
 	local ancients = Entities:FindAllByClassname('npc_dota_fort')
 	for k,v in pairs(ancients) do
 		v:SetHullRadius(190)
 	end
-
-	GameRules.vote_options = LoadKeyValues("scripts/npc/kv/vote_options.txt")
 end
 
 function RetroDota:GameThink()
@@ -117,10 +129,8 @@ function RetroDota:CaptureGameMode()
 		mode:SetUseCustomHeroLevels ( USE_CUSTOM_HERO_LEVELS )
 		mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
 		mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
-
 		--mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )
 		mode:SetTowerBackdoorProtectionEnabled( ENABLE_TOWER_BACKDOOR_PROTECTION )
-
 		mode:SetFogOfWarDisabled(DISABLE_FOG_OF_WAR_ENTIRELY)
 		mode:SetGoldSoundDisabled( DISABLE_GOLD_SOUNDS )
 		mode:SetRemoveIllusionsOnDeath( REMOVE_ILLUSIONS_ON_DEATH )]]
@@ -197,12 +207,34 @@ function RetroDota:OnPlayerPickHero(keys)
 			hero:HeroLevelUp(false)
 		end	
 	end
+	
+	--Set the player's gold.  This will override the gold bonus if the player chose to random (which we want to do).
+	PlayerResource:SetGold(playerID, 0, false)
+	PlayerResource:SetGold(playerID, 0, true)
+	PlayerResource:ModifyGold(playerID, 625 + GameRules.starting_gold, false, 0)
 
 	-- Set Custom XP Value when a hero is picked after the multiplier was defined
 	if GameRules.xp_multiplier then
 		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
 		print("Set unit's EXP bounty to " .. XP_value)
 		hero:SetCustomDeathXP(XP_value)
+	end
+	
+	--Swap the version of Invoke for the one with the correct cooldown.
+	if GameRules.invoke_cd ~= "12" then  --The active version of Invoke defaults to a 12-second cooldown, so don't change anything if the default cooldown was selected.
+		if hero:GetName() == "npc_dota_hero_Invoker" then
+			local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_12_second_cooldown")
+			local old_invoke_ability_level = old_invoke_ability:GetLevel()
+			local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
+		
+			hero:RemoveAbility("invoker_retro_invoke_12_second_cooldown")
+			local new_invoke_ability_name = "invoker_retro_invoke_" .. GameRules.invoke_cd .. "_second_cooldown"
+			hero:AddAbility(new_invoke_ability_name)
+			
+			local new_invoke_ability = hero:FindAbilityByName(new_invoke_ability_name)
+			new_invoke_ability:SetLevel(old_invoke_ability_level)
+			new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
+		end
 	end
 end
 
@@ -293,26 +325,41 @@ function RetroDota:OnEntityKilled( keys )
 			end
 		end
 
+		
+		--If the win condition is kills, see if a team has won.
+		if END_GAME_ON_KILLS == true then
+			local killed_unit_owner = killedUnit:GetPlayerOwner()
+			if killed_unit_owner ~= nil then
+				if (killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() ~= DOTA_TEAM_BADGUYS) or 
+				(killedUnit:HasModifier("modifier_invoker_retro_betrayal") and killed_unit_owner.invoker_retro_betrayal_original_team ~= nil and killed_unit_owner.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS) then
+					if self.nRadiantKills == nil then
+						self.nRadiantKills = 1
+					else
+						self.nRadiantKills = self.nRadiantKills + 1
+					end
+					
+					if self.nRadiantKills >= GameRules.win_condition then
+						print("Radiant Team Wins")
+						GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+						GameRules:SetSafeToLeave( true )
+					else
+						print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
+					end
+				elseif (killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() ~= DOTA_TEAM_GOODGUYS) or 
+				(killedUnit:HasModifier("modifier_invoker_retro_betrayal") and killed_unit_owner.invoker_retro_betrayal_original_team ~= nil and killed_unit_owner.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS) then
+					if self.nDireKills == nil then
+						self.nDireKills = 1
+					else
+						self.nDireKills = self.nDireKills + 1
+					end
 
-
-		if END_GAME_ON_KILLS == true then 
-			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
-				self.nRadiantKills = self.nRadiantKills + 1
-				if self.nRadiantKills >= GameRules.win_condition then
-					print("Radiant Team Wins")
-					GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-					GameRules:SetSafeToLeave( true )
-				else
-					print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
-				end
-			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
-				self.nDireKills = self.nDireKills + 1
-				if self.nDireKills >= GameRules.win_condition then
-					print("Dire Team Wins")	
-					GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-					GameRules:SetSafeToLeave( true )
-				else
-					print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+					if self.nDireKills >= GameRules.win_condition then
+						print("Dire Team Wins")	
+						GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+						GameRules:SetSafeToLeave( true )
+					else
+						print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+					end
 				end
 			end
 		end
@@ -321,15 +368,13 @@ end
 
 -- An ability was used by a player
 function RetroDota:OnAbilityUsed(keys)
-	local player = EntIndexToHScript(keys.PlayerID)
+	--[[local player = EntIndexToHScript(keys.PlayerID)
 	local abilityname = keys.abilityname
 	
 	local hero = player:GetAssignedHero()
 	local ability = hero:FindAbilityByName(abilityname)
-
 	if ability then
 		local mana_cost = ability:GetManaCost(ability:GetLevel() - 1)
-
 		print("Mana Cost Option : ", GameRules.mana_cost_reduction , "This Spell Mana Cost: ",mana_cost)
 		if GameRules.mana_cost_reduction == 50 then
 			hero:GiveMana(mana_cost/2)
@@ -338,10 +383,9 @@ function RetroDota:OnAbilityUsed(keys)
 			hero:GiveMana(mana_cost)
 			print("Refunded "..mana_cost)
 		end
-	end
+	end]]
 
 end
-
 
 
 -- register the 'player_voted' command in our console
@@ -440,7 +484,7 @@ function RetroDota:RegisterVote( player, string_values )
     else
     	local vote_count = GameRules.players_voted + GameRules.players_skipped_vote
     	print( vote_count .. " out of " .. GameRules.player_count .. " have voted")
-    	GameRules:SendCustomMessage("<font color='#2EFE2E'>("..vote_count.."/"..GameRules.player_count.." votes)</font>", 0, 0)
+    	GameRules:SendCustomMessage("<font color='#2EFE2E'>("..vote_count.."/"..GameRules.player_count.." players have voted so far.)</font>", 0, 0)
     end
 
 end
@@ -465,12 +509,12 @@ end
 
 function RetroDota:OnEveryoneVoted()
 	
-	print("All Players have voted.")
+	print("All players have voted.")
 
 	-- Handle the case where all players skipped voting
 	if GameRules.players_voted == 0 then
-		print("Everyone skipped voting. Setting the defaults")
-		GameRules.win_condition = GameRules.vote_options.kills_to_win["1"]
+		print("Everyone skipped voting.  The game will use default settings.")
+		--[[GameRules.win_condition = GameRules.vote_options.kills_to_win["1"]
 		GameRules.starting_level = GameRules.vote_options.starting_level["1"]
 		GameRules.starting_gold = GameRules.vote_options.starting_gold["1"]
 		GameRules.invoke_cd = GameRules.vote_options.invoke_cd["1"]
@@ -479,10 +523,9 @@ function RetroDota:OnEveryoneVoted()
 		GameRules.wtf = "0"
 		GameRules.fast_respawn = "0"
 		GameRules.gold_multiplier = "1"
-		GameRules.xp_multiplier = "1"
-
+		GameRules.xp_multiplier = "1"]]
 	else
-		print("Averaging the values now")
+		print("Averaging the voted-on values now.")
 
 		print("-> Win Condition")
 	    GameRules.win_condition = GameRules.vote_options.kills_to_win[RoundedDownAverage(GameRules.win_condition_votes)]
@@ -528,7 +571,7 @@ function RetroDota:OnEveryoneVoted()
 	
 	end
 
-	GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
+	GameRules:SendCustomMessage("<font color='#2EFE2E'>Voting has finished!</font>", 0, 0)
 	GameRules.finished_voting = true
 
 	-- Results from voting
@@ -537,25 +580,38 @@ function RetroDota:OnEveryoneVoted()
 	if GameRules.win_condition ~= "0" and GameRules.win_condition ~= 0 then
 		print(GameRules.win_condition)
 		END_GAME_ON_KILLS = true
-		FireGameEvent("show_center_message",{ message = "First Team to "..GameRules.win_condition.." Kills Wins", duration = 10.0})
-		GameRules:SendCustomMessage("The game will end when one team gets "..GameRules.win_condition.." kills!", 0, 0)
+		FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})
+		GameRules:SendCustomMessage("The first team to amass "..GameRules.win_condition.." kills wins!", 0, 0)
+	else
+		GameRules:SendCustomMessage("Destroy the enemy's ancient to win!", 0, 0)
+		FireGameEvent("show_center_message",{ message = "Destroy the enemy's ancient to win!", duration = 10.0})
 	end
 	
 	-- Starting Level and Gold
-	GameRules:SendCustomMessage("Starting level is "..GameRules.starting_level.."! Bonus Gold is "..GameRules.starting_gold, 0, 0)
+	GameRules:SendCustomMessage("Players start at level " ..GameRules.starting_level.. " with " .. GameRules.starting_gold .. " bonus starting gold.", 0, 0)
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
 	
-	if GameRules.mana_cost_reduction == "2" then
-		GameRules:SendCustomMessage("There will be "..GameRules.invoke_slots.." Invoke Slots, with " .. GameRules.invoke_cd.." sec Invoke Cooldown, and 50% less mana cost on all spells", 0, 0)
-	elseif GameRules.mana_cost_reduction == "3" then
-		GameRules:SendCustomMessage("There will be "..GameRules.invoke_slots.." Invoke Slots, with " .. GameRules.invoke_cd.." sec Invoke Cooldown, and spells cost 0 mana to cast", 0, 0)
+	--Invoke slots
+	if GameRules.invoke_slots == "1" then
+		GameRules:SendCustomMessage("There is " ..GameRules.invoke_slots.." slot for invoked spells.", 0, 0)
 	else
-		GameRules:SendCustomMessage("There will be "..GameRules.invoke_slots.." Invoke Slots", 0, 0)
+		GameRules:SendCustomMessage("There are " ..GameRules.invoke_slots.." slots for invoked spells.", 0, 0)
 	end
 	
+	--Invoke cooldown and spell mana cost
+	if GameRules.mana_cost_reduction == 50 then
+		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost half mana.", 0, 0)
+	elseif GameRules.mana_cost_reduction == 100 then
+		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost no mana.", 0, 0)
+	else
+		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost full mana.", 0, 0)
+	end
+	SetInvokeVersion(GameRules.invoke_cd)
+	
+	
 	if GameRules.fast_respawn == "1" then
-		GameRules:GetGameModeEntity():SetFixedRespawnTime(0)
+		GameRules:GetGameModeEntity():SetFixedRespawnTime(.5)
 	end
 
 	if GameRules.wtf == "1" then
@@ -566,19 +622,19 @@ function RetroDota:OnEveryoneVoted()
 	-- WTF + Insta Respawn
 	if GameRules.wtf == "1" then
 		if GameRules.fast_respawn == "1" then
-			GameRules:SendCustomMessage("WTF Mode is ON. Instant Respawn is ON", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is ON.  Instant respawn mode is ON.", 0, 0)
 		else
-			GameRules:SendCustomMessage("WTF Mode is ON", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is ON.  Instant respawn mode is OFF.", 0, 0)
 		end
 	else
 		if GameRules.fast_respawn == "1" then
-			GameRules:SendCustomMessage("Instant Respawn is ON", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is OFF.  Instant respawn mode is ON.", 0, 0)
+		else
+			GameRules:SendCustomMessage("WTF mode is OFF.  Instant respawn mode is OFF.", 0, 0)
 		end
 	end
 
-	if GameRules.gold_multiplier ~= "1" or GameRules.xp_multiplier ~= "1" then
-		GameRules:SendCustomMessage("Gold Multiplier: "..GameRules.gold_multiplier.." -- XP Multiplier: "..GameRules.xp_multiplier, 0, 0)
-	end
+	GameRules:SendCustomMessage("The gold multiplier is "..GameRules.gold_multiplier.."x.  The XP multiplier is "..GameRules.xp_multiplier .. "x.", 0, 0)
 
 	-- Set Custom XP Value on all heroes in game
 	local allHeroes = HeroList:GetAllHeroes()
@@ -587,11 +643,12 @@ function RetroDota:OnEveryoneVoted()
 		print("Set unit's EXP bounty to " .. XP_value)
 		hero:SetCustomDeathXP(XP_value)
 	end
-	  
-    -- Add vote settings to our stat collector
-    statcollection.addStats({
-        modes = {
-            win_condition = GameRules.win_condition
+	
+
+-- Add vote settings to our stat collector
+	statcollection.addStats({
+	    modes = {
+	        win_condition = GameRules.win_condition
 			starting_level = GameRules.starting_level
 			starting_gold = GameRules.starting_gold
 			invoke_cd = GameRules.invoke_cd
@@ -601,8 +658,9 @@ function RetroDota:OnEveryoneVoted()
 			fast_respawn = GameRules.fast_respawn
 			gold_multiplier = GameRules.gold_multiplier
 			xp_multiplier = GameRules.xp_multiplier
-        }
-    })
+	    }
+	})
+
 end
 
 -- Sets all the heroes to this level
@@ -622,6 +680,30 @@ function SetBonusGold(gold)
 	for pID=0,9 do
 		if PlayerResource:IsValidPlayerID(pID) then
 			PlayerResource:ModifyGold(pID, gold, false, 0)
+		end
+	end
+end
+
+
+-- Gives the player the version of Invoke with the correct cooldown.
+-- An additional check is done OnHeroPicked for players that still haven't picked when the vote ends.
+function SetInvokeVersion(cooldown)
+	if cooldown ~= "12" then  --The active version of Invoke defaults to a 12-second cooldown, so don't change anything if the default cooldown was selected.
+		local allHeroes = HeroList:GetAllHeroes()
+		for k, hero in pairs( allHeroes ) do
+			if hero:GetName() == "npc_dota_hero_Invoker" then
+				local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_12_second_cooldown")
+				local old_invoke_ability_level = old_invoke_ability:GetLevel()
+				local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
+			
+				hero:RemoveAbility("invoker_retro_invoke_12_second_cooldown")
+				local new_invoke_ability_name = "invoker_retro_invoke_" .. cooldown .. "_second_cooldown"
+				hero:AddAbility(new_invoke_ability_name)
+				
+				local new_invoke_ability = hero:FindAbilityByName(new_invoke_ability_name)
+				new_invoke_ability:SetLevel(old_invoke_ability_level)
+				new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
+			end
 		end
 	end
 end

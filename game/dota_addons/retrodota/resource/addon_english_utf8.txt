@@ -909,7 +909,7 @@
 		
 		//Invisibility Aura
 		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura"                            "Invisibility Aura"
-		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_Description"                "Invoke: <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nOther nearby friendly units become invisible after a fade time of %fade_time% seconds.  The radius increases per level of Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_Description"                "Invoke: <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nOther nearby friendly units become invisible after a fade time of %fade_time% seconds.  Invoker himself does not turn invisible.  The aura radius increases per level of Quas."
 		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_Note0"                      "Like with most other auras, Invisibility Aura's effect lingers for .5 seconds."
 		"DOTA_Tooltip_Ability_invoker_retro_invisibility_aura_radius"                     "RADIUS (<font color=\"#0099CC\">QUAS</font>):"
 

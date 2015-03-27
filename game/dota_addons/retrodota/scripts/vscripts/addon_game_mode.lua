@@ -2,6 +2,7 @@ require("timers")
 require("physics")
 require("popups")
 require("retrodota")
+require("lib.statcollection")
 
 --------------------------------------------------------------------------------
 -- PRECACHE

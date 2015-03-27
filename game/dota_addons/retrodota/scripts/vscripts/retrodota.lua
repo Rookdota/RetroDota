@@ -323,26 +323,41 @@ function RetroDota:OnEntityKilled( keys )
 			end
 		end
 
+		
+		--If the win condition is kills, see if a team has won.
+		if END_GAME_ON_KILLS == true then
+			local killed_unit_owner = killedUnit:GetPlayerOwner()
+			if killed_unit_owner ~= nil then
+				if (killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() ~= DOTA_TEAM_BADGUYS) or 
+				(killedUnit:HasModifier("modifier_invoker_retro_betrayal") and killed_unit_owner.invoker_retro_betrayal_original_team ~= nil and killed_unit_owner.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS) then
+					if self.nRadiantKills == nil then
+						self.nRadiantKills = 1
+					else
+						self.nRadiantKills = self.nRadiantKills + 1
+					end
+					
+					if self.nRadiantKills >= GameRules.win_condition then
+						print("Radiant Team Wins")
+						GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+						GameRules:SetSafeToLeave( true )
+					else
+						print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
+					end
+				elseif (killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() ~= DOTA_TEAM_GOODGUYS) or 
+				(killedUnit:HasModifier("modifier_invoker_retro_betrayal") and killed_unit_owner.invoker_retro_betrayal_original_team ~= nil and killed_unit_owner.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS) then
+					if self.nDireKills == nil then
+						self.nDireKills = 1
+					else
+						self.nDireKills = self.nDireKills + 1
+					end
 
-
-		if END_GAME_ON_KILLS == true then 
-			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
-				self.nRadiantKills = self.nRadiantKills + 1
-				if self.nRadiantKills >= GameRules.win_condition then
-					print("Radiant Team Wins")
-					GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-					GameRules:SetSafeToLeave( true )
-				else
-					print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
-				end
-			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
-				self.nDireKills = self.nDireKills + 1
-				if self.nDireKills >= GameRules.win_condition then
-					print("Dire Team Wins")	
-					GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-					GameRules:SetSafeToLeave( true )
-				else
-					print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+					if self.nDireKills >= GameRules.win_condition then
+						print("Dire Team Wins")	
+						GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+						GameRules:SetSafeToLeave( true )
+					else
+						print("Dire Team has "..self.nDireKills.." kills out of the "..GameRules.win_condition.." needed to win")
+					end
 				end
 			end
 		end

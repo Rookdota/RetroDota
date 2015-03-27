@@ -88,7 +88,6 @@ function modifier_invoker_retro_betrayal_on_destroy(keys)
 	for i, individual_hero in ipairs(herolist) do
 		if individual_hero:HasModifier("modifier_invoker_retro_betrayal") then
 			someone_has_betrayal = true
-			print("someone has Betrayal")
 		end
 	end
 	

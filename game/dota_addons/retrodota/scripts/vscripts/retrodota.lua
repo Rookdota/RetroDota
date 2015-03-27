@@ -574,7 +574,7 @@ function RetroDota:OnEveryoneVoted()
 	
 	--Invoke slots
 	if GameRules.invoke_slots == "1" then
-		GameRules:SendCustomMessage("There are " ..GameRules.invoke_slots.." slot for invoked spells.", 0, 0)
+		GameRules:SendCustomMessage("There is " ..GameRules.invoke_slots.." slot for invoked spells.", 0, 0)
 	else
 		GameRules:SendCustomMessage("There are " ..GameRules.invoke_slots.." slots for invoked spells.", 0, 0)
 	end

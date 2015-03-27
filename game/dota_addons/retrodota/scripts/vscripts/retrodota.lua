@@ -346,7 +346,7 @@ end
 
 -- An ability was used by a player
 function RetroDota:OnAbilityUsed(keys)
-	local player = EntIndexToHScript(keys.PlayerID)
+	--[[local player = EntIndexToHScript(keys.PlayerID)
 	local abilityname = keys.abilityname
 	
 	local hero = player:GetAssignedHero()
@@ -363,7 +363,7 @@ function RetroDota:OnAbilityUsed(keys)
 			hero:GiveMana(mana_cost)
 			print("Refunded "..mana_cost)
 		end
-	end
+	end]]
 
 end
 
@@ -565,6 +565,7 @@ function RetroDota:OnEveryoneVoted()
 		GameRules:SendCustomMessage("The first team to amass "..GameRules.win_condition.." kills wins!", 0, 0)
 	else
 		GameRules:SendCustomMessage("Destroy the enemy's ancient to win!", 0, 0)
+		FireGameEvent("show_center_message",{ message = "Destroy the enemy's ancient to win!", duration = 10.0})
 	end
 	
 	-- Starting Level and Gold
@@ -580,9 +581,9 @@ function RetroDota:OnEveryoneVoted()
 	end
 	
 	--Invoke cooldown and spell mana cost
-	if GameRules.mana_cost_reduction == "2" then
+	if GameRules.mana_cost_reduction == 50 then
 		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost half mana.", 0, 0)
-	elseif GameRules.mana_cost_reduction == "3" then
+	elseif GameRules.mana_cost_reduction == 100 then
 		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost no mana.", 0, 0)
 	else
 		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost full mana.", 0, 0)
@@ -592,7 +593,7 @@ function RetroDota:OnEveryoneVoted()
 	
 	
 	if GameRules.fast_respawn == "1" then
-		GameRules:GetGameModeEntity():SetFixedRespawnTime(0)
+		GameRules:GetGameModeEntity():SetFixedRespawnTime(.5)
 	end
 
 	if GameRules.wtf == "1" then
@@ -615,7 +616,7 @@ function RetroDota:OnEveryoneVoted()
 		end
 	end
 
-	GameRules:SendCustomMessage("Gold multiplier: "..GameRules.gold_multiplier.."x.  XP multiplier: "..GameRules.xp_multiplier .. "x.", 0, 0)
+	GameRules:SendCustomMessage("The gold multiplier is "..GameRules.gold_multiplier.."x.  The XP multiplier is "..GameRules.xp_multiplier .. "x.", 0, 0)
 
 	-- Set Custom XP Value on all heroes in game
 	local allHeroes = HeroList:GetAllHeroes()

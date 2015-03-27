@@ -82,3 +82,160 @@
 	}
 }
 
+
+"invoker_retro_betrayal_half_mana_cost"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName" 			"invoker_retro_betrayal"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+	"AbilityManaCost"				"100"
+	"AbilityCastRange"				"500"
+	
+	"precache"
+	{
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal_explosion.vpcf"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1.5 3 4.5 6 7.5 9 10.5 12"  //Increases with Quas.
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_invoker/invoker_retro_betrayal.lua"
+			"Function"			"invoker_retro_betrayal_on_spell_start"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_betrayal"
+		{
+			"Duration"			"%duration"
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+			
+			"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+			"EffectAttachType"		"follow_overhead"
+			
+			//When this modifier's duration ends, or when it is othwerwise removed, move the affected unit back to their original team.
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_invoker/invoker_retro_betrayal.lua"
+					"Function"			"modifier_invoker_retro_betrayal_on_destroy"
+				}
+			}
+		}
+	}
+}
+
+
+"invoker_retro_betrayal_no_mana_cost"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName" 			"invoker_retro_betrayal"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+	"AbilityManaCost"				"0"
+	"AbilityCastRange"				"500"
+	
+	"precache"
+	{
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal_explosion.vpcf"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1.5 3 4.5 6 7.5 9 10.5 12"  //Increases with Quas.
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"pip_current"			"1"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_invoker/invoker_retro_betrayal.lua"
+			"Function"			"invoker_retro_betrayal_on_spell_start"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_invoker_retro_betrayal"
+		{
+			"Duration"			"%duration"
+			"Passive"  			"0"
+			"IsHidden" 			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+			
+			"EffectName"			"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+			"EffectAttachType"		"follow_overhead"
+			
+			//When this modifier's duration ends, or when it is othwerwise removed, move the affected unit back to their original team.
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_invoker/invoker_retro_betrayal.lua"
+					"Function"			"modifier_invoker_retro_betrayal_on_destroy"
+				}
+			}
+		}
+	}
+}

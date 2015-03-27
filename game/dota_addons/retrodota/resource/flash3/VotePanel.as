@@ -51,12 +51,12 @@
 	
 			var a:Array = new Array();
 			a.push({"label":"Ancient", "data":"1"});
-			a.push({"label":"2 Kills", "data":"2"});
-			a.push({"label":"5 Kills", "data":"3"});
-			a.push({"label":"10 Kills", "data":"4"});
-			a.push({"label":"25 Kills", "data":"5"});
-			a.push({"label":"50 Kills", "data":"6"});
-			a.push({"label":"100 Kills", "data":"7"});
+			a.push({"label":"2 kills", "data":"2"});
+			a.push({"label":"5 kills", "data":"3"});
+			a.push({"label":"10 kills", "data":"4"});
+			a.push({"label":"25 kills", "data":"5"});
+			a.push({"label":"50 kills", "data":"6"});
+			a.push({"label":"100 kills", "data":"7"});
 			var dataProvider1 = new DataProvider(a);
 			this.killsToWinBox.setDataProvider(dataProvider1);
 			this.killsToWinBox.setSelectedIndex(0);
@@ -77,7 +77,7 @@
 			// Gold Combobox
 			this.goldBox = replaceWithValveComponent(startingGold, "ComboBoxSkinned");
 			var array_gold:Array = new Array();
-			array_gold.push({"label":"Default", "data":"1"});
+			array_gold.push({"label":"Default (625)", "data":"1"});
 			array_gold.push({"label":"1.5k", "data":"2"});
 			array_gold.push({"label":"5k", "data":"3"});
 			array_gold.push({"label":"10k", "data":"4"});
@@ -103,8 +103,8 @@
 			// 2nd Invoke slot: DotaCheckBoxDota
 			this.secondInvokeBox = replaceWithValveComponent(secondInvoke, "ComboBoxSkinned");
 			var array_yn:Array = new Array();
-			array_yn.push({"label":"1 Ability Slot", "data":"1"});
-			array_yn.push({"label":"2 Ability Slots", "data":"2"});
+			array_yn.push({"label":"1 slot", "data":"1"});
+			array_yn.push({"label":"2 slots", "data":"2"});
 			var dataProvider7 = new DataProvider(array_yn);
 			this.secondInvokeBox.setDataProvider(dataProvider7);
 			this.secondInvokeBox.setSelectedIndex(0);
@@ -113,9 +113,9 @@
 			// Mana Cost: 100/50/0 ComboBoxSkinned
 			this.manaCostBox = replaceWithValveComponent(manaCost, "ComboBoxSkinned");
 			var array_mana:Array = new Array();
-			array_mana.push({"label":"100%", "data":"1"});
-			array_mana.push({"label":"50%", "data":"2"});
-			array_mana.push({"label":"0% - No Mana Cost", "data":"3"});
+			array_mana.push({"label":"100% (full mana cost)", "data":"1"});
+			array_mana.push({"label":"50% (half mana cost)", "data":"2"});
+			array_mana.push({"label":"0% (no mana cost)", "data":"3"});
 			var dataProvider4 = new DataProvider(array_mana);
 			this.manaCostBox.setDataProvider(dataProvider4);
 			this.manaCostBox.setSelectedIndex(0);

@@ -135,10 +135,17 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			local wex_ability = keys.caster:FindAbilityByName("invoker_retro_wex")
 			local exort_ability = keys.caster:FindAbilityByName("invoker_retro_exort")
 			
+			local suffix = ""
+			if GameRules.mana_cost_reduction == 100 then
+				suffix = "_no_mana_cost"
+			elseif GameRules.mana_cost_reduction == 50 then
+				suffix = "_half_mana_cost"
+			end
+			
 			if string.find(current_invoked_spell_name, "invoker_retro_icy_path") then  --If one of the 8 Icy Path spells is invoked when an orb is leveled up, swap it out for the correct version based on Quas' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas"
+				local new_invoked_spell_name = "invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -146,7 +153,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_portal") then  --If one of the 8 Portal spells is invoked when an orb is leveled up, swap it out for the correct version based on Quas' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas"
+				local new_invoked_spell_name = "invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -154,7 +161,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_tornado_blast") then  --If one of the 8 Tornado Blast spells is invoked when an orb is leveled up, swap it out for the correct version based on Quas' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas"
+				local new_invoked_spell_name = "invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -162,7 +169,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_disarm") then  --If one of the 8 Disarm spells is invoked when an orb is leveled up, swap it out for the correct version based on Exort' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_disarm_level_" .. exort_ability:GetLevel() .. "_exort"
+				local new_invoked_spell_name = "invoker_retro_disarm_level_" .. exort_ability:GetLevel() .. "_exort" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -170,7 +177,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_telelightning") then  --If one of the 8 Telelighning spells is invoked when an orb is leveled up, swap it out for the correct version based on Exort' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_telelightning_level_" .. wex_ability:GetLevel() .. "_wex"
+				local new_invoked_spell_name = "invoker_retro_telelightning_level_" .. wex_ability:GetLevel() .. "_wex" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -204,7 +211,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_shroud_of_flames") then  --If one of the 8 Shroud of Flames spells is invoked when an orb is leveled up, swap it out for the correct version based on Exort' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_shroud_of_flames_exort"..exort_ability:GetLevel()
+				local new_invoked_spell_name = "invoker_retro_shroud_of_flames_exort"..exort_ability:GetLevel() .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -212,7 +219,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_soul_blast") then  --If one of the 8 Soul Blast spells is invoked when an orb is leveled up, swap it out for the correct version based on Wex' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex"
+				local new_invoked_spell_name = "invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -220,7 +227,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_confuse") then  --If one of the 8 Confuse spells is invoked when an orb is leveled up, swap it out for the correct version based on Exort' level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_confuse_level_" .. exort_ability:GetLevel() .. "_exort"
+				local new_invoked_spell_name = "invoker_retro_confuse_level_" .. exort_ability:GetLevel() .. "_exort" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -240,7 +247,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 			elseif string.find(current_invoked_spell_name, "invoker_retro_inferno") then  --If one of the 8 Inferno spells is invoked when an orb is leveled up, swap it out for the correct version based on Wex's level.
 				local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 				keys.caster:RemoveAbility(current_invoked_spell_name)
-				local new_invoked_spell_name = "invoker_retro_inferno_level_" .. wex_ability:GetLevel() .. "_wex"
+				local new_invoked_spell_name = "invoker_retro_inferno_level_" .. wex_ability:GetLevel() .. "_wex" .. suffix
 				keys.caster:AddAbility(new_invoked_spell_name)
 				local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 				new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -267,7 +274,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 											if exort_ability_timer ~= nil then
 												local current_invoked_spell_cooldown = current_invoked_spell_timer:GetCooldownTimeRemaining()
 												keys.caster:RemoveAbility(current_invoked_spell_name_timer)
-												local new_invoked_spell_name = "invoker_retro_incinerate_level_" .. exort_ability_timer:GetLevel() .. "_exort"
+												local new_invoked_spell_name = "invoker_retro_incinerate_level_" .. exort_ability_timer:GetLevel() .. "_exort" .. suffix
 												keys.caster:AddAbility(new_invoked_spell_name)
 												local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 												new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -282,7 +289,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 				else  --If the ability is not being channeled, swap it out immediately.
 					local current_invoked_spell_cooldown = current_invoked_spell:GetCooldownTimeRemaining()
 					keys.caster:RemoveAbility(current_invoked_spell_name)
-					local new_invoked_spell_name = "invoker_retro_incinerate_level_" .. exort_ability:GetLevel() .. "_exort"
+					local new_invoked_spell_name = "invoker_retro_incinerate_level_" .. exort_ability:GetLevel() .. "_exort" .. suffix
 					keys.caster:AddAbility(new_invoked_spell_name)
 					local new_invoked_spell = keys.caster:FindAbilityByName(new_invoked_spell_name)
 					new_invoked_spell:StartCooldown(current_invoked_spell_cooldown)
@@ -308,7 +315,7 @@ function invoker_retro_orb_maintain_invoked_spells(keys)
 				end
 				
 				current_invoked_spell:SetLevel(average_level)  --Level up the ability for tooltip purposes.
-			elseif current_invoked_spell_name == "invoker_retro_emp" then  --Seeing if the string contains "invoker_retro_emp" is misleading because "invoker_retro_empty" also fits that bill.
+			elseif current_invoked_spell_name == "invoker_retro_emp" or current_invoked_spell_name == "invoker_retro_emp_half_mana_cost" or current_invoked_spell_name == "invoker_retro_emp_no_mana_cost" then  --Seeing if the string contains "invoker_retro_emp" is misleading because "invoker_retro_empty" also fits that bill.
 				--Set EMP's level to the average level of Quas and Wex.
 				local average_level = (quas_ability:GetLevel() + wex_ability:GetLevel()) / 2
 				average_level = math.floor(average_level + .5)  --Round to the nearest integer.

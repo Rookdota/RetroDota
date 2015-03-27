@@ -2,10 +2,6 @@
 Retro Dota game mode
 ]]
 
-statcollection.addStats({
-	modID = 'XXXXXXXXXXXXXXXXXXX' --GET THIS FROM http://getdotastats.com/#d2mods__my_mods
-})
-
 print("Retro Dota game mode loaded.")
 
 RETRODOTA_VERSION = "1.0.0"
@@ -648,15 +644,15 @@ function RetroDota:OnEveryoneVoted()
 -- Add vote settings to our stat collector
 	statcollection.addStats({
 	    modes = {
-	        win_condition = GameRules.win_condition
-			starting_level = GameRules.starting_level
-			starting_gold = GameRules.starting_gold
-			invoke_cd = GameRules.invoke_cd
-			mana_cost_reduction = GameRules.mana_cost_reduction
-			invoke_slots = GameRules.invoke_slots
-			wtf = GameRules.wtf
-			fast_respawn = GameRules.fast_respawn
-			gold_multiplier = GameRules.gold_multiplier
+	        win_condition = GameRules.win_condition,
+			starting_level = GameRules.starting_level,
+			starting_gold = GameRules.starting_gold,
+			invoke_cd = GameRules.invoke_cd,
+			mana_cost_reduction = GameRules.mana_cost_reduction,
+			invoke_slots = GameRules.invoke_slots,
+			wtf = GameRules.wtf,
+			fast_respawn = GameRules.fast_respawn,
+			gold_multiplier = GameRules.gold_multiplier,
 			xp_multiplier = GameRules.xp_multiplier
 	    }
 	})

@@ -20,12 +20,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	 {
-	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
-	  "particle"	"particles/generic_gameplay/generic_stunned.vpcf"  
+	 	"soundfile"   "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 	 }
-
-	// Stats
-	//-------------------------------------------------------------------------------------------------------------
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -58,19 +54,12 @@
 
 			"OnAttackLanded"
 			{
-				
 				"Random"
 				{
 					"Chance"			"%chance"
 
 					"OnSuccess"
 					{
-						"FireSound"
-						{
-							"EffectName"	"Hero_Slardar.Bash"
-							"Target"		"TARGET"
-						}
-
 						"RunScript"
 						{
 							"ScriptFile"	"heroes/hero_gambler/gambler_retro_lucky_stars.lua"

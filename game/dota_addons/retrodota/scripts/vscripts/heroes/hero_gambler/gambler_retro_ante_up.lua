@@ -25,6 +25,7 @@ function gambler_retro_ante_up_on_spell_start(event)
 	target.ante_bounty = ability:GetLevelSpecialValueFor("cash_in", ability:GetLevel() - 1)
 end
 
+
 --[[ ============================================================================================================
 	Author: Noya
 	Date: 14.1.2015.
@@ -77,13 +78,12 @@ function gambler_retro_ante_up_on_owner_death(event)
 	AnteUpShowBounty(event)
 end
 
+--[[ ============================================================================================================
+	Author: wFX
+	Date: March 16, 2015
+	Called to show popup.
+================================================================================================================= ]]
 function AnteUpShowBounty(event)
-	local pfxId = ParticleManager:CreateParticle(event.effect_name, PATTACH_CUSTOMORIGIN, event.caster)
-	local digits = string.len(event.msg)+1
-	local color = Vector(255, 200, 33)
-	ParticleManager:SetParticleControl(pfxId, 0, event.caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(pfxId, 1, Vector(0, event.msg, 0))
-	ParticleManager:SetParticleControl(pfxId, 2, Vector(2.0, digits, 0))
-	ParticleManager:SetParticleControl(pfxId, 3, color)
+	PopupGoldGain(event.caster, event.msg)
 	event.caster:EmitSound("General.Coins")
 end

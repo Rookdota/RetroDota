@@ -1,5 +1,6 @@
 require("timers")
 require("physics")
+require("popups")
 require("retrodota")
 
 --------------------------------------------------------------------------------

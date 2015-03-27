@@ -27,15 +27,7 @@ function ChipStack(event)
 	event.target:EmitSound("DOTA_Item.MagicStick.Activate")
 	event.target:EmitSound("DOTA_Item.MagicStick.Activate")
 	event.target:EmitSound("DOTA_Item.Hand_Of_Midas")
-
-
-	local pfxPath = "particles/msg_fx/msg_crit.vpcf" 
-    local pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_OVERHEAD_FOLLOW, target)
-    local color = Vector(255, 200, 33)
-    local digits = string.len(gold_damage)+1
-
-    ParticleManager:SetParticleControl(pidx, 1, Vector(9, gold_damage, 4))
-    ParticleManager:SetParticleControl(pidx, 2, Vector(3.0, digits, 0))
-    ParticleManager:SetParticleControl(pidx, 3, color)
+	
+    PopupNumbers(event.target, "crit", Vector(255, 200, 33), 3.0, gold_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
 	
 end

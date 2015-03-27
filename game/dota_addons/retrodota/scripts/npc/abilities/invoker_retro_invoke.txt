@@ -2,7 +2,7 @@
 // Author: Rook
 // Date: February 15, 2015
 // Invoker combines the three reagents he has active into a spell, with different effects based on the reagents. The order the reagents were casts makes a difference.
-"invoker_retro_invoke"
+"invoker_retro_invoke_12_second_cooldown"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
@@ -36,3 +36,103 @@
 }
 
 
+"invoker_retro_invoke_6_second_cooldown"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityTextureName" 			"invoker_retro_invoke"
+	"MaxLevel"						"1"
+	"RequiredLevel"					"6"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6"
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_invoke.lua"
+			"Function"							"invoker_retro_invoke_on_spell_start"
+		}
+	}
+}
+
+
+"invoker_retro_invoke_2_second_cooldown"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityTextureName" 			"invoker_retro_invoke"
+	"MaxLevel"						"1"
+	"RequiredLevel"					"6"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"2"
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_invoke.lua"
+			"Function"							"invoker_retro_invoke_on_spell_start"
+		}
+	}
+}
+
+
+"invoker_retro_invoke_0_second_cooldown"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityTextureName" 			"invoker_retro_invoke"
+	"MaxLevel"						"1"
+	"RequiredLevel"					"6"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"						"heroes/hero_invoker/invoker_retro_invoke.lua"
+			"Function"							"invoker_retro_invoke_on_spell_start"
+		}
+	}
+}

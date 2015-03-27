@@ -413,9 +413,14 @@
 		
 		
 		//Invoke
-		//Note: The description is at its maximum line limit.  Coloring reagent names with <font> also causes some of the description to be cut off.
-		"DOTA_Tooltip_Ability_invoker_retro_invoke"                                       "Invoke"
-		"DOTA_Tooltip_Ability_invoker_retro_invoke_Description"                           "Invoker combines the three reagents he has active into a spell.  The order in which the reagents were cast determines which new spell is invoked.\nQuas Quas Quas:  Icy Path\nQuas Quas Wex:   Portal\nQuas Quas Exort:  Frost Nova\nQuas Wex Quas:   Betrayal\nQuas Wex Wex:    Tornado Blast\nQuas Wex Exort:   Levitation\nQuas Exort Quas:  Power Word\nQuas Exort Wex:   Invisibility Aura\nQuas Exort Exort:  Shroud of Flames\nWex Quas Quas:   Mana Burn\nWex Quas Wex:    EMP\nWex Quas Exort:   Soul Blast\nWex Wex Quas:    Telelightning\nWex Wex Wex:     Shock\nWex Wex Exort:    Arcane Arts\nWex Exort Quas:   Scout\nWex Exort Wex:    Energy Ball\nWex Exort Exort:   Lightning Shield\nExort Quas Quas:  Chaos Meteor\nExort Quas Wex:   Confuse\nExort Quas Exort:  Disarm\nExort Wex Quas:   Soul Reaver\nExort Wex Wex:    Firestorm\nExort Wex Exort:   Incinerate\nExort Exort Quas:  Deafening Blast\nExort Exort Wex:   Inferno\nExort Exort Exort:  Firebolt"
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_12_second_cooldown"                    "Invoke"
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_12_second_cooldown_Description"        "Invoker combines the three reagents he has active into a spell.  The order in which the reagents were cast determines which new spell is invoked."
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_6_second_cooldown"                     "Invoke"
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_6_second_cooldown_Description"         "Invoker combines the three reagents he has active into a spell.  The order in which the reagents were cast determines which new spell is invoked."
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_2_second_cooldown"                     "Invoke"
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_2_second_cooldown_Description"         "Invoker combines the three reagents he has active into a spell.  The order in which the reagents were cast determines which new spell is invoked."
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_0_second_cooldown"                     "Invoke"
+		"DOTA_Tooltip_Ability_invoker_retro_invoke_0_second_cooldown_Description"         "Invoker combines the three reagents he has active into a spell.  The order in which the reagents were cast determines which new spell is invoked."
 
 		
 		//Levitation

@@ -11,7 +11,8 @@
 		//Exort uses <font color=\"#FF6600\">Exort</font>, which is (230, 138, 0)
 		
 		// ******************** HEROES ***********************
-		"npc_dota_hero_invoker"    	  "Kael"
+		"npc_dota_hero_invoker"    	  "Retro Invoker"
+		"npc_dota_hero_viper"    	  "Gambler"
 
 		
 		// ******************** ITEMS ***********************

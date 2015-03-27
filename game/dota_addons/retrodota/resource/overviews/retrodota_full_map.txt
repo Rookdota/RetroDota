@@ -1,0 +1,8 @@
+retrodota_full_map
+{
+	material materials/overviews/retrodota_full_map.vmat
+	pos_x -7072
+	pos_y 7898
+	scale 14.531
+}
+

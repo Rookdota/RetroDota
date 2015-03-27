@@ -205,6 +205,11 @@ function RetroDota:OnPlayerPickHero(keys)
 			hero:HeroLevelUp(false)
 		end	
 	end
+	
+	--Set the player's gold.  This will override the gold bonus if the player chose to random (which we want to do).
+	PlayerResource:SetGold(playerID, 0, false)
+	PlayerResource:SetGold(playerID, 0, true)
+	PlayerResource:ModifyGold(playerID, 625 + GameRules.starting_gold, false, 0)
 
 	-- Set Custom XP Value when a hero is picked after the multiplier was defined
 	if GameRules.xp_multiplier then
@@ -366,7 +371,6 @@ function RetroDota:OnAbilityUsed(keys)
 	end]]
 
 end
-
 
 
 -- register the 'player_voted' command in our console
@@ -588,7 +592,6 @@ function RetroDota:OnEveryoneVoted()
 	else
 		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost full mana.", 0, 0)
 	end
-	
 	SetInvokeVersion(GameRules.invoke_cd)
 	
 	

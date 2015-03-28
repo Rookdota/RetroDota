@@ -150,6 +150,7 @@ function RetroDota:CaptureGameMode()
 		GameRules:SetUseCustomHeroXPValues(true)
 		GameRules:SetUseBaseGoldBountyOnHeroes(false)
 		GameRules:SetSameHeroSelectionEnabled(true)
+		GameRules:SetPreGameTime(60)
 		--[[mode:SetRecommendedItemsDisabled( RECOMMENDED_BUILDS_DISABLED )
 		mode:SetCameraDistanceOverride( CAMERA_DISTANCE_OVERRIDE )
 		mode:SetCustomBuybackCostEnabled( CUSTOM_BUYBACK_COST_ENABLED )
@@ -223,6 +224,27 @@ function RetroDota:OnAllPlayersLoaded()
 
 	-- Show Vote Panel
 	FireGameEvent( 'show_vote_panel', {} )
+
+	GameRules:SendCustomMessage("<font color='##FFCC33'>Vote on the settings you would like to play with!", 0, 0)
+
+	local message30shown = false
+	local message10shown = false
+	Timers:CreateTimer(function()
+		local time = GameRules:GetDOTATime(false,true)
+		print("Time false true "..time)
+		if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and not GameRules.finished_voting then
+			if math.abs(time) < 30 and not message30shown then
+				GameRules:SendCustomMessage("<font color='#FF9933'>30 seconds left to vote.", 0, 0)
+				message30shown = true
+			elseif math.abs(time) < 10 and not message10shown then
+				GameRules:SendCustomMessage("<font color='#EB4B4B'>10 seconds left to vote.", 0, 0)
+				return
+			end
+		elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+			return
+		end
+		return 1
+	end)
 
 end
 
@@ -621,7 +643,7 @@ function RetroDota:OnEveryoneVoted()
 		--print(GameRules.win_condition)
 		END_GAME_ON_KILLS = true
 		FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})
-		GameRules:SendCustomMessage("The first team to amass "..GameRules.win_condition.." kills wins!", 0, 0)
+		GameRules:SendCustomMessage("The first team to amass <font color='#FF9933'>"..GameRules.win_condition.." kills</font> wins!", 0, 0)
 		
 		--Make the towers invulnerable, which in turn will keep the ancients invulnerable, since there is a kills to win condition.
 		--The radiant "towers" do not get their invulnerability removed at 0:00 gametime if END_GAME_ON_KILLS == true.
@@ -645,24 +667,24 @@ function RetroDota:OnEveryoneVoted()
 	end
 	
 	-- Starting Level and Gold
-	GameRules:SendCustomMessage("Players start at level " ..GameRules.starting_level.. " with " .. GameRules.starting_gold .. " bonus starting gold.", 0, 0)
+	GameRules:SendCustomMessage("Players start at level <font color='#FF9933'>" ..GameRules.starting_level.. "</font> with <font color='#FF9933'>" .. GameRules.starting_gold .. "</font> bonus starting gold.", 0, 0)
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
 	
 	--Invoke slots
 	if GameRules.invoke_slots == "1" then
-		GameRules:SendCustomMessage("There is " ..GameRules.invoke_slots.." slot for invoked spells.", 0, 0)
+		GameRules:SendCustomMessage("There is <font color='#FF9933'>" ..GameRules.invoke_slots.." slot</font> for invoked spells.", 0, 0)
 	else
-		GameRules:SendCustomMessage("There are " ..GameRules.invoke_slots.." slots for invoked spells.", 0, 0)
+		GameRules:SendCustomMessage("There are <font color='#FF9933'>" ..GameRules.invoke_slots.." slots</font> for invoked spells.", 0, 0)
 	end
 	
 	--Invoke cooldown and spell mana cost
 	if GameRules.mana_cost_reduction == 50 then
-		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost half mana.", 0, 0)
+		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>half mana</font>.", 0, 0)
 	elseif GameRules.mana_cost_reduction == 100 then
-		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost no mana.", 0, 0)
+		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>no mana</font>.", 0, 0)
 	else
-		GameRules:SendCustomMessage("Invoke has a " .. GameRules.invoke_cd.."-second cooldown, and all spells cost full mana.", 0, 0)
+		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>full mana</font>.", 0, 0)
 	end
 	SetInvokeVersion(GameRules.invoke_cd)
 	
@@ -679,19 +701,19 @@ function RetroDota:OnEveryoneVoted()
 	-- WTF + Insta Respawn
 	if GameRules.wtf == "1" then
 		if GameRules.fast_respawn == "1" then
-			GameRules:SendCustomMessage("WTF mode is ON.  Instant respawn mode is ON.", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
 		else
-			GameRules:SendCustomMessage("WTF mode is ON.  Instant respawn mode is OFF.", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
 		end
 	else
 		if GameRules.fast_respawn == "1" then
-			GameRules:SendCustomMessage("WTF mode is OFF.  Instant respawn mode is ON.", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
 		else
-			GameRules:SendCustomMessage("WTF mode is OFF.  Instant respawn mode is OFF.", 0, 0)
+			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
 		end
 	end
 
-	GameRules:SendCustomMessage("The gold multiplier is "..GameRules.gold_multiplier.."x.  The XP multiplier is "..GameRules.xp_multiplier .. "x.", 0, 0)
+	GameRules:SendCustomMessage("The gold multiplier is <font color='#FF9933'>"..GameRules.gold_multiplier.."x</font>.  The XP multiplier is <font color='#FF9933'>"..GameRules.xp_multiplier .. "x</font>.", 0, 0)
 	GameRules:SetGoldPerTick(1*GameRules.gold_multiplier)
 
 	-- Set Custom XP Value on all heroes in game
@@ -730,8 +752,8 @@ function SetHeroLevels(level)
 		--[[for i=1,level-1 do
 			hero:HeroLevelUp(false)
 		end]]
-		hero:AddExperience(XP_PER_LEVEL_TABLE[i], false, false)
-		print("Added "..XP_PER_LEVEL_TABLE[i])
+		hero:AddExperience(XP_PER_LEVEL_TABLE[level], false, false)
+		print("Added "..XP_PER_LEVEL_TABLE[level])
 	end
 end
 

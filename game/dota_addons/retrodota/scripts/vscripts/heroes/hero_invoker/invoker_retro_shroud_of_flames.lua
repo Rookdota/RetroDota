@@ -30,9 +30,10 @@ function invoker_retro_shroud_of_flames_dummy(keys)
 	local shroud_of_flames_dummy_unit = CreateUnitByName("npc_dota_invoker_retro_shroud_of_flames_unit", pos, false, caster, caster, caster:GetTeam())
 
 	-- Teach the ability and set its level
-	shroud_of_flames_dummy_unit:AddAbility(ability:GetAbilityName())
-	local ability = shroud_of_flames_dummy_unit:FindAbilityByName("invoker_retro_shroud_of_flames_exort"..exort_ability:GetLevel())
-	ability:SetLevel(quas_ability:GetLevel())
+	local ability_name = ability:GetAbilityName()
+	shroud_of_flames_dummy_unit:AddAbility(ability_name)
+	local dummy_ability = shroud_of_flames_dummy_unit:FindAbilityByName(ability_name)
+	dummy_ability:SetLevel(quas_ability:GetLevel())
 	
 	shroud_of_flames_dummy_unit.shroud_of_flames_exort_level = exort_ability:GetLevel()
 	

@@ -115,6 +115,7 @@ function RetroDota:CaptureGameMode()
 		-- Custom Settings
 		GameRules:SetUseCustomHeroXPValues(true)
 		GameRules:SetUseBaseGoldBountyOnHeroes(false)
+		GameRules:SetSameHeroSelectionEnabled(true)
 		--[[mode:SetRecommendedItemsDisabled( RECOMMENDED_BUILDS_DISABLED )
 		mode:SetCameraDistanceOverride( CAMERA_DISTANCE_OVERRIDE )
 		mode:SetCustomBuybackCostEnabled( CUSTOM_BUYBACK_COST_ENABLED )
@@ -572,13 +573,29 @@ function RetroDota:OnEveryoneVoted()
 
 	-- Results from voting
 
-	-- Set Kills to Win if the option is not the default (Ancient)
-	if GameRules.win_condition ~= "0" and GameRules.win_condition ~= 0 then
-		print(GameRules.win_condition)
+	if GameRules.win_condition ~= "0" and GameRules.win_condition ~= 0 then  --If the win condition is kills.
+		--print(GameRules.win_condition)
 		END_GAME_ON_KILLS = true
 		FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})
 		GameRules:SendCustomMessage("The first team to amass "..GameRules.win_condition.." kills wins!", 0, 0)
-	else
+		
+		--Make the towers invulnerable, which in turn will keep the ancients invulnerable, since there is a kills to win condition.
+		--The radiant "towers" do not get their invulnerability removed at 0:00 gametime if END_GAME_ON_KILLS == true.
+		local towers = Entities:FindAllByClassname('npc_dota_tower')
+		for i, individual_tower in ipairs(towers) do
+			Timers:CreateTimer({
+				endTime = .03,
+				callback = function()
+					if GameRules:GetDOTATime(false, false) > 0 then
+						individual_tower:AddNewModifier(individual_tower, nil, "modifier_invulnerable", {})
+						return
+					else
+						return .03
+					end
+				end
+			})
+		end
+	else  --If the win condition is the ancient.
 		GameRules:SendCustomMessage("Destroy the enemy's ancient to win!", 0, 0)
 		FireGameEvent("show_center_message",{ message = "Destroy the enemy's ancient to win!", duration = 10.0})
 	end

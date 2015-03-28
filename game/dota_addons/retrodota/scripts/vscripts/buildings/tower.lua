@@ -60,7 +60,7 @@ function InvulnerabilityCheck( event )
 	local caster = event.caster
 	local time = GameRules:GetDOTATime(false, false)
 
-	if time > 0 and caster:HasModifier("modifier_invulnerable") then
+	if time > 0 and caster:HasModifier("modifier_invulnerable") and not END_GAME_ON_KILLS then
 		caster:RemoveModifierByName("modifier_invulnerable")
 		print("Tower is now vulnerable")
 	end

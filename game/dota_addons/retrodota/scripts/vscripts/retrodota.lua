@@ -19,6 +19,34 @@ for i=6, 25 do
 	XP_BOUNTY_PER_LEVEL_TABLE[i] = XP_BOUNTY_PER_LEVEL_TABLE[i-1] + 100
 end
 
+XP_PER_LEVEL_TABLE = {
+	0,
+	200,
+	400,
+	900,
+	1400,
+	2000,
+	2600,
+	3200,
+	4400,
+	5400,
+	6000,
+	8200,
+	9000,
+	10400,
+	11900,
+	13500,
+	15200,
+	17000,
+	18900,
+	20900,
+	23000,
+	25200,
+	27500,
+	29900,
+	32400
+}
+
 if RetroDota == nil then
 	RetroDota = class({})
 end
@@ -201,9 +229,8 @@ function RetroDota:OnPlayerPickHero(keys)
 
 	-- Check the level of this hero, add the bonus levels if needed
 	if GameRules.finished_voting and (hero:GetLevel() ~= GameRules.starting_level) then
-		for i=1,(GameRules.starting_level-hero:GetLevel()) do
-			hero:HeroLevelUp(false)
-		end	
+		hero:AddExperience(XP_PER_LEVEL_TABLE[i], false, false)
+		print("Added "..XP_PER_LEVEL_TABLE[i])
 	end
 	
 	--Set the player's gold.  This will override the gold bonus if the player chose to random (which we want to do).
@@ -683,13 +710,15 @@ function RetroDota:OnEveryoneVoted()
 end
 
 -- Sets all the heroes to this level
--- An additional check is done OnHeroPicked for players that still haven't picked when the vote ends
+-- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends
 function SetHeroLevels(level)
 	local allHeroes = HeroList:GetAllHeroes()
 	for k, hero in pairs( allHeroes ) do
-		for i=1,level-1 do
+		--[[for i=1,level-1 do
 			hero:HeroLevelUp(false)
-		end
+		end]]
+		hero:AddExperience(XP_PER_LEVEL_TABLE[i], false, false)
+		print("Added "..XP_PER_LEVEL_TABLE[i])
 	end
 end
 
@@ -705,7 +734,7 @@ end
 
 
 -- Gives the player the version of Invoke with the correct cooldown.
--- An additional check is done OnHeroPicked for players that still haven't picked when the vote ends.
+-- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends.
 function SetInvokeVersion(cooldown)
 	if cooldown ~= "12" then  --The active version of Invoke defaults to a 12-second cooldown, so don't change anything if the default cooldown was selected.
 		local allHeroes = HeroList:GetAllHeroes()

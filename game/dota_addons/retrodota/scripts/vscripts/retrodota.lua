@@ -667,7 +667,7 @@ function RetroDota:OnEveryoneVoted()
 	end
 	
 	-- Starting Level and Gold
-	GameRules:SendCustomMessage("Players start at level <font color='#FF9933'>" ..GameRules.starting_level.. "</font> with <font color='#FF9933'>" .. GameRules.starting_gold .. "</font> bonus starting gold.", 0, 0)
+	GameRules:SendCustomMessage("Players start at level <font color='#FF9933'>" ..GameRules.starting_level.. "</font> with <font color='#FF9933'>" .. GameRules.starting_gold .. "</font> starting gold.", 0, 0)
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
 	

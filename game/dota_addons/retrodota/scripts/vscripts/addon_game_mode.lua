@@ -5,7 +5,7 @@ require("retrodota")
 require("lib.statcollection")
 
 statcollection.addStats({
-	modID = 'XXXXXXXXXXXXXXXXXXX' --GET THIS FROM http://getdotastats.com/#d2mods__my_mods
+	modID = '599fb911391cf8660b988e9a030a4f29' --GET THIS FROM http://getdotastats.com/#d2mods__my_mods
 })
 
 --------------------------------------------------------------------------------

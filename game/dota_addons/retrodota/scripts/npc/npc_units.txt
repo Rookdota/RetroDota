@@ -656,7 +656,7 @@
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
 		"ProjectileCollisionSize"	"50"
-		"RingRadius"				"120"
+		"RingRadius"				"175"
 		"HealthBarOffset"			"280"
 
 		// Movement
@@ -750,7 +750,7 @@
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
 		"ProjectileCollisionSize"	"50"
-		"RingRadius"				"120"
+		"RingRadius"				"175"
 		"HealthBarOffset"			"280"
 
 		// Movement

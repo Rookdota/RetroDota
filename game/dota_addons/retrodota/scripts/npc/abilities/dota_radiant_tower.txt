@@ -1,0 +1,49 @@
+// Gives team gold when killed (because its a npc_dota_creature which doesn't trigger the tower gold by default)
+// Also checks the tree of life to see if glyph was used (because the built in even doesn't work)
+"dota_radiant_tower"
+{
+	"BaseClass" 		"ability_datadriven"
+	"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers"
+	{
+		"modifier_tower_gold"
+		{
+			"Passive"   "1"
+			"IsHidden"	"1"
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"buildings/tower.lua"
+					"Function"		"GiveTeamTowerGold"
+				}
+			}
+		}
+
+		"modifier_tower_glyph"	
+		{
+			"Passive"   "1"
+			"IsHidden"	"1"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"buildings/tower.lua"
+					"Function"		"FindTreeOfLife"
+				}
+			}
+
+			"ThinkInterval"  "0.03"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"buildings/tower.lua"
+					"Function"		"CheckGlyphUsage"
+				}
+			}
+		}
+	}	
+}

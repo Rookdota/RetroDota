@@ -42,6 +42,7 @@ function RetroDota:InitGameMode()
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(RetroDota, 'OnEntityKilled'), self)
 	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(RetroDota, 'OnPlayerLevelUp'), self)
 	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(RetroDota, 'OnAbilityUsed'), self)
+	--ListenToGameEvent('dota_glyph_used', Dynamic_Wrap(RetroDota, 'OnGlyphUsed'), self) --Doesn't trigger.
 	
 	-- Vote Data
 	GameRules.finished_voting = false
@@ -258,7 +259,7 @@ function RetroDota:OnNPCSpawned(keys)
 	
 	if GameRules.gold_multiplier then
 		npc:SetMaximumGoldBounty(npc:GetGoldBounty() * tonumber(GameRules.gold_multiplier))
-		npc:SetMinimumGoldBounty(npc:GetGoldBounty() * tonumber(GameRules.gold_multiplier))
+		npc:SetMinimumGoldBounty(npc:GetGoldBounty() * 1.1 )
 	end
 
 	if IsValidEntity(npc) and GameRules:GetDOTATime(false, false) < 500 then  --Lane creeps stop being given movement speed modifiers at 7:30, so don't bother removing them after that point.
@@ -382,6 +383,10 @@ function RetroDota:OnAbilityUsed(keys)
 		end
 	end]]
 
+end
+
+function RetroDota:OnGlyphUsed( event )
+	print("Glyph Used by Team "..keys.teamnumber)
 end
 
 
@@ -648,6 +653,7 @@ function RetroDota:OnEveryoneVoted()
 	end
 
 	GameRules:SendCustomMessage("The gold multiplier is "..GameRules.gold_multiplier.."x.  The XP multiplier is "..GameRules.xp_multiplier .. "x.", 0, 0)
+	GameRules:SetGoldPerTick(1*GameRules.gold_multiplier)
 
 	-- Set Custom XP Value on all heroes in game
 	local allHeroes = HeroList:GetAllHeroes()

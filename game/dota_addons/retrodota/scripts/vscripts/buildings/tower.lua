@@ -65,3 +65,40 @@ function InvulnerabilityCheck( event )
 		print("Tower is now vulnerable")
 	end
 end
+
+
+
+-- Gives gold to everyone on the killer's team (for radiant towers)
+function GiveTeamTowerGold( event )
+	local killer = event.attacker
+	local allHeroes = HeroList:GetAllHeroes()
+	local team_gold = 200
+
+	for k,v in pairs(allHeroes) do
+		if v:GetPlayerID() and v:GetTeam() == killer:GetTeam() then
+			v:ModifyGold(team_gold, true, 0)
+			PopupGoldGain(v, team_gold)
+		end
+	end
+end
+
+-- Keeps an index to the tree of line in the units handle
+function FindTreeOfLife( event )
+	local caster = event.caster
+	local tree = Entities:FindByModel(nil, "models/props_tree/tree_cine_01_10k.vmdl")
+	print(tree)
+
+	caster.ancient = tree
+
+end
+
+
+-- Checks if the tree was glyphed and applies the glyph to the tower if so
+function CheckGlyphUsage( event )
+	local caster = event.caster
+	local ancient = caster.ancient
+ 	if ancient:HasModifier("modifier_fountain_glyph") and not caster:HasModifier("modifier_fountain_glyph") then
+ 		print("Glyph used! Applying it to this tower")
+ 		caster:AddNewModifier(caster, nil, "modifier_fountain_glyph", {duration = 5.0})
+ 	end
+ end 

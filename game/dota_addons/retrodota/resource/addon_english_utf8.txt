@@ -11,7 +11,7 @@
 		//Exort uses <font color=\"#FF6600\">Exort</font>, which is (255, 102, 0)
 		
 		// ******************** HEROES ***********************
-		"npc_dota_hero_invoker"    	  "Retro Invoker"
+		"npc_dota_hero_invoker"    	  "Arsenal Magus"
 		"npc_dota_hero_viper"    	  "Gambler"
 
 		
@@ -1691,6 +1691,12 @@
 		"XPMultiplierTextLabel"				"XP Multiplier"
 		"VOTE"								"VOTE"
 		"DONTCARE"							"DON'T CARE"
+
+		// ******************** GamePanel UI ***********************
+		"Welcome"							"Welcome"	
+		"to"								"to"
+		"Version"							"1.0.0"
+		"Description"						"Long ago, Invoker mastered no fewer than 27 spells.\nCan you master them as well?\n\nVote on the settings you would like to\nplay with using the central panel.\n\nWhen hosting, choose from a brand new\narena or the standard Dota map.\n\nNew in this version:\nInitial release, with 27-spell Invoker and a new map.\n\nComing soon: Gambler!\nCreated by Rook, Noya, and wFX."
 	}
 }
  

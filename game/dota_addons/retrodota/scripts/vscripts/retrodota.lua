@@ -607,7 +607,7 @@ function RetroDota:OnEveryoneVoted()
 	
 	
 	if GameRules.fast_respawn == "1" then
-		GameRules:GetGameModeEntity():SetFixedRespawnTime(.5)
+		GameRules:GetGameModeEntity():SetFixedRespawnTime(1)
 	end
 
 	if GameRules.wtf == "1" then

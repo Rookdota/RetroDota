@@ -231,7 +231,7 @@ function RetroDota:OnAllPlayersLoaded()
 	local message10shown = false
 	Timers:CreateTimer(function()
 		local time = GameRules:GetDOTATime(false,true)
-		print("Time false true "..time)
+		--print("Time false true "..time)
 		if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and not GameRules.finished_voting then
 			if math.abs(time) < 30 and not message30shown then
 				GameRules:SendCustomMessage("<font color='#FF9933'>30 seconds left to vote.", 0, 0)

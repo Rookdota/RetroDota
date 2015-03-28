@@ -32,6 +32,22 @@
 			
 			this.closeGamePanel.addEventListener(MouseEvent.CLICK, onCloseButtonClicked);
 			
+			//font
+			var txFormat:TextFormat = new TextFormat;
+			txFormat.font = "$TextFont";					
+			
+			this.Welcome.text = Globals.instance.GameInterface.Translate("#Welcome");
+			this.Welcome.setTextFormat(txFormat);
+			
+			this.to.text = Globals.instance.GameInterface.Translate("#to");
+			this.to.setTextFormat(txFormat);
+			
+			this.Description.text = Globals.instance.GameInterface.Translate("#Description");
+			this.Description.setTextFormat(txFormat);
+			
+			this.Version.text = Globals.instance.GameInterface.Translate("#Version");
+			this.Version.setTextFormat(txFormat);
+			
 			trace("##SpellPanel Setup!");
 		}
 		

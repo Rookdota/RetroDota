@@ -106,7 +106,7 @@
 	"npc_dota_hero_ursa"				"0"
 	"npc_dota_hero_vengefulspirit"		"0"
 	"npc_dota_hero_venomancer"			"0"
-	"npc_dota_hero_viper"				"1"
+	"npc_dota_hero_viper"				"0"
 	"npc_dota_hero_visage"				"0"
 	"npc_dota_hero_warlock"				"0"
 	"npc_dota_hero_weaver"				"0"

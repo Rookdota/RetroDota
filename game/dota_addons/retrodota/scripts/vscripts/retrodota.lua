@@ -51,6 +51,7 @@ if RetroDota == nil then
 	RetroDota = class({})
 end
 
+
 function RetroDota:InitGameMode()
 	RetroDota = self
 	print('[RETRODOTA] Starting to load retrodota RetroDota...')
@@ -109,15 +110,18 @@ function RetroDota:InitGameMode()
 	end
 end
 
+
 function RetroDota:GameThink()
 	return 0.25
 end
+
 
 -- This function is called 1 to 2 times as the player connects initially but before they have completely connected
 function RetroDota:PlayerConnect(keys)
 	print('[RETRODOTA] PlayerConnect')
 
 end
+
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function RetroDota:OnConnectFull(keys)
@@ -134,6 +138,7 @@ function RetroDota:OnConnectFull(keys)
 	GameRules.player_count = GameRules.player_count + 1
 
 end
+
 
 -- This function is called as the first player loads and sets up the GameMode parameters
 function RetroDota:CaptureGameMode()
@@ -165,11 +170,12 @@ function RetroDota:CaptureGameMode()
 	end
 end
 
--- This function is called once and only once as soon as the first player (almost certain to be the server in local lobbies) loads in.
 
+-- This function is called once and only once as soon as the first player (almost certain to be the server in local lobbies) loads in.
 function RetroDota:OnFirstPlayerLoaded()
 	print("[BAREBONES] First Player has loaded")
 end
+
 
 -- The overall game state has changed
 function RetroDota:OnGameRulesStateChange(keys)
@@ -210,6 +216,7 @@ function RetroDota:OnGameRulesStateChange(keys)
 		end
 	end
 end
+
 
 function RetroDota:OnAllPlayersLoaded()
 	print("[RETRODOTA] All Players have loaded into the game")
@@ -262,6 +269,7 @@ function RetroDota:OnPlayerPickHero(keys)
 		end
 	end
 end
+
 
 -- A player leveled up
 function RetroDota:OnPlayerLevelUp(keys)
@@ -391,6 +399,7 @@ function RetroDota:OnEntityKilled( keys )
 	end
 end
 
+
 -- An ability was used by a player
 function RetroDota:OnAbilityUsed(keys)
 	--[[local player = EntIndexToHScript(keys.PlayerID)
@@ -411,6 +420,7 @@ function RetroDota:OnAbilityUsed(keys)
 	end]]
 
 end
+
 
 function RetroDota:OnGlyphUsed( event )
 	print("Glyph Used by Team "..keys.teamnumber)
@@ -442,6 +452,7 @@ Convars:RegisterCommand( "player_skip_vote", function(name, p)
 		end
 	end
 end, "DONT CARE button", 0 )
+
 
 function RetroDota:IgnoreVote(player)
 	local pID = player:GetPlayerID()
@@ -535,6 +546,7 @@ function RoundedDownAverage( table )
 
 	return tostring(value)
 end
+
 
 function RetroDota:OnEveryoneVoted()
 	
@@ -709,6 +721,7 @@ function RetroDota:OnEveryoneVoted()
 
 end
 
+
 -- Sets all the heroes to this level
 -- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends
 function SetHeroLevels(level)
@@ -727,7 +740,7 @@ end
 function SetBonusGold(gold)
 	for pID=0,9 do
 		if PlayerResource:IsValidPlayerID(pID) then
-			PlayerResource:ModifyGold(pID, gold, false, 0)
+			PlayerResource:ModifyGold(pID, gold - 625, false, 0)
 		end
 	end
 end

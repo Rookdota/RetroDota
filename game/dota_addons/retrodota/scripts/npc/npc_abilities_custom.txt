@@ -907,7 +907,7 @@
 			"11"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"burn_damage_per_interval"			"25"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
+				"burn_damage_per_interval"			"60"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
 			}
 			"12"
 			{
@@ -1076,7 +1076,7 @@
 			"11"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"burn_damage_per_interval"			"25"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
+				"burn_damage_per_interval"			"60"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
 			}
 			"12"
 			{
@@ -1245,7 +1245,7 @@
 			"11"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"burn_damage_per_interval"			"25"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
+				"burn_damage_per_interval"			"60"  //Units who are hit by the meteor also have a modifier applied to them that deals this much damage per interval.  I don't think there's a mechanic where the meteor leaves a trail behind it that damages units standing in it.
 			}
 			"12"
 			{

@@ -557,7 +557,7 @@ C_INIT_PositionOffset C_INIT_PositionOffset_0
 C_INIT_CreateFromCPs C_INIT_CreateFromCPs_0
 {
 	bool m_bRandomDistribution = false
-	int m_nIncrement = 1
+	int m_nIncrement = 0
 	int m_nMinCP = 1
 	bool m_bRunForParentApplyKillList = true
 	float m_flOpStartFadeInTime = 0.000000

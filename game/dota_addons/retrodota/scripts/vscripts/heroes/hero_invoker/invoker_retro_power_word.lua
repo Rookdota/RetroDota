@@ -18,6 +18,10 @@ function invoker_retro_power_word_on_spell_start(keys)
 				end
 			})
 			
+			while keys.target:HasModifier("modifier_invoker_retro_power_word_armor_buff") do
+				keys.target:RemoveModifierByName("modifier_invoker_retro_power_word_armor_buff")
+			end
+			
 			local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 			if quas_ability ~= nil then
 				local armor_buff_value = math.abs(keys.ability:GetLevelSpecialValueFor("armor_bonus_ally", quas_ability:GetLevel() - 1))
@@ -47,6 +51,10 @@ function invoker_retro_power_word_on_spell_start(keys)
 			end
 		})
 		
+		while keys.target:HasModifier("modifier_invoker_retro_power_word_armor_debuff") do
+			keys.target:RemoveModifierByName("modifier_invoker_retro_power_word_armor_debuff")
+		end
+			
 		local quas_ability = keys.caster:FindAbilityByName("invoker_retro_quas")
 		if quas_ability ~= nil then
 			local armor_debuff_value = math.abs(keys.ability:GetLevelSpecialValueFor("armor_reduction_enemy", quas_ability:GetLevel() - 1))

@@ -134,13 +134,31 @@ function invoker_retro_confuse_on_spell_start(keys)
 			end
 		end
 		
-		--Give the illusion the caster's spell(s) so it looks like it has something invoked.  There is no reason to give the ghost anything because it cannot be selected.
+		--Give the illusion the caster's spell(s) so it looks like it has something invoked.  Give it the correct version of Invoke, as well.
+		--There is no reason to give the ghost anything because it cannot be selected.
 		local illusion_current_invoked_spell_d = confuse_illusion:GetAbilityByIndex(3)
 		confuse_illusion:RemoveAbility(illusion_current_invoked_spell_d:GetName())
-		confuse_illusion:AddAbility(keys.caster:GetAbilityByIndex(3):GetName())
+		local caster_current_invoked_spell_d = keys.caster:GetAbilityByIndex(3)
+		local caster_current_invoked_spell_d_name = caster_current_invoked_spell_d:GetName()
+		confuse_illusion:AddAbility(caster_current_invoked_spell_d_name)
+		local illusion_new_invoked_spell_d = confuse_illusion:FindAbilityByName(caster_current_invoked_spell_d_name)
+		illusion_new_invoked_spell_d:SetLevel(caster_current_invoked_spell_d:GetLevel())
+		
 		local illusion_current_invoked_spell_f = confuse_illusion:GetAbilityByIndex(4)
 		confuse_illusion:RemoveAbility(illusion_current_invoked_spell_f:GetName())
-		confuse_illusion:AddAbility(keys.caster:GetAbilityByIndex(4):GetName())
+		local caster_current_invoked_spell_f = keys.caster:GetAbilityByIndex(4)
+		local caster_current_invoked_spell_f_name = caster_current_invoked_spell_f:GetName()
+		confuse_illusion:AddAbility(caster_current_invoked_spell_f_name)
+		local illusion_new_invoked_spell_f = confuse_illusion:FindAbilityByName(caster_current_invoked_spell_f_name)
+		illusion_new_invoked_spell_f:SetLevel(caster_current_invoked_spell_f:GetLevel())
+		
+		local illusion_current_invoke = confuse_illusion:GetAbilityByIndex(5)
+		confuse_illusion:RemoveAbility(illusion_current_invoke:GetName())
+		local caster_invoke = keys.caster:GetAbilityByIndex(5)
+		local caster_invoke_name = caster_invoke:GetName()
+		confuse_illusion:AddAbility(caster_invoke_name)
+		local illusion_new_invoke = confuse_illusion:FindAbilityByName(caster_invoke_name)
+		illusion_new_invoke:SetLevel(caster_invoke:GetLevel())
 		
 		--Play some particle effects and sound.
 		ParticleManager:CreateParticle("particles/generic_gameplay/illusion_created.vpcf", PATTACH_ABSORIGIN_FOLLOW, confuse_illusion)

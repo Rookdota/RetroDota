@@ -39,10 +39,10 @@ function invoker_retro_shroud_of_flames_dummy(keys)
 	
 	-- Apply this modifier rank on the target
 	target:RemoveModifierByName("modifier_shroud_of_flames")
-	ability:ApplyDataDrivenModifier(shroud_of_flames_dummy_unit, target, "modifier_shroud_of_flames", {duration = ability:GetDuration()})
+	dummy_ability:ApplyDataDrivenModifier(shroud_of_flames_dummy_unit, target, "modifier_shroud_of_flames", {duration = dummy_ability:GetDuration()})
 
 	-- Kill the dummy after the duration
-	Timers:CreateTimer(ability:GetDuration(), function()
+	Timers:CreateTimer(dummy_ability:GetDuration(), function()
 		shroud_of_flames_dummy_unit:RemoveSelf()
 	end)
 end

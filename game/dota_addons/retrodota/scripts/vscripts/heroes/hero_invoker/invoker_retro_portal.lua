@@ -11,7 +11,7 @@ function invoker_retro_portal_on_ability_phase_start(keys)
 	local portal_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_portal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.target)
 	
 	local portal_particle_drain_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_portal_drain.vpcf", PATTACH_ABSORIGIN, keys.caster)
-	ParticleManager:SetParticleControl(portal_particle_drain_effect, 1, Vector(target_origin.x, target_origin.y, target_origin.z + 75))
+	ParticleManager:SetParticleControlEnt(portal_particle_drain_effect, 1, keys.target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", keys.target:GetAbsOrigin(), false)
 	ParticleManager:SetParticleControl(portal_particle_drain_effect, 2, Vector(distance_to_target * 3.5, 0, 0))
 	
 	--Remove the Portal particles after the duration is supposed to end.

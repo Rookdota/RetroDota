@@ -257,9 +257,9 @@ function RetroDota:OnPlayerPickHero(keys)
 	FireGameEvent( 'show_spell_list_button', { player_ID = playerID } )
 
 	-- Check the level of this hero, add the bonus levels if needed
-	if GameRules.finished_voting and (hero:GetLevel() ~= GameRules.starting_level) then
-		hero:AddExperience(XP_PER_LEVEL_TABLE[i], false, false)
-		print("Added "..XP_PER_LEVEL_TABLE[i])
+	if GameRules.finished_voting and (hero:GetLevel() < GameRules.starting_level) then
+		hero:AddExperience(XP_PER_LEVEL_TABLE[GameRules.starting_level], false, false)
+		print("Added "..XP_PER_LEVEL_TABLE[GameRules.starting_level] .. " XP.")
 	end
 	
 	--Set the player's gold.  This will override the gold bonus if the player chose to random (which we want to do).
@@ -753,7 +753,7 @@ function SetHeroLevels(level)
 			hero:HeroLevelUp(false)
 		end]]
 		hero:AddExperience(XP_PER_LEVEL_TABLE[level], false, false)
-		print("Added "..XP_PER_LEVEL_TABLE[level])
+		print("Added "..XP_PER_LEVEL_TABLE[level] .. " XP.")
 	end
 end
 

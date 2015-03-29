@@ -24,7 +24,7 @@ function Precache(context)
 	PrecacheResource("model", "models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl", context)
 	
 	--Precache all Invoker cosmetics for use with Confuse.
-	PrecacheResource("model", "models/items/invoker", context)
+	PrecacheResource("model", "models/items/invoker/*", context)
 end
 
 --------------------------------------------------------------------------------

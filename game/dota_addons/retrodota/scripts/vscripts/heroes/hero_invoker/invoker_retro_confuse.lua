@@ -134,10 +134,13 @@ function invoker_retro_confuse_on_spell_start(keys)
 			end
 		end
 		
-		--Give the illusion Confuse so it looks like it has something invoked.  There is no reason to give the ghost anything because it cannot be selected.
-		local illusion_current_invoked_spell = confuse_illusion:GetAbilityByIndex(3)  --This seems to be an empty slot.
-		confuse_illusion:RemoveAbility(illusion_current_invoked_spell:GetName())
+		--Give the illusion the caster's spell(s) so it looks like it has something invoked.  There is no reason to give the ghost anything because it cannot be selected.
+		local illusion_current_invoked_spell_d = confuse_illusion:GetAbilityByIndex(3)
+		confuse_illusion:RemoveAbility(illusion_current_invoked_spell_d:GetName())
 		confuse_illusion:AddAbility(keys.caster:GetAbilityByIndex(3):GetName())
+		local illusion_current_invoked_spell_f = confuse_illusion:GetAbilityByIndex(4)
+		confuse_illusion:RemoveAbility(illusion_current_invoked_spell_f:GetName())
+		confuse_illusion:AddAbility(keys.caster:GetAbilityByIndex(4):GetName())
 		
 		--Play some particle effects and sound.
 		ParticleManager:CreateParticle("particles/generic_gameplay/illusion_created.vpcf", PATTACH_ABSORIGIN_FOLLOW, confuse_illusion)

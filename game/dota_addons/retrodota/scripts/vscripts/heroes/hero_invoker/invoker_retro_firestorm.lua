@@ -107,7 +107,7 @@ end
 	Additional parameters: keys.FireballDuration, keys.FireballExplosionDamage, keys.FireballDamageAoE
 ================================================================================================================= ]]
 function modifier_invoker_retro_firestorm_fireball_duration_on_interval_think(keys)
-	local new_health = keys.target:GetHealth() - ((.03 / 7) * keys.target:GetMaxHealth())
+	local new_health = keys.target:GetHealth() - ((.03 / keys.FireballDuration) * keys.target:GetMaxHealth())
 	
 	if new_health <= 0 then  --Have the fireball explode.
 		--Play the explosion particle effect.

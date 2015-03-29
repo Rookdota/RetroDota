@@ -19,14 +19,13 @@ function invoker_retro_shock_on_spell_start(keys)
 		
 		--Display particle effects in the AoE and for each affected enemy.
 		local shock_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_ground.vpcf", PATTACH_ABSORIGIN, keys.caster)
-		ParticleManager:SetParticleControl(shock_particle_effect, 1, Vector(radius, 0, 0))
+		ParticleManager:SetParticleControl(shock_particle_effect, 1, Vector(radius, 0, 0))	
 
 		for i, individual_unit in ipairs(nearby_enemy_units) do
-			local unit_origin = individual_unit:GetAbsOrigin()
-			local shock_particle_effect_unit = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_lightning_bolt.vpcf", PATTACH_ABSORIGIN, individual_unit)
-			ParticleManager:SetParticleControl(shock_particle_effect_unit, 1, Vector(caster_origin.x, caster_origin.y, 350))
-			local shock_particle_effect_unit_2 = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_lightning_bolt.vpcf", PATTACH_ABSORIGIN, individual_unit)
-			ParticleManager:SetParticleControl(shock_particle_effect_unit_2, 1, Vector(unit_origin.x, unit_origin.y, 400))
+			local shock_particle_effect_unit = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_lightning_bolt.vpcf", PATTACH_ABSORIGIN_FOLLOW, individual_unit)
+			ParticleManager:SetParticleControlEnt(shock_particle_effect_unit, 1, keys.caster, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", caster_origin, false)
+			local shock_particle_effect_unit_2 = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_lightning_bolt.vpcf", PATTACH_ABSORIGIN_FOLLOW, individual_unit)
+			ParticleManager:SetParticleControlEnt(shock_particle_effect_unit_2, 1, individual_unit, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", individual_unit:GetAbsOrigin(), false)
 			
 			individual_unit:EmitSound("Hero_razor.lightning")
 		end

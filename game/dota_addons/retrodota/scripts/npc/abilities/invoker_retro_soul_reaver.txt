@@ -1,5 +1,5 @@
 // Invoker's Soul Reaver
-// Author:
+// Author: wFX
 // Date: February 15, 2015
 // Invoke: Exort Wex Quas
 // Blazes a target enemy unit, dealing up to 400 damage, based on Quas level. After 8 seconds, it takes another 280 damage. Increases the Invoker's movement speed for 8 seconds based on Wex level.
@@ -17,6 +17,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -123,6 +124,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -229,6 +231,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------

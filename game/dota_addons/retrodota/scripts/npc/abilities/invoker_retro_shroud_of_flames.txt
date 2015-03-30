@@ -19,6 +19,7 @@
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
     "AbilityCastAnimation"          "ACT_DOTA_CAST_ICE_WALL"
     "MaxLevel"                      "1"
+	"AbilityProcsMagicStick" 		"1"
     
     // Stats
     //-------------------------------------------------------------------------------------------------------------
@@ -143,6 +144,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -267,6 +269,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -391,6 +394,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -515,6 +519,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -639,6 +644,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -763,6 +769,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -887,6 +894,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1011,6 +1019,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1135,6 +1144,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1259,6 +1269,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1383,6 +1394,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1507,6 +1519,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1631,6 +1644,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1755,6 +1769,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1879,6 +1894,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2003,6 +2019,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2127,6 +2144,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2251,6 +2269,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2375,6 +2394,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2499,6 +2519,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2623,6 +2644,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2747,6 +2769,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2871,6 +2894,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2995,6 +3019,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------

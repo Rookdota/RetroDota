@@ -20,6 +20,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -122,6 +123,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -210,6 +212,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_2_exort"
 {
 	// General
@@ -224,6 +227,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -312,6 +316,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_3_exort"
 {
 	// General
@@ -326,6 +331,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -414,6 +420,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_4_exort"
 {
 	// General
@@ -428,6 +435,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -516,6 +524,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_5_exort"
 {
 	// General
@@ -530,6 +539,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -618,6 +628,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_6_exort"
 {
 	// General
@@ -632,6 +643,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -720,6 +732,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_7_exort"
 {
 	// General
@@ -734,6 +747,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -822,6 +836,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_8_exort"
 {
 	// General
@@ -836,6 +851,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -938,6 +954,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1026,6 +1043,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_2_exort_half_mana_cost"
 {
 	// General
@@ -1040,6 +1058,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1128,6 +1147,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_3_exort_half_mana_cost"
 {
 	// General
@@ -1142,6 +1162,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1230,6 +1251,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_4_exort_half_mana_cost"
 {
 	// General
@@ -1244,6 +1266,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1332,6 +1355,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_5_exort_half_mana_cost"
 {
 	// General
@@ -1346,6 +1370,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1434,6 +1459,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_6_exort_half_mana_cost"
 {
 	// General
@@ -1448,6 +1474,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1536,6 +1563,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_7_exort_half_mana_cost"
 {
 	// General
@@ -1550,6 +1578,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1638,6 +1667,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_8_exort_half_mana_cost"
 {
 	// General
@@ -1652,6 +1682,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1741,7 +1772,6 @@
 }
 
 
-
 "invoker_retro_disarm_level_1_exort_no_mana_cost"
 {
 	// General
@@ -1755,6 +1785,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1843,6 +1874,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_2_exort_no_mana_cost"
 {
 	// General
@@ -1857,6 +1889,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1945,6 +1978,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_3_exort_no_mana_cost"
 {
 	// General
@@ -1959,6 +1993,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2047,6 +2082,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_4_exort_no_mana_cost"
 {
 	// General
@@ -2061,6 +2097,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2149,6 +2186,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_5_exort_no_mana_cost"
 {
 	// General
@@ -2163,6 +2201,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2251,6 +2290,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_6_exort_no_mana_cost"
 {
 	// General
@@ -2265,6 +2305,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2353,6 +2394,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_7_exort_no_mana_cost"
 {
 	// General
@@ -2367,6 +2409,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -2455,6 +2498,7 @@
 	}
 }
 
+
 "invoker_retro_disarm_level_8_exort_no_mana_cost"
 {
 	// General
@@ -2469,6 +2513,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------

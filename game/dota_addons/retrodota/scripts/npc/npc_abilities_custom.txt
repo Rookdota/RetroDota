@@ -183,6 +183,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -260,6 +261,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityDamage"					"50 100 150 200"
 		"AbilityCastPoint"				"0.01"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -386,6 +388,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityDamage"					"50 100 150 200"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -438,7 +441,7 @@
 	// Date: March 16, 2015
 	// 5 6 7 8% of chance on auto attack to 
 	// Instantly kill a creep
-	// Deal 200 extra damage on buildings and on heros
+	// Deal 200 extra damage on buildings and on heroes
 	// Also always pillage gold with the formula
 	// (AttackDamage/TargetMaxHP) * PillageRatio * TargetBounty/2
 	
@@ -451,6 +454,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"gambler_retro_lucky_stars"
+		
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -595,6 +599,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -674,6 +679,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -753,6 +759,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -836,6 +843,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_CHAOS_METEOR"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1005,6 +1013,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_CHAOS_METEOR"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1174,6 +1183,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_CHAOS_METEOR"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1348,6 +1358,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1444,6 +1455,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1540,6 +1552,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1636,6 +1649,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1732,6 +1746,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1828,6 +1843,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1924,6 +1940,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2020,6 +2037,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2116,6 +2134,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2212,6 +2231,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2308,6 +2328,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2404,6 +2425,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2500,6 +2522,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2596,6 +2619,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2692,6 +2716,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2788,6 +2813,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2884,6 +2910,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2980,6 +3007,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3076,6 +3104,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3172,6 +3201,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3268,6 +3298,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3364,6 +3395,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3460,6 +3492,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3556,6 +3589,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3652,6 +3686,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3753,6 +3788,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3852,6 +3888,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3951,6 +3988,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4057,6 +4095,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4159,6 +4198,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4247,6 +4287,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_2_exort"
 	{
 		// General
@@ -4261,6 +4302,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4349,6 +4391,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_3_exort"
 	{
 		// General
@@ -4363,6 +4406,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4451,6 +4495,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_4_exort"
 	{
 		// General
@@ -4465,6 +4510,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4553,6 +4599,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_5_exort"
 	{
 		// General
@@ -4567,6 +4614,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4655,6 +4703,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_6_exort"
 	{
 		// General
@@ -4669,6 +4718,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4757,6 +4807,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_7_exort"
 	{
 		// General
@@ -4771,6 +4822,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4859,6 +4911,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_8_exort"
 	{
 		// General
@@ -4873,6 +4926,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4975,6 +5029,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5063,6 +5118,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_2_exort_half_mana_cost"
 	{
 		// General
@@ -5077,6 +5133,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5165,6 +5222,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_3_exort_half_mana_cost"
 	{
 		// General
@@ -5179,6 +5237,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5267,6 +5326,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_4_exort_half_mana_cost"
 	{
 		// General
@@ -5281,6 +5341,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5369,6 +5430,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_5_exort_half_mana_cost"
 	{
 		// General
@@ -5383,6 +5445,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5471,6 +5534,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_6_exort_half_mana_cost"
 	{
 		// General
@@ -5485,6 +5549,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5573,6 +5638,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_7_exort_half_mana_cost"
 	{
 		// General
@@ -5587,6 +5653,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5675,6 +5742,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_8_exort_half_mana_cost"
 	{
 		// General
@@ -5689,6 +5757,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5778,7 +5847,6 @@
 	}
 	
 	
-	
 	"invoker_retro_disarm_level_1_exort_no_mana_cost"
 	{
 		// General
@@ -5792,6 +5860,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5880,6 +5949,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_2_exort_no_mana_cost"
 	{
 		// General
@@ -5894,6 +5964,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -5982,6 +6053,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_3_exort_no_mana_cost"
 	{
 		// General
@@ -5996,6 +6068,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6084,6 +6157,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_4_exort_no_mana_cost"
 	{
 		// General
@@ -6098,6 +6172,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6186,6 +6261,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_5_exort_no_mana_cost"
 	{
 		// General
@@ -6200,6 +6276,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6288,6 +6365,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_6_exort_no_mana_cost"
 	{
 		// General
@@ -6302,6 +6380,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6390,6 +6469,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_7_exort_no_mana_cost"
 	{
 		// General
@@ -6404,6 +6484,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6492,6 +6573,7 @@
 		}
 	}
 	
+	
 	"invoker_retro_disarm_level_8_exort_no_mana_cost"
 	{
 		// General
@@ -6506,6 +6588,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6609,6 +6692,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6683,6 +6767,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6757,6 +6842,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6876,6 +6962,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6946,6 +7033,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7016,6 +7104,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7197,6 +7286,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7299,6 +7389,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7401,6 +7492,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7502,6 +7594,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7663,6 +7756,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7824,6 +7918,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8024,6 +8119,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8121,6 +8217,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8218,6 +8315,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8411,6 +8509,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8498,6 +8597,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8585,6 +8685,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8672,6 +8773,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8759,6 +8861,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8846,6 +8949,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8933,6 +9037,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9020,6 +9125,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9107,6 +9213,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9194,6 +9301,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9281,6 +9389,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9368,6 +9477,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9455,6 +9565,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9542,6 +9653,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9629,6 +9741,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9716,6 +9829,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9803,6 +9917,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9890,6 +10005,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -9977,6 +10093,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10064,6 +10181,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10151,6 +10269,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10238,6 +10357,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10325,6 +10445,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10412,6 +10533,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10499,6 +10621,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -10594,6 +10717,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10752,6 +10876,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10909,6 +11034,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -11066,6 +11192,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -11223,6 +11350,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -11380,6 +11508,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -11537,6 +11666,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -11694,6 +11824,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -11851,6 +11982,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12008,6 +12140,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12165,6 +12298,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12322,6 +12456,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12479,6 +12614,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12636,6 +12772,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12793,6 +12930,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -12950,6 +13088,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13107,6 +13246,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13264,6 +13404,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13421,6 +13562,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13578,6 +13720,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13735,6 +13878,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13892,6 +14036,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14049,6 +14194,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14206,6 +14352,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14363,6 +14510,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14528,6 +14676,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14644,6 +14793,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14760,6 +14910,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14876,6 +15027,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14992,6 +15144,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15108,6 +15261,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15224,6 +15378,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15340,6 +15495,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15456,6 +15612,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15572,6 +15729,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15688,6 +15846,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15804,6 +15963,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -15920,6 +16080,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16036,6 +16197,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16152,6 +16314,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16268,6 +16431,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16384,6 +16548,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16500,6 +16665,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16616,6 +16782,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16732,6 +16899,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16848,6 +17016,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -16964,6 +17133,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -17080,6 +17250,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -17196,6 +17367,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -17312,6 +17484,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -17705,6 +17878,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_GHOST_WALK"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -17804,6 +17978,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_GHOST_WALK"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -17903,6 +18078,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_GHOST_WALK"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -18009,106 +18185,12 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"150"
-		"AbilityCastRange"				"500"
-		
-		"precache"
-		{
-			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_lightning_shield.vpcf"
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"10 20 30 40 50 60 70 80"  //Increases with Wex.
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5 10 15 20 25 30 35 40"  //Increases with Wex.
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"170"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_interval"		".5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pip_current"			"1"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"heroes/hero_invoker/invoker_retro_lightning_shield.lua"
-				"Function"				"invoker_retro_lightning_shield_on_spell_start"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_invoker_retro_lightning_shield"
-			{
-				"Passive"  			"0"
-				"IsHidden" 			"0"
-				"IsBuff"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"1"
-				
-				"EffectName"            "particles/units/heroes/hero_invoker/invoker_retro_lightning_shield.vpcf"
-				"EffectAttachType"      "PATTACH_ABSORIGIN"
-				
-				"ThinkInterval" 	"%damage_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_invoker/invoker_retro_lightning_shield.lua"
-						"Function"				"modifier_invoker_retro_lightning_shield_on_interval_think"
-						"Radius"				"%range"
-						"DamageInterval"		"%damage_interval"
-					}
-				}
-			}
-		}
-	}
-	
-	
-	"invoker_retro_lightning_shield_no_mana_cost"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-		"AbilityTextureName" 			"invoker_retro_lightning_shield"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
-		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"0"
 		"AbilityCastRange"				"500"
 		
 		"precache"
@@ -18199,11 +18281,108 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"75"
+		"AbilityCastRange"				"500"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_invoker/invoker_retro_lightning_shield.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_second"		"10 20 30 40 50 60 70 80"  //Increases with Wex.
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5 10 15 20 25 30 35 40"  //Increases with Wex.
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"170"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		".5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pip_current"			"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_invoker/invoker_retro_lightning_shield.lua"
+				"Function"				"invoker_retro_lightning_shield_on_spell_start"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_invoker_retro_lightning_shield"
+			{
+				"Passive"  			"0"
+				"IsHidden" 			"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"1"
+				
+				"EffectName"            "particles/units/heroes/hero_invoker/invoker_retro_lightning_shield.vpcf"
+				"EffectAttachType"      "PATTACH_ABSORIGIN"
+				
+				"ThinkInterval" 	"%damage_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_invoker/invoker_retro_lightning_shield.lua"
+						"Function"				"modifier_invoker_retro_lightning_shield_on_interval_think"
+						"Radius"				"%range"
+						"DamageInterval"		"%damage_interval"
+					}
+				}
+			}
+		}
+	}
+	
+	
+	"invoker_retro_lightning_shield_no_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityTextureName" 			"invoker_retro_lightning_shield"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"0"
 		"AbilityCastRange"				"500"
 		
 		"precache"
@@ -18297,6 +18476,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -18352,6 +18532,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -18407,6 +18588,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -18470,6 +18652,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -18546,6 +18729,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -18622,6 +18806,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -18698,6 +18883,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -18774,6 +18960,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -18850,6 +19037,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -18926,6 +19114,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19002,6 +19191,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19078,6 +19268,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19154,6 +19345,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19230,6 +19422,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19306,6 +19499,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19382,6 +19576,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19458,6 +19653,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19534,6 +19730,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19610,6 +19807,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19686,6 +19884,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19762,6 +19961,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19838,6 +20038,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19914,6 +20115,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -19990,6 +20192,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -20066,6 +20269,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -20142,6 +20346,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -20218,6 +20423,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -20294,6 +20500,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_SUN_STRIKE"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats	
 		//-------------------------------------------------------------------------------------------------------------
@@ -20373,6 +20580,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20496,6 +20704,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20619,6 +20828,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ALACRITY"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20888,6 +21098,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20957,6 +21168,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21026,6 +21238,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_FORGE_SPIRIT"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21098,6 +21311,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21161,6 +21375,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21224,6 +21439,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_EMP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21294,6 +21510,7 @@
 	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ICE_WALL"
 	    "MaxLevel"                      "1"
+		"AbilityProcsMagicStick" 		"1"
 	    
 	    // Stats
 	    //-------------------------------------------------------------------------------------------------------------
@@ -21418,6 +21635,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21542,6 +21760,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21666,6 +21885,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21790,6 +22010,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -21914,6 +22135,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22038,6 +22260,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22162,6 +22385,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22286,6 +22510,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22410,6 +22635,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22534,6 +22760,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22658,6 +22885,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22782,6 +23010,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -22906,6 +23135,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23030,6 +23260,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23154,6 +23385,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23278,6 +23510,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23402,6 +23635,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23526,6 +23760,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23650,6 +23885,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23774,6 +24010,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -23898,6 +24135,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24022,6 +24260,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24146,6 +24385,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24270,6 +24510,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24404,6 +24645,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24479,6 +24721,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24554,6 +24797,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24629,6 +24873,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24704,6 +24949,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24779,6 +25025,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24854,6 +25101,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -24929,6 +25177,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25004,6 +25253,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25079,6 +25329,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25154,6 +25405,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25229,6 +25481,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25304,6 +25557,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25379,6 +25633,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25454,6 +25709,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25529,6 +25785,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25604,6 +25861,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25679,6 +25937,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25754,6 +26013,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25829,6 +26089,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25904,6 +26165,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -25979,6 +26241,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26054,6 +26317,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26129,6 +26393,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26204,6 +26469,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_COLD_SNAP"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26264,7 +26530,7 @@
 		}
 	}
 	// Invoker's Soul Reaver
-	// Author:
+	// Author: wFX
 	// Date: February 15, 2015
 	// Invoke: Exort Wex Quas
 	// Blazes a target enemy unit, dealing up to 400 damage, based on Quas level. After 8 seconds, it takes another 280 damage. Increases the Invoker's movement speed for 8 seconds based on Wex level.
@@ -26282,6 +26548,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26388,6 +26655,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26494,6 +26762,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26606,6 +26875,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26676,6 +26946,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26746,6 +27017,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26816,6 +27088,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26886,6 +27159,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26956,6 +27230,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27026,6 +27301,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27097,6 +27373,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27167,6 +27444,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27237,6 +27515,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27307,6 +27586,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27377,6 +27657,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27447,6 +27728,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27517,6 +27799,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27587,6 +27870,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27658,6 +27942,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27728,6 +28013,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27798,6 +28084,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27868,6 +28155,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -27938,6 +28226,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28008,6 +28297,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28077,6 +28367,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28147,6 +28438,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28218,6 +28510,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28288,6 +28581,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28367,6 +28661,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28459,6 +28754,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28551,6 +28847,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28643,6 +28940,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28735,6 +29033,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28827,6 +29126,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -28919,6 +29219,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29011,6 +29312,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29103,6 +29405,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29195,6 +29498,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29287,6 +29591,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29379,6 +29684,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29471,6 +29777,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29563,6 +29870,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29655,6 +29963,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29747,6 +30056,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29839,6 +30149,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29931,6 +30242,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30023,6 +30335,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30115,6 +30428,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30207,6 +30521,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30299,6 +30614,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30391,6 +30707,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30483,6 +30800,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30575,6 +30893,7 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_TORNADO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------

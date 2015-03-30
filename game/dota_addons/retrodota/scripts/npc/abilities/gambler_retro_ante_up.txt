@@ -22,6 +22,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityDamage"					"50 100 150 200"
 	"AbilityCastPoint"				"0.01"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------

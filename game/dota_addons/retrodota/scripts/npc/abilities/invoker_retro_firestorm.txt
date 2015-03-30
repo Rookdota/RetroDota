@@ -15,6 +15,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -176,6 +177,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -337,6 +339,7 @@
 	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ICE_WALL"
 	"FightRecapLevel"				"1"
 	"MaxLevel"						"1"
+	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------

@@ -22,7 +22,7 @@ function modifier_invoker_retro_invisibility_aura_on_interval_think(keys)
 		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
 
 		for i, individual_unit in ipairs(nearby_ally_units) do
-			if keys.caster ~= individual_unit then  --Invisibility Aura does not make Invoker invisible.
+			if keys.caster ~= individual_unit and not string.find(individual_unit:GetName(), "tower_radiant") then  --Invisibility Aura does not make Invoker nor the Radiant towers invisible.
 				local current_gametime = GameRules:GetGameTime()
 				if individual_unit.invisibility_aura_most_recent_gametime_in_aura == nil then  --Initialize the most recent time the unit was in an Invis Aura, if necessary.
 					individual_unit.invisibility_aura_most_recent_gametime_in_aura = 0

@@ -82,7 +82,7 @@ function GiveTeamTowerGold( event )
 	end
 end
 
--- Keeps an index to the tree of line in the units handle
+-- Keeps an index to the tree of life in the units handle
 function FindTreeOfLife( event )
 	local caster = event.caster
 	local tree = Entities:FindByModel(nil, "models/props_tree/tree_cine_01_10k.vmdl")

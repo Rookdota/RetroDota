@@ -3,7 +3,7 @@
 // Date: March 16, 2015
 // 5 6 7 8% of chance on auto attack to 
 // Instantly kill a creep
-// Deal 200 extra damage on buildings and on heros
+// Deal 200 extra damage on buildings and on heroes
 // Also always pillage gold with the formula
 // (AttackDamage/TargetMaxHP) * PillageRatio * TargetBounty/2
 
@@ -16,6 +16,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"gambler_retro_lucky_stars"
+	
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"

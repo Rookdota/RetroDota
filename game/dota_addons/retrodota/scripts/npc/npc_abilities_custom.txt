@@ -7693,6 +7693,7 @@
 				"FireballVisionRadius"			"%fireball_vision_radius"
 				"FireballDamageAoE"				"%fireball_damage_aoe"
 				"FireballLandingDamage"			"%fireball_landing_damage"
+				"FireballDuration"				"%fireball_duration"
 			}
 		}
 		
@@ -7718,14 +7719,29 @@
 						"FireballExplosionDamage"		"%fireball_explosion_damage"
 					}
 				}
-			}
-			"modifier_invoker_retro_firestorm_fireball_damage_over_time"
+			}		
+			//This aura emitter is placed on landed fireballs to make it so the DoTs from multiple fireballs do not stack.
+			"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_emitter"
 			{
-				"Passive"  			"0"
-				"IsHidden" 			"1"
+				"Passive"			"0"
+				"IsHidden"			"1"
 				"IsBuff"			"0"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
+				"Aura" 				"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"
+				"Aura_Radius" 		"%fireball_damage_aoe"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+			}
+			"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_firestorm"
 				
 				"ThinkInterval" 	"%fireball_aoe_damage_interval"
 				"OnIntervalThink"
@@ -7733,8 +7749,7 @@
 					"RunScript"
 					{
 						"ScriptFile"					"heroes/hero_invoker/invoker_retro_firestorm.lua"
-						"Function"						"modifier_invoker_retro_firestorm_fireball_damage_over_time_on_interval_think"
-						"FireballDamageAoE"				"%fireball_damage_aoe"
+						"Function"						"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_on_interval_think"
 						"FireballAoEDamageInterval"		"%fireball_aoe_damage_interval"
 						"FireballAoEDamagePerSecond"	"%fireball_aoe_damage_per_second"
 					}
@@ -7855,6 +7870,7 @@
 				"FireballVisionRadius"			"%fireball_vision_radius"
 				"FireballDamageAoE"				"%fireball_damage_aoe"
 				"FireballLandingDamage"			"%fireball_landing_damage"
+				"FireballDuration"				"%fireball_duration"
 			}
 		}
 		
@@ -7880,14 +7896,29 @@
 						"FireballExplosionDamage"		"%fireball_explosion_damage"
 					}
 				}
-			}
-			"modifier_invoker_retro_firestorm_fireball_damage_over_time"
+			}		
+			//This aura emitter is placed on landed fireballs to make it so the DoTs from multiple fireballs do not stack.
+			"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_emitter"
 			{
-				"Passive"  			"0"
-				"IsHidden" 			"1"
+				"Passive"			"0"
+				"IsHidden"			"1"
 				"IsBuff"			"0"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
+				"Aura" 				"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"
+				"Aura_Radius" 		"%fireball_damage_aoe"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+			}
+			"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_firestorm"
 				
 				"ThinkInterval" 	"%fireball_aoe_damage_interval"
 				"OnIntervalThink"
@@ -7895,8 +7926,7 @@
 					"RunScript"
 					{
 						"ScriptFile"					"heroes/hero_invoker/invoker_retro_firestorm.lua"
-						"Function"						"modifier_invoker_retro_firestorm_fireball_damage_over_time_on_interval_think"
-						"FireballDamageAoE"				"%fireball_damage_aoe"
+						"Function"						"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_on_interval_think"
 						"FireballAoEDamageInterval"		"%fireball_aoe_damage_interval"
 						"FireballAoEDamagePerSecond"	"%fireball_aoe_damage_per_second"
 					}
@@ -8017,6 +8047,7 @@
 				"FireballVisionRadius"			"%fireball_vision_radius"
 				"FireballDamageAoE"				"%fireball_damage_aoe"
 				"FireballLandingDamage"			"%fireball_landing_damage"
+				"FireballDuration"				"%fireball_duration"
 			}
 		}
 		
@@ -8042,14 +8073,29 @@
 						"FireballExplosionDamage"		"%fireball_explosion_damage"
 					}
 				}
-			}
-			"modifier_invoker_retro_firestorm_fireball_damage_over_time"
+			}		
+			//This aura emitter is placed on landed fireballs to make it so the DoTs from multiple fireballs do not stack.
+			"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_emitter"
 			{
-				"Passive"  			"0"
-				"IsHidden" 			"1"
+				"Passive"			"0"
+				"IsHidden"			"1"
 				"IsBuff"			"0"
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
+				"Aura" 				"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"
+				"Aura_Radius" 		"%fireball_damage_aoe"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+			}
+			"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_firestorm"
 				
 				"ThinkInterval" 	"%fireball_aoe_damage_interval"
 				"OnIntervalThink"
@@ -8057,8 +8103,7 @@
 					"RunScript"
 					{
 						"ScriptFile"					"heroes/hero_invoker/invoker_retro_firestorm.lua"
-						"Function"						"modifier_invoker_retro_firestorm_fireball_damage_over_time_on_interval_think"
-						"FireballDamageAoE"				"%fireball_damage_aoe"
+						"Function"						"modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_on_interval_think"
 						"FireballAoEDamageInterval"		"%fireball_aoe_damage_interval"
 						"FireballAoEDamagePerSecond"	"%fireball_aoe_damage_per_second"
 					}

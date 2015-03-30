@@ -3,7 +3,7 @@
 	Date: March 6, 2015
 	Called when Firestorm is cast.
 	Additional parameters: keys.FireballCastRadius, keys.FireballLandDelay, keys.FireballDelayBetweenSpawns,
-		keys.FireballVisionRadius, keys.FireballDamageAoE, keys.FireballLandingDamage
+		keys.FireballVisionRadius, keys.FireballDamageAoE, keys.FireballLandingDamage, keys.FireballDuration
 ================================================================================================================= ]]
 function invoker_retro_firestorm_on_spell_start(keys)
 	local caster_point = keys.caster:GetAbsOrigin()
@@ -75,9 +75,9 @@ function invoker_retro_firestorm_on_spell_start(keys)
 					fireball_unit:EmitSound("Hero_EarthSpirit.RollingBoulder.Target")
 					fireball_unit:EmitSound("Hero_Phoenix.FireSpirits.Cast")
 					
-					local firestorm_ability = fireball_unit:FindAbilityByName("invoker_retro_firestorm") 
+					local firestorm_ability = fireball_unit:FindAbilityByName("invoker_retro_firestorm")
 					firestorm_ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_duration", nil)
-					firestorm_ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_damage_over_time", nil)					
+					firestorm_ability:ApplyDataDrivenModifier(keys.caster, fireball_unit, "modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_emitter", nil)					
 					
 					--Damage nearby enemy units with fireball landing damage.
 					local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), fireball_landing_point, nil, keys.FireballDamageAoE, DOTA_UNIT_TARGET_TEAM_ENEMY,
@@ -148,12 +148,6 @@ end
 	Called regularly on fireballs that are lying around.  Damages nearby enemy units.
 	Additional parameters: keys.FireballDamageAoE, keys.FireballAoEDamageInterval, keys.FireballAoEDamagePerSecond
 ================================================================================================================= ]]
-function modifier_invoker_retro_firestorm_fireball_damage_over_time_on_interval_think(keys)
-	--Damage nearby enemy units with fireball explosion damage.
-	local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), keys.target:GetAbsOrigin(), nil, keys.FireballDamageAoE, DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	
-	for i, individual_unit in ipairs(nearby_enemy_units) do
-		ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.FireballAoEDamagePerSecond * keys.FireballAoEDamageInterval, damage_type = DAMAGE_TYPE_MAGICAL,})
-	end
+function modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_on_interval_think(keys)
+	ApplyDamage({victim = keys.target, attacker = keys.caster, damage = keys.FireballAoEDamagePerSecond * keys.FireballAoEDamageInterval, damage_type = DAMAGE_TYPE_MAGICAL,})
 end

@@ -12,7 +12,7 @@
 		
 		"DOTA_Chat_NoBattlePoints_WrongLobby"		""		//"Battle Points will not be awarded for this match because it is a practice lobby."
 		"Dota_shared_content_available"				""		//"Players are sharing items in the Shared Content tab."
-
+		
 		
 		// ******************** HEROES ***********************
 		"npc_dota_hero_invoker"    	  "Arsenal Magus"
@@ -447,6 +447,9 @@
 		"DOTA_Tooltip_Ability_invoker_retro_firestorm_no_mana_cost"                                    "Firestorm"
 		"DOTA_Tooltip_Ability_invoker_retro_firestorm_no_mana_cost_Description"                        "Invoke: <font color=\"#FF6600\">Exort</font> <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font>.\n\nInvoker calls a number of fireballs from the sky to successively and randomly land in the targeted area.  The effects of each fireball have a radius of %fireball_damage_aoe% units.  Upon landing, a fireball will deal %fireball_landing_damage% damage to all nearby enemy units, after which it will deal %fireball_aoe_damage_per_second% damage per second to nearby enemy units while it remains in the ground.  %fireball_duration% seconds after landing, it will explode, dealing %fireball_explosion_damage% damage to nearby enemy units.  The number of fireballs summoned increases per level of Exort."
 		"DOTA_Tooltip_Ability_invoker_retro_firestorm_no_mana_cost_num_fireballs" 					  "NUMBER OF FIREBALLS (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_firestorm_fireball_damage_over_time_aura"                "Firestorm"
+		"DOTA_Tooltip_modifier_invoker_retro_firestorm_fireball_damage_over_time_aura_Description"    "Taking periodic damage from a nearby fireball."
 
 		
 		
@@ -1700,7 +1703,17 @@
 		"Welcome"							"Welcome"	
 		"to"								"to"
 		"Version"							"1.0.0"
-		"Description"						"Long ago, Invoker mastered no fewer than 27 spells.\nCan you master them as well?\n\nVote on the settings you would like to\nplay with using the central panel.\n\nWhen hosting, choose from a brand new\narena or the standard Dota map.\n\nNew in this version:\nInitial release, with 27-spell Invoker and a new map.\n\nComing soon: Gambler!\nCreated by Rook, Noya, and wFX."
+		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?"
+		"Instructions"						"Vote on the settings you would like to play\n with using the central panel.\n\nWhen hosting, choose from a brand new arena\nor the standard Dota map."
+		"New"								"New in this version:"
+		"Changes"							"Initial release, with 27-spell Invoker and a new map!"
+		"Soon"								"Coming soon: "
+		"SoonText"							"Gambler!" //FF9933
+		"Authors"							"Created by "
+		"Author1"							"Rook" //0099CC
+		"Author2"							"Noya" //CC0099
+		"Author3"							"wFX" //FF6600
+
 	}
 }
  

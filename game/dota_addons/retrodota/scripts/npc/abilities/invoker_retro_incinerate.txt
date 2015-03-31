@@ -27,7 +27,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -52,20 +52,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -186,7 +191,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -211,20 +216,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -344,7 +354,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"100"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -369,20 +379,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -502,7 +517,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"150"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -527,20 +542,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -660,7 +680,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"200"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -685,20 +705,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -818,7 +843,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"250"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -843,20 +868,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -976,7 +1006,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"300"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1001,20 +1031,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1134,7 +1169,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"350"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1159,20 +1194,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1292,7 +1332,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
 	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"400"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1317,20 +1357,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1450,7 +1495,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1475,20 +1520,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1608,7 +1658,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"100"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1633,20 +1683,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1766,7 +1821,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"150"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1791,20 +1846,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1924,7 +1984,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"200"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1949,20 +2009,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2082,7 +2147,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"250"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2107,20 +2172,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2240,7 +2310,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"300"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2265,20 +2335,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2398,7 +2473,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"350"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2423,20 +2498,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2556,7 +2636,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
 	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"400"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2581,20 +2661,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2714,7 +2799,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2739,20 +2824,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2872,7 +2962,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"100"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2897,20 +2987,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3030,7 +3125,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"150"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3055,20 +3150,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3188,7 +3288,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"200"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3213,20 +3313,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3346,7 +3451,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"250"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3371,20 +3476,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3504,7 +3614,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"300"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3529,20 +3639,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3662,7 +3777,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"350"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3687,20 +3802,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3820,7 +3940,7 @@
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"400"  //Update wave_radius if this is.
+	"AoERadius"						"50"  //Update wave_initial_radius if this is.
 	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3845,20 +3965,25 @@
 		}
 		"03"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.  Update AoERadius if this is.
+			"var_type"							"FIELD_INTEGER"
+			"wave_initial_radius"				"50"
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"damage_per_wave"					"75"
+			"wave_radius_increase_per_wave"		"25"
 		}
 		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"damage_per_wave"					"50"
+		}
+		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
 		}
-		"06"
+		"07"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"

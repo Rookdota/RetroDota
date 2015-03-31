@@ -69,7 +69,8 @@ function modifier_invoker_retro_incinerate_channeling_on_created(keys)
 	--The number of waves, as well as the radius of each wave, is dependent on the level of Exort.
 	if keys.target.incinerate_exort_level ~= nil then
 		local num_waves = keys.ability:GetLevelSpecialValueFor("num_waves", keys.target.incinerate_exort_level - 1)
-		local wave_radius = keys.ability:GetLevelSpecialValueFor("wave_radius", keys.target.incinerate_exort_level - 1)
+		local wave_initial_radius = keys.ability:GetLevelSpecialValueFor("wave_initial_radius", keys.target.incinerate_exort_level - 1)
+		local wave_radius_increase_per_wave = keys.ability:GetLevelSpecialValueFor("wave_radius_increase_per_wave", keys.target.incinerate_exort_level - 1)
 
 		--Spawn the waves so long as the caster continues channeling, with a delay between them.
 		local waves_spawned_so_far = 0
@@ -77,20 +78,21 @@ function modifier_invoker_retro_incinerate_channeling_on_created(keys)
 			endTime = keys.DelayBetweenWaves,
 			callback = function()
 				if waves_spawned_so_far < num_waves and keys.caster.incinerate_current_dummy_unit == keys.target then
+					local current_wave_radius = wave_initial_radius + (waves_spawned_so_far * wave_radius_increase_per_wave)
 					local incinerate_wave_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf", PATTACH_ABSORIGIN, keys.target)
-					ParticleManager:SetParticleControl(incinerate_wave_particle_effect, 1, Vector(wave_radius, 0, 0))
+					ParticleManager:SetParticleControl(incinerate_wave_particle_effect, 1, Vector(current_wave_radius, 0, 0))
 					
-					keys.target:SetDayTimeVisionRange(wave_radius)
-					keys.target:SetNightTimeVisionRange(wave_radius)
+					keys.target:SetDayTimeVisionRange(current_wave_radius)
+					keys.target:SetNightTimeVisionRange(current_wave_radius)
 					
 					keys.target:EmitSound("Hero_Invoker.ForgeSpirit")
 					
 					--Damage nearby enemy units.
-					local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), keys.target:GetAbsOrigin(), nil, wave_radius, DOTA_UNIT_TARGET_TEAM_ENEMY,
+					local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), keys.target:GetAbsOrigin(), nil, current_wave_radius, DOTA_UNIT_TARGET_TEAM_ENEMY,
 						DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 					
 					for i, individual_unit in ipairs(nearby_enemy_units) do
-						ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.DamagePerWave, damage_type = DAMAGE_TYPE_MAGICAL,})
+						ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.DamagePerWave * (waves_spawned_so_far + 1), damage_type = DAMAGE_TYPE_MAGICAL,})
 					end
 					
 					waves_spawned_so_far = waves_spawned_so_far + 1

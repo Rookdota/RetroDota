@@ -50,16 +50,16 @@
 			this.killsToWinBox = replaceWithValveComponent(killsToWin, "ComboBoxSkinned");
 	
 			var a:Array = new Array();
-			a.push({"label":"Ancient", "data":"1"});
-			a.push({"label":"2 kills", "data":"2"});
-			a.push({"label":"5 kills", "data":"3"});
-			a.push({"label":"10 kills", "data":"4"});
-			a.push({"label":"25 kills", "data":"5"});
-			a.push({"label":"50 kills", "data":"6"});
-			a.push({"label":"100 kills", "data":"7"});
+			a.push({"label":"2 kills", "data":"1"});
+			a.push({"label":"5 kills", "data":"2"});
+			a.push({"label":"10 kills", "data":"3"});
+			a.push({"label":"25 kills", "data":"4"});
+			a.push({"label":"50 kills", "data":"5"});
+			a.push({"label":"100 kills", "data":"6"});
+			a.push({"label":"Ancient", "data":"7"});
 			var dataProvider1 = new DataProvider(a);
 			this.killsToWinBox.setDataProvider(dataProvider1);
-			this.killsToWinBox.setSelectedIndex(0);
+			this.killsToWinBox.setSelectedIndex(6);
 			this.killsToWinBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onKillsToWinChanged );
 						
 			this.levelBox = replaceWithValveComponent(startingLevel, "ComboBoxSkinned");
@@ -71,13 +71,13 @@
 			array_level.push({"label":"Level 25", "data":"5"});
 			var dataProvider6 = new DataProvider(array_level);
 			this.levelBox.setDataProvider(dataProvider6);
-			this.levelBox.setSelectedIndex(0);
+			this.levelBox.setSelectedIndex(1);
 			this.levelBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onStartingLevelChanged );
 			
 			// Gold Combobox
 			this.goldBox = replaceWithValveComponent(startingGold, "ComboBoxSkinned");
 			var array_gold:Array = new Array();
-			array_gold.push({"label":"Default (625)", "data":"1"});
+			array_gold.push({"label":"625 (standard)", "data":"1"});
 			array_gold.push({"label":"1.5k", "data":"2"});
 			array_gold.push({"label":"5k", "data":"3"});
 			array_gold.push({"label":"10k", "data":"4"});
@@ -97,7 +97,7 @@
 			array_cd.push({"label":"0 seconds", "data":"4"});
 			var dataProvider3 = new DataProvider(array_cd);
 			this.invokeCDBox.setDataProvider(dataProvider3);
-			this.invokeCDBox.setSelectedIndex(0);
+			this.invokeCDBox.setSelectedIndex(1);
 			this.invokeCDBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onInvokeCDChanged );
 			
 			// 2nd Invoke slot: DotaCheckBoxDota
@@ -107,7 +107,7 @@
 			array_yn.push({"label":"2 slots", "data":"2"});
 			var dataProvider7 = new DataProvider(array_yn);
 			this.secondInvokeBox.setDataProvider(dataProvider7);
-			this.secondInvokeBox.setSelectedIndex(0);
+			this.secondInvokeBox.setSelectedIndex(1);
 			this.secondInvokeBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, secondInvoke_click );
 			
 			// Mana Cost: 100/50/0 ComboBoxSkinned
@@ -118,7 +118,7 @@
 			array_mana.push({"label":"0% (no mana cost)", "data":"3"});
 			var dataProvider4 = new DataProvider(array_mana);
 			this.manaCostBox.setDataProvider(dataProvider4);
-			this.manaCostBox.setSelectedIndex(0);
+			this.manaCostBox.setSelectedIndex(1);
 			this.manaCostBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onManaCostChanged );
 			
 			// -wtf: DotaCheckBoxDota
@@ -138,7 +138,7 @@
 			array_fast.push({"label":"Yes", "data":"1"});
 			var dataProvider9 = new DataProvider(array_fast);
 			this.fastRespawnBox.setDataProvider(dataProvider9);
-			this.fastRespawnBox.setSelectedIndex(0);
+			this.fastRespawnBox.setSelectedIndex(1);
 			this.fastRespawnBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, fast_click );
 			
 			// Gold Multiplier Slider

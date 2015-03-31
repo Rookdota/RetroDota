@@ -92,14 +92,14 @@ function RetroDota:InitGameMode()
 	GameRules.vote_options = LoadKeyValues("scripts/npc/kv/vote_options.txt")
 	
 	--Initialize the voting options with their default settings.
-	GameRules.win_condition = GameRules.vote_options.kills_to_win["1"]
-	GameRules.starting_level = GameRules.vote_options.starting_level["1"]
+	GameRules.win_condition = GameRules.vote_options.kills_to_win["7"]
+	GameRules.starting_level = GameRules.vote_options.starting_level["2"]
 	GameRules.starting_gold = GameRules.vote_options.starting_gold["1"]
-	GameRules.invoke_cd = GameRules.vote_options.invoke_cd["1"]
-	GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["1"]
-	GameRules.invoke_slots = "1"
+	GameRules.invoke_cd = GameRules.vote_options.invoke_cd["2"]
+	GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["2"]
+	GameRules.invoke_slots = "2"
 	GameRules.wtf = "0"
-	GameRules.fast_respawn = "0"
+	GameRules.fast_respawn = "1"
 	GameRules.gold_multiplier = "1"
 	GameRules.xp_multiplier = "1"
 	
@@ -484,7 +484,7 @@ function RetroDota:IgnoreVote(player)
 
 	GameRules.players_skipped_vote = GameRules.players_skipped_vote + 1
 	local vote_count = GameRules.players_voted + GameRules.players_skipped_vote
-	GameRules:SendCustomMessage("<font color='#2EFE2E'>("..vote_count.."/"..GameRules.player_count.." votes)</font>", 0, 0)
+	GameRules:SendCustomMessage("<font color='#2EFE2E'>("..vote_count.."/"..GameRules.player_count.." players have voted so far.)</font>", 0, 0)
 
 	if (GameRules.players_voted + GameRules.players_skipped_vote == GameRules.player_count ) then
     	RetroDota:OnEveryoneVoted()
@@ -639,7 +639,7 @@ function RetroDota:OnEveryoneVoted()
 
 	-- Results from voting
 
-	if GameRules.win_condition ~= "0" and GameRules.win_condition ~= 0 then  --If the win condition is kills.
+	if GameRules.win_condition ~= "7" and GameRules.win_condition ~= 7 then  --If the win condition is kills.
 		--print(GameRules.win_condition)
 		END_GAME_ON_KILLS = true
 		FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})

@@ -86,14 +86,24 @@ function invoker_retro_chaos_meteor_on_spell_start(keys)
 			keys.ability:ApplyDataDrivenModifier(keys.caster, chaos_meteor_dummy_unit, "modifier_invoker_retro_chaos_meteor_main_damage", nil)
 			
 			--Adjust the dummy unit's position every frame.
-			for i=.03, chaos_meteor_duration, .03 do
-				Timers:CreateTimer({
-					endTime = i,
-					callback = function()
-						chaos_meteor_dummy_unit:SetAbsOrigin(chaos_meteor_dummy_unit:GetAbsOrigin() + chaos_meteor_velocity_per_frame)
+			local endTime = GameRules:GetGameTime() + chaos_meteor_duration
+			Timers:CreateTimer({
+				callback = function()
+					chaos_meteor_dummy_unit:SetAbsOrigin(chaos_meteor_dummy_unit:GetAbsOrigin() + chaos_meteor_velocity_per_frame)
+					if GameRules:GetGameTime() > endTime then
+						--Have the dummy unit linger in the position the meteor ended up in, in order to provide vision.
+						Timers:CreateTimer({
+							endTime = keys.EndVisionDuration,
+							callback = function()
+								chaos_meteor_dummy_unit:Destroy()
+							end
+						})
+						return 
+					else 
+						return .03
 					end
-				})
-			end
+				end
+			})
 			
 			--Stop the sound, particle, and damage when the meteor disappears.
 			Timers:CreateTimer({
@@ -102,14 +112,6 @@ function invoker_retro_chaos_meteor_on_spell_start(keys)
 					chaos_meteor_dummy_unit:StopSound("Hero_Invoker.ChaosMeteor.Loop")
 					chaos_meteor_dummy_unit:StopSound("Hero_Invoker.ChaosMeteor.Destroy")
 					chaos_meteor_dummy_unit:RemoveModifierByName("modifier_invoker_retro_chaos_meteor_main_damage")
-				end
-			})
-			
-			--Have the dummy unit linger in the position the meteor ended up in, in order to provide vision.
-			Timers:CreateTimer({
-				endTime = chaos_meteor_duration + keys.EndVisionDuration,
-				callback = function()
-					chaos_meteor_dummy_unit:Destroy()
 				end
 			})
 		end

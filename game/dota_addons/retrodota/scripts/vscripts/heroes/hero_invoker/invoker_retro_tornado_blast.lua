@@ -65,28 +65,26 @@ function invoker_retro_tornado_blast_on_spell_start(keys)
 	tornado_blast_dummy_unit:SetNightTimeVisionRange(keys.ProjectileFlyingVision)
 	
 	--Adjust the dummy unit's position every frame to match that of the tornado particle effect.
-	for i=.03, tornado_blast_duration, .03 do
-		Timers:CreateTimer({
-			endTime = i,
-			callback = function()
-				tornado_blast_dummy_unit:SetAbsOrigin(tornado_blast_dummy_unit:GetAbsOrigin() + tornado_blast_velocity_per_frame)
+	local endTime = GameRules:GetGameTime() + tornado_blast_duration
+	Timers:CreateTimer({
+		endTime = .03,
+		callback = function()
+			tornado_blast_dummy_unit:SetAbsOrigin(tornado_blast_dummy_unit:GetAbsOrigin() + tornado_blast_velocity_per_frame)
+			if GameRules:GetGameTime() > endTime then
+				tornado_blast_dummy_unit:StopSound("Hero_Invoker.Tornado")
+				
+				--Have the dummy unit linger in the position the tornado ended up in, in order to provide vision.
+				Timers:CreateTimer({
+					endTime = keys.ProjectileFlyingVisionMaxRangeDuration,
+					callback = function()
+						tornado_blast_dummy_unit:Destroy()
+					end
+				})
+				
+				return 
+			else 
+				return .03
 			end
-		})
-	end
-	
-	--Stop the sound when the tornado disappears.
-	Timers:CreateTimer({
-		endTime = tornado_blast_duration,
-		callback = function()
-			tornado_blast_dummy_unit:StopSound("Hero_Invoker.Tornado")
-		end
-	})
-	
-	--Have the dummy unit linger in the position the tornado ended up in, in order to provide vision.
-	Timers:CreateTimer({
-		endTime = tornado_blast_duration + keys.ProjectileFlyingVisionMaxRangeDuration,
-		callback = function()
-			tornado_blast_dummy_unit:Destroy()
 		end
 	})
 end

@@ -10,7 +10,6 @@ function invoker_retro_emp_on_spell_start(keys)
 	--Calculate where and when the EMP should end up.
 	local caster_forward_vector = keys.caster:GetForwardVector()
 	local emp_time_to_final_position = keys.DistanceToMove / keys.ProjectileSpeedPerSecond
-	local emp_total_duration = emp_time_to_final_position + keys.DelayBeforeExploding
 	local emp_velocity_per_frame = keys.caster:GetForwardVector() * (keys.ProjectileSpeedPerSecond * .03)
 	
 	--The amount of mana to burn depends on both Wex and Quas.
@@ -44,38 +43,40 @@ function invoker_retro_emp_on_spell_start(keys)
 		local emp_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_emp.vpcf", PATTACH_ABSORIGIN_FOLLOW, emp_dummy_unit)
 		
 		--Move the EMP dummy unit to its final position.
-		for i=.03, emp_time_to_final_position, .03 do
-			Timers:CreateTimer({
-				endTime = i,
-				callback = function()
-					emp_dummy_unit:SetAbsOrigin(emp_dummy_unit:GetAbsOrigin() + emp_velocity_per_frame)
-				end
-			})
-		end
-		
-		--Explode the EMP after it is in its final position and the delay has passed.
+		local endTime = GameRules:GetGameTime() + emp_time_to_final_position
 		Timers:CreateTimer({
-			endTime = emp_total_duration,
 			callback = function()
-				ParticleManager:DestroyParticle(emp_effect, false)
-				local emp_explosion_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_emp_explode.vpcf",  PATTACH_ABSORIGIN, emp_dummy_unit)
-				
-				emp_dummy_unit:EmitSound("Hero_Invoker.EMP.Discharge")
-				
-				local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), emp_dummy_unit:GetAbsOrigin(), nil, keys.Radius, DOTA_UNIT_TARGET_TEAM_ENEMY,
-				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MANA_ONLY, FIND_ANY_ORDER, false)
+				emp_dummy_unit:SetAbsOrigin(emp_dummy_unit:GetAbsOrigin() + emp_velocity_per_frame)
+				if GameRules:GetGameTime() > endTime then
+					--Explode the EMP after it is in its final position and the delay has passed.
+					Timers:CreateTimer({
+						endTime = keys.DelayBeforeExploding,
+						callback = function()
+							ParticleManager:DestroyParticle(emp_effect, false)
+							local emp_explosion_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_emp_explode.vpcf",  PATTACH_ABSORIGIN, emp_dummy_unit)
+							
+							emp_dummy_unit:EmitSound("Hero_Invoker.EMP.Discharge")
+							
+							local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), emp_dummy_unit:GetAbsOrigin(), nil, keys.Radius, DOTA_UNIT_TARGET_TEAM_ENEMY,
+							DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MANA_ONLY, FIND_ANY_ORDER, false)
 
-				for i, individual_unit in ipairs(nearby_enemy_units) do
-					individual_unit:ReduceMana(mana_to_burn)
+							for i, individual_unit in ipairs(nearby_enemy_units) do
+								individual_unit:ReduceMana(mana_to_burn)
+							end
+							
+							--Remove the dummy unit once the sound has stopped.
+							Timers:CreateTimer({
+								endTime = 4,
+								callback = function()
+									emp_dummy_unit:Destroy()  --Note that this does cause a small dust cloud to appear in the dummy unit's location.
+								end
+							})
+						end
+					})
+					return 
+				else 
+					return .03
 				end
-				
-				--Remove the dummy unit once the sound has stopped.
-				Timers:CreateTimer({
-					endTime = 4,
-					callback = function()
-						emp_dummy_unit:Destroy()  --Note that this does cause a small dust cloud to appear in the dummy unit's location.
-					end
-				})
 			end
 		})
 	end

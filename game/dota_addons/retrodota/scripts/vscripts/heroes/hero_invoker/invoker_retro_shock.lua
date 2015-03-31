@@ -19,7 +19,7 @@ function invoker_retro_shock_on_spell_start(keys)
 		
 		--Display particle effects in the AoE and for each affected enemy.
 		local shock_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_ground.vpcf", PATTACH_ABSORIGIN, keys.caster)
-		ParticleManager:SetParticleControl(shock_particle_effect, 1, Vector(radius, 0, 0))	
+		ParticleManager:SetParticleControl(shock_particle_effect, 1, Vector(radius, 0, 0))
 
 		for i, individual_unit in ipairs(nearby_enemy_units) do
 			local shock_particle_effect_unit = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_shock_lightning_bolt.vpcf", PATTACH_ABSORIGIN_FOLLOW, individual_unit)

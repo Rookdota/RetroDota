@@ -4,7 +4,6 @@
 	Called when Telelightning's cast point finishes.  Moves Invoker to the target and damages them.
 ================================================================================================================= ]]
 function invoker_retro_telelightning_on_spell_start(event)
-
 	local caster = event.caster
 	local ability = event.ability
 	local wex_ability = caster:FindAbilityByName("invoker_retro_wex")
@@ -28,7 +27,6 @@ function invoker_retro_telelightning_on_spell_start(event)
 		damage_type = ability:GetAbilityDamageType()
 	}
 	ApplyDamage(damageTable)
-
 end
 
 

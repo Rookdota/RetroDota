@@ -39,6 +39,11 @@ function invoker_retro_inferno_on_spell_start(keys)
 				dummy_unit_ability:SetLevel(1)
 			end
 			
+			local ability_name = keys.ability:GetName()
+			inferno_dummy_unit:AddAbility(ability_name)
+			dummy_unit_inferno_ability = inferno_dummy_unit:FindAbilityByName(ability_name)
+			dummy_unit_inferno_ability:SetLevel(keys.ability:GetLevel())
+			
 			inferno_dummy_unit:EmitSound("Hero_Invoker.SunStrike.Charge")
 			
 			--Store the DPS that the inferno should deal.
@@ -47,12 +52,12 @@ function invoker_retro_inferno_on_spell_start(keys)
 			--Display the pre-explosion particle effect at the dummy unit's point.
 			local inferno_pre_explosion_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_inferno_pre_explosion.vpcf", PATTACH_ABSORIGIN, inferno_dummy_unit)
 			
-			keys.ability:ApplyDataDrivenModifier(keys.caster, inferno_dummy_unit, "modifier_invoker_retro_inferno_damage_over_time", nil)
-			
 			--Explode the inferno after a delay.
 			Timers:CreateTimer({
 				endTime = keys.InfernoExplosionDelay,
 				callback = function()
+					dummy_unit_inferno_ability:ApplyDataDrivenModifier(keys.caster, inferno_dummy_unit, "modifier_invoker_retro_inferno_damage_over_time", nil)
+					
 					--Destroy the pre-explosion particle effect, and play the explosion particle effect.
 					ParticleManager:DestroyParticle(inferno_pre_explosion_particle_effect, false)
 					local inferno_explosion_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_inferno.vpcf", PATTACH_ABSORIGIN, inferno_dummy_unit)

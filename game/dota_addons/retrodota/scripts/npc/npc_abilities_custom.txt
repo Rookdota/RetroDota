@@ -14810,6 +14810,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -14821,6 +14827,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -14927,6 +14942,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -14938,6 +14959,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15044,6 +15074,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15055,6 +15091,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15161,6 +15206,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15172,6 +15223,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15278,6 +15338,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15289,6 +15355,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15395,6 +15470,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15406,6 +15487,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15512,6 +15602,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15523,6 +15619,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15629,6 +15734,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15640,6 +15751,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15746,6 +15866,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15757,6 +15883,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15863,6 +15998,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15874,6 +16015,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -15980,6 +16130,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -15991,6 +16147,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16097,6 +16262,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16108,6 +16279,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16214,6 +16394,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16225,6 +16411,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16331,6 +16526,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16342,6 +16543,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16448,6 +16658,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16459,6 +16675,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16565,6 +16790,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16576,6 +16807,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16682,6 +16922,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16693,6 +16939,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16799,6 +17054,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16810,6 +17071,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -16916,6 +17186,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -16927,6 +17203,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -17033,6 +17318,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -17044,6 +17335,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -17150,6 +17450,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -17161,6 +17467,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -17267,6 +17582,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -17278,6 +17599,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -17384,6 +17714,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -17395,6 +17731,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -17501,6 +17846,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -17512,6 +17863,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}
@@ -17618,6 +17978,12 @@
 				"IsDebuff"			"0"
 				"IsPurgable"		"0"
 				
+				"Aura" 				"modifier_invoker_retro_inferno_damage_over_time_aura"
+				"Aura_Radius" 		"%inferno_radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				
 				"ThinkInterval" 	"%inferno_damage_interval"
 				"OnIntervalThink"
 				{
@@ -17629,6 +17995,15 @@
 						"InfernoDamageInterval"			"%inferno_damage_interval"
 					}
 				}
+			}
+			"modifier_invoker_retro_inferno_damage_over_time_aura"   //This is simply used to display an icon in the affected hero's modifier bar, informing them that they are taking periodic damage.
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"TextureName"		"invoker_retro_inferno"
 			}
 		}
 	}

@@ -662,7 +662,7 @@ function RetroDota:OnEveryoneVoted()
 			})
 		end
 	else  --If the win condition is the ancient.
-		GameRules:SendCustomMessage("Destroy the enemy's ancient to win!", 0, 0)
+		GameRules:SendCustomMessage("Destroy the <font color='#FF9933'>enemy's ancient</font> to win!", 0, 0)
 		FireGameEvent("show_center_message",{ message = "Destroy the enemy's ancient to win!", duration = 10.0})
 	end
 	

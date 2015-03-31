@@ -46,11 +46,14 @@ function invoker_retro_betrayal_on_spell_start(keys)
 					--Set up health labels for every hero now that a unit has Betrayal on them.
 					local herolist = HeroList:GetAllHeroes()
 					for i, individual_hero in ipairs(herolist) do
-						local individual_player = PlayerResource:GetPlayer(individual_hero:GetPlayerID())
-						if individual_hero:GetTeam() == DOTA_TEAM_GOODGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
-							individual_hero:SetCustomHealthLabel("Radiant", 0, 255, 0)
-						elseif individual_hero:GetTeam() == DOTA_TEAM_BADGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
-							individual_hero:SetCustomHealthLabel("Dire", 255, 0, 0)
+						local pid = individual_hero:GetPlayerID()
+						if pid ~= nil and PlayerResource:IsValidPlayer(pid) then
+							local individual_player = PlayerResource:GetPlayer(pid)
+							if individual_hero:GetTeam() == DOTA_TEAM_GOODGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
+								individual_hero:SetCustomHealthLabel("Radiant", 0, 255, 0)
+							elseif individual_hero:GetTeam() == DOTA_TEAM_BADGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
+								individual_hero:SetCustomHealthLabel("Dire", 255, 0, 0)
+							end
 						end
 					end
 					

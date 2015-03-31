@@ -134,9 +134,17 @@ function RetroDota:OnConnectFull(keys)
 
 	-- The Player ID of the joining player
 	local playerID = ply:GetPlayerID()
-
-	GameRules.player_count = GameRules.player_count + 1
-
+	
+	if connected_playerIDs == nil then
+		connected_playerIDs = {}
+	end
+	
+	--If the player has not connected before (e.g. so long as they have not disconnected and come back).
+	--Without this check, a player disconnecting and returning can trick the code into thinking there are 11 players when in fact, there are only 10.
+	if connected_playerIDs[playerID] == nil then
+		connected_playerIDs[playerID] = true
+		GameRules.player_count = GameRules.player_count + 1
+	end
 end
 
 
@@ -454,7 +462,7 @@ Convars:RegisterCommand( "player_voted", function(name, string_values)
 	local cmdPlayer = Convars:GetCommandClient()
 	if cmdPlayer then
 		local playerID = cmdPlayer:GetPlayerID()
-		if playerID ~= nil and playerID ~= -1 then
+		if playerID ~= nil and playerID ~= -1 and PlayerResource:IsValidPlayer(playerID) then
 			--if the player is valid, register the vote
         	return RetroDota:RegisterVote( cmdPlayer , string_values)
 		else
@@ -468,7 +476,7 @@ Convars:RegisterCommand( "player_skip_vote", function(name, p)
 	local cmdPlayer = Convars:GetCommandClient()
 	if cmdPlayer then
 		local playerID = cmdPlayer:GetPlayerID()
-		if playerID ~= nil and playerID ~= -1 then
+		if playerID ~= nil and playerID ~= -1 and PlayerResource:IsValidPlayer(playerID) then
 			--if the player is valid, register the vote
         	return RetroDota:IgnoreVote(cmdPlayer)
 		end

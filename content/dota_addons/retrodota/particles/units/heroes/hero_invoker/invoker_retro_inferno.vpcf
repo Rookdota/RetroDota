@@ -81,35 +81,11 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_explosion_flash.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
-		},
-		ParticleChildrenInfo_t
-		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_explosion_expa.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
-		},
-		ParticleChildrenInfo_t
-		{
 			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
 			bool m_bDisableChild = false
-		},
-		ParticleChildrenInfo_t
-		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_impact.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
 		}
 	]
 	bool m_bShouldSort = true

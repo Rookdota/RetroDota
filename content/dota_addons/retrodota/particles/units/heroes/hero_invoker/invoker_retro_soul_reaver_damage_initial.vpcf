@@ -218,7 +218,7 @@ C_OP_InterpolateRadius C_OP_InterpolateRadius_4
 {
 	float m_flStartTime = 0.000000
 	float m_flEndTime = 1.000000
-	float m_flStartScale = 20.000000
+	float m_flStartScale = 30.000000
 	float m_flEndScale = 1.000000
 	bool m_bEaseInAndOut = false
 	float m_flBias = 0.400000
@@ -608,7 +608,7 @@ C_INIT_RandomColor C_INIT_RandomColor_0
 
 C_OP_InstantaneousEmitter C_OP_InstantaneousEmitter_14
 {
-	int m_nParticlesToEmit = 10
+	int m_nParticlesToEmit = 20
 	int m_nMinParticlesToEmit = -1
 	float m_flStartTime = 0.000000
 	float m_flStartTimeMax = -1.000000

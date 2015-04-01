@@ -65,14 +65,6 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground_ground_cracks.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
-		},
-		ParticleChildrenInfo_t
-		{
 			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground_dust_hit.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
@@ -89,22 +81,6 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground_beams.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
-		},
-		ParticleChildrenInfo_t
-		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground_soul_hands_pnt.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
-		},
-		ParticleChildrenInfo_t
-		{
 			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground_grow_rope.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
@@ -118,14 +94,6 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
 			bool m_bDisableChild = false
-		},
-		ParticleChildrenInfo_t
-		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_ground_core.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 1.600000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
 		}
 	]
 	bool m_bShouldSort = true

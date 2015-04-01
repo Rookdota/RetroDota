@@ -73,14 +73,6 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_shadowraze_glow.vpcf"
-			bool m_bPreventNameBasedLookup = false
-			float m_flDelay = 0.000000
-			bool m_bEndCap = false
-			bool m_bDisableChild = true
-		},
-		ParticleChildrenInfo_t
-		{
 			string m_ChildRef = "particles/units/heroes/hero_invoker/invoker_retro_inferno_shadowraze_end_smoke.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000

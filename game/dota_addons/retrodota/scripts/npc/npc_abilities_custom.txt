@@ -21610,7 +21610,7 @@
 					"MODIFIER_STATE_INVISIBLE"				"MODIFIER_STATE_VALUE_ENABLED"
 				}
 	
-				"EffectName"        "particles/econ/wards/portal/ward_portal_core/ward_portal_eye_sentry.vpcf"
+				"EffectName"        "particles/items2_fx/ward_true_sight.vpcf"
 				"EffectAttachType"  "follow_origin"
 				
 				"ThinkInterval"  "0.03"
@@ -21648,7 +21648,6 @@
 	
 		"precache"
 		{
-			"particle"  "particles/econ/wards/portal/ward_portal_core/ward_portal_eye_sentry.vpcf"
 			"particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 			"model"		"models/items/courier/snowl/snowl_flying.vmdl"
@@ -21718,7 +21717,6 @@
 	
 		"precache"
 		{
-			"particle"  "particles/econ/wards/portal/ward_portal_core/ward_portal_eye_sentry.vpcf"
 			"particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 			"model"		"models/items/courier/snowl/snowl_flying.vmdl"
@@ -21788,7 +21786,6 @@
 	
 		"precache"
 		{
-			"particle"  "particles/econ/wards/portal/ward_portal_core/ward_portal_eye_sentry.vpcf"
 			"particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 			"model"		"models/items/courier/snowl/snowl_flying.vmdl"

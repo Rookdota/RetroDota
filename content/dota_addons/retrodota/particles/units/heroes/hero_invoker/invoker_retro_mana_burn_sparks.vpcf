@@ -493,8 +493,8 @@ C_INIT_VelocityRandom C_INIT_VelocityRandom_12
 	int m_nControlPointNumber = 0
 	float m_fSpeedMin = 0.000000
 	float m_fSpeedMax = 0.000000
-	float(3) m_LocalCoordinateSystemSpeedMin = ( -350.000000, -350.000000, 300.000000 )
-	float(3) m_LocalCoordinateSystemSpeedMax = ( 350.000000, 350.000000, 350.000000 )
+	float(3) m_LocalCoordinateSystemSpeedMin = ( -350.000000, -350.000000, 256.000000 )
+	float(3) m_LocalCoordinateSystemSpeedMax = ( 350.000000, 350.000000, 512.000000 )
 	bool m_bRunForParentApplyKillList = true
 	float m_flOpStartFadeInTime = 0.000000
 	float m_flOpEndFadeInTime = 0.000000
@@ -544,7 +544,7 @@ C_INIT_InitialVelocityNoise C_INIT_InitialVelocityNoise_13
 	int m_nOpTimeScaleSeed = 0
 	float m_flOpTimeScaleMin = 1.000000
 	float m_flOpTimeScaleMax = 1.000000
-	bool m_bDisableOperator = false
+	bool m_bDisableOperator = true
 	int m_nOpEndCapState = -1
 	int m_nOpScaleCP = -1
 	string m_Notes = ""

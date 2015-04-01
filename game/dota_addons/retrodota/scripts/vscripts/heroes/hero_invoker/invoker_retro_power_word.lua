@@ -12,7 +12,7 @@ function invoker_retro_power_word_on_spell_start(keys)
 			ParticleManager:SetParticleControlEnt(power_word_ally_particle_effect, 1, keys.target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", keys.target:GetAbsOrigin(), false)
 			--Remove the particle effect after a short duration.
 			Timers:CreateTimer({
-				endTime = 2,
+				endTime = 4,
 				callback = function()
 					ParticleManager:DestroyParticle(power_word_ally_particle_effect, false)
 				end
@@ -45,7 +45,7 @@ function invoker_retro_power_word_on_spell_start(keys)
 		ParticleManager:SetParticleControlEnt(power_word_enemy_particle_effect, 1, keys.target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", keys.target:GetAbsOrigin(), false)
 		--Remove the particle effect after a short duration.
 		Timers:CreateTimer({
-			endTime = 2,
+			endTime = 4,
 			callback = function()
 				ParticleManager:DestroyParticle(power_word_enemy_particle_effect, false)
 			end

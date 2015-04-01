@@ -550,8 +550,8 @@ C_INIT_InitialVelocityNoise C_INIT_InitialVelocityNoise_14
 	float(3) m_vecAbsValInv = ( 0.000000, 0.000000, 0.000000 )
 	float(3) m_vecOffsetLoc = ( 0.000000, 0.000000, 0.000000 )
 	float m_flOffset = 0.000000
-	float(3) m_vecOutputMin = ( -164.000000, -164.000000, -64.000000 )
-	float(3) m_vecOutputMax = ( 164.000000, 164.000000, 364.000000 )
+	float(3) m_vecOutputMin = ( -256.000000, -256.000000, 64.000000 )
+	float(3) m_vecOutputMax = ( 256.000000, 256.000000, 364.000000 )
 	float m_flNoiseScale = 3.000000
 	float m_flNoiseScaleLoc = 1.000000
 	int m_nControlPointNumber = 0

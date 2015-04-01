@@ -230,7 +230,7 @@ C_OP_InterpolateRadius C_OP_InterpolateRadius_5
 {
 	float m_flStartTime = 0.000000
 	float m_flEndTime = 1.000000
-	float m_flStartScale = 2.000000
+	float m_flStartScale = 3.000000
 	float m_flEndScale = 0.500000
 	bool m_bEaseInAndOut = false
 	float m_flBias = 0.500000

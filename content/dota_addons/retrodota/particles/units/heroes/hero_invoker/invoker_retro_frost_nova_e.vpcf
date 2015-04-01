@@ -385,7 +385,7 @@ C_INIT_RandomLifeTime C_INIT_RandomLifeTime_7
 C_INIT_RandomRadius C_INIT_RandomRadius_8
 {
 	float m_flRadiusMin = 50.000000
-	float m_flRadiusMax = 128.000000
+	float m_flRadiusMax = 256.000000
 	float m_flRadiusRandExponent = 1.000000
 	bool m_bRunForParentApplyKillList = true
 	float m_flOpStartFadeInTime = 0.000000

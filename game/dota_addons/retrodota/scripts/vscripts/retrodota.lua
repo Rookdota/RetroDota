@@ -108,6 +108,20 @@ function RetroDota:InitGameMode()
 	for k,v in pairs(ancients) do
 		v:SetHullRadius(190)
 	end
+	
+	--Due to issues with lag, we will create lots of fireballs for use with the Firestorm spell.  These fireballs will hide out in a corner of the map
+	--until they are needed, and will return there when they are done.
+	firestorm_fireballs = {}
+	for i=0, 79, 1 do
+		local fireball_unit = CreateUnitByName("npc_dota_invoker_retro_firestorm_unit", Vector(7000, 7000, 128), false, nil, nil, DOTA_TEAM_GOODGUYS)
+		local fireball_unit_ability = fireball_unit:FindAbilityByName("invoker_retro_firestorm_fireball")
+		if fireball_unit_ability ~= nil then
+			fireball_unit_ability:SetLevel(1)
+		end
+		fireball_unit_ability:ApplyDataDrivenModifier(fireball_unit, fireball_unit, "dummy_modifier_no_health_bar", nil)
+		
+		firestorm_fireballs[i] = fireball_unit
+	end
 end
 
 

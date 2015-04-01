@@ -544,7 +544,8 @@
 	{
 		"dummy_modifier"
 		{
-			"Passive"   "1"
+			"Passive"   	"1"
+			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			"States"
 			{
 				"MODIFIER_STATE_NO_UNIT_COLLISION"  	"MODIFIER_STATE_VALUE_ENABLED"
@@ -557,6 +558,15 @@
 				"MODIFIER_STATE_NOT_ON_MINIMAP" 		"MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_UNSELECTABLE"   		"MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_OUT_OF_GAME"    		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"dummy_modifier_no_health_bar"
+		{
+			"Passive"   	"0"
+			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			"States"
+			{
+				"MODIFIER_STATE_NO_HEALTH_BAR"  		"MODIFIER_STATE_VALUE_ENABLED"
 			}
 		}
 	}

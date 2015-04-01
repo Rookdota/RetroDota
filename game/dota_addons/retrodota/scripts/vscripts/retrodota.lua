@@ -303,7 +303,6 @@ end
 
 -- A player leveled up
 function RetroDota:OnPlayerLevelUp(keys)
-
 	local player = EntIndexToHScript(keys.player)
 	local hero = player:GetAssignedHero() 
 	local level = keys.level

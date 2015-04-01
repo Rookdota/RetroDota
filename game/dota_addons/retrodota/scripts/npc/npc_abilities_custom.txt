@@ -8499,7 +8499,6 @@
 				"Aura_Radius" 		"%wall_element_radius"
 				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
-				"Aura_Flags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				"Aura_ApplyToCaster" "0"
 			}
 			"modifier_invoker_retro_icy_path_unit_ability_aura"

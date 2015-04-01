@@ -283,13 +283,13 @@ function RetroDota:OnPlayerPickHero(keys)
 	end
 	
 	--Swap the version of Invoke for the one with the correct cooldown.
-	if GameRules.invoke_cd ~= "12" then  --The active version of Invoke defaults to a 12-second cooldown, so don't change anything if the default cooldown was selected.
+	if GameRules.invoke_cd ~= "6" then  --The active version of Invoke defaults to a 6-second cooldown, so don't change anything if the default cooldown was selected.
 		if hero:GetName() == "npc_dota_hero_Invoker" then
-			local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_12_second_cooldown")
+			local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_6_second_cooldown")
 			local old_invoke_ability_level = old_invoke_ability:GetLevel()
 			local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
 		
-			hero:RemoveAbility("invoker_retro_invoke_12_second_cooldown")
+			hero:RemoveAbility("invoker_retro_invoke_6_second_cooldown")
 			local new_invoke_ability_name = "invoker_retro_invoke_" .. GameRules.invoke_cd .. "_second_cooldown"
 			hero:AddAbility(new_invoke_ability_name)
 			
@@ -646,8 +646,7 @@ function RetroDota:OnEveryoneVoted()
 	GameRules.finished_voting = true
 
 	-- Results from voting
-
-	if GameRules.win_condition ~= "7" and GameRules.win_condition ~= 7 then  --If the win condition is kills.
+	if GameRules.win_condition ~= "0" and GameRules.win_condition ~= 0 then  --If the win condition is kills.
 		--print(GameRules.win_condition)
 		END_GAME_ON_KILLS = true
 		FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})
@@ -779,21 +778,23 @@ end
 -- Gives the player the version of Invoke with the correct cooldown.
 -- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends.
 function SetInvokeVersion(cooldown)
-	if cooldown ~= "12" then  --The active version of Invoke defaults to a 12-second cooldown, so don't change anything if the default cooldown was selected.
+	if cooldown ~= "6" then  --The active version of Invoke defaults to a 6-second cooldown, so don't change anything if the default cooldown was selected.
 		local allHeroes = HeroList:GetAllHeroes()
 		for k, hero in pairs( allHeroes ) do
 			if hero:GetName() == "npc_dota_hero_Invoker" then
-				local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_12_second_cooldown")
-				local old_invoke_ability_level = old_invoke_ability:GetLevel()
-				local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
-			
-				hero:RemoveAbility("invoker_retro_invoke_12_second_cooldown")
-				local new_invoke_ability_name = "invoker_retro_invoke_" .. cooldown .. "_second_cooldown"
-				hero:AddAbility(new_invoke_ability_name)
+				local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_6_second_cooldown")
+				if old_invoke_ability ~= nil then
+					local old_invoke_ability_level = old_invoke_ability:GetLevel()
+					local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
 				
-				local new_invoke_ability = hero:FindAbilityByName(new_invoke_ability_name)
-				new_invoke_ability:SetLevel(old_invoke_ability_level)
-				new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
+					hero:RemoveAbility("invoker_retro_invoke_6_second_cooldown")
+					local new_invoke_ability_name = "invoker_retro_invoke_" .. cooldown .. "_second_cooldown"
+					hero:AddAbility(new_invoke_ability_name)
+					
+					local new_invoke_ability = hero:FindAbilityByName(new_invoke_ability_name)
+					new_invoke_ability:SetLevel(old_invoke_ability_level)
+					new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
+				end
 			end
 		end
 	end

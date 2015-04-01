@@ -57,6 +57,6 @@
 		"Ability3"					"invoker_retro_exort"
 		"Ability4"					"invoker_retro_empty_slot_1"
 		"Ability5"					"invoker_retro_empty_slot_2"
-		"Ability6"					"invoker_retro_invoke_12_second_cooldown"
+		"Ability6"					"invoker_retro_invoke_6_second_cooldown"
 	}
 }

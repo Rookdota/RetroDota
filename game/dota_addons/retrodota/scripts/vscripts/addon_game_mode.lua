@@ -22,8 +22,7 @@ function Precache(context)
 	PrecacheResource("model", "models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl", context)
 	PrecacheResource("model", "models/heroes/undying/undying_minion.vmdl", context)
 	PrecacheResource("model", "models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl", context)
-	PrecacheResource("model", "models/props_tree/tree_oak_02.vmdl", context)
-	
+
 	--Precache all Invoker cosmetics for use with Confuse.
 	PrecacheResource("model_folder", "models/heroes/invoker/", context)
 end

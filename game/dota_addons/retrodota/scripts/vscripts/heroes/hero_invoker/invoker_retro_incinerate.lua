@@ -52,7 +52,7 @@ function invoker_retro_incinerate_on_channel_finish(keys)
 		Timers:CreateTimer({  --Destroy the dummy unit after the particle effects and sounds are sure to be finished.
 			endTime = 3,
 			callback = function()
-				incinerate_dummy_unit:Destroy()
+				incinerate_dummy_unit:RemoveSelf()
 			end
 		})
 	end

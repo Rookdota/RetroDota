@@ -68,7 +68,7 @@ function invoker_retro_emp_on_spell_start(keys)
 							Timers:CreateTimer({
 								endTime = 4,
 								callback = function()
-									emp_dummy_unit:Destroy()  --Note that this does cause a small dust cloud to appear in the dummy unit's location.
+									emp_dummy_unit:RemoveSelf()  --Note that this does cause a small dust cloud to appear in the dummy unit's location.
 								end
 							})
 						end

@@ -51,7 +51,7 @@ function invoker_retro_icy_path_on_spell_start(keys)
 		Timers:CreateTimer({
 			endTime = icy_path_duration,
 			callback = function()
-				icy_path_unit:Destroy()
+				icy_path_unit:RemoveSelf()
 			end
 		})
 	end

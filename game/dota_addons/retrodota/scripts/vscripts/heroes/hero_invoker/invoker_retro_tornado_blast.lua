@@ -77,7 +77,7 @@ function invoker_retro_tornado_blast_on_spell_start(keys)
 				Timers:CreateTimer({
 					endTime = keys.ProjectileFlyingVisionMaxRangeDuration,
 					callback = function()
-						tornado_blast_dummy_unit:Destroy()
+						tornado_blast_dummy_unit:RemoveSelf()
 					end
 				})
 				

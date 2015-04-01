@@ -115,6 +115,7 @@
 			"FireballDamageAoE"				"%fireball_damage_aoe"
 			"FireballLandingDamage"			"%fireball_landing_damage"
 			"FireballDuration"				"%fireball_duration"
+			"FireballExplosionDamage"		"%fireball_explosion_damage"
 		}
 	}
 	
@@ -136,8 +137,6 @@
 					"ScriptFile"					"heroes/hero_invoker/invoker_retro_firestorm.lua"
 					"Function"						"modifier_invoker_retro_firestorm_fireball_duration_on_interval_think"
 					"FireballDuration"				"%fireball_duration"
-					"FireballDamageAoE"				"%fireball_damage_aoe"
-					"FireballExplosionDamage"		"%fireball_explosion_damage"
 				}
 			}
 		}		
@@ -292,6 +291,7 @@
 			"FireballDamageAoE"				"%fireball_damage_aoe"
 			"FireballLandingDamage"			"%fireball_landing_damage"
 			"FireballDuration"				"%fireball_duration"
+			"FireballExplosionDamage"		"%fireball_explosion_damage"
 		}
 	}
 	
@@ -313,8 +313,6 @@
 					"ScriptFile"					"heroes/hero_invoker/invoker_retro_firestorm.lua"
 					"Function"						"modifier_invoker_retro_firestorm_fireball_duration_on_interval_think"
 					"FireballDuration"				"%fireball_duration"
-					"FireballDamageAoE"				"%fireball_damage_aoe"
-					"FireballExplosionDamage"		"%fireball_explosion_damage"
 				}
 			}
 		}		
@@ -469,6 +467,7 @@
 			"FireballDamageAoE"				"%fireball_damage_aoe"
 			"FireballLandingDamage"			"%fireball_landing_damage"
 			"FireballDuration"				"%fireball_duration"
+			"FireballExplosionDamage"		"%fireball_explosion_damage"
 		}
 	}
 	
@@ -490,8 +489,6 @@
 					"ScriptFile"					"heroes/hero_invoker/invoker_retro_firestorm.lua"
 					"Function"						"modifier_invoker_retro_firestorm_fireball_duration_on_interval_think"
 					"FireballDuration"				"%fireball_duration"
-					"FireballDamageAoE"				"%fireball_damage_aoe"
-					"FireballExplosionDamage"		"%fireball_explosion_damage"
 				}
 			}
 		}		

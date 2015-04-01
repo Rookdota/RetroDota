@@ -74,7 +74,7 @@ function invoker_retro_inferno_on_spell_start(keys)
 						endTime = keys.InfernoExplosionDuration,
 						callback = function()
 							inferno_dummy_unit:StopSound("Hero_Huskar.Burning_Spear")
-							inferno_dummy_unit:Destroy()
+							inferno_dummy_unit:RemoveSelf()
 						end
 					})
 				end

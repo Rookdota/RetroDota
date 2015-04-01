@@ -95,7 +95,7 @@ function invoker_retro_chaos_meteor_on_spell_start(keys)
 						Timers:CreateTimer({
 							endTime = keys.EndVisionDuration,
 							callback = function()
-								chaos_meteor_dummy_unit:Destroy()
+								chaos_meteor_dummy_unit:RemoveSelf()
 							end
 						})
 						return 

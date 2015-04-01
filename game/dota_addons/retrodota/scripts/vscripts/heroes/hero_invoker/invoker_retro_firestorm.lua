@@ -3,7 +3,8 @@
 	Date: March 6, 2015
 	Called when Firestorm is cast.
 	Additional parameters: keys.FireballCastRadius, keys.FireballLandDelay, keys.FireballDelayBetweenSpawns,
-		keys.FireballVisionRadius, keys.FireballDamageAoE, keys.FireballLandingDamage, keys.FireballDuration
+		keys.FireballVisionRadius, keys.FireballDamageAoE, keys.FireballLandingDamage, keys.FireballDuration,
+		keys.FireballExplosionDamage
 ================================================================================================================= ]]
 function invoker_retro_firestorm_on_spell_start(keys)
 	local caster_point = keys.caster:GetAbsOrigin()
@@ -49,14 +50,6 @@ function invoker_retro_firestorm_on_spell_start(keys)
 			end
 			fireball_sound_unit:EmitSound("Hero_EarthSpirit.Magnetize.End")
 			
-			--Destroy the dummy unit used to play the sound after it is finished.
-			Timers:CreateTimer({
-				endTime = 3,
-				callback = function()
-					fireball_sound_unit:Destroy()
-				end
-			})
-			
 			--Spawn the landed fireball when it's supposed to have visually landed.
 			Timers:CreateTimer({
 				endTime = keys.FireballLandDelay,
@@ -66,6 +59,8 @@ function invoker_retro_firestorm_on_spell_start(keys)
 					if fireball_unit_ability ~= nil then
 						fireball_unit_ability:SetLevel(1)
 					end
+					
+					fireball_unit.firestorm_fireball_time_to_explode = GameRules:GetGameTime() + keys.FireballDuration
 					
 					local fireball_ground_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_firestorm_fireball.vpcf", PATTACH_ABSORIGIN, fireball_unit)
 					
@@ -86,6 +81,35 @@ function invoker_retro_firestorm_on_spell_start(keys)
 					for i, individual_unit in ipairs(nearby_enemy_units) do
 						ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.FireballLandingDamage, damage_type = DAMAGE_TYPE_MAGICAL,})
 					end
+					
+					--Explode the fireball when it is set to expire.  By doing this here and not in modifier_invoker_retro_firestorm_fireball_duration_on_interval_think,
+					--the spell can be made with one less dummy unit.
+					Timers:CreateTimer({
+						endTime = keys.FireballDuration,
+						callback = function()
+							local fireball_explosion_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_firestorm_fireball_explosion.vpcf", PATTACH_ABSORIGIN, fireball_sound_unit)
+							
+							fireball_sound_unit:EmitSound("Hero_EarthSpirit.RollingBoulder.Destroy")
+							
+							--Damage nearby enemy units with fireball explosion damage.
+							local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), fireball_landing_point, nil, keys.FireballDamageAoE, DOTA_UNIT_TARGET_TEAM_ENEMY,
+								DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+							
+							for i, individual_unit in ipairs(nearby_enemy_units) do
+								ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.FireballExplosionDamage, damage_type = DAMAGE_TYPE_MAGICAL,})
+							end
+							
+							fireball_unit:RemoveSelf()
+							
+							--Destroy the dummy unit used to play the explosion after the effect is finished.
+							Timers:CreateTimer({
+								endTime = 2,
+								callback = function()
+									fireball_sound_unit:RemoveSelf()
+								end
+							})
+						end
+					})
 				end
 			})
 			
@@ -104,40 +128,21 @@ end
 	Author: Rook
 	Date: March 6, 2015
 	Called regularly on fireballs that are lying around.  Removes some of the fireball's health to enforce the timer.
-	Additional parameters: keys.FireballDuration, keys.FireballExplosionDamage, keys.FireballDamageAoE
+	Additional parameters: keys.FireballDuration
 ================================================================================================================= ]]
 function modifier_invoker_retro_firestorm_fireball_duration_on_interval_think(keys)
-	local new_health = keys.target:GetHealth() - ((.03 / keys.FireballDuration) * keys.target:GetMaxHealth())
+	local new_health = keys.target:GetMaxHealth()
 	
-	if new_health <= 0 then  --Have the fireball explode.
-		--Play the explosion particle effect.
-		local fireball_explosion_unit = CreateUnitByName("npc_dota_invoker_retro_firestorm_fireball_explosion_unit", keys.target:GetAbsOrigin(), false, nil, nil, keys.caster:GetTeam())
-		local dummy_unit_ability = fireball_explosion_unit:FindAbilityByName("dummy_unit_passive")
-		if dummy_unit_ability ~= nil then
-			dummy_unit_ability:SetLevel(1)
-		end
-		local fireball_explosion_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_firestorm_fireball_explosion.vpcf", PATTACH_ABSORIGIN, fireball_explosion_unit)
+	if keys.target.firestorm_fireball_time_to_explode == nil then
+		new_health = keys.target:GetHealth() - ((keys.target:GetMaxHealth() / keys.FireballDuration) * .03)
+	else
+		new_health = new_health * ((keys.target.firestorm_fireball_time_to_explode - GameRules:GetGameTime()) / keys.FireballDuration)
+	end
 		
-		fireball_explosion_unit:EmitSound("Hero_EarthSpirit.RollingBoulder.Destroy")
-		--Destroy the dummy unit used to play the explosion after the effect is finished.
-		Timers:CreateTimer({
-			endTime = 2,
-			callback = function()
-				fireball_explosion_unit:Destroy()
-			end
-		})
-		
-		--Damage nearby enemy units with fireball explosion damage.
-		local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), keys.target:GetAbsOrigin(), nil, keys.FireballDamageAoE, DOTA_UNIT_TARGET_TEAM_ENEMY,
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-		
-		for i, individual_unit in ipairs(nearby_enemy_units) do
-			ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.FireballExplosionDamage, damage_type = DAMAGE_TYPE_MAGICAL,})
-		end
-		
-		keys.target:Destroy()
-	else  --Just lower the health.
+	if new_health > 0 then  --Lower the health.
 		keys.target:SetHealth(new_health)
+	else
+		keys.target:SetHealth(1)
 	end
 end
 

@@ -52,7 +52,7 @@ function invoker_retro_energy_ball_on_spell_start(keys)
 					Timers:CreateTimer({
 						endTime = 4,
 						callback = function()
-							energy_ball_dummy_unit:Destroy()
+							energy_ball_dummy_unit:RemoveSelf()
 							ParticleManager:DestroyParticle(energy_ball_effect, false)
 						end
 					})

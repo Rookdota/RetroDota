@@ -45,14 +45,20 @@ function invoker_retro_betrayal_on_spell_start(keys)
 					
 					--Set up health labels for every hero now that a unit has Betrayal on them.
 					local herolist = HeroList:GetAllHeroes()
-					for i, individual_hero in ipairs(herolist) do
-						local pid = individual_hero:GetPlayerID()
-						if pid ~= nil and PlayerResource:IsValidPlayer(pid) then
-							local individual_player = PlayerResource:GetPlayer(pid)
-							if individual_hero:GetTeam() == DOTA_TEAM_GOODGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
-								individual_hero:SetCustomHealthLabel("Radiant", 0, 255, 0)
-							elseif individual_hero:GetTeam() == DOTA_TEAM_BADGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
-								individual_hero:SetCustomHealthLabel("Dire", 255, 0, 0)
+					if herolist ~= nil then
+						for i, individual_hero in ipairs(herolist) do
+							if IsValidEntity(individual_hero) then
+								local pid = individual_hero:GetPlayerID()
+								if pid ~= nil and PlayerResource:IsValidPlayerID(pid) and PlayerResource:IsValidPlayer(pid) then
+									local individual_player = PlayerResource:GetPlayer(pid)
+									if individual_player ~= nil then
+										if individual_hero:GetTeam() == DOTA_TEAM_GOODGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS then
+											individual_hero:SetCustomHealthLabel("Radiant", 0, 255, 0)
+										elseif individual_hero:GetTeam() == DOTA_TEAM_BADGUYS or individual_player.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS then
+											individual_hero:SetCustomHealthLabel("Dire", 255, 0, 0)
+										end
+									end
+								end
 							end
 						end
 					end
@@ -84,6 +90,7 @@ end
 function modifier_invoker_retro_betrayal_on_destroy(keys)
 	local target_pid = keys.target:GetPlayerID()
 	local target_player = PlayerResource:GetPlayer(target_pid)
+	local target_team = keys.target:GetTeam()
 	
 	--Remove health labels if no heroes have Betrayal on them anymore.
 	local herolist = HeroList:GetAllHeroes()
@@ -100,7 +107,7 @@ function modifier_invoker_retro_betrayal_on_destroy(keys)
 		end
 	end
 
-	if target_player.invoker_retro_betrayal_original_team ~= nil then  --If this value was not stored, we're in trouble.
+	if target_player.invoker_retro_betrayal_original_team ~= nil and target_team ~= "DOTA_TEAM_GOODGUYS" and target_team ~= "DOTA_TEAM_BADGUYS" then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
 		PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)
 		keys.target:SetTeam(target_player.invoker_retro_betrayal_original_team)
 		target_player.invoker_retro_betrayal_original_team = nil

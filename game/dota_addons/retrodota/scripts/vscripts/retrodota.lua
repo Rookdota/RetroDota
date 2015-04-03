@@ -247,8 +247,11 @@ function RetroDota:OnAllPlayersLoaded()
 	-- Show Vote Panel
 	FireGameEvent( 'show_vote_panel', {} )
 
-	GameRules:SendCustomMessage("<font color='##FFCC33'>Vote on the settings you would like to play with!", 0, 0)
-
+	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)
+	GameRules:SendCustomMessage("<font color='#FF9933'>News:</font> <font color='##FFCC33'>Version 1.0.1 released, which improves stability.</font>", 0, 0)
+	GameRules:SendCustomMessage("<font color='##FFCC33'>Please also note that lag issues can arise when a player uses an Invoker cosmetic item that was released within the past few months, since the Source 2 branch of Dota 2 has not yet been updated with the newest cosmetics.</font>", 0, 0)
+	
+	
 	local message30shown = false
 	local message10shown = false
 	Timers:CreateTimer(function()
@@ -379,6 +382,20 @@ function RetroDota:OnEntityKilled( keys )
 	end
 
 	if killedUnit:IsRealHero() then
+		--In version 1.0.0, the Betrayal spell was occasionally erroring out, causing heroes to be stuck on a custom team by themselves.
+		--Then, when they attempted to respawn, the game would crash because there was no spawn point for that team.  As a backup,
+		--here we make sure a hero is moved back to its original team on death.
+		if killedUnit:HasModifier("modifier_invoker_retro_betrayal") then
+			killedUnit:RemoveModifierByName("modifier_invoker_retro_betrayal")
+		end
+		local killed_unit_pid = killedUnit:GetPlayerID()
+		local killed_unit_player = PlayerResource:GetPlayer(killed_unit_pid)
+		local killed_unit_team = killedUnit:GetTeam()
+		if killedUnit.invoker_retro_betrayal_original_team ~= nil and killed_unit_team ~= "DOTA_TEAM_GOODGUYS" and killed_unit_team ~= "DOTA_TEAM_BADGUYS" then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
+			PlayerResource:SetCustomTeamAssignment(killed_unit_pid, killedUnit.invoker_retro_betrayal_original_team)
+			killedUnit:SetTeam(target_player.invoker_retro_betrayal_original_team)
+			killedUnit.invoker_retro_betrayal_original_team = nil
+		end
 
 		-- Gold Multiplier for hero kills
 		if killerEntity:IsRealHero() and GameRules.gold_multiplier then
@@ -710,7 +727,7 @@ function RetroDota:OnEveryoneVoted()
 	
 	
 	if GameRules.fast_respawn == "1" then
-		GameRules:GetGameModeEntity():SetFixedRespawnTime(1)
+		GameRules:GetGameModeEntity():SetFixedRespawnTime(3)
 	end
 
 	if GameRules.wtf == "1" then

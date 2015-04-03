@@ -63,7 +63,7 @@
 		"FireEffect"
 		{
 			"EffectName"           "particles/units/heroes/hero_invoker/invoker_retro_deafening_blast_impact.vpcf"
-			"EffectAttachType"     "PATTACH_ABSORIGIN"
+			"EffectAttachType"     "PATTACH_ABSORIGIN_FOLLOW"
 			"Target"               "TARGET"
 		}
 	}
@@ -163,7 +163,7 @@
 		"FireEffect"
 		{
 			"EffectName"           "particles/units/heroes/hero_invoker/invoker_retro_deafening_blast_impact.vpcf"
-			"EffectAttachType"     "PATTACH_ABSORIGIN"
+			"EffectAttachType"     "PATTACH_ABSORIGIN_FOLLOW"
 			"Target"               "TARGET"
 		}
 	}
@@ -263,7 +263,7 @@
 		"FireEffect"
 		{
 			"EffectName"           "particles/units/heroes/hero_invoker/invoker_retro_deafening_blast_impact.vpcf"
-			"EffectAttachType"     "PATTACH_ABSORIGIN"
+			"EffectAttachType"     "PATTACH_ABSORIGIN_FOLLOW"
 			"Target"               "TARGET"
 		}
 	}

@@ -21,9 +21,9 @@ function invoker_retro_invoke_on_spell_start(keys)
 	
 	if keys.caster.invoked_orbs[1] ~= nil and keys.caster.invoked_orbs[2] ~= nil and keys.caster.invoked_orbs[3] ~= nil then  --A spell will be invoked only if three orbs have been summoned.
 		--The Invoke particle effect changes color depending on which orbs are invoked.
-		local quas_particle_effect_color = Vector(60, 185, 255)
-		local wex_particle_effect_color = Vector(195, 91, 201)
-		local exort_particle_effect_color = Vector(244, 180, 40)
+		local quas_particle_effect_color = Vector(0, 153, 204)
+		local wex_particle_effect_color = Vector(204, 0, 153)
+		local exort_particle_effect_color = Vector(255, 102, 0)
 		
 		local num_quas_orbs = 0
 		local num_wex_orbs = 0
@@ -61,7 +61,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Quas Quas
 					local spell_name_to_invoke = "invoker_retro_icy_path_level_" .. quas_ability:GetLevel() .. "_quas" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_icy_path") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local icy_path_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						icy_path_ability:SetLevel(quas_ability:GetLevel())
@@ -70,7 +70,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Quas Wex
 					local spell_name_to_invoke = "invoker_retro_portal_level_" .. quas_ability:GetLevel() .. "_quas" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_portal") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local portal_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						portal_ability:SetLevel(wex_ability:GetLevel())
@@ -79,7 +79,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Quas Exort
 					local spell_name_to_invoke = "invoker_retro_frost_nova" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local frost_nova_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						frost_nova_ability:SetLevel(quas_ability:GetLevel())
@@ -90,7 +90,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Wex Quas
 					local spell_name_to_invoke = "invoker_retro_betrayal" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local betrayal_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						betrayal_ability:SetLevel(quas_ability:GetLevel())
@@ -99,7 +99,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Wex Wex
 					local spell_name_to_invoke = "invoker_retro_tornado_blast_level_" .. quas_ability:GetLevel() .. "_quas" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_tornado_blast") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local tornado_blast_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						tornado_blast_ability:SetLevel(quas_ability:GetLevel())
@@ -108,7 +108,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Wex Exort
 					local spell_name_to_invoke = "invoker_retro_levitation" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local levitation_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						--Set Levitation's level to the average level of Quas, Wex, and Exort.
@@ -131,7 +131,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Quas Exort Quas
 					local spell_name_to_invoke = "invoker_retro_power_word" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local power_word_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						power_word_ability:SetLevel(quas_ability:GetLevel())
@@ -140,7 +140,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Quas Exort Wex
 					local spell_name_to_invoke = "invoker_retro_invisibility_aura"
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local invisibility_aura_ability = keys.caster:FindAbilityByName("invoker_retro_invisibility_aura")
 						invisibility_aura_ability:SetLevel(quas_ability:GetLevel())
@@ -149,7 +149,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Quas Exort Exort
 					local spell_name_to_invoke = "invoker_retro_shroud_of_flames_exort" .. exort_ability:GetLevel() .. suffix
 					if not string.find(ability_d_name, "invoker_retro_shroud_of_flames") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local shroud_of_flames_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						shroud_of_flames_ability:SetLevel(quas_ability:GetLevel())
@@ -162,7 +162,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Quas Quas
 					local spell_name_to_invoke = "invoker_retro_mana_burn" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local mana_burn_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						mana_burn_ability:SetLevel(wex_ability:GetLevel())
@@ -171,7 +171,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Quas Wex
 					local spell_name_to_invoke = "invoker_retro_emp" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 
 						local emp_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
@@ -193,7 +193,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Quas Exort
 					local spell_name_to_invoke = "invoker_retro_soul_blast_level_" .. wex_ability:GetLevel() .. "_wex" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_soul_blast") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local soul_blast_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						soul_blast_ability:SetLevel(wex_ability:GetLevel())
@@ -204,7 +204,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Wex Quas
 					local spell_name_to_invoke = "invoker_retro_telelightning_level_" .. wex_ability:GetLevel() .. "_wex" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_telelightning") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local telelightning_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						telelightning_ability:SetLevel(wex_ability:GetLevel())
@@ -213,7 +213,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Wex Wex
 					local spell_name_to_invoke = "invoker_retro_shock" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local shock_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						shock_ability:SetLevel(wex_ability:GetLevel())
@@ -222,7 +222,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Wex Exort
 					local spell_name_to_invoke = "invoker_retro_arcane_arts"
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local arcane_arts_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						arcane_arts_ability:SetLevel(wex_ability:GetLevel())
@@ -233,7 +233,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Wex Exort Quas
 					local spell_name_to_invoke = "invoker_retro_scout" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local scout_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						scout_ability:SetLevel(wex_ability:GetLevel())
@@ -242,7 +242,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Wex Exort Wex
 					local spell_name_to_invoke = "invoker_retro_energy_ball" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local energy_ball_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						energy_ball_ability:SetLevel(wex_ability:GetLevel())
@@ -251,7 +251,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Wex Exort Exort
 					local spell_name_to_invoke = "invoker_retro_lightning_shield" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local lightning_shield_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						lightning_shield_ability:SetLevel(wex_ability:GetLevel())
@@ -264,7 +264,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Quas Quas
 					local spell_name_to_invoke = "invoker_retro_chaos_meteor" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local chaos_meteor_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						chaos_meteor_ability:SetLevel(exort_ability:GetLevel())
@@ -273,7 +273,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Quas Wex
 					local spell_name_to_invoke = "invoker_retro_confuse_level_" .. exort_ability:GetLevel() .. "_exort" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_confuse") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local confuse_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						confuse_ability:SetLevel(exort_ability:GetLevel())
@@ -282,7 +282,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Quas Exort
 					local spell_name_to_invoke = "invoker_retro_disarm_level_" .. exort_ability:GetLevel().."_exort" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_disarm") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local disarm_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						disarm_ability:SetLevel(exort_ability:GetLevel())
@@ -293,7 +293,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Wex Quas
 					local spell_name_to_invoke = "invoker_retro_soul_reaver" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local soul_reaver_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						soul_reaver_ability:SetLevel(quas_ability:GetLevel())
@@ -302,7 +302,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Wex Wex
 					local spell_name_to_invoke = "invoker_retro_firestorm" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local firestorm_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						firestorm_ability:SetLevel(exort_ability:GetLevel())
@@ -311,7 +311,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Wex Exort
 					local spell_name_to_invoke = "invoker_retro_incinerate_level_" .. exort_ability:GetLevel() .. "_exort" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_incinerate") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local incinerate_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						incinerate_ability:SetLevel(exort_ability:GetLevel())
@@ -322,7 +322,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				if keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_quas" then  --Exort Exort Quas
 					local spell_name_to_invoke = "invoker_retro_deafening_blast" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local deafening_blast_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						deafening_blast_ability:SetLevel(exort_ability:GetLevel())
@@ -331,7 +331,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_wex" then  --Exort Exort Wex
 					local spell_name_to_invoke = "invoker_retro_inferno_level_" .. wex_ability:GetLevel() .. "_wex" .. suffix
 					if not string.find(ability_d_name, "invoker_retro_inferno") then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local inferno_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						inferno_ability:SetLevel(exort_ability:GetLevel())
@@ -340,7 +340,7 @@ function invoker_retro_invoke_on_spell_start(keys)
 				elseif keys.caster.invoked_orbs[3]:GetName() == "invoker_retro_exort" then  --Exort Exort Exort
 					local spell_name_to_invoke = "invoker_retro_firebolt" .. suffix
 					if ability_d_name ~= spell_name_to_invoke then
-						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+						invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 						keys.caster:AddAbility(spell_name_to_invoke)
 						local firebolt_ability = keys.caster:FindAbilityByName(spell_name_to_invoke)
 						firebolt_ability:SetLevel(exort_ability:GetLevel())
@@ -360,7 +360,7 @@ end
 	slot D already.  Removes the old spell and shifts the D spell over to the F slot if Invoker is allowed to have
 	2 spells invoked.
 ================================================================================================================= ]]
-function invoker_retro_invoke_on_spell_start_spell_remover_helper(keys, spell_name_to_invoke)
+function invoker_retro_invoke_on_spell_start_spell_remover_helper(keys)
 	--Since cooldowns are tied to the ability but we don't have room to keep all the abilities on Invoker due to the
 	--limited number of slots, keep track of the gametime of when abilities were last cast, which we can use to determine
 	--if invoked spells should still be on cooldown from when they were last used.

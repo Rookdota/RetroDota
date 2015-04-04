@@ -91,23 +91,27 @@ function modifier_invoker_retro_betrayal_on_destroy(keys)
 	local target_pid = keys.target:GetPlayerID()
 	local target_player = PlayerResource:GetPlayer(target_pid)
 	local target_team = keys.target:GetTeam()
-	
+
 	--Remove health labels if no heroes have Betrayal on them anymore.
-	local herolist = HeroList:GetAllHeroes()
 	local someone_has_betrayal = false
-	for i, individual_hero in ipairs(herolist) do
-		if individual_hero:HasModifier("modifier_invoker_retro_betrayal") then
-			someone_has_betrayal = true
-		end
-	end
-	
-	if not someone_has_betrayal then
+	local herolist = HeroList:GetAllHeroes()
+	if herolist ~= nil then
 		for i, individual_hero in ipairs(herolist) do
-			individual_hero:SetCustomHealthLabel("", 0, 0, 0)  --Remove the custom health label.
+			if individual_hero ~= nil and IsValidEntity(individual_hero) and individual_hero:HasModifier("modifier_invoker_retro_betrayal") then
+				someone_has_betrayal = true
+			end
+		end
+
+		if not someone_has_betrayal then
+			for i, individual_hero in ipairs(herolist) do
+				if individual_hero ~= nil and IsValidEntity(individual_hero) then
+					individual_hero:SetCustomHealthLabel("", 0, 0, 0)  --Remove the custom health label.
+				end
+			end
 		end
 	end
 
-	if target_player.invoker_retro_betrayal_original_team ~= nil and target_team ~= "DOTA_TEAM_GOODGUYS" and target_team ~= "DOTA_TEAM_BADGUYS" then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
+	if target_player ~= nil and target_player.invoker_retro_betrayal_original_team ~= nil and target_team ~= "DOTA_TEAM_GOODGUYS" and target_team ~= "DOTA_TEAM_BADGUYS" and PlayerResource:IsValidPlayerID(target_pid) and PlayerResource:IsValidPlayer(target_pid) then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
 		PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)
 		keys.target:SetTeam(target_player.invoker_retro_betrayal_original_team)
 		target_player.invoker_retro_betrayal_original_team = nil

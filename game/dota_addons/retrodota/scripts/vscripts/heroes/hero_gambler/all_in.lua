@@ -29,7 +29,7 @@ end
 --[[ 
 	Author: Noya
 	Date: March 25, 2015
-	Failed All In, loses random gold up to the casters gold
+	Failed All In, loses random gold up to the casters gold or the damage cap (whichever is lower)
  ]]
  function AllInFailure(event)
  	local caster = event.caster

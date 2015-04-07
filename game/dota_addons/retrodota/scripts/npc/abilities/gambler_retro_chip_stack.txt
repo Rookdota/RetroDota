@@ -16,7 +16,6 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityDamage"					"50 100 150 200"
 	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats

@@ -1686,7 +1686,42 @@
 
 
 
-
+		//Ante Up
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up"									"Ante Up"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_Description"						"Costs 100 gold to cast.  When cast, heals the target if they are an ally and damages the target if they are an enemy.  If, sometime within the next %duration% seconds, the target unit gets a hero kill before dying, Gambler is awarded a bounty of gold and Ante Up's effect ends.  If, instead, the target unit dies before getting a hero kill, Gambler is awarded half the gold bounty."
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_damage_heal"						"DAMAGE/HEAL:"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_cash_in"							"GOLD BOUNTY:"
+		
+		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff"                              "Ante Up"
+		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff_Description"                  "If this unit gets a hero kill, Gambler will be awarded a bounty of gold and Ante Up's effect will end.  If, instead, this unit dies, Gambler will be awarded half the gold bounty."
+		
+		"DOTA_Tooltip_modifier_gambler_retro_ante_up_debuff"                            "Ante Up"
+		"DOTA_Tooltip_modifier_gambler_retro_ante_up_debuff_Description"                "If this unit gets a hero kill, Gambler will be awarded a bounty of gold and Ante Up's effect will end.  If, instead, this unit dies, Gambler will be awarded half the gold bounty."
+		
+		
+		
+		//Chip Stack
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack"									"Chip Stack"
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_Description"						"Deals damage equal to a percentage of the target's current gold."
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_gold_to_damage_ratio"			"%PERCENT OF TARGET'S GOLD AS DAMAGE:"
+		
+		
+		
+		//Lucky Stars
+		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars"								"Lucky Stars"
+		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_Description"					"Gambler's autoattacks passively grant him gold, with the amount gained increasing slightly as Lucky Stars is leveled up.  His autoattacks also have a chance to instantly kill a creep, or deal %bonus_damage% bonus damage to a hero or building."
+		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_chance"							"%CHANCE:"
+		
+		
+		
+		//All In
+		"DOTA_Tooltip_Ability_gambler_retro_all_in"										"All In"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_Description"							"Deals damage to the target equal to a random number between 1 and Gambler's current gold or the damage cap (whichever is lower).  All In also has a chance to fail completely, in which case no damage is dealt and Gambler instead loses gold equal to the damage that would have been dealt if successful."
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_damage_cap"							"DAMAGE CAP:"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_chance_to_fail"						"%CHANCE TO FAIL:"
+		
+		
+		
 		// ******************** VotePanel UI ***********************
 		"InvokerTitle"						"GAME SETTINGS"
 		"WinConditionLabel"					"Win Condition"

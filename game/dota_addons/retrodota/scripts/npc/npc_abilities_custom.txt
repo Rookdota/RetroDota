@@ -182,7 +182,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats
@@ -208,7 +208,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"change_to_fail"		"30 25 20"	
+				"chance_to_fail"		"30 25 20"	
 			}
 		}
 	
@@ -216,7 +216,7 @@
 		{
 			"Random"
 			{
-				"Chance"			"100 - %change_to_fail"
+				"Chance"			"100 - %chance_to_fail"
 				"OnSuccess"
 				{
 					"RunScript"
@@ -242,7 +242,7 @@
 	// Date: March 16, 2015
 	// Gambler wagers 100 gold on the game targeting a hero.
 	// If the target get a kill first, Gambler cashes in for a big reward,
-	// If the target dies first, Gamble cashes in for half as much.
+	// If the target dies first, Gambler cashes in for half as much.
 	// Damages enemy, heal allies.
 	// Cash in for 300 400 500 600, damage/heal for 50 100 150 200
 	// Lua code have a workaround for prevent self casting
@@ -259,7 +259,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"4"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityDamage"					"50 100 150 200"
 		"AbilityCastPoint"				"0.01"
 		"AbilityProcsMagicStick" 		"1"
 		
@@ -284,13 +283,18 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"duration"				"60"  
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cash_in"				"300 400 500 600"	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_heal"			"50 100 150 200"	
 			}
 		}
 	
@@ -309,6 +313,7 @@
 			{
 				"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
 				"Function"			"gambler_retro_ante_up_on_spell_start"
+				"DamageHeal"		"%damage_heal"
 			}
 		}
 		
@@ -387,7 +392,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityDamage"					"50 100 150 200"
 		"AbilityProcsMagicStick" 		"1"
 		
 		// Stats

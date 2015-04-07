@@ -30,7 +30,7 @@ function invoker_retro_emp_on_spell_start(keys)
 		
 		local mana_to_burn = keys.ability:GetLevelSpecialValueFor("mana_burned", average_level - 1)
 		
-		--Create a dummy unit will dictate the path of the EMP and provide sound.
+		--Create a dummy unit that will dictate the path of the EMP and provide sound.
 		local emp_dummy_unit = CreateUnitByName("npc_dota_invoker_retro_emp_unit", caster_origin + (caster_forward_vector * 100), false, nil, nil, keys.caster:GetTeam())
 		local emp_dummy_unit_ability = emp_dummy_unit:FindAbilityByName("dummy_unit_passive")
 		if emp_dummy_unit_ability ~= nil then

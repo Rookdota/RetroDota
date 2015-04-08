@@ -381,7 +381,7 @@ function RetroDota:OnEntityKilled( keys )
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
 
-	if killedUnit:IsRealHero() then
+	if killedUnit ~= nil and killedUnit:IsRealHero() then
 		--In version 1.0.0, the Betrayal spell was occasionally erroring out, causing heroes to be stuck on a custom team by themselves.
 		--Then, when they attempted to respawn, the game would crash because there was no spawn point for that team.  As a backup,
 		--here we make sure a hero is moved back to its original team on death.
@@ -389,16 +389,18 @@ function RetroDota:OnEntityKilled( keys )
 			killedUnit:RemoveModifierByName("modifier_invoker_retro_betrayal")
 		end
 		local killed_unit_pid = killedUnit:GetPlayerID()
-		local killed_unit_player = PlayerResource:GetPlayer(killed_unit_pid)
-		local killed_unit_team = killedUnit:GetTeam()
-		if killedUnit.invoker_retro_betrayal_original_team ~= nil and killed_unit_team ~= "DOTA_TEAM_GOODGUYS" and killed_unit_team ~= "DOTA_TEAM_BADGUYS" then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
-			PlayerResource:SetCustomTeamAssignment(killed_unit_pid, killedUnit.invoker_retro_betrayal_original_team)
-			killedUnit:SetTeam(target_player.invoker_retro_betrayal_original_team)
-			killedUnit.invoker_retro_betrayal_original_team = nil
+		if killed_unit_pid ~= nil and PlayerResource:IsValidPlayerID(killed_unit_pid) and PlayerResource:IsValidPlayer(killed_unit_pid) then
+			local killed_unit_player = PlayerResource:GetPlayer(killed_unit_pid)
+			local killed_unit_current_team = killedUnit:GetTeam()
+			if killed_unit_player ~= nil and killed_unit_player.invoker_retro_betrayal_original_team ~= nil and killed_unit_current_team ~= "DOTA_TEAM_GOODGUYS" and killed_unit_current_team ~= "DOTA_TEAM_BADGUYS" then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
+				PlayerResource:SetCustomTeamAssignment(killed_unit_pid, killedUnit.invoker_retro_betrayal_original_team)
+				killedUnit:SetTeam(killed_unit_player.invoker_retro_betrayal_original_team)
+				killedUnit.invoker_retro_betrayal_original_team = nil
+			end
 		end
 
 		-- Gold Multiplier for hero kills
-		if killerEntity:IsRealHero() and GameRules.gold_multiplier then
+		if killerEntity ~= nil and killerEntity:IsRealHero() and GameRules.gold_multiplier then
 			local bounty = killedUnit:GetGoldBounty() * GameRules.gold_multiplier - killedUnit:GetGoldBounty()
 			print(bounty, killedUnit:GetGoldBounty(), GameRules.gold_multiplier, killedUnit:GetGoldBounty())
 			if bounty ~= 0 then
@@ -423,7 +425,7 @@ function RetroDota:OnEntityKilled( keys )
 		if END_GAME_ON_KILLS == true then
 			local killed_unit_owner = killedUnit:GetPlayerOwner()
 			if killed_unit_owner ~= nil then
-				if (killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() ~= DOTA_TEAM_BADGUYS) or 
+				if (killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity ~= nil and killerEntity:GetTeam() ~= DOTA_TEAM_BADGUYS) or 
 				(killedUnit:HasModifier("modifier_invoker_retro_betrayal") and killed_unit_owner.invoker_retro_betrayal_original_team ~= nil and killed_unit_owner.invoker_retro_betrayal_original_team == DOTA_TEAM_BADGUYS) then
 					if self.nRadiantKills == nil then
 						self.nRadiantKills = 1
@@ -438,7 +440,7 @@ function RetroDota:OnEntityKilled( keys )
 					else
 						print("Radiant Team has "..self.nRadiantKills.." kills out of the "..GameRules.win_condition.." needed to win")
 					end
-				elseif (killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetTeam() ~= DOTA_TEAM_GOODGUYS) or 
+				elseif (killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity ~= nil and killerEntity:GetTeam() ~= DOTA_TEAM_GOODGUYS) or 
 				(killedUnit:HasModifier("modifier_invoker_retro_betrayal") and killed_unit_owner.invoker_retro_betrayal_original_team ~= nil and killed_unit_owner.invoker_retro_betrayal_original_team == DOTA_TEAM_GOODGUYS) then
 					if self.nDireKills == nil then
 						self.nDireKills = 1

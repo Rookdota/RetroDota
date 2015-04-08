@@ -22,6 +22,8 @@ function gambler_retro_ante_up_on_spell_start(event)
 		})
 		arg = "modifier_gambler_retro_ante_up_debuff"
 	end
+	
+	ability:PayGoldCost()
 	ability:ApplyDataDrivenModifier(caster, target, arg, {})
 	target.ante_bounty = ability:GetLevelSpecialValueFor("cash_in", ability:GetLevel() - 1)
 end

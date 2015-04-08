@@ -88,10 +88,6 @@ end
 	Called when Betrayal's modifier expires.  Moves the unit back to their original team.
 ================================================================================================================= ]]
 function modifier_invoker_retro_betrayal_on_destroy(keys)
-	local target_pid = keys.target:GetPlayerID()
-	local target_player = PlayerResource:GetPlayer(target_pid)
-	local target_team = keys.target:GetTeam()
-
 	--Remove health labels if no heroes have Betrayal on them anymore.
 	local someone_has_betrayal = false
 	local herolist = HeroList:GetAllHeroes()
@@ -110,10 +106,17 @@ function modifier_invoker_retro_betrayal_on_destroy(keys)
 			end
 		end
 	end
+	
+	--Move the player back to their original team.
+	local target_pid = keys.target:GetPlayerID()
+	if target_pid ~= nil and PlayerResource:IsValidPlayerID(target_pid) and PlayerResource:IsValidPlayer(target_pid) then
+		local target_player = PlayerResource:GetPlayer(target_pid)
+		local target_current_team = keys.target:GetTeam()
 
-	if target_player ~= nil and target_player.invoker_retro_betrayal_original_team ~= nil and target_team ~= "DOTA_TEAM_GOODGUYS" and target_team ~= "DOTA_TEAM_BADGUYS" and PlayerResource:IsValidPlayerID(target_pid) and PlayerResource:IsValidPlayer(target_pid) then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
-		PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)
-		keys.target:SetTeam(target_player.invoker_retro_betrayal_original_team)
-		target_player.invoker_retro_betrayal_original_team = nil
+		if target_player ~= nil and target_player.invoker_retro_betrayal_original_team ~= nil and target_current_team ~= "DOTA_TEAM_GOODGUYS" and target_current_team ~= "DOTA_TEAM_BADGUYS" then  --If the invoker_retro_betrayal_original_team was not stored, we're in trouble.
+			PlayerResource:SetCustomTeamAssignment(target_pid, target_player.invoker_retro_betrayal_original_team)
+			keys.target:SetTeam(target_player.invoker_retro_betrayal_original_team)
+			target_player.invoker_retro_betrayal_original_team = nil
+		end
 	end
 end

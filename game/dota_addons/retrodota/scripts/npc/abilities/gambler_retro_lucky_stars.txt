@@ -21,7 +21,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	 {
-	 	"soundfile"   "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_lucky_stars_lucky.vpcf"
+	 	"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 	 }
 
 	// Special

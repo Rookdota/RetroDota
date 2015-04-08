@@ -56,7 +56,7 @@ end
 --[[ ============================================================================================================
 	Author: wFX
 	Date: March 16, 2015
-	Called when the owner of ante up kill another hero.
+	Called when the owner of ante up kills another hero.
 ================================================================================================================= ]]
  function gambler_retro_ante_up_on_owner_hero_kill(event)
 	event.caster:ModifyGold(event.attacker.ante_bounty, false, 0)
@@ -64,13 +64,15 @@ end
 	event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_debuff", event.caster)
 	event.msg = event.attacker.ante_bounty
 	event.attacker.ante_bounty = 0
+	
+	local cash_in_full_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)
 	AnteUpShowBounty(event)
 end
 
 --[[ ============================================================================================================
 	Author: wFX
 	Date: March 16, 2015
-	Called when the owner of ante up die.
+	Called when the owner of ante up dies.
 ================================================================================================================= ]]
 function gambler_retro_ante_up_on_owner_death(event)
 	event.caster:ModifyGold(event.unit.ante_bounty/2, false, 0)
@@ -78,6 +80,8 @@ function gambler_retro_ante_up_on_owner_death(event)
 	event.unit:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_debuff", event.caster)
 	event.msg = event.unit.ante_bounty/2
 	event.unit.ante_bounty = 0
+	
+	local cash_in_half_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)
 	AnteUpShowBounty(event)
 end
 

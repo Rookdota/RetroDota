@@ -193,7 +193,8 @@
 	
 		"precache"
 		{
-	//		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
 		}
 		
 		// Special
@@ -275,6 +276,8 @@
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_b.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
 		}
 	
 		// Special

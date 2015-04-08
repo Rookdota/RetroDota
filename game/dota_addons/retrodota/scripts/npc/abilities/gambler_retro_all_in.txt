@@ -25,7 +25,8 @@
 
 	"precache"
 	{
-//		"particle"				"particles/units/heroes/hero_invoker/invoker_retro_betrayal.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
 	}
 	
 	// Special

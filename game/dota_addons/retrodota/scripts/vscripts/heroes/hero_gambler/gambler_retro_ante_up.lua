@@ -2,7 +2,7 @@
 	Author: wFX
 	Date: March 16, 2015
 	Called when Ante up is cast.
-	Additional parameters: keys.DamageHeal
+	Additional parameters: event.DamageHeal
 ================================================================================================================= ]]
 function gambler_retro_ante_up_on_spell_start(event)
 	
@@ -11,13 +11,13 @@ function gambler_retro_ante_up_on_spell_start(event)
 	local ability  = event.ability
 	local arg
 	if caster:GetTeamNumber() == target:GetTeamNumber() then
-		target:Heal(keys.DamageHeal, caster)
+		target:Heal(event.DamageHeal, caster)
 		arg = "modifier_gambler_retro_ante_up_buff"
 	else
 		ApplyDamage({
 			victim = target,
 			attacker = caster,
-			damage = keys.DamageHeal,
+			damage = event.DamageHeal,
 			damage_type = ability:GetAbilityDamageType()
 		})
 		arg = "modifier_gambler_retro_ante_up_debuff"

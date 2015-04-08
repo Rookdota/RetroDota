@@ -19,7 +19,7 @@ function gambler_retro_lucky_stars_on_success(event)
 			damage = event.ability:GetSpecialValueFor("bonus_damage"),
 			damage_type = event.ability:GetAbilityDamageType()
 		})
-		PopupNumbers(event.caster, "crit", Vector(255, 200, 33), 1.0, event.ability:GetSpecialValueFor("bonus_damage"), PATTACH_CUSTOMORIGIN, nil, POPUP_SYMBOL_POST_LIGHTNING)
+		PopupNumbers(event.target, "crit", Vector(255, 200, 33), 1.0, event.ability:GetSpecialValueFor("bonus_damage"), PATTACH_CUSTOMORIGIN, nil, POPUP_SYMBOL_POST_LIGHTNING)
 	    flag = true
 	end
 
@@ -32,7 +32,7 @@ end
 --[[ ============================================================================================================
 	Author: wFX
 	Date: March 27, 2015
-	Every hit add some amunt to pillaged gold
+	Every hit, add some amount to pillaged gold
 ================================================================================================================= ]]
 
 function gambler_retro_lucky_stars_pillage(event)

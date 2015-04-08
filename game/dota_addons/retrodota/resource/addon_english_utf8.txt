@@ -1693,10 +1693,10 @@
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_cash_in"							"GOLD BOUNTY:"
 		
 		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff"                              "Ante Up"
-		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff_Description"                  "If this unit gets a hero kill, Gambler will be awarded a bounty of gold and Ante Up's effect will end.  If, instead, this unit dies, Gambler will be awarded half the gold bounty."
+		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff_Description"                  "If this unit gets a hero kill, Gambler will be awarded a bounty of gold and this effect will end.  If, instead, this unit dies, Gambler will be awarded half the gold bounty."
 		
 		"DOTA_Tooltip_modifier_gambler_retro_ante_up_debuff"                            "Ante Up"
-		"DOTA_Tooltip_modifier_gambler_retro_ante_up_debuff_Description"                "If this unit gets a hero kill, Gambler will be awarded a bounty of gold and Ante Up's effect will end.  If, instead, this unit dies, Gambler will be awarded half the gold bounty."
+		"DOTA_Tooltip_modifier_gambler_retro_ante_up_debuff_Description"                "If this unit gets a hero kill, Gambler will be awarded a bounty of gold and this effect will end.  If, instead, this unit dies, Gambler will be awarded half the gold bounty."
 		
 		
 		

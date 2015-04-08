@@ -47,6 +47,6 @@ end
 
 	caster:SpendGold(gold_lost, 0)
 	-- print("Lost "..gold_lost.." gold, bad gamble")
-	PopupNumbers(caster, "damage", Vector(255, 200, 33), 3.0, gold_lost, PATTACH_OVERHEAD_FOLLOW, POPUP_SYMBOL_PRE_MINUS, nil)]
+	PopupNumbers(caster, "damage", Vector(255, 200, 33), 3.0, gold_lost, PATTACH_OVERHEAD_FOLLOW, POPUP_SYMBOL_PRE_MINUS, nil)
 	event.target:EmitSound("General.BigCoins")
 end

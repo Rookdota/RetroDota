@@ -81,15 +81,19 @@ function PopupIntTome(target, amount)
 end
 
 function PopupHPRemovalDamage(target, amount)
-    PopupNumbers(target, "crit", Vector(154, 46, 254), 3.0, amount, PATTACH_ABSORIGIN_FOLLOW ,nil, POPUP_SYMBOL_POST_LIGHTNING)
+    PopupNumbers(target, "crit", Vector(154, 46, 254), 3.0, amount, PATTACH_ABSORIGIN_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
 function PopupLumber(target, amount)
-    PopupNumbers(target, "damage", Vector(10, 200, 90), 3.0, amount, PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_PLUS, nil)
+    PopupNumbers(target, "damage", Vector(10, 200, 90), 3.0, amount, PATTACH_ABSORIGIN_FOLLOW, POPUP_SYMBOL_PRE_PLUS, nil)
 end
 
 function PopupDeny(target, color)
-    PopupNumbers(target, "deny", color, 2.0, nil, PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_DENY, nil)
+    PopupNumbers(target, "deny", color, 2.0, nil, PATTACH_ABSORIGIN_FOLLOW, POPUP_SYMBOL_PRE_DENY, nil)
+end
+
+function PopupDeny(target, color)
+    PopupNumbers(target, "deny", color, 2.0, nil, PATTACH_ABSORIGIN_FOLLOW, POPUP_SYMBOL_PRE_DENY, nil)
 end
 
 -- Customizable version.

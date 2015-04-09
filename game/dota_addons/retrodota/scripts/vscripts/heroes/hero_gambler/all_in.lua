@@ -84,7 +84,7 @@ end
 	local lights_on = Vector(255, 220, 48)  --Gold
 	local lights_off = Vector(140, 140, 140)  --Grey
 	
-	--Plan an animation using colors.
+	--Play an animation using colors.
 	ParticleManager:SetParticleControl(all_in_failure_particle, 3, lights_on)
 	Timers:CreateTimer({
 		endTime = 1.1,

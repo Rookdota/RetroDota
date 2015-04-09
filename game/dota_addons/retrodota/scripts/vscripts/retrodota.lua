@@ -763,23 +763,37 @@ function RetroDota:OnEveryoneVoted()
 		hero:SetCustomDeathXP(XP_value)
 	end
 	
-
--- Add vote settings to our stat collector
-	statcollection.addStats({
-	    modes = {
-	        win_condition = GameRules.win_condition,
-			starting_level = GameRules.starting_level,
-			starting_gold = GameRules.starting_gold,
-			invoke_cd = GameRules.invoke_cd,
-			mana_cost_reduction = GameRules.mana_cost_reduction,
-			invoke_slots = GameRules.invoke_slots,
-			wtf = GameRules.wtf,
-			fast_respawn = GameRules.fast_respawn,
-			gold_multiplier = GameRules.gold_multiplier,
-			xp_multiplier = GameRules.xp_multiplier
-	    }
-	})
-
+	local running_in_workshop_tools = true
+	for k, hero in pairs( allHeroes ) do
+		if running_in_workshop_tools == true and IsValidEntity(hero) then
+			local pid = hero:GetPlayerID()
+			if pid ~= nil and PlayerResource:IsValidPlayerID(pid) and PlayerResource:IsValidPlayer(pid) then
+				local individual_player = PlayerResource:GetPlayer(pid)
+				if individual_player ~= nil and PlayerResource:GetPlayerName(pid) ~= nil and PlayerResource:GetPlayerName(pid) ~= "" then
+					running_in_workshop_tools = false
+					print("The game appears to be running in the main client (not the Workshop Tools), so stats will be collected.")
+				end
+			end
+		end
+	end
+	
+	-- Add vote settings to our stat collector, so long as the gamemode is not running in the Workshop Tools.
+	if running_in_workshop_tools == false then
+		statcollection.addStats({
+			modes = {
+				win_condition = GameRules.win_condition,
+				starting_level = GameRules.starting_level,
+				starting_gold = GameRules.starting_gold,
+				invoke_cd = GameRules.invoke_cd,
+				mana_cost_reduction = GameRules.mana_cost_reduction,
+				invoke_slots = GameRules.invoke_slots,
+				wtf = GameRules.wtf,
+				fast_respawn = GameRules.fast_respawn,
+				gold_multiplier = GameRules.gold_multiplier,
+				xp_multiplier = GameRules.xp_multiplier
+			}
+		})
+	end
 end
 
 

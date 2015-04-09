@@ -50,7 +50,6 @@ function AllInSuccess(event)
 		end
 	})
 	
-	
 	PopupNumbers(target, "damage", Vector(255, 0, 0), 3.0, random_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
 	event.target:EmitSound("General.BigCoins")
 	event.target:EmitSound("Hero_OgreMagi.Fireblast.x3")
@@ -79,6 +78,8 @@ end
 
 	caster:SpendGold(gold_lost, 0)
 	-- print("Lost "..gold_lost.." gold, bad gamble")
+	
+	local all_in_failure_coins_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	
 	local all_in_failure_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
 	local lights_on = Vector(255, 220, 48)  --Gold

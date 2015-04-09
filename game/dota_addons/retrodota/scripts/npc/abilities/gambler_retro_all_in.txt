@@ -27,6 +27,8 @@
 	{
 		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success.vpcf"
 		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_coins.vpcf"
 	}
 	
 	// Special

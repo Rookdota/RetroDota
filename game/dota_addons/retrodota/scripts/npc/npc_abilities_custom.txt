@@ -195,6 +195,8 @@
 		{
 			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_coins.vpcf"
 		}
 		
 		// Special
@@ -278,6 +280,7 @@
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
 		}
 	
 		// Special
@@ -407,20 +410,8 @@
 		"precache"
 		{
 			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_b.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_beam_black.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_c.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_edge_rope.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_edge_rope_flash.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_lvl_5_tgt_sparks.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_path_ember.vpcf"		
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_path_steam.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_src_burst.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_src_glow.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_burst.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_glow.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_lgt.vpcf"
-			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_tgt_sparks.vpcf"
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_coins.vpcf"
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_blood.vpcf"
 		}
 		
 		// Special

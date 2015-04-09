@@ -15,6 +15,7 @@ function ChipStack(event)
 	--print("Chip Stack did "..gold_damage.." damage!")
 
 	local chip_stack_beam_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf",  PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	ParticleManager:SetParticleControlEnt(chip_stack_beam_particle, 0, event.caster, PATTACH_POINT_FOLLOW, "attach_hitloc", event.caster:GetAbsOrigin(), false)
 	ParticleManager:SetParticleControlEnt(chip_stack_beam_particle, 1, event.target, PATTACH_POINT_FOLLOW, "attach_hitloc", event.target:GetAbsOrigin(), false)
 	local particle_effect_intensity = 400 + (100 * event.ability:GetLevel() - 1)
 	ParticleManager:SetParticleControl(chip_stack_beam_particle, 2, Vector(particle_effect_intensity))

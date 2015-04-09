@@ -24,6 +24,9 @@ function gambler_retro_ante_up_on_spell_start(event)
 	end
 	
 	ability:PayGoldCost()
+	
+	ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	
 	ability:ApplyDataDrivenModifier(caster, target, arg, {})
 	target.ante_bounty = ability:GetLevelSpecialValueFor("cash_in", ability:GetLevel() - 1)
 end
@@ -66,8 +69,13 @@ end
 	event.attacker.ante_bounty = 0
 	
 	local cash_in_full_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)
-	local cash_in_explosion_particle_1 = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
-	local cash_in_explosion_particle_2 = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	
+	--Display twice as many particles since the full amount was cashed in.
+	for i=0, 2, 1 do
+		ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+		ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	end
+	
 	AnteUpShowBounty(event)
 end
 
@@ -85,6 +93,7 @@ function gambler_retro_ante_up_on_owner_death(event)
 	
 	local cash_in_half_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)
 	local cash_in_explosion_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	local cash_in_explosion_backside_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 	AnteUpShowBounty(event)
 end
 

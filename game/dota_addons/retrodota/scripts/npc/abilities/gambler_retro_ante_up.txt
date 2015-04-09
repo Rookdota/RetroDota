@@ -39,6 +39,8 @@
 		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
 		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
 		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf"
 	}
 
 	// Special

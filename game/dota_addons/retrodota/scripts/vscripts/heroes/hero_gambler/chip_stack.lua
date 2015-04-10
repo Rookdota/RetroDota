@@ -36,8 +36,7 @@ function ChipStack(event)
 		end
 	})
 	
-	event.target:EmitSound("DOTA_Item.MagicWand.Activate")
-	event.target:EmitSound("DOTA_Item.MagicStick.Activate")
+	event.target:EmitSound("Hero_DoomBringer.DevourCast")
 	event.target:EmitSound("DOTA_Item.Hand_Of_Midas")
 
     PopupNumbers(event.target, "damage", Vector(255, 0, 0), 2.0, gold_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)

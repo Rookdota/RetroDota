@@ -1688,7 +1688,7 @@
 
 		//Ante Up
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up"									"Ante Up"
-		"DOTA_Tooltip_Ability_gambler_retro_ante_up_Description"						"Costs 100 gold to cast.  When cast, heals the target if they are an ally and damages the target if they are an enemy.  If, sometime within the next %duration% seconds, the target unit gets a hero kill before dying, Gambler \"cashes in\" for a bounty of gold and Ante Up's effect ends.  If, instead, the target unit dies before getting a hero kill, Gambler cashes in for half the gold bounty."
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_Description"						"Costs 100 gold to cast.  When cast, heals the target if they are an ally and damages the target if they are an enemy.  If, sometime within the next %duration% seconds, the target unit gets a hero kill before dying, Gambler \"cashes in\" for a bounty of gold and Ante Up's effect ends.  If, instead, the target unit dies before getting a hero kill, Gambler cashes in for half the gold bounty.  Cannot be self-cast."
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_damage_heal"						"DAMAGE/HEAL:"
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_cash_in"							"CASH IN GOLD BOUNTY:"
 		

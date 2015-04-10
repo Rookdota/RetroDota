@@ -32,6 +32,7 @@
 		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf"
 		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_damage_msg.vpcf"
 		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_explosion.vpcf"
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
 	}
 	
 	// Special

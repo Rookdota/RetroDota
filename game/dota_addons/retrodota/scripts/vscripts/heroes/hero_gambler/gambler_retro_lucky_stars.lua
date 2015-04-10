@@ -24,7 +24,7 @@ function gambler_retro_lucky_stars_on_success(event)
 	end
 
 	if flag == true then
-		event.target:StopSound("Hero_OgreMagi.Fireblast.x1")
+		--event.target:StopSound("Hero_OgreMagi.Fireblast.x1")
 		event.target:EmitSound("Hero_OgreMagi.Fireblast.x1")
 		
 		local lucky_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_lucky_stars_lucky.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)

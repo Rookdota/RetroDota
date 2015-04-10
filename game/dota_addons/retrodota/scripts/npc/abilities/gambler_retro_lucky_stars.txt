@@ -23,7 +23,6 @@
 	 {
 		"particle"		"particles/units/heroes/hero_gambler/gambler_lucky_stars_lucky.vpcf"
 		"particle"		"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_blood_firstpool.vpcf"
-	 	"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 	 }
 
 	// Special

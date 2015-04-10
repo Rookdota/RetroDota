@@ -30,6 +30,7 @@
 		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
 		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_coins.vpcf"
 		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_blood.vpcf"
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 	}
 	
 	// Special

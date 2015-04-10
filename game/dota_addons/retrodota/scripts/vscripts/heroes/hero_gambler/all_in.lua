@@ -66,8 +66,8 @@ function AllInSuccess(event)
     ParticleManager:SetParticleControl(pidx, 2, Vector(3.0, digits, 0))
     ParticleManager:SetParticleControl(pidx, 3, Vector(255, 0, 0))
 
-	event.target:EmitSound("General.BigCoins")
-	event.target:EmitSound("Hero_OgreMagi.Fireblast.x3")
+	event.caster:EmitSound("retro_dota.gambler_retro_all_in_success_bell")
+	event.caster:EmitSound("Hero_OgreMagi.Fireblast.x3")
 end
 
 
@@ -150,5 +150,6 @@ end
     ParticleManager:SetParticleControl(pidx, 2, Vector(3.0, digits, 0))
     ParticleManager:SetParticleControl(pidx, 3, Vector(255, 200, 33))
 	
-	event.caster:EmitSound("General.BigCoins")
+	event.caster:EmitSound("retro_dota.gambler_retro_all_in_failure_buzzer")
+	event.caster:EmitSound("retro_dota.gambler_retro_all_in_failure_gold_lost")
 end

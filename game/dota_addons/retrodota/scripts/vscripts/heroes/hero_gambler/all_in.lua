@@ -50,7 +50,22 @@ function AllInSuccess(event)
 		end
 	})
 	
-	PopupNumbers(target, "damage", Vector(255, 0, 0), 3.0, random_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
+	--Display the explosion particle.
+	ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_success_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+	
+	--Display the damage dealt particle.
+    local pidx = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_success_damage_msg.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
+
+    local digits = 0
+    if random_damage ~= nil then
+        digits = #tostring(random_damage)
+    end
+    digits = digits + 1  --This is due to the POPUP_SYMBOL_POST_LIGHTNING postsymbol.
+
+    ParticleManager:SetParticleControl(pidx, 1, Vector(tonumber(nil), tonumber(random_damage), tonumber(POPUP_SYMBOL_POST_LIGHTNING)))
+    ParticleManager:SetParticleControl(pidx, 2, Vector(3.0, digits, 0))
+    ParticleManager:SetParticleControl(pidx, 3, Vector(255, 0, 0))
+
 	event.target:EmitSound("General.BigCoins")
 	event.target:EmitSound("Hero_OgreMagi.Fireblast.x3")
 end
@@ -123,7 +138,7 @@ end
 	})
 	
 	--Display the gold lost particle.
-    local pidx = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) -- target:GetOwner()
+    local pidx = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 
     local digits = 0
     if gold_lost ~= nil then

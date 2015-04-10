@@ -197,6 +197,7 @@
 			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_coins.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf"
 		}
 		
 		// Special
@@ -282,6 +283,7 @@
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
 			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf"
 		}
 	
 		// Special
@@ -459,6 +461,7 @@
 		"precache"
 		 {
 			"particle"		"particles/units/heroes/hero_gambler/gambler_lucky_stars_lucky.vpcf"
+			"particle"		"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_blood_firstpool.vpcf"
 		 	"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		 }
 	

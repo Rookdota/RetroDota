@@ -9,8 +9,8 @@ function gambler_retro_lucky_stars_on_success(event)
 	local flag = false
 
 	if event.target:IsCreature() then
+		ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_blood_firstpool.vpcf", PATTACH_ABSORIGIN, event.target)
 		event.target:Kill(event.ability, event.caster)
-	    PopupDeny(event.caster, Vector(255, 200, 33))
 	    flag = true
 	elseif event.target:IsHero() or event.target:IsTower() or event.target.GetInvulnCount ~= nil then
 		ApplyDamage({
@@ -19,7 +19,7 @@ function gambler_retro_lucky_stars_on_success(event)
 			damage = event.ability:GetSpecialValueFor("bonus_damage"),
 			damage_type = event.ability:GetAbilityDamageType()
 		})
-		PopupNumbers(event.target, "crit", Vector(255, 200, 33), 1.0, event.ability:GetSpecialValueFor("bonus_damage"), PATTACH_CUSTOMORIGIN, nil, POPUP_SYMBOL_POST_LIGHTNING)
+		PopupNumbers(event.target, "damage", Vector(255, 0, 0), 2.0, event.ability:GetSpecialValueFor("bonus_damage"), PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
 	    flag = true
 	end
 

@@ -36,11 +36,9 @@ function ChipStack(event)
 		end
 	})
 	
-	-- Change this with EmitSoundParams or another fancy thins, this is ridiculous
 	event.target:EmitSound("DOTA_Item.MagicWand.Activate")
 	event.target:EmitSound("DOTA_Item.MagicStick.Activate")
 	event.target:EmitSound("DOTA_Item.Hand_Of_Midas")
-	
-    PopupNumbers(event.target, "crit", Vector(255, 200, 33), 3.0, gold_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
-	
+
+    PopupNumbers(event.target, "damage", Vector(255, 0, 0), 2.0, gold_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end

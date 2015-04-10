@@ -92,10 +92,6 @@ function PopupDeny(target, color)
     PopupNumbers(target, "deny", color, 2.0, nil, PATTACH_ABSORIGIN_FOLLOW, POPUP_SYMBOL_PRE_DENY, nil)
 end
 
-function PopupDeny(target, color)
-    PopupNumbers(target, "deny", color, 2.0, nil, PATTACH_ABSORIGIN_FOLLOW, POPUP_SYMBOL_PRE_DENY, nil)
-end
-
 -- Customizable version.
 function PopupNumbers(target, pfx, color, lifetime, number, pattach, presymbol, postsymbol)
     local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)

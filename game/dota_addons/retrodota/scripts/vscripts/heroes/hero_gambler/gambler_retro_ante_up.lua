@@ -5,13 +5,13 @@
 	Additional parameters: event.DamageHeal
 ================================================================================================================= ]]
 function gambler_retro_ante_up_on_spell_start(event)
-	
 	local caster = event.caster
 	local target = event.target
 	local ability  = event.ability
 	local arg
 	if caster:GetTeamNumber() == target:GetTeamNumber() then
 		target:Heal(event.DamageHeal, caster)
+		 PopupNumbers(target, "damage", Vector(0, 255, 0), 2.0, event.DamageHeal, PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_PLUS, nil)
 		arg = "modifier_gambler_retro_ante_up_buff"
 	else
 		ApplyDamage({
@@ -20,11 +20,13 @@ function gambler_retro_ante_up_on_spell_start(event)
 			damage = event.DamageHeal,
 			damage_type = ability:GetAbilityDamageType()
 		})
+		PopupDamage(target, event.DamageHeal)
 		arg = "modifier_gambler_retro_ante_up_debuff"
 	end
 	
 	ability:PayGoldCost()
 	
+	PopupNumbers(caster, "block", Vector(255, 200, 33), 2.0, ability:GetGoldCost(ability:GetLevel() - 1), PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_MINUS, nil)
 	ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 	
 	ability:ApplyDataDrivenModifier(caster, target, arg, {})
@@ -37,7 +39,6 @@ end
 	Date: 14.1.2015.
 	Disallows self targeting by checking if the target is not the caster when the ability starts
 ================================================================================================================= ]]
-
 function AnteUpPreCast(event)
 	local caster = event.caster
 	local target = event.target
@@ -103,6 +104,6 @@ end
 	Called to show popup.
 ================================================================================================================= ]]
 function AnteUpShowBounty(event)
-	PopupGoldGain(event.caster, event.msg)
+	PopupNumbers(event.caster, "evade", Vector(255, 200, 33), 3.0, event.msg, PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_PLUS, nil)
 	event.caster:EmitSound("General.Coins")
 end

@@ -122,8 +122,18 @@ end
 		end
 	})
 	
+	--Display the gold lost particle.
+    local pidx = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) -- target:GetOwner()
+
+    local digits = 0
+    if gold_lost ~= nil then
+        digits = #tostring(gold_lost)
+    end
+    digits = digits + 1  --This is due to the POPUP_SYMBOL_PRE_MINUS presymbol.
+
+    ParticleManager:SetParticleControl(pidx, 1, Vector(tonumber(POPUP_SYMBOL_PRE_MINUS), tonumber(gold_lost), tonumber(nil)))
+    ParticleManager:SetParticleControl(pidx, 2, Vector(3.0, digits, 0))
+    ParticleManager:SetParticleControl(pidx, 3, Vector(255, 200, 33))
 	
-	
-	PopupNumbers(caster, "damage", Vector(255, 200, 33), 3.0, gold_lost, PATTACH_OVERHEAD_FOLLOW, POPUP_SYMBOL_PRE_MINUS, nil)
-	event.target:EmitSound("General.BigCoins")
+	event.caster:EmitSound("General.BigCoins")
 end

@@ -20,6 +20,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"MaxLevel"						"4"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityCastPoint"				"0.01"
 	"AbilityProcsMagicStick" 		"1"
 	

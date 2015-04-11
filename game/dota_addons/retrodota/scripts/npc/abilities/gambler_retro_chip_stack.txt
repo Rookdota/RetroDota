@@ -14,7 +14,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityTextureName" 			"gambler_retro_chip_stack"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityProcsMagicStick" 		"1"
 	

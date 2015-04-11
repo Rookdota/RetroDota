@@ -6,6 +6,10 @@ If you have any questions regarding the project, if you have found a bug/issue w
 Resources
 =========
 
+
+http://www.playdota.com/forums/showthread.php?t=517562
+
+
 Invoker
 -------
 - [All Skill Values](http://pastebin.com/82HHWJ9a)

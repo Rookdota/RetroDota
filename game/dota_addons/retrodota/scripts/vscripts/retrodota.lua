@@ -564,6 +564,7 @@ function RetroDota:RegisterVote( player, string_values )
     local fast_respawn = vote[8]
     local gold_multiplier = vote[9]
     local xp_multiplier = vote[10]
+    local mirror_match = vote[11]
 
     EmitSoundOnClient("HeroPicker.Selected", player)
 
@@ -575,6 +576,7 @@ function RetroDota:RegisterVote( player, string_values )
 	table.insert(GameRules.gold_votes, gold)
 	table.insert(GameRules.invoke_cd_votes, invoke_cd)
 	table.insert(GameRules.invoke_slots_votes, invoke_slots)
+	table.insert(GameRules.mirror_match_votes, mirror_match)
 	table.insert(GameRules.mana_cost_reduction_votes, mana_cost_reduction)
 	table.insert(GameRules.wtf_votes, wtf)
 	table.insert(GameRules.fast_respawn_votes, fast_respawn)
@@ -654,6 +656,10 @@ function RetroDota:OnEveryoneVoted()
 		GameRules.invoke_slots = RoundedDownAverage(GameRules.invoke_slots_votes)
 		print("==> "..GameRules.invoke_slots)
 
+		print("-> Mirror Match")
+		GameRules.mirror_match = RoundedDownAverage(GameRules.mirror_match_votes)
+		print("==> "..GameRules.mirror_match)
+
 		print("-> WTF?")
 		GameRules.wtf = RoundedDownAverage(GameRules.wtf_votes)
 		print("==> "..GameRules.wtf)
@@ -716,6 +722,13 @@ function RetroDota:OnEveryoneVoted()
 	else
 		GameRules:SendCustomMessage("There are <font color='#FF9933'>" ..GameRules.invoke_slots.." slots</font> for invoked spells.", 0, 0)
 	end
+
+	--Mirror Most Picked
+	if GameRules.mirror_match == "1" then
+		--GameRules:SendCustomMessage("This is a normal all pick match")
+	else
+		GameRules:SendCustomMessage("The most picked hero will be mirrored for all players")
+	end
 	
 	--Invoke cooldown and spell mana cost
 	if GameRules.mana_cost_reduction == 50 then
@@ -775,6 +788,14 @@ function RetroDota:OnEveryoneVoted()
 				end
 			end
 		end
+	end
+
+	-- Mirroring most picked if needed
+	if GameRules.mirror_match == "2" then
+		DeepPrintTable(allHeroes)
+		-- Missing counting and setting the most picked hero
+		-- for k, hero in pairs( allHeroes ) do
+		-- end
 	end
 	
 	-- Add vote settings to our stat collector, so long as the gamemode is not running in the Workshop Tools.

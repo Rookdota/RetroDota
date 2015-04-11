@@ -23,9 +23,8 @@
         var goldBox:Object;
         var invokeCDBox:Object;
         var secondInvokeBox:Object;
-        var forceMirrorBox:Object;
         var manaCostBox:Object;
-        var wtfBox:Object;
+        var mirrorBox:Object;
         var fastRespawnBox:Object;
 		var xpSlider:Object;
 		var goldSlider:Object;
@@ -110,16 +109,6 @@
 			this.secondInvokeBox.setDataProvider(dataProvider7);
 			this.secondInvokeBox.setSelectedIndex(1);
 			this.secondInvokeBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, secondInvoke_click );
-
-			// 2nd Invoke slot: ComboBoxSkinned
-			this.forceMirrorBox = replaceWithValveComponent(forceMirror, "ComboBoxSkinned");
-			var array_fmm:Array = new Array();
-			array_fmm.push({"label":"Normal All Pick", "data":"1"});
-			array_fmm.push({"label":"Mirror Most Picked", "data":"2"});
-			var dataProvider10 = new DataProvider(array_fmm);
-			this.forceMirrorBox.setDataProvider(dataProvider10);
-			this.forceMirrorBox.setSelectedIndex(1);
-			this.forceMirrorBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, forceMirror_click );
 			
 			// Mana Cost: 100/50/0 ComboBoxSkinned
 			this.manaCostBox = replaceWithValveComponent(manaCost, "ComboBoxSkinned");
@@ -132,16 +121,15 @@
 			this.manaCostBox.setSelectedIndex(1);
 			this.manaCostBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onManaCostChanged );
 			
-			// -wtf: DotaCheckBoxDota
-			// 2nd Invoke slot: DotaCheckBoxDota
-			this.wtfBox = replaceWithValveComponent(wtf, "ComboBoxSkinned");
-			var array_wtf:Array = new Array();
-			array_wtf.push({"label":"No", "data":"0"});
-			array_wtf.push({"label":"Yes", "data":"1"});
-			var dataProvider8 = new DataProvider(array_wtf);
-			this.wtfBox.setDataProvider(dataProvider8);
-			this.wtfBox.setSelectedIndex(0);
-			this.wtfBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, wtf_click );
+			// Mirror most picked: ComboBoxSkinned
+			this.mirrorBox = replaceWithValveComponent(forceMirror, "ComboBoxSkinned");
+			var array_mirror:Array = new Array();
+			array_mirror.push({"label":"No", "data":"0"});
+			array_mirror.push({"label":"Yes", "data":"1"});
+			var dataProvider8 = new DataProvider(array_mirror);
+			this.mirrorBox.setDataProvider(dataProvider8);
+			this.mirrorBox.setSelectedIndex(0);
+			this.mirrorBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, mirror_click);
 
 			this.fastRespawnBox = replaceWithValveComponent(fastRespawn, "ComboBoxSkinned");
 			var array_fast:Array = new Array();
@@ -208,8 +196,8 @@
 			this.ManaCostLabel.text = Globals.instance.GameInterface.Translate("#ManaCostLabel");
 			this.ManaCostLabel.setTextFormat(txFormatBold);
 
-			this.wtfLabel.text = Globals.instance.GameInterface.Translate("#wtfLabel");
-			this.wtfLabel.setTextFormat(txFormatBold);
+			this.mirrorLabel.text = Globals.instance.GameInterface.Translate("#mirrorLabel");
+			this.mirrorLabel.setTextFormat(txFormatBold);
 
 			this.fastRespawnLabel.text = Globals.instance.GameInterface.Translate("#fastRespawnLabel");
 			this.fastRespawnLabel.setTextFormat(txFormatBold);
@@ -304,17 +292,10 @@
             return;
         }// end function
 
-        public function forceMirror_click(event:ListEvent)
+        public function mirror_click(event:ListEvent)
         {
-            var Current:String = this.forceMirrorBox.menuList.dataProvider[this.forceMirrorBox.selectedIndex].data;
-            trace("Force Mirror Match " + Current);
-            return;
-        }// end function
-
-        public function wtf_click(event:ListEvent)
-        {
-			var Current:String = this.wtfBox.menuList.dataProvider[this.wtfBox.selectedIndex].data;
-            trace("WTF " + Current);
+			var Current:String = this.mirrorBox.menuList.dataProvider[this.mirrorBox.selectedIndex].data;
+            trace("Mirror " + Current);
             return;
         }// end function
 
@@ -334,14 +315,13 @@
 			var gold:String = this.goldBox.menuList.dataProvider[this.goldBox.selectedIndex].data;
 			var invoke_cd:String = this.invokeCDBox.menuList.dataProvider[this.invokeCDBox.selectedIndex].data;
 			var invoke_slots:String = this.secondInvokeBox.menuList.dataProvider[this.secondInvokeBox.selectedIndex].data;
-			var mirror_match:String = this.forceMirrorBox.menuList.dataProvider[this.forceMirrorBox.selectedIndex].data;
 			var mana_cost_reduction:String = this.manaCostBox.menuList.dataProvider[this.manaCostBox.selectedIndex].data;
-			var wtf:String = this.wtfBox.menuList.dataProvider[this.wtfBox.selectedIndex].data;
+			var mirror_match:String = this.mirrorBox.menuList.dataProvider[this.mirrorBox.selectedIndex].data;
 			var fast_respawn:String = this.fastRespawnBox.menuList.dataProvider[this.fastRespawnBox.selectedIndex].data;
 			var gold_multiplier:String = this.goldSlider.value;
 			var xp_multiplier:String = this.xpSlider.value;
 
-			var command:String = "player_voted "+ win_condition+','+level+','+gold+','+invoke_cd+','+invoke_slots+','+mana_cost_reduction+','+wtf+','+fast_respawn+','+gold_multiplier+','+xp_multiplier+','+mirror_match;
+			var command:String = "player_voted "+ win_condition+','+level+','+gold+','+invoke_cd+','+invoke_slots+','+mana_cost_reduction+','+mirror_match+','+fast_respawn+','+gold_multiplier+','+xp_multiplier;
 
             trace(command)
 			this.gameAPI.SendServerCommand(command);

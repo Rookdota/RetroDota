@@ -84,7 +84,7 @@ function RetroDota:InitGameMode()
 	GameRules.invoke_cd_votes = {}
 	GameRules.invoke_slots_votes = {}
 	GameRules.mana_cost_reduction_votes = {}
-	GameRules.wtf_votes = {}
+	GameRules.mirror_votes = {}
 	GameRules.fast_respawn_votes = {}
 	GameRules.gold_multiplier_votes = {}
 	GameRules.xp_multiplier_votes = {}
@@ -98,7 +98,7 @@ function RetroDota:InitGameMode()
 	GameRules.invoke_cd = GameRules.vote_options.invoke_cd["2"]
 	GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["2"]
 	GameRules.invoke_slots = "2"
-	GameRules.wtf = "0"
+	GameRules.mirror_match = "0"
 	GameRules.fast_respawn = "1"
 	GameRules.gold_multiplier = "1"
 	GameRules.xp_multiplier = "1"
@@ -560,11 +560,10 @@ function RetroDota:RegisterVote( player, string_values )
     local invoke_cd = vote[4]
     local invoke_slots = vote[5]
     local mana_cost_reduction = vote[6]
-    local wtf = vote[7]
+    local mirror_match = vote[7]
     local fast_respawn = vote[8]
     local gold_multiplier = vote[9]
     local xp_multiplier = vote[10]
-    local mirror_match = vote[11]
 
     EmitSoundOnClient("HeroPicker.Selected", player)
 
@@ -578,7 +577,6 @@ function RetroDota:RegisterVote( player, string_values )
 	table.insert(GameRules.invoke_slots_votes, invoke_slots)
 	table.insert(GameRules.mirror_match_votes, mirror_match)
 	table.insert(GameRules.mana_cost_reduction_votes, mana_cost_reduction)
-	table.insert(GameRules.wtf_votes, wtf)
 	table.insert(GameRules.fast_respawn_votes, fast_respawn)
 	table.insert(GameRules.gold_multiplier_votes, gold_multiplier)
 	table.insert(GameRules.xp_multiplier_votes, xp_multiplier)	
@@ -625,7 +623,7 @@ function RetroDota:OnEveryoneVoted()
 		GameRules.invoke_cd = GameRules.vote_options.invoke_cd["1"]
 		GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["1"]
 		GameRules.invoke_slots = "1"
-		GameRules.wtf = "0"
+		GameRules.mirror_match = "0"
 		GameRules.fast_respawn = "0"
 		GameRules.gold_multiplier = "1"
 		GameRules.xp_multiplier = "1"]]
@@ -659,10 +657,6 @@ function RetroDota:OnEveryoneVoted()
 		print("-> Mirror Match")
 		GameRules.mirror_match = RoundedDownAverage(GameRules.mirror_match_votes)
 		print("==> "..GameRules.mirror_match)
-
-		print("-> WTF?")
-		GameRules.wtf = RoundedDownAverage(GameRules.wtf_votes)
-		print("==> "..GameRules.wtf)
 
 		print("-> Fast Respawn?")
 		GameRules.fast_respawn = RoundedDownAverage(GameRules.fast_respawn_votes)
@@ -722,13 +716,6 @@ function RetroDota:OnEveryoneVoted()
 	else
 		GameRules:SendCustomMessage("There are <font color='#FF9933'>" ..GameRules.invoke_slots.." slots</font> for invoked spells.", 0, 0)
 	end
-
-	--Mirror Most Picked
-	if GameRules.mirror_match == "1" then
-		--GameRules:SendCustomMessage("This is a normal all pick match")
-	else
-		GameRules:SendCustomMessage("The most picked hero will be mirrored for all players")
-	end
 	
 	--Invoke cooldown and spell mana cost
 	if GameRules.mana_cost_reduction == 50 then
@@ -745,23 +732,18 @@ function RetroDota:OnEveryoneVoted()
 		GameRules:GetGameModeEntity():SetFixedRespawnTime(3)
 	end
 
-	if GameRules.wtf == "1" then
-		SendToConsole("dota_ability_debug 1")
-		SendToServerConsole("dota_ability_debug 1")
-	end
-
-	-- WTF + Insta Respawn
-	if GameRules.wtf == "1" then
+	-- Mirror + Insta Respawn
+	if GameRules.mirror_match == "1" then
 		if GameRules.fast_respawn == "1" then
-			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
+			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
 		else
-			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
+			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
 		end
 	else
 		if GameRules.fast_respawn == "1" then
-			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
+			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
 		else
-			GameRules:SendCustomMessage("WTF mode is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
+			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
 		end
 	end
 
@@ -808,7 +790,7 @@ function RetroDota:OnEveryoneVoted()
 				invoke_cd = GameRules.invoke_cd,
 				mana_cost_reduction = GameRules.mana_cost_reduction,
 				invoke_slots = GameRules.invoke_slots,
-				wtf = GameRules.wtf,
+				mirror_match = GameRules.mirror_match,
 				fast_respawn = GameRules.fast_respawn,
 				gold_multiplier = GameRules.gold_multiplier,
 				xp_multiplier = GameRules.xp_multiplier

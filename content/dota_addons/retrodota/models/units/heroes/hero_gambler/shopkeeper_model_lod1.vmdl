@@ -1510,8 +1510,8 @@ CVanimGroup CVanimGroup_0
 		{
 			string m_Animationname = "stun"
 			string m_Filepath = "models/units/heroes/hero_gambler/stun.smd"
-			int m_nStartframe = -1
-			int m_nEndframe = 179
+			int m_nStartframe = 179
+			int m_nEndframe = 358
 			float m_flFps = 210.000000
 			CAnimationLoop m_Loop = CAnimationLoop
 			{

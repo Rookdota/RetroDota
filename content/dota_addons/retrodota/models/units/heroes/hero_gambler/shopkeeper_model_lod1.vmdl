@@ -1509,13 +1509,13 @@ CVanimGroup CVanimGroup_0
 		CVanim
 		{
 			string m_Animationname = "stun"
-			string m_Filepath = "models/units/heroes/hero_gambler/bindpose.smd"
+			string m_Filepath = "models/units/heroes/hero_gambler/stun.smd"
 			int m_nStartframe = -1
-			int m_nEndframe = -1
-			float m_flFps = 30.000000
+			int m_nEndframe = 179
+			float m_flFps = 210.000000
 			CAnimationLoop m_Loop = CAnimationLoop
 			{
-				bool m_bLoop = false
+				bool m_bLoop = true
 				bool m_bSmoothLoop = false
 				int m_nSmoothLoopStart = 0
 				int m_nSmoothLoopEnd = 0

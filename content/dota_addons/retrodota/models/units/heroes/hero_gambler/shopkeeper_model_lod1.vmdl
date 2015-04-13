@@ -51,7 +51,11 @@ CVModel CVModel_0
 	}
 	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
 	[
-		
+		CVhitBoxSetListReference
+		{
+			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
+			string m_sFileName = ""
+		}
 	]
 	CVattachmentListReference[] m_pAttachmentLists = 
 	[
@@ -113,6 +117,800 @@ CVModel CVModel_0
 	bool m_bEnableClothProcessing = true
 	float m_flClothEnableThreshold = 0.050000
 	int m_nMaxClothVertsPerMesh = 2048
+}
+
+CVhitBoxSetList CVhitBoxSetList_0
+{
+	CVhitBoxSet[] m_HitBoxSets = 
+	[
+		CVhitBoxSet
+		{
+			string m_name = "default"
+			CVhitBox[] m_HitBoxes = 
+			[
+				CVhitBox
+				{
+					string m_name = "root"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "root"
+					float(3) m_vMinBounds = ( -40.646736, -39.569984, -35.372246 )
+					float(3) m_vMaxBounds = ( 42.787498, 27.370331, 50.410423 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "spine1"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "spine1"
+					float(3) m_vMinBounds = ( -17.899651, -40.646748, -48.493347 )
+					float(3) m_vMaxBounds = ( 33.973228, 42.787495, 25.955900 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "spine2"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "spine2"
+					float(3) m_vMinBounds = ( -13.969162, -31.822765, -47.185230 )
+					float(3) m_vMaxBounds = ( 28.039902, 38.048313, 28.824177 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "spine3"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "spine3"
+					float(3) m_vMinBounds = ( -13.197128, -39.012146, -47.933048 )
+					float(3) m_vMaxBounds = ( 25.778709, 39.012177, 23.781048 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "spine4"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "spine4"
+					float(3) m_vMinBounds = ( -23.077492, -36.060547, -32.746311 )
+					float(3) m_vMaxBounds = ( 30.873810, 36.060577, 21.000500 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "clavicle_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "clavicle_L"
+					float(3) m_vMinBounds = ( -11.436920, -25.351959, -20.391403 )
+					float(3) m_vMaxBounds = ( 43.573334, 29.823692, 21.106384 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "clavicle_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "clavicle_R"
+					float(3) m_vMinBounds = ( -43.573330, -27.156372, -23.098007 )
+					float(3) m_vMaxBounds = ( 4.008343, 22.689045, 29.863274 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bicep_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bicep_L"
+					float(3) m_vMinBounds = ( -16.067192, -13.606125, -18.123363 )
+					float(3) m_vMaxBounds = ( 43.562431, 15.574257, 24.693409 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bicep_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bicep_R"
+					float(3) m_vMinBounds = ( -43.562378, -15.574326, -24.693420 )
+					float(3) m_vMaxBounds = ( 9.794567, 13.606079, 16.834743 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "mainBag0_2"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "mainBag0_2"
+					float(3) m_vMinBounds = ( -21.700993, -14.438515, -14.057465 )
+					float(3) m_vMaxBounds = ( 18.743359, 7.752289, 28.884262 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "elbow_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "elbow_L"
+					float(3) m_vMinBounds = ( -0.376860, -13.606094, -14.655745 )
+					float(3) m_vMaxBounds = ( 31.893095, 16.054039, 11.901020 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "elbow_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "elbow_R"
+					float(3) m_vMinBounds = ( -32.014027, -16.054092, -11.901094 )
+					float(3) m_vMaxBounds = ( 32.569416, 13.606049, 14.655645 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "tenticle6_1"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "tenticle6_1"
+					float(3) m_vMinBounds = ( 8.231682, -5.196667, -3.997421 )
+					float(3) m_vMaxBounds = ( 10.235485, 10.426525, 3.070839 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "wrist_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "wrist_L"
+					float(3) m_vMinBounds = ( 0.184326, -2.876259, -8.257336 )
+					float(3) m_vMaxBounds = ( 7.252943, 5.890213, 8.320614 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "wrist_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "wrist_R"
+					float(3) m_vMinBounds = ( -70.638512, -26.059593, -147.240616 )
+					float(3) m_vMaxBounds = ( 30.297569, 8.228256, 157.237015 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "tenticle6_2"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "tenticle6_2"
+					float(3) m_vMinBounds = ( -2.740528, -4.676575, -3.408958 )
+					float(3) m_vMaxBounds = ( 8.339073, 10.426544, 3.171951 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "thigh_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "thigh_L"
+					float(3) m_vMinBounds = ( -14.793358, -36.354275, -36.520729 )
+					float(3) m_vMaxBounds = ( 46.553581, 25.786579, 31.371115 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "thigh_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "thigh_R"
+					float(3) m_vMinBounds = ( -46.553570, -25.786570, -32.531498 )
+					float(3) m_vMaxBounds = ( 17.217163, 25.654566, 36.520725 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Ring_1_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Ring_1_L"
+					float(3) m_vMinBounds = ( -0.960339, -2.380375, -2.365707 )
+					float(3) m_vMaxBounds = ( 7.626792, 2.207844, 1.882347 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Thumb_0_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Thumb_0_L"
+					float(3) m_vMinBounds = ( -4.210875, -2.241188, -5.101704 )
+					float(3) m_vMaxBounds = ( 7.201605, 4.441772, 1.909870 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Index_1_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Index_1_L"
+					float(3) m_vMinBounds = ( -0.586792, -2.544563, -4.298042 )
+					float(3) m_vMaxBounds = ( 8.686128, 2.103336, 1.100052 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Mid_1_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Mid_1_L"
+					float(3) m_vMinBounds = ( -1.221146, -2.978336, -2.911781 )
+					float(3) m_vMaxBounds = ( 7.884944, 2.305805, 1.449188 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Pinky_1_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Pinky_1_L"
+					float(3) m_vMinBounds = ( -0.479172, -3.328743, -1.656303 )
+					float(3) m_vMaxBounds = ( 5.855213, 1.818794, 1.331482 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Pinky_1_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Pinky_1_R"
+					float(3) m_vMinBounds = ( -2.000000, -2.000000, -2.000000 )
+					float(3) m_vMaxBounds = ( 2.000000, 2.000000, 2.000000 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Ring_1_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Ring_1_R"
+					float(3) m_vMinBounds = ( -8.149966, -2.208061, -1.882309 )
+					float(3) m_vMaxBounds = ( 0.960386, 2.380142, 3.039871 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Thumb_0_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Thumb_0_R"
+					float(3) m_vMinBounds = ( -6.248377, -4.566216, -1.909760 )
+					float(3) m_vMaxBounds = ( 5.896882, 2.241310, 4.586292 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Index_1_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Index_1_R"
+					float(3) m_vMinBounds = ( -9.645598, -2.223473, -1.099937 )
+					float(3) m_vMaxBounds = ( 0.586815, 1.816635, 3.006516 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Mid_1_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Mid_1_R"
+					float(3) m_vMinBounds = ( 0.962280, -2.305969, -1.449097 )
+					float(3) m_vMaxBounds = ( 1.221144, 2.573910, -1.445259 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontTabbard2_0"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontTabbard2_0"
+					float(3) m_vMinBounds = ( 11.600937, -19.903736, -1.002930 )
+					float(3) m_vMaxBounds = ( 12.518600, 14.662890, 5.449636 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "tenticle6_3"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "tenticle6_3"
+					float(3) m_vMinBounds = ( 8.030426, -3.647060, -2.949577 )
+					float(3) m_vMaxBounds = ( 8.255405, 2.790249, 2.478561 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "knee_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "knee_L"
+					float(3) m_vMinBounds = ( -14.849995, -9.841161, -38.242233 )
+					float(3) m_vMaxBounds = ( 30.515671, 24.909039, 7.164997 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "knee_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "knee_R"
+					float(3) m_vMinBounds = ( -30.488274, -24.665333, -7.176693 )
+					float(3) m_vMaxBounds = ( 15.051685, 9.801979, 38.295959 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Ring_2_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Ring_2_L"
+					float(3) m_vMinBounds = ( -0.274010, -1.953312, -1.896370 )
+					float(3) m_vMaxBounds = ( 6.982658, 1.793056, 1.137978 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Thumb_1_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Thumb_1_L"
+					float(3) m_vMinBounds = ( -4.227533, -2.241165, -5.066261 )
+					float(3) m_vMaxBounds = ( 11.056454, 2.888191, 1.234047 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Index_2_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Index_2_L"
+					float(3) m_vMinBounds = ( -0.415535, -2.324749, -2.361343 )
+					float(3) m_vMaxBounds = ( 6.693962, 1.953178, 0.878952 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Mid_2_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Mid_2_L"
+					float(3) m_vMinBounds = ( -0.177734, -1.809757, -1.703522 )
+					float(3) m_vMaxBounds = ( 5.533089, 2.045025, 0.894691 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Pinky_2_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Pinky_2_L"
+					float(3) m_vMinBounds = ( -0.407188, -1.782181, -1.842850 )
+					float(3) m_vMaxBounds = ( 4.707336, 1.746956, 1.287682 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "neck1"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "neck1"
+					float(3) m_vMinBounds = ( -10.515404, -20.199963, -30.873287 )
+					float(3) m_vMaxBounds = ( 26.178436, 20.200024, 21.183891 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Pinky_2_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Pinky_2_R"
+					float(3) m_vMinBounds = ( -3.067379, -1.654022, -1.743416 )
+					float(3) m_vMaxBounds = ( -1.857456, 2.322350, 1.890976 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Ring_2_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Ring_2_R"
+					float(3) m_vMinBounds = ( -6.727104, -2.252743, 1.178375 )
+					float(3) m_vMaxBounds = ( -2.654373, 1.302589, 1.890465 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Thumb_1_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Thumb_1_R"
+					float(3) m_vMinBounds = ( -7.826408, -2.614853, -1.141441 )
+					float(3) m_vMaxBounds = ( 4.227631, 2.241287, 3.070782 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Index_2_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Index_2_R"
+					float(3) m_vMinBounds = ( -7.070778, -2.375732, -0.973076 )
+					float(3) m_vMaxBounds = ( -2.365486, 1.730156, 2.143532 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Mid_2_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Mid_2_R"
+					float(3) m_vMinBounds = ( -2.000000, -2.000000, -2.000000 )
+					float(3) m_vMaxBounds = ( 2.000000, 2.000000, 2.000000 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontTabbard2_1"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontTabbard2_1"
+					float(3) m_vMinBounds = ( 12.734154, -35.532467, -7.668827 )
+					float(3) m_vMaxBounds = ( 17.774990, 14.095482, 9.976421 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "tenticle6_4"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "tenticle6_4"
+					float(3) m_vMinBounds = ( 7.812626, -2.747143, -1.910545 )
+					float(3) m_vMaxBounds = ( 7.926891, 1.673092, 1.689362 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontLowerRobe1_0_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontLowerRobe1_0_R"
+					float(3) m_vMinBounds = ( -13.655548, -9.072670, -8.958473 )
+					float(3) m_vMaxBounds = ( 33.715481, 8.834679, 5.661751 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "ankle_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "ankle_L"
+					float(3) m_vMinBounds = ( -4.330442, -9.532154, -18.865814 )
+					float(3) m_vMaxBounds = ( 23.651047, 10.254204, 3.385645 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "ankle_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "ankle_R"
+					float(3) m_vMinBounds = ( -23.687319, -10.609091, -3.372157 )
+					float(3) m_vMaxBounds = ( 4.338667, 9.181786, 18.837736 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontLowerRobe2_0_A_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontLowerRobe2_0_A_L"
+					float(3) m_vMinBounds = ( -33.169418, -9.440144, -9.992886 )
+					float(3) m_vMaxBounds = ( 2.317604, 9.457100, 5.256340 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "MidMeta_0_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "MidMeta_0_L"
+					float(3) m_vMinBounds = ( -3.394855, -5.923889, -7.744843 )
+					float(3) m_vMaxBounds = ( 12.199551, 3.277908, 2.746803 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "IndexMeta_0_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "IndexMeta_0_L"
+					float(3) m_vMinBounds = ( 1.422253, -5.120220, -7.589806 )
+					float(3) m_vMaxBounds = ( 11.180618, 4.728119, 2.840675 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "PinkyMeta_0_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "PinkyMeta_0_L"
+					float(3) m_vMinBounds = ( -2.514030, -3.164719, -4.573524 )
+					float(3) m_vMaxBounds = ( 8.853514, 2.838570, 2.155647 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "RingMeta_0_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "RingMeta_0_L"
+					float(3) m_vMinBounds = ( -2.349491, -6.728355, -4.975441 )
+					float(3) m_vMaxBounds = ( 10.292614, 6.462757, 2.214973 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Ring_3_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Ring_3_L"
+					float(3) m_vMinBounds = ( 1.018860, -1.766479, -1.158085 )
+					float(3) m_vMaxBounds = ( 3.775063, 1.743111, 0.788765 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Thumb_2_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Thumb_2_L"
+					float(3) m_vMinBounds = ( 1.187296, -1.602829, -2.872581 )
+					float(3) m_vMaxBounds = ( 5.385576, 2.169273, 0.361511 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Index_3_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Index_3_L"
+					float(3) m_vMinBounds = ( 0.771652, -2.040565, -1.989914 )
+					float(3) m_vMaxBounds = ( 4.116188, 1.814022, 0.662354 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Mid_3_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Mid_3_L"
+					float(3) m_vMinBounds = ( 0.926422, -1.685211, -1.280632 )
+					float(3) m_vMaxBounds = ( 4.075897, 1.704727, 0.955322 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Pinky_3_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Pinky_3_L"
+					float(3) m_vMinBounds = ( 1.102127, -1.614586, -1.457207 )
+					float(3) m_vMaxBounds = ( 3.511559, 1.673141, 1.403568 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "basketAttach5_0"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "basketAttach5_0"
+					float(3) m_vMinBounds = ( -31.627502, -23.884552, -24.988853 )
+					float(3) m_vMaxBounds = ( 38.597519, 24.735046, 21.807190 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "head"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "head"
+					float(3) m_vMinBounds = ( -24.032799, -15.398077, -17.840347 )
+					float(3) m_vMaxBounds = ( 16.440144, 15.398115, 18.600601 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Pinky_3_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Pinky_3_R"
+					float(3) m_vMinBounds = ( -4.066200, -1.480087, -1.482155 )
+					float(3) m_vMaxBounds = ( 1.505241, 2.430252, 2.332443 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Ring_3_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Ring_3_R"
+					float(3) m_vMinBounds = ( -3.988304, -2.392303, -1.053062 )
+					float(3) m_vMaxBounds = ( 0.555084, 1.310921, 2.311386 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Thumb_2_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Thumb_2_R"
+					float(3) m_vMinBounds = ( -5.371351, -2.169151, -1.132484 )
+					float(3) m_vMaxBounds = ( -1.274055, 1.602951, 2.623562 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Index_3_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Index_3_R"
+					float(3) m_vMinBounds = ( -3.954201, -2.330250, -0.881912 )
+					float(3) m_vMaxBounds = ( 1.563820, 1.732105, 2.027161 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "Mid_3_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "Mid_3_R"
+					float(3) m_vMinBounds = ( -3.918854, -2.626846, -0.603554 )
+					float(3) m_vMaxBounds = ( 1.445160, 1.175339, 1.234352 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "RingMeta_0_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "RingMeta_0_R"
+					float(3) m_vMinBounds = ( -9.230539, -6.462948, -2.214905 )
+					float(3) m_vMaxBounds = ( 2.349551, 6.728153, 4.550850 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "IndexMeta_0_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "IndexMeta_0_R"
+					float(3) m_vMinBounds = ( -10.388916, -4.728310, -2.840569 )
+					float(3) m_vMaxBounds = ( -1.422176, 4.530228, 7.458855 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "MidMeta_0_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "MidMeta_0_R"
+					float(3) m_vMinBounds = ( -10.045587, -2.292130, -2.416031 )
+					float(3) m_vMaxBounds = ( -1.832269, 5.923733, 7.744911 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "PinkyMeta_0_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "PinkyMeta_0_R"
+					float(3) m_vMinBounds = ( -8.853468, -2.838776, -2.155632 )
+					float(3) m_vMaxBounds = ( 2.514105, 2.226906, 0.713928 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bottle3Attach4_0"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bottle3Attach4_0"
+					float(3) m_vMinBounds = ( -4.344910, -3.780117, -12.298538 )
+					float(3) m_vMaxBounds = ( 17.470474, 21.862335, 57.224739 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "daggerAttach7_0"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "daggerAttach7_0"
+					float(3) m_vMinBounds = ( -23.251770, -26.960442, -18.896927 )
+					float(3) m_vMaxBounds = ( 37.511917, 32.347439, 5.732597 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "hornAttach1_0"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "hornAttach1_0"
+					float(3) m_vMinBounds = ( -19.279350, -26.817612, -35.297905 )
+					float(3) m_vMaxBounds = ( 21.062393, 27.124153, 29.851440 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontTabbard2_2"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontTabbard2_2"
+					float(3) m_vMinBounds = ( -24.729465, -35.532467, -7.428688 )
+					float(3) m_vMaxBounds = ( 17.706272, 13.592781, 76.265175 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "tenticle6_5"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "tenticle6_5"
+					float(3) m_vMinBounds = ( 4.454491, -2.922695, -2.490067 )
+					float(3) m_vMaxBounds = ( 13.417419, 2.583385, 1.492477 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontLowerRobe1_1_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontLowerRobe1_1_R"
+					float(3) m_vMinBounds = ( 0.205856, -9.631659, -5.752411 )
+					float(3) m_vMaxBounds = ( 21.889114, 8.171755, 6.290833 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "toeBase_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "toeBase_L"
+					float(3) m_vMinBounds = ( -4.393401, -10.221699, -4.722005 )
+					float(3) m_vMaxBounds = ( 13.200915, 10.357807, 9.067106 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "toeBase_R"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "toeBase_R"
+					float(3) m_vMinBounds = ( -13.131978, -10.714407, -9.069805 )
+					float(3) m_vMaxBounds = ( 4.378152, 9.842089, 4.724775 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "frontLowerRobe2_1_A_L"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "frontLowerRobe2_1_A_L"
+					float(3) m_vMinBounds = ( -23.105465, -10.672722, -5.943195 )
+					float(3) m_vMaxBounds = ( -1.310833, 8.308060, 6.091820 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				}
+			]
+		}
+	]
 }
 
 CVattachmentList CVattachmentList_0
@@ -215,7 +1013,7 @@ CVanimGroup CVanimGroup_0
 		},
 		CVanim
 		{
-			string m_Animationname = "bow"
+			string m_Animationname = "AnteUp"
 			string m_Filepath = "models/units/heroes/hero_gambler/bow.smd"
 			int m_nStartframe = 0
 			int m_nEndframe = 139
@@ -325,7 +1123,7 @@ CVanimGroup CVanimGroup_0
 		},
 		CVanim
 		{
-			string m_Animationname = "goodbye"
+			string m_Animationname = "AllIn"
 			string m_Filepath = "models/units/heroes/hero_gambler/goodbye.smd"
 			int m_nStartframe = 0
 			int m_nEndframe = 79
@@ -380,7 +1178,7 @@ CVanimGroup CVanimGroup_0
 		},
 		CVanim
 		{
-			string m_Animationname = "greeting"
+			string m_Animationname = "ChipStack"
 			string m_Filepath = "models/units/heroes/hero_gambler/greeting.smd"
 			int m_nStartframe = 0
 			int m_nEndframe = 149
@@ -513,6 +1311,446 @@ CVanimGroup CVanimGroup_0
 				CActivity
 				{
 					string m_Name = "ACT_DOTA_ATTACK"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "spawn"
+			string m_Filepath = "models/units/heroes/hero_gambler/bow.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 30.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_SPAWN"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "flail"
+			string m_Filepath = "models/units/heroes/hero_gambler/bindpose.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 30.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_FLAIL"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "death"
+			string m_Filepath = "models/units/heroes/hero_gambler/death.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 90.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_DIE"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "stun"
+			string m_Filepath = "models/units/heroes/hero_gambler/bindpose.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 30.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_DISABLED"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "defeat"
+			string m_Filepath = "models/units/heroes/hero_gambler/greeting.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 15.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_DEFEAT"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "victory"
+			string m_Filepath = "models/units/heroes/hero_gambler/bow.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 15.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_VICTORY"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "teleport"
+			string m_Filepath = "models/units/heroes/hero_gambler/goodbye.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 15.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_TELEPORT"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		},
+		CVanim
+		{
+			string m_Animationname = "attack2"
+			string m_Filepath = "models/units/heroes/hero_gambler/attack.smd"
+			int m_nStartframe = -1
+			int m_nEndframe = -1
+			float m_flFps = 215.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = false
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_ATTACK2"
 					int m_nWeight = 1
 				}
 			]

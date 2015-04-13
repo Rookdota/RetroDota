@@ -1729,7 +1729,7 @@ CVanimGroup CVanimGroup_0
 		CVanim
 		{
 			string m_Animationname = "attack2"
-			string m_Filepath = "models/units/heroes/hero_gambler/attack.smd"
+			string m_Filepath = "models/units/heroes/hero_gambler/attack_rare.smd"
 			int m_nStartframe = -1
 			int m_nEndframe = -1
 			float m_flFps = 215.000000

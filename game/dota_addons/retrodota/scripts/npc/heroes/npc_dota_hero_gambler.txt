@@ -3,19 +3,20 @@
 //=================================================================================================================
 "npc_dota_hero_gambler"
 {
-	"override_hero"				"npc_dota_hero_viper"
+	"override_hero"				"npc_dota_hero_zuus"
 	
 	"Model"						"models/units/heroes/hero_gambler/shopkeeper_model_lod1.vmdl"		// Model.
 	"ModelScale" 				"1.05"
-	"Portrait"					"vgui/hud/heroportraits/portrait_viper"		// Small image for hero selection
-	"IdleExpression"			"scenes/viper/viper_exp_idle_01.vcd"		// custom facial animation idle
-	"SoundSet"					"Hero_Viper"									// Name of sound set.
+	"Portrait"					"vgui/hud/heroportraits/portrait_zuus"	// Small image for hero selection
+	"IdleExpression"			"scenes/zuus/zuus_exp_idle_01.vcd"		// custom facial animation idle
+	"SoundSet"					"Hero_zuus"						// Name of sound set.
 	"HeroGlowColor" 			"255 200 33"
-	"PickSound"					"viper_vipe_spawn_01"
-	"BanSound"					"viper_vipe_anger_06"
-	"HeroSelectSoundEffect"		"Hero_Viper.Pick"
-	"ProjectileModel"			"viper_base_attack"						// Particle system model for projectile.
-	
+	"PickSound"					"zuus_zuus_spawn_01"
+	"BanSound"					"zuus_zuus_anger_03"
+	"HeroSelectSoundEffect"		"retro_dota.gambler_retro_ante_up_cash_in"
+	"ProjectileModel"			"zuus_base_attack"						// Particle system model for projectile.
+	"Team"						"Good"
+	"HeroID"					"22"														// unique ID number for this hero.  Do not change this once established or it will invalidate collected stats.	
 	
 	"AbilityLayout" 			"4"
 	"Ability1"					"gambler_retro_ante_up"
@@ -55,31 +56,24 @@
 	"StatusManaRegen"			"1.0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
-	
 
-	"ParticleFile"				"particles/units/heroes/hero_viper.pcf"
-	"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_viper.txt"
-	"VoiceFile"					"scripts/voscripts/game_sounds_vo_viper.txt"
+	"ParticleFile"				"particles/units/heroes/hero_zuus.pcf"
+	"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_zuus.txt"
+	"VoiceFile"					"scripts/voscripts/game_sounds_vo_zuus.txt"
 
 	// Additional data needed to render the out of game portrait
 	"RenderablePortrait"
 	{
 		"Particles"
 		{
-			"viper_loadout"
+			"zeus_loadout"
 			{
 				"0"
-				{
-					"type"		"follow_origin"
-					"location"		"attach_hitloc"
-				}
-				"1"
 				{
 					"type"		"follow_attachment"
 					"location"	"attach_hitloc"
 				}
-
-			}
+			}	
 		}
-	}	
+	}				
 }

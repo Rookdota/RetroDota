@@ -54,6 +54,14 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
 			bool m_bDisableChild = false
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/units/heroes/hero_gambler/gambler_all_in_failure_coins_magic.vpcf"
+			bool m_bPreventNameBasedLookup = false
+			float m_flDelay = 0.000000
+			bool m_bEndCap = false
+			bool m_bDisableChild = false
 		}
 	]
 	bool m_bShouldSort = true

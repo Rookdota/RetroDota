@@ -16,7 +16,7 @@
 		
 		// ******************** HEROES ***********************
 		"npc_dota_hero_invoker"    	  "Arsenal Magus"
-		"npc_dota_hero_viper"    	  "Gambler"
+		"npc_dota_hero_zuus"    	  "Gambler"
 
 		
 		// ******************** ITEMS ***********************
@@ -1740,13 +1740,13 @@
 		// ******************** GamePanel UI ***********************
 		"Welcome"							"Welcome"	
 		"to"								"to"
-		"Version"							"1.0.1"
+		"Version"							"2.0.0"
 		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?"
 		"Instructions"						"Vote on the settings you would like to play\n with using the central panel.\n\nWhen hosting, choose from a brand new arena\nor the standard Dota map."
 		"New"								"New in this version:"
-		"Changes"							"Initial release, with 27-spell Invoker and a new map!"
+		"Changes"							"Gambler and a gold-based win condition!"
 		"Soon"								"Coming soon: "
-		"SoonText"							"Gambler!" //FF9933
+		"SoonText"							"?" //FF9933
 		"Authors"							"Created by "
 		"Author1"							"Rook" //0099CC
 		"Author2"							"Noya" //CC0099

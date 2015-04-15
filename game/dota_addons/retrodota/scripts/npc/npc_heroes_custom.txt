@@ -13,12 +13,13 @@
 		"IdleExpression"			"scenes/zuus/zuus_exp_idle_01.vcd"		// custom facial animation idle
 		"SoundSet"					"Hero_zuus"						// Name of sound set.
 		"HeroGlowColor" 			"255 200 33"
-		"PickSound"					"zuus_zuus_spawn_01"
-		"BanSound"					"zuus_zuus_anger_03"
-		"HeroSelectSoundEffect"		"retro_dota.gambler_retro_ante_up_cash_in"
-		"ProjectileModel"			"zuus_base_attack"						// Particle system model for projectile.
+		"PickSound"					"sounds/gambler_responses/you_found_me.vsnd"
+		"BanSound"					"sounds/gambler_responses/frull_not_in_the_shop.vsnd"
+		"HeroSelectSoundEffect"		"sounds/gambler_retro_ante_up_cash_in.vsnd"
+		"ProjectileModel"			"particles/units/heroes/hero_gambler/gambler_base_attack.vpcf"						// Particle system model for projectile.
 		"Team"						"Good"
-		"HeroID"					"22"														// unique ID number for this hero.  Do not change this once established or it will invalidate collected stats.	
+		"HeroID"					"22"														// unique ID number for this hero.  Do not change this once established or it will invalidate collected stats.
+		"particle_folder"			"particles/units/heroes/hero_gambler"
 		
 		"AbilityLayout" 			"4"
 		"Ability1"					"gambler_retro_ante_up"
@@ -30,9 +31,14 @@
 		"MagicalResistance"			"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"43"										// Damage range min.
-		"AttackDamageMax"			"49"										// Damage range max.
-	
+		"AttackDamageMin"			"43"									// Damage range min.
+		"AttackDamageMax"			"49"									// Damage range max.
+		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackAnimationPoint"		"0.33"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
+		"AttackRange"				"575"									// Range within a target can be attacked.
+		"ProjectileSpeed"			"1200"									// Speed of projectile.
+		
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"16"										// Base strength
 		"AttributeStrengthGain"		"2"										// Strength bonus per level.
@@ -41,13 +47,14 @@
 		"AttributeBaseIntelligence"	"21"										// Base intelligence
 		"AttributeIntelligenceGain"	"2"										// Intelligence bonus per level.
 	
-		"BountyXP"					"0"									    // Experience earn.
-		"BountyGoldMin"				"0"										// Gold earned min.
-		"BountyGoldMax"				"0"										// Gold earned max.
+		//"BountyXP"					"0"									    // Experience earn.
+		//"BountyGoldMin"				"0"										// Gold earned min.
+		//"BountyGoldMax"				"0"										// Gold earned max.
 	
-		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		//"RingRadius"				"70"
-	
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"80"
+		"HealthBarOffset"			"210"
+		
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"1.0"									// Turning rate.
@@ -59,9 +66,8 @@
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
-		"ParticleFile"				"particles/units/heroes/hero_zuus.pcf"
-		"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_zuus.txt"
-		"VoiceFile"					"scripts/voscripts/game_sounds_vo_zuus.txt"
+		"GameSoundsFile"  			"soundevents/custom_sounds.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"
 	
 		// Additional data needed to render the out of game portrait
 		"RenderablePortrait"

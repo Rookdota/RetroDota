@@ -22,12 +22,12 @@ function Precache(context)
 	PrecacheResource("model", "models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl", context)
 	PrecacheResource("model", "models/heroes/undying/undying_minion.vmdl", context)
 	PrecacheResource("model", "models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl", context)
-	
-	--Precache all custom sounds.
-	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 
 	--Precache all Invoker cosmetics for use with Confuse.
 	PrecacheResource("model_folder", "models/heroes/invoker/", context)
+	
+	--Precache particles required for Gambler.
+	PrecacheResource("particle", "particles/units/heroes/hero_gambler/gambler_base_attack.vpcf", context)
 end
 
 --------------------------------------------------------------------------------

@@ -26,10 +26,13 @@ function gambler_retro_ante_up_on_spell_start(event)
 	
 	ability:PayGoldCost()
 	
-	local random_int = RandomInt(1, 3)
-	caster:EmitSound("retro_dota.gambler_retro_ante_up_gold_cost_0" .. random_int)
-	
+	caster:EmitSound("retro_dota.gambler_retro_ante_up_gold_cost")
 	target:EmitSound("retro_dota.gambler_retro_ante_up_on_spell_start")
+	
+	local random_int = RandomInt(1, 3)
+	if random_int == 1 then
+		caster:EmitSound("retro_dota.gambler_retro_spell_cast_voice")
+	end
 	
 	PopupNumbers(caster, "block", Vector(255, 200, 33), 2.0, ability:GetGoldCost(ability:GetLevel() - 1), PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_MINUS, nil)
 	ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)

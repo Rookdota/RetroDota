@@ -758,7 +758,7 @@
 						"value1"		"sounds/vo/gambler/humming_02.vsnd"
 						"value2"		"sounds/vo/gambler/humming_03.vsnd"
 						"value3"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
-						"value5"		"sounds/vo/gambler/mm.vsnd"
+						"value4"		"sounds/vo/gambler/mm.vsnd"
 					}
 				}
 				"volume_min"
@@ -818,7 +818,7 @@
 						"value1"		"sounds/vo/gambler/humming_02.vsnd"
 						"value2"		"sounds/vo/gambler/humming_03.vsnd"
 						"value3"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
-						"value5"		"sounds/vo/gambler/mm.vsnd"
+						"value4"		"sounds/vo/gambler/mm.vsnd"
 					}
 				}
 				"volume_min"
@@ -874,10 +874,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/humming_01.vsnd"
-						"value1"		"sounds/vo/gambler/humming_02.vsnd"
-						"value2"		"sounds/vo/gambler/humming_03.vsnd"
-						"value5"		"sounds/vo/gambler/mm.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -933,10 +930,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/humming_01.vsnd"
-						"value1"		"sounds/vo/gambler/humming_02.vsnd"
-						"value2"		"sounds/vo/gambler/humming_03.vsnd"
-						"value5"		"sounds/vo/gambler/mm.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"

@@ -65,21 +65,5 @@
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
 	"GameSoundsFile"  			"soundevents/custom_sounds.vsndevts"
-	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"
-
-	// Additional data needed to render the out of game portrait
-	"RenderablePortrait"
-	{
-		"Particles"
-		{
-			"zeus_loadout"
-			{
-				"0"
-				{
-					"type"		"follow_attachment"
-					"location"	"attach_hitloc"
-				}
-			}	
-		}
-	}				
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"		
 }

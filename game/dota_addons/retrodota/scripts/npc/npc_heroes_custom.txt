@@ -67,7 +67,14 @@
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
 		"GameSoundsFile"  			"soundevents/custom_sounds.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"		
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"
+		
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+			}
+		}
 	}
 	//=================================================================================================================
 	// HERO: Invoker

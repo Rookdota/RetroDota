@@ -1730,7 +1730,7 @@
 		"InvokeCDLabel"						"Invoke Cooldown"
 		"SecondInvokeLabel"					"Invoked Spell Slots"
 		"ManaCostLabel"						"Spell Mana Cost"
-		"wtfLabel"							"WTF Mode"
+		"mirrorLabel"						"Mirror Mode"
 		"fastRespawnLabel"					"Instant Respawn"
 		"GoldMultiplierTextLabel"			"Gold Multiplier"
 		"XPMultiplierTextLabel"				"XP Multiplier"
@@ -1741,12 +1741,13 @@
 		"Welcome"							"Welcome"	
 		"to"								"to"
 		"Version"							"2.0.0"
-		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?"
-		"Instructions"						"Vote on the settings you would like to play\n with using the central panel.\n\nWhen hosting, choose from a brand new arena\nor the standard Dota map."
+		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?\n\nOr, if luck is more your game,\ndelve into the seedy past of the shopkeeper,\nwhen he was known as the Gambler!"
+		"Instructions"						"Vote on the settings you would like to play\n with using the central panel.\nWhen hosting, choose from a brand new arena\nor the standard Dota map."
 		"New"								"New in this version:"
 		"Changes"							"Gambler and a gold-based win condition!"
 		"Soon"								"Coming soon: "
-		"SoonText"							"?" //FF9933
+		"SoonText"							"That is for you to decide!" //FF9933
+		"SoonText2"							"Leave suggestions in the Workshop page on what you'd like to see next"
 		"Authors"							"Created by "
 		"Author1"							"Rook" //0099CC
 		"Author2"							"Noya" //CC0099

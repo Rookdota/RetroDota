@@ -63,6 +63,9 @@
 			this.SoonText.text = Globals.instance.GameInterface.Translate("#SoonText");
 			this.SoonText.setTextFormat(txFormatBold);
 			
+			this.SoonText2.text = Globals.instance.GameInterface.Translate("#SoonText2");
+			this.SoonText2.setTextFormat(txFormatBold);
+			
 			this.Authors.text = Globals.instance.GameInterface.Translate("#Authors");
 			this.Authors.setTextFormat(txFormatBold);
 			

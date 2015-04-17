@@ -84,7 +84,7 @@ function RetroDota:InitGameMode()
 	GameRules.invoke_cd_votes = {}
 	GameRules.invoke_slots_votes = {}
 	GameRules.mana_cost_reduction_votes = {}
-	GameRules.mirror_votes = {}
+	GameRules.mirror_match_votes = {}
 	GameRules.fast_respawn_votes = {}
 	GameRules.gold_multiplier_votes = {}
 	GameRules.xp_multiplier_votes = {}

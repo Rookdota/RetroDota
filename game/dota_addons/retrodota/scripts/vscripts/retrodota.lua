@@ -99,6 +99,7 @@ function RetroDota:InitGameMode()
 	GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["2"]
 	GameRules.invoke_slots = "2"
 	GameRules.mirror_match = "0"
+	GameRules.mirror_hero = "npc_dota_hero_Invoker"
 	GameRules.fast_respawn = "1"
 	GameRules.gold_multiplier = "1"
 	GameRules.xp_multiplier = "1"
@@ -278,10 +279,6 @@ function RetroDota:OnPlayerPickHero(keys)
 	local player = EntIndexToHScript(keys.player)
 	local playerID = hero:GetPlayerID()
 	
-	print(hero:GetUnitName())
-	if hero:GetUnitName() == "npc_dota_hero_Invoker" then
-		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
-	end
 	FireGameEvent( 'show_spell_list_button', { player_ID = playerID } )
 
 	-- Check the level of this hero, add the bonus levels if needed
@@ -301,6 +298,17 @@ function RetroDota:OnPlayerPickHero(keys)
 		print("Set unit's EXP bounty to " .. XP_value)
 		hero:SetCustomDeathXP(XP_value)
 	end
+
+	-- If Mirror Match has already been decided and set to true, replace this hero by the mirror hero if necessary
+	if GameRules.mirror_match == "1" and GameRules.players_voted > 1 then
+		print("Hero Name: "..hero:GetName(), "Mirror Hero Name: "..GameRules.mirror_hero)
+		if hero:GetName() ~= GameRules.mirror_hero then
+			local gold = hero:GetGold()
+			local XP = hero:GetCurrentXP()
+			local pID = hero:GetPlayerID()
+			PlayerResource:ReplaceHeroWith(pID, GameRules.mirror_hero, gold, XP)
+		end
+	end
 	
 	--Swap the version of Invoke for the one with the correct cooldown.
 	if GameRules.invoke_cd ~= "6" then  --The active version of Invoke defaults to a 6-second cooldown, so don't change anything if the default cooldown was selected.
@@ -317,6 +325,11 @@ function RetroDota:OnPlayerPickHero(keys)
 			new_invoke_ability:SetLevel(old_invoke_ability_level)
 			new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
 		end
+	end
+
+	-- Start Pips if playing Invoker
+	if hero:GetUnitName() == "npc_dota_hero_Invoker" then
+		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
 	end
 end
 
@@ -730,12 +743,12 @@ function RetroDota:OnEveryoneVoted()
 	end
 	SetInvokeVersion(GameRules.invoke_cd)
 	
-	
+	-- Fast Respawn
 	if GameRules.fast_respawn == "1" then
 		GameRules:GetGameModeEntity():SetFixedRespawnTime(3)
 	end
 
-	-- Mirror + Insta Respawn
+	-- Mirror + Insta Respawn Messages
 	if GameRules.mirror_match == "1" then
 		if GameRules.fast_respawn == "1" then
 			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
@@ -775,12 +788,39 @@ function RetroDota:OnEveryoneVoted()
 		end
 	end
 
-	-- Mirroring most picked if needed
-	if GameRules.mirror_match == "2" then
-		DeepPrintTable(allHeroes)
-		-- Missing counting and setting the most picked hero
-		-- for k, hero in pairs( allHeroes ) do
-		-- end
+	-- Mirroring most picked if needed (ignored for single player)
+	if GameRules.mirror_match == "1" and GameRules.players_voted > 1 then
+		-- Search heroes and determine the most picked
+		local invokers = 0
+		local gamblers = 0
+		for k, hero in pairs( allHeroes ) do
+			local hero_name = hero:GetUnitName()
+			if hero_name == "npc_dota_hero_Invoker" then
+				invokers = invokers + 1
+			elseif hero_name == "" then
+				gamblers = gamblers + 1
+			end
+		end
+
+		-- Set every hero to the most picked. Gambler wins if tied
+		if gamblers >= 1 and gamblers >= invokers then
+			GameRules.mirror_hero = "npc_dota_hero_zuus"
+		else
+			GameRules.mirror_hero = "npc_dota_hero_Invoker"
+		end
+		print("There are "..gamblers.." gamblers and "..invokers.." Invokers ingame, Mirror Mode Hero will be "..GameRules.mirror_hero)
+
+		-- Replace heroes that were already picked
+		for k,hero in pairs( allHeroes ) do
+			local pID = hero:GetPlayerID()
+			print(pID, hero:GetName(), GameRules.mirror_hero)
+			if hero:GetName() ~= GameRules.mirror_hero then
+				local gold = hero:GetGold()
+				local XP = hero:GetCurrentXP()
+				PlayerResource:ReplaceHeroWith(pID, GameRules.mirror_hero, gold, XP)
+				print("Replaced player "..pID.." hero with "..GameRules.mirror_hero)
+			end
+		end
 	end
 	
 	-- Add vote settings to our stat collector, so long as the gamemode is not running in the Workshop Tools.

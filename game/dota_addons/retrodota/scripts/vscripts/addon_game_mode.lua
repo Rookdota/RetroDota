@@ -29,8 +29,9 @@ function Precache(context)
 	--Precache particles required for Gambler.
 	PrecacheResource("particle", "particles/units/heroes/hero_gambler/gambler_base_attack.vpcf", context)
 
-	-- Precache Gambler for Mirror Match.  This may or may not be needed.
-	--PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
+	-- Precache heroes for Mirror Match.  This may or may not be needed.
+	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
+	PrecacheUnitByNameSync("npc_dota_hero_Invoker", context)
 end
 
 --------------------------------------------------------------------------------

@@ -837,9 +837,15 @@ function RetroDota:OnEveryoneVoted()
 				PlayerResource:ReplaceHeroWith(pID, GameRules.mirror_hero, gold, XP)
 				
 				if GameRules.mirror_hero == "npc_dota_hero_Invoker" then  --Start the pips if the player's hero is changed to Invoker.
-					FireGameEvent( 'send_hero_ent', { player_ID = pID, _ent = hero:GetEntityIndex() } )
+					local new_hero_player = PlayerResource:GetPlayer(pID)
+					if new_hero_player ~= nil then
+						local new_hero = new_hero_player:GetAssignedHero()
+						if new_hero ~= nil then
+							FireGameEvent( 'send_hero_ent', { player_ID = pID, _ent = new_hero:GetEntityIndex() } )
+						end
+					end
 				end
-				
+			
 				print("Replaced player "..pID.." hero with "..GameRules.mirror_hero)
 			end
 		end

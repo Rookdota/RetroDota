@@ -806,7 +806,7 @@ function RetroDota:OnEveryoneVoted()
 		if invokers == gamblers then
 			local host_player = PlayerResource:GetPlayer(0)
 			if host_player ~= nil then
-				local host_hero = GetAssignedHero()
+				local host_hero = host_player:GetAssignedHero()
 				if host_hero ~= nil then
 					host_hero_name = host_hero:GetUnitName()
 					if hero_name == "npc_dota_hero_Invoker" then

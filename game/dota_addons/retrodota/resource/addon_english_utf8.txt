@@ -1747,7 +1747,7 @@
 		"Changes"							"Gambler and a gold-based win condition!"
 		"Soon"								"Coming soon: "
 		"SoonText"							"That is for you to decide!" //FF9933
-		"SoonText2"							"Leave suggestions in the Workshop page on what you'd like to see next"
+		"SoonText2"							"Leave suggestions for the next hero on Retro Dota's Workshop page!"
 		"Authors"							"Created by "
 		"Author1"							"Rook" //0099CC
 		"Author2"							"Noya" //CC0099

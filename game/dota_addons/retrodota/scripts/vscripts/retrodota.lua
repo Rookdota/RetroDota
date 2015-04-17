@@ -300,9 +300,9 @@ function RetroDota:OnPlayerPickHero(keys)
 	end
 
 	-- If Mirror Match has already been decided and set to true, replace this hero by the mirror hero if necessary
-	if GameRules.mirror_match == "1" and GameRules.players_voted > 1 then
+	if GameRules.mirror_match == "1" and GameRules.players_voted + GameRules.players_skipped_vote > 1 then
 		print("Hero Name: "..hero:GetName(), "Mirror Hero Name: "..GameRules.mirror_hero)
-		if hero:GetName() ~= GameRules.mirror_hero then
+		if GameRules.mirror_hero ~= nil and hero:GetName() ~= GameRules.mirror_hero then
 			local gold = hero:GetGold()
 			local XP = hero:GetCurrentXP()
 			local pID = hero:GetPlayerID()
@@ -789,7 +789,7 @@ function RetroDota:OnEveryoneVoted()
 	end
 
 	-- Mirroring most picked if needed (ignored for single player)
-	if GameRules.mirror_match == "1" and GameRules.players_voted > 1 then
+	if GameRules.mirror_match == "1" and GameRules.players_voted + GameRules.players_skipped_vote > 1 then
 		-- Search heroes and determine the most picked
 		local invokers = 0
 		local gamblers = 0
@@ -797,13 +797,29 @@ function RetroDota:OnEveryoneVoted()
 			local hero_name = hero:GetUnitName()
 			if hero_name == "npc_dota_hero_Invoker" then
 				invokers = invokers + 1
-			elseif hero_name == "" then
+			elseif hero_name == "npc_dota_hero_zuus" then
 				gamblers = gamblers + 1
 			end
 		end
-
-		-- Set every hero to the most picked. Gambler wins if tied
-		if gamblers >= 1 and gamblers >= invokers then
+		
+		--If there is a tie between the number of Invokers and Gamblers, give the host the tiebreaking vote.
+		if invokers == gamblers then
+			local host_player = PlayerResource:GetPlayer(0)
+			if host_player ~= nil then
+				local host_hero = GetAssignedHero()
+				if host_hero ~= nil then
+					host_hero_name = host_hero:GetUnitName()
+					if hero_name == "npc_dota_hero_Invoker" then
+						invokers = invokers + 1
+					elseif hero_name == "npc_dota_hero_zuus" then
+						gamblers = gamblers + 1
+					end
+				end
+			end
+		end
+		
+		--Set every hero to the most picked.  If there was a problem finding the host's hero in the previous if block, arbitrarily swing the vote in favor of Invoker.
+		if gamblers > invokers then
 			GameRules.mirror_hero = "npc_dota_hero_zuus"
 		else
 			GameRules.mirror_hero = "npc_dota_hero_Invoker"
@@ -817,6 +833,7 @@ function RetroDota:OnEveryoneVoted()
 			if hero:GetName() ~= GameRules.mirror_hero then
 				local gold = hero:GetGold()
 				local XP = hero:GetCurrentXP()
+				
 				PlayerResource:ReplaceHeroWith(pID, GameRules.mirror_hero, gold, XP)
 				print("Replaced player "..pID.." hero with "..GameRules.mirror_hero)
 			end

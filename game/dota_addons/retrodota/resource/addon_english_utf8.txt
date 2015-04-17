@@ -1744,7 +1744,7 @@
 		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?\n\nOr, if luck is more your game,\ndelve into the seedy past of the shopkeeper,\nwhen he was known as the Gambler!"
 		"Instructions"						"Vote on the settings you would like to play\n with using the central panel.\nWhen hosting, choose from a brand new arena\nor the standard Dota map."
 		"New"								"New in this version:"
-		"Changes"							"Gambler and a gold-based win condition!"
+		"Changes"							"Gambler!"
 		"Soon"								"Coming soon: "
 		"SoonText"							"That is for you to decide!" //FF9933
 		"SoonText2"							"Leave suggestions for the next hero on Retro Dota's Workshop page!"

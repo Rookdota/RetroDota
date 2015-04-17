@@ -44,6 +44,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"pillage_ratio"			"0.01 0.02 0.03 0.04"
 		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
 	}
 
 	"Modifiers"

@@ -49,10 +49,15 @@
 			"var_type"				"FIELD_FLOAT"
 			"chance_to_fail"		"30 25 20"	
 		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
 	}
 
 	"OnSpellStart"
-	{
+	{	
 		"Random"
 		{
 			"Chance"			"100 - %chance_to_fail"

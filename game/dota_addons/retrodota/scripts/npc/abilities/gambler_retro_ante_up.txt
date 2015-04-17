@@ -64,6 +64,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"damage_heal"			"50 100 150 200"	
 		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
 	}
 
 	"OnAbilityPhaseStart"

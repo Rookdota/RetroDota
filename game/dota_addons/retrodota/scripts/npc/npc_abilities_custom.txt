@@ -217,10 +217,15 @@
 				"var_type"				"FIELD_FLOAT"
 				"chance_to_fail"		"30 25 20"	
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
 		}
 	
 		"OnSpellStart"
-		{
+		{	
 			"Random"
 			{
 				"Chance"			"100 - %chance_to_fail"
@@ -309,6 +314,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_heal"			"50 100 150 200"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
 			}
 		}
 	
@@ -432,6 +442,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"gold_to_damage_ratio"	"15 20 25 30"  
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
 		}
 		
 		"OnSpellStart"
@@ -488,6 +503,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pillage_ratio"			"0.01 0.02 0.03 0.04"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
 			}
 		}
 	

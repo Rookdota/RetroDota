@@ -278,7 +278,10 @@ function RetroDota:OnPlayerPickHero(keys)
 	local player = EntIndexToHScript(keys.player)
 	local playerID = hero:GetPlayerID()
 	
-	FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
+	print(hero:GetUnitName())
+	if hero:GetUnitName() == "npc_dota_hero_Invoker" then
+		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
+	end
 	FireGameEvent( 'show_spell_list_button', { player_ID = playerID } )
 
 	-- Check the level of this hero, add the bonus levels if needed

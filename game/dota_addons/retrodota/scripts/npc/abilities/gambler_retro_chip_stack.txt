@@ -42,6 +42,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"gold_to_damage_ratio"	"15 20 25 30"  
 		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
 	}
 	
 	"OnSpellStart"

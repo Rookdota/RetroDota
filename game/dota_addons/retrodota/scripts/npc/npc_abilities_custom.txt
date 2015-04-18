@@ -518,7 +518,7 @@
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+						"Function"			"gambler_retro_ante_up_on_owner_kill"
 					}	
 				}
 				"OnDeath"
@@ -545,7 +545,7 @@
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+						"Function"			"gambler_retro_ante_up_on_owner_kill"
 					}	
 				}
 				"OnDeath"
@@ -660,7 +660,7 @@
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+						"Function"			"gambler_retro_ante_up_on_owner_kill"
 					}	
 				}
 				"OnDeath"
@@ -687,7 +687,7 @@
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+						"Function"			"gambler_retro_ante_up_on_owner_kill"
 					}	
 				}
 				"OnDeath"
@@ -802,7 +802,7 @@
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+						"Function"			"gambler_retro_ante_up_on_owner_kill"
 					}	
 				}
 				"OnDeath"
@@ -829,7 +829,7 @@
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
-						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+						"Function"			"gambler_retro_ante_up_on_owner_kill"
 					}	
 				}
 				"OnDeath"

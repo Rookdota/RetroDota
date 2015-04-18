@@ -68,24 +68,26 @@ end
 --[[ ============================================================================================================
 	Author: wFX
 	Date: March 16, 2015
-	Called when the owner of ante up kills another hero.
+	Called when the owner of ante up kills another unit.
 ================================================================================================================= ]]
- function gambler_retro_ante_up_on_owner_hero_kill(event)
-	event.caster:ModifyGold(event.attacker.ante_bounty, false, 0)
-	event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_buff", event.caster)
-	event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_debuff", event.caster)
-	event.msg = event.attacker.ante_bounty
-	event.attacker.ante_bounty = 0
-	
-	local cash_in_full_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)
-	
-	--Display twice as many particles since the full amount was cashed in.
-	for i=0, 2, 1 do
-		ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
-		ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+ function gambler_retro_ante_up_on_owner_kill(event)
+	if event.unit:IsRealHero() then
+		event.caster:ModifyGold(event.attacker.ante_bounty, false, 0)
+		event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_buff", event.caster)
+		event.attacker:RemoveModifierByNameAndCaster("modifier_gambler_retro_ante_up_debuff", event.caster)
+		event.msg = event.attacker.ante_bounty
+		event.attacker.ante_bounty = 0
+		
+		local cash_in_full_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf", PATTACH_OVERHEAD_FOLLOW, event.caster)
+		
+		--Display twice as many particles since the full amount was cashed in.
+		for i=0, 2, 1 do
+			ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+			ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+		end
+		
+		AnteUpShowBounty(event)
 	end
-	
-	AnteUpShowBounty(event)
 end
 
 --[[ ============================================================================================================

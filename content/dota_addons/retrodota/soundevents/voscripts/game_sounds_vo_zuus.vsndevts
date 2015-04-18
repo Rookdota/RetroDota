@@ -753,8 +753,7 @@
 						"value1"		"sounds/vo/gambler/humming_02.vsnd"
 						"value2"		"sounds/vo/gambler/humming_03.vsnd"
 						"value3"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
-						"value4"		"sounds/vo/gambler/roquelaire_would_you_like_a_cracker.vsnd"
-						"value5"		"sounds/vo/gambler/mm.vsnd"
+						"value4"		"sounds/vo/gambler/mm.vsnd"
 					}
 				}
 				"volume_min"

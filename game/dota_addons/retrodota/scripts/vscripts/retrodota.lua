@@ -249,7 +249,6 @@ function RetroDota:OnAllPlayersLoaded()
 	FireGameEvent( 'show_vote_panel', {} )
 
 	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)
-	GameRules:SendCustomMessage("<font color='#FF9933'>News:</font> <font color='##FFCC33'>Added Gambler and a gold-based win condition! (version 2.0.0)</font>", 0, 0)
 	GameRules:SendCustomMessage("<font color='##FFCC33'>Please also note that lag issues can arise when a player uses an Invoker cosmetic item that was released within the past few months, since the Source 2 branch of Dota 2 has not yet been updated with the newest cosmetics.</font>", 0, 0)
 	
 	
@@ -733,7 +732,7 @@ function RetroDota:OnEveryoneVoted()
 		GameRules:SendCustomMessage("There are <font color='#FF9933'>" ..GameRules.invoke_slots.." slots</font> for invoked spells.", 0, 0)
 	end
 	
-	--Invoke cooldown and spell mana cost
+	--Invoke cooldown and spell mana cost.  SetInvokeVersion() is called later, after heroes have been switched for Mirror Mode.
 	if GameRules.mana_cost_reduction == 50 then
 		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>half mana</font>.", 0, 0)
 	elseif GameRules.mana_cost_reduction == 100 then
@@ -741,7 +740,6 @@ function RetroDota:OnEveryoneVoted()
 	else
 		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>full mana</font>.", 0, 0)
 	end
-	SetInvokeVersion(GameRules.invoke_cd)
 	
 	-- Fast Respawn
 	if GameRules.fast_respawn == "1" then
@@ -765,28 +763,6 @@ function RetroDota:OnEveryoneVoted()
 
 	GameRules:SendCustomMessage("The gold multiplier is <font color='#FF9933'>"..GameRules.gold_multiplier.."x</font>.  The XP multiplier is <font color='#FF9933'>"..GameRules.xp_multiplier .. "x</font>.", 0, 0)
 	GameRules:SetGoldPerTick(1*GameRules.gold_multiplier)
-
-	-- Set Custom XP Value on all heroes in game
-	local allHeroes = HeroList:GetAllHeroes()
-	for k, hero in pairs( allHeroes ) do
-		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
-		print("Set unit's EXP bounty to " .. XP_value)
-		hero:SetCustomDeathXP(XP_value)
-	end
-	
-	local running_in_workshop_tools = true
-	for k, hero in pairs( allHeroes ) do
-		if running_in_workshop_tools == true and IsValidEntity(hero) then
-			local pid = hero:GetPlayerID()
-			if pid ~= nil and PlayerResource:IsValidPlayerID(pid) and PlayerResource:IsValidPlayer(pid) then
-				local individual_player = PlayerResource:GetPlayer(pid)
-				if individual_player ~= nil and PlayerResource:GetPlayerName(pid) ~= nil and PlayerResource:GetPlayerName(pid) ~= "" then
-					running_in_workshop_tools = false
-					print("The game appears to be running in the main client (not the Workshop Tools), so stats will be collected.")
-				end
-			end
-		end
-	end
 
 	-- Mirroring most picked if needed (ignored for single player)
 	if GameRules.mirror_match == "1" and GameRules.players_voted + GameRules.players_skipped_vote > 1 then
@@ -851,6 +827,32 @@ function RetroDota:OnEveryoneVoted()
 		end
 	end
 	
+	-- Set Custom XP Value on all heroes in game
+	local allHeroes = HeroList:GetAllHeroes()
+	for k, hero in pairs( allHeroes ) do
+		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
+		print("Set unit's EXP bounty to " .. XP_value)
+		hero:SetCustomDeathXP(XP_value)
+	end
+	
+	local running_in_workshop_tools = true
+	for k, hero in pairs( allHeroes ) do
+		if running_in_workshop_tools == true and IsValidEntity(hero) then
+			local pid = hero:GetPlayerID()
+			if pid ~= nil and PlayerResource:IsValidPlayerID(pid) and PlayerResource:IsValidPlayer(pid) then
+				local individual_player = PlayerResource:GetPlayer(pid)
+				if individual_player ~= nil and PlayerResource:GetPlayerName(pid) ~= nil and PlayerResource:GetPlayerName(pid) ~= "" then
+					running_in_workshop_tools = false
+					print("The game appears to be running in the main client (not the Workshop Tools), so stats will be collected.")
+				end
+			end
+		end
+	end
+	
+	--Update each hero's spells with the voted-upon option.
+	SetInvokeVersion(GameRules.invoke_cd)
+	SetManaCostReduction(GameRules.mana_cost_reduction)
+	
 	-- Add vote settings to our stat collector, so long as the gamemode is not running in the Workshop Tools.
 	if running_in_workshop_tools == false then
 		statcollection.addStats({
@@ -914,6 +916,52 @@ function SetInvokeVersion(cooldown)
 					local new_invoke_ability = hero:FindAbilityByName(new_invoke_ability_name)
 					new_invoke_ability:SetLevel(old_invoke_ability_level)
 					new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
+				end
+			end
+		end
+	end
+end
+
+
+-- Updates the player's spells with half- or no- mana cost versions if voted upon.
+-- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends.
+function SetManaCostReduction(mana_cost_reduction_percent)
+	local suffix = ""
+
+	if mana_cost_reduction_percent == 50 then
+		suffix = "_half_mana_cost"
+	elseif mana_cost_reduction_percent == 100 then
+		suffix = "_no_mana_cost"
+	end
+	
+	if suffix ~= "" then
+		local allHeroes = HeroList:GetAllHeroes()
+		for k, hero in pairs( allHeroes ) do
+			if hero:GetName() == "npc_dota_hero_zuus" then
+				local ability_name = "gambler_retro_ante_up"
+				
+				while ability_name ~= "" do
+					local old_ability = hero:FindAbilityByName(ability_name)
+					if old_ability ~= nil then
+						local old_ability_level = old_ability:GetLevel()
+						local old_ability_cooldown = old_ability:GetCooldownTimeRemaining()
+					
+						hero:RemoveAbility(ability_name)
+						local new_ability_name = ability_name .. suffix
+						hero:AddAbility(new_ability_name)
+						
+						local new_ability = hero:FindAbilityByName(new_ability_name)
+						new_ability:SetLevel(old_ability_level)
+						new_ability:StartCooldown(old_ability_cooldown)
+					end
+					
+					if ability_name == "gambler_retro_ante_up" then
+						ability_name = "gambler_retro_chip_stack"
+					elseif ability_name == "gambler_retro_chip_stack" then
+						ability_name = "gambler_retro_all_in"
+					elseif ability_name == "gambler_retro_all_in" then
+						ability_name = ""
+					end
 				end
 			end
 		end

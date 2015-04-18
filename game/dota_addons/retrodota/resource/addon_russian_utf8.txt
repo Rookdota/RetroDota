@@ -1690,6 +1690,16 @@
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_damage_heal"						"УРОН/ЛЕЧЕНИЕ:"
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_cash_in"							"НАГРАДА:"
 		
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost"									"Ante Up"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost_Description"						"Использование стоит 100 золота.  При использовании, лечит союзника или наносит урон врагу.  Если цель в последующие %duration% секунд убивает героя, Gambler получает награду золотом.  Если цель погибла то того как убила героя то Gambler получит только половину награды.  Не может быть использовано на самого себя."
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost_damage_heal"						"УРОН/ЛЕЧЕНИЕ:"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost_cash_in"							"НАГРАДА:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost"									"Ante Up"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost_Description"						"Использование стоит 100 золота.  При использовании, лечит союзника или наносит урон врагу.  Если цель в последующие %duration% секунд убивает героя, Gambler получает награду золотом.  Если цель погибла то того как убила героя то Gambler получит только половину награды.  Не может быть использовано на самого себя."
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost_damage_heal"						"УРОН/ЛЕЧЕНИЕ:"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost_cash_in"							"НАГРАДА:"
+		
 		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff"                              "Ante Up"
 		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff_Description"                  "Если этот юнит убьет героя Gambler получит награду, а если этот юнит погибнет Gambler получит половину награды."
 		
@@ -1702,6 +1712,14 @@
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack"									"Chip Stack"
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_Description"						"Наносит урон порпоциональный текущему золоту цели."
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_gold_to_damage_ratio"			"%ПРОЦЕНТ ЗОЛОТА В УРОН:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_half_mana_cost"									"Chip Stack"
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_half_mana_cost_Description"						"Наносит урон порпоциональный текущему золоту цели."
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_half_mana_cost_gold_to_damage_ratio"			"%ПРОЦЕНТ ЗОЛОТА В УРОН:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_no_mana_cost"									"Chip Stack"
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_no_mana_cost_Description"						"Наносит урон порпоциональный текущему золоту цели."
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_no_mana_cost_gold_to_damage_ratio"			"%ПРОЦЕНТ ЗОЛОТА В УРОН:"
 		
 		
 		
@@ -1717,6 +1735,16 @@
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_Description"							"Наносит урон равный текущему золоту Gamblerа с максимальным пределом.  Также есть шанс полного провала при котором Gambler теряет золото равное возможно нанесённому урону."
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_damage_cap"							"ПРЕДЕЛ УРОНА:"
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_chance_to_fail"						"%ШАНС ПРОВАЛА:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost"										"All In"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost_Description"							"Наносит урон равный текущему золоту Gamblerа с максимальным пределом.  Также есть шанс полного провала при котором Gambler теряет золото равное возможно нанесённому урону."
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost_damage_cap"							"ПРЕДЕЛ УРОНА:"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost_chance_to_fail"						"%ШАНС ПРОВАЛА:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost"										"All In"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost_Description"							"Наносит урон равный текущему золоту Gamblerа с максимальным пределом.  Также есть шанс полного провала при котором Gambler теряет золото равное возможно нанесённому урону."
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost_damage_cap"							"ПРЕДЕЛ УРОНА:"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost_chance_to_fail"						"%ШАНС ПРОВАЛА:"
 		
 		
 		

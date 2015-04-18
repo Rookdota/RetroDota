@@ -58,3 +58,117 @@
 		}
 	}
 }
+
+
+
+"gambler_retro_chip_stack_half_mana_cost"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName" 			"gambler_retro_chip_stack"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityProcsMagicStick" 		"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6"    
+	"AbilityManaCost"				"47 50 52 55"
+	"AbilityGoldCost"				"0"
+	"AbilityCastRange"				"800"   // to be confirmed
+	
+	"precache"
+	{
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_coins.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_blood.vpcf"
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"gold_to_damage_ratio"	"15 20 25 30"  
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_gambler/chip_stack.lua"
+			"Function"			"ChipStack"
+		}
+	}
+}
+
+
+
+"gambler_retro_chip_stack_no_mana_cost"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName" 			"gambler_retro_chip_stack"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityProcsMagicStick" 		"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6"    
+	"AbilityManaCost"				"0"
+	"AbilityGoldCost"				"0"
+	"AbilityCastRange"				"800"   // to be confirmed
+	
+	"precache"
+	{
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_coins.vpcf"
+		"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_blood.vpcf"
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"gold_to_damage_ratio"	"15 20 25 30"  
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_gambler/chip_stack.lua"
+			"Function"			"ChipStack"
+		}
+	}
+}

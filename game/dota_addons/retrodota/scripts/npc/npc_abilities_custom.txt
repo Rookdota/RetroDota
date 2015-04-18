@@ -247,7 +247,168 @@
 				}
 			}
 		}
+	}
 	
+	
+	
+	"gambler_retro_all_in_half_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_all_in"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"75"
+		"AbilityCastRange"				"600"
+	
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_coins.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_damage_msg.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_explosion.vpcf"
+			"soundfile"		"soundevents/custom_sounds.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_cap"			"1500 2000 2500"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chance_to_fail"		"30 25 20"	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
+		}
+	
+		"OnSpellStart"
+		{	
+			"Random"
+			{
+				"Chance"			"100 - %chance_to_fail"
+				"OnSuccess"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gambler/all_in.lua"
+						"Function"		"AllInSuccess"
+					}
+				}
+				"OnFailure"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gambler/all_in.lua"
+						"Function"		"AllInFailure"
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
+	"gambler_retro_all_in_no_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_all_in"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"600"
+	
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_coins.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_failure_gold_lost_msg.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_damage_msg.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_explosion.vpcf"
+			"soundfile"		"soundevents/custom_sounds.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_cap"			"1500 2000 2500"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chance_to_fail"		"30 25 20"	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
+		}
+	
+		"OnSpellStart"
+		{	
+			"Random"
+			{
+				"Chance"			"100 - %chance_to_fail"
+				"OnSuccess"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gambler/all_in.lua"
+						"Function"		"AllInSuccess"
+					}
+				}
+				"OnFailure"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_gambler/all_in.lua"
+						"Function"		"AllInFailure"
+					}
+				}
+			}
+		}
 	}
 	// Gambler's Ante up
 	// Author: wFX
@@ -398,6 +559,290 @@
 			}
 		}
 	}
+	
+	
+	
+	"gambler_retro_ante_up_half_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_ante_up"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"4"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.01"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"50"
+		"AbilityGoldCost"				"100"
+		"AbilityCastRange"				"800"   // to be confirmed
+	
+	
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_b.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf"
+			"soundfile"		"soundevents/custom_sounds.vsndevts"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"60"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cash_in"				"300 400 500 600"	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_heal"			"50 100 150 200"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
+		}
+	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_gambler/gambler_retro_ante_up.lua"
+				"Function"		"AnteUpPreCast"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+				"Function"			"gambler_retro_ante_up_on_spell_start"
+				"DamageHeal"		"%damage_heal"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_gambler_retro_ante_up_buff"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsBuff"			"1"
+	
+				"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+	
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					}	
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_death"					
+					}
+				}
+			}
+	
+			"modifier_gambler_retro_ante_up_debuff"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsDebuff"			"1"
+	
+				"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+	
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					}	
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_death"					
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
+	"gambler_retro_ante_up_no_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_ante_up"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"4"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.01"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"    
+		"AbilityManaCost"				"0"
+		"AbilityGoldCost"				"100"
+		"AbilityCastRange"				"800"   // to be confirmed
+	
+	
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_b.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf"
+			"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf"
+			"soundfile"		"soundevents/custom_sounds.vsndevts"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"60"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cash_in"				"300 400 500 600"	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_heal"			"50 100 150 200"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
+		}
+	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_gambler/gambler_retro_ante_up.lua"
+				"Function"		"AnteUpPreCast"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+				"Function"			"gambler_retro_ante_up_on_spell_start"
+				"DamageHeal"		"%damage_heal"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_gambler_retro_ante_up_buff"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsBuff"			"1"
+	
+				"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+	
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					}	
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_death"					
+					}
+				}
+			}
+	
+			"modifier_gambler_retro_ante_up_debuff"
+			{
+				"Duration"			"%duration"
+				"IsPurgable"		"1"
+				"IsDebuff"			"1"
+	
+				"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+				"EffectAttachType"		"follow_origin"
+	
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+					}	
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+						"Function"			"gambler_retro_ante_up_on_owner_death"					
+					}
+				}
+			}
+		}
+	}
 	// Gambler's Chip Stack
 	// Author: Noya
 	// Date: March 25, 2015
@@ -422,6 +867,120 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"6"    
 		"AbilityManaCost"				"95 100 105 110"
+		"AbilityGoldCost"				"0"
+		"AbilityCastRange"				"800"   // to be confirmed
+		
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_coins.vpcf"
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_blood.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gold_to_damage_ratio"	"15 20 25 30"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_gambler/chip_stack.lua"
+				"Function"			"ChipStack"
+			}
+		}
+	}
+	
+	
+	
+	"gambler_retro_chip_stack_half_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_chip_stack"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"    
+		"AbilityManaCost"				"47 50 52 55"
+		"AbilityGoldCost"				"0"
+		"AbilityCastRange"				"800"   // to be confirmed
+		
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack.vpcf"
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_coins.vpcf"
+			"particle"				"particles/units/heroes/hero_gambler/gambler_chip_stack_blood.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gold_to_damage_ratio"	"15 20 25 30"  
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pip_show"				"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_gambler/chip_stack.lua"
+				"Function"			"ChipStack"
+			}
+		}
+	}
+	
+	
+	
+	"gambler_retro_chip_stack_no_mana_cost"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"gambler_retro_chip_stack"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityProcsMagicStick" 		"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"    
+		"AbilityManaCost"				"0"
 		"AbilityGoldCost"				"0"
 		"AbilityCastRange"				"800"   // to be confirmed
 		

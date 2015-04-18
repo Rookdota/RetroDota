@@ -147,3 +147,287 @@
 		}
 	}
 }
+
+
+
+"gambler_retro_ante_up_half_mana_cost"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName" 			"gambler_retro_ante_up"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"MaxLevel"						"4"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AbilityCastPoint"				"0.01"
+	"AbilityProcsMagicStick" 		"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+	"AbilityManaCost"				"50"
+	"AbilityGoldCost"				"100"
+	"AbilityCastRange"				"800"   // to be confirmed
+
+
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_b.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf"
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"60"  
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cash_in"				"300 400 500 600"	
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_heal"			"50 100 150 200"	
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_gambler/gambler_retro_ante_up.lua"
+			"Function"		"AnteUpPreCast"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+			"Function"			"gambler_retro_ante_up_on_spell_start"
+			"DamageHeal"		"%damage_heal"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_gambler_retro_ante_up_buff"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsBuff"			"1"
+
+			"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+				}	
+			}
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_death"					
+				}
+			}
+		}
+
+		"modifier_gambler_retro_ante_up_debuff"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+
+			"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+				}	
+			}
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_death"					
+				}
+			}
+		}
+	}
+}
+
+
+
+"gambler_retro_ante_up_no_mana_cost"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName" 			"gambler_retro_ante_up"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"MaxLevel"						"4"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AbilityCastPoint"				"0.01"
+	"AbilityProcsMagicStick" 		"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"    
+	"AbilityManaCost"				"0"
+	"AbilityGoldCost"				"100"
+	"AbilityCastRange"				"800"   // to be confirmed
+
+
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_b.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_debuff_glow.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_full.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_half.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_cash_in_explosion_backside.vpcf"
+		"particle"		"particles/units/heroes/hero_gambler/gambler_ante_up_coins.vpcf"
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"60"  
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cash_in"				"300 400 500 600"	
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_heal"			"50 100 150 200"	
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_gambler/gambler_retro_ante_up.lua"
+			"Function"		"AnteUpPreCast"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+			"Function"			"gambler_retro_ante_up_on_spell_start"
+			"DamageHeal"		"%damage_heal"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_gambler_retro_ante_up_buff"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsBuff"			"1"
+
+			"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+				}	
+			}
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_death"					
+				}
+			}
+		}
+
+		"modifier_gambler_retro_ante_up_debuff"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsDebuff"			"1"
+
+			"EffectName"			"particles/units/heroes/hero_gambler/gambler_ante_up_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_hero_kill"
+				}	
+			}
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_gambler/gambler_retro_ante_up.lua"
+					"Function"			"gambler_retro_ante_up_on_owner_death"					
+				}
+			}
+		}
+	}
+}

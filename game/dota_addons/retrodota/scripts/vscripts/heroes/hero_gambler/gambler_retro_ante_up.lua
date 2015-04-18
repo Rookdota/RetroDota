@@ -24,8 +24,6 @@ function gambler_retro_ante_up_on_spell_start(event)
 		arg = "modifier_gambler_retro_ante_up_debuff"
 	end
 	
-	ability:PayGoldCost()
-	
 	caster:EmitSound("retro_dota.gambler_retro_ante_up_gold_cost")
 	target:EmitSound("retro_dota.gambler_retro_ante_up_on_spell_start")
 	

@@ -1,6 +1,62 @@
 "Portraits"
 {
 	"Version"		"1"
+	
+	
+	
+	"models/heroes/zuus/zuus.vmdl"
+	{
+		"PortraitPosition" "164.65 -100.50 168.16"
+		"PortraitLookAt" "0.78 149.43 0.19"
+		"PortraitFOV" "15"
+		"PortraitLightPosition" "202.70 -23.15 308.17"
+		"PortraitLightLookAt" "54.79 171.70 0.00"
+		"PortraitLightFOV" "69"
+		"PortraitLightDistance" "377"
+		"PortraitLightColor" "0.25 0.24 0.22"  //"1.00 0.94 0.89"
+		"PortraitShadowColor" "0.07 0.07 0.07"
+		"PortraitShadowScale" "2.500"
+		"PortraitAmbientOrigin" "79.07 84.15 25.32"
+		"PortraitAmbientColor" "0.08 0.15 0.15"
+		"PortraitAmbientScale" "2.500"
+		"PortraitSpecularColor" "0.97 0.07 0.09"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_windrunner.vmat"
+		"PortraitBackgroundColor1"		"1 1 1"
+		"PortraitBackgroundColor2"		"1 1 1"
+		"PortraitBackgroundColor3"		"1 1 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+	}
+	"models/units/heroes/hero_gambler/shopkeeper_model_lod1.vmdl"
+	{
+		"PortraitPosition" "164.65 -100.50 168.16"
+		"PortraitLookAt" "0.78 149.43 0.19"
+		"PortraitFOV" "15"
+		"PortraitLightPosition" "202.70 -23.15 308.17"
+		"PortraitLightLookAt" "54.79 171.70 0.00"
+		"PortraitLightFOV" "69"
+		"PortraitLightDistance" "377"
+		"PortraitLightColor" "0.25 0.24 0.22"  //"1.00 0.94 0.89"
+		"PortraitShadowColor" "0.07 0.07 0.07"
+		"PortraitShadowScale" "2.500"
+		"PortraitAmbientOrigin" "79.07 84.15 25.32"
+		"PortraitAmbientColor" "0.08 0.15 0.15"
+		"PortraitAmbientScale" "2.500"
+		"PortraitSpecularColor" "0.97 0.07 0.09"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_windrunner.vmat"
+		"PortraitBackgroundColor1"		"1 1 1"
+		"PortraitBackgroundColor2"		"1 1 1"
+		"PortraitBackgroundColor3"		"1 1 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+	}
+	
+
+
+
+
+	
+	
+	
+	
 	"default"
 	{
 		"PortraitPosition"		"446.17 -88.29 -22.69"
@@ -1144,44 +1200,22 @@
 		"PortraitSpecularColor"		"0.97 0.07 0.09"
 		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_windrunner.vmat"
 	}
-	"models/heroes/zuus/zuus.vmdl"
-	{
-		"PortraitPosition"		"85.10 -51.07 143.02"
-		"PortraitLookAt"		"5.70 147.57 0.00"
-		"PortraitFOV"		"19"
-		"PortraitLightPosition"		"18.77 33.74 156.60"
-		"PortraitLightLookAt"		"40.83 236.21 0.00"
-		"PortraitLightFOV"		"90"
-		"PortraitLightDistance"		"51"
-		"PortraitLightColor"		"0.21 0.24 0.42"
-		"PortraitShadowColor"		"0.04 0.07 0.15"
-		"PortraitShadowScale"		"0.300000"
-		"PortraitAmbientOrigin"		"124.52 78.03 76.20"
-		"PortraitAmbientColor"		"0.00 0.20 0.46"
-		"PortraitAmbientScale"		"0.600000"
-		"PortraitSpecularColor"		"0.97 0.07 0.09"
-		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_coolinterior.vmat"
-		"PortraitBackgroundColor1"		"1 1 1"
-		"PortraitBackgroundColor2"		"1 1 1"
-		"PortraitBackgroundColor3"		"1 1 1"
-		"PortraitBackgroundColor4"		"1 1 1"
-	}
 	"models/heroes/kunkka/kunkka.vmdl"
 	{
-		"PortraitPosition"		"202.96 -212.46 176.97"
-		"PortraitLookAt"		"5.03 131.74 0.00"
-		"PortraitFOV"		"8"
-		"PortraitLightPosition"		"35.96 12.10 191.93"
-		"PortraitLightLookAt"		"56.43 203.42 359.08"
-		"PortraitLightFOV"		"90"
-		"PortraitLightDistance"		"80"
-		"PortraitLightColor"		"0.29 0.30 0.26"
-		"PortraitShadowColor"		"0.04 0.04 0.04"
-		"PortraitShadowScale"		"1.000000"
-		"PortraitAmbientOrigin"		"17.98 22.49 1.49"
-		"PortraitAmbientColor"		"0.22 0.47 0.78"
-		"PortraitAmbientScale"		"0.905000"
-		"PortraitSpecularColor"		"0.97 0.07 0.09"
+		"PortraitPosition" "158.25 -95.33 171.07"
+		"PortraitLookAt" "0.78 149.43 0.19"
+		"PortraitFOV" "15"
+		"PortraitLightPosition" "215.88 -30.23 291.87"
+		"PortraitLightLookAt" "53.16 172.70 0.00"
+		"PortraitLightFOV" "90"
+		"PortraitLightDistance" "1000"
+		"PortraitLightColor" "1.00 0.96 0.96"
+		"PortraitShadowColor" "0.07 0.07 0.07"
+		"PortraitShadowScale" "0.500"
+		"PortraitAmbientOrigin" "78.40 84.46 26.29"
+		"PortraitAmbientColor" "0.08 0.15 0.15"
+		"PortraitAmbientScale" "5.000"
+		"PortraitSpecularColor" "0.97 0.07 0.09"
 		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_glacier.vmat"
 		"PortraitBackgroundColor1"		".1 .2 .4"
 		"PortraitBackgroundColor2"		".1 .2 .4"

@@ -15,7 +15,10 @@ function AllInSuccess(event)
 	if gold < damage_cap then
 		damage_cap = gold
 	end
-
+	if damage_cap < 1 then  --If you have 0 gold, you will still do 1 damage.
+		damage_cap = 1
+	end
+	
 	local random_damage = RandomInt(1, damage_cap)
 	ApplyDamage({ victim = target, attacker = caster, damage = random_damage, damage_type = AbilityDamageType, ability = ability}) 
 	-- print("All In did "..random_damage.." damage!")

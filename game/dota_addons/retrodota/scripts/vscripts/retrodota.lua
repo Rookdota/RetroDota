@@ -309,22 +309,10 @@ function RetroDota:OnPlayerPickHero(keys)
 		end
 	end
 	
-	--Swap the version of Invoke for the one with the correct cooldown.
-	if GameRules.invoke_cd ~= "6" then  --The active version of Invoke defaults to a 6-second cooldown, so don't change anything if the default cooldown was selected.
-		if hero:GetName() == "npc_dota_hero_Invoker" then
-			local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_6_second_cooldown")
-			local old_invoke_ability_level = old_invoke_ability:GetLevel()
-			local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
-		
-			hero:RemoveAbility("invoker_retro_invoke_6_second_cooldown")
-			local new_invoke_ability_name = "invoker_retro_invoke_" .. GameRules.invoke_cd .. "_second_cooldown"
-			hero:AddAbility(new_invoke_ability_name)
-			
-			local new_invoke_ability = hero:FindAbilityByName(new_invoke_ability_name)
-			new_invoke_ability:SetLevel(old_invoke_ability_level)
-			new_invoke_ability:StartCooldown(old_invoke_ability_cooldown)
-		end
-	end
+	--Update this hero's spells with the correct mana costs and Invoke cooldown (if applicable).
+	SetInvokeVersion(GameRules.invoke_cd, hero)
+	SetManaCostReduction(GameRules.mana_cost_reduction, hero)
+	
 
 	-- Start Pips if playing Invoker
 	if hero:GetUnitName() == "npc_dota_hero_Invoker" then
@@ -850,8 +838,8 @@ function RetroDota:OnEveryoneVoted()
 	end
 	
 	--Update each hero's spells with the voted-upon option.
-	SetInvokeVersion(GameRules.invoke_cd)
-	SetManaCostReduction(GameRules.mana_cost_reduction)
+	SetInvokeVersion(GameRules.invoke_cd, nil)
+	SetManaCostReduction(GameRules.mana_cost_reduction, nil)
 	
 	-- Add vote settings to our stat collector, so long as the gamemode is not running in the Workshop Tools.
 	if running_in_workshop_tools == false then
@@ -899,17 +887,22 @@ end
 
 -- Gives the player the version of Invoke with the correct cooldown.
 -- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends.
-function SetInvokeVersion(cooldown)
-	if cooldown ~= "6" then  --The active version of Invoke defaults to a 6-second cooldown, so don't change anything if the default cooldown was selected.
-		local allHeroes = HeroList:GetAllHeroes()
-		for k, hero in pairs( allHeroes ) do
+--Pass in nil for the "hero" parameter if you want to update every hero's spells.
+function SetInvokeVersion(cooldown, hero)
+	if GameRules.finished_voting == true and cooldown ~= nil and cooldown ~= "12" then  --The active version of Invoke defaults to a 12-second cooldown, so don't change anything if the default cooldown was selected.
+		if hero == nil then
+			local allHeroes = HeroList:GetAllHeroes()
+			for k, individual_hero in pairs( allHeroes ) do
+				SetInvokeVersion(cooldown, individual_hero)
+			end
+		elseif IsValidEntity(hero) then
 			if hero:GetName() == "npc_dota_hero_Invoker" then
-				local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_6_second_cooldown")
+				local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_12_second_cooldown")
 				if old_invoke_ability ~= nil then
 					local old_invoke_ability_level = old_invoke_ability:GetLevel()
 					local old_invoke_ability_cooldown = old_invoke_ability:GetCooldownTimeRemaining()
 				
-					hero:RemoveAbility("invoker_retro_invoke_6_second_cooldown")
+					hero:RemoveAbility("invoker_retro_invoke_12_second_cooldown")
 					local new_invoke_ability_name = "invoker_retro_invoke_" .. cooldown .. "_second_cooldown"
 					hero:AddAbility(new_invoke_ability_name)
 					
@@ -925,42 +918,48 @@ end
 
 -- Updates the player's spells with half- or no- mana cost versions if voted upon.
 -- An additional check is done OnPlayerPickHero for players that still haven't picked when the vote ends.
-function SetManaCostReduction(mana_cost_reduction_percent)
-	local suffix = ""
-
-	if mana_cost_reduction_percent == 50 then
-		suffix = "_half_mana_cost"
-	elseif mana_cost_reduction_percent == 100 then
-		suffix = "_no_mana_cost"
-	end
-	
-	if suffix ~= "" then
-		local allHeroes = HeroList:GetAllHeroes()
-		for k, hero in pairs( allHeroes ) do
-			if hero:GetName() == "npc_dota_hero_zuus" then
-				local ability_name = "gambler_retro_ante_up"
-				
-				while ability_name ~= "" do
-					local old_ability = hero:FindAbilityByName(ability_name)
-					if old_ability ~= nil then
-						local old_ability_level = old_ability:GetLevel()
-						local old_ability_cooldown = old_ability:GetCooldownTimeRemaining()
+--Pass in nil for the "hero" parameter if you want to update every hero's spells.
+function SetManaCostReduction(mana_cost_reduction_percent, hero)
+	if GameRules.finished_voting == true and mana_cost_reduction_percent ~= nil then
+		local suffix = ""
+		if mana_cost_reduction_percent == 50 then
+			suffix = "_half_mana_cost"
+		elseif mana_cost_reduction_percent == 100 then
+			suffix = "_no_mana_cost"
+		end
+		
+		if suffix ~= "" then  --Spells default to their full mana cost versions, so don't change anything if they were voted upon.
+			if hero == nil then
+				local allHeroes = HeroList:GetAllHeroes()
+				for k, individual_hero in pairs( allHeroes ) do
+					SetManaCostReduction(mana_cost_reduction_percent, individual_hero)
+				end
+			elseif IsValidEntity(hero) then
+				if hero:GetName() == "npc_dota_hero_zuus" then
+					local ability_name = "gambler_retro_ante_up"
 					
-						hero:RemoveAbility(ability_name)
-						local new_ability_name = ability_name .. suffix
-						hero:AddAbility(new_ability_name)
+					while ability_name ~= "" do
+						local old_ability = hero:FindAbilityByName(ability_name)
+						if old_ability ~= nil then
+							local old_ability_level = old_ability:GetLevel()
+							local old_ability_cooldown = old_ability:GetCooldownTimeRemaining()
 						
-						local new_ability = hero:FindAbilityByName(new_ability_name)
-						new_ability:SetLevel(old_ability_level)
-						new_ability:StartCooldown(old_ability_cooldown)
-					end
-					
-					if ability_name == "gambler_retro_ante_up" then
-						ability_name = "gambler_retro_chip_stack"
-					elseif ability_name == "gambler_retro_chip_stack" then
-						ability_name = "gambler_retro_all_in"
-					elseif ability_name == "gambler_retro_all_in" then
-						ability_name = ""
+							hero:RemoveAbility(ability_name)
+							local new_ability_name = ability_name .. suffix
+							hero:AddAbility(new_ability_name)
+							
+							local new_ability = hero:FindAbilityByName(new_ability_name)
+							new_ability:SetLevel(old_ability_level)
+							new_ability:StartCooldown(old_ability_cooldown)
+						end
+						
+						if ability_name == "gambler_retro_ante_up" then
+							ability_name = "gambler_retro_chip_stack"
+						elseif ability_name == "gambler_retro_chip_stack" then
+							ability_name = "gambler_retro_all_in"
+						elseif ability_name == "gambler_retro_all_in" then
+							ability_name = ""
+						end
 					end
 				end
 			end

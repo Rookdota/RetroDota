@@ -355,7 +355,7 @@ C_OP_RenderSprites C_OP_RenderSprites_7
 	float m_flFeatheringMinDist = 0.000000
 	float m_flFeatheringMaxDist = 15.000000
 	float m_flOverbrightFactor = 1.000000
-	string m_hTexture = "materials/particle/smoke1/smoke1.vtex"
+	string m_hTexture = "materials/particle/smoke3/smoke3b.vtex"
 	CParticleVisibilityInputs VisibilityInputs = CParticleVisibilityInputs
 	{
 		float m_flCameraBias = 0.000000

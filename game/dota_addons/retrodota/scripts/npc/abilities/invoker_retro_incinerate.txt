@@ -26,8 +26,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"50"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -43,22 +43,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -68,9 +68,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -190,8 +195,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"50"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -207,22 +212,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -232,9 +237,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -353,8 +363,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"100"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -370,22 +380,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -395,9 +405,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -516,8 +531,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"150"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -533,22 +548,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -558,9 +573,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -679,8 +699,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"200"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -696,22 +716,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -721,9 +741,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -842,8 +867,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"250"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -859,22 +884,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -884,9 +909,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1005,8 +1035,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"300"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1022,22 +1052,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -1047,9 +1077,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1168,8 +1203,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"350"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1185,22 +1220,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -1210,9 +1245,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1331,8 +1371,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"200"
-	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"400"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1348,22 +1388,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -1373,9 +1413,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1494,8 +1539,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"50"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1511,22 +1556,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -1536,9 +1581,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1657,8 +1707,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"100"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1674,22 +1724,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -1699,9 +1749,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1820,8 +1875,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"150"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -1837,22 +1892,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -1862,9 +1917,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -1983,8 +2043,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"200"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2000,22 +2060,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -2025,9 +2085,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2146,8 +2211,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"250"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2163,22 +2228,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -2188,9 +2253,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2309,8 +2379,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"300"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2326,22 +2396,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -2351,9 +2421,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2472,8 +2547,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"350"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2489,22 +2564,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -2514,9 +2589,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2635,8 +2715,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"100"
-	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"400"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2652,22 +2732,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -2677,9 +2757,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2798,8 +2883,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"40"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"50"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"1.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2815,22 +2900,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -2840,9 +2925,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -2961,8 +3051,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"80"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"100"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"3.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -2978,22 +3068,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3003,9 +3093,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3124,8 +3219,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"120"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"150"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"4.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3141,22 +3236,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3166,9 +3261,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3287,8 +3387,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"160"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"200"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"6.45"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3304,22 +3404,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3329,9 +3429,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3450,8 +3555,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"200"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"250"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"8.05"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3467,22 +3572,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3492,9 +3597,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3613,8 +3723,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"240"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"300"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"9.65"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3630,22 +3740,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3655,9 +3765,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3776,8 +3891,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"280"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"350"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"11.25"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3793,22 +3908,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3818,9 +3933,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"
@@ -3939,8 +4059,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"25"
 	"AbilityManaCost"				"0"
-	"AbilityCastRange"				"320"  //Update incinerate_cast_range if this is.
-	"AoERadius"						"50"  //Update wave_initial_radius if this is.
+	"AbilityCastRange"				"400"  //Update cast_range if this is.
+	"AoERadius"						"%wave_radius"
 	"AbilityChannelTime"			"12.85"  //Update num_waves and delay_between_waves if this is.  An extra .05 channel time is added as a hack to get the last wave to deal damage.
 	
 	"precache"
@@ -3956,22 +4076,22 @@
 		"01"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  Update AbilityCastRange if this is.
+			"cast_range"						"40 80 120 160 200 240 280 320"  //Increases with Exort.  These values are currently hardcoded into AbilityCastRange because it cannot take in AbilitySpecial variables.
 		}
 		"02"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime if this or delay_between_waves is.
+			"num_waves"							"2 4 6 8 10 12 14 16"  //Increases with Exort.  Update AbilityChannelTime or delay_between_waves if this is.
 		}
 		"03"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_initial_radius"				"50"
+			"wave_radius"						"50 100 150 200 250 300 350 400"  //Increases with Exort.
 		}
 		"04"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"wave_radius_increase_per_wave"		"25"
+			"wave_radius_increase_per_wave"		"0"
 		}
 		"05"
 		{
@@ -3981,9 +4101,14 @@
 		"06"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime if this or num_waves is.
+			"delay_between_waves"				".8"  //The first wave occurs this long after the channeling starts, and subsequent waves have this long of a delay between them, too.  Update AbilityChannelTime or num_waves if this is.
 		}
 		"07"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"channel_time"						"1.65 3.25 4.85 6.45 8.05 9.65 11.25 12.85"  //These values are currently hardcoded into AbilityChannelTime because it cannot take in AbilitySpecial variables.
+		}
+		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"pip_current"						"1"

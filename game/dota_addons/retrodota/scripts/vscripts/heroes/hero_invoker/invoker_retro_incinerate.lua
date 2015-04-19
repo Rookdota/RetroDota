@@ -69,7 +69,7 @@ function modifier_invoker_retro_incinerate_channeling_on_created(keys)
 	--The number of waves, as well as the radius of each wave, is dependent on the level of Exort.
 	if keys.target.incinerate_exort_level ~= nil then
 		local num_waves = keys.ability:GetLevelSpecialValueFor("num_waves", keys.target.incinerate_exort_level - 1)
-		local wave_initial_radius = keys.ability:GetLevelSpecialValueFor("wave_initial_radius", keys.target.incinerate_exort_level - 1)
+		local wave_radius = keys.ability:GetLevelSpecialValueFor("wave_radius", keys.target.incinerate_exort_level - 1)
 		local wave_radius_increase_per_wave = keys.ability:GetLevelSpecialValueFor("wave_radius_increase_per_wave", keys.target.incinerate_exort_level - 1)
 
 		--Spawn the waves so long as the caster continues channeling, with a delay between them.
@@ -78,7 +78,7 @@ function modifier_invoker_retro_incinerate_channeling_on_created(keys)
 			endTime = keys.DelayBetweenWaves,
 			callback = function()
 				if waves_spawned_so_far < num_waves and keys.caster.incinerate_current_dummy_unit == keys.target then
-					local current_wave_radius = wave_initial_radius + (waves_spawned_so_far * wave_radius_increase_per_wave)
+					local current_wave_radius = wave_radius + (waves_spawned_so_far * wave_radius_increase_per_wave)
 					local incinerate_wave_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_incinerate.vpcf", PATTACH_ABSORIGIN, keys.target)
 					ParticleManager:SetParticleControl(incinerate_wave_particle_effect, 1, Vector(current_wave_radius, 0, 0))
 					

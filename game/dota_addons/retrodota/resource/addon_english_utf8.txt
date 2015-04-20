@@ -1793,7 +1793,7 @@
 		// ******************** GamePanel UI ***********************
 		"Welcome"							"Welcome"	
 		"to"								"to"
-		"Version"							"2.0.1"
+		"Version"							"2.0.2"
 		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?\n\nOr, if luck is more your game,\ndelve into the seedy past of the shopkeeper,\nwhen he was known as the Gambler!"
 		"Instructions"						"Vote on the settings you would like to play\n with using the central panel.\nWhen hosting, choose from a brand new arena\nor the standard Dota map."
 		"New"								"New in this version:"

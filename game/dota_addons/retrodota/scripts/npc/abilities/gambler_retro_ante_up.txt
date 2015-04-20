@@ -95,6 +95,7 @@
 		"modifier_gambler_retro_ante_up_buff"
 		{
 			"Duration"			"%duration"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"IsPurgable"		"1"
 			"IsBuff"			"1"
 
@@ -109,6 +110,7 @@
 					"Function"			"gambler_retro_ante_up_on_owner_kill"
 				}	
 			}
+			
 			"OnDeath"
 			{
 				"RunScript"
@@ -122,6 +124,7 @@
 		"modifier_gambler_retro_ante_up_debuff"
 		{
 			"Duration"			"%duration"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"IsPurgable"		"1"
 			"IsDebuff"			"1"
 
@@ -136,6 +139,7 @@
 					"Function"			"gambler_retro_ante_up_on_owner_kill"
 				}	
 			}
+			
 			"OnDeath"
 			{
 				"RunScript"
@@ -237,6 +241,7 @@
 		"modifier_gambler_retro_ante_up_buff"
 		{
 			"Duration"			"%duration"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"IsPurgable"		"1"
 			"IsBuff"			"1"
 
@@ -251,6 +256,7 @@
 					"Function"			"gambler_retro_ante_up_on_owner_kill"
 				}	
 			}
+			
 			"OnDeath"
 			{
 				"RunScript"
@@ -264,6 +270,7 @@
 		"modifier_gambler_retro_ante_up_debuff"
 		{
 			"Duration"			"%duration"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"IsPurgable"		"1"
 			"IsDebuff"			"1"
 
@@ -278,6 +285,7 @@
 					"Function"			"gambler_retro_ante_up_on_owner_kill"
 				}	
 			}
+			
 			"OnDeath"
 			{
 				"RunScript"
@@ -379,6 +387,7 @@
 		"modifier_gambler_retro_ante_up_buff"
 		{
 			"Duration"			"%duration"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"IsPurgable"		"1"
 			"IsBuff"			"1"
 
@@ -393,6 +402,7 @@
 					"Function"			"gambler_retro_ante_up_on_owner_kill"
 				}	
 			}
+			
 			"OnDeath"
 			{
 				"RunScript"
@@ -406,6 +416,7 @@
 		"modifier_gambler_retro_ante_up_debuff"
 		{
 			"Duration"			"%duration"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"IsPurgable"		"1"
 			"IsDebuff"			"1"
 
@@ -420,6 +431,7 @@
 					"Function"			"gambler_retro_ante_up_on_owner_kill"
 				}	
 			}
+			
 			"OnDeath"
 			{
 				"RunScript"

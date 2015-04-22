@@ -996,7 +996,6 @@
 		"DOTA_Tooltip_Ability_invoker_retro_portal"                        "Portal"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_Description"            "Создать: <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nПосле небольшой анимации наносит указанному врагу урон и перемешает его к Invokerу.  Дальность применения увеличивается с уровнем Quas, а урон увеличивается с уровнем Wex.\n\nДАЛЬНОСТЬ ПРИМЕНЕННИЯ (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">350/400/450/500/550/600/650/700</font>"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_damage"                 "УРОН (<font color=\"#CC0099\">WEX</font>):"
-		FF9933
 		
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas"                        "Portal"
 		"DOTA_Tooltip_Ability_invoker_retro_portal_level_1_quas_Description"            "Создать: <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nПосле небольшой анимации наносит указанному врагу урон и перемешает его к Invokerу.  Дальность применения увеличивается с уровнем Quas, а урон увеличивается с уровнем Wex.\n\nДАЛЬНОСТЬ ПРИМЕНЕННИЯ (<font color=\"#0099CC\">QUAS</font>): <font color=\"#FF9933\">350</font><font color=\"#888888\">/400/450/500/550/600/650/700</font>"

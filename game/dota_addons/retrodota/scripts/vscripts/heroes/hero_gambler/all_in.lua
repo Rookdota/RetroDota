@@ -9,17 +9,17 @@ function AllInSuccess(event)
 	local ability  = event.ability
 	local AbilityDamageType = ability:GetAbilityDamageType()
 	local damage_cap = ability:GetLevelSpecialValueFor("damage_cap", ability:GetLevel() - 1 )
-
-	-- Adjust the cap for casters gold
+	
 	local gold = caster:GetGold()
-	if gold < damage_cap then
-		damage_cap = gold
+	if gold <= 0 then  --If you have 0 gold, you will still do 1 damage.
+		gold = 1
 	end
-	if damage_cap < 1 then  --If you have 0 gold, you will still do 1 damage.
-		damage_cap = 1
+
+	local random_damage = RandomInt(1, gold)
+	if random_damage > damage_cap then  --Cap the damage if it is over the damage cap.
+		random_damage = damage_cap
 	end
 	
-	local random_damage = RandomInt(1, damage_cap)
 	ApplyDamage({ victim = target, attacker = caster, damage = random_damage, damage_type = AbilityDamageType, ability = ability}) 
 	-- print("All In did "..random_damage.." damage!")
 	
@@ -91,15 +91,22 @@ end
 	local gold = caster:GetGold()
 	local damage_cap = ability:GetLevelSpecialValueFor("damage_cap", ability:GetLevel() - 1 )
 
-	-- Adjust the cap for casters gold
 	local gold = caster:GetGold()
-	if gold < damage_cap then
-		damage_cap = gold
+	if gold <= 0 then
+		gold = 1
 	end
 
-	local gold_lost = RandomInt(1, damage_cap)
-
-	caster:SpendGold(gold_lost, 0)
+	local gold_lost = RandomInt(1, gold)
+	if gold_lost > damage_cap then  --Cap the damage if it is over the damage cap.
+		gold_lost = damage_cap
+	end
+	
+	if caster:GetGold() >= gold_lost then
+		caster:SpendGold(gold_lost, 0)
+	else  --If the caster has less gold than he is supposed to lose, set his gold to 0.  This should only apply when he casts All In with 0 gold, but it prevents his gold count from going negative.
+		caster:SetGold(0, true)
+		caster:SetGold(0, false)
+	end
 	-- print("Lost "..gold_lost.." gold, bad gamble")
 	
 	local all_in_failure_coins_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_gambler/gambler_all_in_failure_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)

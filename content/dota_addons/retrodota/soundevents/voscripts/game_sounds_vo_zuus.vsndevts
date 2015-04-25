@@ -694,6 +694,11 @@
 						"value3"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
 						"value4"		"sounds/vo/gambler/roquelaire_would_you_like_a_cracker.vsnd"
 						"value5"		"sounds/vo/gambler/mm.vsnd"
+						"value6"		"sounds/vo/gambler/humming_01.vsnd"
+						"value7"		"sounds/vo/gambler/humming_02.vsnd"
+						"value8"		"sounds/vo/gambler/humming_03.vsnd"
+						"value9"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
+						"value10"		"sounds/vo/gambler/mm.vsnd"
 					}
 				}
 				"volume_min"
@@ -809,11 +814,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/humming_01.vsnd"
-						"value1"		"sounds/vo/gambler/humming_02.vsnd"
-						"value2"		"sounds/vo/gambler/humming_03.vsnd"
-						"value3"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
-						"value4"		"sounds/vo/gambler/mm.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -869,11 +870,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/humming_01.vsnd"
-						"value1"		"sounds/vo/gambler/humming_02.vsnd"
-						"value2"		"sounds/vo/gambler/humming_03.vsnd"
-						"value3"		"sounds/vo/gambler/can_i_be_of_service.vsnd"
-						"value4"		"sounds/vo/gambler/mm.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -1381,9 +1378,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value1"		"sounds/vo/gambler/my_little_friend_always_busy_busy.vsnd"
-						"value2"		"sounds/vo/gambler/your_secrets_safe_with_me.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -1439,9 +1434,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value1"		"sounds/vo/gambler/my_little_friend_always_busy_busy.vsnd"
-						"value2"		"sounds/vo/gambler/your_secrets_safe_with_me.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -1837,11 +1830,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/a_powerful_combination_01.vsnd"
-						"value1"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value2"		"sounds/vo/gambler/it_looks_good_on_you.vsnd"
-						"value3"		"sounds/vo/gambler/my_favorite_customer.vsnd"
-						"value4"		"sounds/vo/gambler/those_go_together_nicely.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -2017,11 +2006,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/a_powerful_combination_01.vsnd"
-						"value1"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value2"		"sounds/vo/gambler/it_looks_good_on_you.vsnd"
-						"value3"		"sounds/vo/gambler/my_favorite_customer.vsnd"
-						"value4"		"sounds/vo/gambler/those_go_together_nicely.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -2077,11 +2062,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/a_powerful_combination_01.vsnd"
-						"value1"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value2"		"sounds/vo/gambler/it_looks_good_on_you.vsnd"
-						"value3"		"sounds/vo/gambler/my_favorite_customer.vsnd"
-						"value4"		"sounds/vo/gambler/those_go_together_nicely.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -2137,11 +2118,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/a_powerful_combination_01.vsnd"
-						"value1"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value2"		"sounds/vo/gambler/it_looks_good_on_you.vsnd"
-						"value3"		"sounds/vo/gambler/my_favorite_customer.vsnd"
-						"value4"		"sounds/vo/gambler/those_go_together_nicely.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -2197,11 +2174,7 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/a_powerful_combination_01.vsnd"
-						"value1"		"sounds/vo/gambler/ill_just_wrap_it_up_shall_i.vsnd"
-						"value2"		"sounds/vo/gambler/it_looks_good_on_you.vsnd"
-						"value3"		"sounds/vo/gambler/my_favorite_customer.vsnd"
-						"value4"		"sounds/vo/gambler/those_go_together_nicely.vsnd"
+						"value0"		"sounds/vo/zuus/dummy.vsnd"
 					}
 				}
 				"volume_min"
@@ -8448,7 +8421,11 @@
 				{
 					"value"
 					{
-						"value0"		"sounds/vo/gambler/looks_like_youre_everywhere_today.vsnd"
+						"value0"		"sounds/vo/gambler/your_foes_will_fear_you_now.vsnd"
+						"value1"		"sounds/vo/gambler/the_full_set.vsnd"
+						"value2"		"sounds/vo/gambler/those_go_together_nicely.vsnd"
+						"value3"		"sounds/vo/gambler/whatre_you_buying_01.vsnd"
+						"value4"		"sounds/vo/gambler/whatre_you_buying_02.vsnd"
 					}
 				}
 				"volume_min"

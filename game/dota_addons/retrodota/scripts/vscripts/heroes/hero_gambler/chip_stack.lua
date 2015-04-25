@@ -39,10 +39,10 @@ function ChipStack(event)
 	event.target:EmitSound("Hero_DoomBringer.DevourCast")
 	event.target:EmitSound("DOTA_Item.Hand_Of_Midas")
 	
-	local random_int = RandomInt(1, 3)
+	--[[local random_int = RandomInt(1, 10)
 	if random_int == 1 then
 		event.caster:EmitSound("retro_dota.gambler_retro_spell_cast_voice")
-	end
+	end]]
 
     PopupNumbers(event.target, "damage", Vector(255, 0, 0), 2.0, gold_damage, PATTACH_OVERHEAD_FOLLOW, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end

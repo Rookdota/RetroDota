@@ -1751,7 +1751,7 @@
 		
 		//Lucky Stars
 		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars"								"Lucky Stars"
-		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_Description"					"Gambler's autoattacks have a chance to instantly kill a creep, or deal %bonus_damage% bonus damage to a hero or building.  His autoattacks also passively grant him a very samll amount of gold, with the amount gained increasing slightly as Lucky Stars is leveled up."
+		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_Description"					"Gambler's autoattacks have a chance to instantly kill a creep, or deal %bonus_damage% bonus damage to a hero or building.  His autoattacks also passively grant him a very small amount of gold (less than one gold per autoattack), with the amount gained increasing slightly as Lucky Stars is leveled up."
 		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_chance"							"%CHANCE:"
 		
 		

@@ -72,7 +72,7 @@ function AllInSuccess(event)
 	event.caster:EmitSound("retro_dota.gambler_retro_all_in_success_bell")
 	event.caster:EmitSound("Hero_OgreMagi.Fireblast.x3")
 	
-	local random_int = RandomInt(1, 3)
+	local random_int = RandomInt(1, 4)
 	if random_int == 1 then
 		event.caster:EmitSound("retro_dota.gambler_retro_all_in_success_voice")
 	end

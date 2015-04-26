@@ -92,7 +92,7 @@ function RetroDota:InitGameMode()
 	GameRules.vote_options = LoadKeyValues("scripts/npc/kv/vote_options.txt")
 	
 	--Initialize the voting options with their default settings.
-	GameRules.win_condition = GameRules.vote_options.kills_to_win["7"]
+	GameRules.win_condition = GameRules.vote_options.kills_to_win["6"]
 	GameRules.starting_level = GameRules.vote_options.starting_level["2"]
 	GameRules.starting_gold = GameRules.vote_options.starting_gold["1"]
 	GameRules.invoke_cd = GameRules.vote_options.invoke_cd["2"]

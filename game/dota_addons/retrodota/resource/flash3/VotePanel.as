@@ -55,11 +55,10 @@
 			array_wcondition.push({"label":"10 kills", "data":"3"});
 			array_wcondition.push({"label":"25 kills", "data":"4"});
 			array_wcondition.push({"label":"50 kills", "data":"5"});
-			array_wcondition.push({"label":"100 kills", "data":"6"});
-			array_wcondition.push({"label":"Ancient", "data":"7"});
+			array_wcondition.push({"label":"Ancient", "data":"6"});
 			var dataProvider1 = new DataProvider(array_wcondition);
 			this.killsToWinBox.setDataProvider(dataProvider1);
-			this.killsToWinBox.setSelectedIndex(6);
+			this.killsToWinBox.setSelectedIndex(5);
 			this.killsToWinBox.menuList.addEventListener( ListEvent.INDEX_CHANGE, onKillsToWinChanged );
 						
 			this.levelBox = replaceWithValveComponent(startingLevel, "ComboBoxSkinned");

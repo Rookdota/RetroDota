@@ -7,8 +7,7 @@ Resources
 =========
 
 
-- [Old Heroes](http://www.playdota.com/forums/showthread.php?t=517562)
--- Rook's opinion: the most interesting old heroes include Invoker, Gambler, Pudge, and Conjurer
+- [Old Heroes](http://www.playdota.com/forums/showthread.php?t=517562).  Rook's opinion: the most interesting old heroes include Invoker, Gambler, Pudge, and Conjurer.
 
 - [Beta Heroes](http://www.playdota.com/forums/showthread.php?t=1273183)
 

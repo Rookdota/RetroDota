@@ -21,7 +21,7 @@
 	"MaxLevel"						"4"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-	"AbilityCastPoint"				"0.01"
+	"AbilityCastPoint"				"0.3"
 	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
@@ -167,7 +167,7 @@
 	"MaxLevel"						"4"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-	"AbilityCastPoint"				"0.01"
+	"AbilityCastPoint"				"0.3"
 	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats
@@ -313,7 +313,7 @@
 	"MaxLevel"						"4"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-	"AbilityCastPoint"				"0.01"
+	"AbilityCastPoint"				"0.3"
 	"AbilityProcsMagicStick" 		"1"
 	
 	// Stats

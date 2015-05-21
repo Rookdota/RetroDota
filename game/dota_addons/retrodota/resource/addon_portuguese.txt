@@ -1,0 +1,420 @@
+"lang"
+{
+	"Language"		"Portuguese"
+	"Tokens"
+	{
+		// ******************** GENERAL **********************
+		"addon_game_name"			"Retro Dota"	
+		
+		//Quas uses <font color=\"#0099CC\">Quas</font>, which is (0, 153, 204)
+		//Wex uses <font color=\"#CC0099\">Wex</font>, which is (204, 0, 153)
+		//Exort uses <font color=\"#FF6600\">Exort</font>, which is (255, 102, 0)
+		
+		"DOTA_Chat_NoBattlePoints_WrongLobby"		""		//"Battle Points will not be awarded for this match because it is a practice lobby."
+		"Dota_shared_content_available"				""		//"Players are sharing items in the Shared Content tab."
+		
+		
+		// ******************** HEROES ***********************
+		"npc_dota_hero_invoker"    	  "Arsenal Magus"
+		"npc_dota_hero_zuus"    	  "Gambler"
+
+		
+		// ******************** ITEMS ***********************
+		"DOTA_Tooltip_ability_item_refresher_datadriven"									"Refresher Orb"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_Description"						"Habilidade Ativa: Reset Cooldowns - Dá resete nas cooldowns de todos os seus itens e suas habilidades."
+		"DOTA_Tooltip_ability_item_refresher_datadriven_Lore"								"Um artefato poderoso criado por magos."
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_health_regen"					"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_mana_regen_percentage"		"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_intelligence"					"+$int"
+		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_attack_speed"					"+$attack"
+		
+		
+		// ******************** STRUCTURES ***********************
+		"dota_fountain"										"Fonte"
+		
+		"npc_radiant_fort"									"Arvore da Vida"
+		"npc_dire_fort"										"Trono de Gelo"
+		
+		"npc_radiant_tower"									"Guardião"
+		"npc_dire_tower"									"Ziggurat"
+		
+		"npc_dota_goodguys_tower1_top"						"Guardião"
+		"npc_dota_goodguys_tower1_mid"						"Guardião"
+		"npc_dota_goodguys_tower1_bot"						"Guardião"
+		"npc_dota_goodguys_tower2_top"						"Guardião"
+		"npc_dota_goodguys_tower2_mid"						"Guardião"
+		"npc_dota_goodguys_tower2_bot"						"Guardião"
+		"npc_dota_goodguys_tower3_top"						"Guardião"
+		"npc_dota_goodguys_tower3_mid"						"Guardião"
+		"npc_dota_goodguys_tower3_bot"						"Guardião"
+		"npc_dota_goodguys_tower4"							"Guardião"
+		"npc_dota_badguys_tower1_top"						"Ziggurat"
+		"npc_dota_badguys_tower1_mid"						"Ziggurat"
+		"npc_dota_badguys_tower1_bot"						"Ziggurat"
+		"npc_dota_badguys_tower2_top"						"Ziggurat"
+		"npc_dota_badguys_tower2_mid"						"Ziggurat"
+		"npc_dota_badguys_tower2_bot"						"Ziggurat"
+		"npc_dota_badguys_tower3_top"						"Ziggurat"
+		"npc_dota_badguys_tower3_mid"						"Ziggurat"
+		"npc_dota_badguys_tower3_bot"						"Ziggurat"
+		"npc_dota_badguys_tower4"							"Ziggurat"
+
+		
+		// ******************** ABILITIES ********************
+		
+		//Arcane Arts
+		"DOTA_Tooltip_ability_invoker_retro_arcane_arts"                                  "Arcane Arts"
+		"DOTA_Tooltip_ability_invoker_retro_arcane_arts_Description"                      "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#CC0099\">Wex</font> <font color=\"#FF6600\">Exort</font>.\n\nAumenta passivamente a resistência mágica de Invoker. O ganho de resistência mágica aumenta por conforme o level de Wex."
+		"DOTA_Tooltip_ability_invoker_retro_arcane_arts_magic_resistance"                 "%RESISTÊNCIA MÁGICA (<font color=\"#CC0099\">WEX</font>):"
+		
+		
+		
+		//Betrayal
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal"                                     "Betrayal"
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_Description"                         "Invocação: <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#0099CC\">Quas</font>.\n\nTransfere temporariamente a unidade inimiga para um outro time, permitindo receber danos de seus oponentes assim como de seus aliados. A duração aumenta por level de Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_duration"							  "DURAÇÃO (<font color=\"#0099CC\">QUAS</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_half_mana_cost"                      "Betrayal"
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_half_mana_cost_Description"          "Invocação: <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#0099CC\">Quas</font>.\n\nTransfere temporariamente a unidade inimiga para um outro time, permitindo receber danos de seus oponentes assim como de seus aliados. A duração aumenta por level de Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_half_mana_cost_duration"			  "DURAÇÃO (<font color=\"#0099CC\">QUAS</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_no_mana_cost"                        "Betrayal"
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_no_mana_cost_Description"            "Invocação: <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font> <font color=\"#0099CC\">Quas</font>.\n\nTransfere temporariamente a unidade inimiga para um outro time, permitindo receber danos de seus oponentes assim como de seus aliados. A duração aumenta por level de Quas."
+		"DOTA_Tooltip_Ability_invoker_retro_betrayal_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#0099CC\">QUAS</font>):"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_betrayal"                    				  "Betrayal"
+		"DOTA_Tooltip_modifier_invoker_retro_betrayal_Description"       				  "Temporariamente transferido para outra equipe."
+
+		
+		//Chaos Meteor
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor"                                 "Chaos Meteor"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_Description"                     "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font>.\n\nInvoker traz do espaço um meteoro flamejante no local apontado. Após %land_delay% segundos de viagem, o meteoro aterrissa e rola por %travel_distance% unidades a %travel_speed% unidades por segundo, causando dano a cada %main_damage_interval% segundos. Unidades atingidas são queimadas e tomam dano adicional a cada segundo durante %burn_duration% segundos. Unidade podem ser atingidas por vários meterosos ao mesmo tempo, o que causa dano por queimaduras multiplas vezes. O dano inicial causado pelo meteoro aumenta por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_main_damage_per_second_tooltip"  "DANO DO METEORO POR SEGUNDO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_burn_damage_per_interval"        "DANO DE QUEIMADURAS POR SEGUNDO:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_half_mana_cost"                                 "Chaos Meteor"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_half_mana_cost_Description"                     "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font>.\n\nInvoker traz do espaço um meteoro flamejante no local apontado. Após %land_delay% segundos de viagem, o meteoro aterrissa e rola por %travel_distance% unidades a %travel_speed% unidades por segundo, causando dano a cada %main_damage_interval% segundos. Unidades atingidas são queimadas e tomam dano adicional a cada segundo durante %burn_duration% segundos. Unidade podem ser atingidas por vários meterosos ao mesmo tempo, o que causa dano por queimaduras multiplas vezes. O dano inicial causado pelo meteoro aumenta por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_half_mana_cost_main_damage_per_second_tooltip"  "DANO DO METEORO POR SEGUNDO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_half_mana_cost_burn_damage_per_interval"        "DANO DE QUEIMADURAS POR SEGUNDO:"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_no_mana_cost"                                 "Chaos Meteor"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_no_mana_cost_Description"                     "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font>.\n\nInvoker traz do espaço um meteoro flamejante no local apontado. Após %land_delay% segundos de viagem, o meteoro aterrissa e rola por %travel_distance% unidades a %travel_speed% unidades por segundo, causando dano a cada %main_damage_interval% segundos. Unidades atingidas são queimadas e tomam dano adicional a cada segundo durante %burn_duration% segundos. Unidade podem ser atingidas por vários meterosos ao mesmo tempo, o que causa dano por queimaduras multiplas vezes. O dano inicial causado pelo meteoro aumenta por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_no_mana_cost_main_damage_per_second_tooltip"  "DANO DO METEORO POR SEGUNDO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_chaos_meteor_no_mana_cost_burn_damage_per_interval"        "DANO DE QUEIMADURAS POR SEGUNDO:"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_chaos_meteor_burn_damage"                    "Queimadura do Chaos Meteor"
+		"DOTA_Tooltip_modifier_invoker_retro_chaos_meteor_burn_damage_Description"        "Recebendo dano por segundo por ter entrado em contato com o Chaos Meteor de Invoker."
+		
+		
+		
+		//Confuse
+		"DOTA_Tooltip_Ability_invoker_retro_confuse"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage taken decreases per levão aumenta por nivel de Quasl o dano recebido pela ilusao diminui por nivel de Wex le o cast range aumenta por nivel de Exort9CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX</font>): <DANO RECEBIDO color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da iluso, the illusion damage takão aumenta por nivel de Quasn o dano recebido pela ilusao diminui por nivel de Wexase o cast range aumenta por nivel de Exortor=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDAMAGE TAKEN (<font color=\"#CC0099\">WEX<DANO RECEBIDO): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_half_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_half_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_half_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_1_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_2_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_3_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_4_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_5_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_6_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_7_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_no_mana_cost"                        "Confuse"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_no_mana_cost_Description"            "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma ilusão de Invoker no local escolhido. A ilusão não pode se mover, atacar, ou conjurar magias. Uma segunda ilusão \"fantasma\" também é criada no mesmo lugar, que também é incapaz de realizar qualquer ação, mas tem o dobro da duração, alem de ser invulneravel e não-selecionavel. A duração da ilusão aumenta por nivel de Quas, o dano recebido pela ilusao diminui por nivel de Wex, e o cast range aumenta por nivel de Exort.\n\nDURAÇÃO (<font color=\"#0099CC\">QUAS</font>): <font color=\"#888888\">5/10/15/20/25/30/35/40</font>\nDANO RECEBIDO (<font color=\"#CC0099\">WEX</font>): <font color=\"#888888\">150%%/140%%/130%%/120%%/110%%/100%%/90%%/80%%</font>"
+		"DOTA_Tooltip_Ability_invoker_retro_confuse_level_8_exort_no_mana_cost_cast_range"             "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		
+		
+		//Deafening Blast
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast"                              "Deafening Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_Description"                  "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font>.\n\nCausa dano enquanto aplica break e silence em seus oponentes, desativando suas passivas e os impedindo de usar magias ou items. A duração do efeito e o dano causado aumenta por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_mute_duration"                "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_damage"                       "DAMAGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_half_mana_cost"                              "Deafening Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_half_mana_cost_Description"                  "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font>.\n\nCausa dano enquanto aplica break e silence em seus oponentes, desativando suas passivas e os impedindo de usar magias ou items. A duração do efeito e o dano causado aumenta por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_half_mana_cost_mute_duration"                "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_half_mana_cost_damage"                       "DAMAGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_no_mana_cost"                              "Deafening Blast"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_no_mana_cost_Description"                  "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font>.\n\nCausa dano enquanto aplica break e silence em seus oponentes, desativando suas passivas e os impedindo de usar magias ou items. A duração do efeito e o dano causado aumenta por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_no_mana_cost_mute_duration"                "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_deafening_blast_no_mana_cost_damage"                       "DAMAGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_modifier_invoker_retro_deafening_blast"                  			  "Deafening Blast"
+		"DOTA_Tooltip_modifier_invoker_retro_deafening_blast_Description"                 "Muted.  Essa unidade não pode usar magias ou items, e suas passivas estão desativadas."
+
+		
+		
+		//Disarm (Broken into 8 spells)
+		"DOTA_Tooltip_Ability_invoker_retro_disarm"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_half_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_half_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_half_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_half_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_2_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_3_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_4_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_5_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_6_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_7_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_no_mana_cost"                         "Disarm"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_no_mana_cost_Description"             "Invocação: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDesarma uma unidade inimiga. A duração e cast range aumentam por level de Exort."
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_no_mana_cost_duration"				  "DURAÇÃO (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_8_exort_no_mana_cost_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+
+		"DOTA_Tooltip_modifier_invoker_retro_disarm"                  					  "Disarm"
+		"DOTA_Tooltip_modifier_invoker_retro_disarm_Description"                          "Desarmado."
+
+		
+		
+		//EMP
+		"DOTA_Tooltip_Ability_invoker_retro_emp"                                          "EMP"
+		"DOTA_Tooltip_Ability_invoker_retro_emp_Description"                              "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nLibera um EMP na frente de Invoker que se move à %projectile_speed_per_second% unidades por segundo. Após ter se movido %distance_to_move% unidades, o EMP para e espera %delay_before_exploding% segundos antes de detonar, quando então uma quantidade de mana é removida de todos os inimigos em uma AoE de %radius% unidades.  A quantidade de mana removida aumenta por level de Quas e Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_emp_mana_burned"                              "MANA REMOVIDA (<font color=\"#0099CC\">QUAS</font>, <font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_emp_half_mana_cost"                                          "EMP"
+		"DOTA_Tooltip_Ability_invoker_retro_emp_half_mana_cost_Description"                              "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nLibera um EMP na frente de Invoker que se move à %projectile_speed_per_second% unidades por segundo. Após ter se movido %distance_to_move% unidades, o EMP para e espera %delay_before_exploding% segundos antes de detonar, quando então uma quantidade de mana é removida de todos os inimigos em uma AoE de %radius% unidades.  A quantidade de mana removida aumenta por level de Quas e Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_emp_half_mana_cost_mana_burned"                              "MANA REMOVIDA (<font color=\"#0099CC\">QUAS</font>, <font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_emp_no_mana_cost"                                          "EMP"
+		"DOTA_Tooltip_Ability_invoker_retro_emp_no_mana_cost_Description"                              "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#0099CC\">Quas</font> <font color=\"#CC0099\">Wex</font>.\n\nLibera um EMP na frente de Invoker que se move à %projectile_speed_per_second% unidades por segundo. Após ter se movido %distance_to_move% unidades, o EMP para e espera %delay_before_exploding% segundos antes de detonar, quando então uma quantidade de mana é removida de todos os inimigos em uma AoE de %radius% unidades.  A quantidade de mana removida aumenta por level de Quas e Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_emp_no_mana_cost_mana_burned"                              "MANA REMOVIDA (<font color=\"#0099CC\">QUAS</font>, <font color=\"#CC0099\">WEX</font>):"
+
+		
+		
+		//Empty Slot 1
+		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_1"                                 "Empty Slot"
+		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_1_Description"                     ""
+
+		
+		
+		//Empty Slot 2
+		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_2"                                 "Empty Slot"
+		"DOTA_Tooltip_Ability_invoker_retro_empty_slot_2_Description"                     ""
+
+		
+		
+		//Energy Ball
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball"                                  "Energy Ball"
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_Description"                      "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#FF6600\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma bola de energia na localização de Invoker. Após um delay de %delay_before_exploding% segundos, causa dano em todas as unidades inimigas em %radius%-unit AoE. O dano aumenta por level de Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_damage"							  "DANO (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_half_mana_cost"                                  "Energy Ball"
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_half_mana_cost_Description"                      "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#FF6600\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma bola de energia na localização de Invoker. Após um delay de %delay_before_exploding% segundos, causa dano em todas as unidades inimigas em %radius%-unit AoE. O dano aumenta por level de Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_half_mana_cost_damage"							  "DANO (<font color=\"#CC0099\">WEX</font>):"
+		
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_no_mana_cost"                                  "Energy Ball"
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_no_mana_cost_Description"                      "Invocação: <font color=\"#CC0099\">Wex</font> <font color=\"#FF6600\">Exort</font> <font color=\"#CC0099\">Wex</font>.\n\nCria uma bola de energia na localização de Invoker. Após um delay de %delay_before_exploding% segundos, causa dano em todas as unidades inimigas em %radius%-unit AoE. O dano aumenta por level de Wex."
+		"DOTA_Tooltip_Ability_invoker_retro_energy_ball_no_mana_cost_damage"							  "DANO (<font color=\"#CC0099\">WEX</font>):"
+
+		
+		
+		//Exort
+		"DOTA_Tooltip_Ability_invoker_retro_exort"                                        "Exort"
+		"DOTA_Tooltip_Ability_invoker_retro_exort_Description"                            "Permite a manipulação das magias de fogo e da um bonus permanente de Força. Cada instancia de Exort fornece regeneração de vida extra."
+		"DOTA_Tooltip_Ability_invoker_retro_exort_bonus_health_regen_per_instance"		  "REGEN DE VIDA BONUS POR INSTANCIA DE <font color=\"#FF6600\">EXORT</font>:"
+		"DOTA_Tooltip_Ability_invoker_retro_exort_bonus_strength"		              	  "BONUS DE FORÇA PASSIVO:"
+
+		"DOTA_Tooltip_modifier_invoker_retro_exort_instance"                              "Exort"
+		"DOTA_Tooltip_modifier_invoker_retro_exort_instance_Description"                  "Regeneração de HP bonus  por segundo aumentada em .5 por cada level de Exort."
+		
+
+
+	}
+}

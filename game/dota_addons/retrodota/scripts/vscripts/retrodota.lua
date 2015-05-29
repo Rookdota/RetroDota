@@ -248,9 +248,7 @@ function RetroDota:OnAllPlayersLoaded()
 	-- Show Vote Panel
 	FireGameEvent( 'show_vote_panel', {} )
 
-	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)
-	GameRules:SendCustomMessage("<font color='##FFCC33'>Please also note that lag issues can arise when a player uses an Invoker cosmetic item that was released within the past few months, since the Source 2 branch of Dota 2 has not yet been updated with the newest cosmetics.</font>", 0, 0)
-	
+	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)	
 	
 	local message30shown = false
 	local message10shown = false

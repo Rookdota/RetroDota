@@ -1768,13 +1768,14 @@
 		// ******************** GamePanel UI ***********************
 		"Welcome"							"Bem-vindo"	
 		"to"								"à"
-		"Version"							"2.0.0"
-		"Intro"								"Em tempos remotos,\nInvoker dominava não menos que 27 magias.\nVocê conseguirá domina-las também?"
+		"Version"							"2.0.2"
+		"Intro"								"Em tempos remotos,\nInvoker dominava não menos que 27 magias.\nVocê conseguirá domina-las também?\n\nOu se sorte faz mais o seu tipo, você pode conhecer o passado sombrio do vendedor, quando ele era conhecido como o Gambler!"
 		"Instructions"						"Vote nas configurações que você gostaria de jogar\n usando o painel central.\n\nAo criar uma partida, pode ser escolhido o mapa tradicional\nou uma arena exclusiva!"
 		"New"								"Novidades desta versão:"
-		"Changes"							"Gambler e condições de vitória baseadas em ouro!"
+		"Changes"							"Gambler!"
 		"Soon"								"Em breve: "
-		"SoonText"							"?" //FF9933
+		"SoonText"							"Isto é você quem decide!" //FF9933
+		"SoonText2"							"Deixe sugestões para o próximo herói na pagina do workshop do Retro Dota!"
 		"Authors"							"Criado por "
 		"Author1"							"Rook" //0099CC
 		"Author2"							"Noya" //CC0099

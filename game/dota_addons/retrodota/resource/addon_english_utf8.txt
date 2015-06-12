@@ -236,8 +236,8 @@
 		//Disarm (Broken into 8 spells)
 		"DOTA_Tooltip_Ability_invoker_retro_disarm"                         "Disarm"
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_Description"             "Invoke: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDisarms the target enemy unit.  The duration and cast range increase per level of Exort."
-		"DOTA_Tooltip_Ability_invoker_retro_disarm_duration"				  "DURATION (<font color=\"#FF6600\">EXORT</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_disarm_cast_range" 			  "CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_duration"				"DURATION (<font color=\"#FF6600\">EXORT</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_disarm_cast_range" 			  	"CAST RANGE (<font color=\"#FF6600\">EXORT</font>):"
 
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort"                         "Disarm"
 		"DOTA_Tooltip_Ability_invoker_retro_disarm_level_1_exort_Description"             "Invoke: <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nDisarms the target enemy unit.  The duration and cast range increase per level of Exort."
@@ -470,7 +470,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_Description"				          "Invoke: <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nBlasts the target enemy unit with damaging frost, dealing damage to it as well as enemies within %area_radius% range.  Affected units have their movement speed slowed.  The damage dealt increases per level of Quas."
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_area_damage"				          "DAMAGE (<font color=\"#0099CC\">QUAS</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_slow_percent" 			     	  "%SLOW:"
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_slow_duration"				      "SLOW DURATION:"	
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_slow_duration"				      "SLOW DURATION:"
 		
 		"DOTA_Tooltip_modifier_invoker_retro_frost_nova_slow"                             "Frost Nova"
 		"DOTA_Tooltip_modifier_invoker_retro_frost_nova_slow_Description"                 "Movement speed slowed."
@@ -1170,7 +1170,7 @@
 		"DOTA_Tooltip_Ability_invoker_retro_scout_half_mana_cost"                                        "Scout"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_half_mana_cost_Description"                            "Invoke: <font color=\"#CC0099\">Wex</font> <font color=\"#FF6600\">Exort</font> <font color=\"#0099CC\">Quas</font>.\n\nSummons an invisible, invulnerable Owl Scout that has flying vision and truesight.  The summon duration, vision radius, and movement speed all increase per level of Wex."
 		"DOTA_Tooltip_Ability_invoker_retro_scout_half_mana_cost_owl_duration"             	 	      "DURATION (<font color=\"#CC0099\">WEX</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_scout_half_mana_cost_owl_vision"							  "VISION RADIUS (<font color=\"#CC0099\">WEX</font>):"
+		"DOTA_Tooltip_Ability_invoker_retro_scout_half_mana_cost_owl_vision"						  "VISION RADIUS (<font color=\"#CC0099\">WEX</font>):"
 		"DOTA_Tooltip_Ability_invoker_retro_scout_half_mana_cost_owl_movespeed"						  "MOVEMENT SPEED (<font color=\"#CC0099\">WEX</font>):"
 		
 		"DOTA_Tooltip_Ability_invoker_retro_scout_no_mana_cost"                                        "Scout"
@@ -1790,7 +1790,7 @@
 		"DONTCARE"							"DON'T CARE"
 
 		// ******************** GamePanel UI ***********************
-		"Welcome"							"Welcome"	
+		"Welcome"							"Welcome"
 		"to"								"to"
 		"Version"							"2.0.2"
 		"Intro"								"Long ago,\nInvoker mastered no fewer than 27 spells.\nCan you master them as well?\n\nOr, if luck is more your game,\ndelve into the seedy past of the shopkeeper,\nwhen he was known as the Gambler!"

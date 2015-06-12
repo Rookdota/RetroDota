@@ -457,19 +457,19 @@
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova"                    				  "Frost Nova"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_Description"				          "Invocação: <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nCausa uma explosão de gelo no alvo inimigo, causando dano no no alvo e ao redor em %area_radius% unidades. Unidades afetadas ficam com sua velocidade de movimento reduzida. O dano causado aumenta por level de Quas."
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_area_damage"				          "DANO (<font color=\"#0099CC\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_slow_percent" 			     	  "%SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_slow_percent" 			     	  "%LENTIDÃO:"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_slow_duration"				      "DURAÇÃO DA LENTIDÃO:"	
 		
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_half_mana_cost"                    				  "Frost Nova"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_half_mana_cost_Description"				          "Invocação: <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nCausa uma explosão de gelo no alvo inimigo, causando dano no no alvo e ao redor em %area_radius% unidades. Unidades afetadas ficam com sua velocidade de movimento reduzida. O dano causado aumenta por level de Quas."
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_half_mana_cost_area_damage"				          "DANO (<font color=\"#0099CC\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_half_mana_cost_slow_percent" 			     	  "%SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_half_mana_cost_slow_percent" 			     	  "%LENTIDÃO:"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_half_mana_cost_slow_duration"				      "DURAÇÃO DA LENTIDÃO:"	
 		
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost"                    				  "Frost Nova"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_Description"				          "Invocação: <font color=\"#0099CC\">Quas</font> <font color=\"#0099CC\">Quas</font> <font color=\"#FF6600\">Exort</font>.\n\nCausa uma explosão de gelo no alvo inimigo, causando dano no no alvo e ao redor em %area_radius% unidades. Unidades afetadas ficam com sua velocidade de movimento reduzida. O dano causado aumenta por level de Quas."
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_area_damage"				          "DANO (<font color=\"#0099CC\">QUAS</font>):"
-		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_slow_percent" 			     	  "%SLOW:"
+		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_slow_percent" 			     	  "%LENTIDÃO:"
 		"DOTA_Tooltip_Ability_invoker_retro_frost_nova_no_mana_cost_slow_duration"				      "DURAÇÃO DA LENTIDÃO:"	
 		
 		"DOTA_Tooltip_modifier_invoker_retro_frost_nova_slow"                             "Frost Nova"
@@ -1128,7 +1128,7 @@
 		//Quas
 		"DOTA_Tooltip_Ability_invoker_retro_quas"                                         "Quas"
 		"DOTA_Tooltip_Ability_invoker_retro_quas_Description"							  "Permite a manipulação das magias arcanas e concede um bonus permanente de Inteligencia. Each Quas instance provides increased attack damage."
-		"DOTA_Tooltip_Ability_invoker_retro_quas_bonus_damage_percent_per_instance"		  "%ATTACK DANO BONUS POR INSTANCIA DE <font color=\"#0099CC\">QUAS</font>:"
+		"DOTA_Tooltip_Ability_invoker_retro_quas_bonus_damage_percent_per_instance"		  "%DANO BONUS POR INSTANCIA DE <font color=\"#0099CC\">QUAS</font>:"
 		"DOTA_Tooltip_Ability_invoker_retro_quas_bonus_intelligence"		              "BONUS PASSIVO DE INTELIGENCIA:"
 		
 		"DOTA_Tooltip_modifier_invoker_retro_quas_instance"                               "Quas"
@@ -1678,7 +1678,7 @@
 		//Wex
 		"DOTA_Tooltip_Ability_invoker_retro_wex"                                          "Wex"
 		"DOTA_Tooltip_Ability_invoker_retro_wex_Description"                              "Permite a manipulação das magias de fogo e da um bonus permanente de Agility. Cada instancia de Wex fornece velocidade de movimento bonus."
-		"DOTA_Tooltip_Ability_invoker_retro_wex_move_speed_percent_per_instance"		  "%MOVE SPEED BONUS PER <font color=\"#CC0099\">WEX</font> INSTANCE:"
+		"DOTA_Tooltip_Ability_invoker_retro_wex_move_speed_percent_per_instance"		  "%VELOCIDADE DE MOVIMENTO BONUS POR INSTANCIA DE <font color=\"#CC0099\">WEX</font>:"
 		"DOTA_Tooltip_Ability_invoker_retro_wex_bonus_agility"		              		  "BONUS PASSIVO DE AGILIDADE:"
 
 		"DOTA_Tooltip_modifier_invoker_retro_wex_instance"                                "Wex"
@@ -1702,14 +1702,14 @@
 		
 		//Chip Stack
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack"									"Chip Stack"
-		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_Description"						"Causa dano igual a uma porcentagem do total de outro do seu alvo."
-		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_gold_to_damage_ratio"			"%PERCENT OF TARGET'S GOLD AS DAMAGE:"
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_Description"						"Causa dano igual a uma porcentagem do total de ouro do seu alvo."
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_gold_to_damage_ratio"			"%PORCENTAGEM DE OURO DO ALVO EM DANO:"
 		
 		
 		
 		//Lucky Stars
 		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars"								"Lucky Stars"
-		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_Description"					"Os atques basicos de Gambler possuem uma chance de matar automaticamente um creep, ou causar %bonus_damage% de dano extra em herois ou construções. Seus ataques basicos tambem forncem uma pequena quantidade de ouro, garantindo uma taxa de ouro um pouco melhor a cada level dessa skill."
+		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_Description"					"Os ataques basicos de Gambler possuem uma chance de matar automaticamente um creep, ou causar %bonus_damage% de dano extra em herois ou construções. Seus ataques basicos tambem forncem uma pequena quantidade de ouro, garantindo uma taxa de ouro um pouco melhor a cada level dessa skill."
 		"DOTA_Tooltip_Ability_gambler_retro_lucky_stars_chance"							"%CHANCE:"
 		
 		
@@ -1718,7 +1718,7 @@
 		"DOTA_Tooltip_Ability_gambler_retro_all_in"										"All In"
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_Description"							"Causa dano a unidade inimiga em um valor aleatorio entre 1 e o ouro atual de Gambler ou o limite de dano (o menor entre os dois). All In possui uma chance de falhar completamente, causando 0 de dano ao inimigo e fazendo com que Gambler perca em ouro a quantidade dano que seria causada ao inimigo."
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_damage_cap"							"LIMITE DE DANO:"
-		"DOTA_Tooltip_Ability_gambler_retro_all_in_chance_to_fail"						"%CHANCE TO FAIL:"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_chance_to_fail"						"%CHANCE DE FALHAR:"
 		
 		
 		

@@ -1692,6 +1692,16 @@
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_damage_heal"						"DANO/CURA:"
 		"DOTA_Tooltip_Ability_gambler_retro_ante_up_cash_in"							"RECOMPENSA DA APOSTA:"
 		
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost"									"Ante Up"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost_Description"						"Custo de 100 de gold para ser utilizado. Cura o alvo caso seja um aliado ou causa dano se o alvo for um inimigo. Se durante a duração de %duration% segundos, o alvo fizer uma kill antes de morrer, Gambler recebe uma recompensa em ouro por sua aposta. Se o alvo apostado morrer antes de conseguir uma kill, Gambler é recompensado apenas com a metade do valor. Não pode ser usado em si mesmo."
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost_damage_heal"						"DANO/CURA:"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_half_mana_cost_cash_in"							"RECOMPENSA DA APOSTA:"
+
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost"									"Ante Up"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost_Description"						"Custo de 100 de gold para ser utilizado. Cura o alvo caso seja um aliado ou causa dano se o alvo for um inimigo. Se durante a duração de %duration% segundos, o alvo fizer uma kill antes de morrer, Gambler recebe uma recompensa em ouro por sua aposta. Se o alvo apostado morrer antes de conseguir uma kill, Gambler é recompensado apenas com a metade do valor. Não pode ser usado em si mesmo."
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost_damage_heal"						"DANO/CURA:"
+		"DOTA_Tooltip_Ability_gambler_retro_ante_up_no_mana_cost_cash_in"							"RECOMPENSA DA APOSTA:"
+		
 		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff"                              "Ante Up"
 		"DOTA_Tooltip_modifier_gambler_retro_ante_up_buff_Description"                  "Se esta unidade matar antes de morrer, Gambler receberá um recompensa em ouro pela aposta e o buff será encerrado. Se esta unidade morrer antes de matar, Gambler receberá metade da recompensa."
 		
@@ -1704,6 +1714,14 @@
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack"									"Chip Stack"
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_Description"						"Causa dano igual a uma porcentagem do total de outro do seu alvo."
 		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_gold_to_damage_ratio"			"%PERCENT OF TARGET'S GOLD AS DAMAGE:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_half_mana_cost"									"Chip Stack"
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_half_mana_cost_Description"						"Causa dano igual a uma porcentagem do total de ouro do seu alvo."
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_half_mana_cost_gold_to_damage_ratio"			"%PORCENTAGEM DE OURO DO ALVO EM DANO:"
+
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_no_mana_cost"									"Chip Stack"
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_no_mana_cost_Description"						"Causa dano igual a uma porcentagem do total de ouro do seu alvo."
+		"DOTA_Tooltip_Ability_gambler_retro_chip_stack_no_mana_cost_gold_to_damage_ratio"			"%PORCENTAGEM DE OURO DO ALVO EM DANO:"
 		
 		
 		
@@ -1719,6 +1737,16 @@
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_Description"							"Causa dano a unidade inimiga em um valor aleatorio entre 1 e o ouro atual de Gambler ou o limite de dano (o menor entre os dois). All In possui uma chance de falhar completamente, causando 0 de dano ao inimigo e fazendo com que Gambler perca em ouro a quantidade dano que seria causada ao inimigo."
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_damage_cap"							"LIMITE DE DANO:"
 		"DOTA_Tooltip_Ability_gambler_retro_all_in_chance_to_fail"						"%CHANCE TO FAIL:"
+		
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost"										"All In"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost_Description"							"Causa dano a unidade inimiga em um valor aleatorio entre 1 e o ouro atual de Gambler ou o limite de dano (o menor entre os dois). All In possui uma chance de falhar completamente, causando 0 de dano ao inimigo e fazendo com que Gambler perca em ouro a quantidade dano que seria causada ao inimigo."
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost_damage_cap"							"LIMITE DE DANO:"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_half_mana_cost_chance_to_fail"						"%CHANCE DE FALHAR:"
+
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost"										"All In"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost_Description"							"Causa dano a unidade inimiga em um valor aleatorio entre 1 e o ouro atual de Gambler ou o limite de dano (o menor entre os dois). All In possui uma chance de falhar completamente, causando 0 de dano ao inimigo e fazendo com que Gambler perca em ouro a quantidade dano que seria causada ao inimigo."
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost_damage_cap"							"LIMITE DE DANO:"
+		"DOTA_Tooltip_Ability_gambler_retro_all_in_no_mana_cost_chance_to_fail"						"%CHANCE DE FALHAR:"
 		
 		
 		

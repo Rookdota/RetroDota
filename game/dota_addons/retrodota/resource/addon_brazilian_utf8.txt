@@ -1770,7 +1770,7 @@
 		"to"								"à"
 		"Version"							"2.0.2"
 		"Intro"								"Em tempos remotos,\nInvoker dominava não menos que 27 magias.\nVocê conseguirá domina-las também?\n\nOu se sorte faz mais o seu tipo, você pode\nconhecer o passado sombrio do vendedor\nquando ele era conhecido como o Gambler!"
-		"Instructions"						"Vote nas configurações que você gostaria de jogar\n usando o painel central.\n\nAo criar uma partida, pode ser escolhido o\nmapa tradicional\nou uma arena exclusiva!"
+		"Instructions"						"Vote nas configurações que você gostaria de jogar\n usando o painel central.\nAo criar uma partida, pode ser escolhido o\nmapa tradicional ou uma arena exclusiva!"
 		"New"								"Novidades desta versão:"
 		"Changes"							"Gambler!"
 		"Soon"								"Em breve: "

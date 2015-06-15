@@ -1751,7 +1751,7 @@
 		
 		
 		// ******************** VotePanel UI ***********************
-		"InvokerTitle"						"CONFIGURAÇÕES DA PARTIDA"
+		"InvokerTitle"						"CONFIGURAÇÕES"
 		"WinConditionLabel"					"Objetivo para vitória"
 		"StartingLevelLabel"				"Level inicial"
 		"StartingGoldLabel"					"Ouro inicial"

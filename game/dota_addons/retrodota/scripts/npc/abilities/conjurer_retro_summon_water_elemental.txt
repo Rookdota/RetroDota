@@ -1,0 +1,51 @@
+// Conjurer's Summon Water Elemental
+// Author: wFX
+// Date: June 15, 2015
+// Summons a Water elemental to attack the Conjurer's enemies. Lasts 60 seconds
+"conjurer_retro_summon_water_elemental"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName" 			"conjurer_retro_summon_water_elemental"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	"AbilityCastPoint"				"0.25"
+	"AbilityProcsMagicStick" 		"1"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+	"AbilityManaCost"				"110 120 130 140"
+
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_gambler/gambler_all_in_success_explosion.vpcf"
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"summon_duration"				"60"  
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pip_show"				"0"
+		}
+	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_conjurer/summon_water_elemental.lua"
+			"Function"		"SummonWaterElementalOnSpellStart"
+		}
+	}
+}

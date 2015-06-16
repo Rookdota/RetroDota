@@ -1,0 +1,371 @@
+conjurer_water_elemental_level_1
+{
+	// General
+	"BaseClass"					"npc_dota_creature" // allows turning and cosmetics
+	"Model"						"models/heroes/morphling/morphling.vmdl"
+	"ModelScale"				"0.5"
+	//"SoundSet"				"Tower.Water"					// Name of sound set.
+	//"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"Level"						"1"
+	"HasInventory"				"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"					"0"			// Physical protection.
+	"MagicalResistance"				"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"30"		// Damage range min.
+	"AttackDamageMax"			"35"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1"			// Speed of attack.
+	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"450"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+	"ProjectileSpeed"			"750"		// Speed of projectile.
+
+	// Attributes
+	//----------------------------------------------------------------
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	//"AttributeBaseStrength"		"0"			// Base strength
+	//"AttributeStrengthGain"		"0"			// Strength bonus per level.
+	//"AttributeBaseIntelligence"	"0"			// Base intelligence
+	//"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+	//"AttributeBaseAgility"		"0"			// Base agility
+	//"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+	// Bounty
+	//----------------------------------------------------------------
+	//"BountyXP"					"25"		// Experience earn.
+	//"BountyGoldMin"				"150"		// Gold earned min.
+	//"BountyGoldMax"				"250"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	//"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+	//"ProjectileCollisionSize"	"50"
+	//"RingRadius"				"130"
+	//"HealthBarOffset"			"260"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"200"			// Speed
+	"MovementTurnRate"			"1.0"			// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"400"			// Base health.
+	"StatusHealthRegen"			"0.3"			// Health regeneration rate.
+	//"StatusMana"				"300"			// Base mana.
+	//"StatusManaRegen"			"0.5"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	//"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	//"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	//"Creature"
+	//{
+		//"AttachWearables"
+		//{
+			//"Wearable1"		{	"ItemDef"		"227"		}
+			//"Wearable2"		{	"ItemDef"		"228"		}
+			//"Wearable3" 	{	"ItemDef"		"229"		}
+			//"Wearable4"		{	"ItemDef"		"230"		}
+		//}
+	//}
+}
+
+conjurer_water_elemental_level_2
+{
+	// General
+	"BaseClass"					"npc_dota_creature" // allows turning and cosmetics
+	"Model"						"models/heroes/morphling/morphling.vmdl"
+	"ModelScale"				"0.7"
+	//"SoundSet"				"Tower.Water"					// Name of sound set.
+	//"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"Level"						"2"
+	"HasInventory"				"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"					"1"			// Physical protection.
+	"MagicalResistance"				"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"40"		// Damage range min.
+	"AttackDamageMax"			"45"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1"			// Speed of attack.
+	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"450"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+	"ProjectileSpeed"			"750"		// Speed of projectile.
+
+	// Attributes
+	//----------------------------------------------------------------
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	//"AttributeBaseStrength"		"0"			// Base strength
+	//"AttributeStrengthGain"		"0"			// Strength bonus per level.
+	//"AttributeBaseIntelligence"	"0"			// Base intelligence
+	//"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+	//"AttributeBaseAgility"		"0"			// Base agility
+	//"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+	// Bounty
+	//----------------------------------------------------------------
+	//"BountyXP"					"25"		// Experience earn.
+	//"BountyGoldMin"				"150"		// Gold earned min.
+	//"BountyGoldMax"				"250"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	//"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+	//"ProjectileCollisionSize"	"50"
+	//"RingRadius"				"130"
+	//"HealthBarOffset"			"260"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"200"			// Speed
+	"MovementTurnRate"			"1.0"			// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"600"		// Base health.
+	"StatusHealthRegen"			"0.3"			// Health regeneration rate.
+	//"StatusMana"				"300"			// Base mana.
+	//"StatusManaRegen"			"0.5"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	//"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	//"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	//"Creature"
+	//{
+		//"AttachWearables"
+		//{
+			//"Wearable1"		{	"ItemDef"		"227"		}
+			//"Wearable2"		{	"ItemDef"		"228"		}
+			//"Wearable3" 	{	"ItemDef"		"229"		}
+			//"Wearable4"		{	"ItemDef"		"230"		}
+		//}
+	//}
+}
+
+conjurer_water_elemental_level_3
+{
+	// General
+	"BaseClass"					"npc_dota_creature" // allows turning and cosmetics
+	"Model"						"models/heroes/morphling/morphling.vmdl"
+	"ModelScale"				"0.9"
+	//"SoundSet"				"Tower.Water"					// Name of sound set.
+	//"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"Level"						"3"
+	"HasInventory"				"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"					"2"			// Physical protection.
+	"MagicalResistance"				"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"50"		// Damage range min.
+	"AttackDamageMax"			"55"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1"			// Speed of attack.
+	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"450"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+	"ProjectileSpeed"			"750"		// Speed of projectile.
+
+	// Attributes
+	//----------------------------------------------------------------
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	//"AttributeBaseStrength"		"0"			// Base strength
+	//"AttributeStrengthGain"		"0"			// Strength bonus per level.
+	//"AttributeBaseIntelligence"	"0"			// Base intelligence
+	//"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+	//"AttributeBaseAgility"		"0"			// Base agility
+	//"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+	// Bounty
+	//----------------------------------------------------------------
+	//"BountyXP"					"25"		// Experience earn.
+	//"BountyGoldMin"				"150"		// Gold earned min.
+	//"BountyGoldMax"				"250"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	//"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+	//"ProjectileCollisionSize"	"50"
+	//"RingRadius"				"130"
+	//"HealthBarOffset"			"260"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"200"			// Speed
+	"MovementTurnRate"			"1.0"			// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"800"		// Base health.
+	"StatusHealthRegen"			"0.3"			// Health regeneration rate.
+	//"StatusMana"				"300"			// Base mana.
+	//"StatusManaRegen"			"0.5"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	//"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	//"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	//"Creature"
+	//{
+		//"AttachWearables"
+		//{
+			//"Wearable1"		{	"ItemDef"		"227"		}
+			//"Wearable2"		{	"ItemDef"		"228"		}
+			//"Wearable3" 	{	"ItemDef"		"229"		}
+			//"Wearable4"		{	"ItemDef"		"230"		}
+		//}
+	//}
+}
+
+conjurer_water_elemental_level_4
+{
+	// General
+	"BaseClass"					"npc_dota_creature" // allows turning and cosmetics
+	"Model"						"models/heroes/morphling/morphling.vmdl"
+	"ModelScale"				"1.1"
+	//"SoundSet"				"Tower.Water"					// Name of sound set.
+	//"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"Level"						"4"
+	"HasInventory"				"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"					"3"			// Physical protection.
+	"MagicalResistance"				"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"60"		// Damage range min.
+	"AttackDamageMax"			"65"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1"			// Speed of attack.
+	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"450"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+	"ProjectileSpeed"			"750"		// Speed of projectile.
+
+	// Attributes
+	//----------------------------------------------------------------
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	//"AttributeBaseStrength"		"0"			// Base strength
+	//"AttributeStrengthGain"		"0"			// Strength bonus per level.
+	//"AttributeBaseIntelligence"	"0"			// Base intelligence
+	//"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+	//"AttributeBaseAgility"		"0"			// Base agility
+	//"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+	// Bounty
+	//----------------------------------------------------------------
+	//"BountyXP"					"25"		// Experience earn.
+	//"BountyGoldMin"				"150"		// Gold earned min.
+	//"BountyGoldMax"				"250"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	//"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+	//"ProjectileCollisionSize"	"50"
+	//"RingRadius"				"130"
+	//"HealthBarOffset"			"260"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"200"			// Speed
+	"MovementTurnRate"			"1.0"			// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1000"		// Base health.
+	"StatusHealthRegen"			"0.3"			// Health regeneration rate.
+	//"StatusMana"				"300"			// Base mana.
+	//"StatusManaRegen"			"0.5"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	//"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	//"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	//"Creature"
+	//{
+		//"AttachWearables"
+		//{
+			//"Wearable1"		{	"ItemDef"		"227"		}
+			//"Wearable2"		{	"ItemDef"		"228"		}
+			//"Wearable3" 	{	"ItemDef"		"229"		}
+			//"Wearable4"		{	"ItemDef"		"230"		}
+		//}
+	//}
+}

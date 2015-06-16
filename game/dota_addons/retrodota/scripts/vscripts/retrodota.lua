@@ -533,7 +533,6 @@ function RetroDota:IgnoreVote(player)
 end
 
 
--- Lua is retarded
 function split(inputstr, sep)
     if sep == nil then
             sep = "%s"
@@ -593,7 +592,7 @@ function RetroDota:RegisterVote( player, string_values )
 end
 
 
--- Auxiliar function to return the average numeric value of the votes rounded down
+-- Auxiliary function to return the average numeric value of the votes rounded down
 function RoundedDownAverage( table )
     	
 	local value = 0

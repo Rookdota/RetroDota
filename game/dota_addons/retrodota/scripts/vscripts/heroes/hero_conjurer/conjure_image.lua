@@ -6,8 +6,16 @@
 function ConjureImageOnSpellStart( event )
 	local caster = event.caster
 	local target = event.target
-	local player = caster:GetPlayerID()
 	local ability = event.ability
+	local player = caster:GetPlayerID()
+	if target:GetUnitName() == "npc_radiant_tower" then
+		caster:Stop()
+		ability:RefundManaCost()
+		ability:EndCooldown()
+		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", caster:GetPlayerOwner())
+		FireGameEvent( 'custom_error_show', { player_ID = player, _error = "Ability Can't Target Buildings" } )
+		return
+	end
 	local unit_name = target:GetUnitName()
 	local origin = target:GetAbsOrigin() + RandomVector(100)
 	local duration = ability:GetLevelSpecialValueFor( "illusion_duration", ability:GetLevel() - 1 )

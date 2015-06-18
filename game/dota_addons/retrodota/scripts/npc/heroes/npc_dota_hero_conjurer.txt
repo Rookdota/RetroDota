@@ -32,18 +32,15 @@
 	//"BountyGoldMax"				"0"										// Gold earned max.
 
 	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-	//"RingRadius"				"80"
-	//"HealthBarOffset"			"210"
-	
+		
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"310"									// Speed.
-	//"MovementTurnRate"			"1.0"									// Turning rate.
-
+	
 	"StatusHealth"				"473"									// Base health.
-	//"StatusHealthRegen"			"1.0"									// Health regeneration rate.
+	//"StatusHealthRegen"		"1.0"									// Health regeneration rate.
 	"StatusMana"				"270"									// Base mana.
 	//"StatusManaRegen"			"1.0"									// Mana regeneration rate.
 
-	//"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
 }

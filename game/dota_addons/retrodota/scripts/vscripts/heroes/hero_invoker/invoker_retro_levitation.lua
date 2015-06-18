@@ -23,15 +23,15 @@ function invoker_retro_levitation_on_spell_start(keys)
 			average_level = 8
 		end
 		
-		local levitation_duration = keys.ability:GetLevelSpecialValueFor("duration", average_level - 1)
-		
-		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_levitation", {duration = levitation_duration})
+		local levitation_duration = keys.ability:GetLevelSpecialValueFor("duration", average_level - 1)		
+		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_invoker_retro_levitation", nil)
 		
 		--Stop the sound when the levitation ends.
 		Timers:CreateTimer({
 			endTime = levitation_duration,
 			callback = function()
 				keys.caster:StopSound("Brewmaster_Storm.Cyclone")
+				keys.caster:RemoveModifierByName("modifier_invoker_retro_levitation")
 			end
 		})
 	end

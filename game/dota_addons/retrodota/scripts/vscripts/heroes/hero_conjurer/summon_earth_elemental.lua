@@ -12,5 +12,6 @@ function SummonEarthElementalOnSpellStart( event )
 	if golem ~= nil then
 		golem:SetControllableByPlayer(caster:GetPlayerID(), true)
 		golem:AddNewModifier(caster, ability, 'modifier_kill', {duration = duration})
+		ParticleManager:CreateParticle('particles/units/heroes/hero_brewmaster/brewmaster_earth_death_ambient.vpcf', PATTACH_ABSORIGIN_FOLLOW, golem)
 	end
 end

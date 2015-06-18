@@ -1,7 +1,7 @@
 --[[ ============================================================================================================
 	Author: Rook
 	Date: March 8, 2015
-	Called when Incinerate begins channeling Incinerate.
+	Called when Invoker begins channeling Incinerate.
 ================================================================================================================= ]]
 function invoker_retro_incinerate_on_spell_start(keys)
 	local target_point = keys.target_points[1]

@@ -118,8 +118,8 @@ function RetroDota:InitGameMode()
 		local fireball_unit_ability = fireball_unit:FindAbilityByName("invoker_retro_firestorm_fireball")
 		if fireball_unit_ability ~= nil then
 			fireball_unit_ability:SetLevel(1)
+			fireball_unit_ability:ApplyDataDrivenModifier(fireball_unit, fireball_unit, "dummy_modifier_no_health_bar", nil)
 		end
-		fireball_unit_ability:ApplyDataDrivenModifier(fireball_unit, fireball_unit, "dummy_modifier_no_health_bar", nil)
 		
 		firestorm_fireballs[i] = fireball_unit
 	end

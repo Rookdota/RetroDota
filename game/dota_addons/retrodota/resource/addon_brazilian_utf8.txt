@@ -26,8 +26,6 @@
 		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_health_regen"					"+$hp_regen"
 		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_mana_regen_percentage"		"%+$mana_regen"
 		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_damage"						"+$damage"
-		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_intelligence"					"+$int"
-		"DOTA_Tooltip_ability_item_refresher_datadriven_bonus_attack_speed"					"+$attack"
 		
 		
 		// ******************** STRUCTURES ***********************

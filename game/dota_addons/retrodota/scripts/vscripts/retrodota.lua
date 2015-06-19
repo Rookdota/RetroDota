@@ -99,7 +99,7 @@ function RetroDota:InitGameMode()
 	GameRules.mana_cost_reduction = GameRules.vote_options.mana_cost_reduction["2"]
 	GameRules.invoke_slots = "2"
 	GameRules.mirror_match = "0"
-	GameRules.mirror_hero = "npc_dota_hero_Invoker"
+	GameRules.mirror_hero = "npc_dota_hero_invoker"
 	GameRules.fast_respawn = "1"
 	GameRules.gold_multiplier = "1"
 	GameRules.xp_multiplier = "1"
@@ -313,7 +313,7 @@ function RetroDota:OnPlayerPickHero(keys)
 	
 
 	-- Start Pips if playing Invoker
-	if hero:GetUnitName() == "npc_dota_hero_Invoker" then
+	if hero:GetUnitName() == "npc_dota_hero_invoker" then
 		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
 	end
 end
@@ -756,7 +756,7 @@ function RetroDota:OnEveryoneVoted()
 		local gamblers = 0
 		for k, hero in pairs( allHeroes ) do
 			local hero_name = hero:GetUnitName()
-			if hero_name == "npc_dota_hero_Invoker" then
+			if hero_name == "npc_dota_hero_invoker" then
 				invokers = invokers + 1
 			elseif hero_name == "npc_dota_hero_zuus" then
 				gamblers = gamblers + 1
@@ -770,7 +770,7 @@ function RetroDota:OnEveryoneVoted()
 				local host_hero = host_player:GetAssignedHero()
 				if host_hero ~= nil then
 					host_hero_name = host_hero:GetUnitName()
-					if hero_name == "npc_dota_hero_Invoker" then
+					if hero_name == "npc_dota_hero_invoker" then
 						invokers = invokers + 1
 					elseif hero_name == "npc_dota_hero_zuus" then
 						gamblers = gamblers + 1
@@ -783,7 +783,7 @@ function RetroDota:OnEveryoneVoted()
 		if gamblers > invokers then
 			GameRules.mirror_hero = "npc_dota_hero_zuus"
 		else
-			GameRules.mirror_hero = "npc_dota_hero_Invoker"
+			GameRules.mirror_hero = "npc_dota_hero_invoker"
 		end
 		print("There are "..gamblers.." gamblers and "..invokers.." Invokers ingame, Mirror Mode Hero will be "..GameRules.mirror_hero)
 
@@ -797,7 +797,7 @@ function RetroDota:OnEveryoneVoted()
 				
 				PlayerResource:ReplaceHeroWith(pID, GameRules.mirror_hero, gold, XP)
 				
-				if GameRules.mirror_hero == "npc_dota_hero_Invoker" then  --Start the pips if the player's hero is changed to Invoker.
+				if GameRules.mirror_hero == "npc_dota_hero_invoker" then  --Start the pips if the player's hero is changed to Invoker.
 					local new_hero_player = PlayerResource:GetPlayer(pID)
 					if new_hero_player ~= nil then
 						local new_hero = new_hero_player:GetAssignedHero()
@@ -893,7 +893,7 @@ function SetInvokeVersion(cooldown, hero)
 				SetInvokeVersion(cooldown, individual_hero)
 			end
 		elseif IsValidEntity(hero) then
-			if hero:GetName() == "npc_dota_hero_Invoker" then
+			if hero:GetName() == "npc_dota_hero_invoker" then
 				local old_invoke_ability = hero:FindAbilityByName("invoker_retro_invoke_12_second_cooldown")
 				if old_invoke_ability ~= nil then
 					local old_invoke_ability_level = old_invoke_ability:GetLevel()

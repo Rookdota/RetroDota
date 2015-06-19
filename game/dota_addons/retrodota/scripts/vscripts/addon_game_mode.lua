@@ -31,7 +31,7 @@ function Precache(context)
 
 	-- Precache heroes for Mirror Match.  This may or may not be needed.
 	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
-	PrecacheUnitByNameSync("npc_dota_hero_Invoker", context)
+	PrecacheUnitByNameSync("npc_dota_hero_invoker", context)
 	PrecacheUnitByNameSync("npc_dota_hero_keeper_of_the_light", context)
 	PrecacheUnitByNameSync("npc_dota_hero_morphling", context)
 end

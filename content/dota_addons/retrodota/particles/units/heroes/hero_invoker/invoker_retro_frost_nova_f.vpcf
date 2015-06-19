@@ -43,7 +43,7 @@
 			m_flZoomAmount1 = 4.000000
 			m_nSequenceCombineMode = "2"
 			m_nRefractBlurType = "2"
-			m_hTexture = resource:"materials/particle/smoke3/smoke3b.vtex"
+			m_hTexture = resource:"materials/particle/basic_smoke.vtex"
 		},
 	]
 	m_Initializers =
@@ -78,8 +78,7 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMin = 24
-			m_nAlphaMax = 44
+			m_nAlphaMin = 150
 		},
 		{
 			_class = "C_INIT_PositionOffset"

@@ -11,7 +11,7 @@ function gambler_retro_ante_up_on_spell_start(keys)
 	local arg
 	if caster:GetTeamNumber() == target:GetTeamNumber() then
 		target:Heal(keys.DamageHeal, caster)
-		 PopupNumbers(target, "damage", Vector(0, 255, 0), 2.0, keys.DamageHeal, PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_PLUS, nil)
+		PopupNumbers(target, "damage", Vector(0, 255, 0), 2.0, keys.DamageHeal, PATTACH_ABSORIGIN_FOLLOW ,POPUP_SYMBOL_PRE_PLUS, nil)
 		arg = "modifier_gambler_retro_ante_up_buff"
 	else
 		ApplyDamage({
@@ -61,14 +61,14 @@ function AnteUpPreCast(keys)
 	local player = caster:GetPlayerOwner()
 	local pID = caster:GetPlayerOwnerID()
 
-	-- This prkeyss the spell from going off
+	-- This prevents the spell from going off
 	if target == caster then
 		caster:Stop()
 
 		-- Play Error Sound
 		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", player)
 
-		-- This makes use of the Custom Error Flash module by zedor. https://github.com/zedor/CustomError
+		--This makes use of the Custom Error Flash module by zedor. https://github.com/zedor/CustomError
 		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Ability Can't Target Self" } )
 	end
 end

@@ -248,7 +248,7 @@ function RetroDota:OnAllPlayersLoaded()
 	-- Show Vote Panel
 	FireGameEvent( 'show_vote_panel', {} )
 
-	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)	
+	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)
 	
 	local message30shown = false
 	local message10shown = false
@@ -314,7 +314,6 @@ function RetroDota:OnPlayerPickHero(keys)
 
 	-- Start Pips if playing Invoker
 	if hero:GetUnitName() == "npc_dota_hero_invoker" then
-		print("PIPED")
 		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
 	end
 end
@@ -749,6 +748,8 @@ function RetroDota:OnEveryoneVoted()
 
 	GameRules:SendCustomMessage("The gold multiplier is <font color='#FF9933'>"..GameRules.gold_multiplier.."x</font>.  The XP multiplier is <font color='#FF9933'>"..GameRules.xp_multiplier .. "x</font>.", 0, 0)
 	GameRules:SetGoldPerTick(1*GameRules.gold_multiplier)
+	
+	local allHeroes = HeroList:GetAllHeroes()
 
 	-- Mirroring most picked if needed (ignored for single player)
 	if GameRules.mirror_match == "1" and GameRules.players_voted + GameRules.players_skipped_vote > 1 then
@@ -803,7 +804,6 @@ function RetroDota:OnEveryoneVoted()
 					if new_hero_player ~= nil then
 						local new_hero = new_hero_player:GetAssignedHero()
 						if new_hero ~= nil and new_hero:GetUnitName() == "npc_dota_hero_invoker" then
-							print("PIPED")
 							FireGameEvent( 'send_hero_ent', { player_ID = pID, _ent = new_hero:GetEntityIndex() } )
 						end
 					end
@@ -815,7 +815,6 @@ function RetroDota:OnEveryoneVoted()
 	end
 	
 	-- Set Custom XP Value on all heroes in game
-	local allHeroes = HeroList:GetAllHeroes()
 	for k, hero in pairs( allHeroes ) do
 		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
 		print("Set unit's EXP bounty to " .. XP_value)

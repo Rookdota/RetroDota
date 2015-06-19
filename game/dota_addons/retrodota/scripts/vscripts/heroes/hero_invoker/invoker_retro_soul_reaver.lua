@@ -39,12 +39,14 @@ function invoker_retro_soul_reaver_on_spell_start(event)
 			
 			event.target:EmitSound("retro_dota.invoker_retro_soul_reaver_delayed_damage")
 			event.target:EmitSound("Hero_Jakiro.LiquidFire")
-
-			ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_damage_delayed.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+			
+			PopupCriticalDamage(event.target, secondary_damage)
+			
+			--[[ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_damage_delayed.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 			
 			local soul_reaver_number = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_retro_soul_reaver_msg.vpcf", PATTACH_OVERHEAD_FOLLOW, event.target)
 			ParticleManager:SetParticleControl(soul_reaver_number, 1, Vector(1, damageTable.damage, 0))
-			ParticleManager:SetParticleControl(soul_reaver_number, 2, Vector(2, string.len(math.floor(damageTable.damage)) + 1, 0))
+			ParticleManager:SetParticleControl(soul_reaver_number, 2, Vector(2, string.len(math.floor(damageTable.damage)) + 1, 0))]]
 		end
 	})
 end

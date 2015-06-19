@@ -3,15 +3,11 @@
 	"addontitle"		"Retro Dota"
 	"addonversion"		"1.00"
 	"addontagline"		"Retro Dota"
-	"addonDescription"	"Play as Invoker when he had 27 spells!"
+	"addonDescription"	"Play as 27-Spell Invoker and Gambler!"
 	"TeamCount" 		"10"
-	"maps"				"retrodota_arena_skirmish_map retrodota_full_map"
+	"maps"				"retrodota_arena_skirmish_map"
 	"IsPlayable"		"1"
 	"retrodota_arena_skirmish_map"
-	{
-		"MaxPlayers"	"10"
-	}
-	"retrodota_full_map"
 	{
 		"MaxPlayers"	"10"
 	}

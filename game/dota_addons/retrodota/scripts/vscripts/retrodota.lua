@@ -314,6 +314,7 @@ function RetroDota:OnPlayerPickHero(keys)
 
 	-- Start Pips if playing Invoker
 	if hero:GetUnitName() == "npc_dota_hero_invoker" then
+		print("PIPED")
 		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
 	end
 end
@@ -801,7 +802,8 @@ function RetroDota:OnEveryoneVoted()
 					local new_hero_player = PlayerResource:GetPlayer(pID)
 					if new_hero_player ~= nil then
 						local new_hero = new_hero_player:GetAssignedHero()
-						if new_hero ~= nil then
+						if new_hero ~= nil and new_hero:GetUnitName() == "npc_dota_hero_invoker" then
+							print("PIPED")
 							FireGameEvent( 'send_hero_ent', { player_ID = pID, _ent = new_hero:GetEntityIndex() } )
 						end
 					end

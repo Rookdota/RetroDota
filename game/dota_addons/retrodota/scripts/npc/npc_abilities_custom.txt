@@ -1806,8 +1806,6 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
 				"ThinkInterval" 	"%burn_interval"
 				"OnIntervalThink"
 				{
@@ -1976,8 +1974,6 @@
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
 				
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
 				"ThinkInterval" 	"%burn_interval"
 				"OnIntervalThink"
 				{
@@ -2145,8 +2141,6 @@
 				"IsBuff"			"0"
 				"IsDebuff"			"1"
 				"IsPurgable"		"1"
-				
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				
 				"ThinkInterval" 	"%burn_interval"
 				"OnIntervalThink"

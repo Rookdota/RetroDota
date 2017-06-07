@@ -1,7 +1,7 @@
 "AddonInfo"
 {
 	"addontitle"		"Retro Dota"
-	"addonversion"		"1.00"
+	"addonversion"		"2.0.2"
 	"addontagline"		"Retro Dota"
 	"addonDescription"	"Play as 27-Spell Invoker and Gambler!"
 	"TeamCount" 		"10"

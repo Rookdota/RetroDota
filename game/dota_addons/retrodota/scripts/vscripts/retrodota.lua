@@ -19,7 +19,7 @@ for i=6, 25 do
 	XP_BOUNTY_PER_LEVEL_TABLE[i] = XP_BOUNTY_PER_LEVEL_TABLE[i-1] + 100
 end
 
-XP_PER_LEVEL_TABLE = {
+--[[XP_PER_LEVEL_TABLE = {
 	0,
 	200,
 	400,
@@ -45,6 +45,34 @@ XP_PER_LEVEL_TABLE = {
 	27500,
 	29900,
 	32400
+}--]]
+
+XP_PER_LEVEL_TABLE = {
+	0,
+	240,
+	600,
+	1080,
+	1680,
+	2300,
+	2940,
+	3600,
+	4280,
+	5080,
+	5900,
+	6740,
+	7640,
+	8865,
+	10115,
+	11390,
+	12690,
+	14015,
+	15415,
+	16905,
+	18405,
+	20155,
+	22155,
+	24405,
+	26905
 }
 
 if RetroDota == nil then
@@ -74,7 +102,7 @@ function RetroDota:InitGameMode()
 	--ListenToGameEvent('dota_glyph_used', Dynamic_Wrap(RetroDota, 'OnGlyphUsed'), self) --Doesn't trigger.
 	
 	-- Vote Data
-	GameRules.finished_voting = false
+	GameRules.finished_voting = true
 	GameRules.player_count = 0
 	GameRules.players_voted = 0
 	GameRules.players_skipped_vote = 0
@@ -234,7 +262,7 @@ function RetroDota:OnGameRulesStateChange(keys)
 		if not GameRules.finished_voting then
 
 			-- Finish Voting in case there's still some panels open
-			FireGameEvent( 'hide_vote_panel', {} )
+			--FireGameEvent( 'hide_vote_panel', {} )
 
 			RetroDota:OnEveryoneVoted()
 		end
@@ -246,11 +274,17 @@ function RetroDota:OnAllPlayersLoaded()
 	print("[RETRODOTA] All Players have loaded into the game")
 
 	-- Show Vote Panel
-	FireGameEvent( 'show_vote_panel', {} )
+	--FireGameEvent( 'show_vote_panel', {} )
 
-	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>Vote on the settings you would like to play with.</font>", 0, 0)
+	GameRules:SendCustomMessage("<font color='#FF9933'>Welcome to Retro Dota!</font>  <font color='##FFCC33'>For the sake of fun, all heroes start at level 6 with reduced respawn timers and halved mana costs.</font>", 0, 0)
+	GameRules:SendCustomMessage("<font color='##FFCC33'>The Arsenal Magus additionally has Invoke set to a 6-second cooldown (instead of 15 seconds), and is able to invoke two spells at once instead of just one.</font>", 0, 0)
+	--GameRules:SendCustomMessage("Please note that Invoker's \"Betrayal\" spell is currently slightly bugged in that affected players do not have their vision unlinked.  The bug has been reported and we hope to have it fixed in the near future.", 0, 0)
 	
-	local message30shown = false
+	--Hack to skirt the old voting system:
+	GameRules.finished_voting = true
+	RetroDota:OnEveryoneVoted()
+
+	--[[local message30shown = false
 	local message10shown = false
 	Timers:CreateTimer(function()
 		local time = GameRules:GetDOTATime(false,true)
@@ -267,7 +301,7 @@ function RetroDota:OnAllPlayersLoaded()
 			return
 		end
 		return 1
-	end)
+	end)--]]
 
 end
 
@@ -276,7 +310,7 @@ function RetroDota:OnPlayerPickHero(keys)
 	local player = EntIndexToHScript(keys.player)
 	local playerID = hero:GetPlayerID()
 	
-	FireGameEvent( 'show_spell_list_button', { player_ID = playerID } )
+	--FireGameEvent( 'show_spell_list_button', { player_ID = playerID } )
 
 	-- Check the level of this hero, add the bonus levels if needed
 	if GameRules.finished_voting and (hero:GetLevel() < GameRules.starting_level) then
@@ -291,9 +325,9 @@ function RetroDota:OnPlayerPickHero(keys)
 
 	-- Set Custom XP Value when a hero is picked after the multiplier was defined
 	if GameRules.xp_multiplier then
-		local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
-		print("Set unit's EXP bounty to " .. XP_value)
-		hero:SetCustomDeathXP(XP_value)
+		--local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
+		--print("Set unit's EXP bounty to " .. XP_value)
+		--hero:SetCustomDeathXP(XP_value)
 	end
 
 	-- If Mirror Match has already been decided and set to true, replace this hero by the mirror hero if necessary
@@ -313,9 +347,9 @@ function RetroDota:OnPlayerPickHero(keys)
 	
 
 	-- Start Pips if playing Invoker
-	if hero:GetUnitName() == "npc_dota_hero_invoker" then
-		FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
-	end
+	--if hero:GetUnitName() == "npc_dota_hero_invoker" then
+		--FireGameEvent( 'send_hero_ent', { player_ID = playerID, _ent = PlayerResource:GetSelectedHeroEntity(playerID):GetEntityIndex() } )
+	--end
 end
 
 
@@ -324,9 +358,9 @@ function RetroDota:OnPlayerLevelUp(keys)
 	local player = EntIndexToHScript(keys.player)
 	local hero = player:GetAssignedHero() 
 	local level = keys.level
-	local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
-	print("Set unit's EXP bounty to " .. XP_value)
-	hero:SetCustomDeathXP(XP_value)
+	--local XP_value = XP_BOUNTY_PER_LEVEL_TABLE[hero:GetLevel()] * GameRules.xp_multiplier
+	--print("Set unit's EXP bounty to " .. XP_value)
+	--hero:SetCustomDeathXP(XP_value)
 
 end
 
@@ -674,14 +708,14 @@ function RetroDota:OnEveryoneVoted()
 	
 	end
 
-	GameRules:SendCustomMessage("<font color='#2EFE2E'>Voting has finished!</font>", 0, 0)
+	--GameRules:SendCustomMessage("<font color='#2EFE2E'>Voting has finished!</font>", 0, 0)
 	GameRules.finished_voting = true
 
 	-- Results from voting
 	if GameRules.win_condition ~= "0" and GameRules.win_condition ~= 0 then  --If the win condition is kills.
 		--print(GameRules.win_condition)
 		END_GAME_ON_KILLS = true
-		FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})
+		--FireGameEvent("show_center_message",{ message = "The first team to "..GameRules.win_condition.." kills wins!", duration = 10.0})
 		GameRules:SendCustomMessage("The first team to amass <font color='#FF9933'>"..GameRules.win_condition.." kills</font> wins!", 0, 0)
 		
 		--Make the towers invulnerable, which in turn will keep the ancients invulnerable, since there is a kills to win condition.
@@ -701,30 +735,30 @@ function RetroDota:OnEveryoneVoted()
 			})
 		end
 	else  --If the win condition is the ancient.
-		GameRules:SendCustomMessage("Destroy the <font color='#FF9933'>enemy's ancient</font> to win!", 0, 0)
-		FireGameEvent("show_center_message",{ message = "Destroy the enemy's ancient to win!", duration = 10.0})
+		--GameRules:SendCustomMessage("Destroy the <font color='#FF9933'>enemy's ancient</font> to win!", 0, 0)
+		--FireGameEvent("show_center_message",{ message = "Destroy the enemy's ancient to win!", duration = 10.0})
 	end
 	
 	-- Starting Level and Gold
-	GameRules:SendCustomMessage("Players start at level <font color='#FF9933'>" ..GameRules.starting_level.. "</font> with <font color='#FF9933'>" .. GameRules.starting_gold .. "</font> starting gold.", 0, 0)
+	--GameRules:SendCustomMessage("Players start at level <font color='#FF9933'>" ..GameRules.starting_level.. "</font> with <font color='#FF9933'>" .. GameRules.starting_gold .. "</font> starting gold.", 0, 0)
 	SetHeroLevels(GameRules.starting_level)
 	SetBonusGold(GameRules.starting_gold)
 	
 	--Invoke slots
-	if GameRules.invoke_slots == "1" then
+	--[[if GameRules.invoke_slots == "1" then
 		GameRules:SendCustomMessage("There is <font color='#FF9933'>" ..GameRules.invoke_slots.." slot</font> for invoked spells.", 0, 0)
 	else
 		GameRules:SendCustomMessage("There are <font color='#FF9933'>" ..GameRules.invoke_slots.." slots</font> for invoked spells.", 0, 0)
-	end
+	end--]]
 	
 	--Invoke cooldown and spell mana cost.  SetInvokeVersion() is called later, after heroes have been switched for Mirror Mode.
-	if GameRules.mana_cost_reduction == 50 then
+	--[[if GameRules.mana_cost_reduction == 50 then
 		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>half mana</font>.", 0, 0)
 	elseif GameRules.mana_cost_reduction == 100 then
 		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>no mana</font>.", 0, 0)
 	else
 		GameRules:SendCustomMessage("Invoke has a <font color='#FF9933'>" .. GameRules.invoke_cd.."-second cooldown</font>, and all spells cost <font color='#FF9933'>full mana</font>.", 0, 0)
-	end
+	end--]]
 	
 	-- Fast Respawn
 	if GameRules.fast_respawn == "1" then
@@ -732,7 +766,7 @@ function RetroDota:OnEveryoneVoted()
 	end
 
 	-- Mirror + Insta Respawn Messages
-	if GameRules.mirror_match == "1" then
+	--[[if GameRules.mirror_match == "1" then
 		if GameRules.fast_respawn == "1" then
 			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>ON</font>.  Instant respawn mode is <font color='#FF9933'>ON</font>.", 0, 0)
 		else
@@ -744,9 +778,9 @@ function RetroDota:OnEveryoneVoted()
 		else
 			GameRules:SendCustomMessage("Mirror Match is <font color='#FF9933'>OFF</font>.  Instant respawn mode is <font color='#FF9933'>OFF</font>.", 0, 0)
 		end
-	end
+	end--]]
 
-	GameRules:SendCustomMessage("The gold multiplier is <font color='#FF9933'>"..GameRules.gold_multiplier.."x</font>.  The XP multiplier is <font color='#FF9933'>"..GameRules.xp_multiplier .. "x</font>.", 0, 0)
+	--GameRules:SendCustomMessage("The gold multiplier is <font color='#FF9933'>"..GameRules.gold_multiplier.."x</font>.  The XP multiplier is <font color='#FF9933'>"..GameRules.xp_multiplier .. "x</font>.", 0, 0)
 	GameRules:SetGoldPerTick(1*GameRules.gold_multiplier)
 	
 	local allHeroes = HeroList:GetAllHeroes()
@@ -804,7 +838,7 @@ function RetroDota:OnEveryoneVoted()
 					if new_hero_player ~= nil then
 						local new_hero = new_hero_player:GetAssignedHero()
 						if new_hero ~= nil and new_hero:GetUnitName() == "npc_dota_hero_invoker" then
-							FireGameEvent( 'send_hero_ent', { player_ID = pID, _ent = new_hero:GetEntityIndex() } )
+							--FireGameEvent( 'send_hero_ent', { player_ID = pID, _ent = new_hero:GetEntityIndex() } )
 						end
 					end
 				end

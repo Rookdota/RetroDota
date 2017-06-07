@@ -36,7 +36,7 @@ function invoker_retro_scout_on_spell_start(event)
 			owl.vOwner = caster:GetOwner()
 			owl:SetControllableByPlayer(caster:GetOwner():GetPlayerID(), true)
 			owl:AddNewModifier(owl, nil, "modifier_kill", {duration = ability:GetLevelSpecialValueFor("owl_duration", wex_level - 1) })  --Add the green duration circle, and kill it after the duration ends.
-			owl:AddNewModifier(owl, nil, "modifier_invisible", {duration = .1})  --Make the owl have the translucent texture.
+			--owl:AddNewModifier(owl, nil, "modifier_invisible", {duration = .1})  --Make the owl have the translucent texture.
 		end
     end
 end
@@ -48,7 +48,7 @@ end
 	Removes invisibility from nearby units, and maintains a translucent texture on the unit.
 ]]
 function modifier_invoker_retro_scout_unit_ability_on_interval_think(keys)
-	keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_invisible", {duration = .1})
+	--keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_invisible", {duration = .1})
 
 	local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), keys.caster:GetAbsOrigin(), nil, keys.caster:GetCurrentVisionRange(), DOTA_UNIT_TARGET_TEAM_ENEMY,
 	DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)

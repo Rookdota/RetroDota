@@ -64,7 +64,6 @@
 		"HeroSelectSoundEffect"		"sounds/gambler_retro_ante_up_cash_in.vsnd"
 		"ProjectileModel"			"particles/units/heroes/hero_gambler/gambler_base_attack.vpcf"						// Particle system model for projectile.
 		"Team"						"Good"
-		"HeroID"					"22"														// unique ID number for this hero.  Do not change this once established or it will invalidate collected stats.
 		"particle_folder"			"particles/units/heroes/hero_gambler"
 		
 		"AbilityLayout" 			"4"
@@ -72,6 +71,15 @@
 		"Ability2"					"gambler_retro_chip_stack"
 		"Ability3"					"gambler_retro_lucky_stars"
 		"Ability4"					"gambler_retro_all_in"
+		"Ability5"					""
+		"Ability10"		"special_bonus_mp_100"
+		"Ability11"		"special_bonus_mp_regen_1"
+		"Ability12"		"special_bonus_mp_125"
+		"Ability13"		"special_bonus_mp_regen_2"
+		"Ability14"		"special_bonus_mp_150"
+		"Ability15"		"special_bonus_mp_regen_3"
+		"Ability16"		"special_bonus_mp_175"
+		"Ability17"		"special_bonus_mp_regen_4"
 	
 		"ArmorPhysical"				"1.0"									    // Physical protection.
 		"MagicalResistance"			"25"									// Magical protection (percentage).
@@ -121,6 +129,11 @@
 			{
 			}
 		}
+		
+		"DisableWearables"			"1"
+		"ItemSlots"
+		{
+		}
 	}
 	//=================================================================================================================
 	// HERO: Invoker
@@ -144,5 +157,13 @@
 		"Ability14"					""
 		"Ability15"					""
 		"Ability16"					""
+		"Ability17"		"special_bonus_mp_100"
+		"Ability18"		"special_bonus_mp_regen_1"
+		"Ability19"		"special_bonus_mp_125"
+		"Ability20"		"special_bonus_mp_regen_2"
+		"Ability21"		"special_bonus_mp_150"
+		"Ability22"		"special_bonus_mp_regen_3"
+		"Ability23"		"special_bonus_mp_175"
+		"Ability24"		"special_bonus_mp_regen_4"
 	}
 }

@@ -169,3 +169,14 @@ end
 	event.caster:EmitSound("retro_dota.gambler_retro_all_in_failure_gold_lost")
 	event.caster:EmitSound("retro_dota.gambler_retro_all_in_failure_voice")
 end
+
+--When All In is just cast.
+--Passes in keys.ChanceToFail
+function AllInCast(keys)
+	math.randomseed(GameRules:GetGameTime())
+	if math.random(100) - keys.ChanceToFail > 0 then
+		AllInSuccess(keys)
+	else
+		AllInFailure(keys)
+	end
+end

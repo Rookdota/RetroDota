@@ -4,4 +4,6 @@
 	"Version"		"1"
 	
 	"item_refresher"							"REMOVE"  //Refresher Orb is replaced with a datadriven version of it.
+	"item_courier"								"REMOVE"
+	"item_flying_courier"						"REMOVE"
 }

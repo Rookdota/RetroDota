@@ -366,17 +366,22 @@ end
 
 
 function RetroDota:OnNPCSpawned(keys)
+	--[ W General              ]: Unknown Combat Class Defend during parse! (DOTA_COMBAT_CLASS_DEFEND_SOFT)
+	--for key,value in pairs(keys) do
+    --	print(key .. ": " .. value)
+	--end
+
 	local npc = EntIndexToHScript(keys.entindex)
 
 	-- Apply Gold & XP Multiplier
-	if GameRules.xp_multiplier then
+	--[[if GameRules.xp_multiplier then
 		npc:SetDeathXP(npc:GetDeathXP() * tonumber(GameRules.xp_multiplier))
 	end
 	
 	if GameRules.gold_multiplier then
 		npc:SetMaximumGoldBounty(npc:GetGoldBounty() * tonumber(GameRules.gold_multiplier))
 		npc:SetMinimumGoldBounty(npc:GetGoldBounty() * 1.1 )
-	end
+	end--]]
 
 	if IsValidEntity(npc) and GameRules:GetDOTATime(false, false) < 500 then  --Lane creeps stop being given movement speed modifiers at 7:30, so don't bother removing them after that point.
 		local npc_name = npc:GetUnitName()
